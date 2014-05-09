@@ -1,0 +1,17 @@
+CFLAGS = -I./include -I./modules -Wall
+
+: grammar.y |> bison -y --defines=include/parse.h -o grammar.c %f |> include/parse.h grammar.c
+: grammar.c |> gcc $(CFLAGS) -c %f -o %o |> %B.o
+
+: foreach cache.c binarydb.c dbpack.c decode.c lookup.c         | include/parse.h |> gcc $(CFLAGS) -c %f -o %o |> %B.o
+: foreach io.c log.c net.c file.c                               | include/parse.h |> gcc $(CFLAGS) -c %f -o %o |> %B.o
+: foreach strutil.c memory.c sig.c util.c regexp.c defs.c dns.c | include/parse.h |> gcc $(CFLAGS) -c %f -o %o |> %B.o
+: foreach shs.c crypt.c                                         | include/parse.h |> gcc $(CFLAGS) -c %f -o %o |> %B.o
+: foreach codegen.c execute.c opcodes.c token.c native.c        | include/parse.h |> gcc $(CFLAGS) -c %f -o %o |> %B.o
+: foreach genesis.c coldcc.c textdb.c control.c                 | include/parse.h |> gcc $(CFLAGS) -c %f -o %o |> %B.o
+
+# driver = grammar + genesis + common (data, db, io, misc, pcode, ops, mod, crypt)
+: grammar.o genesis.o data/*.o cache.o binarydb.o dbpack.o decode.o lookup.o io.o log.o net.o file.o strutil.o memory.o sig.o util.o regexp.o defs.o dns.o codegen.o execute.o opcodes.o token.o native.o ops/*.o modules/*.o shs.o crypt.o |> gcc $(CFLAGS) %f -lgdbm -lgdbm_compat -lm -lnsl -o %o |> genesis
+
+# compiler = grammar + coldcc + textdb + common
+: grammar.o coldcc.o textdb.o data/*.o cache.o binarydb.o dbpack.o decode.o lookup.o io.o log.o net.o file.o strutil.o memory.o sig.o util.o regexp.o defs.o dns.o codegen.o execute.o opcodes.o token.o native.o ops/*.o modules/*.o shs.o crypt.o |> gcc $(CFLAGS) %f -lgdbm -lgdbm_compat -lm -lnsl -o %o |> coldcc
