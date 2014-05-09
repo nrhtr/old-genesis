@@ -16,9 +16,9 @@ SYS=gnu
 CPU=i686_pc
 VENDOR=linux
 
-prefix=/home/jenga/github/genesis
+prefix=/home/nrhtr/github/genesis
 MODE=755
-USER=jenga
+USER=nrhtr
 BINDIR=$(prefix)/bin
 SRCDIR=$(prefix)/src
 MODULES=$(SRCDIR)/modules
