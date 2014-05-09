@@ -1,0 +1,1 @@
+feeding an invalid dict to fromliteral crashes the server.

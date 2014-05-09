@@ -1,0 +1,53 @@
+# Generated automatically from Makefile.in by configure.
+# Cold driver
+
+CFLAGS=-g -O -I../include
+LDFLAGS=
+LIBS=-lgdbm -lm -lnsl
+CC=gcc
+
+SYS=gnu
+CPU=i686_pc
+VENDOR=linux
+
+prefix=/home/spitball/builds/Genesis-1.1.12-STABLE
+BINDIR=$(prefix)/bin
+SRCDIR=$(prefix)/src
+MODULES=$(SRCDIR)/modules
+
+VERSION=1.1.12-STABLE
+
+## we don't need any rules as 'make xxxx.o' will still function correctly,
+## and the builds are usually called from ../Makefile anyway.
+
+## Just add the standard rules.
+
+all:
+
+clean:
+	rm -f *~ *.BAK *.bak
+
+scrub:
+	rm -f *.o *~ *.BAK *.bak
+
+makefile:
+	@cd $(prefix); configure -q
+
+install: all
+
+depend:
+#	@makedepend -- $(CFLAGS) -- $(SRCS) > /dev/null 2>&1
+#	@rm Makefile.bak
+
+lint:
+	$(LINT) -u $(SRCS)
+
+patchable: scrub
+	@chmod -f u+w Makefile
+	@echo "all:" > Makefile
+	@echo " @echo \"** Invalid Makefile! **\"" >> Makefile
+	@echo " @echo \"** running the configure script ... **\"" >> Makefile
+	@echo " @cd ../..; configure" >> Makefile
+
+reconfig:
+	cd ..; make reconfig

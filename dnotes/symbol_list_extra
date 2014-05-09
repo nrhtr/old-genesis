@@ -1,0 +1,3 @@
+var $root flags = [:methods, :code, :core, :variables, :"", "", "", "", "", "", "", "", ""];
+
+extra "" item added for each (de)compile cycle

@@ -1,0 +1,71 @@
+------------------------------------------------------------------------
+GENESIS
+
+Genesis is the compiler and run-time interpreter/daemon for ColdC, and
+is produced by the Cold Project.  You can learn more about helping to
+support the Cold Project at:
+
+    http://web.cold.org/
+
+Release information can be found in doc/CHANGES.
+
+------------------------------------------------------------------------
+INSTALL/COMPILATION IN UNIX
+
+Genesis should compile on most ANSI/ISO C compilers.  If your compiler
+is somewhat non-standard, Genesis may compile but you will have serious
+instability problems.  The only OS which we know you WILL have problems
+with is SunOS 4.1.x (which is dead and no longer supported by Sun--we
+suggest NetBSD as an alternative).
+
+To compile simply type: make
+
+To install simply type: make install
+
+The directory 'bin' contains a few useful scripts for Genesis database
+manipulation.  Full installation instructions can be found at:
+
+      http://web.cold.org/genesis/install.html
+
+------------------------------------------------------------------------
+INSTALL/COMPILATION IN WIN32
+
+You will need an ndbm implementation in Win32.  You can get GNU's ndbm
+implementation (gdbm) to cover this role.  You must first have access
+to a unix system, with either bison or yacc.  Read doc/Win32-INSTALL
+for full instructions.
+
+A copy of GDBM for Win32 can be found at:
+
+      ftp://ftp.cold.org/cold/contrib/gdbm173s.zip
+
+It is suggested that you try to find more current versions before using
+this copy.
+
+------------------------------------------------------------------------
+FURTHER INFORMATION
+
+The following email lists are available:
+
+    coldstuff           Generic cold-related list
+
+Further information, Archives and Subscription mechanisms for the lists are
+available at:
+
+    http://web.cold.org/contact.html
+
+Documentation:
+
+    for Genesis:     http://web.cold.org/genesis/
+    for ColdC:       http://ice.cold.org:1180/bin/help?node=coldc
+
+------------------------------------------------------------------------
+NOTES
+
+Verified to compile and run on:
+
+    * FreeBSD (Any version after 2.0)
+    * Sun Solaris 2.5
+    * Linux (although problems will arise 1.2.x versions)
+    * MacOS X (only tested on 10.1)
+

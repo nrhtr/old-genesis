@@ -1,0 +1,312 @@
+#!/usr/bin/perl
+
+$debug = 0;
+
+########################################################################
+#
+# This is a complete rewrite of the original backup script provided
+# for cold.  It is much friendlier for filesystem backups (the previous
+# one was very unfriendly with incremental FS backups)--and it also
+# provides an option for storing the textdb instead of binarydb --
+# this is much safer and portable, but also more CPU intensive on the
+# system.
+#
+# Configurable variables:
+#
+
+##
+## who to whine at when there are problems, and 'mailx'
+## (make sure to backslash-escape the at-sight)
+##
+#$admin_email = "admin\@domain.com";
+$mailx_exe =   "/usr/bin/Mail";
+
+##
+## The base directories--SET THIS!!
+##
+$base_dir   = "/cold/current";
+$logs_dir   = "$base_dir/logs";
+$backup_dir = "$base_dir/backups";
+
+##
+## The retention of backups
+##
+$hourly_set  = 24;  # how many in the hourly set?  default: 1 day's worth
+$daily_set   = 30;  # how many in the daily set?   default: 1 month's worth
+$monthly_set = 12;  # how many in the monthly set? default: 1 year's worth
+
+##
+## Clean the set 1=yes 0=no (setting to no will mean it does not cleanup
+## after the set, and you must do it manually)
+##
+$clean_hourly  = 1;    # hourly backups?
+$clean_daily   = 1;    # daily backups?
+$clean_monthly = 1;    # monthly backups?
+
+##
+## Store binary or text backups?  0=binary, 1=text
+##
+## if you set text, make sure $coldcc_exec is correct (fully qualified),
+## and make sure $mkfifo_exec (or its equivalent) is set properly.
+## if you set binary, make sure $tar_exec is correct (fully qualified)
+##
+$store_text = 1;
+
+##
+## compress output (binary or text)? 0=no 1=yes
+##
+$compress_output = 1;
+
+##
+## what to compress the text file with?
+##
+                   # bzip is the best, I see about 85% compression
+$compress_exec   = "/usr/local/bin/bzip2 -9f";
+$compress_suffix = "bz2";
+
+                   # alternative (gzip), I see about 80% compression
+#$compress_exec   = "/usr/bin/gzip -9f";
+#$compress_suffix = "gz";
+
+                   # alternative legacy compress, I see about 68% compression
+#$compress_exec   = "/usr/bin/compress";
+#$compress_suffix = "Z";
+
+##
+## more utilities required, make sure the path is correct
+##
+$coldcc_exec = "$base_dir/bin/coldcc";
+$tar_exec = "/usr/bin/tar";
+
+$mkfifo_exec = "/usr/bin/mkfifo";
+# $mkfifo_exec = "/usr/bin/mknod p"; # SYSV way is something like this
+
+##
+## What permission level should the backups be set to?
+##
+## Options:
+##
+##    0600     read/write by owner, and nobody else
+##    0640     read/write by owner, read by group, and nobody else
+##    0644     read/write by owner, read by anybody else
+##
+$backup_perms = 0600;
+
+########################################################################
+## No configurable variables are beyond this point
+########################################################################
+
+$ENV{PATH} = '';
+
+# just in case it wasn't called correctly...
+if (!$debug) {
+    if (fork()) {
+        exit();
+    }
+}
+
+# so we dont have to load a module for it ** DO NOT CHANGE THESE **
+$LOCK_SH = 1;  $LOCK_EX = 2;  $LOCK_NB = 4;  $LOCK_UN = 8;
+$SEEK_SET = 0; $SEEK_CUR = 1; $SEEK_END = 1;
+
+# anybody have the time?
+($l_sec,$l_min,$l_hour,$l_mday,$l_mon,$l_year,$l_wday,$l_yday) = localtime();
+$time = time();
+$l_year+= 1900; # no y2k issues here
+
+#@days = ("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+#@months = ("Jan","Feb","Mar","Apr","May","Jun",
+#           "Jul","Aug","Sep","Oct","Nov","Dec");
+#
+#
+#$d_mn = "$months[$l_mon]$l_year";
+#$d_da = sprintf("%02d$d_mn", $l_mday);
+#$d_hr = sprintf("${d_da}:%02d", $l_hour);
+
+$d_mn = sprintf("$l_year%02d", $l_mon+1);
+$d_da = sprintf("$d_mn%02d", $l_mday);
+$d_hr = sprintf("$d_da%02d", $l_hour);
+
+$lockfile = "$base_dir/L.$d_hr";
+$textdb   = "textdb-${d_hr}";
+$binarydb = "binary-${d_hr}";
+
+lopen(LOCK, ">$lockfile") || die("open(>$lockfile): $!\n");
+print LOCK "$$\n";
+
+@nix_files = ($lockfile);
+$SIG{INT} = 'abort';
+$SIG{TERM} = 'abort';
+$SIG{QUIT} = 'abort';
+
+##
+## bundle up the current backup
+##
+chdir($base_dir);
+rename("binary.bak", $binarydb) ||
+   die("rename(binary.bak => $binarydb): $!\n");
+
+if ($store_text) {
+    $bundle = $td_out = "$backup_dir/$textdb";
+    if ($compress_output) {
+        $td_out = "textdump_fifo";
+        push(@nix_files, $td_out);
+        &cmd("$mkfifo_exec $td_out.out");
+        $zout = "$backup_dir/_$textdb.$compress_suffix";
+        &cmd("$compress_exec < $td_out.out > $zout &");
+        $bundle .= ".$compress_suffix";
+    }
+
+    $rc=0xffff & &cmd("$coldcc_exec -d -o -b $binarydb -t $td_out 2>/dev/null");
+    &abort("ColdCC decompile failed!!\n") if ($rc != 0);
+
+    if ($compress_output) {
+        unlink($td_out);
+
+        ## all of this mess is incase coldcc dies, we dont hose a good db
+        $zout1 = "$backup_dir/_$textdb.$compress_suffix";
+        $zout2 = "$backup_dir/$textdb.$compress_suffix";
+        rename($zout1, $zout2) || &abort("rename($zout1=>$zout2: $!\n");
+    }
+} else {
+    &cmd("$tar_exec -cf $backup_dir/$binarydb.tar $binarydb");
+    $bundle = "$backup_dir/$binarydb.tar";
+    if ($compress_output) {
+        &cmd("$compress_exec $bundle");
+        $bundle .= ".$compress_suffix"; 
+    }
+}
+
+## remove it
+opendir(BINARY, $binarydb) || &abort("opendir($binarydb): $!\n");
+@list = grep(!/^\.{1,2}$/, readdir(BINARY));
+for $f (@list) {
+    $debug && print "unlink(\"$binarydb/$f\")";
+    if (unlink("$binarydb/$f")) {
+        print "\n";
+    } else {
+        print ": $!\n";
+    }
+}
+closedir(BINARY);
+rmdir($binarydb) || print "rmdir(\"$binarydb\"): $!\n";
+
+##
+## now shuffle the existing backup sets
+##
+opendir(BACKUPS, "$backup_dir") ||
+    &abort("Unable to open backup directory ($backup_dir): $!\n");
+%hourly  = ();
+%daily   = ();
+%monthly = ();
+for $f (readdir(BACKUPS)) {
+    if ($f =~ /^(binary|textdb)-([^.]+)\./) {
+        $date = $2;
+        if (length($date) == 10) {
+            $hourly{$date} = "textdb-$date.bz2";
+        } elsif (length($date) == 8) {
+            $daily{$date} = "textdb-$date.bz2";
+        } elsif (length($date) == 6) {
+            $monthly{$date} = "textdb-$date.bz2";
+        }
+    }
+}
+closedir(BACKUPS);
+
+$debug && print "HOURLY\n";
+&shift_set($clean_hourly, $hourly_set, \%hourly,
+    sub { return $d =~ /^\d{8}00$/ },
+    sub { $f2 =~ s/(\d{8})00/$1/ });
+
+$debug && print "DAILY\n";
+&shift_set($clean_daily, $daily_set, \%daily,
+    sub { return $d =~ /^\d{6}01$/ },
+    sub { $f2 =~ s/(\d{6})01/$1/ });
+
+$debug && print "MONTHLY\n";
+&shift_set($clean_monthly, $monthly_set, \%monthly,
+    sub { return $d =~ /^\d{4}12$/ },
+    sub { $f2 =~ s/(\d{4})12/$1/ });
+
+##
+## let go of the lock
+##
+unlink(@nix_files);
+lclose(LOCK);
+
+########################################################################
+
+sub lopen {
+    my ($fd, $fname) = @_;
+    my $retry;
+
+    if (!open($fd, $fname)) {
+        print(STDERR "open($fd, \"$fname\"): $!\n");
+        return 0;
+    }
+    $retry = $lopen_retry || 5;
+
+    while (!flock($fd, $LOCK_EX|$LOCK_NB)) {
+        if (!$retry) {
+            print STDERR "Cannot lock file: $fname\n";
+            return 0;
+        }
+        $retry--;
+        sleep(1);
+    }
+
+    return $fd;
+}
+
+sub lclose {
+    my ($file) = $_[0];
+    
+    close($file);
+    flock($file, $LOCK_UN);
+}
+
+sub abort {
+    unlink(@nix_files);
+    lclose(LOCK);
+    if (length($admin_email) && length($mailx_exe)) {
+        system($mailx_exe, "-s", "Genesis Backup ERROR: $_[0]", $admin_email);
+    }
+    die(@_);
+}
+
+sub cmd {
+    $debug && print("EXEC: " . join(" ", @_) . "\n");
+    return system(@_);
+}
+
+sub shift_set {
+    my ($clean_it, $set_max, $dict, $keep, $change) = @_;
+
+    $debug && print "shift($clean_it, $set_max, $dict, $keep, $change)\n";
+
+    if ($clean_it) {
+        my @set = sort(keys(%$dict));
+        $debug && print "CLEAN: $#set\n";
+        while (($#set+1) > $set_max) {
+            $d = shift(@set);
+            $f1 = $$dict{$d};
+            if (&$keep) {
+                $f2 = $f1;
+                &$change;
+                $debug && print "rename($f1, $f2)\n";
+                rename("$backup_dir/$f1", "$backup_dir/$f2") ||
+                    &abort("rename($f1 => $f2): $!\n");
+            } else {
+                $debug && print "unlink($f1)\n";
+                unlink("$backup_dir/$f1") || print STDERR "unlink($f1): $!\n";
+            }
+        }
+    } else {
+        $f1 = $f2 = $bundle;
+        &$change;
+        $debug && print "rename($f1, $f2)\n";
+        rename("$backup_dir/$f1", "$backup_dir/$f2") ||
+            &abort("rename($f1 => $f2): $!\n");
+    }
+}
+

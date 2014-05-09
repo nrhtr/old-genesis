@@ -1,0 +1,5 @@
+dict fromliteral stuff is really flaky
+feeding an invalid dict to fromliteral crashes the server.
+var $root flags = [:methods, :code, :core, :variables, :"", "", "", "", "", "", "", "", ""];
+
+extra "" item added for each (de)compile cycle

@@ -1,0 +1,34 @@
+// vim:noet:sts=8:ts=8:filetype=c
+// Setup: create root and sys
+
+object $root;
+
+object $string:$root;
+public method.split():native;
+
+// run tests on $sys
+object $sys;
+
+public method.test_string_equality {
+    throw(~fail,[]);
+};
+
+eval
+{
+    var x;
+    catch any {
+        .test_string_equality();
+    }
+    with {
+        dblog("Error!");
+    }
+    x =
+#["one" => 1];
+        dblog(toliteral(x));
+    catch any {
+        dblog(toliteral($string.split()));
+    }
+    with {
+        dblog(toliteral(error()));
+    }
+};
