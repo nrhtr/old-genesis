@@ -1,0 +1,6 @@
+CFLAGS = -I../include
+LIBS=-lgdbm -lm -lnsl
+CC=gcc
+
+#fixme - shouldn't need dependency on parser data types
+: foreach data.c buffer.c dict.c ident.c list.c object.c string.c handled_frob.c quickhash.c | ../<parsegroup> |> $(CC) $(CFLAGS) -c %f -o %o |> %B.o
