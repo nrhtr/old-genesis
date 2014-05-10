@@ -87,6 +87,7 @@ $(COMPILER): $(COMPILER_O)
 clean:
 	rm -f include/parse.h grammar.c *~ *.BAK *.bak y.output *.core
 	rm -f $(EXES)
+	rm -f *.o data/*.o modules/*.o ops/*.o
 	cd $(SRCDIR); rm -f $(EXES)
 	@cd $(MODULES); make $@
 	@cd $(OPSDIR); make $@
