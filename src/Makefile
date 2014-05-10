@@ -10,7 +10,7 @@ CC=gcc
 RANLIB=
 LINT=
 YACC=bison -y
-YFLAGS=-d
+YFLAGS=--defines=include/parse.h -o grammar.c
 
 SYS=gnu
 CPU=i686_pc
@@ -153,20 +153,18 @@ patchable: commitable
 	rm -f $(SRCDIR)/include/config.h
 	rm -f $(TESTDIR)/coldcc
 
-include/parse.h:
-	mv -f y.tab.h include/parse.h
-
 reconfig: scrub config
 config:
 	@cd ../; configure
 
 win32: Win32
 
+include/parse.h: grammar.y
+	$(YACC) $(YFLAGS) grammar.y
+
 regrammar:
 	@echo "generating parser source..."
 	@$(YACC) $(YFLAGS) grammar.y
-	@mv -f y.tab.c grammar.c
-	@mv -f y.tab.h include/parse.h
 	@grep '#include' grammar.c > incs
 	@grep -v '#include' grammar.c > out
 	@cat incs out > grammar.c
@@ -181,8 +179,6 @@ Win32:
                 s/#VPATCH#/#define VERSION_PATCH $(VPATCH)/" include/config.h.win32 > include/config.h
 	@echo "generating parser source..."
 	@$(YACC) $(YFLAGS) grammar.y
-	@mv -f y.tab.c grammar.c
-	@mv -f y.tab.h include/parse.h
 	@grep '#include' grammar.c > incs
 	@grep -v '#include' grammar.c > out
 	@cat incs out > grammar.c
