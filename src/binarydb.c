@@ -146,7 +146,7 @@ void verify_clean(void)
     char *s;
     FILE *fp;
 
-    v_major[0] = v_minor[0] = v_patch[0] = magicmod[0] = system[0] = search[0] = (char) NULL;
+    v_major[0] = v_minor[0] = v_patch[0] = magicmod[0] = system[0] = search[0] = '\0';
 
     if ((fp = fopen(c_clean_file, "rb"))) {
         fgets(system, LINE, fp);
@@ -159,7 +159,7 @@ void verify_clean(void)
         /* cleanup anything after the system name */
         s = &system[strlen(system) - 1];
         while (s > system && isspace(*s)) {
-            *s = (char) NULL;
+            *s = '\0';
             s--;
         }
 

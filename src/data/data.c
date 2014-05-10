@@ -324,7 +324,7 @@ cStr *data_tostr(cData * data)
 
     case OBJNUM:
         {
-            char prefix[] = { '$', (char) NULL };
+            char prefix[] = { '$', '\0' };
             Obj *obj = cache_retrieve(data->u.objnum);
 
             if (!obj || obj->objname == -1) {

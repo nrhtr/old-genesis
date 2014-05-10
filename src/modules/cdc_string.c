@@ -117,7 +117,7 @@ NATIVE_METHOD(strsub)
     replace = string_chars(STR3);
     replace_len = string_length(STR3);
 
-    if (*s == (char) NULL || *search == (char) NULL) {
+    if (*s == '\0' || *search == '\0') {
         subbed = string_dup(STR1);
     } else {
         subbed = string_new(search_len);

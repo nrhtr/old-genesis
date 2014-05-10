@@ -84,7 +84,7 @@ INTERNAL void prebind_port_with(char *str, char *name)
         fprintf(stderr, "** Invalid prebind format: %s\n", str);
         exit(1);
     }
-    *s = (char) NULL;
+    *s = '\0';
     s++;
 
     port = atoi(s);
@@ -158,7 +158,7 @@ void get_my_hostname(void)
     /* for those OS's that do not do this */
     memset(cbuf, 0, LINE);
     if (!gethostname(cbuf, LINE)) {
-        if (cbuf[LINE - 1] != (char) NULL) {
+        if (cbuf[LINE - 1] != '\0') {
             fprintf(stderr, "Unable to determine hostname: name too long.\n");
         } else {
             string_discard(str_hostname);
@@ -232,7 +232,7 @@ INTERNAL void initialize(Int argc, char **argv)
             switch (*opt) {
             case 'd':          /* directory */
                 opt++;
-                if (*opt == (char) NULL) {
+                if (*opt == '\0') {
                     usage(name);
                     fputs("** Invalid directory option: -d\n", stderr);
                     exit(1);
@@ -256,7 +256,7 @@ INTERNAL void initialize(Int argc, char **argv)
                 break;
             case 'l':          /* logfile */
                 opt++;
-                if (*opt == (char) NULL) {
+                if (*opt == '\0') {
                     usage(name);
                     fputs("** Invalid file option: -l\n", stderr);
                     exit(1);

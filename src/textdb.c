@@ -82,8 +82,8 @@ extern Bool print_warn;
     }
 
 #define MATCH(__s, __t, __l) (!strnccmp(__s, __t, __l) && isspace(__s[__l]))
-#define NEXT_SPACE(__s) {for (; *__s && !isspace(*__s) && *__s != (char) NULL; __s++);}
-#define NEXT_WORD(__s)  {for (; isspace(*__s) && *__s != (char) NULL; __s++);}
+#define NEXT_SPACE(__s) {for (; *__s && !isspace(*__s) && *__s != '\0'; __s++);}
+#define NEXT_WORD(__s)  {for (; isspace(*__s) && *__s != '\0'; __s++);}
 
 
 /*
@@ -462,11 +462,11 @@ INTERNAL Int get_idref(char *sp, idref_t * id, Int isobj)
     }
 
     /* get just the symbol */
-    for (x = 0; *p != (char) NULL && (isalnum(*p) || *p == '_' || *p == '$'); x++, p++);
+    for (x = 0; *p != '\0' && (isalnum(*p) || *p == '_' || *p == '$'); x++, p++);
 
     strncpy(str, sp, x);
     p = str;
-    str[x] = (char) NULL;
+    str[x] = '\0';
 
     if (*p == '$') {
         if (!isobj)
@@ -487,7 +487,7 @@ INTERNAL Long parse_to_objnum(idref_t ref)
     Long id, objnum = 0;
     Int result;
 
-    if (ref.str[0] != (char) NULL) {
+    if (ref.str[0] != '\0') {
         if (!strncmp(ref.str, "root", 4) && strlen(ref.str) == 4)
             return 1;
         else if (!strncmp(ref.str, "sys", 3) && strlen(ref.str) == 3)
@@ -510,7 +510,7 @@ INTERNAL Long parse_to_objnum(idref_t ref)
 INTERNAL Obj *handle_objcmd(char *line, char *s, Int new)
 {
     idref_t obj;
-    char *p = (char) NULL, obj_str[BUF];
+    char *p = '\0', obj_str[BUF];
     Obj *target = NULL;
     cList *parents = list_new(1);       /* will always have a least one parent */
     Long objnum;
@@ -543,19 +543,19 @@ INTERNAL Obj *handle_objcmd(char *line, char *s, Int new)
         NEXT_WORD(s);
 
         /* get each parent, look them up */
-        while ((more && *s != (char) NULL) && running) {
+        while ((more && *s != '\0') && running) {
             p = strchr(s, ',');
             if (p == NULL) {
                 /* we may be at the end of the line.. */
                 if (s[strlen(s) - 1] != ';')
                     DIE("Parse Error, unterminated directive.");
-                s[strlen(s) - 1] = (char) NULL;
+                s[strlen(s) - 1] = '\0';
                 strcpy(par_str, s);
                 len = strlen(par_str);
                 more = FALSE;
             } else {
                 strncpy(par_str, s, p - s);
-                par_str[p - s] = (char) NULL;
+                par_str[p - s] = '\0';
                 len = p - s;
             }
             get_idref(par_str, &parent, ISOBJ);
@@ -640,7 +640,7 @@ INTERNAL Obj *handle_objcmd(char *line, char *s, Int new)
 
     /* if we should, add the name.  If it already has one, we just replace it. */
     if (objnum != ROOT_OBJNUM && objnum != SYSTEM_OBJNUM) {
-        if (obj.str[0] != (char) NULL)
+        if (obj.str[0] != '\0')
             add_objname(obj.str, target->objnum);
     }
 
@@ -721,7 +721,7 @@ INTERNAL void handle_namecmd(char *line, char *s, Int new)
     p = s;
 
     /* skip past the name */
-    for (; *p && !isspace(*p) && *p != (char) NULL && *p != ';'; p++);
+    for (; *p && !isspace(*p) && *p != '\0' && *p != ';'; p++);
 
     /* copy the name */
     COPY(name, s, p);
@@ -737,7 +737,7 @@ INTERNAL void handle_namecmd(char *line, char *s, Int new)
     ident_discard(id);
 
     /* lets see if there is a objnum association, or if we should pick one */
-    for (; isspace(*p) && *p != (char) NULL; p++);
+    for (; isspace(*p) && *p != '\0'; p++);
 
     if (*p != ';') {
         if (!p) {
@@ -780,7 +780,7 @@ INTERNAL void handle_varcmd(char *line, char *s, Int new, Int access)
             WARN(("Ignoring object variable with invalid parent:"));
             if (strlen(line) > 55) {
                 line[50] = line[51] = line[52] = '.';
-                line[53] = (char) NULL;
+                line[53] = '\0';
             }
             WARN(("\"%s\"", line));
             return;
@@ -789,7 +789,7 @@ INTERNAL void handle_varcmd(char *line, char *s, Int new, Int access)
             WARN(("Ignoring object variable with no ancestor:"));
             if (strlen(line) > 55) {
                 line[50] = line[51] = line[52] = '.';
-                line[53] = (char) NULL;
+                line[53] = '\0';
             }
             WARN(("\"%s\"", line));
             return;
@@ -804,11 +804,11 @@ INTERNAL void handle_varcmd(char *line, char *s, Int new, Int access)
 
     /* strip trailing spaces and semi colons */
     while (s[strlen(s) - 1] == ';' || isspace(s[strlen(s) - 1]))
-        s[strlen(s) - 1] = (char) NULL;
+        s[strlen(s) - 1] = '\0';
 
     s += get_idref(s, &name, NOOBJ);
 
-    if (name.str[0] == (char) NULL)
+    if (name.str[0] == '\0')
         DIEf("Invalid variable name \"%s\"", p);
 
     var = ident_get(name.str);
@@ -826,7 +826,7 @@ INTERNAL void handle_varcmd(char *line, char *s, Int new, Int access)
         d.type = -2;
 
         /* skip the current 'word' until we hit a space or a '=' */
-        for (; *s && !isspace(*s) && *s != (char) NULL && *s != '='; s++);
+        for (; *s && !isspace(*s) && *s != '\0' && *s != '='; s++);
 
         /* incase we hit a space and not a '=', bump it up to the next word */
         NEXT_WORD(s);
@@ -907,7 +907,7 @@ INTERNAL Int get_method_name(char *s, idref_t * id)
     if (*s == '.')
         s++, count++;
 
-    for (x = 0, p = s; *p != (char) NULL; x++, p++) {
+    for (x = 0, p = s; *p != '\0'; x++, p++) {
         if (isalnum(*p) || *p == '_')
             continue;
         break;
@@ -915,7 +915,7 @@ INTERNAL Int get_method_name(char *s, idref_t * id)
 
     count += x;
     strncpy(id->str, s, x);
-    id->str[x] = (char) NULL;
+    id->str[x] = '\0';
 
     return count;
 }
@@ -936,7 +936,7 @@ INTERNAL void handle_bind_nativecmd(FILE * fp, char *s)
 
     s += get_method_name(s, &meth);
 
-    if (nat.str[0] == (char) NULL || meth.str[0] == (char) NULL)
+    if (nat.str[0] == '\0' || meth.str[0] == '\0')
         DIE("Invalid method name in bind_native directive.\n");
     inat = ident_get(nat.str);
     imeth = ident_get(meth.str);
@@ -987,7 +987,7 @@ INTERNAL void handle_methcmd(FILE * fp, char *s, Int new, Int access)
 
     s += get_method_name(s, &id);
 
-    if (id.str[0] == (char) NULL)
+    if (id.str[0] == '\0')
         DIE("No method name.");
 
     name = ident_get(id.str);
@@ -996,7 +996,7 @@ INTERNAL void handle_methcmd(FILE * fp, char *s, Int new, Int access)
     if ((p = strchr(s, ':')) != NULL) {
         p++;
 
-        while (*p != (char) NULL && running) {
+        while (*p != '\0' && running) {
             NEXT_WORD(p);
             if (!strnccmp(p, "nooverride", 10)) {
                 p += 10;
@@ -1166,7 +1166,7 @@ void compile_cdc_file(FILE * fp)
         while (line->len && isspace(line->s[line->len - 1]))
             line->len--;
 
-        line->s[line->len] = (char) NULL;
+        line->s[line->len] = '\0';
 
         /* Strip unprintables from the line. */
         for (p = s = line->s; *p; p++) {
@@ -1175,7 +1175,7 @@ void compile_cdc_file(FILE * fp)
             *s++ = *p;
         }
 
-        *s = (char) NULL;
+        *s = '\0';
         line->len = s - line->s;
 
         if (!line->len) {
@@ -1185,7 +1185,7 @@ void compile_cdc_file(FILE * fp)
 
         /* if we end in a backslash, concatenate */
         if (line->s[line->len - 1] == '\\') {
-            line->s[line->len - 1] = (char) NULL;
+            line->s[line->len - 1] = '\0';
             line->len--;
 
             if (str != NULL) {
@@ -1652,11 +1652,11 @@ char *strchop(char *str, Int len)
 {
     register int x;
     for (x = 0; x < len; x++) {
-        if (str[x] == (char) NULL)
-            return (char) NULL;
+        if (str[x] == '\0')
+            return '\0';
     }
     /* null terminate it and put an elipse in */
-    str[x] = (char) NULL;
+    str[x] = '\0';
     str[x - 1] = str[x - 2] = str[x - 3] = '.';
 
     return str;

@@ -36,13 +36,13 @@ module_t web_module = { YES, init_web, YES, uninit_web };
 
 /* we pre-define this for speed */
 char *dec_2_hex[] = {
-    (char) NULL, (char) NULL, (char) NULL, (char) NULL, (char) NULL,
-    (char) NULL, (char) NULL, (char) NULL, (char) NULL, (char) NULL,
-    (char) NULL, (char) NULL, (char) NULL, (char) NULL, (char) NULL,
-    (char) NULL, (char) NULL, (char) NULL, (char) NULL, (char) NULL,
-    (char) NULL, (char) NULL, (char) NULL, (char) NULL, (char) NULL,
-    (char) NULL, (char) NULL, (char) NULL, (char) NULL, (char) NULL,
-    (char) NULL, (char) NULL, (char) NULL,
+    NULL, NULL, NULL, NULL, NULL,
+    NULL, NULL, NULL, NULL, NULL,
+    NULL, NULL, NULL, NULL, NULL,
+    NULL, NULL, NULL, NULL, NULL,
+    NULL, NULL, NULL, NULL, NULL,
+    NULL, NULL, NULL, NULL, NULL,
+    NULL, NULL, NULL,
     "%21", "%22", "%23", "%24", "%25", "%26", "%27", "%28", "%29", "%2a",
     "%2b",
     "%2c", "%2d", "%2e", "%2f", "%30", "%31", "%32", "%33", "%34", "%35",
@@ -59,7 +59,7 @@ char *dec_2_hex[] = {
     "%6d",
     "%6e", "%6f", "%70", "%71", "%72", "%73", "%74", "%75", "%76", "%77",
     "%78",
-    "%79", "%7a", "%7b", "%7c", "%7d", "%7e", (char) NULL
+    "%79", "%7a", "%7b", "%7c", "%7d", "%7e", '\0'
 };
 
 #define tohex(c) (dec_2_hex[(int) c])
@@ -111,7 +111,7 @@ cStr *decode(cStr * str)
         }
     }
 
-    *n = (char) NULL;
+    *n = '\0';
 
     str->len = (n - str->s);
 
@@ -123,7 +123,7 @@ cStr *encode_full(cStr * in)
     register char *s = string_chars(in);
     cStr *str = string_new(string_length(in));
 
-    for (; *s != (char) NULL; s++) {
+    for (; *s != '\0'; s++) {
         if (*s == ' ')
             str = string_addc(str, '+');
         else if (*s > ' ' && *s <= '~') {
@@ -142,7 +142,7 @@ cStr *encode_partial(cStr * in)
     register char *s = string_chars(in);
     cStr *str = string_new(string_length(in));
 
-    for (; *s != (char) NULL; s++) {
+    for (; *s != '\0'; s++) {
         if (*s == ' ')
             str = string_addc(str, '+');
         else if (*s > ' ' && *s <= '~') {
@@ -174,7 +174,7 @@ cStr *html_escape(cStr * in)
     /* doh, they do.. */
     out = string_new(len);
 
-    for (; *s != (char) NULL; s++) {
+    for (; *s != '\0'; s++) {
         switch (*s) {
         case '<':
             out = string_add_chars(out, "&lt;", 4);

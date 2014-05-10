@@ -141,7 +141,7 @@ COLDC_FUNC(strsub)
     replace = string_chars(args[2].u.str);
     replace_len = string_length(args[2].u.str);
 
-    if (*s == (char) NULL || *search == (char) NULL) {
+    if (*s == '\0' || *search == '\0') {
         subbed = string_dup(args[0].u.str);
     } else {
         subbed = string_new(search_len);

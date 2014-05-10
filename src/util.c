@@ -396,14 +396,14 @@ cStr *fgetstring(FILE * fp)
 #ifdef __Win32__
         /* DOS and Windows text files may use \r\n or \n as a line termination */
         if ((len >= 2) && (p[len - 2] == '\r')) {
-            p[len - 2] = (char) NULL;
+            p[len - 2] = '\0';
             line->len = len - 2;
             return line;
         } else if (p[len - 1] == '\n') {
 #else
         if (p[len - 1] == '\n') {
 #endif
-            p[len - 1] = (char) NULL;
+            p[len - 1] = '\0';
             line->len = len - 1;
             return line;
         } else {
@@ -606,7 +606,7 @@ Int getarg(char *n, char **buf, char *opt, char **argv, Int * argc, void (*usage
     char *p = opt;
 
     p++;
-    if (*p != (char) NULL) {
+    if (*p != '\0') {
         *buf = p;
 
         return 0;
