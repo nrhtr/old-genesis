@@ -1,6 +1,5 @@
 #!/bin/sh
-tests=$@
-for x in $tests
+for x in ./tests/*.cdc
 do
     echo Running test "$x"...
     ./runtest.sh $x
