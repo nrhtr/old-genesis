@@ -10,7 +10,7 @@ public method .name {
 //********* begin tests ********//
 //******************************//
 
-public method .should_not_ignore_case_when_comparing_strings {
+public method .should_ignore_case_when_comparing_strings {
     var a, b;
     a = "test string";
     b = "tEsT StRiNg";
