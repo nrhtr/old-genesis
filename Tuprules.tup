@@ -1,1 +1,2 @@
-CFLAGS=-Werror
+CC=clang
+CFLAGS=-Wall
