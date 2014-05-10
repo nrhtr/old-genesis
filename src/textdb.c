@@ -510,7 +510,7 @@ INTERNAL Long parse_to_objnum(idref_t ref)
 INTERNAL Obj *handle_objcmd(char *line, char *s, Int new)
 {
     idref_t obj;
-    char *p = '\0', obj_str[BUF];
+    char *p = NULL, obj_str[BUF];
     Obj *target = NULL;
     cList *parents = list_new(1);       /* will always have a least one parent */
     Long objnum;
@@ -536,7 +536,7 @@ INTERNAL Obj *handle_objcmd(char *line, char *s, Int new)
     if (*s == ':') {
         idref_t parent;
         char par_str[BUF];
-        Int len, more = TRUE;
+        Int more = TRUE;
 
         /* step past ':' and skip whitespace */
         s++;
@@ -551,12 +551,10 @@ INTERNAL Obj *handle_objcmd(char *line, char *s, Int new)
                     DIE("Parse Error, unterminated directive.");
                 s[strlen(s) - 1] = '\0';
                 strcpy(par_str, s);
-                len = strlen(par_str);
                 more = FALSE;
             } else {
                 strncpy(par_str, s, p - s);
                 par_str[p - s] = '\0';
-                len = p - s;
             }
             get_idref(par_str, &parent, ISOBJ);
             objnum = parse_to_objnum(parent);
@@ -721,7 +719,8 @@ INTERNAL void handle_namecmd(char *line, char *s, Int new)
     p = s;
 
     /* skip past the name */
-    for (; *p && !isspace(*p) && *p != '\0' && *p != ';'; p++);
+    for (; *p && !isspace(*p) && *p != '\0' && *p != ';'; p++)
+        ;
 
     /* copy the name */
     COPY(name, s, p);
@@ -826,7 +825,8 @@ INTERNAL void handle_varcmd(char *line, char *s, Int new, Int access)
         d.type = -2;
 
         /* skip the current 'word' until we hit a space or a '=' */
-        for (; *s && !isspace(*s) && *s != '\0' && *s != '='; s++);
+        for (; *s && !isspace(*s) && *s != '\0' && *s != '='; s++)
+            ;
 
         /* incase we hit a space and not a '=', bump it up to the next word */
         NEXT_WORD(s);
@@ -1653,7 +1653,7 @@ char *strchop(char *str, Int len)
     register int x;
     for (x = 0; x < len; x++) {
         if (str[x] == '\0')
-            return '\0';
+            return NULL;
     }
     /* null terminate it and put an elipse in */
     str[x] = '\0';

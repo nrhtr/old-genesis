@@ -27,7 +27,7 @@ INTERNAL SOCKET grab_port(Int port, char *addr, int socktype);
 static Long translate_connect_error(Int error);
 
 static struct sockaddr_in sockin;       /* An internet address. */
-static int addr_size = sizeof(sockin);  /* Size of sockin. */
+static unsigned int addr_size = sizeof(sockin);  /* Size of sockin. */
 
 Long server_failure_reason;
 
@@ -302,7 +302,7 @@ Int io_event_wait(Int sec, Conn * connections, server_t * servers, pending_t * p
     pending_t *pend;
     fd_set read_fds, write_fds, except_fds;
     Int flags, nfds, count, result, error;
-    int dummy = sizeof(int);
+    unsigned int dummy = sizeof(int);
 
     /* Set time structure according to sec. */
     if (sec == -1) {

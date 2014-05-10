@@ -43,7 +43,7 @@ void fail_to_start(char *s)
 
 void r_write_log(char *str)
 {
-    fprintf(logfile, str);
+    fprintf(logfile, "%s", str);
     //fputs(str, logfile);
 
     fflush(logfile);

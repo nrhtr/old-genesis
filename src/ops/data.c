@@ -41,7 +41,7 @@ COLDC_FUNC(id)
 {
     Int val;
     INIT_1_ARG(ANY_TYPE);
-    val = args;
+    val = (intptr_t) args;
     pop(1);
     push_int(val);
 }

@@ -42,7 +42,7 @@ NATIVE_METHOD(buf_replace)
 NATIVE_METHOD(subbuf)
 {
     Int start, len, blen;
-    cBuf *buf;
+    cBuf *buf = NULL;
 
     INIT_2_OR_3_ARGS(BUFFER, INTEGER, INTEGER);
 

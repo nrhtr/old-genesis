@@ -245,9 +245,7 @@ Int yylex(void)
         }
 
         if ((*s == '.' && isdigit(*(s + 1))) || *s == 'e') {
-            Float f = yylval.num;
-
-            f = atof(string_chars(float_buf));
+            Float f = atof(string_chars(float_buf));
             string_discard(float_buf);
 
             if (*s == '.') {
@@ -353,12 +351,10 @@ Int yylex(void)
     }
 
     if (len >= 2 && *s == '+' && s[1] == '+') {
-        s += 2, cur_pos += 2, len -= 2;
         return INCREMENT;
     }
 
     if (len >= 2 && *s == '-' && s[1] == '-') {
-        s += 2, cur_pos += 2, len -= 2;
         return DECREMENT;
     }
 

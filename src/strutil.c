@@ -625,7 +625,6 @@ cStr *strsed(cStr * reg,        /* the regexp string */
     } else {                    /* rrg, now we have fun */
         if (flags & RF_GLOBAL) {        /* they would, the bastards */
             Int depth = 100;
-            char *rxs = s;
 
             out = string_new(slen + ((rlen * size) * mult));
 
@@ -634,7 +633,7 @@ cStr *strsed(cStr * reg,        /* the regexp string */
 
             r = string_chars(rs);
 
-            rxs = rx->startp[0];
+            char *rxs = rx->startp[0];
             do {
                 if (!--depth) {
                     string_discard(out);

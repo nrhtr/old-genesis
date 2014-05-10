@@ -26,7 +26,7 @@ void func_r_dblog(void)
     if (!func_init_1(&args, STRING))
         return;
 
-    printf(string_chars(args[0].u.str));
+    printf("%s", string_chars(args[0].u.str));
     //r_write_log(args[0].u.str);
     pop(1);
     push_int(1);

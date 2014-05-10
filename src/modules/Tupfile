@@ -1,7 +1,6 @@
 include_rules
 CFLAGS += -I../include
 LIBS=-lgdbm -lm -lnsl
-CC=gcc
 
 #fixme - shouldn't need dependency on parser data types
 : foreach *.c | ../<parsegroup> |> $(CC) $(CFLAGS) -c %f -o %o |> %B.o
