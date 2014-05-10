@@ -1,4 +1,5 @@
-CFLAGS = -I./include -I./modules -Wall
+include_rules
+CFLAGS += -I./include -I./modules
 
 : grammar.y |> bison -y --defines=include/parse.h -o grammar.c %f |> include/parse.h grammar.c <parsegroup>
 : grammar.c |> gcc $(CFLAGS) -c %f -o %o |> %B.o
