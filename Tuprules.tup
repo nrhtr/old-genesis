@@ -1,2 +1,2 @@
 CC=clang
-CFLAGS=-Wall
+CFLAGS=-Wall -Wconversion
