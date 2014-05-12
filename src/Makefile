@@ -160,7 +160,7 @@ config:
 
 win32: Win32
 
-include/parse.h: grammar.y
+include/parse.h grammar.c: grammar.y
 	$(YACC) $(YFLAGS) grammar.y
 
 regrammar:

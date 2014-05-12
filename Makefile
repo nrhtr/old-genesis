@@ -1,6 +1,5 @@
 all: config
 	@cd src; make $@
-	@cd test; make
 
 clean: config
 	@cd src; make $@

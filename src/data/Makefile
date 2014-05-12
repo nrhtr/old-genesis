@@ -13,7 +13,7 @@ SYS=gnu
 CPU=i686_pc
 VENDOR=linux
 
-prefix=/home/spitball/builds/Genesis-1.1.12-STABLE
+prefix=/home/nrhtr/github/genesis
 BINDIR=$(prefix)/bin
 SRCDIR=$(prefix)/src
 
