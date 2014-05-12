@@ -19,9 +19,6 @@ NATIVE_METHOD(strlen)
     CLEAN_RETURN_INTEGER(len);
 }
 
-
-/* Added by Celthric... basic punctuate */
-
 NATIVE_METHOD(punctuate)
 {
     Int len;

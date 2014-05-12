@@ -2367,8 +2367,6 @@ void op_in(void)
 // Bitwise integer operators.
 //
 // Added by Jeff Kesselman, March 1995
-//
-// Modified by Celthric June 2009
 // ----------------------------------------------------------------
 */
 
