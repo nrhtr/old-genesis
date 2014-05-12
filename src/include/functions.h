@@ -161,6 +161,7 @@ COLDC_FUNC(dblog);
 COLDC_FUNC(r_dblog);
 COLDC_FUNC(backup);
 COLDC_FUNC(shutdown);
+COLDC_FUNC(hard_exit_error);
 COLDC_FUNC(set_heartbeat);
 COLDC_FUNC(cache_info);
 COLDC_FUNC(cancel);

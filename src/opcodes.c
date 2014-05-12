@@ -164,6 +164,7 @@ static Op_info op_info[] = {
     {F_R_DBLOG, "r_dblog", func_r_dblog},
     {F_BACKUP, "backup", func_backup},
     {F_SHUTDOWN, "shutdown", func_shutdown},
+    {F_HARD_EXIT_ERROR, "hard_exit_error", func_hard_exit_error},
     {F_SET_HEARTBEAT, "set_heartbeat", func_set_heartbeat},
     {F_CACHE_INFO, "cache_info", func_cache_info},
 

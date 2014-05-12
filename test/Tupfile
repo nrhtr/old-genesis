@@ -1,0 +1,1 @@
+: foreach ./tests/*.cdc | driver.cdc lib.cdc ../src/coldcc |> ./runtest.sh %f |>

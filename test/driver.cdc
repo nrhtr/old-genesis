@@ -4,21 +4,25 @@
 object $main: $root;
 
 public method .print_errors {
-    arg errors;
+    arg errors, suite;
     var error_count, error;
 
     error_count = listlen(errors);
     if (error_count > 0) {
+	dblog("");
 	dblog("The following tests failed (" + error_count + "):");
 	for error in (errors) {
+	    dblog("---------------");
+	    dblog("Suite   : " + suite.name());
 	    dblog("Method  : " + error[:method]);
 	    dblog("Code    : " + error[:code]);
 	    dblog("Message : " + error[:msg]);
 	    dblog("---------------");
 	}
+	hard_exit_error();
     } else if (error_count == 0) {
-	dblog("Success! All tests passed!");
-	dblog("---------------");
+	//dblog("Success! All tests passed!");
+	//dblog("---------------");
     }
 };
 
@@ -31,9 +35,9 @@ public method .run_suite {
     } with {
 	dblog(toliteral(traceback()));
     }
-    dblog("#####################################");
-    dblog("#   Running test suite: "+tostr(suite.name())+"      #");
-    dblog("#####################################");
+    //dblog("#####################################");
+    //dblog("#   Running test suite: "+tostr(suite.name())+"      #");
+    //dblog("#####################################");
     tc = 2;
     for x in (suite.methods()) {
 	catch any {
@@ -62,9 +66,9 @@ public method .run_suite {
 	}
     }
     
-    dblog("");
+    //dblog("");
     catch any {
-	.print_errors(error_list);
+	.print_errors(error_list, suite);
     } with {
 	dblog("ERROR: " + toliteral(traceback()));
     }
@@ -73,6 +77,6 @@ public method .run_suite {
 eval {
     var errors;
     errors = .run_suite($suite);
-    .print_errors(errors);
+    //.print_errors(errors);
     shutdown();
 };

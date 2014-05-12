@@ -191,7 +191,7 @@ void func_backup(void)
 //
 */
 
-void func_shutdown(void)
+COLDC_FUNC(shutdown)
 {
 
     /* Accept no arguments. */
@@ -200,6 +200,11 @@ void func_shutdown(void)
 
     running = NO;
     push_int(1);
+}
+
+COLDC_FUNC(hard_exit_error)
+{
+    exit(1);
 }
 
 /*
