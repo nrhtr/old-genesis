@@ -92,6 +92,9 @@ cStr *string_unpack(FILE * fp)
     str = string_new(len);
     str->len = len;
     result = fread(str->s, sizeof(char), len, fp);
+    if (result != len) {
+        return NULL;
+    }
     str->s[len] = 0;
     return str;
 }
