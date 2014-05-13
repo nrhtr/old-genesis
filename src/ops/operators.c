@@ -2430,6 +2430,8 @@ void op_bwshr(void)
         cthrow(type_id, "Left side (%D) is not an integer.", d1);
     } else if (d2->type != INTEGER) {
         cthrow(type_id, "Right side (%D) is not an integer.", d2);
+    } else if (d2->u.val < 0) {
+        cthrow(range_id, "Right side (%D) can not be negative.", d2);
     } else {
         /* Replace d1 with d1 / d2, and pop d2. */
         d1->u.val >>= d2->u.val;
@@ -2452,6 +2454,8 @@ void op_bwshl(void)
         cthrow(type_id, "Left side (%D) is not an integer.", d1);
     } else if (d2->type != INTEGER) {
         cthrow(type_id, "Right side (%D) is not an integer.", d2);
+    } else if (d2->u.val < 0) {
+        cthrow(range_id, "Right side (%D) can not be negative.", d2);
     } else {
         /* Replace d1 with d1 / d2, and pop d2. */
         d1->u.val <<= d2->u.val;
