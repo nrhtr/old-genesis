@@ -1,0 +1,22 @@
+new object $root;
+
+root method .init_root();
+
+object $integer:$root;
+
+object $sys:$root;
+driver method .startup() {
+    arg args;
+    var test;
+
+    test = "test";
+    test = 'test;
+    test = `[1, 2, 3];
+    test = #[1:4, "testing":"123"];
+};
+
+public method .next_objnum():native;
+
+public method .status():native;
+
+public method .version():native;
