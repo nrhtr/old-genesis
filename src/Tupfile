@@ -1,7 +1,7 @@
 include_rules
 CFLAGS += -I./include -I./modules
 
-: grammar.y |> bison -y --defines=include/parse.h -o grammar.c %f |> include/parse.h grammar.c <parsegroup>
+: grammar.y |> bison -y --defines=include/parse.h -o grammar.c %f |> grammar.c | include/parse.h <parsegroup>
 : grammar.c |> $(CC) $(CFLAGS) -c %f -o %o |> %B.o
 
 # FIXME: any value in replacing parse.h with <parsegroup>?
@@ -17,3 +17,6 @@ CFLAGS += -I./include -I./modules
 
 # compiler = grammar + coldcc + textdb + common
 : grammar.o coldcc.o textdb.o data/*.o ops/*.o modules/*.o {db} {io} {misc} {pcode} {crypt} |> $(CC) %f -lgdbm -lgdbm_compat -lm -lnsl -o %o |> coldcc <coldcc>
+
+: dict_test.c | include/parse.h |> $(CC) $(CFLAGS) -c -o %o %f |> %B.o
+: dict_test.o grammar.o data/*.o ops/*.o modules/*.o {db} {io} {misc} {pcode} {crypt} |> $(CC) %f -lgdbm -lgdbm_compat -lm -lnsl -o %o |> dict_test
