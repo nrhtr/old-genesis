@@ -1,1 +1,4 @@
-fix subrange behavior. throws error on out of bounds. should return empty string?
+* dict fromliteral stuff is really flaky
+* feeding an invalid dict to fromliteral crashes the server.
+* fix subrange behavior. throws error on out of bounds. should return empty string?
+* extra "" item added for each (de)compile cycle - var $root flags = [:methods, :code, :core, :variables, :"", "", "", "", "", "", "", "", ""];
