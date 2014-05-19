@@ -1,5 +1,4 @@
-// vim:noet:sts=8:ts=8:filetype=c
-// Setup: create root and sys
+// vim:et:sts=8:ts=8:filetype=c
 
 object $suite: $base_suite;
 
@@ -7,8 +6,7 @@ public method .name() {
     return "System";
 };
 
-//********* begin tests ********//
-//******************************//
+// begin tests
 
 public method .should_ignore_empty_statements {
     ;
@@ -20,28 +18,13 @@ public method .should_ignore_comments {
     .assertTrue(1);
 };
 
-private method .throw_test {
-    throw(~test, "Testing!");
-};
-
-public method .should_catch_errors {
-    catch ~test {
-	.throw_test();
-    } with {
-	return;
-    }
-    .fail("error was not thrown!");
-};
-
 public method .should_not_create_object_without_parents {
     var obj;
 
     catch ~type {
-	obj = create([]);
+        obj = create([]);
     } with {
-	return;
+        return;
     }
     .fail("create() with empty parent list did not throw error");
 };
-
-// END TESTS //

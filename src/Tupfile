@@ -16,4 +16,4 @@ CFLAGS += -I./include -I./modules
 : grammar.o genesis.o data/*.o ops/*.o modules/*.o {db} {io} {misc} {pcode} {crypt} |> $(CC) %f -lgdbm -lgdbm_compat -lm -lnsl -o %o |> genesis
 
 # compiler = grammar + coldcc + textdb + common
-: grammar.o coldcc.o textdb.o data/*.o ops/*.o modules/*.o {db} {io} {misc} {pcode} {crypt} |> $(CC) %f -lgdbm -lgdbm_compat -lm -lnsl -o %o |> coldcc
+: grammar.o coldcc.o textdb.o data/*.o ops/*.o modules/*.o {db} {io} {misc} {pcode} {crypt} |> $(CC) %f -lgdbm -lgdbm_compat -lm -lnsl -o %o |> coldcc <coldcc>

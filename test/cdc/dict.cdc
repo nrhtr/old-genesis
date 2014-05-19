@@ -1,5 +1,4 @@
-// vim:noet:sts=8:ts=8:filetype=c
-// Setup: create root and sys
+// vim:et:sts=8:ts=8:filetype=c
 
 object $suite: $base_suite;
 
@@ -7,12 +6,11 @@ public method .name {
     return "Dictionaries";
 };
 
-//********* begin tests ********//
-//******************************//
+// begin tests
 
 public method .should_calculate_correct_booleans {
-    .fail_unless_true (#["item" => "true"], "Non-empty dict did not evaluate to True.");
-    .fail_unless_false (#[], "Empty dict did not evaluate to False.");
+    .assertTrue(#["item" => "true"], "Non-empty dict did not evaluate to True.");
+    .assertFalse(#[], "Empty dict did not evaluate to False.");
 };
 
 public method .should_decode_to_proper_literals {

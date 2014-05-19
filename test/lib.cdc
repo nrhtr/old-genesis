@@ -27,12 +27,36 @@ public method .parents() {
     return parents();
 };
 
+new object $string: $root;
+public method .b {
+    arg s;
+    var p, r, i;
 
-object $slate: $root;
+    p = toint(pow(2.0, tofloat(strlen(s) - 1)));
+    r = 0;
 
-object $base_suite: $root;
+    for i in [1 .. strlen(s)] {
+        r = r + toint(s[i]) * p;
+        p = p / 2;
+    }
+
+    return r;
+};
+
+new object $base_suite: $root;
+var $base_suite helpers = [];
+
+public method .setup() {
+    helpers = [:assertEquals, :assertNotEquals, :assertTrue, :assertFalse, :fail, :fail_unless, :fail_if];
+};
+
 public method .helpers() {
-    return [:assertEquals, :assertNotEquals, :assertTrue, :assertFalse, :fail, :fail_unless, :fail_if];
+    return helpers;
+};
+
+public method .add_helpers() {
+    arg h;
+    helpers = helpers + h;
 };
 
 //******** helper methods ********//
@@ -53,19 +77,6 @@ public method .fail_unless {
     arg bool, format, @extra;
     
     .fail_if(!bool, format, @extra);
-};
-
-// same as fail_unless!
-public method .fail_unless_true {
-    arg bool, format, @extra;
-
-    .fail_if(!bool, format, @extra);
-};
-
-public method .fail_unless_false {
-    arg bool, format, @extra;
-
-    .fail_if(bool, format, @extra);
 };
 
 public method .assertTrue {

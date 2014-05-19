@@ -1,5 +1,4 @@
-// vim:noet:sts=8:ts=8:filetype=c
-// Setup: create root and sys
+// vim:et:sts=8:ts=8:filetype=c
 
 object $suite: $base_suite;
 
@@ -7,8 +6,21 @@ public method .name {
     return "Strings";
 };
 
-//********* begin tests ********//
-//******************************//
+// begin tests
+
+public method .test_substr {
+    .assertEquals(substr("12345", 1, 3), "123");
+};
+
+public method .substr_should_throw_range_when_too_long {
+    catch ~range {
+        substr("12345", 1, 7);
+    } with {
+        return;
+    }
+
+    .fail();
+};
 
 public method .should_ignore_case_when_comparing_strings {
     var a, b;
@@ -59,7 +71,7 @@ public method .testSimplePatternMatching {
 
 public method .test_equal_string_glob {
     var glob_return, stringv;
-    
+
     glob_return = glob("lol", "lol");
     stringv = tostr(glob_return);
     .assertTrue(glob_return, "String globbing does not match equal strings.");
@@ -81,9 +93,9 @@ public method .test_string_in_string {
 public method .test_positive_string_index {
     .fail_unless("abcde"[4] == "d", "String not indexed correctly.");
     catch ~range {
-    "abcde"[6];
+        "abcde"[6];
     } with {
-	return;
+        return;
     }
     .fail("Illegal string-index did not throw ~range");
 };
@@ -92,38 +104,36 @@ public method .test_positive_string_index {
 public method .test_negative_string_index {
     .fail_unless("abcde"[-3] == "c", "String not indexed correctly.");
     catch ~range {
-    "abcde"[-6];
+        "abcde"[-6];
     } with {
-	return;
+        return;
     }
     .fail("Illegal string-index did not throw ~range");
 };
 
 public method .test_empty_string_zero_index {
     catch ~range {
-	""[0];
+        ""[0];
     } with {
-	return;
+        return;
     }
     .fail("Empty string-index did not throw ~range");
 };
 
 public method .test_empty_string_positive_index {
     catch ~range {
-	""[1];
+        ""[1];
     } with {
-	return;
+        return;
     }
     .fail("Empty string-index did not throw ~range");
 };
 
 public method .test_empty_string_negative_index {
     catch ~range {
-	""[-1];
+        ""[-1];
     } with {
-	return;
+        return;
     }
     .fail("Empty string-index did not throw ~range");
 };
-
-// END TESTS //

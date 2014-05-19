@@ -1,0 +1,6 @@
+include_rules
+
+# make sure compiling -> decompile cycle doesn't mess anything up
+: ../../textdump |> cp %f %o |> in
+: in | ../../src/<coldcc> |> ./coldcc -t in && ./coldcc -# -d -t out && rm -r binary |> out
+: in out |> diff %f |>
