@@ -1351,9 +1351,9 @@ Int text_dump(Bool objnames)
 #endif
 
     /* Open the output file. */
-    sprintf(buf, "%s.out", c_dir_textdump);
+    sprintf(buf, ".%s.XXXXXX", c_dir_textdump);
+    fp = fdopen(mkstemp(buf), "w");
 
-    fp = open_scratch_file(buf, "w");
     if (!fp) {
         fprintf(stderr, "\rUnable to open temporary file \"%s\".\n", buf);
         return 0;
@@ -1369,7 +1369,7 @@ Int text_dump(Bool objnames)
     dump_object(ROOT_OBJNUM, fp, objnames);
     hash_discard(dump_hash);
 
-    close_scratch_file(fp);
+    fclose(fp);
 
 #ifdef __Win32__
     /* rename() on Win32 won't overwrite a file as it does on Unix */
