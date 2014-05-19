@@ -1,5 +1,6 @@
 #include "defs.h"
 #include "cdc_types.h"
+#include "lookup.h"
 
 cObjnum get_object_name(Ident id)
 {

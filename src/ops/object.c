@@ -203,7 +203,8 @@ COLDC_FUNC(add_method)
     name = ident_name(SYM2);
     if (is_reserved_word(name))
         THROW((parse_id, "%I is a reserved word, and cannot be used as a method name", SYM2))
-            method = object_find_method_local(cur_frame->object, args[1].u.symbol, FROB_ANY);
+
+    method = object_find_method_local(cur_frame->object, args[1].u.symbol, FROB_ANY);
 
     if (method && (method->m_flags & MF_LOCK))
         THROW((perm_id, "Method is locked, and cannot be changed."))
@@ -1035,7 +1036,8 @@ COLDC_FUNC(method_bytecode)
     /* keep these for later reference, if its already around */
     if (!method)
         THROW((methodnf_id, "Method %D not found.", &args[0]))
-            list = list_new(method->num_opcodes);
+
+    list = list_new(method->num_opcodes);
     d.type = SYMBOL;
     ops = method->opcodes;
     x = 0;
