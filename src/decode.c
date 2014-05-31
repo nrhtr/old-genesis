@@ -1527,7 +1527,7 @@ static cStr *unparse_expr(cStr * str, Expr * expr, Int paren)
 
     case SYMBOL:
         s = expr->u.symbol;
-        str = string_addc(str, ':');
+        str = string_addc(str, '\'');
         if (is_valid_ident(expr->u.symbol))
             return string_add_chars(str, s, strlen(s));
         else
@@ -1675,7 +1675,7 @@ static cStr *unparse_expr(cStr * str, Expr * expr, Int paren)
 
     case DICT:
         str = string_add_chars(str, "#[", 2);
-        str = unparse_dict(str, expr->u.args);
+        str = unparse_args(str, expr->u.args);
         return string_addc(str, ']');
 
     case BUFFER:

@@ -292,16 +292,16 @@ Int yylex(void)
     }
 
     /* Check if it's a string. */
-    if (*s == '"' || *s == '\'') {
+    if (*s == '"') {
         yylval.s = string_token(s, len, &i, *s);
         cur_pos += i;
         return STRING;
     }
 
     /* Check if it's an object literal, symbol, or error code. */
-    if ((*s == '$' || *s == ':' || *s == '~')) {
-        type = ((*s == '$') ? OBJNAME : ((*s == ':') ? SYMBOL : T_ERROR));
-        if (len > 1 && (s[1] == '"' || s[1] == '\'')) {
+    if ((*s == '$' || *s == '\'' || *s == '~')) {
+        type = ((*s == '$') ? OBJNAME : ((*s == '\'') ? SYMBOL : T_ERROR));
+        if (len > 1 && s[1] == '"') {
             yylval.s = string_token(s + 1, len - 1, &i, s[1]);
             cur_pos += i + 1;
             return type;

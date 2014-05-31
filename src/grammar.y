@@ -285,7 +285,7 @@ expr	: INTEGER			{ $$ = integer_expr($1); }
 	| '.' '(' expr ')' '(' args ')'
 					{ $$ = expr_message_expr(NULL, $3, $6);}
 	| '[' args ']'			{ $$ = list_expr($2); }
-	| START_DICT dict_args ']'		{ $$ = dict_expr($2); }
+	| START_DICT args ']'		{ $$ = dict_expr($2); }
 	| START_BUFFER args ']'		{ $$ = buffer_expr($2); }
 	| '<' expr ',' expr handler     { $$ = frob_expr($2, $4, $5); }
 	| expr '[' expr ']'		{ $$ = index_expr($1, $3); }
