@@ -47,7 +47,7 @@ new object $base_suite: $root;
 var $base_suite helpers = [];
 
 public method .setup() {
-    helpers = [:assertEquals, :assertNotEquals, :assertTrue, :assertFalse, :fail, :fail_unless, :fail_if];
+    helpers = ['assertEquals, 'assertNotEquals, 'assertTrue, 'assertFalse, 'fail, 'fail_unless, 'fail_if];
 };
 
 public method .helpers() {
@@ -62,7 +62,7 @@ public method .add_helpers() {
 //******** helper methods ********//
 public method .fail {
     arg @msg;
-    throw(~fail, join(msg, ' '));
+    throw(~fail, join(msg, " "));
 };
 
 public method .fail_if {
@@ -117,5 +117,5 @@ public method .assertThrows {
 	if (error() == myerror)
 	    return;
     }
-    .fail(method + "(" + arglist.join(', ') + " did not throw " + myerror);
+    .fail(method + "(" + arglist.join(", ") + " did not throw " + myerror);
 };

@@ -14,11 +14,11 @@ public method .print_errors {
         for error in (errors) {
             dblog("---------------");
             dblog("Suite   : " + suite.name());
-            dblog("Method  : " + error[:method]);
-            dblog("Code    : " + error[:code]);
-            dblog("Message : " + error[:msg]);
+            dblog("Method  : " + error['method]);
+            dblog("Code    : " + error['code]);
+            dblog("Message : " + error['msg]);
             dblog("---------------");
-            dblog(""+error[:trace]);
+            dblog(""+error['trace]);
         }
         hard_exit_error();
     }
@@ -58,7 +58,7 @@ public method .run_suite {
                 } with {
                     dblog(toliteral(traceback()));
                 }
-                error_list += [#[:method => method, :code => trace[1][1], :msg => trace[1][2], :trace => trace]];
+                error_list += [#[['method, method], ['code, trace[1][1]], ['msg, trace[1][2]], ['trace, trace]]];
             }
             continue;
         }

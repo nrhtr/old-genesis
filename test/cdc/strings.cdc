@@ -29,23 +29,13 @@ public method .should_ignore_case_when_comparing_strings {
     .fail_unless(a == b, "String comparisons should ignore case");
 };
 
-public method .should_parse_alternate_style_strings {
-    .assertEquals("test string", 'test string');
-};
-
 public method .should_calculate_correct_booleans {
     .assertTrue("hello");
     .assertFalse("");
 };
 
 public method .should_decode_to_proper_literals {
-    .assertEquals(toliteral("test string"), '"test string"');
-};
-
-public method .test_strings_from_literal {
-    .assertEquals(fromliteral("''"), "");
-    .assertEquals(fromliteral('"test"'), "test");
-    .assertEquals(fromliteral('\'test\''), "test");
+    .assertEquals(toliteral("test string"), "\"test string\"");
 };
 
 public method .test_string_concatenation {

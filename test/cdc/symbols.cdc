@@ -11,19 +11,19 @@ public method .name() {
 public method .test_symbol_from_literal() {
     var sym;
 
-    sym = fromliteral(":test");
+    sym = fromliteral("'test");
 
-    .fail_unless(sym == :test, "Symbols not correctly parsed from literals.");
+    .fail_unless(sym == 'test, "Symbols not correctly parsed from literals.");
 };
 
 public method .basic_method() {
-    return :success;
+    return 'success;
 };
 
 public method .symbols_should_be_able_to_resolve_to_methods() {
     var result;
 
-    result = .(:basic_method)();
+    result = .('basic_method)();
 
-    .fail_unless(result == :success, "Symbol did not resolve to method on given object.");
+    .fail_unless(result == 'success, "Symbol did not resolve to method on given object.");
 };

@@ -8,20 +8,20 @@ public method .name {
 
 public method .setup {
     pass();
-    .add_helpers([:b]);
+    .add_helpers(['b]);
 };
 
 // begin tests
 
 public method .meta_test_b{
-    .assertEquals('0'.b(), 0);
-    .assertEquals('1'.b(), 1);
-    .assertEquals('10'.b(), 2);
+    .assertEquals("0".b(), 0);
+    .assertEquals("1".b(), 1);
+    .assertEquals("10".b(), 2);
 };
 
 public method .test_shleft {
-    .fail_unless('1'.b() << 1 == '10'.b(), "");
-    .fail_unless('1'.b() << 2 == '100'.b(), "");
+    .fail_unless("1".b() << 1 == "10".b(), "");
+    .fail_unless("1".b() << 2 == "100".b(), "");
 };
 
 public method .negative_shleft_should_fail {
@@ -34,9 +34,9 @@ public method .negative_shleft_should_fail {
 };
 
 public method .test_shright {
-    .fail_unless('1'.b() >> 1 == '0'.b(), "");
-    .fail_unless('10'.b() >> 1 == '1'.b(), "");
-    .fail_unless('1010'.b() >> 2 == '10'.b(), "");
+    .fail_unless("1".b() >> 1 == "0".b(), "");
+    .fail_unless("10".b() >> 1 == "1".b(), "");
+    .fail_unless("1010".b() >> 2 == "10".b(), "");
 };
 
 public method .negative_shright_should_fail {

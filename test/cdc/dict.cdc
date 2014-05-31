@@ -9,7 +9,7 @@ public method .name {
 // begin tests
 
 public method .should_calculate_correct_booleans {
-    .assertTrue(#["item" => "true"], "Non-empty dict did not evaluate to True.");
+    .assertTrue(#[["item", "true"]], "Non-empty dict did not evaluate to True.");
     .assertFalse(#[], "Empty dict did not evaluate to False.");
 };
 
@@ -20,5 +20,5 @@ public method .should_decode_to_proper_literals {
 
 public method .should_convert_from_literal {
     .fail_unless(fromliteral("#[]") == #[], "Empty dict from literal failed.");
-    .fail_unless(fromliteral("#[\"test\" => 66]") == #["test" => 66], "Dict from literal failed.");
+    .fail_unless(fromliteral("#[[\"test\", 66]]") == #[["test", 66]], "Dict from literal failed.");
 };
