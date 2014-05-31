@@ -244,9 +244,11 @@ cStr *dict_add_literal_to_str(cStr * str, cDict * dict, int flags)
 
     str = string_add_chars(str, "#[", 2);
     for (i = 0; i < dict->keys->len; i++) {
+        str = string_addc(str, '[');
         str = data_add_literal_to_str(str, &dict->keys->el[i], flags);
-        str = string_add_chars(str, " => ", 4);
+        str = string_add_chars(str, ", ", 2);
         str = data_add_literal_to_str(str, &dict->values->el[i], flags);
+        str = string_addc(str, ']');
         if (i < dict->keys->len - 1)
             str = string_add_chars(str, ", ", 2);
     }

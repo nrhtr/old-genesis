@@ -61,7 +61,7 @@ extern Bool print_warn;
 
 #define DIE(__s) { \
         printf("\rLine %ld: ERROR: %s\n", (long) line_count, __s); \
-        shutdown_coldcc(); \
+        shutdown_coldcc_error(); \
     }
 
 #define DIEf(__fmt, __arg) { \

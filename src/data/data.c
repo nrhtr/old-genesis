@@ -447,7 +447,7 @@ cStr *data_add_literal_to_str(cStr * str, cData * data, int flags)
         return data_add_list_literal_to_str(str, data->u.list, flags);
 
     case SYMBOL:
-        str = string_addc(str, ':');
+        str = string_addc(str, '\'');
         s = ident_name(data->u.symbol);
         if (*s && is_valid_ident(s))
             return string_add_chars(str, s, strlen(s));
@@ -615,7 +615,7 @@ char *data_from_literal(cData * d, char *s)
                 s++;
         }
         return s;
-    } else if (*s == '"' || *s == '\'') {
+    } else if (*s == '"') {
         d->type = STRING;
         d->u.str = string_parse(&s, *s);
         return s;
@@ -661,7 +661,7 @@ char *data_from_literal(cData * d, char *s)
         cData assocs;
         /* Get associations. */
 
-        s = dict_from_literal(&assocs, s + 1);
+        s = data_from_literal(&assocs, s + 1);
         if (assocs.type != LIST) {
             if (assocs.type != -1)
                 data_discard(&assocs);
@@ -670,7 +670,6 @@ char *data_from_literal(cData * d, char *s)
         }
 
         /* Make a dict from the associations. */
-
         d->type = DICT;
         d->u.dict = dict_from_slices(assocs.u.list);
         data_discard(&assocs);
@@ -716,7 +715,7 @@ char *data_from_literal(cData * d, char *s)
         d->type = BUFFER;
         d->u.buffer = buf;
         return s;
-    } else if (*s == ':') {
+    } else if (*s == '\'') {
         s++;
         d->type = SYMBOL;
         d->u.symbol = parse_ident(&s);

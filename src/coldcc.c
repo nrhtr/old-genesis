@@ -40,6 +40,17 @@ INTERNAL void usage(char *name);
 INTERNAL FILE *find_text_db(void);
 INTERNAL void compile_db(Int type);
 
+/* FIXME: needs refactoring */
+void shutdown_coldcc_error(void)
+{
+    cache_sync();
+    db_close();
+    flush_output();
+    close_files();
+    fputc(10, stderr);
+    exit(1);
+}
+
 void shutdown_coldcc(void)
 {
     cache_sync();
