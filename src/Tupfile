@@ -13,10 +13,10 @@ CFLAGS += -I./include -I./modules
 : foreach genesis.c coldcc.c textdb.c control.c                 | include/parse.h |> $(CC) $(CFLAGS) -c %f -o %o |> %B.o {meta}
 
 # driver = grammar + genesis + common (data, db, io, misc, pcode, ops, mod, crypt)
-: grammar.o genesis.o data/*.o ops/*.o modules/*.o {db} {io} {misc} {pcode} {crypt} |> $(CC) %f -lgdbm -lgdbm_compat -lm -lnsl -o %o |> genesis
+: grammar.o genesis.o data/*.o ops/*.o modules/*.o {db} {io} {misc} {pcode} {crypt} |> $(CC) %f -lkyotocabinet -lgdbm -lgdbm_compat -lm -lnsl -o %o |> genesis
 
 # compiler = grammar + coldcc + textdb + common
-: grammar.o coldcc.o textdb.o data/*.o ops/*.o modules/*.o {db} {io} {misc} {pcode} {crypt} |> $(CC) %f -lgdbm -lgdbm_compat -lm -lnsl -o %o |> coldcc <coldcc>
+: grammar.o coldcc.o textdb.o data/*.o ops/*.o modules/*.o {db} {io} {misc} {pcode} {crypt} |> $(CC) %f -lkyotocabinet -lgdbm -lgdbm_compat -lm -lnsl -o %o |> coldcc <coldcc>
 
 : dict_test.c | include/parse.h |> $(CC) $(CFLAGS) -c -o %o %f |> %B.o
-: dict_test.o grammar.o data/*.o ops/*.o modules/*.o {db} {io} {misc} {pcode} {crypt} |> $(CC) %f -lgdbm -lgdbm_compat -lm -lnsl -o %o |> dict_test
+: dict_test.o grammar.o data/*.o ops/*.o modules/*.o {db} {io} {misc} {pcode} {crypt} |> $(CC) %f -lkyotocabinet -lgdbm -lgdbm_compat -lm -lnsl -o %o |> dict_test

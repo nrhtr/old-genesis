@@ -1,7 +1,7 @@
 /*
 // Full copyright information is available in the file ../doc/CREDITS
 //
-// Interface to dbm index of object locations.
+// Interface to index of object locations.
 */
 
 #include "defs.h"
@@ -16,7 +16,11 @@
 #include "cdc_db.h"
 #include "util.h"
 
-#include DBM_H_FILE
+#include <kclangc.h>
+typedef struct {
+    char *dptr;
+    int dsize;
+} datum;
 
 #ifdef S_IRUSR
 #define READ_WRITE		(S_IRUSR | S_IWUSR)
@@ -35,7 +39,8 @@ INTERNAL void sync_name_cache(void);
 INTERNAL Int store_name(Long name, Long objnum);
 INTERNAL Int get_name(Long name, Long * objnum);
 
-INTERNAL DBM *dbp;
+INTERNAL KCDB *dbp;
+INTERNAL KCCUR *cursor;
 
 struct name_cache_entry {
     Long name;
@@ -47,36 +52,36 @@ struct name_cache_entry {
 void lookup_open(char *name, Int cnew)
 {
     Int i;
+    uint32_t res;
+
+    dbp = kcdbnew();
 
     if (cnew)
-        dbp = dbm_open(name, O_TRUNC | O_RDWR | O_CREAT | O_BINARY, READ_WRITE);
+        res = kcdbopen(dbp, name, KCOTRUNCATE | KCOWRITER | KCOCREATE);
     else
-        dbp = dbm_open(name, O_RDWR | O_BINARY, READ_WRITE);
-    if (!dbp)
-        fail_to_start("Cannot open dbm database file.");
+        res = kcdbopen(dbp, name, KCOWRITER);
+    if (!res)
+        fail_to_start("Cannot open index file.");
 
     for (i = 0; i < NAME_CACHE_SIZE; i++)
         name_cache[i].name = NOT_AN_IDENT;
+
+    cursor = kcdbcursor(dbp);
 }
 
 void lookup_close(void)
 {
     sync_name_cache();
-    dbm_close(dbp);
+    kcdbclose(dbp);
 }
 
 void lookup_sync(void)
 {
-    char buf[255];
+    uint32_t res;
 
-    sprintf(buf, "%s/index", c_dir_binary);
-
-    /* Only way to do this with ndbm is close and re-open. */
     sync_name_cache();
-    dbm_close(dbp);
-    dbp = dbm_open(buf, O_RDWR | O_CREAT | O_BINARY, READ_WRITE);
-    if (!dbp)
-        panic("Cannot reopen dbm database file.");
+    if (!kcdbsync(dbp, 1, NULL, NULL))
+        panic("Cannot sync index file.");
 }
 
 Int lookup_retrieve_objnum(Long objnum, off_t * offset, Int * size)
@@ -85,16 +90,13 @@ Int lookup_retrieve_objnum(Long objnum, off_t * offset, Int * size)
     Number_buf nbuf;
 
     /* Get the value for objnum from the database. */
-    /* printf("Get the value for objnum from db\n"); */
     key = objnum_key(objnum, nbuf);
-    /* printf("Build db key: %d -> %d / %d\n", objnum, key.dptr, key.dsize); */
-    value = dbm_fetch(dbp, key);
-    /* printf("Fetch db value: %s / %d\n", value.dptr, value.dsize); */
+    value.dptr = kcdbget(dbp, key.dptr, key.dsize, &value.dsize);
+
     if (!value.dptr)
         return 0;
 
     parse_offset_size_value(value, offset, size);
-    /* printf("Calculate offset and size: %d / %d\n", *offset, *size); */
     return 1;
 }
 
@@ -105,7 +107,8 @@ Int lookup_store_objnum(Long objnum, off_t offset, Int size)
 
     key = objnum_key(objnum, nbuf1);
     value = offset_size_value(offset, size, nbuf2);
-    if (dbm_store(dbp, key, value, DBM_REPLACE)) {
+
+    if (!kcdbset(dbp, key.dptr, key.dsize, value.dptr, value.dsize)) {
         write_err("ERROR: Failed to store key %l.", objnum);
         return 0;
     }
@@ -120,7 +123,7 @@ Int lookup_remove_objnum(Long objnum)
 
     /* Remove the key from the database. */
     key = objnum_key(objnum, nbuf);
-    if (dbm_delete(dbp, key)) {
+    if (!kcdbremove(dbp, key.dptr, key.dsize)) {
         write_err("ERROR: Failed to delete key %l.", objnum);
         return 0;
     }
@@ -131,7 +134,8 @@ Long lookup_first_objnum(void)
 {
     datum key;
 
-    key = dbm_firstkey(dbp);
+    kccurjump(cursor);
+    key.dptr = kccurgetkey(cursor, &key.dsize, 0);
     if (key.dptr == NULL)
         return INV_OBJNUM;
     if (key.dsize > 1 && *key.dptr == 0)
@@ -143,7 +147,8 @@ Long lookup_next_objnum(void)
 {
     datum key;
 
-    key = dbm_nextkey(dbp);
+    kccurstep(cursor);
+    key.dptr = kccurgetkey(cursor, &key.dsize, 1);
     if (key.dptr == NULL)
         return NOT_AN_IDENT;
     if (key.dsize > 1 && *key.dptr == 0)
@@ -227,7 +232,7 @@ Int lookup_remove_name(Long name)
 
     /* Remove the key from the database. */
     key = name_key(name);
-    if (dbm_delete(dbp, key))
+    if (!kcdbremove(dbp, key.dptr, key.dsize))
         return 0;
     return 1;
 }
@@ -237,7 +242,8 @@ Long lookup_first_name(void)
     datum key;
 
     sync_name_cache();
-    key = dbm_firstkey(dbp);
+    kccurjump(cursor);
+    key.dptr = kccurgetkey(cursor, &key.dsize, 0);
     if (key.dptr == NULL)
         return NOT_AN_IDENT;
     if (key.dsize == 1 || *key.dptr != 0)
@@ -249,7 +255,8 @@ Long lookup_next_name(void)
 {
     datum key;
 
-    key = dbm_nextkey(dbp);
+    kccurstep(cursor);
+    key.dptr = kccurgetkey(cursor, &key.dsize, 1);
     if (key.dptr == NULL)
         return NOT_AN_IDENT;
     if (key.dsize == 1 || *key.dptr != 0)
@@ -347,8 +354,8 @@ INTERNAL Int store_name(Long name, Long objnum)
     value = objnum_value(objnum, nbuf);
 
     key = name_key(name);
-    if (dbm_store(dbp, key, value, DBM_REPLACE)) {
-        write_err("ERROR: Failed to store key %s.", name);
+    if (!kcdbset(dbp, key.dptr, key.dsize, value.dptr, value.dsize)) {
+        write_err("ERROR: Failed to store key %s.", key.dptr);
         return 0;
     }
 
@@ -361,7 +368,7 @@ INTERNAL Int get_name(Long name, Long * objnum)
 
     /* Get the key from the database. */
     key = name_key(name);
-    value = dbm_fetch(dbp, key);
+    value.dptr = kcdbget(dbp, key.dptr, key.dsize, &value.dsize);
     if (!value.dptr)
         return 0;
 

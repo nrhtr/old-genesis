@@ -199,7 +199,7 @@ void init_binary_db(void)
 
     sprintf(c_clean_file, "%s/.clean", c_dir_binary);
     DBFILE(fdb_objects, "objects");
-    DBFILE(fdb_index, "index");
+    DBFILE(fdb_index, "index.kch");
 
     if (stat(c_dir_binary, &statbuf) == F_FAILURE) {
         FAIL("Cannot find binary directory \"%s\".\n");
@@ -238,7 +238,7 @@ void init_new_db(void)
 
     sprintf(c_clean_file, "%s/.clean", c_dir_binary);
     DBFILE(fdb_objects, "objects");
-    DBFILE(fdb_index, "index");
+    DBFILE(fdb_index, "index.kch");
 
     open_db_directory();
     open_db_objects("wb+");
