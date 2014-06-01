@@ -3,7 +3,7 @@ testdb=$1
 trap "rm -rf binary" 0 1 2
 tmp=`mktemp`
 cat lib.cdc $testdb driver.cdc > $tmp
-./coldcc -f -o -W -t $tmp 2>/dev/null
+../src/coldcc -f -o -W -t $tmp 2>/dev/null
 test_success=$?
 rm $tmp
 exit $test_success
