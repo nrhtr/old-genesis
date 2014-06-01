@@ -1351,7 +1351,7 @@ Int text_dump(Bool objnames)
 #endif
 
     /* Open the output file. */
-    sprintf(buf, ".%s.XXXXXX", c_dir_textdump);
+    sprintf(buf, "%s.XXXXXX", c_dir_textdump);
     fp = fdopen(mkstemp(buf), "w");
 
     if (!fp) {
