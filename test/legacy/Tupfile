@@ -1,0 +1,2 @@
+include_rules
+: test.in | ../../src/coldcc |> ./runtest |>
