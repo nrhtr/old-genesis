@@ -61,7 +61,7 @@ static struct {
     "..", UPTO}, {
     "|)", CRITRIGHT}, {
     "||", OR}, {
-        /*"|", OP_COND_OTHER_ELSE}, { */
+    "|", OP_COND_OTHER_ELSE}, {
     "#[", START_DICT}, {
     "`[", START_BUFFER}, {
     "&&", AND}, {

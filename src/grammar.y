@@ -331,8 +331,7 @@ expr	: INTEGER			{ $$ = integer_expr($1); }
 					{ $$ = map_expr($3,$1,$7,OP_FILTER); }
 	| filter '[' expr UPTO expr ']' WHERE '(' expr ')'
 					{ $$ = map_range_expr($3,$5,$1,$9,OP_FILTER_RANGE); }
-	/*| expr OP_COND_IF expr OP_COND_OTHER_ELSE expr
-					{ $$ = cond_expr($1, $3, $5); }*/
+	| expr OP_COND_IF expr OP_COND_OTHER_ELSE expr { $$ = cond_expr($1, $3, $5); }
 	| IDENT MULT_EQ expr		{ $$ = doeq_expr(MULT_EQ, $1, $3); }
 	| IDENT DIV_EQ expr		{ $$ = doeq_expr(DIV_EQ, $1, $3); }
 	| IDENT PLUS_EQ expr		{ $$ = doeq_expr(PLUS_EQ, $1, $3); }
