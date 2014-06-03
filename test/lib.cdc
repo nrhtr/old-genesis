@@ -54,11 +54,6 @@ public method .helpers() {
     return helpers;
 };
 
-public method .add_helpers() {
-    arg h;
-    helpers = helpers + h;
-};
-
 //******** helper methods ********//
 public method .fail {
     arg @msg;

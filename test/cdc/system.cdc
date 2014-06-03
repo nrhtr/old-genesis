@@ -8,16 +8,6 @@ public method .name() {
 
 // begin tests
 
-public method .should_ignore_empty_statements {
-    ;
-    .assertTrue(1);
-};
-
-public method .should_ignore_comments {
-    // Here is a comment
-    .assertTrue(1);
-};
-
 public method .should_not_create_object_without_parents {
     var obj;
 

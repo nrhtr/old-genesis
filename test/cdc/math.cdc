@@ -8,7 +8,6 @@ public method .name {
 
 public method .setup {
     pass();
-    .add_helpers(['b]);
 };
 
 // begin tests
