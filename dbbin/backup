@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-$debug = 0;
+$debug = 1;
 
 ########################################################################
 #
@@ -24,7 +24,7 @@ $mailx_exe =   "/usr/bin/Mail";
 ##
 ## The base directories--SET THIS!!
 ##
-$base_dir   = "/cold/current";
+$base_dir   = "/home/nrhtr/github/genesis";
 $logs_dir   = "$base_dir/logs";
 $backup_dir = "$base_dir/backups";
 
@@ -61,7 +61,7 @@ $compress_output = 1;
 ## what to compress the text file with?
 ##
                    # bzip is the best, I see about 85% compression
-$compress_exec   = "/usr/local/bin/bzip2 -9f";
+$compress_exec   = "/usr/bin/bzip2 -9f";
 $compress_suffix = "bz2";
 
                    # alternative (gzip), I see about 80% compression
@@ -75,7 +75,7 @@ $compress_suffix = "bz2";
 ##
 ## more utilities required, make sure the path is correct
 ##
-$coldcc_exec = "$base_dir/bin/coldcc";
+$coldcc_exec = "$base_dir/src/coldcc";
 $tar_exec = "/usr/bin/tar";
 
 $mkfifo_exec = "/usr/bin/mkfifo";
@@ -148,20 +148,16 @@ rename("binary.bak", $binarydb) ||
 
 if ($store_text) {
     $bundle = $td_out = "$backup_dir/$textdb";
-    if ($compress_output) {
-        $td_out = "textdump_fifo";
-        push(@nix_files, $td_out);
-        &cmd("$mkfifo_exec $td_out.out");
-        $zout = "$backup_dir/_$textdb.$compress_suffix";
-        &cmd("$compress_exec < $td_out.out > $zout &");
-        $bundle .= ".$compress_suffix";
-    }
 
-    $rc=0xffff & &cmd("$coldcc_exec -d -o -b $binarydb -t $td_out 2>/dev/null");
+    $rc=0xffff & &cmd("$coldcc_exec -d -o -b $binarydb -t $td_out.out 2>/dev/null");
     &abort("ColdCC decompile failed!!\n") if ($rc != 0);
 
     if ($compress_output) {
-        unlink($td_out);
+
+        $zout = "$backup_dir/_$textdb.$compress_suffix";
+        &cmd("$compress_exec < $td_out.out > $zout");
+        unlink("$td_out.out");
+        $bundle .= ".$compress_suffix";
 
         ## all of this mess is incase coldcc dies, we dont hose a good db
         $zout1 = "$backup_dir/_$textdb.$compress_suffix";
@@ -174,6 +170,7 @@ if ($store_text) {
     if ($compress_output) {
         &cmd("$compress_exec $bundle");
         $bundle .= ".$compress_suffix"; 
+        print("made $bundle\n");
     }
 }
 
@@ -288,6 +285,7 @@ sub shift_set {
         my @set = sort(keys(%$dict));
         $debug && print "CLEAN: $#set\n";
         while (($#set+1) > $set_max) {
+            $debug && print "shifting item";
             $d = shift(@set);
             $f1 = $$dict{$d};
             if (&$keep) {
