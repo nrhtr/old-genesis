@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [1206] in "Coldmud discussion meeting"</TITLE>
+<H1>[1206] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1206"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1196"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1205"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1205"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1207"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] cold stuff ;)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan  2 17:12:30 1997
+)</H3>
+<PRE>
+Date: Thu, 02 Jan 1997 14:09:08 -0800
+To: Brandon Gillespie &lt;brandon@cold.org&gt;
+From: Jeff Kesselman &lt;jeffk@ten.net&gt;
+Cc: coldstuff@cold.org
+
+At 02:44 PM 1/2/97 -0700, you wrote:
+
+&gt;
+&gt;caller/sender/definer etc are not related to user()  They are task/frame
+&gt;functions.  user() is not--it is simply a mechanism that MAY be used to
+
+My point precisely, except I'm saying it SHOULD be a task/frame function.
+
+&gt;&gt;  I'm not
+&gt;really seeing what the problem is, when all you have to do is put a call
+&gt;to set_user() as the first operation in $connection.parse(). 
+
+yes this works, i just don't think its terribly clean is all and, to be
+honest,  though it IS useful, it would probably be MORE appropriate to do
+such data storage and retrieval in-db, not as part of the language...
+
+However I DO see a use for a function that queries into the data the system
+already has on the call chain...
+
+&gt; Also, the
+&gt;system now works well with heartbeat and the like.  Should $sys be
+&gt;returned as the user() when a task was called from a heartbeat?  
+
+ABSOLUTELY it should return $sys as %$sys is the topmost object on the call
+stack.
+
+Lets forget about user() though for simplicity and i will merely say that I
+want a top() function that returns the topmost object on the call stack in
+a maximally efficient manner.  The fact that I thought this was what user()
+was going to be is somewhat irrelevant.
+
+JK
+</PRE>

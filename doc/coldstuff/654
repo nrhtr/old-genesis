@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [654] in "Coldmud discussion meeting"</TITLE>
+<H1>[654] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?654"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="653"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="655"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>new coldmuds</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Feb 27 15:02:29 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: coldstuff@MIT.EDU
+Date: Mon, 27 Feb 1995 13:02:32 -0600 (CST)
+
+If you are starting a coldmud and need help from someone who has done server
+ hacking and started more than a few coldmuds I can assist you. I am in
+ the middle of looking for an RL job, as well as being a wiz at two MOOs and
+ a Cold (where I am acting as a source of information and such), so I can't
+ guarentee anything.
+
+If, however, you send me mail at crag@serial.io.com I can meet you somewhere
+ and help you get started. I will also try to send whatever answers I give
+ to this list for inclusion in the FAQ.
+
+Thinks like select: forever wait means set_heartbeat hasn't been run which
+ means $sys.startup probably han't run which means you probably have NULL files
+ in binary/ due to a failed restart. It is always easier to start from a
+ textdump, if a little slower.
+
+I can sometimes be reached at
+ sensemedia.net ports 6666(cold) and 7777(moo)
+ jhm.ccs.neu.edu 1709
+
+Crag
+
+</PRE>

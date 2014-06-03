@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [219] in "Coldmud discussion meeting"</TITLE>
+<H1>[219] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?219"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="218"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="220"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>stridx()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun May  1 01:04:20 1994
+)</H3>
+<PRE>
+Date: Sat, 30 Apr 1994 23:00:44 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Anybody have any feelings on a builtin along the lines of:
+
+    stridx("string", "search for"[, 'reverse])
+
+Which would return an index of "search for" in "string" (beginning of "search
+for" if "search for" is not a char).  It would return a reverse index if a
+third argument was sent.
+
+Comments?
+
+This just hit me, I coded an index() and rindex() on $string a while ago, and
+they are used enough I feel it would merit a builtin (heck, we have a builtin
+for the end/null index of the string (i.e. 'strlen()').
+
+-Brandon-
+</PRE>

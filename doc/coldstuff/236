@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [236] in "Coldmud discussion meeting"</TITLE>
+<H1>[236] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?236"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="235"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="237"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="237"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="240"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Finding out the call stack in ColdMUD</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 16 23:35:59 1994
+)</H3>
+<PRE>
+Date: Mon, 16 May 1994 23:29:32 -0400 (EDT)
+From: "John P. Landahl III" &lt;jpl3@access.digex.net&gt;
+To: coldstuff@MIT.EDU
+
+I want something like MOO's 'callers()' or 'player' in ColdMUD.  Is this
+possible?  sender() only gives you the info from one level back.  I need
+to know who or what is ultimately responsible for calling the current
+method.  I'm trying to write a parser that can call the user's
+.match_environment() so that all parsing is done by one method call.  But
+sender() is useless beyond the first call, and I can't find anything else
+that would do it.  Any ideas?
+
+John/Jip
+
+----------------------
+John P. Landahl III
+jpl3@digex.net
+</PRE>

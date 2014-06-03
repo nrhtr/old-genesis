@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1229] in "Coldmud discussion meeting"</TITLE>
+<H1>[1229] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1229"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1228"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1230"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] cancel()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Feb  4 06:48:44 1997
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+Date: Tue, 4 Feb 1997 12:36:46 +0100 (MET)
+
+I just noticed another possible bug source. Basically, doing something
+like this:
+
+pause(); cancel(some_paused_task);
+
+won't crash the driver (or so I hope) but is very likely to throw,
+complaining that the task doesn't exist. The trick is that
+run_paused_tasks() will temporarily steal the preemted task list.
+canceling suspended tasks in this manner is still okay.
+This isn't a critical bug (it can't cause a crash), so I'd rather
+leave it for the time when we have *real* multitasking.
+
+	Miro
+
+</PRE>

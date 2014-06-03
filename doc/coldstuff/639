@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [639] in "Coldmud discussion meeting"</TITLE>
+<H1>[639] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?639"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="633"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="636"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="638"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="640"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="640"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="642"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: is the request line open?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan 19 02:42:28 1995
+)</H3>
+<PRE>
+Date: Thu, 19 Jan 1995 02:36:20 -0500 (EST)
+From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+To: coldstuff@MIT.EDU, brandon@avon.declab.usu.edu
+Cc: 
+In-Reply-To: &lt;9501170516.AA01199@avon.declab.usu.edu&gt;
+
+Re: SUFFIX, PREFIX...as I see it, all you need to do is, in player.parse()
+put echo(PREFIX); at the beginning, and echo(SUFFIX) at the end.  Ths may
+not be a complete solution, but it's a start.
+
+
+</PRE>

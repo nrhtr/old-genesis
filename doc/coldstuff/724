@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [724] in "Coldmud discussion meeting"</TITLE>
+<H1>[724] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?724"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="723"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="725"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="725"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="725"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>read_file()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar 23 11:23:31 1995
+)</H3>
+<PRE>
+Date: Thu, 23 Mar 1995 11:19:12 -0500
+From: Quinn &lt;quinn@Access.Mountain.Net&gt;
+To: coldstuff@MIT.EDU
+
+
+How about a read_file() function that is essentially the same as
+ echo_file(), but returns a list of strings (or a buffer) instead
+ of echoing to the object?
+
+Also, concerning run_script(), does anyone have any examples of
+ scripts used with coldmud?
+
+ALSO THREE, is there a nameserver patch for cold?
+
+-Quinn
+
+</PRE>

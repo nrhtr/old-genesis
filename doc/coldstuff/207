@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [207] in "Coldmud discussion meeting"</TITLE>
+<H1>[207] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?207"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="186"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="206"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="206"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="208"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: confusion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Apr  9 11:43:38 1994
+)</H3>
+<PRE>
+To: rayn@q.crossaccess.com (Ray Nawara jr.)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Thu, 31 Mar 1994 10:26:47 PST."
+             &lt;9403311826.AA12771@q.crossaccess.com&gt; 
+Date: Sat, 09 Apr 1994 10:38:21 -0500
+From: Erik Ostrom &lt;eostrom@pepperoncini.gac.edu&gt;
+
+&gt; the reason I wanted to have an accessor was for abstraction purposes..
+&gt; having only one method that directly set a parameter, with all other 
+&gt; methods calling the accessor to change or read the value, so that 
+&gt; changes could be made to how that parameter was set (or returned)
+&gt; easily
+
+One thing to consider is that sometimes you want the setter called
+internally to be different from the setter called by outside methods.
+For example, suppose you have a list parameter and you want other
+objects to be able to add or remove elements, or just set it directly.
+But you also want to make sure the elements are all of type symbol.
+So:
+
+  .set_mylist(thelist) checks the type of every element of thelist
+
+Now, .add_mylist takes one argument and has to check that it's of type
+symbol.  But if it calls .set_mylist, every element already in the
+list--which you _know_ is all symbols--gets rechecked.  And
+.del_mylist is even worse.  When .add_mylist calls .set_mylist, at
+least there's some purpose in checking the new value.  When
+.del_mylist calls .set_mylist, there's no point to it at all.
+
+So, what you want may be a ._set_mylist, or .internal_set_mylist, or
+something, which doesn't do any type checking.  This also makes the
+permissions checking a little less tricky; the internal setter just
+checks that it's being called by a method on the same object, and the
+external setter (along with the adder and deleter) checks permissions
+by owner or permitted-objects or whatever.
+
+No, I don't know why I'm rambling about this.
+
+--Erik
+</PRE>

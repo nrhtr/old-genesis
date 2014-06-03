@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [403] in "Coldmud discussion meeting"</TITLE>
+<H1>[403] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?403"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="402"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="402"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="402"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="404"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="404"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="405"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re:  Looking for Cores</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Sep 12 00:37:28 1994
+)</H3>
+<PRE>
+Date: Sun, 11 Sep 1994 21:13:11 -0700
+From: bookwyrm@netcom.com (Kim)
+To: coldstuff@MIT.EDU, connor@apple.com
+
+Well, I wrote a quick textdump core of a database that approaches the
+functionality of the MOO minimal database.  Basically, enough to telnet
+to and start programming functions and creating objects.  It needs more
+polish to be really useful as a starting point.  I have not messed with 
+it for a bit as I am working on planning out a database before trying to 
+create it.   Take a look at the test scripts in the test directory of
+the server and see how the test database is used.
+
+Kim
+bookwyrm@netcom.com
+</PRE>

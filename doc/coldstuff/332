@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [332] in "Coldmud discussion meeting"</TITLE>
+<H1>[332] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?332"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="331"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="331"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="331"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="333"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Memory/Disk usage</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 27 15:03:42 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Fri, 27 May 1994 12:26:37 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt; What is the current disk/memory(average) usage for ColdDark?
+
+petersboro:brandon/apps/ColdMUD/world&gt; dir
+total 928
+drwxr-xr-x      512 backups/
+drwx------      512 binary/
+-rwxr-xr-x   270336 coldmud*
+-rw-r--r--    20389 logfile
+drwxr-xr-x      512 scripts/
+drwxr-xr-x      512 text/
+-rw-r--r--   638835 textdump
+petersboro:brandon/apps/ColdMUD/world&gt; du -s binary
+869     binary
+
+Interpretation:
+
+   textdump: 638k
+   binary:   869k
+
+&lt; And any estimates on when ColdMud 1.0 might be done? (x months, years?)
+
+Colin will have to answer this.  As for the Cold Dark Core (CDC), I would
+guestimate that our first release will be sometime in July.  It will be ~200k
+as we will not be including any major systems (mainly because we should finish
+them first).  It will be our overhauled core though, with a programming/object
+browsing interface etc.  CDC2 will include all the other nifty systems under
+development (mail, hypertext help (better than the one in world 6), editors,
+etc).
+
+-Brandon-
+</PRE>

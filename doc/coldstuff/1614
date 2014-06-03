@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [1614] in "Coldmud discussion meeting"</TITLE>
+<H1>[1614] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1614"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1613"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1613"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1613"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1615"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Putting colour in emotes, says, and other things like that...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 18 10:02:40 2000
+)</H3>
+<PRE>
+In-Reply-To: &lt;20000818063210.KKGJ9493.mta01.onebox.com@onebox.com&gt;
+From: "Joshua Rosen" &lt;rozzin@jello.geekspace.com&gt;
+To: coldstuff@cold.org
+Date: Fri, 18 Aug 2000 14:00:23 GMT
+Reply-To: coldstuff@cold.org
+
+
+Kris Anderson writes:
+
+&gt; Is there a way to impliment colour in the above mentioned commands? 
+&gt; For example if a user wanted to have red text in one word and green in
+&gt; another word in a pose can it be done?
+
+In $body.emote_cmd, say_cmd, etc., you can run the string(s) through
+$compiler.compile_cml, and use the returned ctext frob instead of the
+string(s).
+
+This would mean that whatever someone types along with a `say' command, for
+example, gets parsed as CML, and braces need to be escaped if they don't
+want them to be parsed this way.
+
+If you do this, it's probably a good idea to make the parsing an optional
+feature, somehow, like by having a :parse-cml=[boolean] setting on bodies.
+</PRE>

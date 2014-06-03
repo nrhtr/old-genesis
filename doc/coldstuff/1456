@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [1456] in "Coldmud discussion meeting"</TITLE>
+<H1>[1456] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1456"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1455"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1455"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1455"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1457"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: win32 genesis compile prob</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Oct 20 21:30:54 1999
+)</H3>
+<PRE>
+From: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Wed, 20 Oct 1999 17:36:53 -0400
+Reply-To: coldstuff@cold.org
+
+Brandon J. Rickman wrote:
+&gt;Jon Lambert's email seems to have changed, so I'll post this here:
+&gt;
+&gt;To: Jon Lambert &lt;jlsysin@ix.netcom.com&gt;
+
+
+Ah it's jlsysinc
+
+&gt;Subject: win32 genesis
+&gt;
+&gt;I'm trying to compile the latest stable version of genesis for win32.  I
+&gt;am stalled trying to do the final compile, can't seem to get past
+&gt;grammar.c.
+&gt;
+&gt;These are the errors I'm getting.  Note I'm using Borland 4.52, will this 
+&gt;be a problem?
+&gt;
+
+I don't believe that Borland version will be a problem.
+
+&gt;Error grammar.y 51: Multiple declaration for 'YYSTYPE'
+&gt;Error /usr/lib/bison.simple 102: Type mismatch in redeclaration of
+&gt;'yylval'
+
+
+I recall getting these errors when using bison.
+
+The solution was either:
+1) Make sure the -y option is used with bison.
+2) Use yacc or byacc
+
+It was definitely a problem with the parser generator I was
+using.  I can't quite remember which one worked best.
+
+--
+J. Lambert
+
+</PRE>

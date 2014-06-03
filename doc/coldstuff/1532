@@ -1,0 +1,90 @@
+<HEAD><TITLE>discuss@charon: [1532] in "Coldmud discussion meeting"</TITLE>
+<H1>[1532] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1532"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1531"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1533"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>patch for annoying behavior</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec 21 02:05:18 1999
+)</H3>
+<PRE>
+From: bruce@puremagic.com
+To: coldstuff@cold.org
+Date: Mon, 20 Dec 1999 22:43:33 -0800 (PST)
+Reply-To: coldstuff@cold.org
+
+This will fix the annoying behavior in listidx(), bufidx() and stridx()
+and properly update the credits file.
+
+ - Bruce
+
+diff -r -u Genesis-1.1.8-STABLE/etc/notes Genesis/etc/notes
+--- Genesis-1.1.8-STABLE/etc/notes	Sat Nov 20 12:44:28 1999
++++ Genesis/etc/notes	Mon Dec 20 22:34:45 1999
+@@ -10,6 +10,9 @@
+       http://www.cold.org/info/lists
+ 
+ RELEASE INFORMATION:
++1.1.9  [XX-XXX-XX] Bruce
++      * Fixed inconsistent behavior in stridx(), listidx(), and
++        bufidx() when presented with an empty first argument. (Bruce)
+ 1.1.8  [20-Nov-99] Brandon, Allen Noe
+       * Committed the bufidx() fix to the stable branch.  Due to
+         inexperience with CVS the fix did not get moved to the STABLE
+
+diff -r -u Genesis-1.1.8-STABLE/src/ops/buffer.c Genesis/src/ops/buffer.c
+--- Genesis-1.1.8-STABLE/src/ops/buffer.c	Tue Jul 13 14:07:48 1999
++++ Genesis/src/ops/buffer.c	Mon Dec 20 22:27:53 1999
+@@ -194,6 +194,12 @@
+     } else
+         THROW((type_id, "Second argument must be a buffer or integer."))
+ 
++    if (!buffer_len(BUF1)) {
++        pop(argc);
++        push_int(0);
++        return;
++    }
++
+     if ((r = buffer_index(BUF1, cp, clen, origin)) == F_FAILURE)
+         THROW((range_id, "Origin is beyond the range of the buffer."))
+ 
+diff -r -u Genesis-1.1.8-STABLE/src/ops/list.c Genesis/src/ops/list.c
+--- Genesis-1.1.8-STABLE/src/ops/list.c	Tue Jul 13 14:07:48 1999
++++ Genesis/src/ops/list.c	Mon Dec 20 22:24:53 1999
+@@ -243,6 +243,12 @@
+     else
+         origin = 1;
+     
++    if (!LIST1-&gt;len) {
++        pop(argc);
++        push_int(0);
++        return;
++    }
++
+     if ((r = list_index(LIST1, &amp;args[1], origin)) == F_FAILURE)
+         THROW((range_id, "Origin is beyond the range of the list."))
+     
+diff -r -u Genesis-1.1.8-STABLE/src/ops/string.c Genesis/src/ops/string.c
+--- Genesis-1.1.8-STABLE/src/ops/string.c	Wed Jul 14 21:33:53 1999
++++ Genesis/src/ops/string.c	Mon Dec 20 22:21:00 1999
+@@ -553,6 +553,12 @@
+     if (!string_length(STR2))
+         THROW((type_id, "No search string.")) 
+ 
++    if (!string_length(STR1)) {
++        pop(argc);
++        push_int(0);
++	return;
++    }
++
+     if ((r = string_index(STR1, STR2, origin)) == F_FAILURE)
+         THROW((range_id, "Origin is beyond the range of the string."))
+ 
+</PRE>

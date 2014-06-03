@@ -1,0 +1,26 @@
+<HEAD><TITLE>discuss@charon: [819] in "Coldmud discussion meeting"</TITLE>
+<H1>[819] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?819"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="818"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="820"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ColdCore 2.1</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Oct 11 14:48:24 1995
+)</H3>
+<PRE>
+Date: Wed, 11 Oct 1995 12:32:55 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+Its available.  PLEASE read the README, this core is not intended for
+developmental use until we get genesis upgraded to the new db format.
+
+-Brandon
+</PRE>

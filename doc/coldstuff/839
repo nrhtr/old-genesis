@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [839] in "Coldmud discussion meeting"</TITLE>
+<H1>[839] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?839"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="838"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="840"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Last of the memory leaks</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov  1 20:00:27 1995
+)</H3>
+<PRE>
+Date: Wed, 01 Nov 1995 17:44:24 -0700
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+Ok!  This is one of the last nasty memory leaks we have been hunting down
+for a while.  Since my source is not in a releasable state, you can fix
+this leak by simply editing functions.c, and replace lines 148-152:
+
+    } else {
+        pop(1);
+        data_dup(&amp;stack[stack_pos], &amp;d);
+        stack_pos++;
+    }
+
+With:
+
+    } else {
+        pop(1);
+        data_dup(&amp;stack[stack_pos++], &amp;d);
+        data_discard(&amp;d);
+    }
+
+From here, the only leak we know of is 1-2 bytes when an object is created!
+
+Enjoy running in 2 megs of RAM :)
+
+-Brandon
+</PRE>

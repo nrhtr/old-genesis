@@ -1,0 +1,92 @@
+<HEAD><TITLE>discuss@charon: [91] in "Coldmud discussion meeting"</TITLE>
+<H1>[91] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?91"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="87"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="90"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="90"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="92"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="92"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="99"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ANSI codes and unreadables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 05:53:33 1993
+)</H3>
+<PRE>
+Date: Sat, 4 Dec 93 10:47:59 GMT
+From: Andrew Wilson &lt;Andrew.Wilson@cm.cf.ac.uk&gt;
+To: coldstuff@MIT.EDU
+
+
+To be honest, I've NEVER seen the point in disallowing some range of input
+values to a M**.  UNIX is a 'clean' system in so far as it doesn't stipulate
+what you can and can't send through IO, I believe that at the SERVER level all
+M**s should behave this way too.
+
+There is a genuine concern that 'bad' ascii could get out of a server and trash
+someone's client, or worse, by redefining keys etc, or whatever else bad ascii
+can do to a client.  There should be some safeguard available to prevent this
+but it should NOT be in the server, it should be a core facility, perhaps one
+hanging off $sys so that its use, or benign 'abuse', could be tied into the
+M**s permissions system.
+
+Suppose then that ColdMUD (say) was permitted to accept ANY ascii, including
+bad ascii, which would have no effect on the server but could still damage a
+client if it got out.
+
+Let's say that the built-in MOO equivalent of notify(obj, str) [forgive the
+MOO reference I've not done enough Cold to remember the equivalent off hand]
+is a built-in callable by a $sys only verb [this could be a compile-time switch,
+so that you could disable this functionality if you weren't interested in
+supporting a 'clean' IO system for your server].  You could then add a new
+Cold built-in, safe_ascii(str) say, which returns 'str' with all bad ascii
+replaced by ' ', space.  Now you provide 'normal' notify() functionality with
+the $sys method:
+
+	$sys.notify
+	args obj, str;
+	notify(obj, safe_ascii(str));
+	.
+
+[excuse the syntax, I'm out of practice Cold-wise]
+
+
+You can then add an 'unsafe' version of notify if you wish to support 'clean'
+IO on an otherwise 'safe' core:
+
+	$sys.unsafe_notify
+	args obj, str;
+	if ($sys.unsafe_notify_permitted(caller(), obj, &lt;whatever else&gt;) {
+		notify(obj, str);
+	} else {
+		some error...
+	}
+	.
+
+Where $sys.unp checks the player, calling object, target object, etc. and
+decides according to some algorithm whether or not to return true.
+
+Of course, if you weren't interested in supporting such a 'clean' IO system,
+then just compile your server to allow notify to be unprotected.  The notify
+would then make an implicit call to safe_ascii for you, and you'd need none of
+the additional $sys methods.
+
+The point is that:
+
+o	worry about bad ascii is not itself reason enough for crippling
+	the server's IO system.
+
+o	Cold is well suited to providing the necessary safeguards which would
+	allow 'clean' IO to be viable.
+
+Greg?  This is a good idea, please consider including it into the Cold server's
+design.
+
+
+Thanks,
+
+Andy (Net.)
+
+</PRE>

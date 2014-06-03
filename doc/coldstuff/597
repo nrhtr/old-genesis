@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [597] in "Coldmud discussion meeting"</TITLE>
+<H1>[597] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?597"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="596"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="598"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="598"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="598"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Another inheritance question.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 25 20:29:10 1994
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+Date: Fri, 25 Nov 1994 17:20:09 -0800 (PST)
+
+Okay. My first one seemed so easy to you all, here's another one....
+
+
+Object A
+   defines foo which contains a 'pass' function call
+
+Object B
+  is a child of Object A
+
+Object C
+  is a child of Object A
+
+Obejct D
+  is a child of Obejct B and Object C
+  defines foo which contains a 'pass' function call.
+
+How many copies of Object A's data fields end up in Object D, and how many 
+times will D.foo() call A.foo() ?
+
+Thanks again,
+
+Jeff Kesselman
+
+</PRE>

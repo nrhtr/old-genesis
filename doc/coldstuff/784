@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [784] in "Coldmud discussion meeting"</TITLE>
+<H1>[784] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?784"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="782"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="782"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="783"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="785"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Regexp matching and escaping characters...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 24 14:43:54 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Thu, 24 Aug 95 13:24:35 EDT."
+             &lt;199508241724.NAA29689@altair.vv.com&gt; 
+Date: Thu, 24 Aug 95 12:39:19 -0600
+
+&lt; Ah, thankee.  Now I see why Pavel chose to use % as the escape character for
+&lt; MOO regex.
+
+This could be an option for upcoming regular expressions.  Does anybody have
+any comments on doing the above?  Ala:
+
+    "%$test" vs "\$test" (which actually has to be "\\$test")
+
+Basically, either we we go it is rather abstract and wrong.  However, The more
+I look at it "\\$" looks less wrong than "%$" ... (I tend to expect MOO or
+whatever to search/replace %$ with something...).
+
+-Brandon
+</PRE>

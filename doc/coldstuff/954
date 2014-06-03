@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [954] in "Coldmud discussion meeting"</TITLE>
+<H1>[954] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?954"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="953"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="955"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Getting my MUD up</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 26 14:24:34 1996
+)</H3>
+<PRE>
+Date: Tue, 26 Mar 1996 13:50:35 -0500
+From: Bill DeVos &lt;watcher@winc.com&gt;
+To: coldstuff@cold.org
+
+Ok, your fix worked beautifully but now when I run "coldcc" I get this
+output.
+{root@slip102} /usr/Mud/textcore # ../bin/coldcc 
+Compiling database...
+Reading from "textdump".
+Line 8: WARNING: objname $root is already bound to objnum #1
+Line 9: WARNING: objname $sys is already bound to objnum #0
+Line 83: line 8 in $root.spawn(): Unknown function get_dbref.
+Line 98: ABORT: Method definition failed
+  I'm trying to compile the new Minimal3.0 db.  Thanks for your patience
+and all assistance will be appreciated...
+-- 
+             Watcher
+
+	watcher@winc.com
+	http://www.winc.com/~watcher/
+
+---  Look Ma! No sig!
+</PRE>

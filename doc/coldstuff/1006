@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [1006] in "Coldmud discussion meeting"</TITLE>
+<H1>[1006] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1006"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1005"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1007"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1007"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1009"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Re: Crashes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jun  4 19:54:00 1996
+)</H3>
+<PRE>
+Date: Wed, 5 Jun 1996 01:37:40 +0200
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+
+
+I traced a bit through the program. I discovered the following:
+
+First, my telnet sends ^C in character mode instead of the line mode, so
+^C sequence it interpreted immediately.
+
+Secondly, connection_read got only garbage from the connection (the
+sequence it actually read was 6, 255, 254, 255, 253, 6). This could be a
+telnet bug.
+
+Thirdly, this is the only situation when core gets a line that is not
+terminated by CR/LF. I'm not sure this has been tested in any way.
+
+Fourth, `[65,10,3].to_strings() =&gt; ["a",`[3]]
+(can we handle buffers in these lists? Especially if it terminates by a
+buffer?)
+
+And lastly, when I kill my telnet, I get neatly disconnected, and my
+connection object destroyed. So I don't think that is the problem.
+
+	Miro
+
+</PRE>

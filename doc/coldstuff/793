@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [793] in "Coldmud discussion meeting"</TITLE>
+<H1>[793] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?793"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="790"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="792"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="792"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="794"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="794"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="797"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: exception handling...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 31 18:32:18 1995
+)</H3>
+<PRE>
+Date: Thu, 31 Aug 1995 16:24:05 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+&lt; This isn't an exception handler, it's a switch statement.
+
+No, it is both.  Yes, I'm aware of its similarity with a switch statement,
+but it is cleaner and more succinct than the current method, in conjunction
+with a switch, ala:
+
+for obj in (list) {
+    catch ~locked {
+        obj.query_test();
+        sender().print("Test is sucessful for: " + obj.name());
+        valid = valid + [obj];
+    } with {
+        switch(error()) {
+            case ~locked:
+                sender().print("Object is locked.");
+            default:
+                sender().print("Error: " + toliteral(error) + " encountered!");
+        }
+    }
+}
+
+(vs:)                 
+
+for obj in (list) {
+    catch { 
+        obj.query_test();
+    } handle ~locked {
+        sender().print("Object is locked.");
+    } handle others {
+        sender().print("Error: " + toliteral(error) + " encountered!");
+    } finally {
+        sender().print("Test is sucessful for: " + obj.name());
+        valid = valid + [obj];
+    }
+}
+
+Like I said, its mainly a small change.  However, my goal is to get it 
+to a 3-stage handler, rather than the 2-stage one it is at now.  I.e.
+currently you have "error-&gt;oops, do this", Richelieu brought up that it
+would be nice to do 3 stages, ala "error, try this, otherwise this".  I'm
+just having a hard time finding a good way to do it.
+
+-Brandon
+</PRE>

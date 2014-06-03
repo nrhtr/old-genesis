@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [217] in "Coldmud discussion meeting"</TITLE>
+<H1>[217] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?217"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="216"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="216"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="216"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="218"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="218"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="218"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: consistency in match_template</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Apr 28 17:28:17 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Thu, 28 Apr 1994 13:33:48 PDT."
+             &lt;199404282033.NAA10934@netcom.com&gt; 
+Date: Thu, 28 Apr 1994 16:20:01 -0500
+From: Erik Ostrom &lt;eostrom@pepperoncini.gac.edu&gt;
+
+I was going to remark on this:
+
+&gt; Consistency is required for a decent user interface, and simply saying
+&gt; "they'll figure it out" is not good enough because they shouldn't have
+&gt; to if it's properly done in the first place.
+
+I was going to say something about how slavish devotion to consistency
+can get you in trouble, but then I decided it was moot when I read
+this:
+
+&gt; match_template(template, string, quote-char, quote-handling, field-handling)
+&gt; 
+&gt; where quote-char is a single-char string (specifying which char
+&gt; should be used in the place " is used currently) or a double-char
+&gt; string (specifying an open-close pair), quote-handling is a symbol
+&gt; specifying whether quotes are transparent (removed from output),
+&gt; passed thru intact, etc. and field-handling specifies whether quotes
+&gt; denote field breaks and whether quoted portions can match keywords
+&gt; as well as wildcards, etc.
+
+Wow.  I can't even think of anything to say.
+
+Imagine if, each time you wanted to do something, you had to stop and
+remember which 4-tuple of quoting semantics the command you're
+thinking of uses.  Staggering.
+</PRE>

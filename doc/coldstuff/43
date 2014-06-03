@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [43] in "Coldmud discussion meeting"</TITLE>
+<H1>[43] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?43"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="42"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="44"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="44"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="44"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: regexp...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 04:38:30 1993
+)</H3>
+<PRE>
+Date: Wed, 17 Nov 1993 02:31:52 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+&gt; I'd like to cast a vote of in-server regexp routines.  
+
+...cast a vote????  This is Greg's baby, he can make the decisions, no voting
+involved.  What we have to do is convince Greg :)
+
+(Sorry, with NetrekII that is a peeve of mine--when non-coders decide they can
+just randomly vote on something and make you do it).
+
+&gt; Could someone give me a clue on what a "client robot" is?
+
+It is something on another machine which runs a character.
+
+I dont understand how Greg would want all automaton's to be clients though,
+what about the hundreds of creepies, merchants, npc's, etc?  Are we just going
+to reconnoiter our entire campus of computers to run the MUD? :)
+
+-Brandon
+</PRE>

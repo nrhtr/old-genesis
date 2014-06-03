@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [973] in "Coldmud discussion meeting"</TITLE>
+<H1>[973] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?973"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="969"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="972"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="972"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="974"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="976"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="983"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] 'user()' builtin function..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Apr 23 11:37:47 1996
+)</H3>
+<PRE>
+Date: Tue, 23 Apr 1996 11:05:33 -0400
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+From: Quinn &lt;quinn@vv.com&gt;
+Cc: coldstuff@cold.org
+
+At 01:00 PM 4/22/96 -0600, Brandon Gillespie wrote:
+&gt;Do you prefer 'user()' or 'controller()'?
+
+'issuer()' is a more generic term than 'user()'; 'user()' implies that a
+$user is controlling the task and/or a user is at the other end of the root
+connection.
+
+'controller()' is probably best, but I don't like it's length.
+
+Maybe 'spawner()'?
+
+-Quinn
+
+
+
+</PRE>

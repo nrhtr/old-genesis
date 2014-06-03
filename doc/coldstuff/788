@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [788] in "Coldmud discussion meeting"</TITLE>
+<H1>[788] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?788"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="787"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="789"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>:sigh: I broke it</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 25 22:57:04 1995
+)</H3>
+<PRE>
+Date: Fri, 25 Aug 1995 19:54:02 -0700
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+
+All:
+
+My apologies.  At one point the DC was handling logins from my NT box and NETCOm fine BUT I completely reorganized the objects 'cause I made a fairly serious design error the first time.
+
+When it worked again from my linux console I thought it was fixed, but the
+two mentioned above now fail to proeprly negotiate the telnet conenction.
+
+Chances are you guys will have a simialr experience. Sorry for the premature
+annoucnement. Will let you know when its fixed, again.
+
+JK
+</PRE>

@@ -1,0 +1,79 @@
+<HEAD><TITLE>discuss@charon: [1167] in "Coldmud discussion meeting"</TITLE>
+<H1>[1167] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1167"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1166"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1168"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] $programmer.set('question,(@spawn $daemon)||!(@spawn $daemon))</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 23:40:16 1996
+)</H3>
+<PRE>
+Date: Mon, 2 Dec 1996 23:36:03 -0500 (EST)
+From: Fabien Ninoles &lt;ninf01@gel.usherb.ca&gt;
+To: Cold Stuff Mailing List &lt;coldstuff@cold.org&gt;
+
+-----BEGIN PGP SIGNED MESSAGE-----
+
+Well.. all this discussions about protocols leads me to a serious dilemn
+about the way I would implement my ColdC mode in the OO-Browser of
+(X)Emacs.
+	Just little word about the project I run: I try to implement a
+mainly completely new core in ColdC. Completely? Not, just very different. 
+More a Core for administration by no programmer. But that's not the
+question.  The question is that I need to browse the big Core of objects
+to more understand ColdCore and trying to not reinventing the wheel.
+That's why I'm trying to implement ColdC support in the OO-Browser.
+
+For the moment, the project goes well (I really think to release a first
+version of the coldc-mode for january) but I want to go further. For the
+moment I only implement it for the textdump and .cdc file format.
+But it will be really cool if I can browse and edit an running-up DB. I
+can I do that. Logging in as regular user can be disturbing because you
+have to do it lot of time but can stay here because you aren't here (or
+there are some who can mud/chat and browse big hierarchy all at the same
+time?). Using a specialized guest aren't enough too because we need some
+time special permissions to mojo some verbs etc... OO-Browsing are really
+for big maintenance work!
+
+Then what now? My solution was to use a daemon. Which one? I don't know.
+The gateway interface are cool but can I pass safely a user name and
+password under http? I don't think so (but may be isn't safe too with
+telnet). Also, http needs really lot of parsing to extract the
+information correctly. Than telnet? ftp? smtp? a completely new protocol?
+
+What's your idea about this? I will promote the most useful suggestion,
+especially if someone says me s/he wants to implement the same support to
+another programming tool... 
+
+Thanks and sorry for the long mail :-/
+
+
+
+- ---------------------------------------------------------------
+ Not knowing we're you going always lead you to a Baggus end.
+                                  the lost Baggus Mage
+- ---------------------------------------------------------------
+Fabien Ninoles aka Baffouille       || Running Debian-Linux
+Ninf01@gel.usherb.ca                || Lover of MOO, mountains, 
+http://www-edu.gel.usherb.ca/ninf01 || poetry and Freedom.
+- ---------------------------------------------------------------
+
+-----BEGIN PGP SIGNATURE-----
+Version: 2.6.3i
+Charset: noconv
+
+iQCVAwUBMqOt81X6fc7jcjhFAQFOHgQAjwTF2hYsKHn5zT5P97JaBn777ryJ1m6q
+/bB/8V7sMCexVWc00D3nkHF5lesk81W4hQ+VQvqvokwZiHkTQ+jHVcE388t0mXkg
+vk6cWJMgh4dZ+uD/mNKYky1tNoGxxxIgvENyQQuv6cLkNtNOSPWYBDw3+ccIAVs3
+nx9JZo+eMss=
+=7hdx
+-----END PGP SIGNATURE-----
+
+</PRE>

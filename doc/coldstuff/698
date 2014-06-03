@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [698] in "Coldmud discussion meeting"</TITLE>
+<H1>[698] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?698"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="676"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="679"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="697"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="699"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assexp op</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 23:58:05 1995
+)</H3>
+<PRE>
+Date: Fri, 10 Mar 1995 20:54:21 -0800
+To: coldstuff@MIT.EDU
+From: jeffpk@netcom.com (Jeff Kesselman)
+
+
+&gt;My brain's too fried to figure out if this language is in LALR(1), I
+&gt;had a midterm on code generation today, we already had our test on
+&gt;parsers, I shouldn't have to know this any more etc etc etc.
+
+I'm pretty sure its LL(1) like C and Pascal.  Anyone know of any counter
+examples?  Myself, I've never had the need for more then LL(1).  Maybe its
+just my heavy C, Pascal and Modula2 background, but every language I've
+ever designed has been LL(1) even though i use Yacc...
+
+
+
+</PRE>

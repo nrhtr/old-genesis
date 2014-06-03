@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1452] in "Coldmud discussion meeting"</TITLE>
+<H1>[1452] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1452"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1451"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1451"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1451"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1453"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ColdC</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug  3 00:32:12 1999
+)</H3>
+<PRE>
+Date: Tue, 03 Aug 1999 21:12:54 -0700
+From: Jeff Kesselman &lt;jeffk@bayarea.net&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+The official repository is www.cold.org.  I believe the ftp area is reacahble
+directly at ftp.cold.org.
+
+When I have questions or sisues I suaully go to "the source" as it were and
+ask the guys workign on it. Theyt can generally be found at the colddark site,
+cold.org:1138
+
+JK
+
+William Moore wrote:
+
+&gt;         I was wondering if anybody on this list could help point me to a
+&gt; good source of information, or perhaps some pointers getting started with
+&gt; ColdC.  I've been an active develpoer of MUDs, mostly diku, and merc based
+&gt; for the last couple of years, but I've found them to be highly restrictive
+&gt; for expansion.  I came acrossed ColdC and was impressed with it's Ideas.
+&gt; I would like to try starting a MUD based on it, but have had a hard time
+&gt; getting started.  Any ideas, and or pointers on where to get started would
+&gt; be greatly appreciated :)
+&gt;
+&gt; Thanks..
+&gt;
+&gt; William Moore
+&gt;
+&gt; Nitwit ideas are for emergencies.  You use them when you've got nothing
+&gt; else to try.  If they work, they go in the Book.  Otherwise you follow
+&gt; the Book, which is largely a collection of nitwit ideas that worked.
+&gt;                 -- Larry Niven, "The Mote in God's Eye"
+
+</PRE>

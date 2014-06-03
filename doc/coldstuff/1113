@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1113] in "Coldmud discussion meeting"</TITLE>
+<H1>[1113] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1113"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1112"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1114"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1116"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1116"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Is there a new version of dumpsplit available?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  3 03:04:37 1996
+)</H3>
+<PRE>
+Date: Sun, 03 Nov 1996 00:58:28 -0800
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+I would like to split out my Alpha 4 textdump but the copy 
+of dumpsplit that I have doesn't seem to work correctly.
+Here are the messages I get:
+	Splitting db
+	Invalid object name "$root;", stripping to "$root".
+	.
+	Invalid object name "$sys: $root;", stripping to "$sysroot".
+	.
+
+Then it seems to hang.
+
+I started to split the file by hand, but then I got bored.
+Anyone have a dumpsplit that works with A4?
+
+Frank
+
+-- 
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+`
+</PRE>

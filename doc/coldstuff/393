@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [393] in "Coldmud discussion meeting"</TITLE>
+<H1>[393] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?393"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="392"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="394"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ColdMUD 0.10.3</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 25 19:56:10 1994
+)</H3>
+<PRE>
+Date: Thu, 25 Aug 1994 16:28:04 -0700
+From: bookwyrm@netcom.com (Kim)
+To: coldstuff@MIT.EDU
+
+
+A friend of mine recently told me about the ColdMUD server, and
+I am trying to find out more about the current development status.
+(Namely, I compiled and tested it on my Linux box, and have run
+into what appear to be bugs.  (It dies on regression test #6 with 
+a segmentation error, for instance.))  I am hesistant to start
+digging through the code and trying to fix things if they have
+already been fixed.  :)  I am currently (attempting to) build a
+database.
+
+The server looks like a very nice piece of design so far, though.
+
+Kim
+bookwyrm@netcom.com
+(Hopefully, I have managed to get on this list as well, and this list
+is the right spot for this discussion.)
+</PRE>

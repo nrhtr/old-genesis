@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [1303] in "Coldmud discussion meeting"</TITLE>
+<H1>[1303] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1303"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1302"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1304"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1304"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1304"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] My connections are hanging</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun 12 23:37:57 1997
+)</H3>
+<PRE>
+Date: Thu, 12 Jun 1997 20:36:51 -0700
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+Here's a strange behavior: mudservices recently crashed and since
+it was brought back up I haven't been able to stay connected for
+more than five minutes.  I don't get kick off, but if I idle for
+about 5 minutes and then try to type anything, no characters show
+up (not even an echo).  The server is still running and I can
+reconnect any number of times, but I always get the same behavior.
+This is for ColdCore A7 and the P26 driver.
+
+I tried shuting down the server and restarting and same behavior.
+I've even copied binary.bak to binary, and the same results.
+
+I've tried telnet connections from two versions of Linux and
+a SunOS, and still the same behavior.  
+
+Anyone know if this is possibly so "reset by peer" and I don't
+see the message?  Mudservices runs several muds and if the system
+in general was having the problem, then other users should have reported
+it.  If anyone has a hint about what the possible problem may be, let me
+know at frankc@maddog.com, or come to blackrabbit.mudservices.com 1138
+amd see for yourself.  Of course if you dont have a problem, I would
+like to know that too.  
+
+Frank
+
+-- 
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+</PRE>

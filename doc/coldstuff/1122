@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [1122] in "Coldmud discussion meeting"</TITLE>
+<H1>[1122] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1122"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1119"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1120"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1121"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1123"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Genesis 1.0p16 released</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  5 12:31:32 1996
+)</H3>
+<PRE>
+Date: Tue, 5 Nov 1996 10:13:52 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: coldstuff@cold.org
+
+Jay wrote:
+&gt; Brandon wrote:
+&gt;&gt;
+&gt;&gt;   * ("string" * INTEGER) returns string repeated INTEGER times (Miro)
+&gt;&gt;
+&gt;
+&gt; eval "bye! thanks for visiting virtual memory!" * 2147483647
+&gt; 
+
+And how is that any different from:
+
+   eval var str; str = "bye!"; while (1) { str += str; refresh(); }
+
+Or any of the other simple ways to be rude?
+
+(ok, the above is only one operation vs a few more, but still)
+
+-Brandon
+
+</PRE>

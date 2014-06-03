@@ -1,0 +1,82 @@
+<HEAD><TITLE>discuss@charon: [182] in "Coldmud discussion meeting"</TITLE>
+<H1>[182] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?182"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="181"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="183"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>suspend()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar 27 01:43:14 1994
+)</H3>
+<PRE>
+Date: Sat, 26 Mar 1994 23:38:21 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I was just thinking, even if we have no way of knowing what status our tick
+count is at, it would be damn nice to have a suspend() which simply froze the
+task for n seconds.  What i'm thinking in reference to is for intensive calls,
+where you could slow down its load on the server.
+
+Example: we have a grep method (admin only) which searches every object's
+methods for wildcards and regular expressions.  When it is currently run it
+slams the server, and even the machine running the server.  I've just adjusted
+it again so that it probably wont ever run out of ticks (lots of sub method
+calls), but if I could put a suspend() up in the top level of loops it would
+help immensely.
+
+The second effect i'd like to see, and the more I think about this it may be a
+different builtin from suspend (so i'll call it something different for now),
+is a pause().  What this function would be for is to stop the current process
+and allow all sub processes/calls to continue to completion, and then to
+continue (feh--ignore my ignorance of terminology).  An example for this is:
+
+I had $sys.backup announce to everybody that a backup is about to occur. 
+However, since it also ran text_dump() it would run the textdump to completion
+first, then everybody would get the announcement (after the fact).  Code:
+
+-=[ $sys.backup():
+args who;
+
+.perms(sender(), 'system);
+$channels.announce('all, "It is 12:30 pm, Impending backup, be ware of lag");
+$sys.log("BACKUP: " + $eng_time.ltime() + " " + who.name('id));
+.do_backup();
+.
+-=[ $sys.do_backup():
+.perms(sender(), 'system);
+return text_dump();
+.
+
+To get over this hurdle I had to pass the call to do_backup through the
+$scheduler.  I dont know if this makes any sense.  Here is some more random
+code:
+
+-=[ $sys.backup():
+args who;
+
+.perms(sender(), 'system);
+$channels.announce('all, "It is 12:30 pm, Impending backup, be ware of lag");
+$sys.log("BACKUP: " + $eng_time.ltime() + " " + who.name('id));
+pause();
+.do_backup();
+.
+
+Where you toss the pause() in there.  You could even specify seconds that it
+would pause, where if it finished sub calls before the allotted time was up it
+would still wait, but if the alloted time was over before it finished sub calls
+it would still be paused until it finished all sub calls...
+
+(sigh)
+
+Any comments?  This is a rambling post btw, and I appologize.
+
+-Brandon (the Lynx)
+</PRE>

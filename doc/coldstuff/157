@@ -1,0 +1,77 @@
+<HEAD><TITLE>discuss@charon: [157] in "Coldmud discussion meeting"</TITLE>
+<H1>[157] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?157"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="156"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="158"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Mod by 0 and random(0) patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 22 18:47:28 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Tue, 22 Mar 1994 13:11:10 -0600
+From: Zachary DeAquila &lt;zachary@serial.io.com&gt;
+
+
+At Lynx's request I went ahead and made a real patch out of the small fixes...
+here ya go:
+
+------------CUT HERE----------------
+*** arithop.c	Tue Mar 22 12:58:54 1994
+--- arithop.good.c	Tue Mar 22 13:01:46 1994
+***************
+*** 97,103 ****
+  	throw(type_id, "Left side (%D) is not an integer.", d1);
+      } else if (d2-&gt;type != INTEGER) {
+  	throw(type_id, "Right side (%D) is not an integer.", d2);
+!     } else if (d2-&gt;type == 0) {  
+  	throw(div_id, "Attempt to divide %D by zero.", d1);
+      } else {
+  	/* Replace d1 with d1 % d2, and pop d2. */
+--- 97,103 ----
+  	throw(type_id, "Left side (%D) is not an integer.", d1);
+      } else if (d2-&gt;type != INTEGER) {
+  	throw(type_id, "Right side (%D) is not an integer.", d2);
+!     } else if (d2-&gt;u.val == 0) { 
+  	throw(div_id, "Attempt to divide %D by zero.", d1);
+      } else {
+  	/* Replace d1 with d1 % d2, and pop d2. */
+*** miscop.c	Tue Mar 22 12:59:17 1994
+--- miscop.good.c	Tue Mar 22 13:01:19 1994
+***************
+*** 41,48 ****
+      if (!func_init_1(&amp;args, INTEGER))
+  	return;
+      
+!     /* Replace argument on stack with a random number. */
+!     args[0].u.val = random_number(args[0].u.val);
+  }
+  
+  void op_time(void)
+--- 41,53 ----
+      if (!func_init_1(&amp;args, INTEGER))
+  	return;
+      
+!     /* Do range checking */
+!     if (args[0].u.val &lt;= 0) {
+!        throw(range_id,"Argument to random() must be greater than zero."); 
+!     } else {
+!        /* Replace argument on stack with a random number. */
+!        args[0].u.val = random_number(args[0].u.val);
+!     }
+  }
+  
+  void op_time(void)
+------------CUT HERE----------------
+
+ Enjoy!
+
+    --Zachary
+</PRE>

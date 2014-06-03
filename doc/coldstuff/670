@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [670] in "Coldmud discussion meeting"</TITLE>
+<H1>[670] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?670"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="669"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="669"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="671"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="671"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar  8 02:08:24 1995
+)</H3>
+<PRE>
+Date: Wed, 8 Mar 95 09:07:50 IST
+To: coldstuff@MIT.EDU
+From: bmgustav@bioinformatics.weizmann.ac.il (Gustavo Glusman)
+
+&gt;Hmm, ok, my vote would be for either '=:' or ':=', simply because (even
+&gt;though it is cool) '-&gt;' or '&lt;-' would be too far from normalness...
+&gt;
+&gt;Some samples:
+&gt;
+&gt;----------
+&gt;while (success := .attempt()) {
+&gt;  .display(success);
+&gt;}
+
+:= is what is used in Pascal, and it is mistaken by = no less. People fail
+to type the : too easily.
+In other words, it might not solve the issue.
+I think &lt;- is very good, and that its being 'far from normalness' can be an
+asset, since the 'normal' methods cause confusion.
+
+-------------------------------------------------------------
+Gustavo Glusman               Founder/administrator of BioMOO
+-- Gustavo@bioinformatics.weizmann.ac.il
+-- http://bioinformatics.weizmann.ac.il:70/0h/Gustavo/Glusman
+-- BioMOO: telnet bioinformatics.weizmann.ac.il 8888
+           WWW:   http://bioinfo.weizmann.ac.il:8888
+
+
+</PRE>

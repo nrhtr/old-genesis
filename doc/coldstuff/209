@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [209] in "Coldmud discussion meeting"</TITLE>
+<H1>[209] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?209"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="208"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="210"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="210"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="210"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Most up to date version and all the patches...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Apr 12 20:46:30 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Tue, 12 Apr 1994 17:39:48 -0700
+From: Gregory Blake &lt;gblake@mis.nu.edu&gt;
+
+
+Yes, I know this has been mailed out recently, but I just went nuts and
+cleared out all the old mail in my mailbox today and lost it...
+where can I find it?
+
+Also, I had a question about the core.  I was looking back at my notes on
+coolMUD and noticed that it's core was much simpler.  As in you had a root
+object, then a described and located object, then under those two, thing,
+room, exit, and player... Now I can see breaking one or two of those down
+some, but is there a reason for having so many different parent objects in
+the core?  Or is a lot of that just in there for the sake of having a little
+of something for everyone.
+
+Snooze
+
+
+--
+==============================================================================
+Gregory Blake                       |Snooze@TinyMUSH,TooMUSH, SpaceMadness,
+Network Admin - National University |LambdaMOO, Fantasia, CaveMUCK, DragonMUD
+work: (619)563-2595                 |Email - gblake@mis.nu.edu
+home: (619)528-4531                 |
+==============================================================================
+home addr: 4783 Utah Street, San Diego, CA  92116
+==============================================================================
+</PRE>

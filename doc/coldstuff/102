@@ -1,0 +1,28 @@
+<HEAD><TITLE>discuss@charon: [102] in "Coldmud discussion meeting"</TITLE>
+<H1>[102] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?102"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="101"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="103"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ansi characters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Dec  5 19:47:07 1993
+)</H3>
+<PRE>
+Date: Sun, 05 Dec 1993 17:40:55 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Just so everybody knows, I did an experiment to see if you could load hidden
+characters from a text dump--you cannot.  The server just freezes up never
+starting.
+
+-Brandon
+</PRE>

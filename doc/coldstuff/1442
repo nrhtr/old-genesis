@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [1442] in "Coldmud discussion meeting"</TITLE>
+<H1>[1442] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1442"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1441"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1443"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Genesis. (fwd)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan  3 01:01:31 1999
+)</H3>
+<PRE>
+From: bruce@portland.puremagic.com
+To: coldstuff@cold.org
+Date: Sat, 2 Jan 1999 21:57:05 -0800 (PST)
+
+I meant to forward this back to the list earlier.
+
+ - Bruce
+
+----- Forwarded message (env-from bruce) -----
+
+From bruce Sat Jan  2 19:20:48 1999
+Subject: Re: Genesis.
+In-Reply-To: &lt;006b01be3691$26b35f80$35e504d0@oemcomputer&gt; from "Jon A. Nielsen" at "Jan 2, 1999  1:47:44 pm"
+To: nikolai@montana.com (Jon A. Nielsen)
+Date: Sat, 2 Jan 1999 19:20:48 -0800 (PST)
+X-Mailer: ELM [version 2.4ME+ PL48 (25)]
+
+&gt;     Greetings, I was wondering if there was a port of this whole project to
+&gt; Win95/98? I would greatly appreciate it.. =oD
+
+There has been a lot of work of late on updating the Windows port of
+Genesis.  There are a couple of remaining problems, which while fairly
+minor, will decide whether or not it becomes part of the 1.1p6 or 1.1p7
+release.
+
+I have a relatively current copy of the binaries at work on my machine,
+and if you like, I can mail them to you either tomorrow (Sunday) or Monday
+while I'm in the office.
+
+Any current core that runs on Genesis on unix should run the same on
+Windows.
+
+ - Bruce
+
+
+----- End of forwarded message (env-from bruce) -----
+</PRE>

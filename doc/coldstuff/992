@@ -1,0 +1,125 @@
+<HEAD><TITLE>discuss@charon: [992] in "Coldmud discussion meeting"</TITLE>
+<H1>[992] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?992"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="990"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="991"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="991"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="993"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Possible optimization idea..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May  6 00:43:39 1996
+)</H3>
+<PRE>
+Date: Sun, 5 May 1996 23:34:17 -0400 (EDT)
+From: James Deikun &lt;james@sanban.cis.pitt.edu&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.960502164226.17688C-100000@tombstone.sunrem.com&gt;
+
+
+
+On Thu, 2 May 1996, Brandon Gillespie wrote:
+
+&gt; the end result is very large.  The idea would be to provide an 
+&gt; 'initializer' function of sorts, for this case called 'new()' where you 
+&gt; specify the data type and the anticipated size.  The driver can ignore 
+&gt; this directive, or it can take it into account--calling 'new()' will 
+&gt; never throw an error, and may simply be equivalent to doing 'bar = "";'.  
+
+To me it seems like there are better solutions, and they'd be easier to 
+implement in some cases, as well as being useful for other purposes 
+besides this.  Read on for said solutions.
+
+As an example to get started with, I would write your exapmle code:
+
+&gt;     images = ["008-123", "008-141", ..];
+&gt;     serv = "&lt;img src=\""+ $sys.primary_server() +"/images/catalog/";    
+&gt;     line = "";
+&gt;     for i in (images)   
+&gt;         line += t + i + ".gif\"&gt;\n";
+
+as
+
+&gt;     images = ["008-123", "008-141", ..];
+&gt;     serv = "&lt;img src=\""+ $sys.primary_server() +"/images/catalog/";
+&gt;     t = ".gif\"&gt;\n" + serv;    
+&gt;     line = serv + $string.join(t, images) + ".gif\"&gt;\n";
+
+where $string.join is a native method that does one pass measuring, then
+allocates the result, then does another pass copying the strings in.
+
+Of course, this doesn't illustrate the solution fully.  Along with 
+$string.join there would be a couple of other new native methods, like 
+$list.flatten(), implemented similarly.  Further, there would be a new 
+loop construct:
+
+  map &lt;var&gt; in &lt;expr&gt; to &lt;placeholder&gt; in &lt;resultvar&gt; {
+  }
+
+(Feel free to use your own syntax, of course.)
+
+A "map" would allocate a list the size of &lt;expr&gt; (assumed to be a list, 
+die with ~type if not), loop through the enclosed statements once for 
+each index position of &lt;expr&gt;, each time placing the &lt;index&gt;th element of 
+&lt;expr&gt; in &lt;var&gt; before the statements are run, and putting the value of 
+&lt;placeholder&gt; into the &lt;index&gt;th position of &lt;resultvar&gt; afterward.
+
+"map" would be useful for times when you want to do some arbitrary thing 
+to n values without gradually building up a list to hold them.
+
+The advantages of this solution over new() is that:
+
+  a) the programmer doesn't have to guess about memory requirements
+  b) it's generally more transparent, often even than the code that would
+     be used right now.
+
+The only disadvantage I see is:
+
+  a) you'd have to implement more stuff.
+
+Personally, though, I'd like to see "map" happen for a lot more reasons than 
+just this problem, and I'm sure that goes for some other people too.
+
+Oh, the other thing: none of these constructs would ever allocate more 
+memory at once than a could construct just by changing one element of a 
+value they already have.  No one could try to "new" something with a 
+size of $maxint, etc.
+
+&gt;       if (!$sys.is_admin(sender())) {
+&gt;           for line in (code) {
+&gt;               if (match_regexp("[^\.a-z_]new\(", line))
+&gt;                   throw(~invfunc, "Only administrators may use new()");
+&gt;           }
+&gt;       }
+
+btw, this regexp is broken, since it'll kill a verb that contains 
+'"new("' -- or itself, though clearly neither uses (or at least, need 
+use) "new".
+
+&gt;   new() can also be a problem if the person coding with it is not
+&gt;   aware of how references are handled.  If they are using it in a
+&gt;   situation where the string would simply be copied anyway, it could
+&gt;   end up creating slower code..
+
+Oh, that's another good thing about my solution: you NEVER end up copying 
+things (or at least, the things you're specifically working with) anyway 
+when using the functions/constructs I propose.  Or at least, I can't 
+think how.
+
+&gt; Comments?  Is this too low a level of functionality for ColdC?  It is 
+&gt; simply a hinting mechanism intended for optimization, not necessarily a 
+&gt; direct memory allocation system like in other languages...
+
+Well, actually, yes, I think it is too low-level.  Stuff like this at 
+least ought to be handled 'out of line' (like pragmas or something) 
+instead of cluttering up the code per se.
+
+--
+James "never count your bytes before they've hatched" Deikun
+(defender of the silver derby, dry cleaner for the stars)
+</PRE>

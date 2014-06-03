@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [666] in "Coldmud discussion meeting"</TITLE>
+<H1>[666] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?666"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="665"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="667"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="667"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar  7 15:53:56 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: coldstuff@MIT.EDU
+Date: Tue, 7 Mar 1995 14:46:48 -0600 (CST)
+
+I'd like to propose '-&gt;' be the assignment operator. It visually represents
+ what happens to the variable being assigned the new value. It has no chance
+ of being pronounced, 'equals'. It looks cool...
+
+@program $root.init_root
+ if (caller() != $root)
+   throw(~perm, "Caller is not $root.");
+ child_index -&gt; 0;
+ owners -&gt; setadd([this()], sender());
+ fertile -&gt; 0;
+.
+
+And of course...
+
+while (success -&gt; .attempt()) {
+  .display(success);
+}
+
+if (where -&gt; .location_of(foo)) {
+  .work_with(where, foo);
+} else if (where -&gt; .location_of(bar)) {
+  .work_with(where, bar);
+} else {
+  .not_working();
+}
+
+Hm... Here are some other contestants:
+':=', '=&gt;', '&lt;&gt;', '&lt;-', '='
+
+What have I left out?
+
+Crag
+</PRE>

@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [142] in "Coldmud discussion meeting"</TITLE>
+<H1>[142] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?142"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="141"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="143"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>D#%(*&amp;(*&amp; dictionary bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Feb  2 16:30:28 1994
+)</H3>
+<PRE>
+Date: Wed, 02 Feb 1994 14:05:54 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+PLEEEEEEASE say that the dictionary bug (where it looses entries) will be fixed
+in the next release, and PLEASE say that the next release is soon...
+
+That dictionary bug is about to drive me up the wall, screws virtually any
+large dict thats used often (we've had to temporarily re-write our $user_db so
+that it used a list instead of a dictionary--so people can log in..)
+
+ /\__.   /\_.__/\__ ._/\__  __/\  The Keeper of the Cheese
+ \   |__/   |   /  `|  /  `'   /  NetrekII (Paradise) co-creator &amp; designer
+  |  |  \   |   |      \      /   Arch at the Cold Dark (ColdMUD):
+  |  `   \____  |      /      \      recumbent.declab.usu.edu 6666
+ / ______/ ____/ __|`_/ __'`__ \  email: brandon@cc.usu.edu
+ \/      \/    \/     \/      \/
+</PRE>

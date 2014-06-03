@@ -1,0 +1,64 @@
+<HEAD><TITLE>discuss@charon: [1106] in "Coldmud discussion meeting"</TITLE>
+<H1>[1106] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1106"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1105"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1105"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1105"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1107"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1107"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1108"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] minimal core</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Oct 26 13:28:46 1996
+)</H3>
+<PRE>
+Date: Sat, 26 Oct 1996 11:22:45 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Zachary DeAquila &lt;zachary@zachs.place.org&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;m0vH4iM-00014qC@zachs.place.org&gt;
+
+On Sat, 26 Oct 1996, Zachary DeAquila wrote:
+&gt; Well, I decided to mess around a bit with the latest driver, so I
+&gt; compiled it up on my linux box (no problems at all.. very cool) and
+&gt; pulled a brand new Minimalcore out of the box and ran it.
+
+I'm hoping to have another ALPHA4 core available today--with @build and
+company fixed.
+
+&gt; Except:
+&gt; It has one command, QUIT. Said command doesn't seem to work.
+&gt; 
+&gt; Really. I mean it. I type QUITE and it responds with Goodbye.
+&gt; but I stay connected.  Anyone care to explain this?  I read the code
+&gt; and it all seems to look okay.  I don't grok.
+
+Erm, it should have said:
+
+  &gt; QUIT
+  Oops, `QUIT` is not supported here.  Try `@quit`
+  Use `@help commands` for an explanation on the differences in commands.
+
+There is an object in your command cache that knows a few of the
+unsupported commands, and points you in the right direction (I opted to do
+this rather than dirty up the actual command environment with lots of
+different awkward non-standard (by my standards :) aliases)  Use the
+command '@which QUIT' to see all of the places it shows up (@which does
+not check command aliases, as they are from a different parser).
+
+Typing QUITE does:
+
+  I don't understand QUITE.
+
+Do you have any command aliases?  One of those could be conflicting, try:
+
+  @command-aliases|@ca
+
+See what you have defined..
+
+-Brandon
+
+</PRE>

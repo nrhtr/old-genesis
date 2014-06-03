@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [12] in "Coldmud discussion meeting"</TITLE>
+<H1>[12] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?12"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="11"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="13"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: server 0.1.7 release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 19:32:47 1993
+)</H3>
+<PRE>
+Date: Mon, 15 Nov 1993 17:19:41 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+&gt; 1) will ColdMUD run on an Intel box running Linux (and if so, what
+&gt; would you recommend as a minimum/medium configuration to support, oh,
+&gt; 6 players for development, or 64 players for eventual public use?)
+
+the Cold Dark will be a PC running either Linux or Free BSD, so either it does,
+or it will. :)
+
+-Lynx/Brandon/Me.
+</PRE>

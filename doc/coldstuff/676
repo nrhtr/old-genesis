@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [676] in "Coldmud discussion meeting"</TITLE>
+<H1>[676] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?676"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="675"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="677"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="677"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="698"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>assexp op</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar  9 12:31:29 1995
+)</H3>
+<PRE>
+Date: Thu, 9 Mar 1995 12:30:15 -0500
+From: Quinn &lt;quinn@Access.Mountain.Net&gt;
+To: cadams@weather.Brockport.EDU, crag@serial.mit.edu
+Cc: coldstuff@MIT.EDU
+
+
+I like '&lt;-', but it really doesn't imply expression anymore than
+ an equals sign does.  I'd suggest '&lt;&gt;', since its easy to type
+ and kind of implies "we are not both equal and we want the whole
+ world to know it, that is why we are pointing outward."
+
+But it used to mean != in old AppleSoft, and I'm sure it means
+ something else somewhere.
+
+As for the local method character, instinctively I like ',' since
+ it's a less emphatic period.  But I don't know the repercussions
+ of using a comma in such a way.
+
+blah blah blah
+
+-Quinn
+
+ _
+ \\\   _   /            Quinn
+  \\\ //  i r t u a l   quinn@access.mountain.net    http://vv.com/~quinn/
+   \\//  /
+    \/ \/ i S i o N s   - - - - - - - - - http://vv.com/ - - - - - - - - -
+</PRE>

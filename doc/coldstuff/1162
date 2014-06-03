@@ -1,0 +1,161 @@
+<HEAD><TITLE>discuss@charon: [1162] in "Coldmud discussion meeting"</TITLE>
+<H1>[1162] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1162"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1159"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1160"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1161"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1163"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1164"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1164"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Intermud3 (was Re: [COLD] Is there ...)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 19:00:17 1996
+)</H3>
+<PRE>
+From: Gregory D Lewis &lt;glewis@maths.adelaide.edu.au&gt;
+To: coldstuff@cold.org
+Date: Tue, 3 Dec 1996 10:14:05 +1030 (CST)
+In-Reply-To: &lt;32A36DD8.748AA00A@maddog.com&gt; from "Frank Crowell" at Dec 2, 96 04:01:28 pm
+
+Frank Crowell wrote:
+&gt; 
+&gt; Brandon Gillespie wrote:
+&gt; 
+&gt; &gt; 
+&gt; &gt; I (used) to be on the intermud list and one thing that struck me as
+&gt; &gt; annoying was their insistence on re-creating existing protocols that are
+&gt; &gt; perfectly capable (just drop them on a different port or on a sub-protocol
+&gt; &gt; like VEIL).  For example:
+&gt; &gt; 
+&gt; 
+&gt; I believe that the I3 was developed in response to the interMOO news
+&gt; postings and
+&gt; the teasing that the LPC world didn't have anything like that.  By the time
+&gt; you suggested VEIL, some version of Intermud was already in place. And you
+&gt; know how hard it is to change things once there is some momentum. 
+
+Intermud-2 would have been the one that was in place.  In fact, there are quite
+a few LPs that still run Intermud-2 stuff.
+
+As for momentum... Intermud-3 as a protocol is by design significantly
+different from Intermud-2, so I personally don't think that argument holds.
+
+IMO I believe there was some vaguely MudOS driver-centric interest in the 
+development of Intermud-3.  (Hey we have this thing called MUD mode
+sockets...but we don't have anything that even remotely uses it...why don't
+we make I3 use it!)
+
+&gt; Besides LP people don't talk to MOO/Cold people do they?
+
+Yes we do, we even look at your driver and subscribe to your mailing lists.
+(All in the interests of subversion ;).
+
+&gt; I think there is one approach that is interesting, and that is to use a
+&gt; gateway server.  
+&gt; This means only the gateway has to know I3.  I would much rather sit in
+&gt; my Cold world and
+&gt; deal with LP-related stuff through channels.  Beats having several
+&gt; Windows open like I have now
+&gt; and violating the laws of time and space by being at more than one place
+&gt; at the same time.  
+
+There is no reason why you couldn't do I3 from Cold.  In fact I've been
+thinking about it myself for quite a long time.  A lack of time has prevented
+me from pursuing it.  The only remotely tricky bit is being familiar enough
+with the MudOS source code to realise how their MUD mode sockets work (why
+oh why they had to use MUD mode sockets I'll never know, just to make it
+difficult for other drivers is the only reason I can work out).
+
+&gt; &gt; &gt; Intermud3 has the following features:
+&gt; &gt; &gt;       -mudlist to show what muds are up, type, address, databases
+&gt; &gt; &gt;       -remote tell with emotes
+&gt; &gt; 
+&gt; &gt; There is no existing protocol which would handle this well.
+&gt; 
+&gt; But it currently works for I3-- except who, that one really sucks.
+&gt; 
+&gt; I can solve problems by subscribing to channels and talking to groups
+&gt; on other muds or tell them individually.  Naturally most of this
+&gt; stuff is for Admins. I started using these channels when I was on the
+&gt; old TMI, then at TMI-2.  
+&gt; 
+
+So these are the singular protocols for which there is a place for I3 to be
+developing its own is the conclusion.
+
+&gt; &gt; Whats wrong with the current 'finger' protocol on port 79?
+&gt; 
+&gt; The difference is that everything is going through your I3 port, so that 
+&gt; finger actually pulls your mud info, not your Unix info.  
+
+I believe Brandon was saying why not use the same protocol as the established
+finger protocol rather than implementing your own.  Other muds, or even other
+finger clients can then just read the mud finger info via that port using
+this established protocol rather than having to know and use the I3 one.
+
+&gt; &gt; 
+&gt; &gt; &gt;       -intermud mail (based on the mud name not the address)
+&gt; &gt; 
+&gt; &gt; One word: SMTP
+&gt; 
+&gt; I haven't tried it from a mud from either Cold or Moo. 
+&gt; Does this go from mud-to -mud or mud-to-OS?
+
+Again, I think Brandon is saying, why not just use the SMTP protocol to
+deliver mail rather than again inventing your own.
+
+&gt; &gt; &gt;       -ftp/telnet
+&gt; &gt; 
+&gt; &gt; uhh
+&gt; &gt; 
+&gt; Is your comment based on the fact that it's standard for Cold, or
+&gt;  why would anyone want it?  I use telnet a lot to connect to other 
+&gt; muds so that I can get access to information that I don't have on 
+&gt; my server.  Also some conversations is better in virtual presence 
+&gt; instead of channels so its a quick popover to the other mud.
+
+I think the comment is...why do I want to be using a telnet client from
+within a mud to get to another mud (it is kinda sick ;).  Same for ftp.
+
+&gt; The ftp is useful considering the way that MudOS sees things. 
+&gt; The root of a mud ftp is
+&gt; 	{yourlib-loc}/lib/ftp
+
+No!  The root of your ftp directory within an LP mudlib is entirely dependent
+upon how you setup the ftp server.  In your experience this may be the way
+many mudlibs set things up, but it has absolutely nothing to do with the
+driver, since it knows nothing whatsoever about your mudlib having an ftp
+server, and neither should it.
+
+&gt; This allows people to move code around without needing system access. 
+&gt; Otherwise I would have to give a wizard an account on my system and 
+&gt; let her ftp to my machine and so on.  Then the files have to be moved 
+&gt; to the library area.
+
+Blargh, there are myriad ways to do this, all depending on how your mudlib
+handles file permissions.  Again, this is a mudlib detail, and is getting
+past I3 discussion.  There is no reason you couldn't indeed write an ftpd in
+ColdC just as ftpd's have been written in LPC.  More to the point, by doing
+so you can use the standard ftp protocol rather than any hacked up I3 version.
+
+Personally I'm kinda surprised I3 includes an ftp protocol since many LPmuds
+run their own ftpd's, whether a hacked version of one of the standard ftpd's
+that runs externally to the mud or an internal ftpd written in LPC that uses
+a socket implementation such as MudOS or DGD (with the networking package)
+provides.
+
+&gt; I believe the LP world is trying to go the same was as Cold-- to put 
+&gt; a lot of the services in the mud itself without having to go out to 
+&gt; the Unix/NT/whatever environments.
+
+The LP world has been going that way for years :)
+
+In fact, it would be good to see more cooperation, since, from an outside and
+possibly naive point of view, there seems to be evolution in similar directions
+by drivers such as Genesis, MudOS and DGD.
+
+						- Greg
+</PRE>

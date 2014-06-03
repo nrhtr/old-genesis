@@ -1,0 +1,84 @@
+<HEAD><TITLE>discuss@charon: [1052] in "Coldmud discussion meeting"</TITLE>
+<H1>[1052] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1052"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1051"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1053"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1053"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1053"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Coldcc - Eyow!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul 29 10:30:28 1996
+)</H3>
+<PRE>
+Date: Tue, 30 Jul 1996 00:01:29 +1000
+From: Dancer &lt;dancer@brisnet.org.au&gt;
+To: coldstuff@cold.org
+
+Simple scenario. I've got a genesis server running (as most of you know)
+and when I update patchlevels, I normally hack in changes to the
+textdump with vi(m).
+
+This time, I decided to take a 'snapshot' of the textdump from cold.org.
+(Since that's the basic db that I'm running at the moment, after my own
+ate itself, and it's backup spontaneously).
+
+Now, I compiled the current dump (not wanting to lose any objs, like
+characters, that were unique to my site), and then did a partial compile
+on the snapshot. (coldcc -f -p -t textdump.snapshot).
+
+Well, it deleted pretty much all the objects I wanted to save, or
+removed the parents and object data from the ones that it had left.
+
+Brandon suggested changing the 'new' keyword, for 'old' in the dump. I
+hadn't thought of that, and felt like a bit of a twerp for _not_
+thinking of it.
+
+Well, things got on top of me, and I left it a couple days. I just got
+back from work tonight, and found that the server had aborted, that the
+binary db was corrupt, and so was the backup. A good time to try it, I
+thought. Hah.
+
+First time the partial compile came across an object marked 'old' it
+segfaulted. (It was calling object_has_ancestor() with an objnum of
+-1)..I trapped that, and had it return 0 in that case. Recompile. Try
+again.
+
+Boom.
+
+..search..hack...gdb...patch...search...hack...gdb...patch..etc
+
+Now, two hours later, I've made some changes to textdb.c
+
+I can't guarantee that they're good. They're certainly not _nice_.
+(I used a _goto_ for christ's sake, to unwind part of a subroutine and
+go back into nested if's with different args. If you take it out, you'll
+see _why_ I did it)
+
+In short:
+	* 'old $objname' automatically deleted $objname, before proceeding. I
+felt this was not what was intended.
+	* Objects would get instantiated (eg: $mail_message_148), and then a
+little while later, coldcc could not retrieve the object by number. This
+I haven't looked into. I punted, and forced it to create a new object. I
+wanted a running database more than a fix just then. (see my goto,
+above).
+	* In data/object.c, object_has_ancestor() can get called with an objnum
+of -1. This is not good. This tends to happen because the 'old'
+declaration deleted the object, instants before we try to do this. You
+can figure this patch out for yourself. Interestingly, I _think_ this
+routine is still called with the bad object number from time to time on
+partial compiles _anyway_. This hints at another bug, that I didn't go
+looking for. (as if the previous thing didn't. Hah.)
+
+No patches, sorry. I'll email a copy of the hacked textdb.c to Brandon
+for him to have a look at. The rest of you wait. It's not a pretty
+sight, what I've done to this code. Things like this shouldn't be
+inflicted on poor innocent software.
+
+D
+</PRE>

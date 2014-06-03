@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [774] in "Coldmud discussion meeting"</TITLE>
+<H1>[774] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?774"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="773"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="775"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Stupid Question Time.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Aug 20 15:59:27 1995
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+Date: Sun, 20 Aug 1995 12:55:32 -0700 (PDT)
+
+I'm finishign up the logon daemon for my mud and I'm having a problem.
+
+The way i WANTED to write it, the daemon woudl wait for a connection, 
+then spawn a child and pass the connection off.
+
+Reassign_connection though,a ccording to the docs, will ONLY work if 
+called from sys.
+
+This seems pretty pointless as it limits reassignment to connections
+originally made to sys.
+
+I have a work around but its definately not as clean.  It also in general 
+makes me question the usefulness of teh reassign_conenction call.
+
+What am i missing?
+
+JK
+
+</PRE>

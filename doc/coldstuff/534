@@ -1,0 +1,70 @@
+<HEAD><TITLE>discuss@charon: [534] in "Coldmud discussion meeting"</TITLE>
+<H1>[534] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?534"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="533"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="533"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="535"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="535"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 16:40:04 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Sat, 05 Nov 94 14:35:58 -0700
+
+&lt; To me, the heartbeat is the pulse or beat itself, and the interval is
+&lt; a quality of it--how long between successive instantiations of this
+&lt; phenomenon.  set_heartbeat() sounds to me like one is trying to
+&lt; specify a different method to call for the heartbeat.
+
+True.  set_heartbeat_interval() wouldn't be bad. I would like to clarify
+that what I don't like is awkward abbreviations (rather than all, as I said
+before).  set_heartbeat_freq() just seems awkward...
+
+&lt; I think NP_SINGLE is a Good Thing(TM), which *should* be available in
+&lt; ColdMUD.
+&lt;
+&lt; NP_SINGLE uses stdin and stdout as a connection, which is reestablished
+&lt; whenever it is closed.  This allows testing on machines without
+&lt; networking.  It can't use stdout, though, if stdout is the log.
+
+It would not be a hard thing to have ColdMUD just open a logfile
+when in single mode, and use it in place of stdout (of course, then you
+may as well just use that file always, rather than stdout, which was
+my initial suggestion 8)
+
+The more I think about it, it wouldn't be a bad idea.  Basically error
+reporting would still go to stderr, stdout would be closed unless you
+are in SINGLE mode (which wouldn't be included currently but may be later).
+Then a logfile would be opened for regular logging...
+
+&lt; If you have holes in your DB such that people can gain admin privileges,
+&lt; you're rather screwed anyway.  What I might like to see is an option
+&lt; where reprogramming of certain methods should be mentioned in the server
+&lt; log, along with full text and task stack.  This allows essentially the
+&lt; same level of security, but is not such a damned pain to deal with.  The
+&lt; flag itself, perhaps, should not be able to be turned off in-DB.  If it
+&lt; can be this too should be logged.
+
+This could work.  Just a flag such as 'report;' or 'monitor;' which stated
+that when the method is compiled over (i.e. written on, or however you want
+to look at it), the driver would send a message to the log consisting of
+the method being modified, the object, and the call stack at that point.
+
+&lt; Like I've said before, if compile() can be protected against actual
+&lt; calls, these essential verbs can be, unless someone can do an arbitrary
+&lt; eval on $sys, in which case they don't need any help from overwitten
+&lt; methods to compromise the security of the system completely.
+
+Well, right now I feel relatively safe with the compile method, but not
+completely.  This would just be another added reassurance.
+
+-Brandon (Lynx)-
+</PRE>

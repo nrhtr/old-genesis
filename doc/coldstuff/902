@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [902] in "Coldmud discussion meeting"</TITLE>
+<H1>[902] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?902"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="899"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="901"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="901"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="903"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="903"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="903"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] New Admin Guide (first draft)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan 18 12:42:00 1996
+)</H3>
+<PRE>
+Date: Thu, 18 Jan 1996 10:16:15 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;199601181347.OAA26675@regoc.srce.hr&gt;
+Reply-To: coldstuff@tombstone.sunrem.com
+
+On Thu, 18 Jan 1996, Miroslav Silovic wrote:
+&gt; &gt; &gt; &lt;discover this later&gt;
+&gt; &gt; &gt; 
+&gt; &gt;   Is this part a joke or is there a way to get in if say the admin forget's
+&gt; &gt; his/her password?  If so, nice idea...
+&gt; &gt; 
+&gt; 
+&gt; This is not a joke, there really is a backdoor login, but you will still
+&gt; need a password to use it. The idea is to use backdoor to fix broken
+&gt; command parsing and similar problems.
+
+The backdoor uses all of it's own code, (rather than hooking into 
+previous modules).  This is in an attempt to be able to connect to a 
+broken server if any portion of the db is wedged.  However, the backdoor 
+is very restrictive.  Infact, you can't even open a connection unless 
+your host is one of a select few (defaulting to 127.0.0.1, I would not 
+suggest using anything else frankly).  From there it actually requires
+one system password, and two user passwords (two may be redundant, but
+*shrug*).
+
+-Brandon
+</PRE>

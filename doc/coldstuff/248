@@ -1,0 +1,74 @@
+<HEAD><TITLE>discuss@charon: [248] in "Coldmud discussion meeting"</TITLE>
+<H1>[248] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?248"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="247"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="249"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>bind()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 17 22:54:52 1994
+)</H3>
+<PRE>
+Date: Tue, 17 May 1994 20:51:56 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt;&gt;    bind()        -- it doesn't work for more than 1 port
+&lt;
+&lt; Could you be more elaborate about this?  Are you passing in the 'more
+&lt; than one part' as arguments to a single bind call (which is
+&lt; incorrect), or doing several bind() calls?  If you're doing the
+&lt; latter, what do you mean by "it doesn't work"?
+
+Sorry, I could have sworn I spoke about this once already.  Ok, from the
+manual:
+
+bind(port, receiver)
+
+[stuff]
+
+I created a method on $sys called bind:
+
+@program $sys.bind
+ arg port, obj;
+
+ if (caller() != $net)
+   throw(~perm, "Sender is not $net.");
+ (&gt; bind(port, obj) &lt;);
+.
+
+Called by $network (obviously).  $net.bind:
+
+@program $net.bind
+ arg port;
+
+ .perms(sender(), 'system);
+ $sys.bind(port, this());
+.
+
+Now, I eval $net.bind(12345) and receive:
+
+! =&gt; Couldn't bind to port 12345.
+!    Thrown by function bind().
+!    ~bind: 0.bind (0) line: 5
+!    ~bind: $net.bind ($net) line: 4
+!    ~methoderr: $lynx.tmp_eval ($lynx) line: 5
+!    ~methoderr: $lynx.eval ($root) line: 16
+
+Basically, I have tried all sorts of variations and different
+objects/ports/etc.  None work, and as far as I know none are being used
+currently.  Since it DOES obviously bind to the first port, I would assume this
+is just a bug where it cannot bind to any more ports after the first one (?).
+
+-Brandon/Lyncx-
+
+(OH, and those two methods were quickies to test it out -- dont bother about
+security with them).
+</PRE>

@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1558] in "Coldmud discussion meeting"</TITLE>
+<H1>[1558] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1558"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1556"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1557"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1557"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1559"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1561"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1561"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Matching strings</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar  2 14:08:39 2000
+)</H3>
+<PRE>
+Date: Thu, 02 Mar 2000 11:15:06 -0800
+To: coldstuff@cold.org
+From: Jeff Kesselman &lt;Jeffrey.Kesselman@eng.sun.com&gt;
+In-Reply-To: &lt;A0200A8D901CD311A51F0001C86523B135072F@MMSINET1&gt;
+Reply-To: coldstuff@cold.org
+
+use substring  and the string length of the string being matched... one 
+subtraction is all it takes.
+
+At 01:05 PM 3/2/00 -0500, you wrote:
+
+&gt;I've noticed match_begin to match incomplete arguments to a string, but 
+&gt;only at the beginning of the string. Example: match_begin("insanity", 
+&gt;"ins") would return true.
+&gt;
+&gt;Is there any matching that matches incomplete arguments to a string, but 
+&gt;at the end? Something like match_end("insanity", "ity")? Thanks
+
+</PRE>

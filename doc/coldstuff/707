@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [707] in "Coldmud discussion meeting"</TITLE>
+<H1>[707] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?707"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="706"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="708"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>assignment clarification</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar 12 23:04:55 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: coldstuff@MIT.EDU
+Date: Sun, 12 Mar 1995 21:58:30 -0600 (CST)
+
+Someone pointed out a possible misunderstanding in the assignment expression
+ debate. He said some people might think I was proposing a new operator in
+ addition to '=' to act as an assignment expression so that the following
+ would be true:
+
+a = b; // Valid
+a &lt;- b; // Valid
+(a = b) || 1; // Invalid, '=' is not an expression
+
+As it turns out, what I propose is to replace '=' with '&lt;-' or something like
+ it, as well as to make it an expression.
+
+I think many readers were aware of what I was proposing but best to explain. I
+ believe I mentioned that I have already made the change. I have a working
+ server running at sensemedia.net:6666 for those who wish to see what such
+ a beast would feel like, or who don't believe it's possible or whatever. In
+ this version the operator is '='.
+
+Having said the above it seems we now have at four questions.
+
+Should there be an assignment statement? (no, an assignment expression 
+ is sufficient since expr; is a statement).
+
+If there is an assignemnt statement what should it be? (=, :=, but I still
+ still don't want one.)
+
+Should there be an assignment expression? (yes, if you don't want one write
+ lint--).
+
+What should the assignment expression operator be? ('&lt;-')
+
+Thank you, drive thru.
+Crag 'Beavis' de Forest
+</PRE>

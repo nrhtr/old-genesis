@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1297] in "Coldmud discussion meeting"</TITLE>
+<H1>[1297] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1297"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1286"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1289"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1296"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1298"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Minimal DB</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 28 23:49:33 1997
+)</H3>
+<PRE>
+Date: Wed, 28 May 1997 23:57:55 -0400
+From: Dave Wallace &lt;dwallace@dmv.com&gt;
+To: coldstuff@cold.org
+CC: dwallace@dmv.com
+
+I have started working with the minimal database since ColdCore is so
+big and under-documented and does _much_ more than I need. Also just for
+the experience of building up from almost nothing. Not that the minimal
+DB doesn't take a bit of study to fully understand since it does so much
+of the basic magic, or perhaps because I'm just dense... Anyhow I
+uncovered a couple of things I'd like to point out since they caused me
+a bit of trouble tracking them down:
+
+In $root.spawn() second to last line 
+==&gt;     (&gt; set_objname(name) &lt;) 
+changes the name of the PARENT not the child! 
+==&gt;     (&gt; obj.set_objname(name) &lt;)
+seems to do the trick
+
+
+In $connection_interface.match_command() : 
+==&gt;    match = ((commands[c])[1]).match_template(line);
+appears to be using the input line as the template, reversing them helps
+==&gt;    match = line.match_template((commands[c])[1]);
+        
+
+Maybe no one is using the Minimal but if they do hopefully this will
+save them some bug-chasing.
+      
+					--- Dave
+</PRE>

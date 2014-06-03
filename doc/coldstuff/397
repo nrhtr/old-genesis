@@ -1,0 +1,27 @@
+<HEAD><TITLE>discuss@charon: [397] in "Coldmud discussion meeting"</TITLE>
+<H1>[397] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?397"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="396"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="398"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="398"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="398"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>TCD</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep  8 13:35:41 1994
+)</H3>
+<PRE>
+From: vaps3kc@prism.gatech.edu (Lord of Agonies)
+To: coldstuff@MIT.EDU
+Date: Thu, 8 Sep 1994 13:29:00 -0400 (EDT)
+
+Is there anyone doing anything serious with the TCD  core that one can
+slurp  down?   I  like  some  of   the core  but   there's  a  lot  of
+extraneous...  stuff... in  the core.    Anyone have  a  list of major
+modules and who inherits from what so I can pare  it back to something
+managable?
+</PRE>

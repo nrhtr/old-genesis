@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [186] in "Coldmud discussion meeting"</TITLE>
+<H1>[186] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?186"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="185"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="187"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="187"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="207"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>re: confusion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar 31 07:10:04 1994
+)</H3>
+<PRE>
+Date: Mon, 28 Mar 1994 15:39:15 -0800
+From: rayn@wookie.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+
+It seems that things have kinda gotten confused as to what im asking.
+basically, the context I'm looking at is that of writing methods on
+objects. When looking at some stuff in a copy of a later ColdDark core
+I noticed that there didnt seem to be methods to set variables on 
+objects, just methods to retrive them. This may be because of the
+copy I had, or because i was looking in the wrong place. My
+suggestion of a combined set/retrive method was also sortof tentative
+which helped confuse matters.
+So the two main issues im intersted in at this point:
+	How do the current cores deal with general setting of variables
+(and by this i dont mean other objects setting a var, just the object
+that owns the var setting it for internal use).
+	Would it be bad to have one method that either set the var or
+returned the var, based upon the context it was called in? This may
+be a bit confusing to the programmer, so I could see why it wouldnt
+be desireable, it just seemed like a neat idea at the time :)
+As a corellary to point 2 should the core methods that add a parameter
+also add the set and retrieve methods for the parameter (pehaps based on
+a template?) This would of course be modifiable, but would then be 
+useful in preventing typing in the accessor each time. alternately
+a template accessor could be called or inherited, although im unclear
+on how to inherit a uniqely named method. 
+Sorry about continuously restating my point, but i keep getting responses
+to the parts I mostly already know (i.e. other objects should directly 
+set vars on an object). my point is that there should be only one method
+period that sets a var on an object, and that object should use that 
+method...
+Ash
+
+</PRE>

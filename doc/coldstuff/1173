@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1173] in "Coldmud discussion meeting"</TITLE>
+<H1>[1173] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1173"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1169"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1172"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1172"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1174"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] win32 port?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec  4 11:41:46 1996
+)</H3>
+<PRE>
+Date: Wed, 4 Dec 1996 09:34:07 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: "Terrence M. Drozdowski" &lt;xymox@xymox.org&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.LNX.3.91.961204083537.26288Y-100000@ns.marion.org&gt;
+
+&gt; Supposedly, if you have the patience, you can compile cold on win32.  You 
+&gt; need access to a unix box first, to build the win32 source files.  All 
+&gt; you need to do is get into a unix shell, type make win32, tar up the 
+&gt; resulting source files, then attempt compile/configuration in NT.  I 
+&gt; tried this once on an NT 4 beta box, with GNUwin32 gcc, but it failed 
+&gt; part way through.  I would imagine if you know your way around C well
+&gt; enough (I know basics, but most is over my head) you could kludge your 
+&gt; way through it all.  If you try it and have success, please let me know.
+
+Yes, that is how :)
+
+I started a Win32 port when I had a system here running Win95+VisualC and
+the GNUWin32 stuff (I was working on getting it to compile in both).
+However, the guy left and I havn't had the desire/drive to install the
+same setup and work on it.  I do have Win95/Visual C nestled on a small
+partition of my drive at home, eventually I'll get to it..  If you want,
+compile it up and send me a log of all the errors--I can probably fix them
+and send you a patch.  A few bounces back and forth like that should be
+all we need to finish it up.
+
+-Brandon
+
+</PRE>

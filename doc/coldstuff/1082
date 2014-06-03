@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [1082] in "Coldmud discussion meeting"</TITLE>
+<H1>[1082] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1082"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1079"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1080"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1081"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1083"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1083"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1085"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Porting Woes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 28 12:28:42 1996
+)</H3>
+<PRE>
+Date: Wed, 28 Aug 1996 08:54:37 -0700 (MST)
+From: "Terrence M. Drozdowski" &lt;xymox@ns.marion.org&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.960828085237.14707A-100000@tombstone.sunrem.com&gt;
+
+On Wed, 28 Aug 1996, Brandon Gillespie wrote:
+
+&gt; On Tue, 27 Aug 1996, Jeff Kesselman wrote:
+&gt; 
+&gt; &gt; Well, Ive been playign with the windows port.
+&gt; &gt; 
+&gt; &gt; First problem is that gcc under Win95 expects 8.3 filenames because its
+&gt; &gt; basicly a DOS interface port of gcc (runs in a DSO box).
+&gt; &gt; 
+&gt; &gt; This means, with our current file names, we will NEVER compile
+&gt; &gt; under gcc.
+&gt; &gt; 
+&gt; &gt; Suggestions?  I coudl change the names but upgrading is gonna be a
+&gt; &gt; pain. It woudl be better is we went to 8.3 for all cold source....
+&gt; 
+&gt; Uhrm, my original compile compiled everything with gcc in bash up to 
+&gt; net.c, where, it bombed on some network stuff I've since finished.  I 
+&gt; never did go back for a second attempt.  We never had any problems with 
+&gt; filename lengths.. (perhaps bash was doing something?)
+&gt; 
+&gt; -Brandon
+&gt; 
+
+Perhaps he's not using win32bash...  I'll give it a try on an NT 4.0 box 
+this week and report back here...
+
+
+------------------------
+Terrence M. Drozdowski	
+xymox@chimaera.marion.org.
+
+
+
+</PRE>

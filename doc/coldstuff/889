@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [889] in "Coldmud discussion meeting"</TITLE>
+<H1>[889] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?889"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="888"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="890"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>a thought about the new, improved + operator...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan  9 19:08:57 1996
+)</H3>
+<PRE>
+Date: Tue, 9 Jan 1996 17:40:25 -0600 (CST)
+From: Kor &lt;qor@io.com&gt;
+To: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;199601092303.QAA00259@lotus.nmt.edu&gt;
+Reply-To: coldstuff@tombstone.sunrem.com
+
+Robert Lumley and I were talking, recently, about the snifty new addition
+of automatic conversion to string via the '+' operator.  we were thinking
+that there is a potential danger in hiding the means of conversion from the
+programmer, so we were wondering about the possibility of operator
+overloading...  the same task could be accomplished without hiding the
+means of operation, and it could also be broadly applied other ways.  I'd
+also rather like it if new operators could be defined.  it could make for
+some very nice looking, clean code.
+
+one problem I see is that this could make for some really strange oddments
+that would be made up to look like something else, even though they parsed
+out in coldc via overloaded operators.
+
+anyhow, comments?
+
+Ira
+
+--
+qor@io.com				Love is Hyperopic.
+</PRE>

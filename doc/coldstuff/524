@@ -1,0 +1,172 @@
+<HEAD><TITLE>discuss@charon: [524] in "Coldmud discussion meeting"</TITLE>
+<H1>[524] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?524"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="523"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="523"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="525"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="525"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 00:59:11 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: jcdst10+@pitt.edu (James C Deikun)
+Date: Fri, 4 Nov 1994 21:57:59 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;Pine.3.89.9411042336.B2071-0100000@unixs1.cis.pitt.edu&gt; from "James C Deikun" at Nov 5, 94 00:17:48 am
+
+&gt; nothing thing.  To me this is the major problem of the ColdMUD
+&gt; error handling system, which got fleshed out for me in a
+&gt; discussion of similar issues a while back in moo-cows.  It's based
+&gt; on LISP catch/throw, which was never really meant for error
+&gt; handling as such.  Without resumes, it's way too static, and it
+&gt; doesn't really support good stack unwinding right now either.
+&gt; These are more basic issues you need to be working on.
+
+Yeah, yeah, I know.. (I read that discussion too) If you want to rewrite
+ColdMUD's error handling system feel free.  In the mean time, however, having
+_some_ way to control atomicity is better than having none at all, and this
+construct would be useful at the very least for avoiding the entirely awful
+situation in MOO where for a whole bunch of utility object verbs you've got
+:foo() and :foo_suspended() and :bar() and :bar_suspended() and on and on.
+
+&gt; What does this actually involve?  (Besides a really long awkward method
+&gt; named $sys.callback of course :)
+
+Not much (it involves an extra builtin, a counter in the server, and a minor
+addition to the main processing loop).  Why?
+
+&gt; &gt;   del_name('dbref)          =&gt; del_dbref('dbref, #object)
+&gt; 
+&gt; Does this mean there can be more than one object to a dbref?  If
+&gt; it is, I can't see how this would cause anything but confusion.
+&gt; If not, why the extra argument?
+
+No, it doesn't, and I don't really know how that extra argument got in there (I
+guess I was busy adjusting everything to be consistent and missed the fact that
+the second arg isn't needed there)..
+
+&gt;     bind()                    =&gt; listen(port, object)
+&gt;     unbind()                  =&gt; unlisten_port(port)
+&gt;                                  unlisten_object(port)
+&gt;                                  unlisten(port, object)
+&gt;                                  listeners(port)
+&gt;                                  listened_ports(object)
+
+Ick.. listen? (I dunno, just an aesthetic thing, but I never liked that name)
+Why so many ways to unbind and check up on things?  I don't see any need for
+more than unlisten_port(port) and possibly listeners, tho that's a frill,
+really (that info can be kept in-DB too).
+
+&gt; Port isn't necessarily a TCP port; just something the server can
+&gt; sensibly listen to.  Could be an identifier for a modem, among
+&gt; other things.  The other parameters would be likewise genericised.
+
+Well, come up with a good overall scheme for keeping everything properly
+generic and I'll look into it.. as it is, I'm having a hard enough time
+figuring out a decent way to make pipes and net connections work the same way,
+and I'm thinking it might be best to not bother and let the DB construct
+generic interfaces (which can easily be done in-DB anyway) instead.  More
+flexible that way too.
+
+&gt; &gt;   conn_object.failed()      =&gt; .connection_failed('refused/'timedout, "addr",
+&gt; &gt;                                                   port, socket)
+&gt; 
+&gt; Are you sure this shouldn't be an error rather than a callback?  After
+&gt; all, this never happens anyplace an error would not be sensible.  I
+&gt; could see a case for this back when the server couldn't queue tasks,
+&gt; but not now.
+
+Where would the error be thrown?  Are you suggesting that the open_connection()
+call should wait for the connection to be established or fail before continuing
+on with its own task?  I think this is a big step backwards.  One of the things
+I really like about ColdMUD is that all its network I/O is asynchronous.
+
+&gt; &gt;   conn_object.parse()       =&gt; .connection_received(`[buffer])
+&gt; 
+&gt; Shouldn't this maybe just be .receive()?
+
+Well, I was kinda trying to keep everything grouped together under a similar
+naming convention..  maybe .connection_receive()..
+
+&gt; How about set_heartbeat_interval()?  Long, but it is after all what
+&gt; the thing actually does, unlike either of the above designations.
+
+Ok by me..
+
+&gt; &gt; Flexible builtin bindings
+&gt; 
+&gt; MOO and ColdMUD get more alike all the time.  It'll be interesting
+&gt; when/if CoolMUD gets in on this trend...
+
+No, I'm talking about real flexibilty in builtin binding, not the kind of hack
+that MOO is doing.
+
+&gt; &gt;   Other contents/directories are allowed but ignored by the server.
+&gt; &gt;   Logfile output will also be changed to go to stdout instead of stderr.
+&gt; &gt;   stderr will be reserved for actual error messages.
+&gt; 
+&gt; This wouldn't work well with something like MOO's NP_SINGLE network
+&gt; module.
+
+True, but ColdMUD doesn't have that.  If it did, or does in future, then under
+that particular setup it would make sense to send everything to stderr instead,
+but for other setups I don't see why we shouldn't take advantage of the two
+streams and use them the way they were intended..
+
+&gt; The minimum here would be us-ascii characters, since everything in the
+&gt; server is expressed in terms of them, as well as all the internals of
+&gt; all current cores.  Strings should also IMHO never include newlines or
+&gt; vertical tabs/formfeeds (or the system-local equivalents of such).
+
+Actually, the minimum, in my opinion, should be completely up to the particular
+character set that the server is compiled to support.  Currently there is only
+a US-ASCII based server, but there's no reason that one shouldn't be able to
+convert it to being all EBCDIC (shudder) based if they wanted to.  It might
+require a few language alterations, but there's no reason it couldn't do all
+its internal processing in EBCDIC, save EBCDIC textdumps, etc.
+
+&gt; I'm not sure buffers should be nailed down as '8-bit bytes'.  
+&gt; Unicode-supporting systems should perhaps get 16.  I'm not entirely 
+&gt; certain of this, either.
+
+No, this is exactly what I'm saying should _not_ be a consideration.  What a
+buffer is or isn't should have absolutely nothing to do with what the data in
+the buffer represents.  The 8-bit specification is simply to define how the
+arbitrary bit pattern is broken up for processing and conversion to a text
+representation when it's displayed, etc, and 8-bit is used because that's the
+smallest breakdown commonly required for any binary data.
+
+&gt; This one is IMNSHO entirely silly, superfluous, and otherwise not a
+&gt; Good Thing(TM).  The idea behind it seems to be that by allowing
+&gt; online changing of methods basic to security one is undermining
+&gt; security.  However, if these methods cannot protect *themselves*
+&gt; from *unauthorized* changes I'd have pretty graves doubts about
+&gt; their general security myself.  The marginal security gain is simply
+&gt; not worth making a whole bunch of people crawl on their knees
+&gt; through textdumps when maintenance needs to be done.  The first
+&gt; thing I'd do if I found this bet set anywhere in a core DB would be
+&gt; to use a perl script to take all instances out.
+
+Well, all I can say is you obviously have very little concept of proper
+security in a computer environment.  I bet you have the same password on all
+your MUDs and never change it too.  After all, if one system can't protect
+itself against a cracker, well who cares about security anywhere on the
+internet, then?
+
+The simple point is that this level of added protection can't hurt and can make
+holes (which will _always_ exist.  Anyone who thinks their software is
+bug-free shouldn't be writing software) MUCH more difficult for someone to
+exploit and/or hide their exploitation.
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

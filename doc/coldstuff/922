@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [922] in "Coldmud discussion meeting"</TITLE>
+<H1>[922] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?922"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="919"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="921"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="921"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="923"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Upgrading DB's</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Feb 23 01:02:52 1996
+)</H3>
+<PRE>
+Date: Thu, 22 Feb 1996 22:52:20 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199602230255.SAA05084@yam.tenetwork.com&gt;
+Reply-To: coldstuff@cold.org
+
+On Thu, 22 Feb 1996, Jeff Kesselman wrote:
+&gt; Can you give me a really compelling reason not to stick with 2-10 
+&gt; until we at least have a better parser for v3?
+
+Because there is no way to make the 0.3 parser better without using it :)
+
+Also, 0.3-8's textdb parser is much better.
+
+&gt; (BTW: The old parser, while btter, is far from perfect also.  There 
+&gt; are some really stupid mistakes in the grammer.  for instance
+&gt;    &lt;$afrob,[foo,bar]&gt;.frobrtn() 
+&gt; is a syntax error, with parens its okay, like
+&gt;    (&lt;$afrob,[foo,bar&gt;).frobrtn
+&gt; 
+&gt; bad bad bad grammer design.
+
+design implies it was intended, this is a bug in the ColdC parser
+(grammar.y, not the textdb parser).  Right now &lt;..&gt;.method() doesn't
+compile anywhere, and (&lt;..&gt;).method() it will always decompile as 
+(&lt;..&gt;).method(), so it is at least consistent.  It is just a bug I havn't 
+gotten around to fixing. 
+
+-Brandon
+</PRE>

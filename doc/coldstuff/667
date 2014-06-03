@@ -1,0 +1,110 @@
+<HEAD><TITLE>discuss@charon: [667] in "Coldmud discussion meeting"</TITLE>
+<H1>[667] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?667"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="666"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="666"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="668"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="668"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar  7 16:22:52 1995
+)</H3>
+<PRE>
+From: brandon@petersboro.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Tue, 07 Mar 95 14:15:42 -0700
+
+&lt; I'd like to propose '-&gt;' be the assignment operator. It visually represents
+&lt; what happens to the variable being assigned the new value. It has no chance
+&lt; of being pronounced, 'equals'. It looks cool...
+
+Oh, hey, I like it, except for I would use the alternate as it looks more
+appropriate, i.e.:
+
+----------
+while (success &lt;- .attempt()) {
+  .display(success);
+}
+
+if (where &lt;- .location_of(foo)) {
+  .work_with(where, foo);
+} else if (where &lt;- .location_of(bar)) {
+  .work_with(where, bar);
+} else {
+  .not_working();
+}
+----------
+
+The '-&gt;' looks too much like you are (somehow) assigning the value on the left
+to the right...
+
+Of course, we do need to consider the standards issue.  In most languages
+an assignment (operator, or in any form) usually consists of a character
+sequence which includes an equals sign of some sort.  There is also the
+consideration that -&gt; is already used in C, and this _is_ a somewhat C-like
+language (of course using '=:' isn't much worse).  Too bad '&lt;' with equals
+signs is already used...
+
+Actually, I was just thinking that the main drawback to '=:' is that it looks
+too much like some convulted "EQUALS x OR x" i.e. "foo=x:y;".  Then I realized
+that in ColdC ':' isn't used in that way, so it would not be a confusion...
+
+Hmm, ok, my vote would be for either '=:' or ':=', simply because (even
+though it is cool) '-&gt;' or '&lt;-' would be too far from normalness...
+
+Some samples:
+
+----------
+while (success := .attempt()) {
+  .display(success);
+}
+
+if (where := .location_of(foo)) {
+  .work_with(where, foo);
+} else if (where := .location_of(bar)) {
+  .work_with(where, bar);
+} else {
+  .not_working();
+}
+----------
+
+The other issue I've been beating around is the one initially brought about
+by the "local" hack from Jordan.  I've been considering a few ways of
+implementing "local" and "global" methods.  The main bump I have is in
+method lookups.  It can:
+
+    use the same operator ('.'), which means that for every method it
+    would have to search both the global list and local list.  However,
+    if you accidentally call a local method globally, it can return
+    an intelligent error (rather than "HELLO, WAKEUP, ANYBODY THERE???").
+
+Or:
+
+    use a different operator (??), which means that it would speed
+    up lookups (as it knows exactly which list to use), but it would
+    include a new operator (operator conflict dillemma arises) and it
+    would be less intuitive (i.e. if we used ':' all the MOO-ers would
+    be writing entire objects which local only methods 8)
+
+Of course, we could use an odd bent on the C method (of either '.' or
+'-&gt;'), and have global lookups with '.' and local lookups with '-&gt;'
+(or perhaps invert it, so local lookups are with '.' and global lookups
+are with '-&gt;', would be closer to the pointer idea in C (i.e. pointing
+to a method off this object).  For instance...:
+
+---------
+foo = .foo_method();
+.set_foo($parse-&gt;parse_foo(foo));
+-&gt;tell(foo);
+---------
+
+Of course, then you would want to use '.' to lookup global methods which
+are on this object (this wouldn't be too much of a problem though...)
+
+-Brandon (Lynx)-
+</PRE>

@@ -1,0 +1,75 @@
+<HEAD><TITLE>discuss@charon: [1088] in "Coldmud discussion meeting"</TITLE>
+<H1>[1088] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1088"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1087"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1089"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] db corruption bug (finally!)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Sep 18 23:10:01 1996
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+Date: Thu, 19 Sep 1996 04:49:43 +0200 (MET DST)
+
+
+The cause was that the size of floats was calculated wrongly. Floats should
+be cast to ints before sending them to size_long. This way, they were
+actually /converted/ to ints, and compression gave the wrong size. Oops!
+The final result was that previous object in binary db trampled valid
+object, causing SEGV on mallocs when bogus string/list lengths were read.
+
+Brandon, could you put this into p14, since the bug is rather trivial,
+and has VERY bad consequences for people who do floats?
+
+	Miro
+
+--------------------------------------------------------------------
+*** old_dbpack.c        Thu Sep 19 04:42:36 1996
+--- dbpack.c    Thu Sep 19 04:30:15 1996
+***************
+*** 711,727 ****
+      size += size_long(data-&gt;type);
+      switch (data-&gt;type) {
+  
+        case INTEGER:
+        size += size_long(data-&gt;u.val);
+        break;
+  
+        case FLOAT:
+!         size += size_long(*((cFloat*)(&amp;data-&gt;u.fval)));
+          break;
+  
+        case STRING:
+        size += string_packed_size(data-&gt;u.str);
+        break;
+  
+        case OBJNUM:
+        size += size_long(data-&gt;u.objnum);
+--- 711,727 ----
+      size += size_long(data-&gt;type);
+      switch (data-&gt;type) {
+  
+        case INTEGER:
+        size += size_long(data-&gt;u.val);
+        break;
+  
+        case FLOAT:
+!         size += size_long(*((Long*)(&amp;data-&gt;u.fval)));
+          break;
+  
+        case STRING:
+        size += string_packed_size(data-&gt;u.str);
+        break;
+  
+        case OBJNUM:
+        size += size_long(data-&gt;u.objnum);
+
+</PRE>

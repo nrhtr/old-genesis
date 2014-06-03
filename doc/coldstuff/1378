@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [1378] in "Coldmud discussion meeting"</TITLE>
+<H1>[1378] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1378"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1375"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1377"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1377"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1379"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1379"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1383"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] NBC Online project</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 20 12:09:06 1997
+)</H3>
+<PRE>
+From: Jay Carlson &lt;nop@nop.com&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+cc: Cold Stuff &lt;coldstuff@cold.org&gt;
+In-reply-to: Your message of "Wed, 19 Nov 1997 23:56:04 -0900."
+             &lt;3473FB24.CABF9998@maddog.com&gt; 
+Date: Thu, 20 Nov 1997 12:01:38 -0500
+
+&gt; There are also some technical problems.  They want the mud to be able to
+&gt; handle 300+ online users. I believe that LambdaMOO lags to an impossible
+&gt; level at over 200-- 
+
+Depends on what you're counting.  LambdaMOO regularly hits 200 users
+connected with quite acceptable lag, but a good number of those 200
+users are idling.  
+
+Looking through the last week or so of stats, I found the high water
+mark for non-idle players was 151, with average lag at that point of
+about 1.7s.  The server's been up for over three weeks now, so we're
+seeing a little bit of a performance hit from various kinds of
+fragmentation.
+
+(LambdaMOO tends to overflow my verbcall counter about three weeks
+into a run.  I should probably rewrite the report generator but it
+amuses me to see -1,949,136,190 hits on the verb cache....)
+
+Anyway, lambda.moo.mud.org doesn't seem like a good measure of what
+the bounds on MOO performance are.  It runs on a 4-CPU SS1000; that
+was a pretty spiffy machine a few years ago but today's el-cheapo
+Cyrix P166 (like the one I have at home) has better pure integer
+performance.  What's more, lambda.moo.mud.org doesn't have enough
+memory---256M of core for a rather active 370M process is just asking
+for bursty lag.  No, I don't think it would be prudent to gloat about
+how disk-basing wouldn't have this problem until there's a concrete
+example in the same ballpark....
+
+Every now and then I spec out a "replacement" machine for LambdaMOO.
+Depending on vendor reputation, I get between $6-11k.  I suspect
+performance would easily triple on a well-built multiprocessor PPro 200.
+-- 
+Jay Carlson    nop@nop.com    nop@mitre.org
+
+Flat text is just *never* what you want.   ---stephen p spackman
+</PRE>

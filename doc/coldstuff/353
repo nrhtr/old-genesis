@@ -1,0 +1,61 @@
+<HEAD><TITLE>discuss@charon: [353] in "Coldmud discussion meeting"</TITLE>
+<H1>[353] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?353"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="352"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="354"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="354"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="355"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>text_dump()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun 22 01:01:33 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Tue, 21 Jun 1994 22:57:55 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I am very confused here (like always).
+
+The system methods $sys.do_backup() and $sys.text_dump()
+
+----------------------------
+@program $sys.do_backup
+ arg who;
+ var line, name, foo;
+
+ .perms(sender(), 'system);
+ $channels.announce('System, "System Backup");
+ last_backup = time();
+ .text_dump();
+.
+
+@program $sys.text_dump
+ .perms(sender(), 'this);
+ return text_dump();
+.
+----------------------------
+
+The question arises around $channels.announce(), which will announce to the
+'System board about the impending backup.  However, the announcement is not
+arriving until _after_ the backup, rather than before.  This has been discussed
+locally uncountable times, with different conclusions every time.  Therefore I
+beg of Greg to answer our dilemma.
+
+Why is the system builtin 'text_dump()' being called and executed before
+$channels.announce is finished?  It makes no difference to have the line:
+
+        foo = $channels.announce('System, "System Backup.");
+
+What is going on?  Richelieu suspects it has to do with the way text_dump() is
+run, but if text_dump() is a sub method call of .text_dump(), why is
+.text_dump() getting called?  (there are more questions and speculations, but
+this is enough to ask the question)...
+
+-Brandon-
+</PRE>

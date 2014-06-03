@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1434] in "Coldmud discussion meeting"</TITLE>
+<H1>[1434] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1434"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1433"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1433"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1433"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1435"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Future of Genesis</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Oct 31 13:18:32 1998
+)</H3>
+<PRE>
+Date: Sat, 31 Oct 1998 10:51:52 -0700
+To: coldstuff@cold.org
+From: Michael Loftis &lt;zop12@mindless.com&gt;
+In-Reply-To: &lt;199810310840.AAA08753@portland.puremagic.com&gt;
+
+At 12:40 AM 10/31/98 -0800, you wrote:
+&gt;Good day all!
+&gt;
+&gt;Some of you already know that Genesis is back under active development.
+&gt;The 1.2 version brings a lot of change internally to the driver.  Some of
+&gt;the upcoming changes will include the use of threads inside the driver.
+&gt;This will not be affecting the multitasking model of the ColdC language
+&gt;for now, but things like the ColdC compiler, the network layer, and
+&gt;possibly file I/O.  However, like all changes, this has problems.  Threads
+&gt;are not supported on all platforms.
+
+If you use pthreads I think this problem becomes kinda null-ish.  Pthreads
+has been ported all to hell and isn't too difficult to port to other
+platforms.  Plus it's pretty stable, and available on most platforms by
+default.  Its small size, GNU license, and good config script makes it OK
+to bundle up with Genesis.
+
+&gt;
+&gt;Are any of you out there using Genesis on such platforms?  Does anyone out
+&gt;there need to have a non-threaded version?
+
+Look into libpthreads ;)
+
+
+------
+Michael Loftis
+zop12@mindless.com
+Voice: 208-436-5399	Fax: 208-436-3252
+UNIX-WIZ Admin-At-Large	ColdC/Genesis Developer
+</PRE>

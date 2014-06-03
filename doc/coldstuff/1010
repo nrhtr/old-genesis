@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1010] in "Coldmud discussion meeting"</TITLE>
+<H1>[1010] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1010"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1009"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1011"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Proposal + patch: new list expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jun  8 21:16:18 1996
+)</H3>
+<PRE>
+Date: Sun, 9 Jun 1996 02:53:46 +0200
+From: silovic@srce.hr (Miroslav Silovic)
+To: brandon@tombstone.sunrem.com, coldstuff@cold.org
+
+
+
+OK, we talked about adding map as primitive. I intend to add some
+more list functionality in the driver, but this is just for the
+test and the proof of concept.
+
+------------
+Here is the test result. Syntax, decoding and execution all work
+------------
+
+
+@program .test
+var a; .tell((  [1,2,3] maplist a onto "&gt;&gt;&gt; "+a+" &lt;&lt;&lt;"  ).columnize(2));
+</PRE>

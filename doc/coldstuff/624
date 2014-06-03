@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [624] in "Coldmud discussion meeting"</TITLE>
+<H1>[624] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?624"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="623"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="625"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="625"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="627"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Adding a command, HELP!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Dec 25 00:21:37 1994
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+Date: Sat, 24 Dec 1994 21:19:57 -0800 (PST)
+
+I'm working  on that littel tiemr manager of mine, but I've been stumped 
+for a week. I CANNOT get CDC to recognize my new command (@tqueue).
+
+I did the follwoing:
+	1) defined a method queue_cmd
+	2) inherited has_commands
+	3) defined the following:
+		var $has_commands commands [["@tqueue",'queue_cmd]]
+		var $has_commands aliases []
+
+It compiled fine but when I type @queue it gives the usual mesages i see 
+for an unknown command.
+
+Do I have to attach this thing somewhere other then as a chidl of 
+has_commands to enable it to see input?  Are there any other steps I'm 
+missing??
+
+This is REALLY frustrating me.
+
+Thanks
+
+Jeff Kesselman
+
+	
+</PRE>

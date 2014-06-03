@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [542] in "Coldmud discussion meeting"</TITLE>
+<H1>[542] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?542"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="541"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="541"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="543"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 13:27:10 1994
+)</H3>
+<PRE>
+From: image@expert.cc.purdue.edu (Jeff T.P.)
+To: coldstuff@MIT.EDU
+Date: Sun, 06 Nov 1994 13:26:17 -0600
+
+&gt; The book you sited earlier said 'unauthorized' changing.  How 'online'
+&gt; is identical to 'unauthorized' is the point that continues to escape
+&gt; me.
+
+James comes up with a few good points here.  Some people have no access
+to the unix side of the server they are running.  I've run three servers
+in the past and only one of those could I have actually logged into the
+system the server was running on.  These situations makes it very
+difficult to edit a textdump.
+
+In the normal everyday world of Unix.  There is nothing that stops a
+superuser from recompiling the Kernal and rebooting.  I don't see why
+ColdMud needs to have this extra 'security.'  It simply makes things
+more difficult for a large majority of people, especially Admins who are
+watching the server while the Chief Admin is gone.  If a horrendous
+error pops up in a protected method, the only recourse would be to
+shutdown the server until the Chief Admin returns and fixes it.  However
+the Admin could edit the method and avoid long down times without an
+overzealous compile protector.  I've been the FireFighter on two MOOs.
+I've saved the systems from going down.  I can't agree with a in-server
+compilation protection scheme.
+--
+Life In The So-Called Information Age . . .
+                      . . . One Man's Garbage Is Another Man's Treasure.
+</PRE>

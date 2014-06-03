@@ -1,0 +1,73 @@
+<HEAD><TITLE>discuss@charon: [477] in "Coldmud discussion meeting"</TITLE>
+<H1>[477] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?477"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="476"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="478"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="478"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="483"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>server dev status</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Oct 28 08:32:42 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Fri, 28 Oct 1994 05:28:18 -0700 (PDT)
+Cc: jbb@homer.ncm.com
+
+Jordan Baker has made changes to the server source which provide the following:
+
+suspend() : Stops processing of current task and adds task id to tasks().
+            if task is resumed return value is 0 or a value specified.
+
+resume(task_id, [return_val])
+          : Resumes task_id if it exists and return value of suspend() in the
+            resumed task is return_val or 0 if none specified.
+
+kill(task_id)
+          : Removes task_id from tasks() without resuming it.
+
+tasks()   : Returs a list of all resumable tasks.
+
+pause()   : Suspends a task but places it in a list of tasks to be resumed
+            as soon as all IO and other tasks have finished. When the task
+            resumes, the tick count in the current frame has been reset.
+
+callers() : Returns a list of [this, definer, method, line] from the call
+            call stack. Intended primarily for debugging uses.
+
+(non_obj_val).(method)([args])
+          : If a non-dbref value is sent a message, the message is actually
+            sent to get_name(type(non_obj_val)), and the value itself is
+            passed as the first arg. For example, "foo".reverse() is
+            syntactically identical to $string.reverse("foo"). Of course this
+            does not change the behavior of frobs or objects, it simply changes
+            the ~type error you would have gotten into either a ~namenf or
+            ~methodnf.
+
+The following change was made but taken out because Jordan wasn't sure about
+it.
+
+private   : Keyword placed at top of method where disallow_overrides would go
+            makes method invisible from methods not defined on the same object.
+
+:method(args)
+          : Search only current object for a method marked "private" and
+            call it as you normally would.
+
+The above were hinted at by Greg and implemented by Jordan to speed things up.
+ Common code could be removed from large methods and put into shared methods
+ without adding an interface method with a security check and the calls are
+ much faster, being only one-object instead of all parents.
+
+I have no idea what Jordan is up to now. His net access always seems to be
+ flakey. Or so he says. :) Perhaps he will be subscribed to this list and
+ answer these questions himself when they come up.
+
+Robert de Forest / Crag 
+</PRE>

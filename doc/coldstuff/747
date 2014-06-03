@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [747] in "Coldmud discussion meeting"</TITLE>
+<H1>[747] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?747"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="746"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="748"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="748"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="750"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>error_arg,error_str</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 25 02:43:26 1995
+)</H3>
+<PRE>
+Date: Thu, 25 May 1995 02:44:00 -0400
+From: Quinn &lt;quinn@Access.Mountain.Net&gt;
+To: coldstuff@MIT.EDU
+
+Why were these removed?  I mean, error() was kept.  Why should we have
+ to index into traceback() for the rest?  If I just want the error_str(),
+ it seems wasteful to make the server generate an entire traceback().
+
+Besides, error_str() looks a lot better than traceback()[1][2].
+
+-Quinn
+</PRE>

@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [1055] in "Coldmud discussion meeting"</TITLE>
+<H1>[1055] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1055"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1054"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1054"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1054"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1056"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1072"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1073"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Binding to Multiple IP Addresses</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul 30 15:25:57 1996
+)</H3>
+<PRE>
+Date: Tue, 30 Jul 1996 13:05:59 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.960730113652.12999A-100000@tombstone.sunrem.com&gt;
+
+&gt; Ok, patch 11 will let you bind to multiple different ip addresses.
+[snip]
+
+Sorry, I was just letting people know the feature has been added, since 
+there was so much interest.  Patch 11 is not yet available.
+
+-Brandon
+</PRE>

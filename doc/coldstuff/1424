@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [1424] in "Coldmud discussion meeting"</TITLE>
+<H1>[1424] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1424"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1423"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1425"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[ANNOUNCE] Genesis 1.1p5 release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep 25 05:16:58 1998
+)</H3>
+<PRE>
+From: bruce@portland.puremagic.com
+To: cold-announce@cold.org
+Date: Fri, 25 Sep 1998 02:08:13 -0700 (PDT)
+
+Good day all,
+
+The latest version of the 1.1-STABLE release is out.  It can be found on
+the usual FTP site, ftp://ftp.cold.org/
+
+RELEASE INFORMATION:
+1.1p5   [25-Sept-98] Bruce, Brad, Colin, Brandon
+      * Brought random() into agreement with docs and enforced it by
+        throwing ~range when arg is negative or zero. (Bruce)
+      * Network I/O made non-blocking for incoming connections (Bruce,
+        Brad, Colin)
+      * Add check to be sure backup() was able to open the directory.
+        (Bruce)
+      * Removed memset() on Win32 from emalloc() (Bruce)
+      * Changed tell to ctell to resolve solaris 2.6 conflict (Brad)
+      * bufidx() had an array bounds read problem. (Brad)
+      * Fixed bug in strgraft() (Bruce)
+      * Fixed crash bug in coldcc (Bruce, noticed by Kipp)
+      * Fixed memory leak in signal handler (Bruce)
+      * Fixed crash bug in signal handler when no current task (Bruce)
+      * Fixed write_long to work properly on 64 bit systems (Brad)
+      * Fixed execute() to return an exit status of 0 properly  (Bruce)
+      * Fixed memory leak in unbind_port() (Bruce)
+      * Fixed abs() to throw an error when the arg isn't an integer or
+        float (Bruce)
+      * Fixed files() to check for NULL after opendir() and fixed a
+        memory leak (Brandon)
+      * Fixed bug in match_begin() (Brandon)
+      * Fixed uninitialized reads in $sys._status() native (Bruce)
+
+
+Thanks to all who were involved.
+
+ - Bruce
+
+</PRE>

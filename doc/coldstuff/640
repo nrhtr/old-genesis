@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [640] in "Coldmud discussion meeting"</TITLE>
+<H1>[640] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?640"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="633"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="639"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="639"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="641"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="641"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="642"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: is the request line open?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan 19 02:57:14 1995
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: wbfst1+@pitt.edu (William B Fisher)
+Date: Wed, 18 Jan 1995 23:53:48 -0800 (PST)
+Cc: coldstuff@MIT.EDU, brandon@avon.declab.usu.edu
+In-Reply-To: &lt;8j7VNo_8XZ8yI=yBIB@pitt.edu&gt; from "William B Fisher" at Jan 19, 95 02:36:20 am
+
+&gt; Re: SUFFIX, PREFIX...as I see it, all you need to do is, in player.parse()
+&gt; put echo(PREFIX); at the beginning, and echo(SUFFIX) at the end.  Ths may
+&gt; not be a complete solution, but it's a start.
+
+That doesn't do anything about the possibility of intermingled text due to
+pause()s or suspend()s, however, which makes it pretty useless for most
+applications..
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+                "In cyberspace, no one can hear you stream"
+</PRE>

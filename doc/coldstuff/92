@@ -1,0 +1,82 @@
+<HEAD><TITLE>discuss@charon: [92] in "Coldmud discussion meeting"</TITLE>
+<H1>[92] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?92"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="87"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="91"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="91"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="93"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="97"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="99"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ANSI codes and unreadables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 13:43:15 1993
+)</H3>
+<PRE>
+To: Andrew Wilson &lt;Andrew.Wilson@cm.cf.ac.uk&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Sat, 04 Dec 93 10:47:59 +0000.
+             &lt;9312041047.AA00249@diamond.cm.cf.ac.uk&gt; 
+Date: Sat, 04 Dec 93 13:37:00 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+As Ian said, this debate shows up on r.g.m.* once a month or so.  I
+will reiterate what I just recently posted there.  Here are the
+reasons why it is a bad idea to handle presentation issues in the
+server:
+
+1. The server is not well-suited to know what kind of presentation
+ability is available to the user's display, and what mechanisms should
+be used to control the display.  On the other hand, the client is very
+well-suited to that task.  The proposal which shows up on r.g.m.* and
+now here is to allow the server to emit VT-100 codes; but not everyone
+uses a VT-100 emulatorq, and many people have bitmapped graphic
+displays which can handle far more powerful presentation.  A 70%
+solution may seem okay to some people, but a design which limits you
+to a 70% solution is never appropriate when a better design is
+available.
+
+2. Handling presentation issues in the server is inflexible.  Even if
+everyone did have VT-100 emulators, people have different screen and
+window sizes, and people may want things formatted differently.
+
+3. Handling presentation issues in the server centralizes load, while
+handling them in the client distributes load.
+
+4. The existings popular clients, TF and VT, are line-oriented
+clients, and are *not* well-adapted to visual formatting.  Neither are
+emacs-based clients, and I suspect tintin isn't much better.
+
+The appropriate solution is to design a client-oriented, intent-based
+protocol, and then let people write clients to format the text however
+they want.  Line-oriented clients could punt and display everything
+without much presentation (VT could actually handle a little bit, such
+as emphasis and centering, given a real protocol instead of VT-100
+codes, which are a nightmare to parse out); newer clients could be
+more sophisticated.  For more references, see jtext.
+
+Someone suggested reading in unprintables from the text dump.  I don't
+currently filter text dump input, so this is possible in 0.9.
+However, I will fix this hole in 1.0.
+
+I am not going to try to place any injunctions on people against
+modifying the server, but I will not be at all pleased if people start
+using coldmud to output raw terminal sequences.  I will also not be
+pleased if people start handling multiple lines by sticking newlines
+in the text rather than using lists of lines.
+
+What about connecting to existing network services that don't stick to
+printable ASCII?  That is a genuine problem.  I do not want to violate
+the printable-text abstraction provided by strings, but sometimes you
+want a raw-buffer abstraction instead.  What I may do is provide a
+'buffer' type and some simple primitives for manipulating them, and
+have connections put their text in a buffer.  User connections will
+then generally convert the buffer into strings.  I'll think about
+this.
+
+--GBH
+
+</PRE>

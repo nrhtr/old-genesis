@@ -1,0 +1,72 @@
+<HEAD><TITLE>discuss@charon: [1416] in "Coldmud discussion meeting"</TITLE>
+<H1>[1416] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1416"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1415"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1415"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1415"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1417"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1417"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1417"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Heretical Question</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr 17 15:14:25 1998
+)</H3>
+<PRE>
+From: braddr@puremagic.com
+To: jeffk@tenetwork.com
+cc: coldstuff@cold.org
+In-reply-to: Your message of "Fri, 17 Apr 1998 11:22:45 PDT."
+             &lt;3.0.32.19980417112225.00c483e0@mail.tenetwork.com&gt; 
+Date: Fri, 17 Apr 1998 12:09:52 -0700
+
+Having written public systems in both C and systems such as MOO and Cold, I MUCH prefer the moo/cold sytle of having runtime mutablility.  Requiring a reboot, and thus either pausing things while it saves, forks, loads, and hands off descriptors  or  shutdown and restart, to fix a typo or install major new systems sucks for the player base.
+
+The use of a VM isn't the requirement that I seek.. its the ability to change as much about the system as possible at runtime rather than compile time.  With clever code you could make the system still fairly dynamic with runtime loading of modules.  The use of a VM simplifies things a great deal, but its by no means required.
+
+Does that help answer your question?
+
+Later,
+Brad
+
+&gt; I've been re-evaluating my Kelvin design as I get deeper and deeper into
+&gt; my current cold based project.  I've come up with a rather heretical
+&gt; question...
+&gt; 
+&gt; How important IS run-time receivability of the "class" structure (yes I
+&gt; know Cold is classless but that's the easiest way to phrase what Im asking.)
+&gt; 
+&gt; I know many people are used to on-line editing of their object defs, but
+&gt; when push comes to shove, for a production environment what are the real
+&gt; advantages?
+&gt; 
+&gt; Does it add significantly to the expressive power of the language or
+&gt; maintainability of applications in real-world use? How so?
+&gt; 
+&gt; I'm asking because this feature has all sorts of implications that result
+&gt; in late binding and visualizations.  Without it, one could really write
+&gt; such a  system right on top of the JAVA VM rather then on a second layer of
+&gt; VM ontop of that.
+&gt; 
+&gt; Pls consider your answers carefully.
+&gt; 
+&gt; Thx.
+&gt; 
+&gt; JK
+&gt; Jeffrey P. Kesselman
+&gt; Senior Game Integration Engineer
+&gt; Total Entertainment Network
+&gt; 
+&gt; "Any intelligent fool can make things bigger, more complex, and more
+&gt; violent. It takes a touch of genius -- and a lot of courage -- to move
+&gt; in the opposite direction." 
+&gt; 	ALbert Einstien
+&gt; 
+&gt; Unite for Java! - http://www.javalobby.org
+&gt; 
+&gt; 
+
+
+</PRE>

@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [543] in "Coldmud discussion meeting"</TITLE>
+<H1>[543] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?543"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="538"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="538"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="542"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="544"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Timed out input.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 14:35:53 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: jeffpk@netcom.com (Jeff Kesselman)
+Date: Sun, 6 Nov 1994 11:35:23 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199411060441.UAA18296@netcom9.netcom.com&gt; from "Jeff Kesselman" at Nov 5, 94 08:41:44 pm
+
+&gt; 
+&gt; 
+&gt; I'm writing combat-mode code right now in c-- (or ColdC as Brandon
+&gt; suggests it be called.) Anyway, if someone is part of a combat I need to
+&gt; querey him each segment to find out if he wants to do anything (combat 
+&gt; is sequentail, based on the Hero System.) Anyway I need to querey the 
+&gt; character, but don't want the whole combat to hang if someone for some 
+&gt; reasin can't or doesnt want to repsond.
+&gt; 
+&gt; What i need is a way to time out the attempt to get info from the user.
+&gt; 
+&gt; I realize that usually cold-mud code is driven by the user input, not the 
+&gt; other way around.
+&gt; 
+&gt; Can someone tell me how to get th effect I'm after???
+&gt; 
+&gt; Thanks
+&gt; 
+&gt; Jeff Kesselman
+&gt; 
+&gt; 
+&gt; 
+
+With version 0.12.0 you can write an input method on the user which prompts
+ 'em, then suspends and places the suspended task ID in a list with an
+ expiratoin time. If the user does something, resume the task and use the
+ something as input, otherwise simply kill the suspended input task and tell
+ the user the question has been canceled.
+
+It was possible to do something like this before 0.12.0, but not nearly as
+ convienient. You'd have to do the same thing as before, but instead of
+ resuming the task you'd call a function designated by the task requsting
+ input, or not call it in the case of a cancelation, and in either case make
+ sure the user's input state is restored to the default :).
+
+Crag / Robert
+</PRE>

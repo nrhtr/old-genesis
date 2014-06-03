@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1538] in "Coldmud discussion meeting"</TITLE>
+<H1>[1538] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1538"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1537"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1539"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>method_bytecode patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan 18 13:52:15 2000
+)</H3>
+<PRE>
+Date: Tue, 18 Jan 2000 13:29:30 -0500
+From: Psyclone &lt;psyclone42@geocities.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+--------------C7D2C4C7707DF3D969BEAB14
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+method_bytecode can return bytecode for methods on ancestors. this is a
+slight security problem and is inconsistent with the behavior of
+list_method. patch follows.
+--------------C7D2C4C7707DF3D969BEAB14
+Content-Type: text/plain; charset=us-ascii;
+ name="bytecode.patch"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline;
+ filename="bytecode.patch"
+
+--- Genesis-1.1.8-STABLE/src/ops/object.c	Thu Nov 18 00:28:39 1999
++++ driver-src/src/ops/object.c	Tue Jan 18 13:21:11 2000
+@@ -987,7 +987,7 @@
+     if (!func_init_1(&amp;args, SYMBOL))
+         return;
+ 
+-    method = object_find_method(cur_frame-&gt;object-&gt;objnum, args[0].u.symbol, FROB_ANY);
++    method = object_find_method_local(cur_frame-&gt;object, args[0].u.symbol, FROB_ANY);
+ 
+     /* keep these for later reference, if its already around */
+     if (!method)
+
+--------------C7D2C4C7707DF3D969BEAB14--
+
+</PRE>

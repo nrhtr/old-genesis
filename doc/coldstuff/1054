@@ -1,0 +1,59 @@
+<HEAD><TITLE>discuss@charon: [1054] in "Coldmud discussion meeting"</TITLE>
+<H1>[1054] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1054"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1053"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1055"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1055"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1073"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Binding to Multiple IP Addresses</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul 30 15:21:55 1996
+)</H3>
+<PRE>
+Date: Tue, 30 Jul 1996 11:51:30 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Ok, patch 11 will let you bind to multiple different ip addresses.  The 
+changes needed to a db are minimal.  Basically, you can (but are not 
+required) to call bind_port() with a second argument of the host to bind 
+to.  For instance, you can do either:
+
+    bind_port(1234)
+    bind_port(1234, "206.81.134.103")
+
+The first would just generically bind port 1234 to all addresses the 
+system listens to.  The second would bind port 1234 JUST to the specified 
+address, so if the machine also handled the address "206.81.134.109" 
+connection attempts to port 1234 on the second address would fail, unless 
+a specific bind was made for that address.
+
+From this point, when a connection is made the object which the port is 
+bound to receives a method call to '.connect()'.  Currently the arguments 
+for this method are:
+
+    arg host, socket;
+
+Now, the arguments are:
+
+    arg client_host, server_host, socket;
+
+So a connect from my workstation (206.81.134.54) to a port bound by the 
+second bind_port() example above would result in the following args:
+
+    "206.81.134.54", "206.81.134.103", xxxxx
+
+(the socket is rather irrelevant, and should actually be removed)
+
+Note: specifying internet names will not work, you must first use 'ip()' 
+to obtain the internet address from the internet name.  Once we get 
+asyncrynous name lookups functioning I will go through and integrate 
+automatic name lookups into everything.
+
+-Brandon Gillespie
+</PRE>

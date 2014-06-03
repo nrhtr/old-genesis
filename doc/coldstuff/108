@@ -1,0 +1,72 @@
+<HEAD><TITLE>discuss@charon: [108] in "Coldmud discussion meeting"</TITLE>
+<H1>[108] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?108"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="107"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="109"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="109"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="113"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Proposed change regarding MI ambiguities</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec 10 18:26:26 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Fri, 10 Dec 1993 18:22:20 -0500
+To: coldstuff@MIT.EDU
+
+
+While composing mail to tiny-splatters, it occurred to me that
+detecting ambiguities in the method search and triggering an error
+would be preferrable to my current method in three respects:
+
+	* It is simpler.
+
+	* If an object has O a non-overridable method named 'foo', all
+	  descendents of that object are guaranteed to call that
+	  method when sent a message 'foo', unless an ancestor of O
+	  defines a non-overridable method 'foo', or unless an
+	  ~ambiguous error results from sending a 'foo' message to O.
+
+	* When you pass a message in a method, the method you call
+	  depends only on the object which defines the current method,
+	  not on the current object.  That is, you know which method
+	  you're passing to.  (There are implementation advantages
+	  here as well, but that's not very important.)
+
+What's an ambiguity?  Given an object with an ancestors digraph, and a
+method name, an ambiguity is when the method definitions do not all
+lie on a single path.  Consider the following two inheritance
+diagrams, where objects marked with an asterix define a method 'foo'.
+
+	A			A
+
+	B			B*
+
+	C			C*
+
+      D*  E*		      D   E
+
+	F*			F*
+
+	G			G
+
+The first diagram is ambiguous, because D and E do not lie on the same
+path up the digraph.  The second diagram is not ambiguous, because
+there is a path which contains all of the method definitions.
+
+Once you've determined the path which contains all of the method
+definitions, the method used is the topmost non-overridable method, if
+there are any, or the bottommost method if there aren't any.
+
+I'm pretty sure I can detect ambiguities in linear time.
+
+Does this seem reasonable to people?
+
+--GBH
+
+</PRE>

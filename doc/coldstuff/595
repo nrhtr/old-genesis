@@ -1,0 +1,71 @@
+<HEAD><TITLE>discuss@charon: [595] in "Coldmud discussion meeting"</TITLE>
+<H1>[595] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?595"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="594"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="594"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="594"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="596"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="596"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="596"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: A subtle ingeritence question.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 25 02:56:54 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: jeffpk@netcom.com (Jeff Kesselman)
+Date: Thu, 24 Nov 1994 23:51:53 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199411250637.WAA21336@netcom16.netcom.com&gt; from "Jeff Kesselman" at Nov 24, 94 10:37:38 pm
+
+&gt; 
+&gt; This is a fairly sublte question regarding inheritence:
+&gt; 
+&gt; Object A
+&gt;    has method foo
+&gt;    has method bar which calls foo
+&gt; 
+&gt; Object B
+&gt;    is a child of Object A
+&gt;    has method foo
+&gt; 
+&gt; B.bar() will call WHICH foo when invoked?
+&gt; 
+&gt; Thanks
+&gt; 
+&gt; Jeff kesselman
+&gt; 
+&gt; 
+&gt; 
+
+I'll define the problem more exactly:
+
+;$root.spawn().set_name('A)
+;$A.spawn().set_name('B)
+
+@program $A.foo
+ arg [args];
+
+ return [sender(), caller(), definer(), this(), 'foo, args];
+.
+
+@program $A.bar
+ arg [args];
+ 
+ .foo(sender(), caller(), definer(), this(), 'bar, args);
+.
+
+;$B.compile($A.list_method('foo), 'foo)
+;; // :)
+
+;$B.bar()
+=&gt; [$B, $A, $B, $B, 'foo, [$crag, $crag, $A, $B, 'bar, []]]
+
+THe answer is B's foo will be called. Method searches look for method which is
+ closest to the this, or the farthest disallow_overides definition. If A.foo
+ had been dis_over it would have been called instead. I believe the manual
+ covers this just fine.
+</PRE>

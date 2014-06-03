@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [193] in "Coldmud discussion meeting"</TITLE>
+<H1>[193] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?193"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="192"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="194"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>run_script</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr  1 00:14:05 1994
+)</H3>
+<PRE>
+Date: Thu, 31 Mar 1994 22:11:08 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Well, against Greg's advice I have been toying with run_script() (a while ago
+he said it did not work, although it has been working so far...).
+
+I was wondering if any thought has been put towards returning standard out and
+probably standard err as well...?  I would like to run some scripts which
+return output, but, well i'd like to RECEIVE the output.
+
+Just off the top of my head, one of the usages is a screaming random name
+generator I have (different data files, I currently have one which is
+lovecraftian and i'm working on a gaelic one).
+
+Anyhow
+</PRE>

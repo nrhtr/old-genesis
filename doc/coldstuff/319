@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [319] in "Coldmud discussion meeting"</TITLE>
+<H1>[319] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?319"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="306"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="317"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="318"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="320"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="320"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="322"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: logging, fact and fiction</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 24 14:28:47 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Tue, 24 May 1994 12:10:57 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Ray:
+&lt; Crag:
+&lt;&gt; If all calls to $sys.eval, $sys.compile, and all methods on $sys
+&lt;&gt; which modify ,admins are logged, then Ray/Ashs senario is
+&lt;&gt; invalid. The time of modifying $sys.log and/or $sys,admins will be
+&lt;&gt; in the log.
+&lt;
+&lt; Mmm, yoeh if mods to log were logged (besides perhaps being
+&lt; recursive?) then you'd be able to see the hole.  
+
+No, there wouldn't be any hole, since it would sequence like so:
+
+  $sys.compile() is called with the code for $sys.log
+    $sys.compile() logs being called and the vital stats (who, what, when, etc)
+    $sys.compile() compiles the method.
+
+No recursion...
+
+(as for beating this into the ground, what else do we have to do? :)
+</PRE>

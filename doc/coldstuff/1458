@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [1458] in "Coldmud discussion meeting"</TITLE>
+<H1>[1458] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1458"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1457"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1457"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1457"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1459"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1463"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1463"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: pueblo format bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct 25 17:07:35 1999
+)</H3>
+<PRE>
+From: "Bruce Mitchener, Jr." &lt;bruce@puremagic.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Mon, 25 Oct 1999 13:50:44 -0700
+Reply-To: coldstuff@cold.org
+
+Tony Dorge wrote:
+&gt; i have noticed that in the $pueblo_format.format() method
+&gt; that the 12th line has an error, it currently reads.
+&gt;
+&gt;
+&gt; return str_to_buf(str + "\n");
+&gt;
+&gt; but shouuld read
+&gt;
+&gt;
+&gt; return str_to_buf(str + "&lt;br&gt;");
+
+
+I applied this fix to the Cold Dark, with the only change being that I kept
+the \n and added a \n to the same line in $html_format.format()
+
+It should show in a new core extraction, whenever that happens.
+
+ - Bruce
+
+
+</PRE>

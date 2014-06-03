@@ -1,0 +1,72 @@
+<HEAD><TITLE>discuss@charon: [352] in "Coldmud discussion meeting"</TITLE>
+<H1>[352] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?352"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="351"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="351"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="351"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="353"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: A thought</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jun 19 02:54:39 1994
+)</H3>
+<PRE>
+From: image@sage.cc.purdue.edu (Jeff T.P.)
+To: BRANDON@cc.usu.edu
+Date: Sun, 19 Jun 94 1:47:33 EST
+In-Reply-To: &lt;01HDOUO5HNPEC1D7YW@cc.usu.edu&gt;; from "BRANDON@cc.usu.edu" at Jun 18, 94 2:01 pm
+
+Original quote by BRANDON@cc.usu.edu:
+
+&gt; This hit me last night.  Why hardcode which objects can call a builtin?  Rather
+&gt; than doing that set it up so every builtin can be bound to an object.  Then
+&gt; upon startup the first method bound is the one which binds the others, from
+&gt; there all the "system" methods are bound to $sys (or whatever, perhaps
+
+I like this, except then there's the problem of the binding information 
+being all over the place (if I'm not misunderstanding you).  I would like 
+to see all of the builtins callable only by $sys (or some other object) 
+in a related but unrelated comment.  Perhaps if there were someway to 
+bind the in-db with the builtins, but do it all in one chunk so that you 
+can look at it real quick and change it all.  Since my own db (RyouKold) 
+has very little on $sys itself, I wouldn't mind forcing all builtins 
+through the $sys object.  
+
+I can't think of an easy way to go about this though.  (Am I making 
+sense?  I doubt it.)  Well, I can think of one, bind_builtin(db_obj), but 
+do we need another poorly named builtin.  (find_method and 
+find_next_method should have been find_definer, and so on.  Oh well, I 
+came around too late to put my two cents in about that.)
+
+For anyone who is wondering.  I am working on a database I call 
+RyouKold.  I was nearly finished with RyouKore (A LambdaMOO Core) when I 
+compiled ColdMud on my roommate's Linux Box without a hitch and switched 
+immediately.  RyouKold is based strongly on what I think LambdaCore could 
+have been.  It's probably not as elegant as ColdDark, but then I'm just 
+learning about true OOP.  I'm trying to build a standard naming system 
+for methods, properties, etc.  The names aren't always quite as 
+descriptive, but they fit into a mold and are easier to remember that way.
+
+RyouKold will have an editor similar in design to the LambdaMOO editor, a 
+mail room (as well as simple mail commands), and hopefully a HTML parser 
+with all the helpfiles available offline.  I'm not sure about the HTML 
+part.  As a bonus, I'm finally killing off the damn '@' commands.  The @ 
+is a prefix for builder commands, '+' for programmers, and '&amp;' is for 
+admins.  I think I have '.' (dot or period) commands too, those are for 
+out-of-database information.  Hopefully this will be a stride forward in 
+IESes and MUDs alike.  (The reason for the prefixes is that then you can 
+use commands at a lower level than you are.  Admins don't always need, or 
+want, to use their all-powerful commands.)
+
+I babbled.  Ooops.
+-- 
+"All of the rumours
+ keeping me grounded
+ I never said (I never said) that they were
+ completely unfounded." - Morrissey, "Speedway" from _Vauxhall and I_
+
+</PRE>

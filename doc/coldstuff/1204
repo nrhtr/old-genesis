@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [1204] in "Coldmud discussion meeting"</TITLE>
+<H1>[1204] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1204"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1196"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1202"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1203"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1205"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1205"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1206"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] cold stuff ;)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan  2 16:55:21 1997
+)</H3>
+<PRE>
+Date: Thu, 2 Jan 1997 14:44:47 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;3.0.32.19970101124455.0070ab00@mail.tenetwork.com&gt;
+
+&gt; &gt;Not really.  It all depends upon what user() is for.  It is simply a means
+&gt; &gt;of identifying a 'key' controller object within the call stack, with a
+&gt; &gt;standard interface (i.e. 'tell').  aving it default to an arbitrary
+&gt; &gt;object could potentially break many things assuming that it always returns
+&gt; &gt;a standard class of object (defined within the database).
+&gt; 
+&gt; Yes, but....  
+&gt; (1) None of the other similar functions (caller(),definer(), sender() )
+&gt;     return a known object type.  This is perfectly acceptable for this use.
+&gt; (2) I would propose that the inability to ask what the object is at the top
+&gt;     of the call stack is a weakness and hole is the whole caller(),definer(),
+&gt;     sender(),this()  structure.  This is a useful piece of information about
+&gt;     the call that is totally hidden.
+
+caller/sender/definer etc are not related to user()  They are task/frame
+functions.  user() is not--it is simply a mechanism that MAY be used to
+help a programmer track a 'controller' object througout any depth of the
+task.  caller/sender/etc are integral to the task/frame system, user is
+irrelevant to it.
+
+&gt; I had an in-db thing like user() before, and dropped it for user(), but 
+&gt; implemented this way there really is little additional value to it.  I
+&gt; REALLY believe a function to query for top of call stack is appropriate and
+&gt; necessary (yes, one could parse traceback() but that's VERY inefficient.)
+
+You could also parse stack(), but that is also inefficient.  I'm not
+really seeing what the problem is, when all you have to do is put a call
+to set_user() as the first operation in $connection.parse().  Also, the
+system now works well with heartbeat and the like.  Should $sys be
+returned as the user() when a task was called from a heartbeat?  I don't
+honestly see the problem with returning #-1
+
+ -Brandon
+
+</PRE>

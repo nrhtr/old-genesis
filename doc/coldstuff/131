@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [131] in "Coldmud discussion meeting"</TITLE>
+<H1>[131] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?131"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="130"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="132"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>The naming issue</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec 23 13:47:42 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Thu, 23 Dec 93 12:59:22 EST
+To: coldstuff@MIT.EDU
+
+
+I have come to two conclusions:
+
+* At least a first-order solution can be achieved by providing a
+facility in the server to convert strings (names) to dbrefs,
+controlled by the system object.  Although the server namespace is
+then flat, we can then experiment with different naming structures
+(hierarchies, for instance) in the db.  Certain things (e.g. symbolic
+links between 'directories,' if we're going to model a filesystem,
+just as an example) can't be easily done this way, but that's okay.
+
+* The reverse-resolution problem is easy: simply keep track of a
+'primary name' on each object.
+
+* If I have both symbolic dbrefs and names, it's going to confuse the
+hell out of people.
+
+This means that I have to convert from symbolic to numeric dbrefs
+before 1.0.  (Or eliminate the idea of dbrefs entirely, but that's too
+radical.)  And, of course, I need to provide the naming facility,
+although the in-db support can wait until after 1.0.
+
+I may have to slip on the Dec. 31 release date to do this, but I think
+leaving the Great Object Naming Issue unaddressed before the first
+general release is a mistake.
+
+--GBH
+
+</PRE>

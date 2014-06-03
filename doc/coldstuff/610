@@ -1,0 +1,96 @@
+<HEAD><TITLE>discuss@charon: [610] in "Coldmud discussion meeting"</TITLE>
+<H1>[610] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?610"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="609"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="611"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="611"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="611"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>.read() / suspend</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  3 18:14:00 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Sat, 3 Dec 1994 14:53:31 -0800 (PST)
+
+I found out one way to screw oneself over when implemeting .read()
+
+If your .parse looks like
+
+buffer = buffer + args
+lines to process = lines in buffer
+buffer = rest of buffer (incomplete line)
+for line in lines to process
+  process line
+
+And your read looks like
+
+reading = task_id
+return suspend
+
+And your process line method looks like
+
+if reading
+  x = reading
+  reading = 0
+  resume(x, line to process)
+  return
+else
+  do other processing
+
+THEN
+
+When .parse is called with a multi-line buffer, and one of the lines
+ contains a command which does a read, then when the read suspends, the rest
+ of the for loop in .parse will be suspended until ANOTHER task starts which
+ resumes the reading task, and in doing so it will resume it with a line after
+ those in the buffer originally passed to .parse
+
+SO
+
+Say I paste the following, resulting in one chunck of net data sent to .parse:
+;.read_lines()
+foo
+bar
+baz
+.
+
+THen say the next thing I send to the server is
+@abort
+
+And say that the .read_lines waits for "." or "@abort". The following will
+ happen:
+
+server calls
+  .parse(buffer_from_strings([";.read_lines()","foo","bar","baz","."])
+while processing ";.read_lines()", the task suspends
+server calls
+  .parse(buffer_from_strings(["@abort"])
+.read is resumed with "@abort", read_lines throws an error or returns ""
+.parse of first task begins processing "foo", etc
+
+SOLUTION:
+
+Have a line_buffer parameter on your connection object
+Have your .parse place new lines at the end of line_buffer
+Change the for loop in .parse into
+while (line_buffer) {
+  cur_line = line_buffer[1];
+  line_buffer = delete(line_buffer, 1);
+  .parse_line(cur_line);
+}
+
+Change your .read to check the line_buffer for lines already received
+
+Hope you can understnad what all I just spewed. If it is not clear I will
+ re-post in a more organized manner. Or something.
+
+Crag / Robert
+
+</PRE>

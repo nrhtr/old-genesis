@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1332] in "Coldmud discussion meeting"</TITLE>
+<H1>[1332] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1332"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1330"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1331"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1331"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1333"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1333"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1341"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Exit announcements (anomaly?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 21 19:32:34 1997
+)</H3>
+<PRE>
+Date: Thu, 21 Aug 1997 17:31:55 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: Chris Williams &lt;psion@geekspace.com&gt;
+cc: "Luther, Clay" &lt;clay@selsius.com&gt;,
+        "'coldstuff@cold.org'" &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;33FCCDFD.A1A5B546@geekspace.com&gt;
+
+On Thu, 21 Aug 1997, Chris Williams wrote:
+&gt; I've noticed the same thing, and agree. Is there a reason source and dest
+&gt; announces can't be called bevore move_to (in $exit.invoke)? (they'd both have
+&gt; to be moved, else the actor would see their messages twice, or none at all).
+
+Yup, there is.. what happens if .move_to() doesn't allow you to move?
+Then everybody has been notified that you went/arrived, but you didn't...
+
+-Brandon
+
+</PRE>

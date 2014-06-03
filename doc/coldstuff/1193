@@ -1,0 +1,78 @@
+<HEAD><TITLE>discuss@charon: [1193] in "Coldmud discussion meeting"</TITLE>
+<H1>[1193] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1193"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1192"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1194"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] db problems</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec 24 18:10:50 1996
+)</H3>
+<PRE>
+Date: Wed, 25 Dec 1996 00:04:09 +0100 (MET)
+From: Miroslav Silovic &lt;Miroslav.Silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+I tried to debug the object management. It seems that object sizes are
+calculated correctly. This sounds ominuous... Or maybe I just failed
+to torture the server properly. Anyway, I tried to modify the objects
+in various ways and dump the db, with no luck - I didn't get a single
+error. Here's the error detection patch. Apply it and try to get
+fprintf to trigger.
+
+Another possibility is that there's still a problem specific to
+ice.cold.org. Or maybe a wild backup script does things it shouldn't.
+Nobody else had db corruption with the newest core, right?
+
+	Miro
+
+--------------------------------------------------------------------
+
+
+
+*** ../../Genesis-1.0p21/src/binarydb.c	Fri Oct 25 02:47:30 1996
+--- binarydb.c	Tue Dec 24 23:17:33 1996
+***************
+*** 499,508 ****
+--- 499,509 ----
+  
+  Int db_put(Obj *obj, Long objnum)
+  {
+      off_t old_offset, new_offset;
+      Int old_size, new_size = size_object(obj), tmp1, tmp2;
++     off_t tmp_o;
+  
+      db_is_dirty();
+      if (lookup_retrieve_objnum(objnum, &amp;old_offset, &amp;old_size)) {
+  	if ((tmp1=NEEDED(new_size, BLOCK_SIZE)) &gt; (tmp2=NEEDED(old_size, BLOCK_SIZE))) {
+  	    /* check for the possible realloc */
+***************
+*** 536,547 ****
+--- 537,556 ----
+      if (fseek(database_file, new_offset, SEEK_SET)) {
+  	write_err("ERROR: Seek failed for %l.", objnum);
+  	return 0;
+      }
+  
++     tmp_o = ftell(database_file);
+      pack_object(obj, database_file);
+      fflush(database_file);
++     if (tmp_o + new_size != ftell(database_file)) {
++ 	fprintf (stderr,
++ 		 "Database error: size=%d real size=%d object=%s\n",
++ 		 new_size, ftell(database_file) - tmp_o,
++ 		 ident_name(obj-&gt;objname));
++ 	fflush(stderr);
++     }
+  
+      return 1;
+  }
+  
+  Int db_check(Long objnum)
+</PRE>

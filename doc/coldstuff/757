@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [757] in "Coldmud discussion meeting"</TITLE>
+<H1>[757] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?757"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="751"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="756"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="756"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="758"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="760"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="761"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: tCD and ColdX mailing lists</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jul 30 17:23:51 1995
+)</H3>
+<PRE>
+Date: Sun, 30 Jul 1995 17:20:30 -0400 (EDT)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: 869683 Gillespie Brandon James &lt;brandon@paradise.declab.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9507301849.AA00587@paradise.declab.usu.edu&gt;
+
+
+
+On Sun, 30 Jul 1995, 869683 Gillespie Brandon James wrote:
+
+&gt; If this is the case, would you like to see connection io go the same route,
+&gt; where you have to ask for input on a connection?
+&gt; 
+&gt; I dont know if I would like this or not, perhaps have both mechanisms going..
+&gt; (defined when you open the connection as intrusive/non-intrusive)
+&gt; 
+&gt; I would like to make both work the same, because if done right there really
+&gt; shouldn't be a difference to the db...  (of course, intrusive files would
+&gt; just mean that every iteration of the main loop it would read a block in
+&gt; from the file)
+
+Methinks this would maybe spam the server just a LITTLE BIT.
+
+A Cold server is pretty fast as VESes go, but I seriously doubt it could 
+keep up with a SCSI HD.  Probably not even a streaming tape.
+
+The only thing that even lets Cold work like this with connections is 
+that they tend to be a) comparatively slow and b) idle a lot.
+
+--
+James "singing viking" Deikun
+</PRE>

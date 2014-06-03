@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [1098] in "Coldmud discussion meeting"</TITLE>
+<H1>[1098] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1098"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1097"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1099"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] I know what frobs are good for!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Oct 17 15:20:35 1996
+)</H3>
+<PRE>
+Date: Thu, 17 Oct 1996 11:52:40 -0700
+From: Jeff Kesselman &lt;jeffk@ten.net&gt;
+Reply-To: jeffk@ten.net
+To: coldstuff@cold.org
+
+I have finally answered the age old coldmud question....  what the hell
+is a frob good for?
+
+I've been re-architecting diogenes, a clean up pass and I ran into a
+real object factoring problem-- frobs turned out to be the clear "right
+answer".
+
+Frobs are for when what you need is truely a new datatype, not an
+object.  What is the difference?  Well, an object, if inherited N
+times through n children still only gets you 1 representation of the
+object.  This behavior is USUALLY eaxactly right but there are times
+when it isn't, when for various reasons you either:
+   (a) Want each parent to bring its OWN data store to the problem
+or
+   (b) Need multiple copies of the parent in a child.
+
+In my case it was the verb-list type.  Some simople utility interfaces
+(like my MUDEDIT interface) only have 1 list, but all VR objects have 2
+(an "internal" and an "external" interface).
+
+This brings up another point which is that, for code purity, if anyone
+were to someday RECODE coldx, the proper way to do what we currently do
+with the data-type helper objects is PROBABLy to treat ALL data types as
+frobs internally.
+
+JK
+</PRE>

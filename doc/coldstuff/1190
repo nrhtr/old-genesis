@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [1190] in "Coldmud discussion meeting"</TITLE>
+<H1>[1190] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1190"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1189"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1191"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] p21 reports to stdout...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Dec 22 07:48:10 1996
+)</H3>
+<PRE>
+From: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+To: coldstuff@cold.org
+Date: Sun, 22 Dec 1996 12:31:47 +0000 (GMT)
+
+Hi,
+
+	18&gt; ./genesis
+	hostname: aaaaaaaa.demon.co.uk
+	19&gt; 
+
+did a debug statement make it into .p21?
+
+Ay.
+</PRE>

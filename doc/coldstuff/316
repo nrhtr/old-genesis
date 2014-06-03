@@ -1,0 +1,72 @@
+<HEAD><TITLE>discuss@charon: [316] in "Coldmud discussion meeting"</TITLE>
+<H1>[316] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?316"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="306"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="308"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="315"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="317"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="317"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="322"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: logging, fact and fiction</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 24 13:46:32 1994
+)</H3>
+<PRE>
+Date: Tue, 24 May 1994 10:30:51 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9405240220.AA00947@binkley.MIT.EDU&gt; (message from Greg Hudson on Mon, 23 May 94 22:20:04 EDT)
+
+
+GBH:
+&gt; Let me make one thing absolutely clear:
+
+&gt; The Coldmud server has absolutely no idea what an admin is.  The
+&gt; server has, in fact, absolutely no idea how your database happens to
+&gt; represent people, or how it implements security.  Brandon explained
+&gt; that certain built-in functions were limited to $sys (in particular,
+&gt; anything that causes an affect on the world outside the database),
+&gt; but that's the only security implemented in the server.
+
+Thanks for the clarification :) It IS important to know what is a
+server function, and what is a DB function, and I'll readily admit I'm
+unclear on this still. Note though that my main objection is to making
+log a DB function, but that is because I see log as a
+hacking-detection tool, as opposed to something else, and log itself
+being in-db is not a security hole or something.
+
+I guess theoretically then, I can just make $sys not allow access to
+the log function for anyone, right?
+
+&gt; If all calls to $sys.eval, $sys.compile, and all methods on $sys
+&gt; which modify ,admins are logged, then Ray/Ashs senario is
+&gt; invalid. The time of modifying $sys.log and/or $sys,admins will be
+&gt; in the log.
+
+Mmm, yoeh if mods to log were logged (besides perhaps being
+recursive?) then you'd be able to see the hole.  
+
+&gt; Your scenarios all have human error on the part of the admins in
+&gt; them, too.  I don't think you can justify time in log() based on
+&gt; that. I claim that the current version of the server can be made
+&gt; equally or more secure than MOO, which has been hacked once in
+&gt; Lambda's history (by Quinn). It has been lagged miserably by an
+&gt; unknown programmer, but that's a different kind of issue.
+
+Note that I stopped justifying time in log(), I've always stated that
+this is just a preference. My concern here was the ability to turn off
+logging on-line, or modify the output of log in-db. Pointing at human
+error is not in my opinion an excuse for securtity problems. Human
+error should be assumed, and measures taken to minimized the damage it
+can do. Having a secure system log is one method of doing this. But it
+seems apparent that all this requires is the proper restrictions on
+$sys. (There is a reason, in fact numerous ones, why I like ColdMUD,
+after all :) Sorry if im getting kinda annoying about this.
+
+	Ray
+
+
+</PRE>

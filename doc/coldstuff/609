@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [609] in "Coldmud discussion meeting"</TITLE>
+<H1>[609] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?609"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="607"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="608"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="608"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="610"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Odd behavior (related to suspend()/resume() ?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  3 13:42:52 1994
+)</H3>
+<PRE>
+To: deforest@netcom.com (Robert de Forest)
+Date: Sat, 3 Dec 1994 23:39:52 -0500 (EST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199412031703.JAA15675@netcom10.netcom.com&gt; from "Robert de Forest" at Dec 3, 94 09:03:52 am
+From: colinm@colinm.ozemail.com.au (Colin McCormack)
+Reply-To: colinm@colinm.ozemail.com.au
+
+I'm pretty sure there's a bug in suspend().
+I'm getting a situation where a spawned object disappears
+utterly after the method in which it's created causes a suspend.
+
+Colin.
+
+(can't be more detailed, 'cos I don't want to lose my cut buffer ;)
+
+</PRE>

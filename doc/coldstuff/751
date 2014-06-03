@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [751] in "Coldmud discussion meeting"</TITLE>
+<H1>[751] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?751"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="750"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="752"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="752"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="761"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>tCD and ColdX mailing lists</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jul 30 12:57:42 1995
+)</H3>
+<PRE>
+Date: Sun, 30 Jul 1995 10:55:36 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@riverheights.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+The Cold Dark and ColdX mailing lists are temporarily munched, as the machine
+is getting an upgrade.
+
+Furthermore, the guy doing the upgrade forgot to backup the local directory,
+which means those who were on the lists need to re-register again.
+
+I will post here when they are online.
+
+Until then, I have a question on functionality:
+
+I am currently in the process of adding a higher level of file control to
+the system.  Which of the following would you rather see:
+
+read_file("filename", DBREF)
+
+Where it opens file and reads blocks from it, sending them to DBREF until
+the file is at it's end.
+
+Or:
+
+open_file("filename", DBREF)
+  (opens the file, read's nothing)
+read_file()
+  (read's a block of the file associated with this object, returns it in
+   buffer form)
+close_file("filename", DBREF)
+
+Furthermore, there will also be:
+
+stat_file("filename")
+
+which will return some basic information on the file (does it exist?  etc)
+
+-Brandon
+
+(Actually, close_file() would be in the first option too)
+</PRE>

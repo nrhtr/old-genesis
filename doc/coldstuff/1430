@@ -1,0 +1,64 @@
+<HEAD><TITLE>discuss@charon: [1430] in "Coldmud discussion meeting"</TITLE>
+<H1>[1430] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1430"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1427"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1429"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1429"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1431"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Question about Genesis</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Sep 28 08:41:02 1998
+)</H3>
+<PRE>
+From: ubmitche@mcs.drexel.edu (Bruce Mitchener)
+To: HyunJoon.Park@COMPAQ.com (Park Hyun Joon)
+Date: Mon, 28 Sep 1998 08:33:14 -0400 (EDT)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;8FF874E07EFFD011AE0A00805F1985351EA4BE@EXCSEL-01&gt; from "Park, Hyun Joon" at Sep 28, 98 00:17:14 am
+
+Hello!
+
+As has already been posted, this is indeed on the feature list for a 
+future release of Genesis, however, none of the coding has yet taking place.
+
+As a quick aside, the current stable version of Genesis is 1.1 with the 
+current development version of Genesis being 1.2, which will maintain 
+compatibility with 1.1.  The primary goal of 1.2 is to improve the quality 
+of the codebase, primarily through optimization and documentation.  While 
+some new features will debut in 1.2, anything that requires some changes 
+to the driver/database interface will be in the 1.3 development tree.
+
+I want to see full support for internationalization and localization in 
+1.3.  This is a lot of work however, and work on 1.3 isn't going to begin 
+for at least another couple of months while things progess with 1.2.
+
+If you are interested in working on support for unicode or localization 
+features with me, I'd be happy to talk with you, either via email or if 
+you wre to visit the Cold Dark.  I had done some exploratory work to make 
+all strings be 8 bit clean, that if it were re-done in the 1.2 tree would 
+simplify the process of adding unicode support to a custom version of 
+Genesis for now.
+
+ - Bruce
+
+&gt; Command is exist only QUIT in MinimalCore.
+&gt; And I was modify source in MinimalCore as "QUIT" ---&gt; "Korean Character" (
+&gt; 2Byte Character ) 
+&gt; But, Every 2Byte Character is eliminated,
+&gt; 
+&gt; How Can I use the 2Byte Character ?
+
+
+-- 
+Bruce Mitchener, Jr.
+ubmitche@mcs.drexel.edu
+
+Vote Monarchist!  (licensed from Black Unicorn &lt;unicorn@schloss.li&gt;)
+Ego sum rex romanus, et super grammatica.
+
+</PRE>

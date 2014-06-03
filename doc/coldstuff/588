@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [588] in "Coldmud discussion meeting"</TITLE>
+<H1>[588] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?588"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="587"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="587"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="587"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="589"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="590"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="605"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: New functions on the version 0.12 of the server</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 17 18:51:28 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Thu, 17 Nov 94 16:49:46 -0700
+
+&lt; tick()
+&lt; ticks_left()
+&lt; size()
+&lt; set_name()
+&lt; del_name()
+&lt; hostname()
+&lt; ip()
+&lt; db_top()
+
+I can document all of the above...
+
+&lt; suspend()
+&lt; resume()
+&lt; pause()
+&lt; db_top()
+&lt; tasks()
+&lt; callers()
+
+However somebody will have to give me at least an ouline, in order for me to
+add these to the manual.  Also, we should add in something about figuring out
+data types and looking for an object with that 'dbref'.
+
+-Brandon (Lynx)-
+</PRE>

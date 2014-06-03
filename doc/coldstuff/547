@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [547] in "Coldmud discussion meeting"</TITLE>
+<H1>[547] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?547"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="546"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="548"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>coldmud-0.12-1</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 20:30:58 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Sun, 06 Nov 94 18:25:27 -0700
+
+This is a mix of fixes by Richelieu and me.  Changes list:
+
+ * fixed several compiler warnings (Alex Stewart)
+ * Updated the filetree (from the 0.10 distribution).  File tree now is:
+
+      538 Makefile                -- runs configure, archive, or moves to src
+      747 README
+      512 bin/
+      407 bin/coldstart*          -- sh script to start the server
+      383 coldstop*               -- emergency shutdown script (uses .pid file)
+      456 bin/dumpbuild*          -- sh script to rebuild a 'dumpsplit' core
+                                     this is faster and more efficient than
+                                     dumpunsplit, and renumbers the objects
+                                     (assuming you used the more recent
+                                     dumpsplit by Colin).  However, you must
+                                     manually set the objnum for sys to 0.
+     2342 bin/dumpsplit*          -- Zachary/Colin's textdump splitting script.
+      112 bin/get-output.pl*      -- used by test-coldmud
+       59 bin/prune-output.pl*    -- used by test-coldmud
+      502 bin/test-coldmud*       -- sh script to test the driver (Greg's)
+     4709 configure*              -- sh script to configure the Makefiles.
+                                     This is currently a base to be build on
+                                     as things progress.
+      512 doc/                    -- All documentation was moved to this
+                                     directory, includes an updated texi file
+                                     for the manual (although it is only
+                                     updated to 0.11).
+      512 etc/                    -- directory to stuff configure.default and
+                                     server settings. (used by scripts)
+      512 logs/                   -- where logs are written, if you use the
+                                     scripts.
+     2560 src/                    -- source files.
+      512 test/                   -- test db
+      512 world/                  -- emtpy, assumedly this is where a world
+                                     would go.
+ * split write_log() into write_log() and write_err(), errors go to stderr,
+   logs go to stdout.
+ * server writes 'coldmud.pid' or '${COLD_DIR}/logs/coldmud.pid' (if COLD_DIR
+   is in the environment).
+ * Updated documentation (to an extent).
+
+You can get it at:
+
+  ftp://sticky.usu.edu/pub/brandon/coldmud/coldmud-0.12-1.tar.gz
+
+-Brandon Gillespie (Lynx)-
+</PRE>

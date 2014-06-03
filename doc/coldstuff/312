@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [312] in "Coldmud discussion meeting"</TITLE>
+<H1>[312] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?312"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="311"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="313"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="314"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="314"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>11.*</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 24 00:23:05 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Mon, 23 May 1994 22:19:04 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; P.S. I too have been having odd server problems, such as a blank startup
+&gt; and crashing on textdump. I am even using 11.4, which has been modified
+&gt; extensively. However, since the next release is already underway and will
+&gt; be what amounts to an overhaul, I am not going to fuss over these problems.
+&gt;
+&gt; P.P.S. Note to individuals wanting to make their dbs compatible with future
+&gt; releases: The following have changed for version 11.x
+
+Actaully, a while back I converted tCD to 0.11.3 (BTW, when are we going to hit
+1.0?), however it was rather buggy and wouldn't even start up for me.  Since I
+couldn't track down SamIAm at the time, and I didn't have the time as it was, I
+tossed the converted core and decided to stick with 0.10 for now (since most of
+the changes take a few simple sed's and your done (God, I love regular
+expressions now that I've taken the time to read about them 8).
+
+&gt; traceback() returns a list of values instead of strings. It is of the form
+&gt; [[~error, "msg (formerly returned by error_str()", arg (formerly returned by
+&gt; error_arg())],
+&gt; ['thrower ('opcode | 'method), opcode or method ('GET_OBJ_VAR, etc)],
+&gt; (and the rest are the stack frames, as in [~error, 'method, #definer, #this,
+&gt; line])]
+&gt;
+&gt; I believe the CD core parsed the old traceback() into this form. This will no
+&gt; longer be necessary.
+
+Luckily, since I pass all (most) tracebacks through that method it only takes
+1 method change to implement this.
+
+&gt; error_arg() and error_str() are contained in traceback() and have been
+&gt; removed.
+
+Something like traceback()[1][3] (arg) and traceback()[1][2] (str).
+
+&gt; dict_add_elem() and dict_del_elem(0 have been removed. They may be coded in-db
+&gt; with dict_add() and dict_del(), as well as a setadd() or setremove() and some
+&gt; other logic.
+
+setadd and setremove have been removed?  Quite frankly I never had the use for
+dict_*_elem().
+
+(don't even know why I'm commenting on this stuff).
+
+-Brandon-
+
+(BTW, the new Enigma CD is great)
+</PRE>

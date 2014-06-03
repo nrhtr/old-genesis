@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [842] in "Coldmud discussion meeting"</TITLE>
+<H1>[842] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?842"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="841"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="843"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>BSDI Unix</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 20 01:25:26 1995
+)</H3>
+<PRE>
+Date: Mon, 20 Nov 95 01:02:04 +0500
+From: "Brian Dale Mayberry, Jr." &lt;mayberry@dcez.com&gt;
+To: "ColdX Listserv" &lt;coldstuff@tombstone.sunrem.com&gt;
+Reply-To: "Brian Dale Mayberry, Jr." &lt;mayberry@dcez.com&gt;
+
+  Has anyone compiled ColdX under BSDI Unix? Some of the libraries ColdX needs
+seem to require BSDI specific libraries of their own. Any help would be
+appreciated.
+
+//----------------------------------------------------------------------------
+// Dale		mayberry@dcez.com
+</PRE>

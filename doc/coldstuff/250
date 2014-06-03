@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [250] in "Coldmud discussion meeting"</TITLE>
+<H1>[250] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?250"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="249"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="249"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="249"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="251"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="251"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="251"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: common ports and bind()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 18 01:47:11 1994
+)</H3>
+<PRE>
+To: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Tue, 17 May 94 23:30:34 -0600.
+             &lt;01HCGOV0TGK2BWBDDI@cc.usu.edu&gt; 
+Date: Wed, 18 May 94 01:45:03 EDT
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; for existing ports in a regular OS, use the same portnumber with a
+&gt; prefix of 66.
+
+This idea doesn't work so well for ports above 99 (e.g. news at 117).
+
+&gt; Following this scheme it would be a good idea to change 6666 to 6623
+&gt; (telnet), although that is only a shy rationalization, since you
+&gt; should be using a client other than telnet.
+
+Moreover, as far as I know, no existing core implements the telnet
+protocol (see RFC 854).
+
+--GBH
+
+</PRE>

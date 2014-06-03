@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [502] in "Coldmud discussion meeting"</TITLE>
+<H1>[502] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?502"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="495"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="498"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="501"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="503"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="503"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="505"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: driver database dumping</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 17:34:13 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: rayn@crossaccess.com
+Date: Tue, 1 Nov 1994 14:27:17 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9411010002.AA12115@q.crossaccess.com&gt; from "rayn@crossaccess.com" at Oct 31, 94 04:02:28 pm
+
+&gt; 
+&gt; 
+&gt; re: dumping objects with dbref instead of obnum.
+&gt; 
+&gt; This would be nice, especially if it allowed renumbering. 
+&gt; I had some wierd cases, where I was editing a textdump that was running (doh!)
+&gt; where the obnum's chaged, so that when I saved the textdump, things were 
+&gt; way messed up. How does that relate to this?
+&gt; (the solution was to not edit a textdump in use ;)
+&gt; 
+&gt; 
+&gt; 	Ray   (Ash)
+&gt; 
+
+Renumbering could be done in-db if create coudl be forced to use an old (free)
+ number. This would only be necessary for making a core which I think should
+ never have any numbrs in it anyway so I'm not too excited about that.
+
+I think this preocupation with numbers is really silly anyway :) (cosmetic).
+
+As for editing textdumps of runnign dbs, it is my understanding that the
+ textdump is ONLY read at startup and ONLY written at execution of a
+ text_dump() function. I think you only screw yourself by editing a textdump
+ while the server is running.
+
+But I could be wrong, of course...
+
+Crag / Robert
+</PRE>

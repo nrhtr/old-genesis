@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1537] in "Coldmud discussion meeting"</TITLE>
+<H1>[1537] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1537"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1533"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1536"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1536"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1538"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [patch] optimize method cache</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan  3 20:31:55 2000
+)</H3>
+<PRE>
+Date: Mon, 03 Jan 2000 20:16:12 -0500
+From: Psyclone &lt;psyclone42@geocities.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+bruce@puremagic.com wrote:
+&gt; 
+&gt; This is a patch to help optimize the method cache some.
+
+&lt;snippage&gt;
+
+the line:    if (method-&gt;m_access = access) {
+should read: if (method-&gt;m_access == access) {
+
+&gt; @@ -1162,9 +1172,18 @@
+&gt;      method = object_find_method_local(object, name, FROB_ANY);
+&gt;      if (method == NULL)
+&gt;          return -1;
+&gt; +    if (method-&gt;m_access = access) {
+&gt; +        /* yay, we don't have to do anything. let's go home. */
+&gt; +        return access;
+&gt; +    }
+&gt; +    if ((method-&gt;m_access == MS_FROB) || (access == MS_FROB)) {
+&gt; +        /*
+&gt; +        * only invalidate when changing to or from 'frob' access.
+&gt; +        */
+&gt; +       cur_stamp++;
+&gt; +    }
+&gt;      method-&gt;m_access = access;
+&gt;      object-&gt;dirty = 1;
+&gt; -    cur_stamp++; /* to invalidate cached frob/!frob defaults */
+&gt;      return access;
+&gt;  }
+&gt;
+</PRE>

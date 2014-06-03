@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [916] in "Coldmud discussion meeting"</TITLE>
+<H1>[916] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?916"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="915"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="915"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="915"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="917"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] More efficient diskbasing</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Feb  7 20:19:12 1996
+)</H3>
+<PRE>
+Date: Wed, 7 Feb 1996 17:54:45 -0700 (MST)
+From: "Terrence M. Drozdowski" &lt;xymox@mcmuse.mc.maricopa.edu&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199602072049.VAA29595@regoc.srce.hr&gt;
+Reply-To: coldstuff@cold.org
+
+On Wed, 7 Feb 1996, Miroslav Silovic wrote:
+
+&gt; 
+&gt; It just occured to me that most of the checkpointing time is wasted on
+&gt; cp - the database has to be copied clean. I thought of a way to keep the
+&gt; database clean 95% of the time. This would also make the server a lot safer.
+&gt; 
+&gt; The thing that would have to be modified is the cache handling. I suggest
+&gt; that modified objects could be kept in RAM till the next checkpoint, and
+&gt; the checkpoint would be when a) 30 minutes (or whatever) passes, or b)
+&gt; more than 75% of the cached objects are modified. Then we could dump
+&gt; just the modified objects, and the database would be non-clean only during
+&gt; the dump, the cp being unnecessary.
+&gt; 
+&gt; What do you all think about this?
+&gt; 
+&gt; 	Jenner
+&gt; 
+
+This sounds good, but how much RAM would this eat up?  Would it inflate 
+dramaticly or unnoticably?  On a busy coldmud, I'd assume that if you 
+have a lot of object creation, you'd have more frequent checkpointing.  
+Though, that's just how it seems to me...
+xymox
+
+--------------------
+Terrence Drozdowski|"Statism is statism by any name the same, apathy is suicide
+xymox@mcmuse.mc.maricopa.edu|and we will bare the blame." -1994 PsykoSonik
+-------------------------------------------------------------------------------
+
+</PRE>

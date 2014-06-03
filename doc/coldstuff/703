@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [703] in "Coldmud discussion meeting"</TITLE>
+<H1>[703] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?703"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="691"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="702"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="702"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="704"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: continuing the debates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar 11 00:09:27 1995
+)</H3>
+<PRE>
+To: jeffpk@netcom.com (Jeff Kesselman)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Fri, 10 Mar 1995 20:55:05 PST."
+             &lt;199503110455.UAA23275@netcom20.netcom.com&gt; 
+Date: Sat, 11 Mar 1995 00:08:14 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; Great idea.  Could the data format for the "assembly code" PLEASE be
+&gt; published?
+
+I certainly hope not.  The internal byte codes used by the Coldmud
+server are an implementation detail.  Publishing them would be as bad
+as publishing the internal representation of a dictionary and allowing
+people to get at them; it means you can't come up with a more
+efficient implementation if you want to.
+
+(In particular, you can't come up with an implementation where you
+compile to machine code.)
+
+Exposing the parse tree is a perfectly good idea, although the lack of
+lightweight structured data types in Coldmud makes this a bit of an
+interface nightmare.
+
+</PRE>

@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [719] in "Coldmud discussion meeting"</TITLE>
+<H1>[719] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?719"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="718"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="718"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="718"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="720"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="720"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="723"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>binary operators</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar 19 22:45:39 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: coldstuff@MIT.EDU
+Date: Sun, 19 Mar 1995 21:33:07 -0600 (CST)
+
+My only objection is that none of the experts (like Greg) have commented, as
+ far as I can recall. I don't think binary operators are good philosophically
+ because they are so low-level, like giving people access to cpu registers
+ only not so drastic. If you need to do something with bits you should be
+ doing it with lists of ints, I would guess. Of course, this argument dies
+ quickly to Brandon's telnet protocol example. Having a bitfield frob is
+ gonna be slow and opt_foo = opt_x.or(opt_y.or(opt_z)); does not look at
+ all good compared to opt_foo = opt_x | opt_y | opt_z;
+
+I guess I'd kinda like to add a new type, but that seems repulsive to me at
+ the same time. I think it would be good for the same reason buffers are
+ better than lists of ints, and bad for the reasons of complicating a server
+ revered by some for its simplicity.
+
+A bitmap or bitfield type WOULD be handy tho. Maybe what we need is a way to
+ extend the server in-db? Something like what Python does (though I haven't
+ looked into it in any depth). I think if we could add new types and have
+ them operate as efficiently as if they had been coded into the server it
+ would stretch the server's usefull lifetime drastically. Then again, I have
+ no immediate suggestions on how to do this.
+
+Alright, here's what I want. For now, go ahead and add the operators as
+ proposed. In the future add operator overloading and such to the language,
+ like what C++ has. Also need to make it possible to extend a running server.
+ Also need transportable objects (think distribution). I guess these are lofty
+ goals, but it's gonna have to happen eventually.
+
+When we do have server extension, 'someone' should write a bitfield class, as
+ well as an arbitrary-precision number class. Am I thinking too far ahead?
+ Should I just calm down and go to school or read a book? Or actually produce
+ something useful other than simple hacks? :)
+
+blah blah, etc
+
+Crag
+</PRE>

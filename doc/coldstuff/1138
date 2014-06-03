@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1138] in "Coldmud discussion meeting"</TITLE>
+<H1>[1138] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1138"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1137"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1137"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1137"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1139"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1139"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1140"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] How easy is it to animate things in ColdX</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 27 12:40:52 1996
+)</H3>
+<PRE>
+Date: Wed, 27 Nov 1996 10:20:15 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+cc: Cold Stuff &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;329ABE2A.208891C1@maddog.com&gt;
+
+On Tue, 26 Nov 1996, Frank Crowell wrote:
+&gt; How easy is it to animate objects and NPCs in ColdX?
+&gt; Anyone have samples such as triggered events, roving
+&gt; NPCs, fuses, and other animated type objects?
+
+How easy is it to do in MOO?
+
+It really depends upon how you approach it.  I would not suggest a tick
+model (where every object receives a tick).  What I would suggest is a
+trigger/callback system.  Have many reactions trigger based, and have the
+creature schedule its own periodic heartbeat.  This way it can devalue its
+own heartbeat over time if it is idle (i.e. reduce its heartbeat until
+about an hour or so, or completely shutoff)--and have activity turn up the
+heartbeat again.  This allows cold to push the inactive object to disk.
+
+Doing a tick model is bad because it is constantly requiring all objects
+to be active which demands them to be in memory at all times--thus
+increasing the memory profile and object cache.  This works against the
+way cold is optimized.
+
+-Brandon Gillespie
+
+</PRE>

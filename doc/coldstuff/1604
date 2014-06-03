@@ -1,0 +1,81 @@
+<HEAD><TITLE>discuss@charon: [1604] in "Coldmud discussion meeting"</TITLE>
+<H1>[1604] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1604"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1603"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1603"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1603"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1605"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1605"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1605"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: newbie question about what cold/genesis can do...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul 10 15:16:13 2000
+)</H3>
+<PRE>
+Date: Mon, 10 Jul 2000 12:00:36 -0700 (PDT)
+From: Jeremy Weatherford &lt;xidus@xidus.net&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;20000710172406.A3156@digiserve.ie&gt;
+Reply-To: coldstuff@cold.org
+
+
+Hi,
+
+ColdC/Genesis is an incredibly flexible system.  Part of that flexibility
+is the fact that almost everything imaginable is left to the softcode.
+This means that you start with basically nothing except the natives, and
+work your way up from there.  IE, you write your own networking code
+(using the provided natives, though)  Thus, if you want to start something
+like this in Cold/Genesis, you'll need to get experience with ColdC first.
+
+ColdC provides an interface to the 'real world' (host filesystem) by
+allowing the execution of scripts in a certain directory.  It also has
+some file access commands, but these probably aren't everything you need.
+Thus, the interface could certainly be done in ColdC/Genesis, but there
+would need to be scripts to handle the actual manipulation of the file
+system.
+
+Sounds like a nifty project, good luck.  :)
+
+Jeremy Weatherford
+xidus@xidus.net
+http://xidus.net
+
+On Mon, 10 Jul 2000, John P . Looney wrote:
+
+&gt;  Excuse the pretentionism, but after playing with the "adventure.sh"
+&gt; script that comes with bash [0], I thought "wouldn't it be cool if you
+&gt; could do more, inside a mud-like environment.
+&gt; 
+&gt;  So, I wrote:
+&gt;     http://www.RedBrick.dcu.ie/~valen/muce.ps
+&gt;  as a kind of a joke. A few friends thought "that would be cool actually".
+&gt; For those too lazy to read it, it's basically saying that "wouldn't it be
+&gt; nice if you could run a mud-like virtual machine on your PC, and import
+&gt; files from your PC (running windows, or unix, or whatever - it shouldn't
+&gt; matter) as objects in a mud-like world. Then, you could clone a load of
+&gt; URL objects, for instance, "go" to a friends "house" - which is a room, on
+&gt; his PC, and do something like "give knapsack.urls to friend" or something.
+&gt; 
+&gt;  Anyway, I was thinking that if we were going to toy with this idea, the
+&gt; Cold system might be a cunning place to start. If any of the developers
+&gt; could have a look at the file, and tell me if I would be better off
+&gt; starting from scratch, of from something like Circle mud, I'd appreciate
+&gt; it.
+&gt; 
+&gt; Kate
+&gt; 
+&gt; [0] adventure.sh comes with the bash 2.x source distro. It's cool - try it
+&gt; out - it lets you walk around your file system, picking up files into a
+&gt; "knapsack", and dumping them into different directories. You can feed
+&gt; files to the "rm" monster, etc.
+&gt; 
+&gt; -- 
+&gt; The words of the unwary are apt to cause needless pain and bloody violence.
+&gt;                                                         - Zen Master Greg
+&gt; 
+
+</PRE>

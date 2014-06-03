@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [942] in "Coldmud discussion meeting"</TITLE>
+<H1>[942] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?942"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="939"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="941"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="941"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="943"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="943"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="943"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] regular expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar 23 17:08:41 1996
+)</H3>
+<PRE>
+Date: Sat, 23 Mar 1996 14:55:32 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199603222335.AAA29121@regoc.srce.hr&gt;
+
+On Sat, 23 Mar 1996, Miroslav Silovic wrote:
+&gt; &gt; Since there is a POSIX standard for regular expressions, should we hook into
+&gt; &gt; the system regular expressions if they exist, resorting to our own regexp 
+&gt; &gt; code if it does not?
+&gt; &gt; 
+&gt; &gt; The problems which could arise with this is that the current POSIX 
+&gt; &gt; standard seems to be somewhat vague, leaving openings for interpretation 
+&gt; &gt; by implementors.  Basically, certain aspects of regular expressions could 
+&gt; &gt; change depending on what OS the driver is running under.
+&gt; 
+&gt; I think we should use Perl regexp (if you feel like isolating its
+&gt; source). At least I can tell which characters need to be backslashed and
+&gt; when in Perl regexp. :) It's also somewhat standard and powerful
+&gt; enough.
+
+Uhh, so by 'perl regexp' you mean you want henry spencer's regexp package 
+with perly extensions?  Basically, the extended \x meanings, like \s, \d, 
+etc?
+</PRE>

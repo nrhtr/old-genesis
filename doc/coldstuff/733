@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [733] in "Coldmud discussion meeting"</TITLE>
+<H1>[733] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?733"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="732"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="734"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>rangeset</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May  3 14:14:13 1995
+)</H3>
+<PRE>
+Date: Wed, 3 May 1995 14:12:37 -0400
+From: Quinn &lt;quinn@Access.Mountain.Net&gt;
+To: coldstuff@MIT.EDU
+
+
+Is there a builtin way to set a range in a string or list?  I can't
+ seem to find one.
+
+Something like MOO's "foo[a..b] = c".  Am I supposed to do this in-db?
+
+Also--where can I find the latest stable cold driver, and a bare World
+ to go with it?
+
+-Quinn
+
+</PRE>

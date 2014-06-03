@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [68] in "Coldmud discussion meeting"</TITLE>
+<H1>[68] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?68"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="67"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="69"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="69"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="70"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Minor note about regexp matching</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 26 09:18:32 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Fri, 26 Nov 93 09:09:06 EST
+To: coldstuff@MIT.EDU
+
+
+I realized shortly after releasing 0.9 that the case-sensitive nature
+of regexp matching was going to get in the way.  For 1.0 (I don't
+think I'm going to do a 0.9.1, actually, unless I get delayed on 1.0),
+I've made regexp matching case-insensitive except when an optional
+third argument is specified.
+
+--GBH
+
+</PRE>

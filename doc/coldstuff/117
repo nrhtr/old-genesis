@@ -1,0 +1,78 @@
+<HEAD><TITLE>discuss@charon: [117] in "Coldmud discussion meeting"</TITLE>
+<H1>[117] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?117"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="116"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="118"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="118"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="124"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>getting it to work..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 13 16:23:09 1993
+)</H3>
+<PRE>
+Date: Mon, 13 Dec 1993 16:14:44 -0500
+From: Seth Cohn &lt;seth@alchemy.TN.Cornell.EDU&gt;
+To: coldstuff@MIT.EDU
+
+
+
+do:
+
+  ./coldmud ./world &gt;&gt;&amp; logfile &amp;
+
+didn't work.  but ./coldmud ./world &gt;&amp; logfile &amp;  did.
+
+
+&gt; Created new room $room3.
+&gt; ERROR: $exit.spawn called with three arguments, requires one.
+&gt; Thrown by interpreter opcode MESSAGE.
+&gt; ~numargs in $nowhere.make_exit (defined on $room), line 8
+&gt; ~methoderr in $programmer1.dig_to_cmd (defined on $builder), line 10
+&gt; ~methoderr in $programmer1.parse_command (defined on $user), line 10
+&gt; ~methoderr in $programmer1.parse_command (defined on $programmer), line 12
+
+&gt;hee, this is because greg changed the way .init worked in world 4.0 from 3.0,
+&gt;but he forgot to change it on exits.  Just change the init to be:
+
+&gt;pass();
+&gt;if (!inited) {
+&gt;  &lt;what it sets&gt;
+&gt;  inited = 1;
+&gt;}
+
+then:
+
+;$exits.add_parameter('inited);
+
+and it should work.
+
+
+I'm a bit confused.  I corrected the first part, but is the second
+supposed to go in textdump or be typed in by me on coldmud?
+I tried typing it in, and got an error. 
+
+
+&gt;Chaos will be releasing his core soon, and i'll be merging it into the Cold
+&gt;Dark.  Other than that i'm not sure if anybody is working on anything...
+
+Well, anyone who wants to contribute to a single 'definative more then the
+basics core' please let me know.  Bare core is good, but like Lambdacore,
+most systems want at least the basics built already.
+
+
+&gt;&gt; I'm willing to create a manual for coding (since I'll be learning it at the
+&gt;&gt; same time, should be a good beginner's intro by the time I get done.) so
+&gt;&gt; I'm looking for as much solid stuff to build a good core as I can get.
+&gt;Did you see Greg's Manual?
+
+You talking about coldmud.info or the postscript stuff?  I haven't looked
+at the ps stuff yet.
+
+Seth
+
+</PRE>

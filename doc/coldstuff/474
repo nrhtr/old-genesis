@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [474] in "Coldmud discussion meeting"</TITLE>
+<H1>[474] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?474"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="473"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="475"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="475"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="476"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Status</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Oct 26 15:31:25 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Wed, 26 Oct 1994 14:25:45 -0500
+From: Zachary  &lt;zachary@pentagon.io.com&gt;
+
+
+I'm sitting here pondering coldmud and wondering... 
+
+exactly what *is* the status of all the cold sites? How many are there?
+
+is there any unified effort to make a reasonable core?
+
+Are there any planned core release dates?
+
+What is the status of the various hacked version of the server?  What's
+the latest on the suspend()/fork() issue?  How thoroughly tested are 
+those?
+
+Hopefully someone (or several someones) will respond and answer one or more
+of these q's.
+
+ --Zachary
+</PRE>

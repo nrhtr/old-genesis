@@ -1,0 +1,108 @@
+<HEAD><TITLE>discuss@charon: [1175] in "Coldmud discussion meeting"</TITLE>
+<H1>[1175] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1175"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1174"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1176"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] ILU</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  7 20:09:00 1996
+)</H3>
+<PRE>
+Date: Sun, 8 Dec 1996 01:57:33 +0100 (MET)
+From: Miroslav Silovic &lt;silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+
+I did some preliminary work that could affect, say, Genesis-1.2. In
+other words, this is a longish-term project. I've been looking into
+linking Cold with ILU. ILU is a (mostly) CORBA-compliant Object
+Request Broker from PARC.
+
+At this point, it would be a good idea to check
+ftp://ftp.parc.xerox.com/pub/ilu/ilu.html
+because I'm about to get a bit technical. :)
+
+So, ILU allows you to specify interface to objects in all the
+supported languages, and link them across address spaces and
+network. In other words, if we add ILU support to Cold, you could just
+declare the methods your object exports, along with type declarations,
+and WHAM! you have an instant glue to your C, C++, Python, Common
+LISP, Java or even FORTRAN code. Ever wanted to do combat system or
+monsters AI in compiled Common LISP? Well, here's your chance. The
+problem is, of course, writing the damn thing. I have proposed
+mapping:
+
+&lt;read the ILU webpage and documentation for more background on this&gt;
+
+	Discrete types map into the most similar Cold type, possibly
+	with loss of precision (we might have a true support for
+	new types built into the server at the time this gets to the
+	coding phase, and better support for new types is something
+	I did intend for 1.2, so loss of presicion may become a
+	nonissue).
+
+	Arrays map into &lt;$array, [list]&gt;
+
+	Sequences map into lists.
+
+	Strings map into strings, of course.
+
+	Records would map into dictionaries of the form #[[fieldname,
+	value] ...]. Of course, the mapping for name can stay fluid
+	till we decide on the rest.
+
+	Object : Here's a bit of a problem. ILU's object model is
+	classed, with single inheritance (subset of ours, so it's not
+	a problem, really. CORBA, I think, only supports SI, too, and
+	so does Java). This means that we really want to use frobs.
+	The problem, as I see it, is that ILU likes to be notified
+	when a client releases the instance of the object. But there
+	is no good way to know when a frob has been destroyed (as
+	opposed to just being swept on the disk). Frobs would have
+	their class automatically constructed from the interface
+	specification, and would just keep an object ID (class would
+	use some native to forward the method call to the 'real'
+	object hiding somewhere in the driver).
+	Another way to do this is to implement a good way to add
+	new types to Cold, then just use a new type. We could
+	set the type to 'unsaveable', then just modify the free
+	routine to notify ILU when all the refs are gone.
+	Objects are the first thing I need advice on.
+
+	Methods: Corba allows methods to modify their parameters.
+	Otherwise they're similar to Cold methods. So, my proposal
+	would be to behave as normal if method has no OUT parameters,
+	and return a list with the new values for all OUT parameters
+	if it does. Any better idea?
+
+	Also, a method call from ILU client to Cold would have to
+	spawn a new task. We still have to check how efficient that
+	is. My guess is - just barely efficient enough. If I were to
+	code a VR in some AI language, I'd code most of it in that
+	language and use Cold only as an extension lang.
+	
+
+	Exceptions: Well, not much to say here. ILU wants you to
+	declare the exception error code and return type, but Cold
+	could just check for declaration match and if there isn't
+	any, signal 'something weird' to ILU. Otherwise, this part
+	at least /seems/ pretty straightforward to me.
+
+Finally, ILU is fairly complex, and writing an interface to Cold might
+well be, if not complex, then *interesting* project. I could use help
+coding this, and some people have shown lots of interest in precisely
+the features we'd get using ILU (link with Java, LINK WITH C++!!!,
+inter-server communication using remote method calls, etc).
+And I could certainly use feedback. Even if it's just 'COOL IDEA!', or
+no, leave it alone, it sucks. :)
+
+	Miro
+
+</PRE>

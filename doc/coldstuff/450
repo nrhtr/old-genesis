@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [450] in "Coldmud discussion meeting"</TITLE>
+<H1>[450] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?450"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="449"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="451"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment, while (etc) (fwd)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep 24 15:33:26 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Sat, 24 Sep 1994 14:00:20 -0400 (EDT)
+From: colinm@ozemail.com.au (Colin McCormack)
+Reply-To: colinm@ozemail.com.au
+
+&gt; &lt; Original quote by Colin McCormack:
+&gt; &lt;&gt; It strikes me that one of C--'s features is its similarity to C++.
+&gt; &lt;
+&gt; &lt;&gt; Hence, assignment `=' (should be an expression)
+&gt; &lt;&gt;        equality `==' (if you can't tell the difference, learn to program)
+&gt; &lt;&gt;        while (abomination) { abomination } (abomination) - syntax sucks rocks.
+&gt; &lt;
+&gt; &lt; If nothing else, I share the same attitude.  It doesn't quite make sense
+&gt; &lt; to take a language called C-- and make it like pascal, or worse, add a
+&gt; &lt; weird conditional structure.  If anything, C-- should mimic C and C++.
+
+[...]
+
+&gt; [...] changing the
+&gt; assignment operator from '=' to ':=' in order to cause less confusion (NOT to
+&gt; make it closer to pascal--that is the silliest idea I've ever seen Colin come
+&gt; up with)
+
+Well, see, I didn't come up with that idea... Brandon misread &lt;&gt; as &gt;
+and misattributed it to me.  That's similar to mistaking = for ==.
+
+I just can't bring myself to see the confusion as a inherent in 
+the character `&gt;' and I don't see how making it ':&gt;' would avoid any confusion.
+
+People writing programs just have to be careful.
+
+Colin.
+
+</PRE>

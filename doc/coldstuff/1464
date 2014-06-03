@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1464] in "Coldmud discussion meeting"</TITLE>
+<H1>[1464] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1464"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1459"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1461"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1463"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1465"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Genesis on Linux</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 10 00:11:33 1999
+)</H3>
+<PRE>
+From: Jeff Kesselman &lt;Jeffrey.Kesselman@eng.sun.com&gt;
+Date: Tue, 9 Nov 1999 20:08:11 -0800
+To: &lt;coldstuff@cold.org&gt;
+Reply-To: coldstuff@cold.org
+
+I did it quite awhiel back with no trouble at all. Havent done it lately.
+
+&gt;At 12:47 PM 11/9/99 -0700, Seth Law wrote:
+&gt;&gt;I was just wondering about any special hints to running/compiling
+&gt;&gt;Genesis on Redhat.  If anyone has done it, any help would be
+&gt;&gt;appreciated.  To be more specific, I have gdbm installed, but still keep
+&gt;&gt;getting ndbm messages.
+&gt;&gt;
+&gt;&gt;thanks,
+&gt;&gt;
+&gt;&gt;
+&gt;&gt;Seth
+&gt;&gt;
+&gt;&gt;seth@sunrem.com
+&gt;
+&gt;I did it, gotta do a symlink somewheres, to make it compiler. Dun remember
+&gt;where exactly. But anyway, that's the answer....find where ndbm.h is on
+&gt;your system, and make a symlink to it in the dir that it's expected to be
+&gt;found.
+&gt;
+&gt;kjackson@crimebucket.com
+&gt;
+&gt;
+
+
+</PRE>

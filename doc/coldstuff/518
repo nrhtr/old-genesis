@@ -1,0 +1,72 @@
+<HEAD><TITLE>discuss@charon: [518] in "Coldmud discussion meeting"</TITLE>
+<H1>[518] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?518"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="517"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="517"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="519"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="519"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov  4 18:12:19 1994
+)</H3>
+<PRE>
+From: brandon@riverheights.declab.usu.edu
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Fri, 04 Nov 94 13:01:50 PST."
+             &lt;199411042101.AA00504@crl4.crl.com&gt; 
+Date: Fri, 04 Nov 94 16:05:38 -0700
+
+&lt; When DB size exceeds cache, objects/parameters/changes disappear spuriously
+
+Just for reference, I've been running 0.12.0 in Ultrix for at least 2 (?)
+months, with no problem.  It is probably an OS specific thing (Linux?  If so,
+somebody try to track down the problem in dbm and mail the slackware guys?)
+
+&lt;   todbref(int)              =&gt; toobj(int)
+
+The more I think about it, I think we should change all the 'to*()' function
+syntaxes to be more standard, rather than using abbreviations.  For instance:
+
+tostr()     =&gt;  to_string()
+toint()     =&gt;  to_int()
+toliteral() =&gt;  to_literal()
+toobj()     =&gt;  to_objnum()
+
+(etc)
+
+&lt;     ebin/           -- directory where execute() programs are located
+
+Actually (cosmetic here), I'd prefer executables/ or exe_bin/, or hmm,
+execute_bin/ (hsm), perhaps execute/  (sigh).
+
+&lt; [pipes]   Anyway, what do people think?
+
+I like the idea of doing it through the same method as a connection, less
+duplicity in-db (since it is doing the same thing).
+
+&lt; buffer_to_strings()        =&gt; ascii_buffer_to_strings()
+&lt; strings_to_buffer()        =&gt; strings_to_ascii_buffer()
+
+I would prefer:
+
+buffer_to_strings(buf)       =&gt; buffer_to_strings(buf, ['type])
+strings_to_buffer(buf)       =&gt; strings_to_buffer(buf, ['type])
+
+Where 'type defines what type of conversion to do (default 'ascii).
+
+&lt; "locked" compilation flag for nethods
+
+"private" would be good too, in my opinion (would remove a lot of perm
+checking which simply checks to make sure it is called by this object).
+
+Also, I would (still) like to see the assignment operator change from '='
+to ':='.  I believe it would seriously help lessen confusion in the language,
+in relation to people learning the language.
+
+-Brandon
+</PRE>

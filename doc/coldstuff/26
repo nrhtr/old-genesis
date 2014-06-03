@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [26] in "Coldmud discussion meeting"</TITLE>
+<H1>[26] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?26"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="20"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="20"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="25"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="27"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>looking into the future</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 12:42:42 1993
+)</H3>
+<PRE>
+Date: Tue, 16 Nov 93 08:59:06 PST
+From: bsw!tungsten.seattle.geoworks.com!weber@uunet.UU.NET (Eric Weber)
+To: Lynx &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;01H5CZYA48L4ANHKWW@cc.usu.edu&gt;
+
+
+If you have the old core around, it seems much more reliable to have
+the merge script look at all three files (old core, new core, active
+db).  If a method or parameter has changed only in either the new core
+or the active db but not both, no problem. If it has changed in both,
+mark it for manual fixup.  This way there is no need to mark what has
+changed, the script can determine that for itself.
+
+We do something similar here at work to merge multiple programmers'
+changes to code files.
+
+-- Eric
+</PRE>

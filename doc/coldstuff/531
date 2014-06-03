@@ -1,0 +1,73 @@
+<HEAD><TITLE>discuss@charon: [531] in "Coldmud discussion meeting"</TITLE>
+<H1>[531] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?531"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="530"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="530"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="532"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="532"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 13:39:35 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Sat, 05 Nov 1994 00:17:48 EST."
+             &lt;Pine.3.89.9411042336.B2071-0100000@unixs1.cis.pitt.edu&gt; 
+Date: Sat, 05 Nov 1994 11:41:52 EST
+From: George Heintzelman &lt;georgeh@MIT.EDU&gt;
+
+
+James Deikun tells us:
+&gt; &gt; Atomic code blocks
+&gt; &gt;   This is really needed now that we have suspend capability, and I will
+&gt; &gt;   probably implement it as an 'atomic &lt;statement&gt;' syntax, i.e:
+&gt; &gt;     atomic object.some_special_method();
+&gt; &gt;   and
+&gt; &gt;     atomic {
+&gt; &gt;       do this;
+&gt; &gt;       and this;
+&gt; &gt;       and this too;
+&gt; &gt;     }
+&gt; &gt;   and etc..  If an attempt is made to suspend or pause while executing in an
+&gt; &gt;   atomic state, an error will be thrown instead.
+&gt; 
+&gt; It seems to me this construct isn't sufficiently general to amount
+&gt; to much.  It won't be worth the bytes it takes in the server in a
+&gt; multithreaded environment (it'd hold up *way* more tasks than
+&gt; necessary if it could even be implemented successfully at all,
+&gt; which is doubtful), and it doesn't allow for things like saving
+&gt; your state and proceeding to do the suspension--it's an all or
+&gt; nothing thing.  To me this is the major problem of the ColdMUD
+&gt; error handling system, which got fleshed out for me in a
+&gt; discussion of similar issues a while back in moo-cows.  It's based
+&gt; on LISP catch/throw, which was never really meant for error
+&gt; handling as such.  Without resumes, it's way too static, and it
+&gt; doesn't really support good stack unwinding right now either.
+&gt; These are more basic issues you need to be working on.
+
+I agree with this analysis, and therefore tentatively suggest (well
+aware that I'm just a lurker until life settles down and I can do some
+Cold hacking again) the implementation of one of the most powerful and
+underappreciated features of any programming language: 
+	Scheme's Call-with-current-continuation.  Exactly how this
+works is difficult to explain, but it basically packages up all of the
+current stack, including the 'future' of the computation in progress,
+and passes it off as an argument to the function which is an argument
+of call/cc.  Using this mechanism, you can implement catch(), throw(),
+pause(), callbacks, lisp's unwind-protect, and the list goes on and
+on. It's a very general stack-handling mechanism. If you're curious for
+details, you should consult a decent Scheme text.... As far as syntax,
+for Cold's purposes, it'd have to have some new syntax, which I don't
+have time to think about right now....
+
+Anyway, just a thought from a lurking lispish-language fan...
+
+
+George Heintzelman
+georgeh@mit.edu
+</PRE>

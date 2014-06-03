@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [405] in "Coldmud discussion meeting"</TITLE>
+<H1>[405] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?405"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="402"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="404"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="404"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="406"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Looking for Cores</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Sep 12 14:11:53 1994
+)</H3>
+<PRE>
+From: rayn@crossaccess.com
+Date: Mon, 12 Sep 1994 11:02:25 -0700
+To: connor@apple.com
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9409120337.AA22451@apple.com&gt; (message from Greg Connor on Sun, 11 Sep 94 20:37:26 PDT)
+
+Besides tCD, there is also World6, which should be available at the
+same place you got ColdMUD. Its nothing but the bare minimum of a
+core, but it does allow you to start from somewhere.
+
+As Brandon said, the Version of tCD he made available isnt a real
+core, its the last textdump of tCD, with a lot of extra stuff. I'm
+trying to clean some of that up, but don't have too much time myself.
+
+Who else is still playing with tCD?  Oh, and are you still running
+colddarkthings, Brandon? (since thats where any discussions of tCD
+should be)
+</PRE>

@@ -1,0 +1,79 @@
+<HEAD><TITLE>discuss@charon: [457] in "Coldmud discussion meeting"</TITLE>
+<H1>[457] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?457"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="455"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="455"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="456"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="458"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="458"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="458"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: while, where, when, with -- WHAT?!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Sep 25 04:04:49 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: jcdst10+@pitt.edu (James C Deikun)
+Date: Sun, 25 Sep 1994 00:54:26 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;Pine.3.89.9409242217.B6599-0100000@unixs1.cis.pitt.edu&gt; from "James C Deikun" at Sep 24, 94 11:04:02 pm
+
+&gt; C's for is definitely NOT something I'd like to see imported into 
+&gt; ColdMUD.  It's far and away the least intuitive statement in the language 
+&gt; and best left where it is.
+
+agreed.  That'd be worse than leaving things the way they are.
+
+&gt; &gt; 	while ((where a := .test()) a &gt;= 0)
+&gt; &gt; 		.do_something(a);
+
+Basically, BTW, this is exactly what I was proposing before for a change to the
+while syntax, except it breaks a bunch of current designs and is really
+difficult to understand (it also makes things more complicated as i can show up
+anywhere).  I at least proposed using {} for statements.  () should only be
+used for argument lists and expressions.
+
+If we're going to adopt something like this instead of assignment-expressions,
+I still think it should be an aspect of the while syntax and should be along
+the lines of:
+
+  DO statement WHILE (expr) statement
+
+with possibly the option of leaving off the "DO statement" part of things if
+one wanted to.
+
+I dunno.. I'm thinking of giving up on this whole thing, actually.. I do
+actually agree with Greg some on the reasons behind assignments as statements
+(now that I think about things, I really kinda like the design aspect of ColdC
+that there's only one actual operation (effect) that can take place per line of
+code)..  and I'm also not sure that changing the while statement is a good way
+to do things either, because people are generally very familiar with it the way
+it is currently and it's easy to understand in its current form..  sigh.
+
+&gt; A crazy idea of my own:  maybe it'd be best to end the language wars once 
+&gt; and for all by introducing low-level code access and writing the compiler 
+&gt; in the DB.  From my inspection of the server code, ColdMUD's string 
+&gt; operations seem efficient enough for this, unlike those of L-----M--.  
+&gt; One could even use a buffer and decomplicate the structure considerably.
+&gt; 
+&gt; This way, if you don't like the language, you could conceivably modify or 
+&gt; replace it.  If you get crazy with this, it could get confusing, but then 
+&gt; noone will program anything cool at your site and you get what you 
+&gt; deserve.  :)
+
+You can do this already, just change the parser code and recompile the server.
+This is actually the kind of thing I'd like to avoid, tho, because it means
+that no two ColdMUDs are likely to be able to use the same code, effectively
+castrating any porting potential or collaboration between systems.  Personally,
+I'd rather have everything stay the way it is than "progress" in such a
+potentially disastrous direction (that's why I'm discussing all of this here
+instead of just going ahead and making my own changes).
+
+-R
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+</PRE>

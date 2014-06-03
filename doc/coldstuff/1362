@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1362] in "Coldmud discussion meeting"</TITLE>
+<H1>[1362] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1362"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1361"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1361"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1361"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1363"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] genesis and coldcore on ftp site</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Oct  1 23:16:36 1997
+)</H3>
+<PRE>
+Date: Wed, 1 Oct 1997 21:04:20 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: Sting &lt;wwnf@grove.iup.edu&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;3250924F.3FBFAECA@grove.iup.edu&gt;
+
+On Mon, 30 Sep 1996, Sting wrote:
+&gt; 
+&gt; Same question.  Do the files still exist on the ftp site or was it just
+&gt; down when I tried to get them&gt;?
+&gt; 
+
+If you logged in, it wasn't down..
+
+Everything is still there tho, read the 'mesages' that are printed (at
+login and when you change directories).  You need to look in /cold (or
+/pub/cold if you are at the mirror) for the base cold directory, and from
+there you have other files (as explained by the message).  Such as 'src'
+for the driver source.
+
+-Brandon
+
+</PRE>

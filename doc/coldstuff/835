@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [835] in "Coldmud discussion meeting"</TITLE>
+<H1>[835] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?835"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="832"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="834"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="834"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="836"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>connections</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Oct 18 15:00:01 1995
+)</H3>
+<PRE>
+Date: Tue, 17 Oct 1995 13:48:21 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@nibley.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+Right now it is possible to have more than one connection sending/receiving
+with an object.  For various reasons I am changing this, what I want to
+know is:
+
+   When a new connection attempts to 'bind' to an object, should we:
+
+       1: close the older connection, perhaps call obj.abort (or similar)
+       2: deny the new connection
+
+I can see advantages with both, if your db is not functioning correctly
+and you accidentally try to bind a new connection to an object already
+serving a connection, the old one would get bumped, possibly disconnecting
+the developer.  Of course, this is a rare case and is due to bad coding
+on their behalf anyway.
+
+I will probably do #1
+
+The main reason is that for cleanliness I only think you should have one
+connection per object, it is cleaner this way...
+
+-Brandon
+</PRE>

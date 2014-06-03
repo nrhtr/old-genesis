@@ -1,0 +1,176 @@
+<HEAD><TITLE>discuss@charon: [410] in "Coldmud discussion meeting"</TITLE>
+<H1>[410] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?410"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="409"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="411"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="411"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="411"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Impromptu faq</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 15 17:24:31 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Thu, 15 Sep 1994 14:16:37 -0700 (PDT)
+
+This isn't really a faq, but we've had the same question three times in a very
+ short span of time with some vague answers but no resolution. I avoided
+ answering the questions because there are no definite answers, however, I will
+ tell you what I know:
+
+Server development:
+ Past:
+  versions through 0.11.0 were written by Greg Hudson. Version 0.10.0 was his
+   last official release, and the last documented server. Patches were once
+   available to fix several bugs and add a function for testing method tick
+   usage. Version 0.11.0 had more internal than external changes. The external
+   changes were a change in the return of traceback() to a list of lists
+   instead of a list of strings (so traceback formatting could be performed
+   in-db), the removal of error_str() and error_arg() (because they are
+   included in traceback()), and the removeal of the functions dict_add_elem()
+   and dict_del_elem() because they are easily implemented in-db with
+   dict_add(), dict_del(), dict_contains(), setadd() and setremove().
+  Greg didn't quite finish 0.11.0, but Colin McCormic kindly finished it for
+   him. I applied the patches for version 10 to this source, resulting in what
+   has been passed around as 0.11.4. This version is 'stable' except that its
+   binary-db storage seems to be broken and it may hang at random on Linux
+   boxes.
+
+ Present:
+  Jordan Baker took my copy of 0.11.4 and added suspend(), resume(), tasks(),
+   cancel(), and callers() to it, resulting in a VERY-BETA 0.12.0. He also
+   changed the message_op funtion to make (x).foo() syntactically equivalent to
+   get_name(type(x)).foo(x) for all non-obj/non-frob x. This means that
+   [1,2].reverse() =&gt; [2,1] if $list.reverse() does what its name implies.
+
+ Future:
+  Colin McCormic has been publicly secretive about what his plans are. They
+   seem to be re-writing the server from the ground up in C++, but being
+   textdump compatible with 0.11.0. He has also hinted at multi-threading,
+   and has shown interest in supporting distributed dbs. I cannot comment
+   further on his plans without risk of either exposing priveledged information
+   or being totally R0NG.
+
+  Jordan Baker continues to do server hacking. He and others are trying to find
+   and squash the bug which is causing the server to hang on linux machines. He
+   also plans to add floating-point support. There has been talk of adding more
+   attributes to methods besides "disallow_overrides", specifically "private"
+   and "instance_only". The first has been successfully added to 0.12.0, but
+   was removed because Jordan didn't trust the changes bug-wise. He also isn't
+   yet convinced that it is a Good Thing (tm).
+
+  For those not familiar with these attributes, private methods are invisible
+   to other calling objects. They have the same accessability as object
+   parameters. In the test implementation, :foo(); caused only the object
+   defining the current method to be searched for a method named 'foo, and if
+   found to run it, otherwise throw ~methodnf. If another object tried to
+   access the method it would not be there, and the method search would
+   continue at the next parent.
+
+  Private methods have two advantages. The first is that the lookup for a
+   private method call only searches one object, as opposed to potentially
+   all the ancestors of this(). The second advantage is that it provides
+   a programmer with a way to be sure that "sender() == this() &amp;&amp;
+   caller() == definer()" because obj:foo() is a syntax error. This is a common
+   perms check in any method which is shared by multiple interface methods,
+   for example. That is, the private flag on methods provides a simple and
+   efficient tool for enforcing an object's interface.
+
+  The other attribute, "instance_only" is an idea a guy I know only as James
+   came up with to guarentee that this() != definer(). There is really only one
+   advantage to this flag. It provides another way to enforce an object's
+   interface. This may not be such a great enhacnement, since it made a lot
+   more sense to me then than now.
+
+  I believe Jordan has plans of re-writting in C++ and/or adding threading to
+   the server some time after the next official release. Both ideas make a lot
+   of sense, so naturally...
+
+Core development:
+ Past:
+  worlds 0.1 through 0.6 were available with various releases of the server.
+   World-0.6 will not run under 0.11.0 without changes, but the changes are
+   simple and obvious with the manual and the above info in hand. None were
+   very complete by most people's standards, as they do not support a help
+   system, mail, editors, aliases, pronoun substitution, or a bunch of other
+   features considered to be necessary in any MUD core. They do however provide
+   the platform from which all cores that I know of developed.
+
+  AbsoluteZero was a core being developed by Jordan Baker and some associates
+   of his, until he lost net access. It has a help system of sorts, pronoun
+   substitution, and some other bells and whistles, but is a very incomplete
+   attempt due to being a work in progress interrupted abruptly.
+
+  TheColdDark was a core developed by Brandon Gilespie(sp?) and others
+   including me for a while. It was much better fleshed out than world-0.6, but
+   was very messy, owing to a lack of dirrection and agreement on the part of
+   the developers. I threw a hissy fit and left in February.
+
+ Present:
+  FrozenApples is the core I have been working on since I left tCD. It provides
+   little funtionality over world-0.6, but includes a re-written IO object
+   system, and @d command, and a LOT of general cleanup/util writting. It is
+   anything but done.
+
+  tCD is available, and in the state described in a previous post by Brandon
+   himself.
+
+  AbsoluteZero is available, but not in a distributeable state.
+
+ Future:
+  FrozenApples is on hold until I finish a project with Jordan. When we are
+   done with that, we will start a serious effort which should result in a top-
+   notch core within a month of starting. User-command level functionality will
+   not be significantly increased, but the structure and design of the core
+   will be as complete as they come, and will include pronoun substitution,
+   better IO handling, an events system, and many other compnents sorely
+   lacking in world-0.6.
+
+  tCD seems to be dead, as Brandon has pressed on to other things and everyone
+   else has either gone back to MOO or is working on the new FrozenApples.
+
+  Abs0 is being incorperated into FrozenApples.
+
+Other cores:
+ I remember hearing of a cold core based on an object-by-object port of
+  LambdaCore. This does not seem like a good idea to me, since what design has
+  gone into Lambda has been based on a singly-inheritant server, when any
+  design has gone on at all. However, if it results in a core that works before
+  Jordan an I are done, then great! :)
+
+ Quinn Avery dabbles in cold development. I will leave it up to him to announce
+  anything he wuold like announced.
+
+Sites that are 'up':
+ I am running a version of FrozenApples on 0.12.0 of the server that has a HUGE
+  security hole. There are also many disgusting, sloppy, irritating, and
+  otherwise stupid bugs in it. However, if you need a site to go to to research
+  cold, you may come to sequoia.picosof.com / 6666. I make no guarentee of any
+  kind. Save your work locally if you value it.
+
+ There is another site that is invite-only that I'm not goint to tell you
+  about. I am not awayre of any public servers other than mine at sequoia, for
+  that matter.
+
+----
+
+That's all I can think of that I can tell you about servers and cores. If you
+ still want details, you're a DEMENTED person. Version 0.10.0 of the server
+ and world-0.6 are available at ftp.ccs.neu.edu//pub/mud/drivers/coldmud. I
+ recomend you play with that for a couple months before asking about other
+ versions.
+
+Once you have played with 0.10, you may look in serial.io.com//incoming for
+ the UNRELEASED 0.12 server and FA core.
+
+If you still feel compelled to ask questions after all this, go ahead and send
+ them to this list. I will answer them if no one else does after a while.
+
+Crag / Robert de Forest
+</PRE>

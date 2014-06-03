@@ -1,0 +1,99 @@
+<HEAD><TITLE>discuss@charon: [449] in "Coldmud discussion meeting"</TITLE>
+<H1>[449] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?449"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="441"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="448"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="448"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="450"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignments change (fix)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep 23 20:26:12 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Fri, 23 Sep 1994 17:48:06 -0600 (MDT)
+To: COLDSTUFF@MIT.EDU
+X-Vms-To: COLDSTUFF@MIT.EDU
+
+&lt; I treated assignment as a statement because I believe assignment
+&lt; expressions lead to horizontally-organized code, which I believe is
+&lt; difficult to read.  Given the opportunity, many programmers will tend
+&lt; to use a small number of long lines of code over a large number of
+&lt; short lines of code; since I felt that Coldmud should enforce uniform
+&lt; code with vertical organization, I didn't give programmers that
+&lt; opportunity.  In fact, you'll notice that no expressions in Coldmud
+&lt; can have side-effects on local variables (and only method calls and
+&lt; primitive calls can have side-effects on the database); therefore,
+&lt; programmers are forced to make only one change per statement.
+
+This is very true (and is an argument I had forgotten about).
+
+&lt; If you're going to change assignment to :=, I would recommend changing
+&lt; equality to a single equal sign, or you will have the false illusion
+&lt; of being similar to Pascal for assignment.  Another option is to
+&lt; change 
+
+Well, one of the ideas of changing an assignment to ':=' is that every operator
+involving an equals sign would be part of a two character sequence (hence the
+chance of confusion would be MUCH less).  By making equality be a single '='
+character pulls the confusion back into it, and you may as well just stick with
+'=' as an assignment.
+
+I don't think the need for assignment expressions is big enough to come up with
+a solution for them.  However, this whole discussion has caused me to feel that
+changing the assignment operator (even if it doesn't become an expression)
+would be a good idea (for the above reason of commonality).  I would also not
+mind seeing '+=' '-=' and '++' '--' (the first two I would really appreciate,
+I can immediately think of several instances where they would simplify things).
+The last two we probably dont want, especially if we have '+='.  Spam code:
+
+Now:        value = 1 + 1;
+(with new:  value := 1 + 1;   )
+
+Possible:   value += 1;
+
+Perhaps:    value++;
+
+Sure they all do the same thing, but each is nicer than the other.  The last,
+however, is probably pulling ColdC into more complexity.
+
+And to reply back to Colin's comment about people not being able to distinguish
+'=' from '==' not being programmers, I have been polling people who's opinions
+I consider worth listening to.  The following is from one of these discussions:
+
+XXXX [to Brandon]: considering i just wiped out all the .email_address's at
+ XXXX the other day by mistyping '==' as '=', i'd prolly prefer ':='
+XXXX thinks the whole 'we should use '=' cuz C does' is just plain stupid
+
+I think said person would be quite offended that you don't consider them a
+programmer (not to mention the case with everybody being named 'Guest' at
+LambdaMOO because of the same slipup on yduJ's behalf).  Yes, the second case
+is in relation to assignment expressions.
+
+Basically, consider (in relation to operators only, do not consider
+assignment expressions or another while loop configuration):
+
+                  Old         New
+
+                  '&lt;='        '&lt;='     (Unchanged)
+                  '&gt;='        '&gt;='     (Unchanged)
+                  '!='        '!='     (Unchanged)
+                  '=='        '=='     (Unchanged)
+                  '='         ':='
+                              '+='     New
+                              '-='     New
+                              '++'     New *
+                              '--'     New *
+
+* I don't consider these two as important as the two above them, although they
+  would be nice.
+
+But, enough from me...
+
+-Brandon
+</PRE>

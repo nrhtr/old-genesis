@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [308] in "Coldmud discussion meeting"</TITLE>
+<H1>[308] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?308"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="306"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="307"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="307"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="309"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="316"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="322"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: logging, fact and fiction</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 23 22:26:26 1994
+)</H3>
+<PRE>
+To: rayn@q.crossaccess.com (Ray Nawara jr.)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Mon, 23 May 94 18:51:12 -0700.
+             &lt;9405240151.AA19058@q.crossaccess.com&gt; 
+Date: Mon, 23 May 94 22:20:04 EDT
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+Let me make one thing absolutely clear:
+
+The Coldmud server has absolutely no idea what an admin is.  The
+server has, in fact, absolutely no idea how your database happens to
+represent people, or how it implements security.  Brandon explained
+that certain built-in functions were limited to $sys (in particular,
+anything that causes an affect on the world outside the database), but
+that's the only security implemented in the server.
+
+&gt; Can't an admin eval as $sys?
+
+This depends entirely on the database's concept of an admin (in
+particular, whether $sys allows this).
+
+--GBH
+
+</PRE>

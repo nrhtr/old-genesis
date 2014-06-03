@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [210] in "Coldmud discussion meeting"</TITLE>
+<H1>[210] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?210"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="209"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="209"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="209"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="211"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Most up to date version and all the patches...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Apr 12 22:05:12 1994
+)</H3>
+<PRE>
+Date: Tue, 12 Apr 1994 18:49:58 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt; Yes, I know this has been mailed out recently, but I just went nuts and
+&lt; cleared out all the old mail in my mailbox today and lost it...
+&lt; where can I find it?
+
+ftp://lab_backup.lib.usu.edu/pub/brandon/coldmud/*
+
+I'm creating a patched source right now.
+
+&lt; Also, I had a question about the core.  I was looking back at my notes on
+&lt; coolMUD and noticed that it's core was much simpler.  As in you had a root
+&lt; object, then a described and located object, then under those two, thing,
+&lt; room, exit, and player... Now I can see breaking one or two of those down
+&lt; some, but is there a reason for having so many different parent objects in
+&lt; the core?  Or is a lot of that just in there for the sake of having a little
+&lt; of something for everyone.
+
+My guess would be because its cool.  (shrug)
+
+&lt; home addr: 4783 Utah Street, San Diego, CA  92116
+
+Cool, Utah Street (I live in utah, get past all the mormon stuff and its not
+so bad).
+
+-Brandon Gillespie
+</PRE>

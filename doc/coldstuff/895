@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [895] in "Coldmud discussion meeting"</TITLE>
+<H1>[895] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?895"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="894"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="896"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] More parser woes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 17 10:23:48 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@tombstone.sunrem.com
+Date: Tue, 16 Jan 1996 21:07:52 +0000
+Reply-To: coldstuff@tombstone.sunrem.com
+
+It used to be legal to use multiple lines to define a variables 
+initialization value.  Now it is not.  This is a royal pain in the 
+ass.
+
+JK
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+Clinton Gingrich Atomic Biological Bomb NSA -- Hi John!
+(A message for my friend in the NSA)
+*******************************************************
+</PRE>

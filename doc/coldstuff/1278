@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1278] in "Coldmud discussion meeting"</TITLE>
+<H1>[1278] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1278"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1277"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1279"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1279"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1279"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] How to restore my database</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Apr 19 14:14:58 1997
+)</H3>
+<PRE>
+From: "Maddog's Studio" &lt;maddog@best.com&gt;
+To: coldstuff@cold.org
+Date: Sat, 19 Apr 1997 11:06:35 -0700 (PDT)
+
+
+The Unix server where I run Black Rabbit Cold is doing something
+wierd and the sysadmin will probably need to rebooted so I'm trying
+to be proactive this time and anticipate that I will have
+a problem when I try to run genesis again with my database.
+
+Do I just copy binary.backup to binary? Or do I have
+to do some tweaking.  The reason why I ask this is that last
+time I had a crash (Unix), I thought I had copied binary.backup
+but I still wasn't able to get the server to run; I don't
+remember which server/db combination I was running at the time.
+This time it is A7 with p26.
+
+Also I understand that yesterday was a busy day for Black Rabbit,
+including visits from several people from this list.  I have
+no idea what will be restored at this time or when the server
+and Unix will be back in action; it's been over 12 hours now
+and things seem fairly grim.  Hope to have some of you
+return when things are back to normal.
+
+Frank
+</PRE>

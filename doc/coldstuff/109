@@ -1,0 +1,91 @@
+<HEAD><TITLE>discuss@charon: [109] in "Coldmud discussion meeting"</TITLE>
+<H1>[109] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?109"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="108"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="108"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="108"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="110"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="110"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="113"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Proposed change regarding MI ambiguities</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec 10 20:30:04 1993
+)</H3>
+<PRE>
+Date: Sat, 11 Dec 93 01:23:29 GMT
+From: Andrew Wilson &lt;Andrew.Wilson@cm.cf.ac.uk&gt;
+To: coldstuff@MIT.EDU
+
+
+&gt; From ghudson@MIT.EDU Fri Dec 10 23:26:36 1993
+&gt; From: ghudson@MIT.EDU
+&gt; Date: Fri, 10 Dec 1993 18:22:20 -0500
+&gt; To: coldstuff@MIT.EDU
+&gt; Subject: Proposed change regarding MI ambiguities
+&gt; Content-Length: 1656
+&gt; 
+&gt; 
+&gt; While composing mail to tiny-splatters, it occurred to me that
+&gt; detecting ambiguities in the method search and triggering an error
+&gt; would be preferrable to my current method in three respects:
+&gt; 
+&gt; 	* It is simpler.
+&gt; 
+&gt; 	* If an object has O a non-overridable method named 'foo', all
+&gt; 	  descendents of that object are guaranteed to call that
+&gt; 	  method when sent a message 'foo', unless an ancestor of O
+&gt; 	  defines a non-overridable method 'foo', or unless an
+&gt; 	  ~ambiguous error results from sending a 'foo' message to O.
+&gt; 
+&gt; 	* When you pass a message in a method, the method you call
+&gt; 	  depends only on the object which defines the current method,
+&gt; 	  not on the current object.  That is, you know which method
+&gt; 	  you're passing to.  (There are implementation advantages
+&gt; 	  here as well, but that's not very important.)
+&gt; 
+&gt; What's an ambiguity?  Given an object with an ancestors digraph, and a
+&gt; method name, an ambiguity is when the method definitions do not all
+&gt; lie on a single path.  Consider the following two inheritance
+&gt; diagrams, where objects marked with an asterix define a method 'foo'.
+&gt; 
+&gt; 	A			A
+&gt; 
+&gt; 	B			B*
+&gt; 
+&gt; 	C			C*
+&gt; 
+&gt;       D*  E*		      D   E
+&gt; 
+&gt; 	F*			F*
+&gt; 
+&gt; 	G			G
+&gt; 
+&gt; The first diagram is ambiguous, because D and E do not lie on the same
+&gt; path up the digraph.  The second diagram is not ambiguous, because
+&gt; there is a path which contains all of the method definitions.
+&gt; 
+&gt; Once you've determined the path which contains all of the method
+&gt; definitions, the method used is the topmost non-overridable method, if
+&gt; there are any, or the bottommost method if there aren't any.
+&gt; 
+&gt; I'm pretty sure I can detect ambiguities in linear time.
+&gt; 
+&gt; Does this seem reasonable to people?
+
+Absolutely not.  It is evident that the ambiguities, if any, can be detected
+when the method is defined.  Such ambiguities are, after all, merely syntactic.
+There really is no reason at all for not creating a @lint, or equivalent
+mechanism for flagging any ambiguities and for refusing to construct an
+ambiguous lattice.  Force the semantics to be unambiguous and you are saved
+the horror of run-time lattice verification.  I'd suggest that you read up
+on the implementation of the Eiffel programming language NOW rather than later.
+Do it right, or don't bother.
+
+&gt; --GBH
+
+
+Andy (Net)
+</PRE>

@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [849] in "Coldmud discussion meeting"</TITLE>
+<H1>[849] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?849"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="846"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="848"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="848"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="850"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Compile and Decompile</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec  1 11:57:13 1995
+)</H3>
+<PRE>
+Date: Fri, 1 Dec 1995 09:24:14 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;199512010120.RAA12318@asparagus.tenetwork.com&gt;
+
+&gt; Not compile object, compile method, which IS at least in Coldmud...
+&gt;
+&gt; [...] compile()
+
+Compile is staying, infact, it is expanding to:
+
++compile()           (accepts a list of strings, returns parsetree)
++decompile()         (accepts a parsetree, returns a list of strings)
++add_method()        (accepts a parsetree or a list of strings)
+
+(check out http://cold.org/syntax.txt, that is my latest 1.0 syntax sheet)
+
+-Brandon
+</PRE>

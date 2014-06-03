@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [765] in "Coldmud discussion meeting"</TITLE>
+<H1>[765] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?765"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="763"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="763"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="764"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="766"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="767"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="767"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: database management package...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 16 05:15:04 1995
+)</H3>
+<PRE>
+From: frankc@netcom.com (Frank Crowell)
+To: coldstuff@MIT.EDU
+Date: Wed, 16 Aug 1995 02:06:22 -0700 (PDT)
+In-Reply-To: &lt;9508150403.AA08493@hydepark.declab.usu.edu&gt; from "869683 Gillespie Brandon James" at Aug 14, 95 10:03:56 pm
+
+869683 Gillespie Brandon James wrote:
+&gt; 
+&gt; Does anybody forsee any problem with switching the driver to use gnu's
+&gt; dbm package, over the standard unix package?  The reason for this switch
+&gt; is that there are a few os's which don't implement ndbm right, or buggy
+&gt; (such as solaris), and centralizing on a readily available and free
+&gt; package may help out some people...
+&gt; 
+
+What is the license (GPL) implication of this?  If you use the gnu
+package then I think you have to make it available to the server
+builders.  Isn't that the way GPL works?
+
+
+Frank
+</PRE>

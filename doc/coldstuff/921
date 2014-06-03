@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [921] in "Coldmud discussion meeting"</TITLE>
+<H1>[921] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?921"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="919"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="919"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="920"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="922"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="922"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="922"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Upgrading DB's</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Feb 22 22:19:45 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@cold.org
+Date: Thu, 22 Feb 1996 18:57:05 +0000
+Reply-To: coldstuff@cold.org
+
+Can you give me a really compelling reason not to stick with 2-10 
+until we at least have a better parser for v3?
+
+(BTW: The old parser, while btter, is far from perfect also.  There 
+are some really stupid mistakes in the grammer.  for instance
+   &lt;$afrob,[foo,bar]&gt;.frobrtn() 
+is a syntax error, with parens its okay, like
+   (&lt;$afrob,[foo,bar&gt;).frobrtn
+
+bad bad bad grammer design.
+
+)
+
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+</PRE>

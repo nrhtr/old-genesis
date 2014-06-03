@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [1031] in "Coldmud discussion meeting"</TITLE>
+<H1>[1031] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1031"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1030"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1032"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Object holders</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jul 20 19:25:17 1996
+)</H3>
+<PRE>
+Date: Sat, 20 Jul 1996 11:19:41 +0200
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+
+I looked into the holders code. I may have read the code wrongly, but I
+don't see any sequential list walk. Instead, the objects which have
+holders defined for them are immediately put into the name index, and
+are found by quick lookup_retrieve_names afterwards. The code seems
+rather okay to me. What optimization did you have in mind, Brandon?
+
+	Miro / Jenner
+</PRE>

@@ -1,0 +1,98 @@
+<HEAD><TITLE>discuss@charon: [559] in "Coldmud discussion meeting"</TITLE>
+<H1>[559] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?559"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="558"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="560"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>A few points..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  8 00:07:22 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: coldstuff@MIT.EDU
+Date: Mon, 7 Nov 1994 21:01:41 -0800 (PST)
+Cc: jbb@homer.ncm.com
+
+Ok, first of all I should point out that I've gotten significantly behind on my
+mail the past couple of days and consewuently I haven't even managed to read
+through all of the stuff that's been sent to this list yet, but there are a few
+things I want to say before I forget..
+
+First of all, Colin, could you please go back and read the list before you post
+messages like your "ToDo or not ToDo" one?  The bulk of your message was
+dealing with stale issues that've been resolved some time back.  As for
+Jordan's work, I HAVE BEEN working with him ever since I found out he was still
+interested in working on this whole thing..
+
+As for the perception held by you and a couple of other people regarding my To
+Do List, I would like to point out a couple of things:
+
+1.  Items on the "To Do" section and the "Up For Discussion" section were not
+put there because I had somehow decided in some divine fashion that certain
+things will be done regardless of how people felt about them (if this was the
+case I simply would havve done them instead of posting about them) and some
+wouldn't, but rather the points in the "To Do" section were largely put there
+based on the fact that according to feedback on this list at the point they
+were proposed, there was no major opposition to them and everyone seemed to
+agree that they should be implemented.  If anything decided that something you
+despise ended up on that list it was primarily your failure to speak up when it
+was proposed.
+
+2.  I have not appointed myself "God of ColdMUD" or any such thing.  At the
+time I posted that list the information I had at my disposal said that nobody
+else was doing work on the server (I'm not sure what kind of miscommunication
+went on between me and Jordan, as it has since become apparent that he is still
+quite interested in working on it), and so I simply offered my services to
+implement several of the features that some people had been asking for.
+
+3.  I suspect some people have also confused my role as "ColdMUD Coordinator"
+with my role as an active member of the ColdMUD community.  It is not my desire
+to fashion ColdMUD into Richelieu's Server.  Throughout this process I have
+been making an attempt to get everyone's opinion regarding proposed changes and
+attempt to work from general consensus regarding what changes will be made to
+the server.  I, of course, also have my own desires as to what will and won't
+be done, but if you'll note, I have been arguing my points on an equal footing
+with everyone else instead of simply going ahead and doing my own thing.  In my
+opinion those aspects of the list which are currently being discussed are not
+resolved and will not be implemented until they are one way or the other, and
+my "vote" is not any more significant than anyone else's.
+
+As it is, Jordan is still involved in this whole thing, and in my opinion is
+quite capable, and so I am quite willing to work with him to acheive desired
+goals in this department (particularly since I often have more desire than time
+anyway).  Admittedly, I should probably have worked on clearing things up
+somewhat as soon as I found out that Jordan was still active, but at this
+point, the situation as I see it is that there are several people interested in
+working on the server, and instead of being the ColdMUD developer, I am
+perfectly willing to be a ColdMUD developer and the ColdMUD coordinator.  As
+such I will work to help coordinate efforts between developers and integrate
+changes which everyone agrees are worthwhile into a common server development.
+
+I do believe that development does need to continue (there are still things the
+server simply cannot do, for one thing), but I also believe that fragmentation
+could be the downfall of ColdMUD altogether if not handled right.  I also
+believe that discussion amongst a decent number of people is the best way to
+ensure that one isn't making a big mistake, which is why I've always made a
+point to post my proposals and ask for comments before planning to go ahead
+with them and why I've also tried to make a point to go with the general
+consensus, regardless of how I feel, when one is made.
+
+-R
+
+PS: I will be leaving for a couple of weeks on Friday (the 11th) to do all
+kinds of roaming across the country and visiting people and participating in a
+conference and such.. I should have net access but may not have a lot of time
+during the whole thing..  just in case anyone needs to know why I'm not
+participating much or being kinda slow to respond to my mail..  I'll be back on
+the 28th..
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

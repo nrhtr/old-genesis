@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [1384] in "Coldmud discussion meeting"</TITLE>
+<H1>[1384] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1384"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1383"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1385"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1385"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1385"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] GDBM for windows</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 25 00:50:09 1997
+)</H3>
+<PRE>
+Date: Mon, 24 Nov 1997 22:34:26 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+
+Does anybody have a GDBM implementation/port for windows that compiles
+under Borland C++?  I was about to compile win32 binaries for 1.1-stable
+and I found the gdbm zip file I have (and the one online) is corrupt.
+
+Any help would be appreciated.
+
+-Brandon
+
+</PRE>

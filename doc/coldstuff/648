@@ -1,0 +1,419 @@
+<HEAD><TITLE>discuss@charon: [648] in "Coldmud discussion meeting"</TITLE>
+<H1>[648] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?648"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="647"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="649"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[ColdMud] The ColdMud FAQ 0.1.0, Jan-31-95</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Feb  1 06:55:15 1995
+)</H3>
+<PRE>
+From: image@expert.cc.purdue.edu (Jeff T.P.)
+To: coldstuff@MIT.EDU
+Date: Wed, 1 Feb 95 6:50:49 EST
+
+Here's the FAQ.  It's also available from my HomePage using the URL:
+http://expert.cc.purdue.edu/~image/ColdMudFAQ.html
+
+Brandon, I'll leave it to you to grab is from there and put in on the 
+Cold Mud Server.
+
+If something is wrong, or you have something to add, mail me.  It'd be 
+helpful to have more info to put in here.  (I'm having lots o' trouble 
+figuring out what to pull from the old mail, since I really don't know 
+what anyone is doing.  So if you're doing something ColdMud-important, 
+tell me.)
+
+
+                           COLDMUD FAQ VERSION 0.1.0
+                                       
+0. Table of Contents
+
+     * 1. Introduction
+          + 1.1. Introduction to ColdMud
+               o 1.1.1. ColdMud Server Development
+                    # 1.1.1.1. ColdMud's History
+                    # 1.1.1.2. ColdMud's Present
+                    # 1.1.1.3. ColdMud's Future
+               o 1.1.2. ColdMud Core Development
+                    # 1.1.2.1. ColdMud Cores' Past
+                    # 1.1.2.2. ColdMud Cores' Present *!*
+                    # 1.1.2.3. ColdMud Cores' Future *!*
+               o 1.1.3. ColdMud Servers Online
+                    # 1.1.3.1. FrozenApples ColdMud *!*
+                    # 1.1.3.2. The Cold Dark ColdMud *!*
+               o 1.1.4. Other Servers Related to ColdMud *!*
+                    # 1.1.4.1. LambdaMOO Server *!*
+                    # 1.1.4.2. Absolute Reality Server *!*
+                    # 1.1.4.3. ColdX *!*
+          + 1.2. Where to get ColdMud Servers &amp; Cores &amp; Info *!*
+     * 2. Answers to Frequently Asked Questions
+          + 2.1. What advantages are there to the yet unimplimented
+            "private methods?"
+          + 2.2. Is there an error in the ColdMud 10.3 manual about how
+            to represent buffers? *!*
+          + 2.3. How does inheritence works? *!*
+     * 3. ColdMud FAQ Credits &amp; Contact Addresses
+          + 3.1. ColdMud FAQ Credits
+          + 3.2. ColdMud FAQ Contacts
+     * 4. History
+       
+   
+     _________________________________________________________________
+   
+1. Introduction
+
+  1.1. INTRODUCTION TO COLDMUD
+  
+    1.1.1. ColdMud Server Development
+    
+      1.1.1.1. ColdMud's History [RdF]
+      
+   
+   
+   Versions through 0.11.0 were written by Greg Hudson. Version 0.10.0
+   was his last official release, and the last documented server. Patches
+   were once available to fix several bugs and add a function for testing
+   method tick usage. Version 0.11.0 had more internal than external
+   changes. The external changes were a change in the return of
+   traceback() to a list of lists instead of a list of strings (so
+   traceback formatting could be performed in-db), the removal of
+   error_str() and error_arg() (because they are included in
+   traceback()), and the removeal of the functions dict_add_elem() and
+   dict_del_elem() because they are easily implemented in-db with
+   dict_add(), dict_del(), dict_contains(), setadd() and setremove().
+   
+   Greg didn't quite finish 0.11.0, but Colin McCormic kindly finished it
+   for him. I applied the patches for version 10 to this source,
+   resulting in what has been passed around as 0.11.4. This version is
+   "stable" except that its binary-db storage seems to be broken and it
+   may hang at random on Linux boxes.
+   
+      1.1.1.2. ColdMud's Present [RdF]
+      
+   
+   
+   Jordan Baker took my copy of 0.11.4 and added suspend(), resume(),
+   tasks(), cancel(), and callers() to it, resulting in a VERY-BETA
+   0.12.0. He also changed the message_op funtion to make (x).foo()
+   syntactically equivalent to get_name(type(x)).foo(x) for all
+   non-obj/non-frob x. This means that [1,2].reverse() =&gt; [2,1] if
+   $list.reverse() does what its name implies.
+   
+      1.1.1.3. ColdMud's Future [RdF]
+      
+   
+   
+   Colin McCormic has been publicly secretive about what his plans are.
+   They seem to be re-writing the server from the ground up in C++, but
+   being textdump compatible with 0.11.0. He has also hinted at
+   multi-threading, and has shown interest in supporting distributed dbs.
+   
+   
+   Jordan Baker continues to do server hacking. He and others are trying
+   to find and squash the bug which is causing the server to hang on
+   linux machines. He also plans to add floating-point support. There has
+   been talk of adding more attributes to methods besides
+   "disallow_overrides", specifically "private" and "instance_only". The
+   first has been successfully added to 0.12.0, but was removed because
+   Jordan didn't trust the changes bug-wise. He also isn't yet convinced
+   that it is a Good Thing (tm).
+   
+   Private methods are "invisible" to other calling objects. They have
+   the same accessability as object parameters. In the test
+   implementation, ".foo();" caused only the object defining the current
+   method to be searched for a method named 'foo. If found, foo() would
+   be executed, otherwise the server would throw a ~methodnf error. If
+   another object tried to access the method it would not be there, and
+   the method search would continue at the next parent.
+   
+   I believe Jordan has plans of re-writting in C++ and/or adding
+   threading to the server some time after the next official release.
+   
+    1.1.2. ColdMud Core Development
+    
+      1.1.2.1. ColdMud Cores' Past [RdF]
+      
+   
+   
+   Worlds 0.1 through 0.6 were available with various releases of the
+   server. World-0.6 will not run under 0.11.0 without changes, but the
+   changes are simple and obvious with the manual and the above info in
+   hand. None were very complete by most people's standards, as they do
+   not support a help system, mail, editors, aliases, pronoun
+   substitution, or a bunch of other features considered to be necessary
+   in any MUD core. They do however provide the platform from which all
+   cores that I know of developed.
+   
+   AbsoluteZero was a core being developed by Jordan Baker and some
+   associates of his, until he lost net access. It has a help system of
+   sorts, pronoun substitution, and some other bells and whistles, but is
+   a very incomplete attempt due to being a work in progress interrupted
+   abruptly.
+   
+      1.1.2.2. ColdMud Cores' Present [RdF] [Jtp]
+      
+   
+   
+   The Cold Dark Core 1.1 is the latest release of tCDcore. Brandon has
+   stated that there probably won't be another release until version 2.0.
+   Feature list not yet available. (Send me one Brandon?)
+   
+   FrozenApples 0.1 is Robert de Forest's ColdMud Core. It provides
+   little funtionality over world-0.6, but includes a re-written I/O
+   object system, and @d command, and lots of general cleanup/util
+   writing. It is anything but done. (Robert, send me a feature list
+   too.)
+   
+   AbsoluteZero is available, but not in a distributeable state.
+   
+      1.1.2.3. ColdMud Cores' Future [RdF] [JTP]
+      
+   
+   
+   FrozenApples is not currently being developed do to a project that
+   Robert de Forest is involved in with Jordan. When that project is
+   completed Robert intends to continue development. Robert says that it
+   should be a "top-notch core within a month of starting. User-command
+   level functionality will not be significantly increased, but the
+   structure and design of the core will be as complete as they come, and
+   will include pronoun substitution, better I/O handling, an events
+   system, and many other components sorely lacking in world-0.6."
+   
+   The Cold Dark is still being worked on by Brandon and his associates.
+   As soon as I get more information on the direction of tCDcore I'll put
+   it here.
+   
+   AbsoluteZero is being incorperated into FrozenApples.
+   
+   RyouKold, a core being developed by Jeff T.P., has been on the
+   programmer's table for a few months now. It's programmed from the
+   ground up, borrowing ideas from World 0.6. RyouKold is planned as
+   being a comprehensive communication server including elements such as
+   intensive client support, public key encryption/authetication for
+   identification/data security, low-level distributed database model,
+   VRML 1.0 support, plus some other bonuses. Because of the intensive
+   new features being added, and the current load of the production team,
+   RyouKold's release date has been set back indefinately. A preliminary
+   release date of RyouKold 1.0beta, a Core with only the basic Social
+   MUD features, is expected for sometime in late Spring of 1995.
+   
+    1.1.3. ColdMud Servers Online
+    
+      1.1.3.1. FrozenApples ColdMud [RdF] [Jtp]
+      
+   
+   
+   Robert de Forest was running the FrozenApples Core for a short time:
+    telnet://sequoia.picosof.com:6666/"
+    
+   
+   
+   To quote him:
+   
+     I am running a version of FrozenApples on 0.12.0 of the server that
+     has a HUGE security hole. There are also many disgusting, sloppy,
+     irritating, and otherwise stupid bugs in it. However, if you need a
+     site to go to to research cold, you may come to sequoia.picosof.com
+     / 6666. I make no guarentee of any kind. Save your work locally if
+     you value it.
+     
+   
+   
+   I get a connection refused when I tried to connect, however.
+   
+      1.1.3.2. The Cold Dark ColdMud [Bdn] [Jtp]
+      
+   
+   
+   Brandon is running The Cold Dark Core again. It's URL's are:
+    telnet://recumbent.declab.usu.edu:1138/
+    http://recumbent.declab.usu.edu:1180/"
+    
+   
+   
+   To quote the history page of the WWW Server:
+   
+     The Cold Dark was originally known as DarkurtheMOO, running MOO,
+     with a purpose of being a developed RPG MOO core based off Darkurthe
+     LEGENDS. However, when we stumbled across ColdMUD our conversion was
+     quite immediate, to the unfortunate demise of our MOO Core. Since
+     then we have evolved in our purpose, to what we are now.
+     
+     The Cold Dark has been active since November of 1993, DarkurtheMOO
+     was active from May 1993 - November 1993. The Cold Dark can be
+     accessed via regular net connections (clients are preferred).
+     
+    1.1.4. Other Servers Related to ColdMud
+    
+   
+   
+   There are some servers out there that have importance to the ColdMud
+   community for various reasons. These servers are either ancestors,
+   siblings, or children of ColdMud. They are included within this FAQ to
+   offer alternatives to ColdMud, as well as to keep the ColdMud
+   community informed about the development state of other servers with a
+   purpose that is related to ColdMud.
+   
+      1.1.4.1 LambdaMOO Server
+      
+   
+   
+   The LambdaMOO Server has been around for approximately three years
+   now. It's stability, usablity, and high level of performance make it
+   the premiere server freely available.
+   
+   LambdaMOO is the parent of ColdMud. Many ideas and philosophies of
+   LambdaMOO exist in the current incarnation of ColdMud, but probably
+   more were altered or improved upon to produce ColdMud.
+   
+   More complete information about LambdaMOO is available at
+   ftp://parcftp.xerox.com/pub/MOO.
+   
+      1.1.4.2 Absolute Reality Server [Jtp]
+      
+   
+   
+   Pat Moss is currently developing a 'child' of ColdMud that he calls,
+   Absolute Reality. It's a server that's geared more as an engineering
+   tool than as a gaming enviroment.
+   
+     I am the proud owner of a bastard child of ColdMUD called AR.
+     Essentially, its coldmud will full floating point math, advanced
+     math libraries and a dynamic matrix for vector mapping. It also has
+     a few other nifty features like a full featured editor, mail system
+     and other in-db niceties.
+     
+   
+   
+   More information about Absolute Reality is available on the web at
+   http://www.microserve.net:80/~trek/ar/. There is some basic
+   information about Absolute Reality as well as the beginnings of a
+   manual for absolute reality.
+   
+      1.1.4.3. ColdX [Jtp]
+      
+   
+   
+   This is something Brandon is working on. I think he also calls it
+   ColdMud 0.12.2. More info soon.
+   
+  1.2. WHERE TO GET COLDMUD SERVERS &amp; CORES &amp; INFO
+  
+   
+   
+   The official ColdMud WWW Site is located at:
+    http://www.declab.usu.edu:8080/ColdMUD/
+    
+    The official ColdMud FTP Archive is located at:
+    ftp://sticky.usu.edu/pub/brandon/coldmud/
+    
+    Located there is:
+    
+   ColdMud -- Server
+          Versions 0.10.3, 0.11.3, 0.12.0, and 0.12.1c.
+          
+   Cold Dark -- Core
+          Versions: 1.0, 1.0b, and 1.1.
+          
+   Absolute Zero -- Core
+          Version ?
+          
+   Frozen Apples -- Core
+          Version 0.1
+          
+   Glacier (world) -- Core
+          Version 0.6
+          
+   Chop -- Core Splitter
+          Version 0.1
+          
+   Dumpsplit and Dumpunsplit -- Core Splitters
+          Version ?
+          
+   Coldmud Docs
+          Version 0.10.3
+          
+    
+      ________________________________________________________________
+    
+2. Answers to Common Questions
+
+  2.1. WHAT ADVANTAGES ARE THERE TO THE YET UNIMPLIMENTED "PRIVATE METHODS?"
+  [RDF]
+    
+    
+    Private methods have two advantages. The first is that the lookup for
+    a private method call only searches one object, as opposed to
+    potentially all the ancestors of this(). The second advantage is that
+    it provides a programmer with a way to be sure that "sender() ==
+    this() &amp;&amp; caller() == definer()" because obj:foo() is a syntax error.
+    This is a common perms check in any method which is shared by
+    multiple interface methods, for example. That is, the private flag on
+    methods provides a simple and efficient tool for enforcing an
+    object's interface.
+    
+  2.2. IS THERE AN ERROR IN THE COLDMUD 10.3 MANUAL ABOUT HOW TO REPRESENT
+  BUFFERS? [JTP]
+    
+    
+    Yes, and a rather large mistake it is. Buffers should be represented
+    with the `[] notation and not the %[] notation. The manual
+    incorrectly offers the reader the %[] notation. You'll get a syntax
+    error if you use this notation.
+    
+  2.3. HOW DOES INHERITENCE WORKS? [JPK] [RDF]
+    
+    
+    This is a fairly subtle question regarding inheritence:
+     * Object A:
+          + has method foo
+          + has method bar which calls foo
+     * Object B:
+          + is a child of Object A
+          + has method foo
+    
+    
+    B.bar() will call WHICH foo when invoked?
+    
+    The answer is B.foo() will be called. Method searches look for method
+    which is closest to the this(), or the farthest disallow_overides
+    definition. If A.foo had been disallow_overrides it would have been
+    called instead. I believe the manual covers this just fine.
+      ________________________________________________________________
+    
+3. ColdMud FAQ Credits &amp; Contact Addresses
+
+  3.1. COLDMUD FAQ CREDITS
+    
+    
+    This FAQ was originally prepared as a rather Impromptu FAQ by Robert
+    de Forest. Jeff T.P. took over the FAQ after that first version.
+    
+  3.2. COLDMUD FAQ CONTACTS
+     * [RdF] Robert de Forest
+     * [Jtp] Jeff T.P.
+     * [Bdn] Brandon
+     * [JPK] Jeff Kesselman
+    
+      ________________________________________________________________
+    
+4. History
+
+     * Version 0.0.0 - Written by [RdF]. September 15, 1994.
+     * Version 0.0.1 - Maintained by [Jtp]. September 16, 1994.
+     * Version 0.1.0 - Maintained by [Jtp]. January 31, 1995.
+
+-- 
+Life in the So Called Information Age. . .
+              . . .One Man's Garbage is Another Man's Treasure (I Guess).
+
+World Wide Web -=&gt; http://expert.cc.purdue.edu/~image/
+</PRE>

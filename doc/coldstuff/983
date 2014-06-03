@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [983] in "Coldmud discussion meeting"</TITLE>
+<H1>[983] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?983"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="969"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="982"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="982"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="984"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] 'user()' builtin function..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr 26 08:07:36 1996
+)</H3>
+<PRE>
+Date: Fri, 26 Apr 1996 04:41:31 -0700 (PDT)
+From: No one of any consequence &lt;seanl@beef.bovine.com&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.960425225006.10344A-100000@tombstone.sunrem.com&gt;
+
+I vote for user(), because it's short, and I'm lazy.
+
+-Sean
+
+On Thu, 25 Apr 1996, Brandon Gillespie wrote:
+
+&gt; On Wed, 24 Apr 1996, Dancer wrote:
+&gt; &gt; &gt; Okay, I agree with Quinn, 'issuer' sounds more generic, if not, I vote 
+&gt; &gt; &gt; for 'controller'.
+&gt; &gt; 
+&gt; &gt; If you want generic, try 'initiator()'. Personally, I'd really like
+&gt; &gt; something like that. There are quite a lot of times when I'd like to pin
+&gt; &gt; down where  .tell() came from (usually from a room announce, from some
+&gt; &gt; code on a user, started by...who? Being able to get the dbref of the
+&gt; &gt; enactor would be a BIG help).
+&gt; 
+&gt; Ok, from discussions here and numerous online I'm personally narrowing it 
+&gt; down to one of:
+&gt; 
+&gt;       origin()
+&gt;       user()
+&gt; 
+&gt; Both of which work.  The primary bonus of 'user()' is it is short, and
+&gt; should be easy to pickup by most beginning users--but it is not as
+&gt; appropriate in more proffesional applications (however, it is also not
+&gt; absolutely inappropriate either).  The drawback to 'origin()' is that it
+&gt; doesn't imply you can change it (of course, it doesn't imply you can't
+&gt; either.. ;) I'm going to be making these changes soon, of these two which
+&gt; do people prefer? 
+&gt; 
+&gt; -Brandon
+&gt; 
+</PRE>

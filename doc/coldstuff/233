@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [233] in "Coldmud discussion meeting"</TITLE>
+<H1>[233] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?233"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="232"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="232"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="232"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="234"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: network "stuff"</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 12 22:59:23 1994
+)</H3>
+<PRE>
+Date: Thu, 12 May 1994 22:55:59 -0400 (EDT)
+From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+To: coldstuff@MIT.EDU
+Cc: 
+In-Reply-To: &lt;01HC98C70UN6BG56CX@cc.usu.edu&gt;
+
+Hold on here..you want strindex (I like that best, but let's get on with the
+point) so you can do word wrapping?  Aren't we getting into the area of client
+functions?  I mean, if you start putting everything in the server, you get
+lambda, and you get 7 second lag and more server JUNK than you will ever
+use in your entire life.  See Lambda, if you don't believe me.
+
+
+</PRE>

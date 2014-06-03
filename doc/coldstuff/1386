@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1386] in "Coldmud discussion meeting"</TITLE>
+<H1>[1386] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1386"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1385"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1387"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Cold limit that should be documented</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 26 18:50:49 1997
+)</H3>
+<PRE>
+From: jeffk@tenetwork.com
+Date: Wed, 26 Nov 1997 15:35:21 -0800
+To: coldstuff@cold.org
+
+There is clearly a fixed buffer size for retrieving packets from TCP/IP.
+If a line is sent that is longer then that buffer, it arrives as two or
+more subsequent calls to the relevant parse method.
+
+Not a big prob to deal with but it should be documented.  Took me a day to
+track it down as the cause of a bug I was seeing (partly 'cause i was just
+stupid and what was happening didn't occur to me until fairly late in the
+day.)
+
+jeffk
+Jeffrey P. Kesselman
+Senior Game Integration Engineer
+Total Entertainment Network
+
+Unite for Java! - http://www.javalobby.org
+
+** Tired of unsolicited email? TAKE BACK OUR MAILBOXES! --
+http://www.ten.net/~jeffk/stopspam.htm ** 
+</PRE>

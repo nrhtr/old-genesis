@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [688] in "Coldmud discussion meeting"</TITLE>
+<H1>[688] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?688"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="687"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="689"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="695"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="695"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>assignment operator change, perhaps something else?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 12:26:17 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Fri, 10 Mar 95 10:08:58 -0700
+
+Perhaps we do not need to change the assignment operator, but rather
+we need to change the equals operator?  By not changing the assignment
+operator it would leave the door open to adding '-=' and '+='...
+Perhaps &lt;&gt; for equal to?...
+
+----
+if (x = a &lt;= b)
+  ...
+else if (x = a &gt;= c)
+  ...
+else if (x = a &lt;&gt; d)
+  ...
+----
+
+Just a thought...
+
+-Brandon
+</PRE>

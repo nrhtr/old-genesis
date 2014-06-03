@@ -1,0 +1,80 @@
+<HEAD><TITLE>discuss@charon: [243] in "Coldmud discussion meeting"</TITLE>
+<H1>[243] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?243"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="242"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="244"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>temporary alternative for no clear_param()?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 17 22:27:26 1994
+)</H3>
+<PRE>
+Date: Tue, 17 May 1994 20:22:18 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Ok, basically, I _really_ dont like the idea of having to copy an object just
+to clear a parameter.  You shouldn't have to do this.  To explain I will map:
+
+
+Object: $foo
+Param:  $root dbref 'foo
+Param:  $achoo zoo_param 'value
+Param:  $foo  foo_param 'value
+
+Parent: $foo
+Object: $doo
+Param:  $root dbref 'doo
+Param:  $achoo zoo_param 'nuther_different_value
+Param:  $foo foo_param 'second_value
+
+Now, I come along and remove foo_param from object $foo and it looks like:
+
+Object: $foo
+Param:  $root dbref 'foo
+Param:  $achoo zoo_param 'value
+
+Parent: $foo
+Object: $doo
+Param:  $root dbref 'doo
+Param:  $achoo zoo_param 'nuther_different_value
+Param:  $foo foo_param 'second_value
+
+NOW, on Object $doo foo_param still exists.  This is because of encapsulation,
+great, dandy.  HOWEVER, I cannot access foo_param on $doo, nor can I _EVER_
+remove foo_param from $doo, it will ALWAYS stay there collecting dust and
+cobwebs! (grumble).
+
+So, once again I would propose:
+
+     clear_parameter($defining_object, 'parameter)
+
+Which is called from the object that it is currently residing on.  This would
+not break encapsulation, and it would fix what I see as a gaping wound in the
+side of ColdMUD.  Oh, and it would allow me to release a core the way I feel it
+should be done (with objects uninitialized).  With the above primitive and the
+even further above example I could type:
+
+(run by object $doo)
+
+    clear_param($foo, 'foo_param);
+
+Which would remove it. (as del_param does on object $foo).
+
+My implementation for this would be to have .uninit call clear_param for all
+objects (assuming that clear_param does not DELETE the parameter on the
+defining parent).  Then when we do a core simply uninitialize all objects.  I
+am currently pondering having .uninit set all params as something obivously not
+normal like 'this_is_a_corified_value_that_can_be_hosed_sometime  Then we could
+use a simple sed to remove the parameters from the database (but this is damn
+ugly).
+
+-Brandon/Lyncx-
+</PRE>

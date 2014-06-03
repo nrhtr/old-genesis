@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [341] in "Coldmud discussion meeting"</TITLE>
+<H1>[341] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?341"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="340"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="342"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>re: read()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun  2 21:58:24 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Thu, 2 Jun 1994 18:52:49 -0700 (PDT)
+
+The functionality of MOOs read() function can be written in-db. It has been
+ done more than one way, though it's always the same concept. Suspending tasks
+ can also be done in-db by means of a task scheduler. Both of these rely on a
+ callback mechanism, which is inconvienient from a coding point of view, but
+ made the server simpler.
+
+I am under the impression that a future release of the server will have both
+ cooperative and preemptive multitasking. This will take care of the pain of
+ writing and using a task scheduler. Since read() is simply a matter of
+ re-directing input to a buffer until N lines are read or some other condition
+ is met, I doubt writing a read() builtin is on the top of the request list.
+
+We thank you for your interest. :)
+
+Crag / Robert de Forest
+-- 
+"Mr. Tater, I think I have a punishment for you that is fair, just, and
+ clever. Or maybe just fairly clever."
+
+    -- King Yakko of Anvilania.
+</PRE>

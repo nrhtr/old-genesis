@@ -1,0 +1,563 @@
+<HEAD><TITLE>discuss@charon: [1096] in "Coldmud discussion meeting"</TITLE>
+<H1>[1096] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1096"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1095"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1097"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Math library</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Oct  2 15:14:14 1996
+)</H3>
+<PRE>
+Date: Wed, 2 Oct 1996 20:37:11 +0200 (MET DST)
+From: Miroslav Silovic &lt;silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+
+I had some extra energy to burn. So... here are $math natives and
+$math object with quite extensive math library (and hopefully clean
+enough to use as standard). Enjoy!
+
+Comments appreciated, as always. :)
+
+-------------------------------------------------- cdc_math.c
+
+
+#define NATIVE_MODULE "$math"
+
+#include &lt;math.h&gt;
+#include "cdc_math.h"
+#include "list.h"
+
+module_t cdc_math_module = {init_math, uninit_math};
+
+void init_math(Int argc, char ** argv)
+{
+}
+
+void uninit_math(void)
+{
+}
+
+static int check_one_vector(cList *l1, Int *len_ret)
+{
+    Int i,len;
+
+    len=list_length(l1);
+    for (i=0; i&lt;len; i++) {
+	if (list_elem(l1,i)-&gt;type != FLOAT)
+	    THROW((type_id, "Arguments must be lists of floats."))
+    }
+    *len_ret=len;
+    RETURN_TRUE;
+}
+
+static int check_vectors(cList *l1, cList *l2, Int *len_ret)
+{
+    Int i,len;
+
+    len=list_length(l1);
+    if (list_length(l2)!=len)
+	THROW((range_id, "Arguments are not of the same length."))
+    for (i=0; i&lt;len; i++) {
+	if (list_elem(l1,i)-&gt;type != FLOAT)
+	    THROW((type_id, "Arguments must be lists of floats."))
+	if (list_elem(l2,i)-&gt;type != FLOAT)
+	    THROW((type_id, "Arguments must be lists of floats."))
+    }
+    *len_ret=len;
+    RETURN_TRUE;
+}
+
+
+NATIVE_METHOD(minor) {
+    Int i,len;
+    cList *l,*l1,*l2;
+
+    INIT_2_ARGS(LIST,LIST);
+    l1=LIST1;
+    l2=LIST2;
+    if (!check_vectors (l1,l2,&amp;len))
+	RETURN_FALSE;
+    l=list_new(len);
+    l-&gt;len=len;
+    for (i=0; i&lt;len; i++) {
+	Float p,q;
+
+	p=list_elem(l1,i)-&gt;u.fval;
+	q=list_elem(l2,i)-&gt;u.fval;
+	list_elem(l,i)-&gt;type=FLOAT;
+	list_elem(l,i)-&gt;u.fval=p&lt;q ? p : q;
+    }
+    CLEAN_RETURN_LIST(l);
+}
+
+NATIVE_METHOD(major) {
+    Int i,len;
+    cList *l,*l1,*l2;
+
+    INIT_2_ARGS(LIST,LIST);
+    l1=LIST1;
+    l2=LIST2;
+    if (!check_vectors (l1,l2,&amp;len))
+	RETURN_FALSE;
+    l=list_new(len);
+    l-&gt;len=len;
+    for (i=0; i&lt;len; i++) {
+	Float p,q;
+
+	p=list_elem(l1,i)-&gt;u.fval;
+	q=list_elem(l2,i)-&gt;u.fval;
+	list_elem(l,i)-&gt;type=FLOAT;
+	list_elem(l,i)-&gt;u.fval=p&gt;q ? p : q;
+    }
+    CLEAN_RETURN_LIST(l);
+}
+
+NATIVE_METHOD(add) {
+    Int i,len;
+    cList *l,*l1,*l2;
+
+    INIT_2_ARGS(LIST,LIST);
+    l1=LIST1;
+    l2=LIST2;
+    if (!check_vectors (l1,l2,&amp;len))
+	RETURN_FALSE;
+    l=list_new(len);
+    l-&gt;len=len;
+    for (i=0; i&lt;len; i++) {
+	Float p,q;
+
+	p=list_elem(l1,i)-&gt;u.fval;
+	q=list_elem(l2,i)-&gt;u.fval;
+	list_elem(l,i)-&gt;type=FLOAT;
+	list_elem(l,i)-&gt;u.fval=p+q;
+    }
+    CLEAN_RETURN_LIST(l);
+}
+
+NATIVE_METHOD(sub) {
+    Int i,len;
+    cList *l,*l1,*l2;
+
+    INIT_2_ARGS(LIST,LIST);
+    l1=LIST1;
+    l2=LIST2;
+    if (!check_vectors (l1,l2,&amp;len))
+	RETURN_FALSE;
+    l=list_new(len);
+    l-&gt;len=len;
+    for (i=0; i&lt;len; i++) {
+	Float p,q;
+
+	p=list_elem(l1,i)-&gt;u.fval;
+	q=list_elem(l2,i)-&gt;u.fval;
+	list_elem(l,i)-&gt;type=FLOAT;
+	list_elem(l,i)-&gt;u.fval=p-q;
+    }
+    CLEAN_RETURN_LIST(l);
+}
+
+NATIVE_METHOD(dot) {
+    Int i,len;
+    cList *l1,*l2;
+    Float s;
+
+    INIT_2_ARGS(LIST,LIST);
+    l1=LIST1;
+    l2=LIST2;
+    if (!check_vectors (l1,l2,&amp;len))
+	RETURN_FALSE;
+    for (s=0.0,i=0; i&lt;len; i++) {
+	Float p,q;
+
+	p=list_elem(l1,i)-&gt;u.fval;
+	q=list_elem(l2,i)-&gt;u.fval;
+	s+=p*q;
+    }
+    CLEAN_RETURN_FLOAT(s);
+}
+
+NATIVE_METHOD(distance) {
+    Int i,len;
+    cList *l1,*l2;
+    Float s;
+
+    INIT_2_ARGS(LIST,LIST);
+    l1=LIST1;
+    l2=LIST2;
+    if (!check_vectors (l1,l2,&amp;len))
+	RETURN_FALSE;
+    for (s=0.0,i=0; i&lt;len; i++) {
+	Float p,q,d;
+
+	p=list_elem(l1,i)-&gt;u.fval;
+	q=list_elem(l2,i)-&gt;u.fval;
+	d=p-q;
+	s+=d*d;
+    }
+    CLEAN_RETURN_FLOAT(sqrt(s));
+}
+
+NATIVE_METHOD(cross) {
+    Int i,len;
+    cList *l,*l1,*l2;
+    cData *f,*f1,*f2;
+
+    INIT_2_ARGS(LIST,LIST);
+    l1=LIST1;
+    l2=LIST2;
+    if (!check_vectors (l1,l2,&amp;len))
+	RETURN_FALSE;
+    if (len!=3)
+	THROW((~range_id,"The vectors are not of length 3."))
+    l=list_new(len);
+    l-&gt;len=len;
+    f=list_elem(l,0);
+    f1=list_elem(l1,0);
+    f2=list_elem(l2,0);
+    f[0].type=f[1].type=f[2].type=FLOAT;
+    f[0].u.fval=f1[1].u.fval*f2[2].u.fval-f1[2].u.fval*f2[1].u.fval;
+    f[1].u.fval=f1[2].u.fval*f2[0].u.fval-f1[0].u.fval*f2[2].u.fval;
+    f[2].u.fval=f1[0].u.fval*f2[1].u.fval-f1[1].u.fval*f2[0].u.fval;
+    CLEAN_RETURN_LIST(l);
+}
+
+NATIVE_METHOD(scale) {
+    Int i,len;
+    cList *l,*l1;
+    Float f;
+
+    INIT_2_ARGS(FLOAT,LIST);
+    l1=LIST2;
+    f=FLOAT1;
+    if (!check_one_vector (l1,&amp;len))
+	RETURN_FALSE;
+    l=list_new(len);
+    l-&gt;len=len;
+    for (i=0; i&lt;len; i++) {
+	Float p;
+
+	p=list_elem(l1,i)-&gt;u.fval;
+	list_elem(l,i)-&gt;type=FLOAT;
+	list_elem(l,i)-&gt;u.fval=p*f;
+    }
+    CLEAN_RETURN_LIST(l);
+}
+
+NATIVE_METHOD(is_lower) {
+    Int i,len;
+    cList *l1,*l2;
+    
+    INIT_2_ARGS(LIST,LIST);
+    l1=LIST1;
+    l2=LIST2;
+    if (!check_vectors (l1,l2,&amp;len))
+	RETURN_FALSE;
+    for (i=0; i&lt;len; i++) {
+	Float p,q;
+
+	p=list_elem(l1,i)-&gt;u.fval;
+	q=list_elem(l2,i)-&gt;u.fval;
+	if (p&gt;=q)
+	    CLEAN_RETURN_INTEGER(0);
+    }
+    CLEAN_RETURN_INTEGER(1);
+}
+
+NATIVE_METHOD(transpose) {
+    Int i,len,len1;
+    cList *l,*l1;
+    cData *e,*o;
+
+    INIT_1_ARG(LIST);
+    l1=LIST1;
+    len=list_length(l1);
+    if (!len) {
+	CLEAN_RETURN_LIST(l1);
+    }
+    e=list_elem(l1,0);
+    for (i=0; i&lt;len; i++) {
+	if (e[i].type!=LIST)
+	    THROW((type_id,"The argument must be a list of lists."))
+    }
+    len1=list_length(e[1].u.list);
+    for (i=1; i&lt;len; i++) {
+	if (list_length(e[i].u.list)!=len1)
+	    THROW((range_id,"All sublists must be of the same length"))
+    }
+    l=list_new(len1);
+    l-&gt;len=len1;
+    o=list_elem(l,0);
+    for (i=0; i&lt;len1; i++) {
+	cList *l2;
+	cData *k;
+	Int j;
+
+	l2=list_new(len);
+	l2-&gt;len=len;
+	o[i].type=LIST;
+	o[i].u.list=l2;
+	k=list_elem(l2,0);
+	for (j=0; j&lt;len; j++)
+	    data_dup(&amp;k[j],list_elem(e[j].u.list,i));
+    }
+    CLEAN_RETURN_LIST(l);
+}
+
+-------------------------------------------------- cdc_math.h
+
+#ifndef _math_mod_h_
+#define _math_mod_h_
+
+#include "defs.h"
+#include "cdc_pcode.h"
+
+void init_math(Int argc, char ** argv);
+void uninit_math(void);
+
+#ifndef _cdc_math_
+extern module_t cdc_math_module;
+#endif
+
+
+extern NATIVE_METHOD(minor);
+extern NATIVE_METHOD(major);
+extern NATIVE_METHOD(add);
+extern NATIVE_METHOD(sub);
+extern NATIVE_METHOD(dot);
+extern NATIVE_METHOD(distance);
+extern NATIVE_METHOD(cross);
+extern NATIVE_METHOD(scale);
+extern NATIVE_METHOD(is_lower);
+extern NATIVE_METHOD(transpose);
+
+#endif
+
+-------------------------------------------------- cdc_math.mod
+
+##  object.method_name           function                 
+native $math.minor()              minor
+native $math.major()              major
+native $math.add()                add
+native $math.sub()            	  sub
+native $math.dot()                dot
+native $math.distance()           distance
+native $math.cross()              cross
+native $math.scale()              scale
+native $math.is_lower()           is_lower
+native $math.transpose()          transpose
+objs cdc_math.o
+
+-------------------------------------------------- math.coldc
+
+object $math: $libraries;
+var $root manager = $jenner;
+var $root flags = ['variables, 'methods, 'code];
+var $root created_on = 844267864;
+var $root owners = [$jenner];
+var $root inited = 1;
+var $math pi = 3.14159;
+var $math pi2 = 6.28318;
+var $math origin_2d = [0.0, 0.0];
+var $math origin_3d = [0.0, 0.0, 0.0];
+var $math transmat_2d = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]];
+var $math transmat_3d = [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0,
+   1.0, 0.0]];
+public method $math.minor(): native {
+};
+public method $math.major(): native {
+};
+public method $math.add(): native {
+};
+public method $math.sub(): native {
+};
+public method $math.dot(): native {
+};
+public method $math.distance(): native {
+};
+public method $math.cross(): native {
+};
+public method $math.scale(): native {
+};
+public method $math.is_lower(): native {
+};
+public method $math.transpose(): native {
+};
+public method $math.polar_rectangular() {
+    arg coords;
+    
+    return [coords[1] * cos(coords[2]), coords[1] * sin(coords[2])];
+};
+public method $math.rectangular_polar() {
+    arg coords;
+    var a;
+    
+    a = atan2(coords[2], coords[1]);
+    if (a &lt; 0)
+        a += pi2;
+    return [.distance(coords, origin_2d), a];
+};
+public method $math.pi() {
+    return pi;
+};
+public method $math.pi2() {
+    return pi2;
+};
+public method $math.deg_rad() {
+    arg angle;
+    
+    return angle / 57.2958;
+};
+public method $math.rad_deg() {
+    arg angle;
+    
+    return angle * 57.2958;
+};
+public method $math.matrix_add() {
+    arg m1, m2;
+    var i;
+    
+    return map i in [1 .. m1.length()] to (.add(m1[i], m2[i]));
+};
+public method $math.matrix_sub() {
+    arg m1, m2;
+    var i;
+    
+    return map i in [1 .. m2.length()] to (.sub(m1[i], m2[i]));
+};
+public method $math.matrix_mul() {
+    arg m1, m2;
+    var x, y;
+    
+    m2 = .transpose(m2);
+    return map x in (m1) to (map y in (m2) to (.dot(x, y)));
+};
+public method $math.spherical_rectangular() {
+    arg coords;
+    var r, phi, theta, r1;
+    
+    r = coords[1];
+    phi = coords[2];
+    theta = coords[3];
+    r1 = r * cos(theta);
+    return [r1 * cos(phi), r1 * sin(phi), r * sin(theta)];
+};
+public method $math.rectangular_spherical() {
+    arg coords;
+    var a, d;
+    
+    a = atan2(coords[2], coords[1]);
+    if (a &lt; 0)
+        a += pi2;
+    return [(d = .distance(coords, origin_3d)), a, atan2(coords[3],
+   .distance(coords.subrange(1, 2), origin_2d))];
+};
+public method $math.ident_mat() {
+    arg n;
+    var x, y;
+    
+    return map x in [1 .. n] to (map y in [1 .. n] to (x == y ? 1.0 : 0.0));
+};
+public method $math.translation_mat() {
+    arg vector;
+    var x, y;
+    
+    if (vector.length() == 2)
+        return [@transmat_2d, [@vector, 1.0]];
+    else
+        return [@transmat_3d, [@vector, 1.0]];
+};
+public method $math.rectangular_cylindrical() {
+    arg coords;
+    var a;
+    
+    a = atan2(coords[2], coords[1]);
+    if (a &lt; 0)
+        a += pi2;
+    return [.distance(coords, origin_2d), a, coords[3]];
+};
+public method $math.cylindrical_rectangular() {
+    arg coords;
+    
+    return [coords[1] * cos(coords[2]), coords[1] * sin(coords[2]), coords[3]];
+};
+public method $math.matrix_scale() {
+    arg s, m;
+    var x;
+    
+    return map x in (m) to (.scale(s, x));
+};
+public method $math.tensor() {
+    arg v1, v2;
+    var x, y;
+    
+    return map x in (v1) to (map y in (v2) to (x * y));
+};
+public method $math.skew() {
+    arg v;
+    
+    return [[0.0, v[3], -v[2]], [-v[3], 0.0, v[1]], [v[2], -v[1], 0.0]];
+};
+public method $math.rotation_mat_3d() {
+    arg axis, angle;
+    var s, c, m, tens;
+    
+    s = sin(angle);
+    c = cos(angle);
+    if (type(axis) == 'list) {
+        axis = .scale(1.0 / .distance(axis, origin_3d), axis);
+        tens = .tensor(axis, axis);
+        m = .matrix_add(tens, .matrix_add(.matrix_scale(s, .skew(axis)),
+   .matrix_scale(c, .matrix_sub(.ident_mat(3), tens))));
+        return [[@m[1], 0.0], [@m[2], 0.0], [@m[3], 0.0], [0.0, 0.0, 0.0,
+   1.0]];
+    } else {
+        switch (axis) {
+            case 'z:
+                return [[c, s, 0.0, 0.0], [-s, c, 0.0, 0.0], [0.0, 0.0, 1.0,
+   0.0], [0.0, 0.0, 0.0, 1.0]];
+            case 'y:
+                return [[c, 0.0, -s, 0.0], [0.0, 1.0, 0.0, 0.0], [s, 0.0, c,
+   0.0], [0.0, 0.0, 0.0, 1.0]];
+            case 'x:
+                return [[1.0, 0.0, 0.0, 0.0], [0.0, c, s, 0.0], [0.0, -s, c,
+   0.0], [0.0, 0.0, 0.0, 1.0]];
+        }
+    }
+};
+public method $math.transform_vect() {
+    arg m, v;
+    var x, outvect, flag;
+    
+    if (m.length() == v.length() + 1) {
+        v = [@v, 1.0];
+        flag = 1;
+    }
+    outvect = map x in (m) to (.dot(x, v));
+    return flag ? outvect.subrange(1, outvect.length() - 1) : outvect;
+};
+public method $math.rotation_mat_2d() {
+    arg angle;
+    var s, c;
+    
+    s = sin(angle);
+    c = cos(angle);
+    return [[c, s, 0.0], [-s, c, 0.0], [0.0, 0.0, 1.0]];
+};
+public method $math.scale_mat() {
+    arg scale;
+    
+    if (scale.length() == 2)
+        return [[scale[1], 0.0, 0.0], [0, scale[2], 0.0], [0.0, 0.0, 1.0]];
+    else
+        return [[scale[1], 0.0, 0.0, 0.0], [0.0, scale[2], 0.0, 0.0], [0.0,
+   0.0, scale[3], 0.0], [0.0, 0.0, 0.0, 1]];
+};
+</PRE>

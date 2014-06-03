@@ -1,0 +1,366 @@
+<HEAD><TITLE>discuss@charon: [1135] in "Coldmud discussion meeting"</TITLE>
+<H1>[1135] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1135"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1134"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1136"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Performance patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 22 14:11:14 1996
+)</H3>
+<PRE>
+Date: Fri, 22 Nov 1996 19:54:14 +0100 (MET)
+From: Miroslav.Silovic@public.srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+Cc: brandon@cold.org
+
+Apply this patch to execute.c. It speeds up the expressions like
+(| foo |), when foo causes the exception. The speedup in the
+commonly used cases (mainly (| something[foo] |) || default and
+(| object.method_that_may_not_exist() |) is *substantial*.
+(the reason is that it won't allocate, then discard the backtrace).
+Note that (| foo.method() |) will still construct the backtrace
+if method explicitly calls throw() ColdC function, or expression
+inside (| |)'s propagates the exception.
+
+----------------------------------------------------------------
+
+*** ../../Genesis-1.0p19/src/execute.c	Wed Nov 13 06:28:05 1996
+--- execute.c	Fri Nov 22 19:29:15 1996
+***************
+*** 1319,1380 ****
+            (num_args == 1) ? "" : "s", required);
+  }
+  
+  void func_type_error(char *which, cData *wrong, char *required)
+  {
+      cthrow(type_id, "The %s argument (%D) is not %s.", which, wrong, required);
+  }
+  
+  void cthrow(Ident error, char *fmt, ...)
+  {
+      cStr *str;
+      va_list arg;
+  
+!     va_start(arg, fmt);
+!     str = vformat(fmt, arg);
+  
+!     va_end(arg);
+      interp_error(error, str);
+!     string_discard(str);
+  }
+  
+  void interp_error(Ident error, cStr *explanation)
+  {
+      cList * location;
+      Ident location_type;
+      cData *d;
+      char *opname;
+  
+!     /* Get the opcode name and decide whether it's a function or not. */
+!     opname = op_table[cur_frame-&gt;last_opcode].name;
+!     location_type = (islower(*opname)) ? function_id : opcode_id;
+  
+!     /* Construct a two-element list giving the location. */
+!     location = list_new(2);
+!     d = list_empty_spaces(location, 2);
+  
+!     /* The first element is 'function or 'opcode. */
+!     d-&gt;type = SYMBOL;
+!     d-&gt;u.symbol = ident_dup(location_type);
+!     d++;
+  
+!     /* The second element is the symbol for the opcode. */
+!     d-&gt;type = SYMBOL;
+!     d-&gt;u.symbol = ident_dup(op_table[cur_frame-&gt;last_opcode].symbol);
+  
+      start_error(error, explanation, NULL, location);
+!     list_discard(location);
+  }
+  
+  void user_error(Ident error, cStr *explanation, cData *arg)
+  {
+      cList * location;
+      cData *d;
+  
+      /* Construct a list giving the location. */
+      location = list_new(5);
+      d = list_empty_spaces(location, 5);
+  
+      /* The first element is 'method. */
+      d-&gt;type = SYMBOL;
+      d-&gt;u.symbol = ident_dup(method_id);
+      d++;
+--- 1319,1400 ----
+            (num_args == 1) ? "" : "s", required);
+  }
+  
+  void func_type_error(char *which, cData *wrong, char *required)
+  {
+      cthrow(type_id, "The %s argument (%D) is not %s.", which, wrong, required);
+  }
+  
++ INTERNAL Bool is_critical (void) {
++     if (cur_frame
++ 	&amp;&amp; cur_frame-&gt;specifiers
++ 	&amp;&amp; cur_frame-&gt;specifiers-&gt;type==CRITICAL)
++ 	return TRUE;
++     return FALSE;
++ }
++ 
+  void cthrow(Ident error, char *fmt, ...)
+  {
+      cStr *str;
+      va_list arg;
+  
+!     if (!is_critical()) {
+! 	va_start(arg, fmt);
+! 	str = vformat(fmt, arg);
+  
+! 	va_end(arg);
+!     }
+!     else
+! 	str=NULL;
+! 
+      interp_error(error, str);
+!     if (str)
+! 	string_discard(str);
+  }
+  
+  void interp_error(Ident error, cStr *explanation)
+  {
+      cList * location;
+      Ident location_type;
+      cData *d;
+      char *opname;
+  
+!     if (explanation) {
+! 	/* Get the opcode name and decide whether it's a function or not. */
+! 	opname = op_table[cur_frame-&gt;last_opcode].name;
+! 	location_type = (islower(*opname)) ? function_id : opcode_id;
+  
+! 	/* Construct a two-element list giving the location. */
+! 	location = list_new(2);
+! 	d = list_empty_spaces(location, 2);
+  
+! 	/* The first element is 'function or 'opcode. */
+! 	d-&gt;type = SYMBOL;
+! 	d-&gt;u.symbol = ident_dup(location_type);
+! 	d++;
+  
+! 	/* The second element is the symbol for the opcode. */
+! 	d-&gt;type = SYMBOL;
+! 	d-&gt;u.symbol = ident_dup(op_table[cur_frame-&gt;last_opcode].symbol);
+!     }
+!     else
+! 	location = NULL;
+  
+      start_error(error, explanation, NULL, location);
+!     if (location)
+! 	list_discard(location);
+  }
+  
+  void user_error(Ident error, cStr *explanation, cData *arg)
+  {
+      cList * location;
+      cData *d;
+  
++ 
+      /* Construct a list giving the location. */
+      location = list_new(5);
+      d = list_empty_spaces(location, 5);
+  
+      /* The first element is 'method. */
+      d-&gt;type = SYMBOL;
+      d-&gt;u.symbol = ident_dup(method_id);
+      d++;
+***************
+*** 1416,1465 ****
+  }
+  
+  INTERNAL void start_error(Ident error, cStr *explanation, cData *arg,
+                          cList * location)
+  {
+      cList * error_condition, *traceback;
+      cData *d;
+  
+!     /* Construct a three-element list for the error condition. */
+!     error_condition = list_new(3);
+!     d = list_empty_spaces(error_condition, 3);
+  
+!     /* The first element is the error code. */
+!     d-&gt;type = T_ERROR;
+!     d-&gt;u.error = ident_dup(error);
+!     d++;
+  
+!     /* The second element is the explanation string. */
+!     d-&gt;type = STRING;
+!     d-&gt;u.str = string_dup(explanation);
+!     d++;
+  
+!     /* The third element is the error arg, or 0 if there is none. */
+!     if (arg) {
+!         data_dup(d, arg);
+!     } else {
+!         d-&gt;type = INTEGER;
+!         d-&gt;u.val = 0;
+!     }
+  
+!     /* Now construct a traceback, starting as a two-element list. */
+!     traceback = list_new(2);
+!     d = list_empty_spaces(traceback, 2);
+  
+!     /* The first element is the error condition. */
+!     d-&gt;type = LIST;
+!     d-&gt;u.list = error_condition;
+!     d++;
+  
+!     /* The second argument is the location. */
+!     d-&gt;type = LIST;
+!     d-&gt;u.list = list_dup(location);
+  
+      /* Start the error propagating.  This consumes traceback. */
+      propagate_error(traceback, error);
+  }
+  
+  /* Requires:  traceback is a list of lists containing the traceback
+   *            information to date.  THIS FUNCTION CONSUMES THE INFORMATION.
+   *            id is an error id.  This function accounts for an error id
+--- 1436,1489 ----
+  }
+  
+  INTERNAL void start_error(Ident error, cStr *explanation, cData *arg,
+                          cList * location)
+  {
+      cList * error_condition, *traceback;
+      cData *d;
+  
+!     if (location) {
+! 	/* Construct a three-element list for the error condition. */
+! 	error_condition = list_new(3);
+! 	d = list_empty_spaces(error_condition, 3);
+  
+! 	/* The first element is the error code. */
+! 	d-&gt;type = T_ERROR;
+! 	d-&gt;u.error = ident_dup(error);
+! 	d++;
+  
+! 	/* The second element is the explanation string. */
+! 	d-&gt;type = STRING;
+! 	d-&gt;u.str = string_dup(explanation);
+! 	d++;
+  
+! 	/* The third element is the error arg, or 0 if there is none. */
+! 	if (arg) {
+! 	    data_dup(d, arg);
+! 	} else {
+! 	    d-&gt;type = INTEGER;
+! 	    d-&gt;u.val = 0;
+! 	}
+  
+! 	/* Now construct a traceback, starting as a two-element list. */
+! 	traceback = list_new(2);
+! 	d = list_empty_spaces(traceback, 2);
+  
+! 	/* The first element is the error condition. */
+! 	d-&gt;type = LIST;
+! 	d-&gt;u.list = error_condition;
+! 	d++;
+  
+! 	/* The second argument is the location. */
+! 	d-&gt;type = LIST;
+! 	d-&gt;u.list = list_dup(location);
+!     }
+!     else
+! 	traceback=NULL;
+  
+      /* Start the error propagating.  This consumes traceback. */
+      propagate_error(traceback, error);
+  }
+  
+  /* Requires:  traceback is a list of lists containing the traceback
+   *            information to date.  THIS FUNCTION CONSUMES THE INFORMATION.
+   *            id is an error id.  This function accounts for an error id
+***************
+*** 1475,1491 ****
+  
+      /* If there's no current frame, drop all this on the floor. */
+      if (!cur_frame) {
+          list_discard(traceback);
+          return;
+      }
+  
+      /* Add message to traceback. */
+!     traceback = traceback_add(traceback, error);
+  
+      /* Look for an appropriate specifier in this frame. */
+      for (; cur_frame-&gt;specifiers; pop_error_action_specifier()) {
+  
+          spec = cur_frame-&gt;specifiers;
+          switch (spec-&gt;type) {
+  
+            case CRITICAL:
+--- 1499,1516 ----
+  
+      /* If there's no current frame, drop all this on the floor. */
+      if (!cur_frame) {
+          list_discard(traceback);
+          return;
+      }
+  
+      /* Add message to traceback. */
+!     if (traceback)
+! 	traceback = traceback_add(traceback, error);
+  
+      /* Look for an appropriate specifier in this frame. */
+      for (; cur_frame-&gt;specifiers; pop_error_action_specifier()) {
+  
+          spec = cur_frame-&gt;specifiers;
+          switch (spec-&gt;type) {
+  
+            case CRITICAL:
+***************
+*** 1507,1523 ****
+  
+              /* Push the error on the stack, and discard our copy of it. */
+              push_error(error);
+              ident_discard(error);
+  
+              /* Pop this error spec, discard the traceback, and continue
+               * processing. */
+              pop_error_action_specifier();
+!             list_discard(traceback);
+              return;
+  
+            case PROPAGATE:
+  
+              /* We're in a propagate expression.  Set the propagate flag and
+               * keep going. */
+              propagate = 1;
+              break;
+--- 1532,1549 ----
+  
+              /* Push the error on the stack, and discard our copy of it. */
+              push_error(error);
+              ident_discard(error);
+  
+              /* Pop this error spec, discard the traceback, and continue
+               * processing. */
+              pop_error_action_specifier();
+!             if (traceback)
+! 		list_discard(traceback);
+              return;
+  
+            case PROPAGATE:
+  
+              /* We're in a propagate expression.  Set the propagate flag and
+               * keep going. */
+              propagate = 1;
+              break;
+</PRE>

@@ -1,0 +1,191 @@
+<HEAD><TITLE>discuss@charon: [1270] in "Coldmud discussion meeting"</TITLE>
+<H1>[1270] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1270"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1269"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1271"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] [PATCH] grep +r</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr  4 05:42:09 1997
+)</H3>
+<PRE>
+Date: Fri, 4 Apr 1997 12:33:58 +0200 (MET DST)
+From: Miroslav Silovic &lt;silovic@petra.zesoi.fer.hr&gt;
+To: coldstuff@cold.org
+
+
+This fixes rather stupid bug in the object.c - extra object_discard
+completely bombed the server if the object got swapped while task
+still used the method (which was sufficiently rare to remain
+unnoticed). The patch also features traceback log (that's dump_stack),
+which proved invaluable when called from debugger, and reference
+checker for the object on stack (currently #ifdeffed out). It also
+fixes deallocing things in wrong order in frame_return (which boggled
+my memory access checker, since it first called method_free, then
+picked method-&gt;object to free it). Enjoy!
+
+
+diff -C 5 -r orig/Genesis-1.0p26/src/execute.c Genesis-1.0p26/src/execute.c
+*** orig/Genesis-1.0p26/src/execute.c	Sat Mar  8 20:25:51 1997
+--- Genesis-1.0p26/src/execute.c	Fri Apr  4 12:10:02 1997
+***************
+*** 381,390 ****
+--- 381,422 ----
+  
+  /*
+  // ---------------------------------------------------------------
+  // Nothing calls this function - it's here as a VM debug utility
+  */
++ 
++ void dump_stack (void)
++ {
++     Frame *f = cur_frame;
++ 
++     while (f) {
++         printf("user #%d, sender #%d, caller #%d, #%d&lt;#%d&gt;.%s (%d)\n",
++                f-&gt;user, f-&gt;sender, f-&gt;caller, f-&gt;object-&gt;objnum,
++                f-&gt;method-&gt;object-&gt;objnum, ident_name(f-&gt;method-&gt;name), f-&gt;method-&gt;refs);
++         f = f-&gt;caller_frame;
++     }
++     printf ("---\n");
++ }
++ 
++ /* This call counts the references from the stack frames to the given object */
++ 
++ int count_stack_refs (int objnum)
++ {
++     Frame *f = cur_frame;
++     int s;
++ 
++     s=0;
++     while (f) {
++ 	if (f-&gt;object-&gt;objnum == objnum)
++ 	    s++;
++ 	if (f-&gt;method-&gt;object-&gt;objnum == objnum)
++ 	    s++;
++         f = f-&gt;caller_frame;
++     }
++     return s;
++ }
++ 
+  #if DISABLED
+  void show_queues(void) {
+      VMState * v;
+  
+      fputs("preempted:", errfile);
+***************
+*** 808,820 ****
+      for (i = cur_frame-&gt;stack_start; i &lt; stack_pos; i++)
+          data_discard(&amp;stack[i]);
+      stack_pos = cur_frame-&gt;stack_start;
+  
+      /* Let go of method and objects. */
+      method_discard(cur_frame-&gt;method);
+      cache_discard(cur_frame-&gt;object);
+-     cache_discard(cur_frame-&gt;method-&gt;object);
+  
+      /* Discard any error action specifiers. */
+      while (cur_frame-&gt;specifiers)
+          pop_error_action_specifier();
+  
+--- 840,862 ----
+      for (i = cur_frame-&gt;stack_start; i &lt; stack_pos; i++)
+          data_discard(&amp;stack[i]);
+      stack_pos = cur_frame-&gt;stack_start;
+  
+      /* Let go of method and objects. */
++ 
++ #if DISABLED
++     /* Check if any of the objects lost their refcounts */
++     if (count_stack_refs(cur_frame-&gt;method-&gt;object-&gt;objnum) &gt; 
++ 	cur_frame-&gt;method-&gt;object-&gt;refs) {
++ 	printf ("EErrp!\n");
++ 	fflush(stdout);
++     }
++ #endif
++ 
++     cache_discard(cur_frame-&gt;method-&gt;object);
+      method_discard(cur_frame-&gt;method);
+      cache_discard(cur_frame-&gt;object);
+  
+      /* Discard any error action specifiers. */
+      while (cur_frame-&gt;specifiers)
+          pop_error_action_specifier();
+  
+diff -C 5 -r orig/Genesis-1.0p26/src/modules/moddef.h Genesis-1.0p26/src/modules/moddef.h
+*** orig/Genesis-1.0p26/src/modules/moddef.h	Sat Mar 22 20:39:33 1997
+--- Genesis-1.0p26/src/modules/moddef.h	Fri Apr  4 11:26:42 1997
+***************
+*** 95,105 ****
+  #define NATIVE_MATH_SCALE 68
+  #define NATIVE_MATH_IS_LOWER 69
+  #define NATIVE_MATH_TRANSPOSE 70
+  #define NATIVE_LAST 71
+  
+! #define MAGIC_MODNUMBER 859059573
+  
+  
+  #ifdef _native_
+  native_t natives[NATIVE_LAST] = {
+      {"buffer",       "length",            native_buflen},
+--- 95,105 ----
+  #define NATIVE_MATH_SCALE 68
+  #define NATIVE_MATH_IS_LOWER 69
+  #define NATIVE_MATH_TRANSPOSE 70
+  #define NATIVE_LAST 71
+  
+! #define MAGIC_MODNUMBER 860145891
+  
+  
+  #ifdef _native_
+  native_t natives[NATIVE_LAST] = {
+      {"buffer",       "length",            native_buflen},
+diff -C 5 -r orig/Genesis-1.0p26/src/ops/object.c Genesis-1.0p26/src/ops/object.c
+*** orig/Genesis-1.0p26/src/ops/object.c	Wed Feb 12 07:23:41 1997
+--- Genesis-1.0p26/src/ops/object.c	Fri Apr  4 12:11:56 1997
+***************
+*** 93,103 ****
+      result = object_assign_var(cur_frame-&gt;object, cur_frame-&gt;method-&gt;object,
+          		       args[0].u.symbol, &amp;args[1]);
+      if (result == varnf_id) {
+          cthrow(varnf_id, "Object variable %I does not exist.", args[0].u.symbol);
+      } else {
+!         /* This is just a stupid way of returning args[1] */
+          data_dup(&amp;d, &amp;args[1]);
+          pop(2);
+          data_dup(&amp;stack[stack_pos++], &amp;d);
+          data_discard(&amp;d);
+      }
+--- 93,103 ----
+      result = object_assign_var(cur_frame-&gt;object, cur_frame-&gt;method-&gt;object,
+          		       args[0].u.symbol, &amp;args[1]);
+      if (result == varnf_id) {
+          cthrow(varnf_id, "Object variable %I does not exist.", args[0].u.symbol);
+      } else {
+!        /* This is just a stupid way of returning args[1] */
+          data_dup(&amp;d, &amp;args[1]);
+          pop(2);
+          data_dup(&amp;stack[stack_pos++], &amp;d);
+          data_discard(&amp;d);
+      }
+***************
+*** 174,184 ****
+      /* keep these for later reference, if its already around */
+      if (method) {
+          flags = method-&gt;m_flags;
+          access = method-&gt;m_access;
+          native = method-&gt;native;
+-         cache_discard(method-&gt;object);
+      }
+  
+      code = args[0].u.list;
+  
+      /* Make sure that every element in the code list is a string. */
+--- 174,183 ----
+</PRE>

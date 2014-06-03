@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [1069] in "Coldmud discussion meeting"</TITLE>
+<H1>[1069] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1069"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1068"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1070"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Cause of the allocated_blocks bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Aug 19 20:20:23 1996
+)</H3>
+<PRE>
+Date: Tue, 20 Aug 1996 02:01:00 +0200 (MET DST)
+From: Miroslav Silovic &lt;silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+
+I didn't look carefully. It appears that the cause is that db_alloc
+doesn't call db_mark, but doesn't fix allocated_blocks variable,
+either. No worries about that bug, then.
+
+	Miro
+
+</PRE>

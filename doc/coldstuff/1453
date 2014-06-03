@@ -1,0 +1,137 @@
+<HEAD><TITLE>discuss@charon: [1453] in "Coldmud discussion meeting"</TITLE>
+<H1>[1453] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1453"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1452"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1454"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>user import script</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 11 03:02:46 1999
+)</H3>
+<PRE>
+Date: Tue, 10 Aug 1999 23:45:38 -0700 (PDT)
+From: Brad Roberts &lt;braddr@puremagic.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+
+These three files can help make importing users into a new db quick and
+easy.  The script below, with its template and list of users, creates 2
+files, a textdump fragment to be appended to the end of a coldcore
+textdump and a script to be run with @mojo on to insert the users into the
+$user_db registry.  It doesn't have anything in the way of error checking,
+but it worked for me.
+
+NOTE: Genesis (and coldcc) must be built WITH crypted passwords enabled
+unless your user.list file has cold style SHA-1 passwords.
+
+Later,
+Brad
+
+
+========================================
+conversion script
+========================================
+
+#!/usr/bin/perl
+
+open FILE, "user.template";
+$template = "";
+while (defined ($line = &lt;FILE&gt;))
+{
+    $template .= $line;
+}
+close FILE;
+
+open FILE,   "user.list";
+open DB,     "&gt;user.db";
+open SCRIPT, "&gt;user.script";
+
+while (defined ($line = &lt;FILE&gt;))
+{
+    chomp $line;
+    ($user, $password) = split(/ /, $line);
+
+    $userobject = $user;
+    $userobject =~ tr/A-Z/a-z/;
+    $userobject =~ s/\'//g;
+    $userobject =~ s/\`//g;
+
+    $loweruser = $user;
+    $loweruser =~ tr/A-Z/a-z/;
+
+    $temp = $template;
+    $temp =~ s/USEROBJECT/$userobject/g;
+    $temp =~ s/USERNAME/$user/g;
+    $temp =~ s/PASSWORD/$password/g;
+
+    print DB "${temp}";
+    print SCRIPT ";\$user_db.insert(\"${loweruser}\", \$user_${userobject})\n";
+}
+
+close FILE;
+close DB;
+close SCRIPT;
+
+
+========================================
+user.template
+========================================
+
+new object $user_USEROBJECT: $player;
+
+var $root manager = $user_USEROBJECT;
+var $root managed = [$user_USEROBJECT];
+var $user task_connections = #[];
+var $root created_on = 934343568;
+var $dmi_data descriptions = #[];
+var $has_commands shortcuts = #[];
+var $has_commands remote = #[];
+var $has_commands local = #[];
+var $channel_ui channel_dict = #[];
+var $channel_ui active_channels = #[];
+var $user connected_seconds = 6;
+var $command_aliases command_aliases = [];
+var $has_name name = ['prop, "USERNAME", "USERNAME"];
+var $mail_list mail = [];
+var $mail_list senders = 1;
+var $mail_list readers = [$user_USEROBJECT];
+var $mail_list notify = [$user_USEROBJECT];
+var $mail_ui current = #[['list, $user_USEROBJECT]];
+var $mail_ui subscribed = #[[$user_USEROBJECT, [934343568, 0]], [$mail_list_news, [0, 0]]];
+var $described prose = [];
+var $location contents = [];
+var $located location = $body_cave;
+var $located obvious = 1;
+var $thing gender = $gender_neuter;
+var $user password = "PASSWORD";
+var $user connected_at = -934343574;
+var $user last_command_at = 934343574;
+var $user connections = [];
+var $user parsers = [$command_parser, $channel_parser];
+var $user action = "";
+var $root quota = 76800;
+var $user formatter = $plain_format;
+var $root inited = 1;
+var $user_info info = #[];
+var $body last_command = "@quit";
+var $command_cache modules = [];
+var $user activity = "";
+
+
+=======================================
+user.list
+=======================================
+
+username crypted_password
+etc etc
+
+=======================================
+
+</PRE>

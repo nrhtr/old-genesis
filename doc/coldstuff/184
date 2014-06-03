@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [184] in "Coldmud discussion meeting"</TITLE>
+<H1>[184] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?184"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="183"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="185"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>log()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar 27 03:10:59 1994
+)</H3>
+<PRE>
+Date: Sun, 27 Mar 1994 01:08:18 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I'd like to also request that the builtin log() function does not place the
+time on each line.  Leave that up to internals.  Its just so redundant, in my
+opinion (and spammy), and I would also like to place times in database, but
+doing so is, well, redundant.
+
+-Brandon (the Lynx)
+</PRE>

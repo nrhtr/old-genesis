@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [843] in "Coldmud discussion meeting"</TITLE>
+<H1>[843] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?843"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="842"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="844"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="844"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="851"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>inheritance</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 30 14:56:02 1995
+)</H3>
+<PRE>
+Date: Thu, 30 Nov 1995 15:38:24 -0500 (EST)
+From: Dave Wallace &lt;dwallace@ssnet.com&gt;
+To: coldstuff@tombstone.sunrem.com
+
+
+I have noticed that children inherit their parents parameter names,but 
+not the _values_ of these parameters, is there some way to have this 
+without specificly initializing the child with $object.init_ and a bunch 
+of functions to access the parent's values? This seems a little messy to 
+me so perhaps there is something I am missing here.
+
+				-Dave.
+
+</PRE>

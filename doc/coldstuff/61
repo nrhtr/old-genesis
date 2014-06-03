@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [61] in "Coldmud discussion meeting"</TITLE>
+<H1>[61] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?61"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="60"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="62"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>clearp props--a semi alternative</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 20 13:16:13 1993
+)</H3>
+<PRE>
+Date: Sat, 20 Nov 1993 11:05:59 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+Ok, if we arent going to have clear props, perhaps we could add in a code
+function (or whatever its called) which is used the same way
+disallow_overrides; is (ie declared at the beginning), such as: 
+use_parent_params; or something.  if this was declared it when it goes to
+access a param, like:
+
+foo = param;
+or param = foo;
+or whatever (where param is on that object), the server (with that flag) would:
+
+param == 0 ? return obj.parent.param | return param;
+
+yes you can code that yourself, but that is a royal pain to code everywhere,
+and it is almost completely unneeded, as I know for many things you would end
+up coding that TONS of times...
+
+any comments?
+
+oh, and without the use_parent_params; flag it would act as it does...
+
+-Brandon/Lynx/Me.
+</PRE>

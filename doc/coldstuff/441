@@ -1,0 +1,72 @@
+<HEAD><TITLE>discuss@charon: [441] in "Coldmud discussion meeting"</TITLE>
+<H1>[441] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?441"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="440"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="442"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="446"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="449"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>assignments change (fix)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep 23 12:35:48 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Fri, 23 Sep 1994 10:31:25 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I toss my vote toward's the ':=' as an assignment operator.  It would be the
+best fix...
+
+Cons for having assignments as expressions AND having '=' as an assignment
+operator:
+
+* It gets confused with '==', quite often.
+
+(I can't think of any others)
+
+Pros for having assignments as expressions with '=' as an assignment operator:
+
+* It makes certain aspects of code smaller and more compact.
+
+Cons for having assignments as expressions with ':=' as an assignment operator:
+
+none
+
+Pros for the same:
+
+* It makes certain aspects of code smaller and more compact.
+
+--------------
+
+OK, sample code:
+
+while (var := .test()) {
+  (expr);
+}
+
+while (var == .test()) {
+  (expr);
+}
+
+I quite like it actually...
+
+BTW, I also think we should use 'handler' alone in a catch sequence.  As riche
+stated, two words for one operation is bad.  'with' on its own is vague,
+'handler' isn't.  Sample code:
+
+catch ~twink {
+  foo;
+} handler {
+  foo;
+}
+
+ /\    Brandon Gillespie    &lt;a href="http://www.usu.edu/~brandon/"&gt;me&lt;/a&gt;  /\
+ ()       An Interactive RFC Index:  http://www.usu.edu/~brandon/RFC/      ()
+ \/ "Luke, at that speed do you think you'll be able to pull out in time?" \/
+</PRE>

@@ -1,0 +1,107 @@
+<HEAD><TITLE>discuss@charon: [1635] in "Coldmud discussion meeting"</TITLE>
+<H1>[1635] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1635"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1626"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1634"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1634"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1636"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1636"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1640"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Genesis 1.1.9 - STABLE</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan  9 03:13:21 2001
+)</H3>
+<PRE>
+Message-ID: &lt;3A5AC32F.733A82D@geocities.com&gt;
+Date: Tue, 09 Jan 2001 01:52:15 -0600
+From: Allen Noe &lt;psyclone42@geocities.com&gt;
+MIME-Version: 1.0
+To: coldstuff@cold.org
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Reply-To: coldstuff@cold.org
+
+Bruce wrote:
+&gt; 
+&gt; This is a very delayed response, but I need to see a dev release
+&gt; made fairly soon to get some large changes into wider testing.
+
+Uh, am I holding you up? Feel free to take what you can use and drop the rest if
+you need to make a release RSN. None of this is so amazingly important that the
+rest of the world needs to wait.
+
+&gt; &gt; In the dev one:
+&gt; &gt; * Some method-cache stuff, if you're impatient. (Bruce)
+&gt; 
+&gt; I think this isn't the full version.  At any rate, I have a far
+&gt; larger patch with many more optimizations and enhancements that
+&gt; Brad and I have been working on that includes this.
+
+That's correct -- it's the old version you posted to this list. If you have a
+better version, then this one is pointless. Like I said, it was for the people
+who couldn't wait for the full version.
+
+&gt; &gt; * Have stack(1) not bother returning line number or pc. (me)
+&gt; 
+&gt; This conflicts with an extension that I've made to stack() that
+&gt; allows you to specify which task you'd like to get a stack for.
+&gt; While this info is available from task_info(), it isn't in the
+&gt; same format as stack() and traceback().  I didn't know about the
+&gt; stack trace being in task_info() until I'd already done my work,
+&gt; so I'm not clear what I'd like to do here.  To me, it makes sense
+&gt; for stack() to present that information, but the duplication
+&gt; seems wasteful. (I already had to change the underlying stuff in
+&gt; execute.c to let task_stack() work for any given task for some of
+&gt; the other work that has been going on.)
+
+Hmm. Sounds interesting, but I don't see how I would use it. I won't push too
+hard for my stack patch, other than that if you call stack() a lot, and don't
+need line numbers or the pc -- just objects and methods -- it saves having to
+parse the bytecode.
+
+I agree that stack(TID) should return that TID's stack, and also that returning
+the frames in task_info is then made redundant.
+
+It looks like task_info is less complex than stack(TID) should be (never having
+seen the latter's code), since task_info does not have to calculate line
+numbers; however if line numbers are needed, your stack(TID) is the only way I
+see to get them for another process's stack.
+
+I can always create a separate function to do what I have stack(1) do if it ends
+up conflicting -- that convention is just to save a function and be slightly
+portable: (| stack(1) |) || stack() should always compile and work.
+
+&gt; &gt; * Have method_bytecode() return jumps so if (1) { return 1; }
+&gt; &gt;   return 0; has different bytecode than if (1) { return 1;
+&gt; &gt;   return 0; } (me)
+&gt; &gt; * Add SYMBOL calling_method(), the same as stack()[2][3] (me)
+&gt; 
+&gt; These 2 look fine for the stable release to me, if they aren't
+&gt; buggy.  How long and to what extent have you been using these
+&gt; bits of code?
+
+I'm not sure about how often method_bytecode is used, but calling_method is used
+for just about every permission check, and more.
+
+Both have been in place for months.. at least 7, perhaps 10 if I read these
+timestamps right. I did find and fix a bug in calling_method where it would
+dereference a NULL pointer (cur_frame-&gt;caller_frame) if called from a method
+called by the driver, but that's it. The method_bytecode patch is four lines
+long -- it adds a case to the big switch there.
+
+&gt; &gt; * Add LIST explode_quoted(STRING), which is a native version
+&gt; &gt;   of ColdCore's $string.explode_quoted() (Jeremy Weatherford)
+&gt; 
+&gt; Hmmm. Would be nicer to see this as a native method on $string.
+&gt; I may do that work for you since it is pretty easy if you prefer.
+
+It's not my code; I just took what Jeremy posted and patched it in. I also think
+it would be much better as a native, but don't have enough round tuits. If you
+want to hack it, by all means, go ahead.
+
+Do you want to see a patch of the 4 things you haven't raised issues about, or
+can you just edit the patch file?
+</PRE>

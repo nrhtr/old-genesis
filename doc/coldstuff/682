@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [682] in "Coldmud discussion meeting"</TITLE>
+<H1>[682] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?682"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="681"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="683"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="683"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="684"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>blah blah blah</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar  9 15:17:52 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: coldstuff@MIT.EDU
+Date: Thu, 9 Mar 1995 14:12:54 -0600 (CST)
+
+I still have the assignment as expression pathch, though not in patch form.
+ A server with the change made (and the operator as '=') is running on
+ serial.io.com:6666 (do not spam this machine as it is a mere PC and not mine).
+
+My vote is for &lt;- over := because &lt;- looks better to me. :)
+
+I want to do the thing Jay said about making the parse tree available. Having
+ made the assigment as exporession change I feel it is within my means to make
+ a change of this type. I would make functions parrallel to the compile and
+ list_method functions called something like set_ops and method_ops (please
+ suggest alternatives, these do not appeal to me at all). The structure they
+ would manipulate in place of the list of strings we currently use as code
+ would be a method list based on the grammar of C--. It would look something
+ this:
+
+[[flags], [arg names], [var names], [statements]]
+
+Flags would be a list of identifiers, currently 'dissallow_overrides would be
+ the only one recognized.
+
+Arg and var names would be lists of strings or idents (pick one, or don't, it 
+ doesn't matter).
+
+statements would be in the form of
+[type, rest]
+where rest is defined by type. Current types are 'comment, 'if, etc. The rest
+ of the structure would be based on the definition of the language as found
+ in grammar.y, and I will not type it all in here unless someone BEGS me to.
+
+Does anyone have any objections? Alternative suggesions?
+
+Crag
+</PRE>

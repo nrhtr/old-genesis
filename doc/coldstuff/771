@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [771] in "Coldmud discussion meeting"</TITLE>
+<H1>[771] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?771"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="764"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="770"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="770"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="772"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="773"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="786"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: fork() vs send()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Aug 19 14:20:39 1995
+)</H3>
+<PRE>
+Date: Sat, 19 Aug 1995 12:19:13 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+&lt; 1. Call it something different.  send() just doesn't say 'fork'.
+
+Actually, it seem's my impression of what send() was suggested as, is wrong.
+They were suggesting send() as an in-db looping speedup, so you could replace:
+
+  for obj in (object_list) {
+      obj.(method)(@args);
+  }
+
+With:
+
+  send(object_list, method, args);
+
+He did suggest that fork could be hidden behind send, but I dont think he
+was suggesting it as a complete replacement for fork.
+
+One of the main reasons I like(d?) it better than a direct fork() 
+implementation is because it _is_ cleaner.
+
+&lt; 2. An argument for a delay time ala fork (n)
+
+Hmm, I dunno... I would like to add the delay times to pause(), with the
+default of no args meaning a 0 second pause (just pop me at the back of
+the current task list).  If you forked off, and wanted a delay, just call
+pause() afterwards...
+
+-Brandon
+</PRE>

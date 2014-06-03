@@ -1,0 +1,83 @@
+<HEAD><TITLE>discuss@charon: [837] in "Coldmud discussion meeting"</TITLE>
+<H1>[837] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?837"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="836"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="838"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>db splitter in ColdCore 2.1 release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct 22 20:56:31 1995
+)</H3>
+<PRE>
+Date: Sun, 22 Oct 1995 18:00:13 -0400 (EDT)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+The 'dumpsplit' perl script in ColdCore 2.1 contained two significant 
+bugs when it came to splitting a db:
+
+  1) it didn't specify a file mode for mkdir() which caused it not to parse.
+
+  2) there was an off-by-one bug that caused the body of the previous 
+object to be placed in the file meant for a given object.
+
+I've fixed both of them (I hope).  Note, though, that I've only tested 
+this once (the results were satisfactory) and I haven't tested putting 
+the db back together again.
+
+The rest of this message is a patch (context diff) for the changes.
+
+
+BEGIN -- CUT HERE -- Cut here -- cut here
+*** dumpsplit   Wed Oct 11 14:27:17 1995
+--- dumpsplit.new       Mon Oct 16 14:00:48 1995
+***************
+*** 54,61 ****
+  sub split {
+      while (&lt;DUMP&gt;) {
+          if (/^object /) {
+!             &amp;saveobj($_);
+          } elsif (/^parent /) {
+              $parents = "${parents}$_";
+          } elsif (/^name /) {
+              print NAMES;
+--- 54,65 ----
+  sub split {
+      while (&lt;DUMP&gt;) {
+          if (/^object /) {
+!             $obj = $_;
+          } elsif (/^parent /) {
++             if ($obj) {
++                 &amp;saveobj($obj);
++                 $obj = '';
++             }
+              $parents = "${parents}$_";
+          } elsif (/^name /) {
+              print NAMES;
+***************
+*** 118,124 ****
+  $names = "$srcdir/names";
+
+  if (!(-d $srcdir)) {
+!     mkdir($srcdir) || (print "Unable to make directory \"$srcdir\"." &amp;&amp; 
+exit);  }
+
+  if (/^-s/) {
+--- 122,128 ----
+  $names = "$srcdir/names";
+
+  if (!(-d $srcdir)) {
+!     mkdir($srcdir, 0700) || (print "Unable to make directory 
+\"$srcdir\"." &amp;&amp;
+exit);
+  }
+
+  if (/^-s/) {
+END -- CUT HERE -- Cut here -- cut here
+</PRE>

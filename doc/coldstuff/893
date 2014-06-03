@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [893] in "Coldmud discussion meeting"</TITLE>
+<H1>[893] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?893"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="891"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="892"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="892"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="894"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Operator overloading</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 10 16:59:11 1996
+)</H3>
+<PRE>
+From: Jettero Heller &lt;heller@grail.cba.csuohio.edu&gt;
+To: coldstuff@tombstone.sunrem.com
+Date: Wed, 10 Jan 1996 16:35:30 -0500 (EST)
+In-Reply-To: &lt;Pine.BSF.3.91.960110134045.12925E-100000@tombstone.sunrem.com&gt; from "Brandon Gillespie" at Jan 10, 96 01:46:28 pm
+Reply-To: coldstuff@tombstone.sunrem.com
+
+&gt; &gt; I don't have the new source on me, but in 2-10, there's 
+&gt; [snip]
+&gt; &gt; for addition. So, cthrow could be replaced with the method call on the
+&gt; &gt; first argument (I don't feel like rummaging through the source to find
+&gt; &gt; the exact recipe. :) ) Brandon, can this be done?
+	[ snip ]
+&gt; However, I'm unsure as to the overall benefits, in general you would be 
+&gt; creating more work for the driver (since it is not designed for operator
+&gt; overloading), with the only benefit being more readable (yet abstracted)
+&gt; code... 
+
+Personally I've never been one to make much use of operator overloading.
+I think it's only marginally more readable. Onlu if the designer did
+a good job at deciding how the overloaded operator should act. One 
+example of this is the list example you gave:
+
+[1, 2, 3] + 1;
+
+that doesn't really mean much to me. Is the result:
+
+[1, 2, 3, 4]  
+or 
+[1, 2, 3, 1]
+
+I usually discourage use of operator overloading for exactly this 
+reason. What is meant by it is often quite unclear. Granted the
+programmer himself may know what he means, but chances are few other
+people know. I've seen overloaded operators abused to often. 
+
+Just my two cents worth on the operator overloading issue. 
+
+** Heller
+
+-- 
+"I think the Exon amendment should at least require that AOL spay its 
+users before they're allowed out to play."  -- Usenet post
+Can you imagine having an implant so the government can track you anywhere
+you go? It's coming and we're bringing it to you, AT&amp;T.
+
+</PRE>

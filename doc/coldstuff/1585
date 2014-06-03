@@ -1,0 +1,80 @@
+<HEAD><TITLE>discuss@charon: [1585] in "Coldmud discussion meeting"</TITLE>
+<H1>[1585] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1585"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1581"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1583"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1584"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1586"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1586"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1588"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: A couple simple questions (hopefully)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 30 14:11:02 2000
+)</H3>
+<PRE>
+Date: Tue, 30 May 2000 11:58:01 -0600
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;200005300503.WAA07490@netcom.com&gt;; from Steven J. Owens on Mon, May 29, 2000 at 10:03:31PM -0700
+Reply-To: coldstuff@cold.org
+
+
+--dDRMvlgZJXvWKvBx
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, May 29, 2000 at 10:03:31PM -0700, Steven J. Owens wrote:
+&gt;=20
+&gt; Andy Croft asks:
+&gt; &gt; &gt; To clarify, I'll have a $thing I've whipped up created every time a g=
+roup
+&gt; &gt; &gt; of players enter combat that acts as a "referee". At the end of comba=
+t, the
+&gt; &gt; &gt; referee object is destroyed. Now, after a year of 10 to twenty players
+&gt; &gt; &gt; duking it out will Cold be able to handle it? Bear in mind I'm still =
+new to
+&gt; &gt; &gt; a powerful OOP environment like Cold. Please save the diesel fuel and
+&gt; &gt; &gt; matches, I'm painfully aware of my incompetence with Cold. &lt;GRIN&gt;
+&gt;=20
+&gt; Bruce writes:=20
+&gt; &gt; Why not just create them as needed and when done with the match, return
+&gt; &gt; them to a pool of un-managed referee objects?  That way, if you only
+&gt; &gt; ever have 10 matches at once, you only really need to create 10 refereee
+&gt; &gt; objects, rather than an endless cycle of create+destroy.
+&gt;=20
+&gt;      Just out of curiosity, what's wrong with an endless
+&gt; create/destroy cycle? =20
+&gt;=20
+&gt;      I'm mostly a spectator on the cold list, but this general topic
+&gt; gets discussed a lot in Java circles, because object instantiation is
+&gt; so expensive in Java.  The general tone, though, is that creating and
+&gt; destroying would be a more elegant design, if not for the limitations
+&gt; of the language environment.
+=20
+Because objects are inherently persistent in ColdC, they also have a
+unique identifier.  This means you can theoretically run out of
+identifiers since it is a signed 32bit number.
+
+As far as overhead goes--that is more a core issue than anything.  To
+instantiate an object in ColdC (without hooking into the core) is
+relatively lightweight--but then no initialization occurs either.
+
+-Brandon Gillespie
+
+--dDRMvlgZJXvWKvBx
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: UUCbOJ7cisamEFpaEY1HaEOi9xsq+Ucj
+
+iQA/AwUBOTQBJkv5XoQiMgn6EQK1jgCfeMItVSP3ryfwGmkil1fmeh8s+98AoMVG
+zIFDFnTif5BboXDnKT233M15
+=dyMo
+-----END PGP SIGNATURE-----
+
+--dDRMvlgZJXvWKvBx--
+</PRE>

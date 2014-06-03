@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [825] in "Coldmud discussion meeting"</TITLE>
+<H1>[825] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?825"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="824"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="826"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="826"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="830"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>protected and private object variables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Oct 14 00:22:54 1995
+)</H3>
+<PRE>
+Date: Fri, 13 Oct 1995 22:17:43 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+I've been thinking we should have protected and private object variables
+Basically, a protected variable would be as it is now.  A private variable
+would act a little differently.  Basically, it cannot be derived by a child,
+but you can access it executing as a child with a method defined on the        
+definer.  Best explained with an example:
+
+-------------
+object $foo;    
+private var bar = [1,2,3];
+protected var mybar = [];
+
+public test {
+    arg test;
+
+    if (test in bar) 
+        mybar = [@(mybar || []), test];
+};
+
+new object $foo_1: $foo;
+-------------
+
+From this, $foo_1,test starts as 0.  I call $foo_1.test(1), and $foo_1,test
+becomes [1], because 'test in bar' gets the value of bar from $foo, rather
+than from $foo_1, because it is a private variable.  If $foo_1 were to
+define another method, and attempt to access bar, it would not work (just
+as it should not).
+
+Is this something I should add?
+
+-Brandon
+</PRE>

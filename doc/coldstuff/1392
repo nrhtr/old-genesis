@@ -1,0 +1,189 @@
+<HEAD><TITLE>discuss@charon: [1392] in "Coldmud discussion meeting"</TITLE>
+<H1>[1392] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1392"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1391"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1393"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1393"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1395"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Help with genesis make</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  8 04:58:17 1997
+)</H3>
+<PRE>
+Date: Mon, 8 Dec 1997 01:29:03 -0800 (PST)
+From: Rogers Pessin &lt;rpessin@yahoo.com&gt;
+Reply-To: rpessin@digital-storm.com
+To: coldstuff@cold.org
+
+  Well, if anyone can help me on this I'd greatly apreciate it.  I am
+trying to make the genesis driver for the very first time and am
+running into some problems.  I've downloaded the latest stable version
+of Genesis (1.1p1-STABLE), uncompressed &amp; untared it per the web page
+directions, changed into the created directory and typed "make", all
+exactly as the web directions tell you to.
+
+  Unfortunately, something seems to be going wrong, specifically, it
+is coming back with errors about undefined references.  I'm running
+Red Hat Linux 5.0 (Linux kernel 2.0.32).  Am I missing some necessary
+file, did I miss doing something, or what exactly?
+
+  I'm including below a paste showing the make results.  I really
+don't know enough about compiling stuff under gcc to know what are the
+important parts to include, so sorry for anything extraneous.  the
+undefined references part is at the very bottom.
+
+Thanks very much for any help,
+Rogers Pessin
+rpessin@digital-storm.com
+
+[begin past]
+
+make[1]: Entering directory `/home/rpessin/Genesis-1.1p1-STABLE/src'
+bison -y -d grammar.y 
+mv -f y.tab.c grammar.c
+gcc -g -O -Iinclude -Imodules   -c grammar.c -o grammar.o
+mv -f y.tab.h include/parse.h
+data objects...
+make[2]: Entering directory
+`/home/rpessin/Genesis-1.1p1-STABLE/src/data'
+gcc -g -O -I../include   -c data.c -o data.o
+gcc -g -O -I../include   -c buffer.c -o buffer.o
+gcc -g -O -I../include   -c dict.c -o dict.o
+gcc -g -O -I../include   -c ident.c -o ident.o
+gcc -g -O -I../include   -c list.c -o list.o
+gcc -g -O -I../include   -c object.c -o object.o
+gcc -g -O -I../include   -c string.c -o string.o
+gcc -g -O -I../include   -c handled_frob.c -o handled_frob.o
+gcc -g -O -I../include   -c quickhash.c -o quickhash.o
+make[2]: Leaving directory `/home/rpessin/Genesis-1.1p1-STABLE/src/data'
+module objects...
+make[2]: Entering directory
+`/home/rpessin/Genesis-1.1p1-STABLE/src/modules'
+gcc -g -O -I../include   -c cdc.c -o cdc.o
+gcc -g -O -I../include   -c cdc_buffer.c -o cdc_buffer.o
+gcc -g -O -I../include   -c cdc_dict.c -o cdc_dict.o
+gcc -g -O -I../include   -c cdc_list.c -o cdc_list.o
+gcc -g -O -I../include   -c cdc_misc.c -o cdc_misc.o
+
+gcc -g -O -I../include   -c cdc_string.c -o cdc_string.o
+gcc -g -O -I../include   -c cdc_integer.c -o cdc_integer.o
+gcc -g -O -I../include   -c veil.c -o veil.o
+gcc -g -O -I../include   -c web.c -o web.o
+gcc -g -O -I../include   -c ext_math.c -o ext_math.o
+make[2]: Leaving directory
+`/home/rpessin/Genesis-1.1p1-STABLE/src/modules'
+operator and function objects...
+make[2]: Entering directory `/home/rpessin/Genesis-1.1p1-STABLE/src/ops'
+gcc -g -O -I../include   -c operators.c -o operators.o
+gcc -g -O -I../include   -c buffer.c -o buffer.o
+gcc -g -O -I../include   -c error.c -o error.o
+gcc -g -O -I../include   -c list.c -o list.o
+gcc -g -O -I../include   -c object.c -o object.o
+gcc -g -O -I../include   -c dict.c -o dict.o
+gcc -g -O -I../include   -c string.c -o string.o
+gcc -g -O -I../include   -c data.c -o data.o
+gcc -g -O -I../include   -c sys.c -o sys.o
+gcc -g -O -I../include   -c misc.c -o misc.o
+gcc -g -O -I../include   -c task.c -o task.o
+gcc -g -O -I../include   -c file.c -o file.o
+gcc -g -O -I../include   -c network.c -o network.o
+gcc -g -O -I../include   -c math.c -o math.o
+make[2]: Leaving directory `/home/rpessin/Genesis-1.1p1-STABLE/src/ops'
+gcc -g -O -Iinclude -Imodules   -c coldcc.c -o coldcc.o
+gcc -g -O -Iinclude -Imodules   -c textdb.c -o textdb.o
+gcc -g -O -Iinclude -Imodules   -c cache.c -o cache.o
+gcc -g -O -Iinclude -Imodules   -c binarydb.c -o binarydb.o
+gcc -g -O -Iinclude -Imodules   -c dbpack.c -o dbpack.o
+gcc -g -O -Iinclude -Imodules   -c decode.c -o decode.o
+gcc -g -O -Iinclude -Imodules   -c lookup.c -o lookup.o
+gcc -g -O -Iinclude -Imodules   -c io.c -o io.o
+gcc -g -O -Iinclude -Imodules   -c log.c -o log.o
+gcc -g -O -Iinclude -Imodules   -c net.c -o net.o
+gcc -g -O -Iinclude -Imodules   -c file.c -o file.o
+gcc -g -O -Iinclude -Imodules   -c strutil.c -o strutil.o
+gcc -g -O -Iinclude -Imodules   -c memory.c -o memory.o
+gcc -g -O -Iinclude -Imodules   -c sig.c -o sig.o
+gcc -g -O -Iinclude -Imodules   -c util.c -o util.o
+gcc -g -O -Iinclude -Imodules   -c regexp.c -o regexp.o
+gcc -g -O -Iinclude -Imodules   -c defs.c -o defs.o
+defs.c: In function `init_defs':
+defs.c:44: warning: passing arg 1 of `string_from_chars' discards
+`const' from pointer target type
+gcc -g -O -Iinclude -Imodules   -c dns.c -o dns.o
+gcc -g -O -Iinclude -Imodules   -c codegen.c -o codegen.o
+gcc -g -O -Iinclude -Imodules   -c execute.c -o execute.o
+gcc -g -O -Iinclude -Imodules   -c opcodes.c -o opcodes.o
+gcc -g -O -Iinclude -Imodules   -c token.c -o token.o
+gcc -g -O -Iinclude -Imodules   -c native.c -o native.o
+gcc -g -O -Iinclude -Imodules   -c shs.c -o shs.o
+gcc -g -O -Iinclude -Imodules   -c crypt.c -o crypt.o
+gcc -g -O -Iinclude -Imodules -Lmodules grammar.o coldcc.o textdb.o 
+data/data.o data/buffer.o data/dict.o data/ident.o data/list.o
+data/object.o data/string.o data/handled_frob.o data/quickhash.o
+cache.o binarydb.o dbpack.o decode.o lookup.o io.o log.o net.o file.o
+strutil.o memory.o sig.o util.o regexp.o defs.o dns.o codegen.o
+execute.o opcodes.o token.o native.o ops/operators.o ops/buffer.o
+ops/error.o ops/list.o ops/object.o ops/dict.o ops/string.o ops/data.o
+ops/sys.o ops/misc.o ops/task.o ops/file.o ops/network.o ops/math.o
+modules/cdc.o modules/cdc_buffer.o modules/cdc_dict.o
+modules/cdc_list.o modules/cdc_misc.o modules/cdc_string.o
+modules/cdc_integer.o modules/veil.o modules/web.o modules/ext_math.o
+shs.o crypt.o -lm -lnsl -o coldcc
+lookup.o: In function `lookup_open':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:56: undefined
+reference to `dbm_open'
+lookup.o: In function `lookup_close':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:66: undefined
+reference to `dbm_close'
+lookup.o: In function `lookup_sync':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:76: undefined
+reference to `dbm_close'
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:77: undefined
+reference to `dbm_open'
+lookup.o: In function `lookup_retrieve_objnum':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:89: undefined
+reference to `dbm_fetch'
+lookup.o: In function `lookup_store_objnum':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:104: undefined
+reference to `dbm_store'
+lookup.o: In function `lookup_remove_objnum':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:119: undefined
+reference to `dbm_delete'
+lookup.o: In function `lookup_first_objnum':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:130: undefined
+reference to `dbm_firstkey'
+lookup.o: In function `lookup_next_objnum':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:142: undefined
+reference to `dbm_nextkey'
+lookup.o: In function `lookup_remove_name':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:226: undefined
+reference to `dbm_delete'
+lookup.o: In function `lookup_first_name':
+
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:236: undefined
+reference to `dbm_firstkey'
+lookup.o: In function `lookup_next_name':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:248: undefined
+reference to `dbm_nextkey'
+lookup.o: In function `store_name':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:345: undefined
+reference to `dbm_store'
+lookup.o: In function `get_name':
+/home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:359: undefined
+reference to `dbm_fetch'
+make[1]: *** [coldcc] Error 1
+rm grammar.c
+make[1]: Leaving directory `/home/rpessin/Genesis-1.1p1-STABLE/src'
+make: *** [all] Error 2
+
+[end paste]
+_________________________________________________________
+DO YOU YAHOO!?
+Get your free @yahoo.com address at http://mail.yahoo.com
+
+</PRE>

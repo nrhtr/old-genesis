@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [1512] in "Coldmud discussion meeting"</TITLE>
+<H1>[1512] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1512"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1511"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1511"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1513"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1513"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>RE: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec  2 18:40:32 1999
+)</H3>
+<PRE>
+From: "Joe Andrieu" &lt;joe@andrieu.net&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Thu, 2 Dec 1999 15:33:31 -0800
+In-Reply-To: &lt;199912022301.PAA14698@swan.prod.itd.earthlink.net&gt;
+Reply-To: coldstuff@cold.org
+
+
+
+-----Original Message-----
+From: owner-coldstuff@roguetrader.com
+[mailto:owner-coldstuff@roguetrader.com]On Behalf Of Joshua Rosen
+Sent: Thursday, December 02, 1999 9:34 AM
+To: coldstuff@cold.org
+Subject: Re: Reference Manual updates
+
+[snip]
+
+I'd think that postscript would be a decent distribution format--it's pretty much open, standardised, and, in other words, good. It prints nicely, and easily, too.
+
+TeX prints nicely, too, but... hm.
+
+HTML makes it nicely and easily embedable in any web site.
+
+[snip]
+
+My religious preference:
+Put textual documents in SGML (or XML, if you want to be trendy), and define a system for transforming them into HTML and TeX or whatever other formats you really need to have them in (plaintext included).
+
+====
+
+
+
+You might consider RTF.  It is simple, cross-platform, and will support most of the nice features from Word without trouble (tables, headers, fonts, etc.).
+
+
+Postscript can be a pain in windows. HTML is not really great for maintaining text.  And TeX is worse. Especially for Windows.  RTF has been a reasonable in-between for other projects I've worked on.
+
+
+-j
+
+</PRE>

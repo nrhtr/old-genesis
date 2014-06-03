@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1612] in "Coldmud discussion meeting"</TITLE>
+<H1>[1612] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1612"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1611"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1611"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1611"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1613"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Help on Events</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug  8 23:51:23 2000
+)</H3>
+<PRE>
+Date: Tue, 8 Aug 2000 21:45:56 -0600
+From: Brandon Gillespie &lt;brandon@ice.cold.org&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;001001c001a6$b3c4c530$a6382bd1@Samantha&gt;; from Adam Cormany on Tue, Aug 08, 2000 at 09:08:22PM -0500
+Reply-To: coldstuff@cold.org
+
+
+--fUYQa+Pmc3FrFX/N
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+If you have already read the help on the events sytem (?events) then
+for examples what I'd recommend doing is running around looking at
+room's event hooks...  do:
+
+    @d here&lt;$event_handler&gt;,
+    @d me&lt;$event_handler&gt;,
+
+=46rom there, follow the referenced objects.  Just look at the
+=2Eevent_notify methods on the given objects to see what they are doing
+with the events listed as symbols.  A place to start would be the Pit
+on the Cold Dark and Squeak.
+
+-Brandon
+
+--fUYQa+Pmc3FrFX/N
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: oSr6fdm7+lWUFKIrxCXbW4kXe64ugACK
+
+iQA/AwUBOZDT8Ev5XoQiMgn6EQJxmACfaFcFseuFI8VIunvTmyj6+wYTdUwAoIKi
+3HbBLOWOlL2fQubuSZsgG6lA
+=n3W6
+-----END PGP SIGNATURE-----
+
+--fUYQa+Pmc3FrFX/N--
+</PRE>

@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [1022] in "Coldmud discussion meeting"</TITLE>
+<H1>[1022] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1022"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1021"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1023"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Big Floats</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun 20 20:55:05 1996
+)</H3>
+<PRE>
+Date: Thu, 20 Jun 1996 18:29:19 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Right now the float type is (in general) a 32bit size (i.e. 'float').  
+Some people would like greater precision, so I have been adding a simple 
+'USE_BIG_FLOATS' define to the driver which would kick it up to 64 bits 
+(double).  There is one major kink, and that is having a constant float 
+in a method.  Right now when you have a constant number it is stored 
+within the list of opcodes (which is a list of long numbers, likely 32 
+bits).  If you have a big float number (64 bits) we have to do one of two 
+things:
+
+    1) reduce its precision to 32 bits
+    2) split it across two opcodes, keeping full precision.
+
+I personally prefer the first option for many reasons, primarily being 
+that despite all of this talk about bits I am doing my best to remove 
+bitsize dependancy from the driver.  The first option would simply mean 
+we cast the float to whatever the opcode type is, and be done with it 
+(casting it back to a float when needed), we do this right now without 
+problem.  The second option would require a bit of coding, and would be 
+adding bitwise dependancy (a definite nono), but everything would work as 
+it is expected.
+
+Keep in mind this is _ONLY_ with constant float values, such as:
+
+    public method .foo() {
+        return 0.5;
+    };
+
+Frankly, I doubt anybody will be needing 64bits of precision in a 
+constant value, but.. who knows.
+
+However!  If you are using big floats, and you feel you must have full
+'big' precision in your constant floats, you do have the option of also
+enabling big numbers, which then uses 64 bits for a long.  In general this
+is NOT suggested, unless you are on a DEC Alpha (as I dont know of a
+single other processor that completely handles 64 bit words--many do
+internal 64 bit words).  But this would then fix the 32bit constant float
+size problem (when using big floats). 
+
+Comments on me using this approach?
+
+-Brandon Gillespie-
+</PRE>

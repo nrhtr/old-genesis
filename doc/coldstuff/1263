@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1263] in "Coldmud discussion meeting"</TITLE>
+<H1>[1263] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1263"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1260"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1262"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1262"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1264"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1269"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1269"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] match_regexp bug...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 31 17:21:43 1997
+)</H3>
+<PRE>
+Date: Mon, 31 Mar 1997 14:14:22 -0800 (PST)
+From: Brian Buchanan &lt;brian@wasteland.calbbs.com&gt;
+To: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;3.0.32.19970331134545.00685554@mail.tenetwork.com&gt;
+
+On Mon, 31 Mar 1997, Jeff Kesselman wrote:
+
+&gt; Date: Mon, 31 Mar 1997 13:45:48 -0800
+&gt; From: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+&gt; To: coldstuff@cold.org
+&gt; Subject: [COLD] match_regexp bug...
+&gt; 
+&gt; match_regexp appears to get confused if there are square brackets in the
+&gt; string to be matched. My matching against the string "Class: []" throws a
+&gt; "umatched []" error.  In all other cases the match works fine.
+&gt; 
+
+From the error you got, it looks like you did something like:
+
+match_regexp("foo","Class: []");
+
+[ and ] are special characters in regexps and expect a list of valid 
+characters or character ranges between them.  To match against literal 
+[]'s, quote them with backslashes, e.g.:
+
+match_regexp("foo","Class: \[\]");
+
+- Brian
+
+</PRE>

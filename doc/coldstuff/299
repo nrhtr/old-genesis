@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [299] in "Coldmud discussion meeting"</TITLE>
+<H1>[299] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?299"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="298"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="300"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>"with handler" in "catch"</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun May 22 14:59:24 1994
+)</H3>
+<PRE>
+Date: Sun, 22 May 1994 12:56:06 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Any chance of changing the language such that the 'with handler' could just be
+'handler'?  Basically, does anybody mind?  Its somewhat trivial but I can think
+of a few times i've tried to use 'with' as a variable.  Just one of those
+irritation factors is all, when it could just be:
+
+catch {
+  //
+} handler {
+  //
+}
+
+Just a thought (it was something Crag and I discussed ages ago).
+</PRE>

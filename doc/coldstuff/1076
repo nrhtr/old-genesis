@@ -1,0 +1,64 @@
+<HEAD><TITLE>discuss@charon: [1076] in "Coldmud discussion meeting"</TITLE>
+<H1>[1076] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1076"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1075"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1077"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] MD5, SHA1, encryption, etc.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Aug 26 03:02:20 1996
+)</H3>
+<PRE>
+Date: Sun, 25 Aug 1996 23:48:36 -0700
+To: coldstuff@cold.org
+From: Jon Callas &lt;jon@worldbenders.com&gt;
+
+Hi. I'm Jon Callas, a MU*-hacker for a long time now. I'm setting up a Cold
+system, and have been going through mail archives and found the recent
+discussion of crypt() etc. and know something about this, because I work
+with privacy software.
+
+MD5 and SHA1 are not encryption algorithms. They are "Message Digest"
+(that's what MD stands for) "Secure Hash" (that's what the SH stands for)
+or "Cryptographic Checksum" algorithms. They are fully exportable (because
+they are not encryption algorithms). What they do is to take an arbtrary
+amount of binary goo and produce a small checksum that you can be pretty
+sure is not like the checksum produced by other bits of binary goo.
+
+They have two properties that make them excellent for doing passwords with.
+(1) It is nigh impossible, given a hash, to determine what the source
+string was. (2) Although collisions are inevitable, it is nigh impossible
+to produce a string S that generates the same hash as a string T. At least
+in theory, anyway.
+
+MD5 produces a 128-bit (16-byte) hash. SHA1 produces a 160-bit (20-byte)
+hash. MD5 was developed by Ron Rivest at RSADSI and is freely usable as
+long as you mumble somewhere that you're using it and that it's copyright
+by them. This is in the source code. SHA1 was developed by the NIST in the
+US as a better, more robust variant on Rivest's MD family. The
+implementation I have was written by Paul Kocher, and is freely
+distributable. I use it in all my freeware.
+
+In general, you should use SHA1, but for the purposes of grinding up
+passwords, there's no problem with either. Me, for my last product (a
+business MU* system called Meeting Space) I used MD5. If I were starting
+now, I'd use SHA1, but I'm not so worried about MD5 that I feel the need to
+retrofit my old software.
+
+I have implementations of both MD5 and SHA that I'm willing to give out.
+
+I also have a crypt-replacement that I wrote for Meeting Space that uses
+MD5 to grind up the password. I'm willing to give this to the ColdX
+Project. Heck, I'm even willing to update it to use SHA1.
+
+	Jon
+
+
+
+</PRE>

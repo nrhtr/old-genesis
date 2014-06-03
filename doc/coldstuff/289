@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [289] in "Coldmud discussion meeting"</TITLE>
+<H1>[289] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?289"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="282"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="288"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="288"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="290"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="290"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="293"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: time in the log</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 19:16:50 1994
+)</H3>
+<PRE>
+Date: Fri, 20 May 1994 15:56:26 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;199405202252.PAA18068@netcom.com&gt; (deforest@netcom.com)
+
+
+
+   &gt; I definitely dont think time should be made in-db. That makes it
+   &gt; modifiable from the db, and therefore prettymuch invalid as a logging
+   &gt; tool security-wise.
+
+   It is a $sys-only builtin at the moment, so security is not an issue.
+
+That is exactly WHY it's an issue. I'm talking about when an admin
+account is hacked. It may be that your only way of detecting this is
+via the logs, and if time isnt in the logs, then thats one less clue.
+anything that can be changed in-db is not strictly secure
+serverwise. (ignoring the in db-security, which may be perfectly
+adequate). I dont consider the DB's time function as a trusted thing,
+only the server's call to unix, and if time were moved to the db, i'd
+be miffed ;) on the other hand, I'd still live, so this is just the
+opinon of a currently extremely paranoid individual :)
+
+	Ray / Ash
+
+</PRE>

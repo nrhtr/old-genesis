@@ -1,0 +1,67 @@
+<HEAD><TITLE>discuss@charon: [680] in "Coldmud discussion meeting"</TITLE>
+<H1>[680] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?680"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="674"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="679"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="681"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="685"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar  9 14:34:19 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Thu, 09 Mar 95 12:26:17 -0700
+
+&lt; Personally, I'd prefer :=..  It's already used in at least one language for
+&lt; this purpose
+
+VMS's DCL (Digital Command Language, aka VMS shell) uses ':==' to set symbols
+(i.e. make an assignment, of sorts).
+
+&lt; I don't particularly like &lt;- mainly because it doesn't have an = in it (as I
+&lt; mentioned above), and because it doesn't much look like an expression either
+&lt; (it looks like a statement.. tho I suppose any assignment will conceptually
+&lt; seem more like a statement, even if it isn't, but at least '='-based things
+&lt; have a history of expressionism(?) to back them up..)
+
+Well, I'm torn here.  I actually like how '&lt;-' looks, it grows on you
+aesthetically, but it DOES get to be somewhat confusing with '-&gt;'...
+(especially if I use '-&gt;' to access global methods).
+
+From all of the arguments put forward, I think we could say it is a tossup
+between '&lt;-' and ':='.  The pros/cons I can think of are (feel free to add/
+change this list):
+
+Assignment operator as '&lt;-':
+PROS:
+  * Looks correct (i.e. right is assigned/pointed into left)
+  * some think it looks "cool" or is aesthetically pleasing
+CONS:
+  * Looks too much like '-&gt;' in C, which has a totally different meaning.
+  * Looks too much like '-&gt;', which may be used to point to global methods
+    (versus '.' which would be used to point to local methods)
+
+Assignment operator as ':=':
+PROS:
+  * It has been used before in a few languages (including Pascal and DCL)
+  * It includes an equals sign, but is a two character sequence per all
+    other operators including an equals sign.
+CONS:
+  ?
+
+&lt; Mind you, I'm not particularly sad to see it go, tho there
+&lt; are some others who shall remain nameless which I'd rather see bite it..
+                  ^^^
+
+Ack, you can tell when you have been programming too long when you start
+referring to programming languages as entities/people rather than objects 8)
+
+-Brandon
+</PRE>

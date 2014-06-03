@@ -1,0 +1,67 @@
+<HEAD><TITLE>discuss@charon: [1423] in "Coldmud discussion meeting"</TITLE>
+<H1>[1423] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1423"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1422"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1424"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>New Cold RPG Seeks Users</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Sep 23 21:13:04 1998
+)</H3>
+<PRE>
+From: nolan_d@mail.utexas.edu
+Date: 24 Sep 1998 01:03:36 -0000
+To: cold-announce@cold.org
+
+Greetings.
+
+For the past 10 months or so, I have been developing a Cold-based RPG,
+which is based on Origin Systems' Wing Commander series, as well as
+some elements of the Privateer games. Recently, I have acquired a
+high-speed net connection, and have begun to consider
+opening. At this point, though, certain portions of the code which I
+would like to have completed are not yet, and the database is
+undergoing a port from ColdHope 0.15A to ColdCore 3.0A10. Furthermore,
+the game doesn't even have a name. :)
+
+So, I am hoping to recruit a few competent ColdC coders to assist in
+the design of the game's space system, as well as future systems such
+as my ambitious plans for an economy. Though the space system is built
+on what I feel to be a very solid foundation, I feel that it can be
+greatly optimized, and that two or more minds would be better than one
+for such a project. Furthermore, my schedule is becoming increasingly
+busier, and I no longer have the time which I had to dedicate to
+coding and debugging. Though I have not made a final decision on this,
+I am considering releasing the code of the space system after
+considerably more effort has been done to add new functionality and
+clean up the code. Since several such systems exist for MUSHes, it
+only makes sense that the ColdC community should have such code at its
+disposal, as well.
+
+Even if you aren't interested in coding, please give it a look. I am
+searching for builders who have some knowledge of the Wing Commander
+universe, as well as folks who are skilled at writing documentation. I
+would also welcome anyone with knowledge of MU* administration who is
+willing to assist with policy creation issues, as well as the creation
+and coordination of a roleplaying team.
+
+If you are interested, feel free to drop by at either
+resnet-21-197.dorm.utexas.edu ports 1138 and 1238. 1138 is the
+ColdHope code on which everything is functional, while 1238 still has
+several major bugs due to the ongoing porting efforts. Hope to see you
+there! :)
+
+                                           Nolan Darilek
+                                      nolan_d@mail.utexas.edu
+                                         ICQ UIN: 15709478
+
+-------------------------------------------------------------------------------
+                "Be sure and put some of those neutrons on it."
+        -Mike Smith, Baseball pitcher, ordering a salad at a restaurant
+</PRE>

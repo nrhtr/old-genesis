@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [662] in "Coldmud discussion meeting"</TITLE>
+<H1>[662] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?662"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="661"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="663"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Archive and Core/Driver fix release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar  3 13:49:56 1995
+)</H3>
+<PRE>
+Date: Fri, 3 Mar 1995 11:42:42 -0700
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+I have updated the archive on sticky to have two subdirectories (drivers
+and worlds).  Drivers includes all of the various drivers I can find, for
+coldmud (does anybody know where Virtual Realities is?), and worlds
+includes the various worlds to use with these drivers.  If anybody wants
+to include their world give it to me.
+
+Also, I've released another patch level in the driver, tweaking some more
+things.  Ditto with the Core.
+
+-Brandon (Lynx)-
+
+(BTW, the full url is: ftp://sticky.usu.edu/pub/brandon/coldmud)
+</PRE>

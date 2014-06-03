@@ -1,0 +1,177 @@
+<HEAD><TITLE>discuss@charon: [426] in "Coldmud discussion meeting"</TITLE>
+<H1>[426] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?426"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="425"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="425"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="425"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="427"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="427"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="429"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: implementing 'atomic' designation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 01:19:53 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Wed, 21 Sep 1994 22:11:25 -0700 (PDT)
+In-Reply-To: &lt;199409220108.SAA16763@netcom10.netcom.com&gt; from "Alex Stewart" at Sep 21, 94 06:08:53 pm
+
+&gt; 
+&gt; Well, as people have probably already surmised by now I'm getting back into the
+&gt; ColdMUD arena with a vengeance :).  I've got a few more server mods I'd like to
+Yay! :)
+
+&gt; see and will probably be looking into unless people have real problems with
+&gt; them..
+&gt; 
+&gt; First, it seems to me that now that we have the ability to pause and
+&gt; suspend, somebody should also implement the ability to designate code blocks as
+&gt; being atomic pretty soon to go with it, before we end up with a lot of code
+&gt; that won't adapt well to that way of doing things when it finally gets
+&gt; implemented (and I do think it should be)..
+&gt; 
+&gt; I'm not really sure how Greg intended the atomic designation to work from a
+&gt; linguistic standpoint (Greg, you out there?  got any suggestions?).  I know he
+&gt; reserved some keywords for it.  My inclination would be to do it something
+&gt; like:
+&gt; 
+&gt;   atomic statement;
+&gt; 
+&gt; and
+&gt; 
+&gt;   atomic {
+&gt;     statements
+&gt;   }
+&gt; 
+&gt; (so that 'atomic' is syntactically and procedurally equivalent to an
+&gt; 'if (1)', just with the additional effect that the associated statement is
+&gt; executed atomically)..  The other question is how suspending operations should
+&gt; act when they're attempted in an atomic execution state..  suspend() I suppose
+&gt; would have to throw an error in any case.  pause() should presumably do
+&gt; likewise (the alternative being to simply continue on without pausing, but this
+&gt; would probably be bad).
+&gt; 
+&gt; I think I'll look into what's required to do this next unless someone else is
+&gt; already working on it.  Any comments about my proposed syntax/results?
+
+Could you define and elaborate on the meaning of atomic execution? I believe it
+ is uninterupted, or single-threaded, but I want to make sure. Please also
+ breifly touch on the utility of this mode. (Hope I don't look stupid now :)
+
+I think Greg was gonna make atomicity a property of methods, like
+ disallow_overides, and the task becomes atomic on entry, and loses atomicity
+ on return. I think this would be acceptable, and possibly easier to implement,
+ since it would simply become a property of execution frames, as opposed to
+ being something you have to track per-statement. DUnno what the details of
+ this are. I like making it module-level better, if it is what I think it is.
+
+&gt; 
+&gt; Also, there are still a couple of operators I'd like to see in the language in
+&gt; some form or other (though I am somewhat negotiable on these points).  Would
+&gt; people have objections to creating an assignment-expression operator which
+&gt; is distinct from simple assignment (which isn't an expression), for use in
+&gt; things like while loops? (If not, what should it be?  ':=' I suppose is a
+&gt; possibility but I suppose Pascal-types might end up using that in place of the
+&gt; '=' operator all the time, thus eliminating the protective aspects of normal
+&gt; assignment..  hmm..).  The only real reason I want such a thing is for while
+&gt; loops, but I really can't think of any other way to deal with them cleanly..
+&gt; 
+&gt; Although.. I suppose an alternative might be to introduce a ',' (comma)
+&gt; operator, like in C ('foo, bar, baz' executes the foo statement, the bar
+&gt; statement and the baz statement and returns the value of the last (baz)
+&gt; statement as the value of the entire expression)..  That would allow things
+&gt; like 'while (x = foo(), x) { ... }', etc.
+
+The assignment as an expression question has come up MANY times. When I first
+ became aquainted with assignment as a statement I thought it was a bad idea,
+ but after getting parse errors on if (a=b) more than a dozen times, I have
+ decided I like things the way they are.
+
+I like the idea of a separate syntax for assignment and I don't like :=
+ because I think it looks more statment like than =.
+
+The idea of the comma "operator" bothers me immensely. I like it in a style
+ sense, because it would make some nice-looking stuff possible, but I think
+ it totally goes against cold design philosophy. Right now, Cold has the
+ advantage of being very simple, making as few assumptions as possible, and
+ being consistent everywhere. It is currently a fact that you will never
+ find an assignment operation inside of parenthasese. No local variable will
+ ever be modified unintentionally.
+
+You could implement the functionality of the comma operator by making {}
+ statement lists be expresisons. However, doing so would make some REALLY ugly
+ code possible. I think if you're going to make changes like this, you should
+ not call it ColdMUD. You should state your goals and philosophy, and plan
+ your changes around that, and call it something else.
+
+&gt; 
+&gt; The other thing that I think would be nice would be an operator (for now I'll
+&gt; call it '??', tho I'm not really sure about what it should actually look like)
+&gt; such that:
+&gt; 
+&gt;   foo = bar ?? baz;
+&gt; 
+&gt; would be equivalent to:
+&gt; 
+&gt;   x = bar;
+&gt;   foo = (type(x) != 'error) ? x | baz;
+&gt; 
+&gt; (i.e. return the value of bar unless it's an error value, in which case return
+&gt; baz instead.  This makes it work similarly to ||, but testing error condition
+&gt; rather than truth value.  Thus a lot of common 'catch any' conditions could be
+&gt; written a lot more cleanly as things like 'foo = (| bar |) ?? baz;', etc.)
+&gt; 
+&gt; Anyway, comments/suggestions anyone?
+
+I had had thoughts along these lines, but even more extreme, in that the
+ operator would choose the second value if the first expression had actually
+ THROWN the error. That is, (? toerr('foo) ?? 0 ?) =&gt; ~foo, but
+                            (? $root.chparents(0) ?? 0 ?) =&gt; 0 (since chparents
+ would throw ~type).
+
+Again, I think these ideas need to be considered more closely after stateing
+ what we want in a more general sense. Do we want to trust the programmers to
+ write "nice" code or do we want to protect them from their =/== mistakes? Do
+ we want to make it possible to write almost totally cryptic code? Etc.
+
+While we're thinking about these things, I'd like to bring up an idea Brandon
+ had a while back. It was to provide formatting operators to allow coders to
+ pretty up their code by dividing long lines and such. An example would be...
+
+@program me.example
+ arg x,y,z;
+ 
+ .tell(x,\
+       y,\
+       z);
+.
+
+I am against this, because I think it's something that should be handled in-db.
+ The Cold philosophy as I understand it demands a lean server, and cruft like
+ this is totally unnecessary.
+
+&gt; 
+&gt; -R
+&gt; -------------------------------------------------------------------------------
+&gt;    Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+&gt;              ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+&gt; 
+
+Summary:
+
+What IS atomicity?
+
+assignment as expression - Yes, but not in a Cold server.
+
+comma-delimited statemnet list as expression - *shrug*, not in a Cold server.
+
+type(expr1) == 'error ? expr2 | expr1 shortened to something else - as above.
+
+Let's talk about phioosophy, goals, etc.
+
+Crag / Robert de Forest
+</PRE>

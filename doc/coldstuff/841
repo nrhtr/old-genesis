@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [841] in "Coldmud discussion meeting"</TITLE>
+<H1>[841] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?841"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="840"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="842"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Driver list of bugs/problems</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov 19 17:21:08 1995
+)</H3>
+<PRE>
+Date: Sun, 19 Nov 1995 15:03:44 -0700
+From: 869683 Gillespie Brandon James &lt;brandon@petersboro.declab.usu.edu&gt;
+To: coldstuff@tombstone.sunrem.com
+
+Ok, the current list of problems has been dramatically reduced over the past
+few months.  I'm posting it now with christmas break approaching where more
+people will have some extra time available.  If anybody finds any clues leading
+to the whereabouts of a solution for these problems, let us know.
+
+    * textdumping randomly leaves out objects after the db reaches
+      a certain size, coldcore has an in-db dumping mechanism to
+      get around this, as textdumping is being rewritten.
+    * callers() causes a SEGV sometimes (but not always).  It is
+      used in .debug() in coldcore, so you may want to remove this.
+    * tasks() causes a SEGV most times.
+
+-Brandon Gillespie-
+</PRE>

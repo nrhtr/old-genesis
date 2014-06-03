@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [608] in "Coldmud discussion meeting"</TITLE>
+<H1>[608] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?608"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="607"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="607"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="607"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="609"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="609"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="609"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Odd behavior (related to suspend()/resume() ?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  3 12:05:39 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: brandon@avon.declab.usu.edu
+Date: Sat, 3 Dec 1994 09:03:52 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9412021657.AA09700@avon.declab.usu.edu&gt; from "brandon@avon.declab.usu.edu" at Dec 2, 94 09:57:14 am
+
+First gut reaction is bad programming. I bet your connection object fills a
+ buffer and when you suspend it has stuff in the buffer that it plans to
+ parse as commands... OR
+
+It might have something to do with the fact that the net tries to do things
+ with large chunks of data instead of single bytes...
+
+I'll drop by and look at the source.
+
+Crag, guessing, feeling kinda silly since he has no clue at the moment.
+</PRE>

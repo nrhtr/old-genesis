@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [642] in "Coldmud discussion meeting"</TITLE>
+<H1>[642] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?642"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="633"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="641"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="641"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="643"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: is the request line open?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan 19 18:13:49 1995
+)</H3>
+<PRE>
+From: brandon@smithfield.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Thu, 19 Jan 95 16:10:02 -0700
+
+&lt; I'm not sure how important SUFFIX et al are, if you have an MCP-aware
+&lt; client and server.  (See http://jhm.ccs.neu.edu:7043/help/subject!mcp
+&lt; if you don't know about it.  At last count, there are at least six
+&lt; clients that speak it.)
+
+Slightly related note, on the Cold Dark we have an editing option for using
+MCP (local editing on your client).  Seems to work, although I dont use it.
+
+-Brandon (Lynx)-
+</PRE>

@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [977] in "Coldmud discussion meeting"</TITLE>
+<H1>[977] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?977"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="969"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="976"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="976"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="978"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="982"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="983"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] 'user()' builtin function..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Apr 24 08:24:08 1996
+)</H3>
+<PRE>
+From: root@thelbane.brisnet.org.au (Dancer)
+To: xymox@mcmuse.mc.maricopa.edu (Terrence M. Drozdowski)
+Date: Wed, 24 Apr 1996 21:55:04 +1000 (AEST)
+Cc: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;Pine.SUN.3.91.960423231144.23116B-100000@mcmuse.mc.maricopa.edu&gt; from "Terrence M. Drozdowski" at Apr 23, 96 11:12:14 pm
+
+&gt; 
+&gt; Okay, I agree with Quinn, 'issuer' sounds more generic, if not, I vote 
+&gt; for 'controller'.
+
+If you want generic, try 'initiator()'. Personally, I'd really like
+something like that. There are quite a lot of times when I'd like to pin
+down where  .tell() came from (usually from a room announce, from some
+code on a user, started by...who? Being able to get the dbref of the
+enactor would be a BIG help).
+
+D
+
+</PRE>

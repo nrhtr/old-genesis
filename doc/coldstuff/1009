@@ -1,0 +1,112 @@
+<HEAD><TITLE>discuss@charon: [1009] in "Coldmud discussion meeting"</TITLE>
+<H1>[1009] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1009"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1006"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1008"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1008"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1010"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Re: Crashes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun  5 12:59:01 1996
+)</H3>
+<PRE>
+Date: Wed, 5 Jun 1996 10:29:51 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Miroslav Silovic &lt;silovic@srce.hr&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199606042337.BAA21300@regoc.srce.hr&gt;
+
+On Wed, 5 Jun 1996, Miroslav Silovic wrote:
+
+&gt; First, my telnet sends ^C in character mode instead of the line mode, so
+&gt; ^C sequence it interpreted immediately.
+&gt; 
+&gt; Secondly, connection_read got only garbage from the connection (the
+&gt; sequence it actually read was 6, 255, 254, 255, 253, 6). This could be a
+&gt; telnet bug.
+
+Actually, I would suspect its something beyond a telnet bug, probably a 
+problem on our behalf in that telnet expects us to be working as a telnet 
+server, and we are not.
+
+[hacks up a quick socket client in perl...]
+
+Hrm, ok, the following can be used to test this, I strongly suspect 
+something is happening to the connection on the outbound end, because the 
+inbound end seems just fine...
+
+#!/usr/bin/perl
+## perl 5
+
+use Socket;
+
+$them = "ice.cold.org";
+$port = 1138;
+
+$SIG{'INT'} = 'dokill';
+sub dokill { kill 9,$child if $child; }
+
+$sockaddr = 'S n a4 x8';
+chop($hostname = `hostname`);
+$proto = (getprotobyname('tcp'))[2];
+$port  = (getservbyname($port, 'tcp'))[2];
+$thisaddr = (gethostbyname($hostname))[4];
+$thataddr = (gethostbyname($them))[4];                           
+
+$this = pack($sockaddr, AF_INET, 0, $thisaddr);
+$that = pack($sockaddr, AF_INET, $port, $thataddr);
+
+socket(S, PF_INET, SOCK_STREAM, $proto) || die "socket: $!";
+bind(S, $this) || die "bind: $!";
+connect(S, $that) || die "connect: $!";
+
+select(S); $| = 1; select(stdout);
+
+if ($child = fork) {
+    while (&lt;STDIN&gt;) {
+        print S;
+    }   
+    sleep 3;
+    do dokill();
+} else {
+    while (&lt;S&gt;) {
+        print;
+    }   
+}   
+--------
+
+Using this client, everything worked fine until I hit ^C.  I had hacked 
+$connection.parse() to echo the buffers of all input, and it simply 
+recieved `[10], except from that point on I received _no more output_.  I 
+could still send input, and it was parsed just fine (@quit worked great 
+:)  But I saw no output. 
+
+&gt; Thirdly, this is the only situation when core gets a line that is not
+&gt; terminated by CR/LF. I'm not sure this has been tested in any way.
+&gt; 
+&gt; Fourth, `[65,10,3].to_strings() =&gt; ["a",`[3]]
+&gt; (can we handle buffers in these lists? Especially if it terminates by a
+&gt; buffer?)
+
+You _ALWAYS_ get a list of [strings, ..., buffer] from buf_to_strings(), 
+our code handles it just fine.
+
+&gt; And lastly, when I kill my telnet, I get neatly disconnected, and my
+&gt; connection object destroyed. So I don't think that is the problem.
+
+That is because when the server noticed your connection was dead it 
+called .disconnect() on the connection object :)   Like I said, 
+everything is working fine _in the db code_, I think the problem is 
+somewhere in the outbound messaging of connections (getting frobbed 
+somehow from the inbound stuff).
+
+One may want to look into tell(obj, buffer) (C function), and how it 
+hooks back to the connection..
+
+-Brandon
+</PRE>

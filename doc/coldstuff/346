@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [346] in "Coldmud discussion meeting"</TITLE>
+<H1>[346] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?346"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="343"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="345"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="345"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="347"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="347"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="349"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>re: floating point</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jun  3 23:17:59 1994
+)</H3>
+<PRE>
+Date: Fri, 3 Jun 1994 14:03:55 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;199406031941.MAA04488@netcom.com&gt; (deforest@netcom.com)
+
+
+&gt; While server-based floating point support would be far faster, it
+&gt; would not be exceedingly difficult to code floating point in-db.
+
+Thats what I was thinking, too, but it seems to me that any in-db
+floating point package will have quite a bit of overhead that can be
+easily eliminated if a new type were implemented. I guess the question
+is is the overhead enough to warrent the work the server change would
+require.
+
+A server implementation would probably have more precision for less
+effort though, as well. (effort on precision, not on total
+implementation)
+
+</PRE>

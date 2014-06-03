@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [500] in "Coldmud discussion meeting"</TITLE>
+<H1>[500] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?500"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="499"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="499"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="499"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="501"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: How does inheritance work...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 09:02:08 1994
+)</H3>
+<PRE>
+To: jeffpk@netcom.com (Jeff Kesselman)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Mon, 31 Oct 1994 23:28:19 PST."
+             &lt;199411010728.XAA14151@netcom14.netcom.com&gt; 
+Date: Tue, 01 Nov 1994 09:00:18 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt;	1) When object-variables are inherited, does the inheritor
+&gt;           have its own copy or do all inheritors reference the
+&gt;           parent's copy?
+
+The inheritor has its own copy of the object variable, but it can only
+be referenced by the parent.
+
+&gt; In some cases you want a variable to act like a c++ static member,
+
+My decision in designing Coldmud was not to allow this kind of
+behavior; the state of an object is a property of that object alone,
+not its parents.
+
+</PRE>

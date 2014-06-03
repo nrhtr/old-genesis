@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [39] in "Coldmud discussion meeting"</TITLE>
+<H1>[39] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?39"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="34"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="34"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="38"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="40"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: parsing</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 19:52:01 1993
+)</H3>
+<PRE>
+From: joe@unipress.com
+To: stewarta@netcom.com (Alex Stewart)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Tue, 16 Nov 93 14:49:28 PST."
+             &lt;199311162249.OAA14624@mail.netcom.com&gt; 
+Date: Tue, 16 Nov 93 19:35:47 -0500
+
+
+&gt; On the subject of regexps:  I also tend to lean towards not including regexp
+&gt; matching simply because it's been my experience that people who understand
+&gt; them tend to lean far too heavily on them, and they're often not the best 
+&gt; tool for the job (except for quite complicated tasks, which can often be
+&gt; broken up into a set of simpler tasks, leading to increased readability and 
+&gt; more easily modifyable systems).
+
+The same argument could be made against the exception handling system in C--,
+or fork() in MOO.  Features of great utility shouldn't be left out for the
+reason that they might be abused.
+
+&gt; MUDs, after all, are not text editors or
+&gt; command-line search programs, and do have their own programming languages
+&gt; which work quite nicely at many of the more sophisticated tasks regexps were
+&gt; designed for.
+
+It's worse; text editors and command line search programs ARE BUILT WITHIN
+MUDs!
+
+My point:  if you don't like regexps, avoid them.  They are important tools to
+me, and it would appear to some other programmers too, so I feel I should
+lobby for their inclusion.  I feel that I am beginning to over-lobby a bit
+here -- I've spoken my thoughts, so now I'll shut up.
+
+-K*
+</PRE>

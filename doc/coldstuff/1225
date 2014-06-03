@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [1225] in "Coldmud discussion meeting"</TITLE>
+<H1>[1225] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1225"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1224"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1226"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] gdbm/ndbm/configure</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan 28 18:26:11 1997
+)</H3>
+<PRE>
+Date: Tue, 28 Jan 1997 16:18:56 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+The new configure script will not allow you to continue without a proper
+*dbm impelementation.
+
+() Brandon Gillespie                     http://www.cold.org/~brandon/  () 
+() The Cold Project needs your support!  http://www.cold.org/support/   ()      
+  
+"I loathe people who keep dogs. They are cowards who haven't got the
+      guts to bite people themselves."      -- August Strindberg 
+</PRE>

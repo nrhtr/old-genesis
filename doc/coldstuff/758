@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [758] in "Coldmud discussion meeting"</TITLE>
+<H1>[758] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?758"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="757"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="759"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="759"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="759"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>heh (Re: tCD and ColdX mailing lists)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jul 30 17:34:26 1995
+)</H3>
+<PRE>
+Date: Sun, 30 Jul 1995 15:33:07 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@paradise.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+&lt; Methinks this would maybe spam the server just a LITTLE BIT.
+
+Sorry, I realized after i sent that off that I said blocks.  All I intended
+to do was to grab a line at a time.
+
+Actually, we could just not allow intrusive file openings like with
+connections, but let connections go both ways (trying to open an intrusive
+file would throw an error).
+
+&lt; Sending them how?  Just like net connections?
+
+Yes.
+
+&lt; Hm.  The answer is: neither.  Files are more complex than net 
+&lt; connections, you'd want to be able to seek around in them and the like.  
+
+But do you really?  I can see file read/write being used somewhat, but
+file seeking and other higher level ops just wouldn't.  Cold is a higher
+level language.  I feel that type of control is beyond it's intended
+scope...
+
+(but, hey, you never know...)
+
+-Brandon
+</PRE>

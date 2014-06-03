@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1301] in "Coldmud discussion meeting"</TITLE>
+<H1>[1301] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1301"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1298"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1300"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1300"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1302"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] prefix/suffix for Cold</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun  4 13:44:30 1997
+)</H3>
+<PRE>
+From: "Maddog's Studio" &lt;maddog@best.com&gt;
+To: coldstuff@cold.org
+Date: Wed, 4 Jun 1997 10:32:56 -0700 (PDT)
+In-Reply-To: &lt;339521DD.855DB475@crl.com&gt; from "greg blake" at Jun 4, 97 01:05:50 am
+
+greg blake wrote:
+&gt; 
+&gt; 
+&gt; I also believe the mass-neotek stuff used that to help prevent people
+&gt; from spoofing the bot.  It would be able to tell what output was from
+&gt; what it was doing or something like that.  Back in the old days there
+&gt; were times when Julia was abused many times by things like that.
+
+Poor Julia and friends were the objects of much abuse.
+
+Colin needs a lot of rework to make it Cold-friendly; 
+I think it would be easier to build a new one base on Joe Strout's 
+Python agent.  The main reason why I use Colin is because I'm actually 
+playing around with some C lib stuff
+and I can quickly interface an external bot to the lib and then play 
+with it interactively.  It's not necessarily the best, but it works--
+sorta.  
+
+
+Frank
+</PRE>

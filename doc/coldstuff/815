@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [815] in "Coldmud discussion meeting"</TITLE>
+<H1>[815] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?815"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="814"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="814"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="814"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="816"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: driver #xxxx =&gt; $name lookups</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct  2 17:53:50 1995
+)</H3>
+<PRE>
+Date: Mon, 2 Oct 1995 17:34:39 -0400 (EDT)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9510022114.AA10599@avon.declab.usu.edu&gt;
+
+
+
+On Mon, 2 Oct 1995, 869683 Gillespie Brandon James wrote:
+
+&gt; that it looks for on root, but this gets really ugly, like MOO.  However,
+&gt; what if we were to do this, but have the known variable be set online,
+&gt; with the default being no variable (and no #xxx-&gt;$name lookups).  Then,
+&gt; the db could perhaps call set_objname_lookup('objname), to set it to
+&gt; lookup on 'objname variable defined on root, or set_objname_lookup(0), which
+&gt; would shut it off...
+&gt; 
+&gt; Does this repulse/appeal to anybody?  This would definitely simplify a
+&gt; lot of things...
+
+Um, it repulses me ...
+
+Either have the driver keep track of it, or have the lookup in the DB.  
+Don't try to combine them in such an odd way.
+
+--
+James "yay, chimera" Deikun
+</PRE>

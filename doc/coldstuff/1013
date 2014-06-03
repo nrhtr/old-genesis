@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1013] in "Coldmud discussion meeting"</TITLE>
+<H1>[1013] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1013"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1012"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1014"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] catch key words...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jun  9 16:29:11 1996
+)</H3>
+<PRE>
+Date: Sun, 09 Jun 1996 13:21:16 -0700
+From: "Jeffrey P. Kesselman" &lt;jeffk@tenetwork.com&gt;
+Reply-To: jeffk@tenetwork.com
+To: coldstuff@cold.org
+
+I know this is a major pain in the ass BUT...
+
+try {} catch &lt;error&gt; {}
+
+Seems to be emerging as a mroe or less standard in c-l;ike languages (C++, JAVA, 
+etc...)
+
+We do the same thign but with different key words.  This is an unecessary 
+complication to learning the language.
+
+IMO ofcourse.
+
+JK
+-- 
+************************************************************************
+Jeff Kesselman                         *             TEN
+Senior Game Integration Engineer       * If it ain't at least national,
+TEN - The Total Entertainment Network  *    Then it ain't the NET!
+************************************************************************
+</PRE>

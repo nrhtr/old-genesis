@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [957] in "Coldmud discussion meeting"</TITLE>
+<H1>[957] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?957"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="956"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="956"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="956"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="958"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="958"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="960"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Right DB, still problems.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 26 16:31:28 1996
+)</H3>
+<PRE>
+Date: Tue, 26 Mar 1996 14:01:05 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;31584688.2CDD24E2@winc.com&gt;
+
+On Tue, 26 Mar 1996, Bill DeVos wrote:
+&gt; Well, the 3.0 db compiles smoothly but at the connect prompt there is
+&gt; only one option... quit, I've checked the textdump and it appears that
+&gt; that is all that is in the db.  I guess we'll be needing a 3.01 db. 8^)
+
+No, that is the minimal db, its... minimal...
+
+-Brandon
+</PRE>

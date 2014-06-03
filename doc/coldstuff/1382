@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [1382] in "Coldmud discussion meeting"</TITLE>
+<H1>[1382] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1382"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1375"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1381"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1381"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1383"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1383"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1383"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] NBC Online project</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 21 02:30:32 1997
+)</H3>
+<PRE>
+Date: Fri, 21 Nov 1997 00:22:31 -0900
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+Brandon Gillespie wrote:
+
+&gt; I tend to agree with the others--they are asking for quite a bit as a
+&gt; donation :)
+&gt;
+
+Yes.
+
+&gt; However, I can provide ice.cold.org as a replacement for Black Rabbit when
+&gt; the need arises, if no sponsor has come forward at that time (basically to
+&gt; extend the proof of concept period).
+&gt;
+
+Thanks.
+
+&gt; We are working on a performance test of cold, using a robot Neale Pickett
+&gt; has created which acts out a play, creating one connection per actor.  We
+&gt; are going to setup several of these at various remote points around the
+&gt; net, each in different rooms on the Cold server--testing performance at
+&gt; each level of connectivity.  Unfortunately my 533mhz alpha is down for the
+&gt; moment, so we will just be restricted to testing it on ice (120mhz cyrix
+&gt; 6x86 with 32mb ram).
+&gt;
+
+I can run a few connections if you want.
+
+&gt; &gt; Another concern is the use of the web.  I'm still not clear on this
+&gt; &gt; requirement, but I know that they want to tie it in to their web page
+&gt; &gt; some way.  If you look at the NBC web page, you will see that they make
+&gt; &gt; heavy use of web technology, including lots of javascripts, and maybe
+&gt; &gt; even java.  I don't really know what to do about this part.
+&gt;
+&gt; It is very VERY easy to integrate things into the web from cold--and for
+&gt; ColdCore there is already a very comprehensive, modular and easilly
+&gt; extendable foundation for doing so.
+&gt;
+
+I hope so.  Naturally the other concern is bandwidth, but there are someways
+to steal bandwidth from the NBC web servers, however I don't think
+the server(s) have much bandwidth left as it is.
+
+frank
+
+</PRE>

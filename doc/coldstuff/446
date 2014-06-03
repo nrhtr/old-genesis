@@ -1,0 +1,81 @@
+<HEAD><TITLE>discuss@charon: [446] in "Coldmud discussion meeting"</TITLE>
+<H1>[446] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?446"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="441"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="441"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="445"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="447"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="447"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="449"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignments change (fix)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep 23 19:15:53 1994
+)</H3>
+<PRE>
+To: BRANDON@cc.usu.edu
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Fri, 23 Sep 1994 10:31:25 MDT."
+             &lt;01HHG5FY1UGYDE2HAQ@cc.usu.edu&gt; 
+Date: Fri, 23 Sep 1994 15:28:23 EDT
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; Cons for having assignments as expressions AND having '=' as an
+&gt; assignment operator:
+
+&gt; * It gets confused with '==', quite often.
+
+&gt; (I can't think of any others)
+
+I'd like to clarify that my decision to treat assignment as a
+statement was not based on this reasoning; I would have adopted Pascal
+assignment and equality operators before making the decision on that
+basis.
+
+I treated assignment as a statement because I believe assignment
+expressions lead to horizontally-organized code, which I believe is
+difficult to read.  Given the opportunity, many programmers will tend
+to use a small number of long lines of code over a large number of
+short lines of code; since I felt that Coldmud should enforce uniform
+code with vertical organization, I didn't give programmers that
+opportunity.  In fact, you'll notice that no expressions in Coldmud
+can have side-effects on local variables (and only method calls and
+primitive calls can have side-effects on the database); therefore,
+programmers are forced to make only one change per statement.
+
+If you're going to change assignment to :=, I would recommend changing
+equality to a single equal sign, or you will have the false illusion
+of being similar to Pascal for assignment.  Another option is to
+change 
+
+I think coming up with hacked solutions for certain cases where you'd
+like to use assignment in an expression is a bad idea.  For example,
+consider this syntax:
+
+	while a &lt;- (.test())
+	    .do_something(a);
+
+This looks great, and its meaning is almost clear, but it's one more
+construct new programmers might be able to understand at first.  And
+while it handles one case (assignment of the expression you're
+testing), it's not universally flexible.  Consider what you might like
+to do in C from time to time:
+
+	while ((count = read(fd, buf, sizeof(buf))) &gt; 0) {
+	}
+
+I don't like constructions like the above (I find it difficult to
+comprehend quickly as I scan through it, unlike vertically organized
+code), but it's fundamentally very similar to the assign-and-test
+case.
+
+In summary, I recommend against extending the syntax to handle a
+common but specific case, I recommend against assignments as
+expressions, I suggest people be careful when changing the syntax for
+assignment and comparison, and I think people should be a bit less
+uptight about how many lines of code they're using.
+
+</PRE>

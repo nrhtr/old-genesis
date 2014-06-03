@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [33] in "Coldmud discussion meeting"</TITLE>
+<H1>[33] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?33"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="19"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="31"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="32"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="34"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="35"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="48"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: clear parameters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 17:57:33 1993
+)</H3>
+<PRE>
+To: Quinn Avery &lt;quinn@dus.mountain.net&gt;
+Cc: deforest@netcom.com, ghudson@MIT.EDU, coldstuff@MIT.EDU
+In-Reply-To: Your message of "Tue, 16 Nov 1993 17:10:12 EST."
+             &lt;199311162210.AA22958@DUS.Mountain.Net&gt; 
+Date: Tue, 16 Nov 1993 15:37:37 -0700
+From: nils mccarthy &lt;nils@mcmuse.mc.maricopa.edu&gt;
+
+i always thought clearish variables should work in the following way:
+
+if a variable had the same value as the one on its parent, it would be
+considered clear, and not stored in the database.
+
+if a variable had a different value than the one on the parent, it would
+be considered non-clear and be stored.
+
+if a variable on the parent is changed, it would automatically be
+inherited by all the clear variables, that is the ones that had the
+same value as the old one.
+
+-nils
+</PRE>

@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [447] in "Coldmud discussion meeting"</TITLE>
+<H1>[447] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?447"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="441"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="446"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="446"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="448"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="448"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="449"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignments change (fix)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep 23 20:07:12 1994
+)</H3>
+<PRE>
+Date: Fri, 23 Sep 1994 20:03:37 -0400
+From: Quinn Avery &lt;quinn@Access.Mountain.Net&gt;
+To: BRANDON@cc.usu.edu, ghudson@MIT.EDU
+Cc: coldstuff@MIT.EDU
+
+:| I think people should be a bit less
+:| uptight about how many lines of code they're using.
+
+The point, to me at least, is not to reduce the number of lines in
+ a method.  It's to make it LOOK good.  To be _readable_.  Which is
+ exactly what you'd like to see, apparently.
+
+I want the freedom to CHOOSE to use an assignment as an expression,
+ to express my idea of readability.
+
+-Q
+</PRE>

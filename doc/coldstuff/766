@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [766] in "Coldmud discussion meeting"</TITLE>
+<H1>[766] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?766"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="765"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="767"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="768"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="768"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>escaping characters in match_regexp()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 16 11:21:18 1995
+)</H3>
+<PRE>
+Date: Wed, 16 Aug 1995 11:17:44 -0400
+To: coldstuff@MIT.EDU
+From: quinn@vv.com (Quinn)
+
+
+Isn't \c supposed to match any character c, stripping it of any special meaning?
+
+;match_regexp("^.+_[0-9]+", "$foo_1")
+--&gt; [[1, 6], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0],
+ [0, 0]]
+(Used 4 ticks, 0 seconds.)
+
+;match_regexp("^\$.+_[0-9]+", "$foo_1")
+-&gt; 0
+(Used 4 ticks, 0 seconds.)
+
+Doesn't seem to work.  If this is a known bug, please excuse my ignorance.
+
+-Quinn
+
+</PRE>

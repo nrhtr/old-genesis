@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1042] in "Coldmud discussion meeting"</TITLE>
+<H1>[1042] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1042"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1041"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1043"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1043"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1045"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] An alternative to common crypt() handling.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jul 24 14:55:52 1996
+)</H3>
+<PRE>
+Date: Wed, 24 Jul 1996 12:21:59 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Correct me if I'm wrong, but 'crypt()' exists for one purpose, and that 
+is handling passwords.  What I suggest is taking a step towards greater 
+abstraction by adding two things:
+
+  * a match_crypted() builtin.
+  * a encrypted data type.
+
+The key is the encrypted data type's literal representation would be:
+
+    "ENCRYPTED"
+
+The only way to create encrypted data would be through 'crypt()'.  When
+matching encrypted data you would pass it to 'match_crypted()'.  The only 
+time the actual true value of the encrypted data would be seen is in a
+text dump, at which point it would be whatever is behind the scenes (such 
+as DES or MD5 or whatever).
+
+This has two advantages:
+
+  * Abstracting with match_crypted() means you dont have problems when
+    different implementations store the seed in different locations
+    (such as FreeBSD and MD5).
+  * Security is heightened as only people with login access to the
+    filesystem can even see the true value of a password.
+
+Basically, its like creating shadow passwords in unix..
+
+Comments?
+
+-Brandon Gillespie
+</PRE>

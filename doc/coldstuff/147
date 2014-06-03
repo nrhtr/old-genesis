@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [147] in "Coldmud discussion meeting"</TITLE>
+<H1>[147] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?147"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="146"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="146"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="146"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="148"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="148"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="150"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: COLD: Status Update?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar  4 03:13:15 1994
+)</H3>
+<PRE>
+To: zachary@IO.COM (Zachary )
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Fri, 04 Mar 1994 02:00:10 CST."
+             &lt;199403040800.CAA18058@illuminati.IO.COM&gt; 
+Date: Fri, 04 Mar 1994 03:10:04 -0500
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+I have to apologize for disappearing suddenly, but my life has become
+very hectic very quickly.
+
+I'm currently dealing with a lot of classwork and a personal life
+that's taking up a lot more of my time, and on top of that, I'm trying
+to single-handedly save MIT's network services from a rapidly
+expanding load due to the addition of the residential networks.  I
+don't have any time at all for frivolous pursuits such as muds.
+
+I'm still very interested in coldmud, and plan to get back to it when
+I have time.  I plan to rewrite the server as a multithreaded C++
+program and introduce some other innovations; I think I may also be
+able to solve some of the needling core design issues, but this will
+all be later.
+
+--GBH
+
+</PRE>

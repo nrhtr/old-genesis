@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [959] in "Coldmud discussion meeting"</TITLE>
+<H1>[959] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?959"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="956"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="958"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="958"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="960"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="960"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="960"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Right DB, still problems.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 26 17:42:22 1996
+)</H3>
+<PRE>
+Date: Tue, 26 Mar 1996 15:21:32 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;31585F03.310343D@winc.com&gt;
+
+On Tue, 26 Mar 1996, Bill DeVos wrote:
+&gt;   Hmm, so minimal that you can't log into it without editing the db in
+&gt; text form?  Hmmm... Ok, I guess that's the next step then.  Thanks.
+
+Yeah, the minimal db is intended as a basic foundation for many uses, it 
+just includes the basics for most applications.  You can build anything 
+on top of it.  An example of what can be build is an online catalog 
+interacting with a database at:
+
+    http://www.roundrocks.com:1234/newslate
+
+The version available currently is actually several months old; the 
+newest version interacts directly with a product database using SQL.  All 
+of it is based off the minimal db, it generates the pages on the fly, 
+catering to the users's connection.
+
+There will be a ColdCore available sometime, which is what I suspect you 
+actually want.
+
+ -Brandon Gillespie-
+</PRE>

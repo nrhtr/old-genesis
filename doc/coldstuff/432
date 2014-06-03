@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [432] in "Coldmud discussion meeting"</TITLE>
+<H1>[432] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?432"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="431"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="433"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="436"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="437"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>code formatting in-db</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 14:12:29 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@netcom.com
+Date: Thu, 22 Sep 1994 11:05:11 -0700 (PDT)
+
+I mentioned doing code formatting in-db in a very long post, but didn't
+ demonstrate how this coudl be done, assumng reares were fairly resourceful.
+
+:)
+
+It is a hack, but here is a sketch:
+
+Create an object "$development_root" which overrides .compile and
+ .list_method. In .compile it finds all the formatting that will be lost
+ in actual compilation and stores it in the code as comments. .list_method
+ reverses the process.
+
+A pre-compiled piece of code might look like
+
+@program me.example
+ arg x, y, z;
+ 
+ // FORMATTED: info starts at 5
+ .tell(x, y, z);
+ // FMT_INFO: line_break, line 4, col 10
+ // FMT_INFO: indent, line 5, spaces 6
+ ...
+ // END_FMT
+.
+
+So it could be done :P
+
+I am for in-server formatting, but I don't think it's a step towards a server
+ with a lot of cruft.
+
+Someone mentioned treating &lt;CR&gt; as whitespace. THis would be ok, but would be
+ lost at compile time.
+
+One other idea is to provide a function to list methods in a more raw form to
+ allow the db to do whatever it wants with it. I suppose you'd need a compile
+ that worked the other way too. This change is along the same lines as the
+ traceback() change in 0.11.
+
+Crag / Robert de Forest
+
+</PRE>

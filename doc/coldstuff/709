@@ -1,0 +1,96 @@
+<HEAD><TITLE>discuss@charon: [709] in "Coldmud discussion meeting"</TITLE>
+<H1>[709] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?709"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="708"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="710"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Returned mail: Host unknown (Name server: serial.mit.edu.: host not found)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 14 03:34:32 1995
+)</H3>
+<PRE>
+Date: Tue, 14 Mar 1995 00:27:21 -0800
+To: coldstuff@MIT.EDU
+From: jeffpk@netcom.com (Jeff Kesselman)
+
+&gt;Date: Mon, 13 Mar 1995 00:49:57 -0800
+&gt;From: Mailer-Daemon (Mail Delivery Subsystem)
+&gt;Subject: Returned mail: Host unknown (Name server: serial.mit.edu.: host not
+&gt;found)
+&gt;To: &lt;jeffpk@netcom.com&gt;
+&gt;
+&gt;The original message was received at Mon, 13 Mar 1995 00:42:54 -0800
+&gt;from jeffpk@netcom20.netcom.com [192.100.81.133]
+&gt;
+&gt;   ----- The following addresses had delivery problems -----
+&gt;&lt;crag@serial.MIT.EDU&gt;  (unrecoverable error)
+&gt;
+&gt;   ----- Transcript of session follows -----
+&gt;550 &lt;crag@serial.MIT.EDU&gt;... Host unknown (Name server: serial.mit.edu.: host
+&gt;not found)
+&gt;
+&gt;   ----- Original message follows -----
+&gt;Return-Path: &lt;jeffpk@netcom.com&gt;
+&gt;Received: from [192.0.2.1] by netcom20.netcom.com (8.6.10/Netcom)
+&gt;        id AAA12413; Mon, 13 Mar 1995 00:42:54 -0800
+&gt;Date: Mon, 13 Mar 1995 00:42:54 -0800
+&gt;Message-Id: &lt;199503130842.AAA12413@netcom20.netcom.com&gt;
+&gt;X-Sender: jeffpk@netcom20.netcom.com
+&gt;Mime-Version: 1.0
+&gt;Content-Type: text/plain; charset="us-ascii"
+&gt;To: crag@serial.MIT.EDU (Robert de Forest )
+&gt;From: jeffpk@netcom.com (Jeff Kesselman)
+&gt;Subject: Re: assignment clarification
+&gt;
+&gt;Okay, My votes.
+&gt;
+&gt;&gt;&gt;
+&gt;&gt;I think many readers were aware of what I was proposing but best to explain. I
+&gt;&gt; believe I mentioned that I have already made the change. I have a working
+&gt;&gt; server running at sensemedia.net:6666 for those who wish to see what such
+&gt;&gt; a beast would feel like, or who don't believe it's possible or whatever. In
+&gt;&gt; this version the operator is '='.
+&gt;&gt;
+&gt;&gt;Having said the above it seems we now have at four questions.
+&gt;&gt;
+&gt;&gt;Should there be an assignment statement? (no, an assignment expression
+&gt;&gt; is sufficient since expr; is a statement).
+&gt;
+&gt;I concurr that there should NOT be two different assignment operators.
+&gt;
+&gt;&gt;
+&gt;&gt;If there is an assignemnt statement what should it be? (=, :=, but I still
+&gt;&gt; still don't want one.)
+&gt;
+&gt;There shouldnt be one.
+&gt;
+&gt;&gt;
+&gt;&gt;Should there be an assignment expression? (yes, if you don't want one write
+&gt;&gt; lint--).
+&gt;
+&gt;Yes.
+&gt;
+&gt;&gt;
+&gt;&gt;What should the assignment expression operator be? ('&lt;-')
+&gt;&gt;
+&gt;
+&gt;
+&gt;=.  Not that I think its the best idea in a vaccum, but I don't think
+&gt;anything else is reasonable in a language vased on C that hopes to be
+&gt;accessible to the largest numebr of users.  (See my suggested 3 rules for
+&gt;compatability already posted.)
+&gt;
+&gt;JK
+&gt;
+&gt;
+&gt;
+&gt;
+
+
+</PRE>

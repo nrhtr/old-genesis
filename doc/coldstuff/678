@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [678] in "Coldmud discussion meeting"</TITLE>
+<H1>[678] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?678"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="677"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="679"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>index/subrange as lvalue</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar  9 13:02:13 1995
+)</H3>
+<PRE>
+From: The Importance of Being Chuck &lt;cadams@weather.Brockport.EDU&gt;
+To: coldstuff@MIT.EDU
+Date: Thu, 9 Mar 1995 12:58:08 -0500 (EST)
+
+So what do the developers think of index/subrange as lvalue?
+
+i.e.:
+
+foo[bar] = baz;
+foo[bar..baz] = [x, y, z];
+
+have assignment-as-expression, index-as-lvalue, and find me a way to
+get the thing to run under HP/UX 9.01, and I'll switch, and plug
+ColdMUD all over the land.  Right now, I'm plugging LPMOO.
+
+Oh yeah, floating point would be nice, but I can wait for that :)
+
+</PRE>

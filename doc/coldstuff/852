@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [852] in "Coldmud discussion meeting"</TITLE>
+<H1>[852] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?852"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="851"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="853"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="853"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="853"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Who is running what</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec  8 01:41:20 1995
+)</H3>
+<PRE>
+Date: Thu, 7 Dec 1995 23:26:29 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+
+I will be releasing Genesis-0.3 sometime soon, which will be using the 
+1.0 textdump format as outlined in the note files.  What I need to know 
+is who is running which version of the driver, and will need upgrade 
+scripts?  Speak now, and I shall help you upgrade when the time comes, 
+hold off, and you are on your own :)
+
+-Brandon
+</PRE>

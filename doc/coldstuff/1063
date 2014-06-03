@@ -1,0 +1,64 @@
+<HEAD><TITLE>discuss@charon: [1063] in "Coldmud discussion meeting"</TITLE>
+<H1>[1063] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1063"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1062"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1062"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1062"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1064"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Re: frobs</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Aug 10 18:15:30 1996
+)</H3>
+<PRE>
+Date: Sat, 10 Aug 1996 16:04:19 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Miroslav Silovic &lt;silovic@srce.hr&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199608102115.XAA24977@regoc.srce.hr&gt;
+
+&gt; &gt; Solutions:
+&gt; &gt; 
+&gt; &gt;   * Prefix frob methods with 'frob_' (or some other such prefix), which 
+&gt; &gt;     is handled behind the scenes and on-the-fly.  This is _ok_, but it
+&gt; &gt;     would kill any efficiency with using Frobs.
+&gt; &gt;   * Create multiple 'scopes' for methods where they do not cross.  I.e.
+&gt; &gt;     you could have two .name() methods, one for use when it is called
+&gt; &gt;     from a frob, and one for when it is called from an object.  This could
+&gt; &gt;     be further extended to private methods as well, although then you
+&gt; &gt;     would either have to devise a special 'local-call' operator (other
+&gt; &gt;     than '.') or you would have to add more lookup steps to the current
+&gt; &gt;     method lookup.
+&gt; &gt; 
+&gt; &gt; 
+&gt; 
+&gt; Okay, here was my answer to the problem: Instead of a change in the method
+&gt; naming (which fubars lookup), I suggested adding 'frob flag to methods.
+&gt; The flag would act as follows:
+&gt; 
+&gt; 	* if method flagged as frob is called like object.method(), it will
+&gt; 	  behave like a normal method. In particular, an attempt to override
+&gt; 	  a !over method will fail (and the parent's method will be called).
+&gt; 	* if method flagged as frob is called like (&lt;object, rep&gt;).method(),
+&gt; 	  it will take priority.
+&gt; 
+&gt; This behaves similarily as different namespaces, except that you can
+&gt; call frob methods like normal ones (unless they're overriding parents),
+&gt; you can easily make them recursive, and there is no cruft in the lookup
+&gt; code (except for overriding, then it would become slightly more complex).
+&gt; 
+&gt; Brandon dislikes this idea, I still don't understand the reasons. Thoughts? :)
+
+It isnt a complete solution.  With this idea you still cannot have a frob
+method and an object method on the _SAME_ object, without having it
+hacked.  Furthermore you have to add special cases to disallowing
+overrides, and I really dont like that idea as you could unintentionally
+introduce security holes--not to mention that disallowing an override is 
+just that, it DISALLOWS overriding.
+
+-Brandon
+</PRE>

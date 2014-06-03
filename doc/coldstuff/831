@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [831] in "Coldmud discussion meeting"</TITLE>
+<H1>[831] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?831"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="830"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="832"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>MinimalCore 1.0</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct 16 15:10:14 1995
+)</H3>
+<PRE>
+Date: Mon, 16 Oct 1995 12:59:07 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+I've hacked up a minimal core for genesis.  This is not intended as a VES
+core, but rather as a spartan genesis core which can be used for a variety
+of tasks.  It contains the basics plus libraries and a networking system.
+
+You can get it at:
+
+    ftp://sticky.usu.edu/pub/brandon/cold/dbs/MinimalCore-1.0.tar.gz
+
+Enjoy
+
+-Brandon
+</PRE>

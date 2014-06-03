@@ -1,0 +1,137 @@
+<HEAD><TITLE>discuss@charon: [1199] in "Coldmud discussion meeting"</TITLE>
+<H1>[1199] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1199"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1195"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1195"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1198"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1200"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1203"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1203"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] What can I do with $robot?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan  1 14:41:26 1997
+)</H3>
+<PRE>
+Date: Wed, 1 Jan 1997 12:32:51 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+cc: Cold Stuff &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;32C66910.4A2148E3@maddog.com&gt;
+
+On Sun, 29 Dec 1996, Frank Crowell wrote:
+&gt; I created a clone of $robot and changed a couple of 
+&gt; attributes, but I don't seem to know how to use/extend the
+&gt; $robot.  As a minimum I would like it to behave like
+&gt; a MUSH puppet so that I could:
+
+$robot is still a work-in-progress.. I only started developing it a few
+weeks ago.
+
+&gt; 	-set it so the object hears and the messages
+&gt; 		can either be pattern-matched or 
+&gt; 		processed in some other way
+&gt; 		(for example on LambdaMOO I have 
+&gt; 		a puppet with a tell_to set to me)
+&gt; 
+&gt; 	-have it respond to tells/pages so I can get 
+&gt; 	it to do things.
+
+It'll do this and much more.  The expected list of features is:
+
+    + puppeteering
+       Allowing somebody to use it as a puppet, seeing
+       and reacting etc.
+    + reactions
+       React to events and text from the environment.
+    + scenes
+       A pre-defined sequence of actions or a behaviour which
+       can be triggered.
+    + internal heartbeat
+       A self-monitored heartbeat that will wind-down and wind-up
+       as appropriate based off the robot's activity.
+
+The foundation for reactions is basically complete.  The interface is very
+raw at the moment, as I finish the designs for the other systems. 
+_Temporarily_ you can use the command '@reactions &lt;object&gt;' to list the
+reactions.  You need to first add a reaction, and then activate it (two
+steps as a robot could have a large library of reactions that it activates
+and deactivates as it goes based off other events, scenes, heartbeat,
+etc).  To add a reaction call .add_reaction() on the robot with eight
+arguments, as follows:
+
+  ARG 1 (symbol): match with
+
+      This is the type of matching to use, it is a symbol representing a
+      method to be called off $string.  It is commonly accepted to be:
+
+          'regexp 'match_pattern 'match_template
+
+      If more than this is used you must update $robot,match_types.  I may
+      add a capability which uses the 'in' operator.
+
+  ARG 2 (string): match template
+
+      This is the template matched against.  If the template is an empty
+      string the reaction always matches, assuming it already passed the
+      chance of reacting.
+
+  ARG 3 (symbol): type of input to react to
+
+      To reduce the overall lag of a large set of reactions they are
+      defined to react to a possible subset of input, which is:
+
+          'tell     -- react only to text sent to .tell() (does not
+                       include directed tells and social events).
+          'notell   -- react to anything other than that sent to .tell()
+                       (i.e. any event or directed tell).
+          'any      -- react to anything.  This is the least efficient
+                       and is not suggested.
+
+      Or any social event (currently 'whisper, 'tosay and 'page).
+
+   ARG 4 (integer): chance of reacting
+
+      Simply a number from 1 to 100, representing the chance of reacting.
+
+   ARG 5 (integer): the number of times to react.
+
+      Either -1 (react an infinite amount of times) or a number which
+      is decremented to zero for each reaction, at which point the
+      reaction is deactivated.
+
+   ARG 6 (list): hook
+
+      Hook is a two element list which will likely be reduced to seperate
+      arguments (at the time of development it could be from one to any
+      number of elements).  The elements are broken down to:
+
+      ELEMENT 1 (symbol): method to call
+
+          This is the method to call if the reaction is triggered.  Look
+          at `@d $robot.react_*` to see the currently defined hooks.
+
+      ELEMENT 2 (list): additional arguments for method call
+
+          These arguments are added after the standard arguments, to the
+          method call for the above method.
+
+   ARG 7 and 8 (integers): minimum and maximum delay
+
+      This is the delay before the reaction hook is called.
+
+When you add a reaction it will be given an integer ID, call
+robot.activate_reaction() with the ID (otherwise it will not react).  You
+will also want to call robot.startup() for it to hook into the appropriate
+events. 
+
+BTW, the robot's manager is where all tells and whatnot are directed
+(assuming the manager is not in the same room as the robot).  This will
+get to be more intelligent in the future.  Also, expect things to change
+in the future, as its all still under development.  
+
+-Brandon Gillespie
+
+</PRE>

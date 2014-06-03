@@ -1,0 +1,28 @@
+<HEAD><TITLE>discuss@charon: [1447] in "Coldmud discussion meeting"</TITLE>
+<H1>[1447] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1447"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1446"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1448"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1448"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1448"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ftp.cold.org broken?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar 24 07:43:17 1999
+)</H3>
+<PRE>
+Date: Wed, 24 Mar 1999 12:31:17 +0000
+From: Peter Torkelson &lt;wfire@fur.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+FTP Error
+
+Could not login to FTP server
+
+d in realloc(): warning: junk pointer, too low to make sense.
+</PRE>

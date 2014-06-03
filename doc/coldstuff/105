@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [105] in "Coldmud discussion meeting"</TITLE>
+<H1>[105] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?105"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="104"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="106"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>fyi</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec  8 01:23:19 1993
+)</H3>
+<PRE>
+Date: Tue, 07 Dec 1993 23:17:41 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+In my quest to hunt down unknown bugs I found that you can create a file and
+echo it with ANSI characters in it, with no detrimental effect (ie
+echo_file()).  Anyhow, if yur bored try:  ;echo_file("foo"); on the Cold Dark
+
+-Brandon (DragonLynx)
+
+(Btw, dont know if I ever said it on this list, but the Cold Dark has found a 
+rather permanent address (Much better than the PC it was going to be).  
+Anybody can connect to:  recumbent.declab.usu.edu 6666  It is open 24 hours a
+day.  If your just sight seeing please use guest :)  If you want to help out
+please speak up! =)
+</PRE>

@@ -1,0 +1,75 @@
+<HEAD><TITLE>discuss@charon: [834] in "Coldmud discussion meeting"</TITLE>
+<H1>[834] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?834"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="832"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="833"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="833"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="835"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="835"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="835"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: connections</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Oct 18 01:16:30 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+Date: Tue, 17 Oct 1995 23:05:11 -0600
+In-reply-to: Your message of "Tue, 17 Oct 95 18:14:10 PDT."
+ &lt;9510180114.AA19146@tungsten.seattle.geoworks.com&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+&lt; The "why" is that it is much easier to get fine grain control with
+&lt; in-db policies then in-server policies.  For example, if I want player
+&lt; objects to only have one connection at a time, but allow unlimited
+&lt; connections to a web object, I could do so by putting the appropriate
+&lt; things in the respective methods.  If the server flat prohibits
+&lt; multiple connections, I lose.  Obviously, I could work around this by
+&lt; creating child objects for each connection, and in fact that may be a
+&lt; better design anyway, but on the other hand I may have a really cool
+&lt; way to handle multiple data streams from a single object.
+&lt; 
+&lt; To take a different approach, I argue that your dilemna over whether to
+&lt; disallow the second connection or force the first connection out is a
+&lt; perfect example of why this should be an in-DB issue.  Whatever
+&lt; decision you make, there will be some situations where it isn't the
+&lt; most appropriate model.
+&lt; 
+&lt; To paraphrase the X philosophy, the server should provide mechanisms,
+&lt; and leave policy to the database.  Just as parsing and security is
+&lt; handled by the DB, so should regulation of connections.
+
+It depends upon the viewpoint being taken.  Right now it _IS_ this way,
+with a few "loose ends", one of which is that multiple connections
+can be using a single object.  The problem with this is you dont have
+multiple connection control, and frankly I dont see the NEED for it,
+since you do have the controls available for single connections.
+
+If we do have multiple connections to a single object, how would you
+suggest the interface?  We could have all of the connection methods
+send a first argument which is a 'connection id', unique to that
+connection, then send to that connection id.  Of course, then people
+would just want to send to the connection id without binding the connection
+to an object, which gets really hairy... (other than language rules
+and encapsulation, there is no reason why connections are bound to
+objects--when you currently send to a connection it steps down a list
+of connections until it finds the one(s) associated with your dbref).
+
+What I was suggesting is primarily a tightening of the control, you have
+full ability to control connections in any way you want right now, in-db;
+I was just talking about the odd case where two connections would
+accidentally get bound to one object (I've only had it happen one of
+the times I rewrote $network).  Basically the i/o from both connections
+gets sent to the same object.
+
+Actually, the main reason I would like to do it this way is simplicity.
+It is simpler to provide the mechanisms for 1/object and to let people
+code up mutiplicity in the db, than to do it in the driver.  Furthermore,
+as I start to add files as well as connections, I would like a standard
+between the two, and this seems the way to go (in general I have found
+that the simpler design is usually the better one anyway)...
+
+-Brandon Gillespie-
+</PRE>

@@ -1,0 +1,71 @@
+<HEAD><TITLE>discuss@charon: [1563] in "Coldmud discussion meeting"</TITLE>
+<H1>[1563] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1563"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1562"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1562"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1562"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1564"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: binary tree/other..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar 11 22:35:33 2000
+)</H3>
+<PRE>
+Date: Sat, 11 Mar 2000 20:15:33 -0700
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;3.0.6.32.20000311174715.0090de70@xamocorp.com&gt;; from roacho@xamocorp.com on Sat, Mar 11, 2000 at 05:47:15PM -0600
+Reply-To: coldstuff@cold.org
+
+
+--kXdP64Ggrk/fb43R
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+On Sat, Mar 11, 2000 at 05:47:15PM -0600, roacho@xamocorp.com wrote:
+&gt; I need to write some code which will be used in 3 places whenever a reque=
+st
+&gt; is made to my server. It is to keep track of unique ips. I will likely
+&gt; write it a few different methods and test for speed/memory usage, however=
+ I
+&gt; would appreciate any suggestions that peopel have.
+&gt;=20
+&gt; I am currently considdering taking the ip and turning it into a single
+&gt; integer and using objects in the database as nodes in a binary tree.  I'm
+&gt; not sure how much overhead will come with the use of all those objects.
+&gt; I'm also think of using nested dictionaries and a list to store the ip's =
+by
+&gt; hierarchical numbering based on the four number fields. I know dictionari=
+es
+&gt; tend to be slow, and ColdC's non-mutable datatypes can be a pain, but I
+&gt; dont know what is the lesser of the two evils.
+&gt;=20
+&gt; Anywho, I'm off to write some code.. if someone can suggest something
+&gt; better please do.
+
+Dictionaries are not 'slow'.  They do have a large cost during
+creation (adding elements) but they are quite fast for retrieval (they
+are basically just data hashes).
+
+As for new suggestions, dunno.  I just wanted to clarify :)
+
+-Brandon
+
+--kXdP64Ggrk/fb43R
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: mBMel9NeuR5xppKQUp7dwBX/NX/KAfgS
+
+iQA/AwUBOMsL1Ev5XoQiMgn6EQJcKwCgm0EqfFmnhMR/pM/60wgEhrX+dzgAniM+
+VZ70tKQoNwuIWglpuNWc4P3j
+=e1Du
+-----END PGP SIGNATURE-----
+
+--kXdP64Ggrk/fb43R--
+</PRE>

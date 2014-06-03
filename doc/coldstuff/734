@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [734] in "Coldmud discussion meeting"</TITLE>
+<H1>[734] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?734"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="733"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="735"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="739"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="739"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>#define SUNOS</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 12 23:57:46 1995
+)</H3>
+<PRE>
+Date: Fri, 12 May 1995 23:57:42 -0400
+From: Quinn &lt;quinn@Access.Mountain.Net&gt;
+To: coldstuff@MIT.EDU
+
+
+What's the point of all those #IFDEF SUNOS lines?  I #DEFINE SUNOS
+ in config.h and everything still bombs.
+
+I'm struggling with 0.12-1c.
+
+-Quinn
+
+Oh, btw: IS ANYONE READING THIS??
+
+</PRE>

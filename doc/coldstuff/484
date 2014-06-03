@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [484] in "Coldmud discussion meeting"</TITLE>
+<H1>[484] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?484"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="483"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="485"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="485"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="487"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Creating buffers.. HELP!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct 30 02:15:19 1994
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+Date: Sun, 30 Oct 1994 00:04:46 -0700 (PDT)
+
+I'm trying to send a specific byte string.  Why does this generate a
+syntax error???
+
+echo(%[0,x,y,width,height]);
+
+x,y,width,height are all integer arguments to the function.
+
+Thanks
+
+Jeff Kesselman
+
+</PRE>

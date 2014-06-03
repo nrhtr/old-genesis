@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [961] in "Coldmud discussion meeting"</TITLE>
+<H1>[961] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?961"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="960"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="962"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] net.c problem Linux 1.2.x</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 29 01:29:17 1996
+)</H3>
+<PRE>
+From: frankc@netcom.com (Frank Crowell)
+To: coldstuff@cold.org (Cold)
+Date: Thu, 28 Mar 1996 22:12:45 -0800 (PST)
+
+
+I'm compiling Genesis 0.4 on Linux 1.2.X and get
+the following:
+
+net.c: conflicting types for 'bzero'
+net.c: warning  ....
+
+anyway, it goes on to say that it was previously defined.
+
+I see in net.c that:
+
+#if !defined(sys_linux) &amp;&amp; !defined(sys_freebsd)
+extern void bzero(...blah blah...)
+#endif
+
+
+My guess is that sys_linux did not get defined because I have
+an old linux.  I could comment the extern line out
+but I don't know if that is the right approach.
+Any other suggestions for getting sys_linux to be defined
+or should I not worry about it?
+
+Frank
+</PRE>

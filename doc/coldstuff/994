@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [994] in "Coldmud discussion meeting"</TITLE>
+<H1>[994] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?994"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="993"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="995"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1002"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1003"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Memory leak</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 13 01:52:12 1996
+)</H3>
+<PRE>
+Date: Mon, 13 May 1996 07:39:40 +0200
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+
+
+I tested the @grep on my home playground. It definitely behaves like a leak,
+and I think it doesn't have anything to do with enlarged cache or malloc
+fragmentation (I used different allocator, too, and different cache se
+setting on a smaller db). My first suspect would be method decompiler,
+although I cahave no way to be sure till I manage to run mcold with my memo
+leak checker upgraded for the new driver (or , alternatively, I consider
+uring sing memleak library from X distrrib).ution). 
+
+I'd still think it' hithink tit'd be niLynx Lynx , could you look over toyour code, especially the places you called
+malloc from , , so I don't have to go though all the trouble? :)
+
+	Miro
+</PRE>

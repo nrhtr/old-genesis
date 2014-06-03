@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [865] in "Coldmud discussion meeting"</TITLE>
+<H1>[865] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?865"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="864"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="866"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="866"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="866"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Vanishing objects bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan  2 03:01:46 1996
+)</H3>
+<PRE>
+Date: Tue, 2 Jan 1996 08:43:01 +0100
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@tombstone.sunrem.com
+
+
+I noticed very insidious bug. Occasionally, an object name vanishes from
+the global lookup table. The object still exists and is valid, but
+attempts to get it by $reference fail (it happened with $backdoor
+on pippin site). An object can be retrieved if you know its parents
+(use descendants() and toint() to find its numerical reference, and
+then @rename it to reset its $name. Ignore the traceback).
+
+</PRE>

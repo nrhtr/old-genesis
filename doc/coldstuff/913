@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [913] in "Coldmud discussion meeting"</TITLE>
+<H1>[913] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?913"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="912"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="914"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Using Data Libraries</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 28 21:32:28 1996
+)</H3>
+<PRE>
+Date: Sun, 28 Jan 1996 19:14:19 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;199601280644.WAA07751@yam.tenetwork.com&gt;
+Reply-To: coldstuff@tombstone.sunrem.com
+
+&gt; A question by the way.  I can';t figure $list out.  it SEEMS like all 
+&gt; [ ] list objects end up as $list objects.  How does this magic 
+&gt; happen?  What am I missing?
+
+Jordan added this nifty bit of functionality for ease of using ColdC 
+libraries based off a specific data type.  Basically, when the 
+interpreter encounters a data type other than OBJNUM as the target where 
+the method is found it looks up an object based off the type of data (ie 
+type())  Simply put, type(list) =&gt; 'list, and lookup('list) =&gt; $list (if 
+you are using a 0-3 core, with 'lookup()).  The data is then set as the 
+first argument to the method, with subsequent arguments following it.  
+Therefore:
+
+    [1,2,3].reverse();
+    "foo".capitalize();
+
+Are the same as:
+
+    $list.reverse([1,2,3]);
+    $string.reverse("foo");
+
+This is one of the 'practical' features of ColdC (as Larry Wall would put
+it ;)
+
+</PRE>

@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [365] in "Coldmud discussion meeting"</TITLE>
+<H1>[365] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?365"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="364"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="366"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="366"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="366"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Off the subject, but...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun 30 22:49:03 1994
+)</H3>
+<PRE>
+From: Dave Richards &lt;dave@richards.connected.com&gt;
+To: coldstuff@MIT.EDU
+Date: Thu, 30 Jun 1994 09:29:54 -0700 (PDT)
+
+I ran into ColdMUD accidently one day, downloaded it, compiled it,
+printed the docs and became impressed by it.  Ok, so here I am all
+impressed, with docs and a running server and still far from able
+to do anything.  Don't get me wrong, I know how to code and have
+done quite a bit of driver maintanance in my life.  But rather than
+learn all the rules of this new driver from reading it end to end, I
+am looking for a place that is running a ColdMUD.  I would like to
+ask such questions as: What is the sequence of execution when the
+system boots up?  When is eval called and in which objects?  And so
+on.
+
+I have an idea for a network-based game, not a MUD per se but I am
+looking for a change from LP-based drivers and would like to implement
+it in ColdMUD assuming I can get some simple answers.
+
+Where do ColdMUD folks meet to talk?
+
+	Cygnus (Dave Richards)
+</PRE>

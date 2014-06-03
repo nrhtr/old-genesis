@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [530] in "Coldmud discussion meeting"</TITLE>
+<H1>[530] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?530"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="525"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="529"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="531"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="531"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 13:39:29 1994
+)</H3>
+<PRE>
+To: George Heintzelman &lt;georgeh@MIT.EDU&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Sat, 05 Nov 1994 11:41:52 EST."
+             &lt;9411051641.AA03780@carbonara.MIT.EDU&gt; 
+Date: Sat, 05 Nov 1994 12:56:31 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; Scheme's Call-with-current-continuation.  Exactly how this works is
+&gt; difficult to explain, but it basically packages up all of the
+&gt; current stack, including the 'future' of the computation in
+&gt; progress, and passes it off as an argument to the function which is
+&gt; an argument of call/cc.
+
+I certainly hope not.  There are a number of serious problems with
+call/cc:
+
+(1) It's very confusing.  By introducing a first-class object which
+contains information about the call state of the program, you allow
+for all sorts of spaghetti.  Closures are bad enough, but with call/cc
+it becomes just about impossible for a human to analyze the flow of a
+program.
+
+(2) It's too general.  Because call/cc returns a first-class object,
+you can have a procedure return a continuation to the middle of that
+procedure, store that value in an object, finish the entire task,
+handle some other requests, and then have someone activate the
+continuation.  This implies that the the implementation cannot be
+using a stack (you have to do continuation-passing style conversion
+and manage the stack on a garbage-collected heap, typically).
+
+To a certain extent, saying "the implementation is too hard" is
+begging out, but it's rare that people actually want non-local control
+beyond exception-handling semantics.  I'm not even convinced that
+there is a good use for resumption semantics, although unwind-protect
+might not be a bad idea.  Also, when you have a multi-level memory
+hierarchy, a contiguous stack has serious performance advantages.
+
+(3) Overly general non-local control mechanisms introduce problems in
+a multithreaded environment.  Suppose, for example, that I have a
+thread-safe list, and I want to introduce a procedure which maps a
+procedure over the values of the list in a thread-safe manner.  If
+that procedure can activate some random continuation, then there's no
+way I can implement locking semantics.  (Exceptions are no problem,
+however; I can unwind-protect and unlock, or catch all-unlock-rethrow,
+whatever.)
+
+C-- was intended to be practical.  Let's not jump off the theoretical
+deep end here.
+
+</PRE>

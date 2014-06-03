@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [823] in "Coldmud discussion meeting"</TITLE>
+<H1>[823] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?823"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="822"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="824"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>0.2-5</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Oct 12 02:30:00 1995
+)</H3>
+<PRE>
+Date: Thu, 12 Oct 1995 00:25:56 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+This version is available at the regular archive:
+
+    ftp://sticky.usu.edu/pub/brandon/cold/drivers/Genesis-0.2-5.tar.gz
+
+It fixes several problems with 0.2-4, and has the new copyright.
+
+note: I'm calling it 'genesis' now, since 'coldx' has evolved to be the
+name of the project itself.
+
+-Brandon
+</PRE>

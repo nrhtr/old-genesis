@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [946] in "Coldmud discussion meeting"</TITLE>
+<H1>[946] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?946"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="945"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="947"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="947"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="948"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Re: regexps</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 25 10:18:13 1996
+)</H3>
+<PRE>
+To: coldstuff@cold.org
+Date: Mon, 25 Mar 1996 09:05:50 -0600
+From: Zachary DeAquila &lt;zachary@zachs.place.org&gt;
+
+
+As I recall, one of the big problems Greg faced when choosing how to
+implement regexps was to find a way to easily implement MOO-style
+'incomplete command' expressions.  In MOO, you canhave a verb
+'foob*ar' that will match foob, fooba and foobar.  How does one
+construct this with a perl regexp?  hrmm... 'foob|fooba|foobar' 
+ew.  So.... whatever the choice, this functional requirement must
+be kept in mind...
+
+ --Zachary
+
+</PRE>

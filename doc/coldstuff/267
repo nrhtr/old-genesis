@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [267] in "Coldmud discussion meeting"</TITLE>
+<H1>[267] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?267"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="266"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="268"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="268"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="270"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>fork() and log()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 15:03:30 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Thu, 19 May 1994 11:52:41 -0700 (PDT)
+
+Colin has briefly touched on ideas he has for the future. One such idea is
+ non-cooperative multi-tasking (like unix and the Amiga), which would mean
+ some new things like semaphores of some kind. I immagine there would have
+ to be a fork() of some sort if nothing less than $task.spawn().go(). :)
+
+I do not speak for colin, of course, but this is the official rumor.
+
+As for log(), Lynx proposes a cospetic change which I have no objection to,
+ though I would prefer to take the date and time out completely. The only
+ problem with this is that log() in its current state suits a purpose that
+ requires that it include this information. If it were left up to the db
+ to supply the info it could be written out or something.
+
+Acutally, I fully endorse the idea of removing the time and &gt; from log()
+ entries and leaving up to $sys.log(). This would also mean you could put
+ $string.from_value(sender()) in the entry or something. This change strikes
+ me as similiar in nature to the change in version 11 to traceback(), where
+ printing the traceback is a task left up to the programmer. Likewise, log()
+ might as well leave it up to the programmer to supply a meaningful/useful
+ log entry.
+
+I doubt there's much to the change, prolly one or two lines in log.c. In fact,
+ I was under the impression that Lynx had already made this change in his
+ version of the server.
+
+Whatever.
+Crag / Robert de Forest
+</PRE>

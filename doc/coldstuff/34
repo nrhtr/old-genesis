@@ -1,0 +1,94 @@
+<HEAD><TITLE>discuss@charon: [34] in "Coldmud discussion meeting"</TITLE>
+<H1>[34] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?34"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="33"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="35"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="39"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="39"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>parsing</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 18:03:04 1993
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: coldstuff@MIT.EDU
+Date: Tue, 16 Nov 93 14:49:28 PST
+
+Well, my mail program appears to be dropping some of my mail into oblivion
+instead of the folder I specify, so I'll have to respond to some things from
+memory, it seems..
+
+The example given of bogging down the system whenever someone gave a command in
+the startup room seems to me to be far more an example of spectacularly bad
+architecture than of verb-matching problems.  In my opinion, there should never
+be so many objects in a single room that this becomes at all noticeable and if
+there are, the room should be cleaned out anyway.  This, however, is not the
+real issue anyway.
+
+I actually started modifying the parsing to elimiate what seemed to me to be an
+incredibly inefficient way of dealing with remotely-referenced verbs (which I
+still think to be the case).  In the process I ended up doing away with the
+verb cache as well, in the interest of better encapsulation and a more flexible
+system.  I'm not really adverse to the notion of a verb cache as such, but
+looking over the system more closely, I really wonder whether the benefits
+would outweigh the quite convoluted implementation necessary.  It seems to me
+that in most cases (including the scenario of the startup room), it would have
+very little, if any, positive affect the way it is now.  I'm going to look into
+it further, however.  I may change my mind.
+
+I shouldn't have mentioned I was working on it..  Inevitably whenever I mention
+I'm working on something, something more important (usually RL) comes up and
+drags me away from it.  Hopefully I'll be back at The ColdDark within a couple
+of days to finish things up.
+
+It also appears I invited people around without telling them where to go.
+Oops.  paradise.declab.usu.edu 6666.  Due to local issues, it's generally only
+up during the nighttime (US time), and sometimes in the evenings.  This
+will change when we get the impending new computer to run it on.
+
+Anyway, for those interested, the parsing structure I'm currently working on is
+along the following lines:
+
+  $player.parse_command does the normal match_command checking, then gets a
+list of all the objects in the player and room, and calls obj.match_verb(str)
+on each.
+
+  obj.match_verb checks the passed string to determine whether it fits an
+appropriate verb by asking each of its ancestors that define verbs to match it,
+and returning any results in the form
+[[obj,template,match_result,method],...]  In the process, it also checks to see
+whether it's in the local environment of the sender, and disregards any local
+verbs being called remotely.
+
+  There is also a simple form of cacheing I'm going to implement on the verb
+handling objects, which will remember the last passed command string and what
+the result was from it and all of its ancestors, thus a good part of the
+overhead on checking all of the objects in the room is reduced, since no matter
+how many descendants of $foo there are, $foo's ancestors would only get
+asked to match the command once.
+
+  Remote matching of verbs is handled simply by searching the command string
+for any explicit dbrefs and including them in the search list.
+
+As I said, the my coded stuff on The ColdDark isn't as far along as I expected
+it to be, so you probably won't get too much more out of looking at it right
+now than what I just listed here.  I'll post when I get something more
+complete down.
+
+On the subject of regexps:  I also tend to lean towards not including regexp
+matching simply because it's been my experience that people who understand them
+tend to lean far too heavily on them, and they're often not the best tool for
+the job (except for quite complicated tasks, which can often be broken up into
+a set of simpler tasks, leading to increased readability and more easily
+modifyable systems).  MUDs, after all, are not text editors or command-line
+search programs, and do have their own programming languages which work quite
+nicely at many of the more sophisticated tasks regexps were designed for.
+
+-Richelieu
+-- 
+</PRE>

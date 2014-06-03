@@ -1,0 +1,28 @@
+<HEAD><TITLE>discuss@charon: [509] in "Coldmud discussion meeting"</TITLE>
+<H1>[509] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?509"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="508"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="510"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="514"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="515"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>quick note: known bugs</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 20:51:08 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Tue, 1 Nov 1994 17:46:28 -0800 (PST)
+
+I am aware of at least two bugs still outstanding in the server at homer.ncm.com
+
+The server becomes entirely unstable when forced to diskbase.
+match_regexp is fckd.
+
+Have a nice day.
+</PRE>

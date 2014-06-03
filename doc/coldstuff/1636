@@ -1,0 +1,172 @@
+<HEAD><TITLE>discuss@charon: [1636] in "Coldmud discussion meeting"</TITLE>
+<H1>[1636] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1636"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1626"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1635"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1635"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1637"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1639"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1640"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Genesis 1.1.9 - STABLE</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan  9 11:18:28 2001
+)</H3>
+<PRE>
+Message-ID: &lt;3A5B36E2.C509CBEB@cubik.org&gt;
+Date: Tue, 09 Jan 2001 09:05:54 -0700
+From: Bruce &lt;bruce@puremagic.com&gt;
+MIME-Version: 1.0
+To: coldstuff@cold.org
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Reply-To: coldstuff@cold.org
+
+Allen Noe wrote:
+&gt; Bruce wrote:
+&gt; &gt; This is a very delayed response, but I need to see a dev
+&gt; &gt; release made fairly soon to get some large changes into
+&gt; &gt; wider testing.
+&gt; 
+&gt; Uh, am I holding you up? Feel free to take what you can use
+&gt; and drop the rest if you need to make a release RSN. None of
+&gt; this is so amazingly important that the rest of the world
+&gt; needs to wait.
+
+I'd rather try to make sure that I'm getting as much of the
+existing stuff as possible, rather than ignore patches that are
+3+ months old.
+
+&gt; &gt; &gt; In the dev one:
+&gt; &gt; &gt; * Some method-cache stuff, if you're impatient.
+&gt; &gt; &gt;   (Bruce)
+&gt; &gt;
+&gt; &gt; I think this isn't the full version.  At any rate, I
+&gt; &gt; have a far larger patch with many more optimizations
+&gt; &gt; and enhancements that Brad and I have been working on
+&gt; &gt; that includes this.
+&gt; 
+&gt; That's correct -- it's the old version you posted to this
+&gt; list. If you have a better version, then this one is
+&gt; pointless. Like I said, it was for the people who couldn't
+&gt; wait for the full version.
+
+Okay.  My addition here was to start caching failed lookups, so
+it isn't as a big a win for most people as the work that was
+originally done.
+
+&gt; &gt; &gt; * Have stack(1) not bother returning line number or
+&gt; &gt; &gt;   pc. (me)
+&gt; &gt;
+&gt; &gt; This conflicts with an extension that I've made to
+&gt; &gt; stack() that allows you to specify which task you'd
+&gt; &gt; like to get a stack for. While this info is available
+&gt; &gt; from task_info(), it isn't in the same format as
+&gt; &gt; stack() and traceback().  I didn't know about the
+&gt; &gt; stack trace being in task_info() until I'd already
+&gt; &gt; done my work, so I'm not clear what I'd like to do
+&gt; &gt; here.  To me, it makes sense for stack() to present
+&gt; &gt; that information, but the duplication seems wasteful.
+&gt; &gt; (I already had to change the underlying stuff in
+&gt; &gt; execute.c to let task_stack() work for any given task
+&gt; &gt; for some of the other work that has been going on.)
+&gt; 
+&gt; Hmm. Sounds interesting, but I don't see how I would
+&gt; use it. I won't push too hard for my stack patch, other
+&gt; than that if you call stack() a lot, and don't need line
+&gt; numbers or the pc -- just objects and methods -- it saves
+&gt; having to parse the bytecode.
+
+There's no cost to getting the pc, just the line numbers.
+
+&gt; I agree that stack(TID) should return that TID's stack,
+&gt; and also that returning the frames in task_info is then
+&gt; made redundant.
+
+Well, not quite redundant as task_info() returns some information
+that stack() doesn't. (Like the value of user() per-frame.)  But
+I needed the ability to print out the stack for any thread in
+native code within the driver, so I already had to extend the
+internal machinery to support getting the stack for any task.
+(Now, when there is a server panic, it will try to print the
+stacks of all the tasks, which is invaluable when you get
+emalloc() failures occasionally and have no idea why.)
+
+&gt; It looks like task_info is less complex than stack(TID)
+&gt; should be (never having seen the latter's code), since
+&gt; task_info does not have to calculate line numbers; however
+&gt; if line numbers are needed, your stack(TID) is the only
+&gt; way I see to get them for another process's stack.
+&gt; 
+&gt; I can always create a separate function to do what I
+&gt; have stack(1) do if it ends up conflicting -- that
+&gt; convention is just to save a function and be slightly
+&gt; portable: (| stack(1) |) || stack() should always compile
+&gt; and work.
+
+Well, I could make stack() take an optional second argument that
+would control whether or not line numbers were calculated:
+
+stack() -- current task, generate line numbers
+stack(828)  -- task 828, generate line numbers
+stack(828, 0) -- task 828, don't genererate line numbers
+stack(task_id(), 0) -- current task, don't generate line
+                       numbers
+
+I could do that if it were seen as important enough.
+
+&gt; &gt; &gt; * Have method_bytecode() return jumps so if (1)
+&gt; &gt; &gt;  { return 1; } return 0; has different bytecode
+&gt; &gt; &gt;  than if (1) { return 1; return 0; } (me)
+&gt; &gt; &gt; * Add SYMBOL calling_method(), the same as
+&gt; &gt; &gt;   stack()[2][3] (me)
+&gt; &gt;
+&gt; &gt; These 2 look fine for the stable release to me, if
+&gt; &gt; they aren't buggy.  How long and to what extent have
+&gt; &gt; you been using these bits of code?
+&gt; 
+&gt; I'm not sure about how often method_bytecode is used,
+&gt; but calling_method is used for just about every
+&gt; permission check, and more.
+&gt; 
+&gt; Both have been in place for months.. at least 7,
+&gt; perhaps 10 if I read these timestamps right. I did
+&gt; find and fix a bug in calling_method where it would
+&gt; dereference a NULL pointer (cur_frame-&gt;caller_frame)
+&gt; if called from a method called by the driver, but
+&gt; that's it. The method_bytecode patch is four lines
+&gt; long -- it adds a case to the big switch there.
+
+Great. I'd just as soon put these in the stable release then.
+
+&gt; &gt; &gt; * Add LIST explode_quoted(STRING), which is a native
+&gt; &gt; &gt;   version of ColdCore's $string.explode_quoted()
+&gt; &gt; &gt;  (Jeremy Weatherford)
+&gt; &gt;
+&gt; &gt; Hmmm. Would be nicer to see this as a native method on
+&gt; &gt; $string. I may do that work for you since it is pretty
+&gt; &gt; easy if you prefer.
+&gt; 
+&gt; It's not my code; I just took what Jeremy posted and
+&gt; patched it in. I also think it would be much better as
+&gt; a native, but don't have enough round tuits. If you
+&gt; want to hack it, by all means, go ahead.
+
+We'll see how much time I can scrape up.  It should just take
+about 10 minutes to make this a native, once I get it patched
+into my tree as it exists now.
+
+&gt; Do you want to see a patch of the 4 things you haven't
+&gt; raised issues about, or can you just edit the patch file?
+
+I'll just grab what I need from your patches ..
+
+Are there other outstanding patches or have you created new ones
+since this original post?  Also, I -know- that some of the work
+that I'm aiming to get into this next release will break Win32 as
+it brings in the use of Posix threads.
+
+ - Bruce
+</PRE>

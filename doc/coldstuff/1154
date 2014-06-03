@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1154] in "Coldmud discussion meeting"</TITLE>
+<H1>[1154] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1154"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1153"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1153"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1153"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1155"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1155"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1163"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Is there a shortcut to @def?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 11:56:54 1996
+)</H3>
+<PRE>
+Date: Mon, 2 Dec 1996 09:48:43 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+cc: Cold Stuff &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;32A2BBD8.57CD781C@maddog.com&gt;
+
+On Mon, 2 Dec 1996, Frank Crowell wrote:
+&gt; [for Alpha4 Core]
+&gt; 
+&gt; I'm looking for a shortcut to @def.
+&gt; 
+&gt; I tried to use the example in the Admin's Guide, but I think
+&gt; I'm missing something: 
+&gt; 	;as $motd; server_name = "My New Server Name"
+&gt; 
+&gt; The way it worked for me was this way:
+&gt; 	@def $motd as $motd eval server_name = "My New Server Name";
+&gt; 
+&gt; If I didn't have @def available, how would I set any variable?
+
+@def went away in Alpha5 in lieu of the 'as' syntax with eval, prefix a
+"statement" to the eval starting with 'as' and followed by the ColdCore
+way of formatting an object/definer, namely:
+
+        $object&lt;$definer&gt;
+
+The definer is optional.  Follow that by a semi colon and then the normal
+eval from that point on.  This replaces both:
+
+    @def xxx as yyy eval zzz        =&gt;    ;as yyy&lt;xxx&gt;; zzz
+    @as yyy eval zzz                =&gt;    ;as yyy; zzz
+
+-Brandon Gillespie
+
+</PRE>

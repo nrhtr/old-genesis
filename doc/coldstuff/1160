@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1160] in "Coldmud discussion meeting"</TITLE>
+<H1>[1160] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1160"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1159"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1159"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1159"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1161"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1162"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1164"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Intermud3 (was Re: [COLD] Is there ...)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 18:30:55 1996
+)</H3>
+<PRE>
+Date: Mon, 02 Dec 1996 15:23:58 -0800
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+From: Jeff Kesselman &lt;jeffk@ten.net&gt;
+Cc: coldstuff@cold.org
+
+I think maybe Brandon's point here was missed, or maybe I missed something...
+
+The issue I see in terms of ftp/telnet(server side)/finger/who  etc is
+simple...
+
+Good standard protocols already exist for these. there is nothing wrong
+with letting a MUD serve these BUT it should serve them via the standard
+protocols.
+Inventing new protocols for the mud world is silly and counter productive
+as it just cuts our world off fro mwhat is fast becoming a standards based
+Internet.
+
+In re port conflicts, there are two answers.  I run my mud on a seperate
+system so it can naturally take over the default ports for all of these.
+Otherwise,
+just assign the services to new ports.
+
+If you want MUDs to be able to auto roundeyvous, the ONE new protocol you
+MIGHT need is a standard port on which lives a MUD port-directory service....
+
+All IMO.
+
+Jeff Kesselman
+</PRE>

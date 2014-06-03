@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [1143] in "Coldmud discussion meeting"</TITLE>
+<H1>[1143] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1143"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1141"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1142"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1142"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1144"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1144"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1149"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] scatter/optional assignments - request for discussion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 29 10:25:30 1996
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+In-Reply-To: &lt;Pine.LNX.3.95.961129094733.2478A-100000@g5-314a.residence.usherb.ca&gt; from Fabien Ninoles at "Nov 29, 96 09:50:36 am"
+To: ninf01@gel.usherb.ca (Fabien Ninoles)
+Date: Fri, 29 Nov 1996 16:01:27 +0100 (MET)
+Cc: coldstuff@cold.org
+
+&gt; &gt;
+&gt; &gt; The question I have (Brandon and I talked about it) is: when to release
+&gt; &gt; this patch? The possibilities:
+&gt; &gt;
+&gt; &gt; 	1) in the next patchlevel
+&gt; &gt; 	2) wait till the core is out
+&gt; &gt; 	3) rename the current driver to 1.1 and then add it to 1.1p1
+&gt; &gt; 	4) release in the next patchlevel but keep quiet about it
+&gt; &gt; 	   (consider it 'undocumented feature' till 1.1)
+&gt; &gt;
+&gt; &gt; Personally, I'm in favor of 4). I don't like 2), because this is *VERY*
+&gt; &gt; useful, and I don't like 3) because I think it's a good idea to have
+&gt; &gt; the Beta core out synchronously with 1.1 driver.
+&gt; &gt;
+&gt; &gt;
+&gt; &gt; Oppinions?
+&gt; &gt;
+&gt; &gt; 	Miro
+&gt; &gt;
+&gt; &gt; PS. Enjoy the patch. :)
+&gt; &gt;
+&gt; 
+&gt; Just a question, are they a lot of other undocumented features in the
+&gt; current driver?
+&gt; 
+&gt; Thanks
+&gt; 
+
+Nope... :) Except that helps have not been updated to mirror all the changes
+(but doc/CHANGES has). :)
+
+	Miro
+
+</PRE>

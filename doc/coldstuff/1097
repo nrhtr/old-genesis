@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [1097] in "Coldmud discussion meeting"</TITLE>
+<H1>[1097] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1097"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1096"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1098"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] *sigh* A bugfix</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Oct  2 15:18:37 1996
+)</H3>
+<PRE>
+Date: Wed, 2 Oct 1996 20:48:38 +0200 (MET DST)
+From: Miroslav Silovic &lt;silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+
+The /only/ function I didn't consider worth testing was bugged. Fix:
+
+NATIVE_METHOD(is_lower) {
+    Int i,len;
+    cList *l1,*l2;
+    
+    INIT_2_ARGS(LIST,LIST);
+    l1=LIST1;
+    l2=LIST2;
+    if (!check_vectors (l1,l2,&amp;len))
+	RETURN_FALSE;
+    for (i=0; i&lt;len; i++) {
+	Float p,q;
+
+	p=list_elem(l1,i)-&gt;u.fval;
+	q=list_elem(l2,i)-&gt;u.fval;
+	if (p&gt;=q) {
+	    CLEAN_RETURN_INTEGER(0);
+        }
+    }
+    CLEAN_RETURN_INTEGER(1);
+}
+
+	Miro
+</PRE>

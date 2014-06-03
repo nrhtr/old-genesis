@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [796] in "Coldmud discussion meeting"</TITLE>
+<H1>[796] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?796"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="790"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="795"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="795"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="797"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="797"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="797"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: exception handling...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep  1 12:49:00 1995
+)</H3>
+<PRE>
+From: Chuck Adams &lt;cadams@weather.Brockport.EDU&gt;
+To: brandon@smithfield.declab.usu.edu (869683 Gillespie Brandon James)
+Date: Fri, 1 Sep 1995 10:44:26 -0600 (MDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9508310725.AA04032@smithfield.declab.usu.edu&gt; from "869683 Gillespie Brandon James" at Aug 31, 95 01:25:08 am
+
+869683 Gillespie Brandon James drew these hieroglyphs:
+&gt; 
+&gt; I'm mulling over the reconstruction of exception handling (catch) to be
+&gt; slightly different.  The best way to explain this is with an example:
+&gt; 
+&gt; for obj in (list) {
+&gt;     catch {
+&gt;         obj.query_test();
+&gt;     } handle ~locked {
+&gt;         sender().print("Object is locked.");
+&gt;     } handle others {
+&gt;         sender().print("Error: " + toliteral(error) + " encountered!");
+&gt;     } otherwise {
+&gt;         sender().print("Test is sucessful for: " + obj.name());
+&gt;         valid = valid + [obj];
+&gt;     }
+&gt; }
+
+&gt; What does everybody else feel about this?
+
+hmm... puts the successful case at the bottom instead of the top --
+one expects the successful case most of the time (that is, success is
+the typical case), and doesn't want to skip over a bunch of border
+cases to reach the code for the typical case.
+
+Gets a minus for readability IMHO.
+
+Chuck
+</PRE>

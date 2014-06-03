@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1205] in "Coldmud discussion meeting"</TITLE>
+<H1>[1205] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1205"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1196"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1204"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1204"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1206"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1206"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1206"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] cold stuff ;)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan  2 17:08:35 1997
+)</H3>
+<PRE>
+Date: Thu, 2 Jan 1997 15:02:07 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+&gt; I don't honestly see the problem with returning #-1
+
+Sorry, my mistake--it returns '0' or an objnum.  The objnum is not
+guaranteed to be a valid objnum (just whatever it was set to).  This way
+you can do something like:
+
+     len = user() ? user().randominfo() : defaultinfo;
+
+And you don't have to dirty up your core by adding 'randominfo' to $sys,
+$connection and any other object that would originate a task. 
+
+Sorry for the tone tho--The hard drive on my computer crashed this morning
+(second drive to do so), so I'm not a happy camper today :b
+
+-Brandon Gillespie
+
+</PRE>

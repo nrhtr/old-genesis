@@ -1,0 +1,84 @@
+<HEAD><TITLE>discuss@charon: [673] in "Coldmud discussion meeting"</TITLE>
+<H1>[673] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?673"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="672"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="674"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="675"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="675"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>more comments</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar  8 14:09:21 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: coldstuff@MIT.EDU
+Date: Wed, 8 Mar 1995 13:01:13 -0600 (CST)
+
+Operators: I was thinking of -&gt; as meaning "goes to" or "points to", but I
+ agree that &lt;- is more obvious in that it looks like the expression is put
+ into the variable. It also happens that x = y = z = 0 becomes x &lt;- y &lt;- z &lt;- 0.
+
+In typing that I found that &lt; requires a shift and - does not which is RATHER
+ annoying. Let's look for something that doesn't require any shifting. The only
+ unshifted punctuation is ,./;'[]-=\` and we can rule out each of those my
+ themselves pretty easily. Something with = in it would be good. That makes the
+ following possible: {,./;'[]-=\}= and the same thing with = in front.
+
+I can almost see using .= but I don't really like it any better than = by
+ itself.
+
+Perhaps something that's all shifted? Shifted punctuation is 
+ ~!@#$%^&amp;*()_+|{}:"&lt;&gt;?
+
+I believe all of those are taken.
+
+With all that said I pick &lt;- with no reason other than taste and the fact that
+ it can't be read as 'equals' (and that it makes for a nice flow thing for
+ chained assignments).
+
+Private or Local methods: I would like to see a distinct way of calling local
+ methods to give us the performance boost. Jordan used :foo() in his version
+ but I don't like that because of MOO. What about foo()? The compiler can
+ generate a local method call rather than a builtin function call if the
+ identifier isn't a valid builtin.
+
+The immediately obvious problem is the possible confusion. Someone might see a
+ local function somewhere and think it was a builtin and be surprised that it
+ doesn't work.
+
+What about ^foo()? I don't remember if we're suing ^ for anything. I also don't
+ much like how it looks. Feh. I'll let someone else suggest something.
+
+More things I'd like to see/add to the server:
+
+dump_object/load_object - Converts an object too and from a list of strings in 
+ textdump format. Useful for in-db porting, revision control, and core building
+ and updating. This should be easy to implement since the server already knows
+ how to read and write textdumps. Just have to change where it reads and writes
+ them to and make it do it for only one object.
+
+assemble/dissassemble - Not that I like MOO or anything, but I think these would
+ be a great way to allow in-db compilation (if anyone is ambitious enough),
+ to let people see the innards of the server for educational purpouses, and to
+ optimize their methods if the server's comiler isn't good enough for some
+ reason.
+
+default methods (:"*" in MOO) - This has been mentioned before (as have all of
+ the above), but I have actual idas for how to do it: have a system object
+ method assign_default_method(obj, meth) and a deassign_default_method(obj).
+ When a message is sent to the object and the method search fails on a parent
+ which has a default method, that method is called with the message sent as the
+ first parameter. I'd also add a pass_to(method, args) function to let the
+ default method pass the message or a different one to a parent.
+
+WHEW!
+
+That's all I have on my mind for now.
+
+Crag
+</PRE>

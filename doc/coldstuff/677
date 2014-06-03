@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [677] in "Coldmud discussion meeting"</TITLE>
+<H1>[677] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?677"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="676"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="676"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="676"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="678"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="679"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="698"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assexp op</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar  9 12:50:52 1995
+)</H3>
+<PRE>
+From: The Importance of Being Chuck &lt;cadams@weather.Brockport.EDU&gt;
+To: quinn@access.mountain.net (Quinn)
+Date: Thu, 9 Mar 1995 12:41:36 -0500 (EST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199503091730.MAA20505@Access.Mountain.Net&gt; from "Quinn" at Mar 9, 95 12:30:15 pm
+
+Quinn drew these heiroglyphs:
+&gt; 
+&gt; 
+&gt; I like '&lt;-', but it really doesn't imply expression anymore than
+&gt;  an equals sign does.  I'd suggest '&lt;&gt;', since its easy to type
+&gt;  and kind of implies "we are not both equal and we want the whole
+&gt;  world to know it, that is why we are pointing outward."
+&gt; But it used to mean != in old AppleSoft, and I'm sure it means
+&gt;  something else somewhere.
+
+Eww.  It usually means inequality in most dialects of BASIC too.  And
+a lot of programmers are going to have the bulk of their experience
+from BASIC.  And it just doesn't look aesthetically pleasing (:wipes
+the spit from everyone's faces after saying that phrase)
+
+&gt; As for the local method character, instinctively I like ',' since
+&gt;  it's a less emphatic period.  But I don't know the repercussions
+&gt;  of using a comma in such a way.
+
+real bitch to parse.  think about it.
+
+foo.bar(1,,baz())
+
+
+</PRE>

@@ -1,0 +1,79 @@
+<HEAD><TITLE>discuss@charon: [1640] in "Coldmud discussion meeting"</TITLE>
+<H1>[1640] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1640"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1626"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1639"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1639"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1641"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Genesis 1.1.9 - STABLE</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 10 05:30:58 2001
+)</H3>
+<PRE>
+Message-ID: &lt;3A5C3670.F90914DA@cubik.org&gt;
+Date: Wed, 10 Jan 2001 03:16:16 -0700
+From: Bruce &lt;bruce@puremagic.com&gt;
+MIME-Version: 1.0
+To: coldstuff@cold.org
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Reply-To: coldstuff@cold.org
+
+Hi Allen,
+
+Allen Noe wrote:
+&gt; Sounds good. If you find you don't have time, I could
+&gt; tack the second arg on the stack(TID) code -- it looks
+&gt; like I'd need to make an INIT_0_TO_2_ARGS, but that
+&gt; looks relatively simple.
+
+This is a matter of about 5-10 minutes of work.  I'll knock it
+out tomorrow or Thursday.
+
+&gt; &gt; Are there other outstanding patches or have you created new ones
+&gt; &gt; since this original post?  Also, I -know- that some of the work
+&gt; &gt; that I'm aiming to get into this next release will break Win32 as
+&gt; &gt; it brings in the use of Posix threads.
+&gt; 
+&gt; No new patches, but there's a little module I wrote
+&gt; -- nothing really widely useful, and the copyright isn't
+&gt; clear on it. If anybody is interested, I could try to
+&gt; clarify the copyright enough to let it be put in the
+&gt; main source. It has natives that do the following:
+&gt; 
+&gt; 1. The equivalent of strlen for a certain kind of
+&gt;    buffer: basically a plain string which may or
+&gt;    may not contain VT100 color codes (ESC[n;n;nm).
+&gt; 2. The equivalent of subrange for the same sort of
+&gt;    buffer.
+&gt; 3. Delete certain strings from a list and merge certain
+&gt;    remaining other strings.
+
+This is interesting.  I've written code in concert with the "The
+Eternal City" people that does similar things for other formats
+of strings. (ANSI and another similar format).  This sounds like
+an interesting thing to make native for them as well.  I might
+enjoy comparing notes on this, if nothing else to compare
+implementation strategies.  Could you drop by the Cold Dark at
+some point?
+
+&gt; As for pthreads, I believe they can be .. er .. "simulated"
+&gt; using Win32 API calls, but would it be too much to ask to
+&gt; surround the bits that need pthreads with ifdefs so they
+&gt; could be compiled out? It would improve portability greatly,
+&gt; not just to Win32.
+
+That can probably be done.  It'll mean losing some new features
+though when you turn off the ifdefs.  The features are mainly for
+scalability though and not likely to be as applicable to the
+typical mud running on Genesis.  (I'm mainly doing this work to
+help out "The Eternal City", so its needs are what are motivating
+me in my choice of what to work on.)
+
+ - Bruce
+</PRE>

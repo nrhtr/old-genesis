@@ -1,0 +1,958 @@
+<HEAD><TITLE>discuss@charon: [1141] in "Coldmud discussion meeting"</TITLE>
+<H1>[1141] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1141"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1140"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1142"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1142"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1149"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] scatter/optional assignments - request for discussion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 29 09:36:37 1996
+)</H3>
+<PRE>
+Date: Fri, 29 Nov 1996 15:01:55 +0100 (MET)
+From: Miroslav.Silovic@public.srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+
+This patch implements two new features:
+
+Optional assignment expression:
+
+	foo ?= bar;
+
+is equivalent to
+
+	if (!foo) foo=bar;
+
+Scatter assignment is easiest to explain with a few examples:
+
+	[foo, bar] = [1,2]
+	=&gt; foo=1, bar=2
+
+	[foo, bar ?= 10] = [1]
+	=&gt; foo=1, bar=10
+
+	[foo, bar, @baz] = [1,2,3,4,5]
+	=&gt; foo=1, bar=2, baz=[3,4,5]
+
+	[[foo, bar], @rest] = [[1,2],[3,4],[5,6]]
+	=&gt; foo=1, bar=2, rest=[[3,4],[5,6]]
+
+-----------
+
+The question I have (Brandon and I talked about it) is: when to release
+this patch? The possibilities:
+
+	1) in the next patchlevel
+	2) wait till the core is out
+	3) rename the current driver to 1.1 and then add it to 1.1p1
+	4) release in the next patchlevel but keep quiet about it
+	   (consider it 'undocumented feature' till 1.1)
+
+Personally, I'm in favor of 4). I don't like 2), because this is *VERY*
+useful, and I don't like 3) because I think it's a good idea to have
+the Beta core out synchronously with 1.1 driver.
+
+
+Oppinions?
+
+	Miro
+
+PS. Enjoy the patch. :)
+
+---------------------------------------------------------------------
+
+diff -r -C 5 ../Genesis-1.0p19/src/codegen.c src/codegen.c
+*** ../Genesis-1.0p19/src/codegen.c	Fri Nov 29 14:27:45 1996
+--- src/codegen.c	Fri Nov 29 14:27:45 1996
+***************
+*** 17,32 ****
+--- 17,43 ----
+  #define MALLOC_DELTA		8
+  #define INSTR_BUF_START 	(512 - MALLOC_DELTA)
+  #define JUMP_TABLE_START	(128 - MALLOC_DELTA)
+  #define MAX_VARS		128
+  
++ enum scatter_modes {
++     SM_STANDARD,
++     SM_OPTIONAL,
++     SM_REST,
++     SM_ERROR
++ };
++ 
+  static void compile_stmt_list(Stmt_list *stmt_list, Int loop, Int catch_level);
+  static void compile_stmt(Stmt *stmt, Int loop, Int catch_level);
+  static void compile_cases(Case_list *cases, Int loop, Int catch_level,
+  			  Int end_dest);
+  static void compile_case_values(Expr_list *values, Int body_dest);
+  static void compile_expr_list(Expr_list *expr_list);
++ static void compile_variable_assign (char *var);
++ static void compile_optional_assign (char *var, Expr *e);
++ static enum scatter_modes compile_assign (Expr *e, enum scatter_modes mode,
++ 					  Bool in_scatter);
+  static void compile_expr(Expr *expr);
+  static Int find_local_var(char *id);
+  static void check_instr_buf(Int pos);
+  static void code(Long val);
+  static void code_str(char *str);
+***************
+*** 325,345 ****
+      cnew-&gt;lineno = cur_lineno();
+      cnew-&gt;u.name = name;
+      return cnew;
+  }
+  
+! Expr *assign_expr(char *var, Expr *value)
+  {
+      Expr *cnew = PMALLOC(compiler_pile, Expr, 1);
+  
+      cnew-&gt;type = ASSIGN;
+      cnew-&gt;lineno = cur_lineno();
+!     cnew-&gt;u.assign.var = var;
+      cnew-&gt;u.assign.value = value;
+      return cnew;
+  }
+  
+  Expr *function_call_expr(char *name, Expr_list *args)
+  {
+      Expr *cnew = PMALLOC(compiler_pile, Expr, 1);
+  
+      cnew-&gt;type = FUNCTION_CALL;
+--- 336,367 ----
+      cnew-&gt;lineno = cur_lineno();
+      cnew-&gt;u.name = name;
+      return cnew;
+  }
+  
+! Expr *assign_expr(Expr *lval, Expr *value)
+  {
+      Expr *cnew = PMALLOC(compiler_pile, Expr, 1);
+  
+      cnew-&gt;type = ASSIGN;
+      cnew-&gt;lineno = cur_lineno();
+!     cnew-&gt;u.assign.lval = lval;
+      cnew-&gt;u.assign.value = value;
+      return cnew;
+  }
+  
++ Expr *opt_expr(char *var, Expr *value)
++ {
++     Expr *cnew = PMALLOC(compiler_pile, Expr, 1);
++ 
++     cnew-&gt;type = OPTIONAL_ASSIGN;
++     cnew-&gt;lineno = cur_lineno();
++     cnew-&gt;u.optassign.var = var;
++     cnew-&gt;u.optassign.value = value;
++     return cnew;
++ }
++ 
+  Expr *function_call_expr(char *name, Expr_list *args)
+  {
+      Expr *cnew = PMALLOC(compiler_pile, Expr, 1);
+  
+      cnew-&gt;type = FUNCTION_CALL;
+***************
+*** 1044,1053 ****
+--- 1066,1208 ----
+  	compile_expr_list(expr_list-&gt;next);
+  	compile_expr(expr_list-&gt;expr);
+      }
+  }
+  
++ /* Modifies: Uses the instruction buffer and may call compiler_error()
++  * Effects: Compiles the recursive structure generated by list destructuring.
++  */
++ 
++ /* temporary functions... */
++ 
++ static void compile_variable_assign (char *var)
++ {
++     Int n;
++ 
++     n = find_local_var(var);
++ 
++     if (n != -1) {
++ 	/* This is a local variable.  Code a SET_LOCAL opcode with a
++ 	 * variable number argument. */
++ 	code(SET_LOCAL);
++ 	code(n);
++     } else {
++ 	/* This is an object variable.  Code a SET_OBJ_VAR opcode with
++                * an identifier argument. */
++ 	code(SET_OBJ_VAR);
++ 	code_str(var);
++     }
++ }
++ 
++ static void compile_optional_assign (char *var, Expr *e)
++ {
++     Int end_dest = new_jump_dest();
++     
++     code (OPTIONAL_ASSIGN);
++     code (end_dest);
++     compile_expr (e);
++     compile_variable_assign (var);
++     set_jump_dest_here (end_dest);
++ }
++ 
++ static enum scatter_modes compile_assign (Expr *e, enum scatter_modes mode,
++ 					  Bool in_scatter)
++ {
++     Expr_list *lvalues;
++ 
++     switch (e-&gt;type) {
++     case VAR:
++ 	/* This is ordinary parameter. Check if it's okay... */
++ 	if (mode != SM_STANDARD) {
++ 	    compiler_error(e-&gt;lineno,
++ 			   "Standard argument following optional.");
++ 	    return SM_ERROR;
++ 	}
++ 
++ 	compile_variable_assign(e-&gt;u.name);
++ 	return SM_STANDARD;
++ 
++     case LIST:
++ 	if (mode != SM_STANDARD) {
++ 	    compiler_error(e-&gt;lineno,
++ 			   "Standard argument following optional or rest.");
++ 	    return SM_ERROR;
++ 	}
++ 
++ 	/* This is recursive... */
++ 
++ 	lvalues=e-&gt;u.args;
++ 
++ 	code(SCATTER_START);
++ 	mode=SM_STANDARD;
++ 	if (!lvalues) {
++ 	    compiler_error(e-&gt;lineno,
++ 			   "Empty scatter assign list.");
++ 	    return SM_ERROR;
++ 	}
++ 	/* First invert the list */
++ 	{
++ 	    Expr_list *ptr, *p1, *p2;
++ 	    ptr=lvalues;
++ 	    p1=ptr-&gt;next;
++ 	    while (p1) {
++ 		p2=p1;
++  		p1=p2-&gt;next;
++ 		p2-&gt;next=ptr;
++ 		ptr=p2;
++ 	    }
++ 	    lvalues-&gt;next=NULL;
++ 	    lvalues=ptr;
++ 	}
++ 	while (lvalues) {
++ 	    if ((mode=compile_assign(lvalues-&gt;expr, mode, TRUE))
++ 		== SM_ERROR)
++ 		return SM_ERROR;
++ 	    lvalues=lvalues-&gt;next;
++ 	}
++ 	code(SCATTER_END);
++ 	return SM_STANDARD;
++ 
++     case OPTIONAL_ASSIGN:
++ 
++ 	if (!in_scatter) {
++ 	    Int n;
++ 	    n = find_local_var(e-&gt;u.optassign.var);
++ 	    if (n != -1) {
++               code(GET_LOCAL);
++               code(n);
++           } else {
++               code(GET_OBJ_VAR);
++               code_str(e-&gt;u.optassign.var);
++           }
++ 	}
++ 
++ 	if (mode != SM_STANDARD &amp;&amp; mode != SM_OPTIONAL) {
++ 	    compiler_error(e-&gt;lineno,
++ 			   "Optional argument following rest.");
++ 	    return SM_ERROR;
++ 	}
++ 
++ 	compile_optional_assign(e-&gt;u.optassign.var, e-&gt;u.optassign.value);
++ 	if (in_scatter)
++ 	    code(OPTIONAL_END);
++ 	return SM_OPTIONAL;
++ 
++     case SPLICE:
++ 	if (e-&gt;u.expr-&gt;type != VAR) {
++ 	    compiler_error(e-&gt;lineno, "Parse error in the rest argument.");
++ 	    return SM_ERROR;
++ 	}
++ 	code (SPLICE);
++ 	compile_variable_assign(e-&gt;u.expr-&gt;u.name);
++ 	return SM_REST;
++     default:
++ 	compiler_error(e-&gt;lineno, "Parse error in scatter argument list.");
++ 	return SM_ERROR;
++     }
++ }
++ 
+  /* Modifies: Uses the instruction buffer and may call compiler_error().
+   * Effects: Compiles expr into instr_buf. */
+  static void compile_expr(Expr *expr)
+  {
+      switch(expr-&gt;type) {
+***************
+*** 1123,1153 ****
+  	  }
+  
+  	  break;
+        }
+  
+!       case ASSIGN: {
+!           Expr *value = expr-&gt;u.assign.value;
+!           Int n;
+  
+!           /* Compile the expression we're assigning or adding. */
+!           compile_expr(value);
+! 
+!           n = find_local_var(expr-&gt;u.assign.var);
+!           if (n != -1) {
+!               /* This is a local variable.  Code a SET_LOCAL opcode with a
+!                * variable number argument. */
+!               code(SET_LOCAL);
+!               code(n);
+!           } else {
+!               /* This is an object variable.  Code a SET_OBJ_VAR opcode with
+!                * an identifier argument. */
+!               code(SET_OBJ_VAR);
+!               code_str(expr-&gt;u.assign.var);
+!           }
+            break;
+-       }
+  
+        case FUNCTION_CALL: {
+  	  Int n;
+  
+  	  code(START_ARGS);
+--- 1278,1296 ----
+  	  }
+  
+  	  break;
+        }
+  
+!       case ASSIGN:
+!           /* Use the ready-made function */
+! 	  compile_expr(expr-&gt;u.assign.value);
+!           compile_assign(expr-&gt;u.assign.lval, SM_STANDARD, FALSE);
+!           break;
+  
+!       case OPTIONAL_ASSIGN:
+!           compile_assign(expr, SM_STANDARD, FALSE);
+            break;
+  
+        case FUNCTION_CALL: {
+  	  Int n;
+  
+  	  code(START_ARGS);
+Only in ../Genesis-1.0p19/src: coldcc
+Common subdirectories: ../Genesis-1.0p19/src/data and src/data
+diff -r -C 5 ../Genesis-1.0p19/src/decode.c src/decode.c
+*** ../Genesis-1.0p19/src/decode.c	Fri Nov 29 14:27:45 1996
+--- src/decode.c	Fri Nov 29 14:27:44 1996
+***************
+*** 93,102 ****
+--- 93,103 ----
+      { OP_ASSIGN,	 1 },
+      { PLUS_EQ,		 1 },
+      { MINUS_EQ,		 1 },
+      { MULT_EQ,		 1 },
+      { DIV_EQ,		 1 },
++     { OPTIONAL_ASSIGN,   1 },
+      { CONDITIONAL,	 2 },
+      { OR,		 3 },
+      { AND,		 4 },
+      { OP_IN,		 5 },
+      { EQ,		 6 },
+***************
+*** 742,751 ****
+--- 743,805 ----
+  static Expr_list *decompile_expressions(Int *pos_ptr)
+  {
+      return decompile_expressions_bounded(pos_ptr, -1);
+  }
+  
++ static Expr *decompile_scatter (Int *pos_ptr)
++ {
++     Int pos=*pos_ptr, end;
++     Expr_list *args = NULL;
++     char *s;
++     Int is_splice=FALSE;
++ 
++     while (1) {
++ 	switch (the_opcodes[pos]) {
++ 	case SET_LOCAL:
++ 	    s = varname(the_opcodes[pos + 1]);
++ 	    args = expr_list(var_expr(s), args);
++ 	    pos += 2;
++ 	    break;
++ 	    
++ 	case SET_OBJ_VAR:
++ 	    s = ident_name(object_get_ident(the_object, the_opcodes[pos + 1]));
++ 	    args = expr_list(var_expr(s), args);
++ 	    pos += 2;
++ 	    break;
++ 
++ 	case OPTIONAL_ASSIGN: {
++ 	    Expr_list *rhs;
++ 
++ 	    end = the_opcodes[pos + 1];
++ 	    pos += 2;
++ 	    rhs = decompile_expressions_bounded(&amp;pos, end);
++ 	    pos = end + 1; /* skip OPTIONAL_END */
++ 	    args = expr_list(opt_expr(rhs-&gt;expr-&gt;u.assign.lval-&gt;u.name,
++ 				      rhs-&gt;expr-&gt;u.assign.value),
++ 			     args);
++ 	    break;
++ 	}
++ 	case SCATTER_START:
++ 	    pos++;
++ 	    args = expr_list(decompile_scatter(&amp;pos), args);
++ 	    break;
++ 
++ 	case SPLICE:
++ 	    pos++;
++ 	    is_splice=TRUE;
++ 	    break;
++ 
++ 	case SCATTER_END:
++ 	    if (is_splice)
++ 		args-&gt;expr = splice_expr(args-&gt;expr);
++ 	    *pos_ptr=pos+1;
++ 	    return list_expr(args);
++ 	}
++     }
++ }
++ 
++ 
+  /* This function constructs the list of expressions that would result from
+   * interpreting the opcodes starting at (*pos_ptr).  We stop at end, at a
+   * statement token, or at a token which pops an argument list off the stack. */
+  static Expr_list *decompile_expressions_bounded(Int *pos_ptr, Int expr_end)
+  {
+***************
+*** 841,864 ****
+                  s = varname(the_opcodes[pos+2]);
+              stack-&gt;expr = doeq_expr(the_opcodes[pos], s, stack-&gt;expr);
+              pos += 3;
+              break;
+  
+!           case SET_LOCAL:
+              /* SET_LOCAL opcode follows one expression. */
+              s = varname(the_opcodes[pos + 1]);
+!             stack-&gt;expr = assign_expr(s, stack-&gt;expr);
+              pos += 2;
+              break;
+  
+            case SET_OBJ_VAR:
+              /* SET_OBJ_VAR opcode follows one expression. */
+              s = ident_name(object_get_ident(the_object, the_opcodes[pos + 1]));
+!             stack-&gt;expr = assign_expr(s, stack-&gt;expr);
+              pos += 2;
+              break;
+  
+  	  case START_ARGS: {
+  	      Expr_list *args;
+  
+  	      pos++;
+  	      args = decompile_expressions(&amp;pos);
+--- 895,939 ----
+                  s = varname(the_opcodes[pos+2]);
+              stack-&gt;expr = doeq_expr(the_opcodes[pos], s, stack-&gt;expr);
+              pos += 3;
+              break;
+  
+! 	  case SET_LOCAL:
+              /* SET_LOCAL opcode follows one expression. */
+              s = varname(the_opcodes[pos + 1]);
+!             stack-&gt;expr = assign_expr(var_expr(s), stack-&gt;expr);
+              pos += 2;
+              break;
+  
+            case SET_OBJ_VAR:
+              /* SET_OBJ_VAR opcode follows one expression. */
+              s = ident_name(object_get_ident(the_object, the_opcodes[pos + 1]));
+!             stack-&gt;expr = assign_expr(var_expr(s), stack-&gt;expr);
+              pos += 2;
+              break;
+  
++ 	  case OPTIONAL_ASSIGN: {
++ 	    /* This is optional assignment. It can't be in the scatter,
++ 	       since it's handled from there. */
++ 	    
++ 	      Expr_list *rhs;
++ 
++ 	      end = the_opcodes[pos + 1];
++ 	      pos += 2;
++ 	      rhs = decompile_expressions_bounded(&amp;pos, end);
++ 	      pos = end;
++ 	      stack = expr_list(opt_expr(rhs-&gt;expr-&gt;u.assign.lval-&gt;u.name,
++ 					 rhs-&gt;expr-&gt;u.assign.value),
++ 				stack-&gt;next /*skip the get_var*/ );
++ 	      break;
++ 	  }
++ 
++ 	  case SCATTER_START:
++ 	      pos++;
++ 	      stack-&gt;expr = assign_expr(decompile_scatter(&amp;pos), stack-&gt;expr);
++ 	      break;
++ 
+  	  case START_ARGS: {
+  	      Expr_list *args;
+  
+  	      pos++;
+  	      args = decompile_expressions(&amp;pos);
+***************
+*** 1452,1469 ****
+  
+        case VAR:
+  	return string_add_chars(str, expr-&gt;u.name, strlen(expr-&gt;u.name));
+  
+        case ASSIGN:
+-         s = expr-&gt;u.assign.var;
+          if (paren)
+              str = string_addc(str, '(');
+!         str = string_add_chars(str, s, strlen(s));
+!         str = string_add_chars(str, " = ", 3);
+!         str = unparse_expr(str, expr-&gt;u.assign.value, PAREN_ASSIGN);
+          if (paren)
+!             str = string_addc(str, ')');
+          return str;
+  
+        case INDECR:
+          s = expr-&gt;u.doeq.var;
+  
+--- 1527,1554 ----
+  
+        case VAR:
+  	return string_add_chars(str, expr-&gt;u.name, strlen(expr-&gt;u.name));
+  
+        case ASSIGN:
+          if (paren)
+              str = string_addc(str, '(');
+! 	str = unparse_expr(str, expr-&gt;u.assign.lval, PAREN_ASSIGN);
+! 	str = string_add_chars(str, " = ", 3);
+! 	str = unparse_expr(str, expr-&gt;u.assign.value, PAREN_ASSIGN);
+! 	if (paren)
+! 	    str = string_addc(str, ')');
+!         return str;
+! 
+!       case OPTIONAL_ASSIGN:
+!         s = expr-&gt;u.optassign.var;
+          if (paren)
+!             str = string_addc(str, '(');
+! 	str = string_add_chars(str, s, strlen(s));
+! 	str = string_add_chars(str, " ?= ", 4);
+! 	str = unparse_expr(str, expr-&gt;u.optassign.value, PAREN_ASSIGN);
+! 	if (paren)
+! 	    str = string_addc(str, ')');
+          return str;
+  
+        case INDECR:
+          s = expr-&gt;u.doeq.var;
+  
+Only in ../Genesis-1.0p19/src: genesis
+diff -r -C 5 ../Genesis-1.0p19/src/grammar.y src/grammar.y
+*** ../Genesis-1.0p19/src/grammar.y	Fri Nov 29 14:27:45 1996
+--- src/grammar.y	Fri Nov 29 14:27:45 1996
+***************
+*** 73,83 ****
+  %token		CATCH ANY HANDLER
+  %token		FORK
+  %token		PASS CRITLEFT CRITRIGHT PROPLEFT PROPRIGHT
+  
+  %right	OP_ASSIGN
+! %right	MINUS_EQ DIV_EQ MULT_EQ PLUS_EQ
+  %left	TO
+  %right	OP_COND_IF ':' OP_COND_OTHER_ELSE
+  %right	OR
+  %right	AND
+  %left	OP_IN
+--- 73,83 ----
+  %token		CATCH ANY HANDLER
+  %token		FORK
+  %token		PASS CRITLEFT CRITRIGHT PROPLEFT PROPRIGHT
+  
+  %right	OP_ASSIGN
+! %right	MINUS_EQ DIV_EQ MULT_EQ PLUS_EQ OPTIONAL_ASSIGN
+  %left	TO
+  %right	OP_COND_IF ':' OP_COND_OTHER_ELSE
+  %right	OR
+  %right	AND
+  %left	OP_IN
+***************
+*** 108,117 ****
+--- 108,118 ----
+  %token CASE_VALUE CASE_RANGE LAST_CASE_VALUE LAST_CASE_RANGE END_CASE RANGE
+  %token FUNCTION_CALL CALL_METHOD EXPR_CALL_METHOD LIST DICT BUFFER FROB INDEX UNARY
+  %token BINARY CONDITIONAL SPLICE NEG SPLICE_ADD POP START_ARGS ZERO ONE
+  %token SET_LOCAL SET_OBJ_VAR GET_LOCAL GET_OBJ_VAR CATCH_END HANDLER_END
+  %token CRITICAL CRITICAL_END PROPAGATE PROPAGATE_END JUMP
++ %token OPTIONAL_END SCATTER_START SCATTER_END
+  
+  %token OP_MAP_RANGE OP_MAPHASH_RANGE OP_FILTER_RANGE OP_FIND_RANGE 
+  
+  %token F_TYPE F_CLASS F_TOINT F_TOFLOAT F_TOSTR F_TOLITERAL
+  %token F_TOOBJNUM F_TOSYM F_TOERR F_VALID F_STRFMT F_STRLEN
+***************
+*** 301,311 ****
+  	| expr OP_COND_IF expr OP_COND_OTHER_ELSE expr	{ $$ = cond_expr($1, $3, $5); }
+  	| IDENT MULT_EQ expr		{ $$ = doeq_expr(MULT_EQ, $1, $3); }
+  	| IDENT DIV_EQ expr		{ $$ = doeq_expr(DIV_EQ, $1, $3); }
+  	| IDENT PLUS_EQ expr		{ $$ = doeq_expr(PLUS_EQ, $1, $3); }
+  	| IDENT MINUS_EQ expr		{ $$ = doeq_expr(MINUS_EQ, $1, $3); }
+! 	| IDENT OP_ASSIGN expr		{ $$ = assign_expr($1, $3); }
+  	| '(' expr ')'			{ $$ = $2; }
+          | CRITLEFT expr CRITRIGHT       { $$ = critical_expr($2); }
+  	| PROPLEFT expr PROPRIGHT	{ $$ = propagate_expr($2); }
+  	;
+  
+--- 302,313 ----
+  	| expr OP_COND_IF expr OP_COND_OTHER_ELSE expr	{ $$ = cond_expr($1, $3, $5); }
+  	| IDENT MULT_EQ expr		{ $$ = doeq_expr(MULT_EQ, $1, $3); }
+  	| IDENT DIV_EQ expr		{ $$ = doeq_expr(DIV_EQ, $1, $3); }
+  	| IDENT PLUS_EQ expr		{ $$ = doeq_expr(PLUS_EQ, $1, $3); }
+  	| IDENT MINUS_EQ expr		{ $$ = doeq_expr(MINUS_EQ, $1, $3); }
+! 	| IDENT OPTIONAL_ASSIGN expr	{ $$ = opt_expr($1, $3); }
+! 	| expr OP_ASSIGN expr		{ $$ = assign_expr($1, $3); }
+  	| '(' expr ')'			{ $$ = $2; }
+          | CRITLEFT expr CRITRIGHT       { $$ = critical_expr($2); }
+  	| PROPLEFT expr PROPRIGHT	{ $$ = propagate_expr($2); }
+  	;
+  
+Common subdirectories: ../Genesis-1.0p19/src/include and src/include
+Common subdirectories: ../Genesis-1.0p19/src/modules and src/modules
+diff -r -C 5 ../Genesis-1.0p19/src/opcodes.c src/opcodes.c
+*** ../Genesis-1.0p19/src/opcodes.c	Fri Nov 29 14:27:45 1996
+--- src/opcodes.c	Fri Nov 29 14:27:45 1996
+***************
+*** 105,114 ****
+--- 105,118 ----
+      { DECREMENT,        "DECREMENT",       op_decrement },
+      { MULT_EQ,          "MULT_EQ",         op_doeq_multiply },
+      { DIV_EQ,           "DIV_EQ",          op_doeq_divide },
+      { PLUS_EQ,          "PLUS_EQ",         op_doeq_add },
+      { MINUS_EQ,         "MINUS_EQ",        op_doeq_subtract },
++     { OPTIONAL_ASSIGN,  "OPTIONAL_ASSIGN", op_optional_assign, JUMP },
++     { OPTIONAL_END,     "OPTIONAL_END",    op_optional_end },
++     { SCATTER_START,    "SCATTER_START",   op_scatter_start },
++     { SCATTER_END,      "SCATTER_END",     0},
+  
+      /* Object variable functions */
+      FDEF(F_ADD_VAR,    "add_var",   add_var)
+      FDEF(F_DEL_VAR,    "del_var",   del_var)
+      FDEF(F_SET_VAR,    "set_var",   set_var)
+Common subdirectories: ../Genesis-1.0p19/src/ops and src/ops
+diff -r -C 5 ../Genesis-1.0p19/src/token.c src/token.c
+*** ../Genesis-1.0p19/src/token.c	Fri Nov 29 14:27:45 1996
+--- src/token.c	Fri Nov 29 14:27:45 1996
+***************
+*** 74,83 ****
+--- 74,84 ----
+      { "+=",			PLUS_EQ },
+      { "--",			DECREMENT },
+      { "-=",			MINUS_EQ },
+      { "/=",			DIV_EQ },
+      { "*=",			MULT_EQ },
++     { "?=",			OPTIONAL_ASSIGN },
+      { "?",			OP_COND_IF },
+  };
+  
+  static struct {
+      Int start;
+Only in src: y.tab.h
+diff -r -C 5 ../Genesis-1.0p19/src/include/code_prv.h src/include/code_prv.h
+*** ../Genesis-1.0p19/src/include/code_prv.h	Fri Nov 29 14:27:45 1996
+--- src/include/code_prv.h	Fri Nov 29 14:27:44 1996
+***************
+*** 97,110 ****
+  	    char *name;
+  	    Expr_list *args;
+  	} function;
+  
+          struct {
+!             char *var;
+              Expr *value;
+          } assign;
+  
+  	struct {
+  	    Expr *message;
+  	    Expr_list *args;
+  	} self_expr_message;
+  
+--- 97,115 ----
+  	    char *name;
+  	    Expr_list *args;
+  	} function;
+  
+          struct {
+!             Expr *lval;
+              Expr *value;
+          } assign;
+  
++         struct {
++             char *var;
++             Expr *value;
++         } optassign;
++ 
+  	struct {
+  	    Expr *message;
+  	    Expr_list *args;
+  	} self_expr_message;
+  
+diff -r -C 5 ../Genesis-1.0p19/src/include/codegen.h src/include/codegen.h
+*** ../Genesis-1.0p19/src/include/codegen.h	Fri Nov 29 14:27:45 1996
+--- src/include/codegen.h	Fri Nov 29 14:27:44 1996
+***************
+*** 46,56 ****
+  Expr * objnum_expr(Long objnum);
+  Expr * objname_expr(char * name);
+  Expr * symbol_expr(char * symbol);
+  Expr * error_expr(char * error);
+  Expr * var_expr(char * name);
+! Expr * assign_expr(char * var, Expr * value);
+  Expr * function_call_expr(char * name, Expr_list * args);
+  Expr * self_expr_message_expr(Expr * message, Expr_list * args);
+  Expr * pass_expr(Expr_list * args);
+  Expr * message_expr(Expr * to, char * message, Expr_list * args);
+  Expr * expr_message_expr(Expr * to, Expr * message, Expr_list * args);
+--- 46,57 ----
+  Expr * objnum_expr(Long objnum);
+  Expr * objname_expr(char * name);
+  Expr * symbol_expr(char * symbol);
+  Expr * error_expr(char * error);
+  Expr * var_expr(char * name);
+! Expr * assign_expr(Expr *lval, Expr * value);
+! Expr * opt_expr(char *var, Expr *value);
+  Expr * function_call_expr(char * name, Expr_list * args);
+  Expr * self_expr_message_expr(Expr * message, Expr_list * args);
+  Expr * pass_expr(Expr_list * args);
+  Expr * message_expr(Expr * to, char * message, Expr_list * args);
+  Expr * expr_message_expr(Expr * to, Expr * message, Expr_list * args);
+diff -r -C 5 ../Genesis-1.0p19/src/include/operators.h src/include/operators.h
+*** ../Genesis-1.0p19/src/include/operators.h	Fri Nov 29 14:27:45 1996
+--- src/include/operators.h	Fri Nov 29 14:27:44 1996
+***************
+*** 68,77 ****
+--- 68,80 ----
+  void op_add(void);
+  void op_doeq_add(void);
+  void op_splice_add(void);
+  void op_subtract(void);
+  void op_doeq_subtract(void);
++ void op_optional_assign(void);
++ void op_optional_end(void);
++ void op_scatter_start(void);
+  void op_p_increment(void);
+  void op_p_decrement(void);
+  void op_increment(void);
+  void op_decrement(void);
+  void op_equal(void);
+diff -r -C 5 ../Genesis-1.0p19/src/modules/moddef.h src/modules/moddef.h
+*** ../Genesis-1.0p19/src/modules/moddef.h	Fri Nov 29 14:27:45 1996
+--- src/modules/moddef.h	Fri Nov 29 14:27:44 1996
+***************
+*** 94,104 ****
+  #define NATIVE_MATH_SCALE 67
+  #define NATIVE_MATH_IS_LOWER 68
+  #define NATIVE_MATH_TRANSPOSE 69
+  #define NATIVE_LAST 70
+  
+! #define MAGIC_MODNUMBER 847990331
+  
+  
+  #ifdef _native_
+  native_t natives[NATIVE_LAST] = {
+      {"buffer",       "length",            native_buflen},
+--- 94,104 ----
+  #define NATIVE_MATH_SCALE 67
+  #define NATIVE_MATH_IS_LOWER 68
+  #define NATIVE_MATH_TRANSPOSE 69
+  #define NATIVE_LAST 70
+  
+! #define MAGIC_MODNUMBER 849262100
+  
+  
+  #ifdef _native_
+  native_t natives[NATIVE_LAST] = {
+      {"buffer",       "length",            native_buflen},
+diff -r -C 5 ../Genesis-1.0p19/src/ops/operators.c src/ops/operators.c
+*** ../Genesis-1.0p19/src/ops/operators.c	Fri Nov 29 14:27:45 1996
+--- src/ops/operators.c	Fri Nov 29 14:27:44 1996
+***************
+*** 5,14 ****
+--- 5,15 ----
+  */
+  
+  #include "defs.h"
+  
+  #include &lt;string.h&gt;
++ #include "cdc_pcode.h"
+  #include "operators.h"
+  #include "execute.h"
+  #include "lookup.h"
+  #include "util.h"
+  
+***************
+*** 1840,1849 ****
+--- 1841,1989 ----
+              cthrow(type_id, "%D is not an integer or float.", d1);
+              return;
+      }
+  }
+  
++ /* Here stars the scatter assign block. BEWARE: big stuff ahead. */
++ 
++ static void scatter_loop (void)
++ {
++     Int list_index = stack[stack_pos - 2].u.val;
++     cData *d = &amp;stack[stack_pos - 1];
++     cList *l = d-&gt;u.list;
++     Long *opcodes = cur_frame-&gt;opcodes;
++     cData *var;
++     Long c;
++ 
++     while (1) {
++ 	switch (opcodes[cur_frame-&gt;pc++]) {
++ 	case SCATTER_END:
++ 	    pop(2);
++ 
++ 	    if (stack[stack_pos-1].type == LIST) {
++ 		/* We allow for more arguments than needed. So, 
++ 		   no extra error check. */
++ 		list_index = stack[stack_pos - 2].u.val;
++ 		l = (d = &amp;stack[stack_pos - 1])-&gt;u.list;
++ 		break;
++ 	    }
++ 	    else {
++ 		stack[stack_pos-1].u.val=1;
++ 		return;
++ 	    }
++ 
++ 	case SET_LOCAL:
++ 	case SET_OBJ_VAR:
++ 	    if (list_index &gt;= list_length(l)) {
++ 		cthrow (range_id, "Too few arguments in the list (%D)",d);
++ 		return;
++ 	    }
++ 	    check_stack(1);
++ 	    data_dup(&amp;stack[stack_pos++],list_elem(l, list_index));
++ 	    c = cur_frame-&gt;pc;
++ 	    (*op_table[opcodes[c-1]].func)();
++ 	    if (cur_frame-&gt;pc != c+1)
++ 		return;
++ 	    pop(1);
++ 	    break;
++ 
++ 	case OPTIONAL_ASSIGN:
++ 	    if (list_index &gt;= list_length(l)) {
++ 		/* Setup for expression evaluation and exit. */
++ 		stack[stack_pos - 2].u.val = list_index;
++ 		cur_frame-&gt;pc++;
++ 		return;
++ 	    }
++ 	    else {
++ 		/* Do the assignment right away */
++ 		c = cur_frame-&gt;pc = cur_frame-&gt;opcodes[cur_frame-&gt;pc] - 1;
++ 		check_stack(1);
++ 		data_dup(&amp;stack[stack_pos++],list_elem(l, list_index));
++ 		(*op_table[opcodes[c-1]].func)();
++ 		if (cur_frame-&gt;pc != c+1)
++ 		    return;
++ 		cur_frame-&gt;pc++; /* skip OPTIONAL_END */
++ 		pop(1);
++ 	    }
++ 	    break;
++ 
++ 	case SCATTER_START: {
++ 	    /* Here's the fun part. Recursive scatter! */
++ 
++ 	    if (list_index &gt;= list_length(l)) {
++ 		cthrow (range_id, "Too few arguments in the list (%D)",d);
++ 		return;
++ 	    }
++ 	    d=list_elem(l, list_index);
++ 	    if (d-&gt;type != LIST) {
++ 		cthrow (type_id, "Attempting to scatter non-list (%D)",d);
++ 		return;
++ 	    }
++ 	    stack[stack_pos-2].u.val = list_index;
++ 	    check_stack(2);
++ 	    stack[stack_pos].type = INTEGER;
++ 	    list_index = stack[stack_pos++].u.val = -1;
++ 	    data_dup(&amp;stack[stack_pos++],d);
++ 	    l = d-&gt;u.list;
++ 	    break;
++ 	}
++ 
++ 	case SPLICE: {
++ 	    Int len=list_length(l);
++ 
++ 	    if (list_index &gt;= len)
++ 		/* Sorry, we're out of data. Empty list. */
++ 		list_index = len;
++ 	    /* Don't anticipate if we're not at the top level */
++ 	    if (stack[stack_pos-3].type == INTEGER)
++ 		anticipate_assignment();
++ 	    c = ++cur_frame-&gt;pc;
++ 	    push_list(list_sublist(l, list_index, len-list_index));
++ 	    (*op_table[opcodes[c-1]].func)();
++ 	    if (cur_frame-&gt;pc != c+1)
++ 		return;
++ 	    pop(1);
++ 	    break;
++ 	}
++ 	}
++ 	list_index++;
++     }
++ }
++ 
++ void op_scatter_start (void)
++ {
++     if (stack[stack_pos-1].type != LIST) {
++ 	cthrow (type_id, "Attempting to scatter non-list (%D)",
++ 		&amp;stack[stack_pos-1]);
++ 	return;
++     }
++ 
++     stack[stack_pos+1]=stack[stack_pos-1];
++     stack[stack_pos-1].type=INTEGER;
++     stack[stack_pos-1].u.val=0;
++     stack[stack_pos]=stack[stack_pos-1];
++     stack_pos+=2;
++     scatter_loop();
++ }
++ 
++ void op_optional_assign(void)
++ {
++     if (!data_true(&amp;stack[stack_pos-1])) {
++ 	cur_frame-&gt;pc++;
++     }
++     else {
++ 	cur_frame-&gt;pc = cur_frame-&gt;opcodes[cur_frame-&gt;pc];
++     }
++     pop(1);
++ }
++ 
++ void op_optional_end(void)
++ {
++     pop(1);
++     scatter_loop();
++ }
++ 
+  /* Effects: Pops the top two values on the stack and pushes 1 if they are
+   *	    equal, 0 if not. */
+  void op_equal(void)
+  {
+      cData *d1 = &amp;stack[stack_pos - 2];
+</PRE>

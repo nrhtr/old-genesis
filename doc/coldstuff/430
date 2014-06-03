@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [430] in "Coldmud discussion meeting"</TITLE>
+<H1>[430] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?430"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="429"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="431"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="433"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="444"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>"fixing" while loops</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 13:55:25 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Thu, 22 Sep 1994 10:47:12 -0700 (PDT)
+
+Problem:
+
+a = .test();
+while (a) {
+  .do_something();
+  a = .test();
+}
+
+Is nasty because it does the assignment identically in two sections and
+ takes up more lines by far than
+
+while (a = .test())
+  .do_seomthing();
+
+Proposed solution:
+
+New statement with syntax of "while &lt;var&gt; test (expr) statement"
+
+In the above it would look like:
+
+while a test (.test())
+  .do_something();
+
+This makes a kind of loop that is like a for, but with more dynamic loop
+ conditions. I think the meaning of this statement is completely in harmony
+ with all the other statements' formats and all that.
+
+I'd like something better than while test, thought....
+
+Anybody like the idea, at least? :)
+
+Crag / Robert de Forest
+</PRE>

@@ -1,0 +1,95 @@
+<HEAD><TITLE>discuss@charon: [726] in "Coldmud discussion meeting"</TITLE>
+<H1>[726] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?726"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="708"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="725"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="727"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar 23 14:58:00 1995
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: jeffpk@netcom.com (Jeff Kesselman)
+Date: Thu, 23 Mar 1995 11:45:23 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199503110454.UAA23074@netcom20.netcom.com&gt; from "Jeff Kesselman" at Mar 10, 95 08:54:07 pm
+
+[Well, I had kinda let my Cold* reading slide for a while, but reading through
+the back posts I have to respond to a couple of things said here.. Sorry if
+this starts up old wars again, but..]
+
+&gt; Good is irrelevent.
+
+Heh.. I'll have to remember this quote (on a side note, I take it this is the
+same approach you take to spelling? :)..
+
+&gt; &gt;&gt; Its not a question of "because theya re there."  It a very practical
+&gt; &gt;&gt; consideration. C, good or bad, has become a defacto standard.
+&gt; &gt;
+&gt; &gt;Umm, excuse me, but if you'd look at what you're saying you might notice that
+&gt; &gt;the term "de facto standard" means _PRECISELY_ "because it's there".  sheesh.
+&gt; 
+&gt; Not because they ae there. Because IT is there. Stop picking on words and
+&gt; read the sentance ::sheesh::
+
+Well, what can I say but "Stop picking on words and read the sentence"..  De
+facto standard = "because it (C) is there".  Stupid mistakes C made ARE there
+because C IS there.  Do I have to spell out every minute logical inference I
+make?  ::sheesh::
+
+&gt; &gt;As I said, stupidity shouldn't be blindly copied in the name of so-called
+&gt; &gt;"standards",
+&gt; 
+&gt; I disagree.  Standards are NEVER optimal, becaus ethey are by definition
+&gt; compromises. Standard are however a hgood thing for comprehension, or don't
+&gt; you agree with that?
+
+Oh, certainly, but I don't agree that this level of nitpicking on standards
+adherence represents a significant comprehension problem, and I do think that
+this level of blindly following all the stupid mistakes of the past represents
+a significant (and unnecessary) risk of flawed programming.  Your argument is
+rather along the lines of "don't give kids condoms because it's better that
+they die of AIDS than (heaven forfend) they should actually do something we
+don't approve of (sex) with the condoms we provide".. Not as severe, mind you,
+but the same basic little-things-are-more-important-than-big-things mentality.
+
+Really, by your arguments so far, we should all still be using FORTRAN, or
+maybe actually assembler.. they were standards first, you know.. We shouldn't
+change working standards just because someone comes up with some new thing like
+C that works better.. Standards are standards, and should be adhered to for
+ever and ever.  Amen.
+
+&gt; Actually your mention of the fact that you never learned to avoid this C
+&gt; pitfall in your earlier post explains a great deal.
+
+Very interesting.. do you actually read the messages I send or use the Psychic
+Friends Network instead?  I never said that.  I said that I still have problems
+with it (due to such things as, oh, typos, for example.. by the look of your
+typing I'd venture that this concept isn't THAT foreign to you), not that I
+hadn't learned the difference.  This pathetic attempt to insult my programming
+ability really isn't worthy, and is completely irrelevant.  You're the one
+who's supposedly arguing in favor of making this language easy to learn for
+people who aren't already master programmers, and now you're saying that if
+someone has problems with one of the most common sources for bugs in C code,
+which you yourself are arguing in favor of perpetuating, that they're not worth
+talking to?  sheesh.. get your position straight.
+
+&gt; Nope, I am not, thank you.   I will repost this, though peopel will be
+&gt; confused by the sudden thread and joinging in the middle. I wish you had
+&gt; said so soone. I hATE mailing lists.  Conferences make MUCH more sense...
+
+I didn't say so sooner because I only then realized, actually..
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+"We are the music makers, and we are the dreamers of the dreams" -- Willy Wonka
+</PRE>

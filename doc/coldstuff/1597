@@ -1,0 +1,221 @@
+<HEAD><TITLE>discuss@charon: [1597] in "Coldmud discussion meeting"</TITLE>
+<H1>[1597] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1597"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1596"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1598"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1598"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1598"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Old URLs in README and coldcore</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun 29 20:33:52 2000
+)</H3>
+<PRE>
+From: "Peter Bombard" &lt;pbombard@altavista.net&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Thu, 29 Jun 2000 20:22:19 -0400
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0001_01BFE207.BAE547E0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+
+I just went through coldcore and both coldcore and genesis' README files and
+identified the following URLs:
+
+1. http://www.cold.org/Software/Genesis/
+2. http://www.cold.org/Software/ColdCore/newadmin.html
+3. http://www.cold.org/~faq/cold.html
+4. http://www.cold.org/Intro/
+5. http://www.cold.org/sitenames.html
+6. http://www.cold.org/support/
+7. http://www.cold.org/info/lists.html
+8. http://www.cold.org/Genesis/
+9. http://www.cold.org/ColdC/
+
+As best as I can tell, the following are the current web page's analogs:
+
+1. http://web.cold.org/genesis/install.html
+2. http://web.cold.org/coldcore/newadmin.html
+3. NOT FOUND
+4. http://web.cold.org/features.html
+5. http://ice.cold.org/cold_servers/list
+6. http://web.cold.org/reference.html
+7. http://web.cold.org/contact.html
+8. http://web.cold.org/genesis/
+9. http://ice.cold.org/bin/help?node=coldc
+
+Is there a process for updating and/or correcting those documents?
+
+In addition, on the current webpage for coldcore, there is mention made of
+"Makeworld"
+My tar did not include that file, so far as I have been able to tell.
+
+I assume it is logically equivalent to "bin/coldcc -tcoldcore"?
+-pete (PBombard@altavista.net)
+
+
+
+------=_NextPart_000_0001_01BFE207.BAE547E0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Diso-8859-1"&gt;
+
+
+&lt;META content=3D"MSHTML 5.00.3018.900" name=3DGENERATOR&gt;&lt;/HEAD&gt;
+&lt;BODY bgColor=3D#ffffff&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;I just =
+went through=20
+coldcore and both coldcore and genesis' README files and identified the=20
+following URLs:&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN=20
+class=3D910431500-30062000&gt;&lt;/SPAN&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;1.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A =
+href=3D"http://www.cold.org/Software/Genesis/"&gt;&lt;FONT=20
+size=3D2&gt;&lt;FONT=20
+face=3DArial&gt;http://www.cold.org/Software/Genesis/&lt;/FONT&gt;&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV=
+&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;2.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A=20
+href=3D"http://www.cold.org/Software/ColdCore/newadmin.html"&gt;&lt;FONT =
+face=3DArial=20
+size=3D2&gt;http://www.cold.org/Software/ColdCore/newadmin.html&lt;/FONT&gt;&lt;/A&gt;&lt;/=
+DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;3.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A =
+href=3D"http://www.cold.org/~faq/cold.html"&gt;&lt;FONT=20
+face=3DArial =
+size=3D2&gt;http://www.cold.org/~faq/cold.html&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;4.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A href=3D"http://www.cold.org/Intro/"&gt;&lt;FONT =
+face=3DArial=20
+size=3D2&gt;http://www.cold.org/Intro/&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;5.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A =
+href=3D"http://www.cold.org/sitenames.html"&gt;&lt;FONT=20
+face=3DArial =
+size=3D2&gt;http://www.cold.org/sitenames.html&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;6.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A href=3D"http://www.cold.org/support/"&gt;&lt;FONT =
+face=3DArial=20
+size=3D2&gt;http://www.cold.org/support/&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;7.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A =
+href=3D"http://www.cold.org/info/lists.html"&gt;&lt;FONT=20
+face=3DArial =
+size=3D2&gt;http://www.cold.org/info/lists.html&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;8.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A href=3D"http://www.cold.org/Genesis/"&gt;&lt;FONT =
+face=3DArial=20
+size=3D2&gt;http://www.cold.org/Genesis/&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;9.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A href=3D"http://www.cold.org/ColdC/"&gt;&lt;FONT =
+face=3DArial=20
+size=3D2&gt;http://www.cold.org/ColdC/&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/D=
+IV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;As =
+best as I can=20
+tell, the following are the current web page's =
+analogs:&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;1.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A =
+href=3D"http://web.cold.org/genesis/install.html"&gt;&lt;FONT=20
+face=3DArial =
+size=3D2&gt;http://web.cold.org/genesis/install.html&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;2.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A =
+href=3D"http://web.cold.org/coldcore/newadmin.html"&gt;&lt;FONT=20
+face=3DArial =
+size=3D2&gt;http://web.cold.org/coldcore/newadmin.html&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;3.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;FONT face=3DArial size=3D2&gt;N&lt;SPAN =
+class=3D910431500-30062000&gt;OT=20
+FOUND&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;4.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/SPAN&gt;&lt;/FONT&gt;&lt;A =
+href=3D"http://web.cold.org/features.html"&gt;&lt;FONT=20
+face=3DArial size=3D2&gt;http://web.cold.org/features.html&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;5.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A =
+href=3D"http://ice.cold.org/cold_servers/list"&gt;&lt;FONT=20
+face=3DArial =
+size=3D2&gt;http://ice.cold.org/cold_servers/list&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;6.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A =
+href=3D"http://web.cold.org/reference.html"&gt;&lt;FONT=20
+face=3DArial =
+size=3D2&gt;http://web.cold.org/reference.html&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;7.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A href=3D"http://web.cold.org/contact.html"&gt;&lt;FONT =
+face=3DArial=20
+size=3D2&gt;http://web.cold.org/contact.html&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;8.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A href=3D"http://web.cold.org/genesis/"&gt;&lt;FONT =
+face=3DArial=20
+size=3D2&gt;http://web.cold.org/genesis/&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;9.=20
+&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/FONT&gt;&lt;A =
+href=3D"http://ice.cold.org/bin/help?node=3Dcoldc"&gt;&lt;FONT=20
+face=3DArial=20
+size=3D2&gt;http://ice.cold.org/bin/help?node=3Dcoldc&lt;/FONT&gt;&lt;/A&gt;&lt;/DIV&gt;&lt;/DIV&gt;=
+&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;Is =
+there a process=20
+for updating and/or correcting those documents?&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN=20
+class=3D910431500-30062000&gt;&lt;/SPAN&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;In =
+addition, on the=20
+current webpage for coldcore, there is mention made of=20
+"Makeworld"&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;My tar =
+did not=20
+include that file, so far as I have been able to =
+tell.&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN=20
+class=3D910431500-30062000&gt;&lt;/SPAN&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial size=3D2&gt;&lt;SPAN class=3D910431500-30062000&gt;I =
+assume it is=20
+logically equivalent to "bin/coldcc -tcoldcore"?&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;P&gt;-pete (&lt;A =
+href=3D"mailto:PBombard@altavista.net"&gt;PBombard@altavista.net&lt;/A&gt;)=20
+&lt;/P&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+
+------=_NextPart_000_0001_01BFE207.BAE547E0--
+
+</PRE>

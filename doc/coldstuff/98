@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [98] in "Coldmud discussion meeting"</TITLE>
+<H1>[98] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?98"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="97"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="99"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="101"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="101"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ANSI</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 17:10:13 1993
+)</H3>
+<PRE>
+Date: Sat, 04 Dec 1993 15:07:14 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt;	ANSI codes are not a solution, no matter what the PC BBS
+&gt; community may think of them.  I would guess that less than half the
+&gt; people on a random mud have ANSI color display capabilites on their
+&gt; terminals.  If you want to give the server the capability of attaching
+&gt; extra information to the text it's sending, do it in a broad spectrum,
+&gt; general way, NOT by hacking in something display-specific, and limited
+&gt; like vt100/ansi escape codes.
+
+Really?
+
+Look we are getting nowhere, is anybody, or does anybody know of anybody
+working on a standard for this type of thing?  Is there one out there?  We can
+debate it to the groud but as this previous article shows we will run in
+circles saying the exact same thing as was said before...
+
+(blows the dust off his ego .sig --hsm, outa date (Bah sigs))
+  _____                                                                  _____
+ (_____)----------------------------------------------------------------(_____)
+   |     Brandon Gillespie      /   Projects:   Co-Creator of Netrek II     |
+   |     aka Lynx              /  Prime Director--League of Netrek Players  |
+   |      Freelance Writer     \  Keeper of the Bad Guide to Starwars       |
+  _|___   Extraordinair :)      \   Partener--Creative Adept             ___|_
+ (_____)----------------------------------------------------------------(_____)
+</PRE>

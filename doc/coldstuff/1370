@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [1370] in "Coldmud discussion meeting"</TITLE>
+<H1>[1370] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1370"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1369"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1369"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1369"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1371"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Broken exits in html format</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 15 18:38:35 1997
+)</H3>
+<PRE>
+Date: Sat, 15 Nov 1997 16:38:16 -0900
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Bruce Mitchener &lt;ubmitche@mcs.drexel.edu&gt;
+CC: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+Bruce Mitchener wrote:
+
+&gt; You need to grab $html_format.do_obj() off of tCD.
+&gt;
+
+Yep. grabbed it and now the exits work great.  Thanks.
+
+frank
+
+</PRE>

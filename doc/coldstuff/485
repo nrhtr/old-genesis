@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [485] in "Coldmud discussion meeting"</TITLE>
+<H1>[485] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?485"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="484"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="484"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="484"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="486"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="487"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="487"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Creating buffers.. HELP!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct 30 03:28:04 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: jeffpk@netcom.com (Jeff Kesselman)
+Date: Sun, 30 Oct 1994 01:22:07 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199410300704.AAA15689@netcom3.netcom.com&gt; from "Jeff Kesselman" at Oct 30, 94 00:04:46 am
+
+&gt; I'm trying to send a specific byte string.  Why does this generate a
+&gt; syntax error???
+&gt; 
+&gt; echo(%[0,x,y,width,height]);
+
+Probably because, last I looked, the notation for a buffer was `[], not %[]
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

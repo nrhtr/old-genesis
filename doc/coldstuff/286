@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [286] in "Coldmud discussion meeting"</TITLE>
+<H1>[286] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?286"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="285"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="285"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="287"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="296"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>re:ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 13:59:17 1994
+)</H3>
+<PRE>
+Date: Fri, 20 May 1994 10:39:00 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+
+
+It might be more useful to have the portmapper port not be the
+multiplexer port, i.e. use the portmapper port to get info on how the
+server uses ports, while the other ports are actually the services. so
+if you wanted a multiplexer, mebe put it on xxx4, with xxx2 the
+standard for portmapper, and such. connecting to portmapper would show
+the connecting server that this server does everything through xxx4,
+and can react accordingly. with a multi-port style server, it would
+show what ports were what service, and still could react
+appropriately. 
+
+	Just a thought.
+
+	Ray /Ash
+
+
+</PRE>

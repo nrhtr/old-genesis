@@ -1,0 +1,28 @@
+<HEAD><TITLE>discuss@charon: [83] in "Coldmud discussion meeting"</TITLE>
+<H1>[83] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?83"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="82"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="84"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>heh Re: uhhh, the server like crashed or something :)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 29 20:24:58 1993
+)</H3>
+<PRE>
+Date: Mon, 29 Nov 1993 18:17:30 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I lied, $builder was the parent of $storymaster, and I was trying to chparent
+$builder to $storymaster, it makes more sense crashing this way, but still isnt
+exactly a good thing :)
+
+-Brandon
+</PRE>

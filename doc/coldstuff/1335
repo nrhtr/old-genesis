@@ -1,0 +1,82 @@
+<HEAD><TITLE>discuss@charon: [1335] in "Coldmud discussion meeting"</TITLE>
+<H1>[1335] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1335"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1330"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1334"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1334"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1336"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1336"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1341"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Exit announcements (anomaly?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 21 21:09:08 1997
+)</H3>
+<PRE>
+Date: Fri, 22 Aug 1997 11:00:32 +1000
+From: Dancer &lt;dancer@brisnet.org.au&gt;
+To: Chris Williams &lt;psion@geekspace.com&gt;, coldstuff@cold.org
+
+Currently, MUSH works this way with regard to exits:
+
+Test the lock, and make sure that the enactor can pass it.
+Issue messages to enactor, and to those in the same room as the enactor.
+(You go north.) (___ takes the north passage.)
+Now things get a little fuzzy. I _think_ that messages for the
+destination room occur now. (____ enters from the southern tunnel.)
+Then the enactor is moved to the target room (____ has arrived.) (and
+____ has left. for the enactor's original location).
+At this point, the exit's job is finished. The enactor has been moved,
+and all the exit messages have been processed. If the target room
+contains any special conditions, they commence processing from this
+point.
+
+D
+
+
+Chris Williams wrote:
+
+&gt; &gt; &gt; I've noticed the same thing, and agree. Is there a reason source
+&gt; and dest
+&gt; &gt; &gt; announces can't be called bevore move_to (in $exit.invoke)?
+&gt; (they'd both have
+&gt; &gt; &gt; to be moved, else the actor would see their messages twice, or
+&gt; none at all).
+&gt; &gt; Yup, there is.. what happens if .move_to() doesn't allow you to
+&gt; move?
+&gt; &gt; Then everybody has been notified that you went/arrived, but you
+&gt; didn't...
+&gt; Yeah. If I recall, MOO's approach to this problem was to approve the
+&gt; mover for
+&gt; moving, then do stuff, then move them, but that was ugly. Or you could
+&gt; do the
+&gt; approval checks twice, once just to check, and once as part of the
+&gt; move.
+&gt; Hmm.
+&gt; Maybe this should be handled by whatever's handling the CML? Like, as
+&gt; part of
+&gt; the CML-frob, you give it meta-information about which messages should
+&gt; be
+&gt; dispatched in what sequence, and to only do such-and-such messages on
+&gt; condition of success of x verb-call (which the cml parser makes??).
+&gt; This seems
+&gt; a bit heavy-handed.
+&gt; Maybe this is just a case where two different messages are needed,
+&gt; instead of
+&gt; piggybacking the actor's message on the destinations announce.
+&gt;
+&gt; --
+&gt;                                   -Chris^`~'*.,_,.*'~`^P$iON-
+&gt; -----BEGIN GEEK CODE BLOCK-----
+&gt; Version: 3.12
+&gt; GCS/CM/IT/M/S d-- s+: a15 C++++$ UL+ P L-- E? W++(+++) N+ o? K? w++++@
+&gt;
+&gt; O--- M-- V- PS++ PE- Y+ PGP- t+ 5++ X+ R+ tv+ b++ DI+++ D+
+&gt; G++ e* h! r y-
+&gt; ------END GEEK CODE BLOCK------
+
+
+
+</PRE>

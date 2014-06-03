@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [527] in "Coldmud discussion meeting"</TITLE>
+<H1>[527] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?527"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="526"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="526"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="526"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="528"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Server additions...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 03:08:31 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Sat, 05 Nov 94 01:06:36 -0700
+
+&lt; If we're making a wish list, how about psuedo terminals and curses support?
+
+Ack, please no.
+
+Strapping yourself to text based is bad.  What you should be doing is trying
+to strip yourself of anything text-based.  (sorry, would spend more time
+talking about this but, well, I'm tired.  If you want to jabber about it
+connect to tCD (recumbent.declab.usu.edu:5555)).
+
+-Brandon
+</PRE>

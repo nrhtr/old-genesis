@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [896] in "Coldmud discussion meeting"</TITLE>
+<H1>[896] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?896"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="895"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="897"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] The %^$#@!! coldc parser</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 17 10:27:12 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@tombstone.sunrem.com
+Date: Tue, 16 Jan 1996 20:57:57 +0000
+Reply-To: coldstuff@tombstone.sunrem.com
+
+I really hate this so called "parser".  It does not accept lack of 
+white space many places it should (ie var $sys foovar=2;  is an 
+error)  and treates carriage returns as somethign other then white 
+space.
+
+I really don't want to re-write the whole compiler, but if I re-write 
+the parser will someone else do the symantic glue?
+
+Jeff Kessleman
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+Clinton Gingrich Atomic Biological Bomb NSA -- Hi John!
+(A message for my friend in the NSA)
+*******************************************************
+</PRE>

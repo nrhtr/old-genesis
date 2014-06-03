@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [498] in "Coldmud discussion meeting"</TITLE>
+<H1>[498] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?498"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="495"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="497"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="497"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="499"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="502"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="505"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: driver database dumping</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 00:16:11 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: brandon@petersboro.declab.usu.edu
+Date: Mon, 31 Oct 1994 21:11:38 -0800 (PST)
+Cc: coldstuff@MIT.EDU, jbb@homer.ncm.com
+In-Reply-To: &lt;9410312336.AA19708@petersboro.declab.usu.edu&gt; from "brandon@petersboro.declab.usu.edu" at Oct 31, 94 04:36:05 pm
+
+&gt; The more I think about it, the more I believe that the driver should
+&gt; dump object's with their dbref rather than objnum, _if one is assigned_.
+
+:notes this down on the list he's now keeping of things to do on the server.
+
+BTW, all.. I should apologize to Crag (and Jordan too, somewhat) for flying off
+like I did on this list..  I was frustrated and anxious about having so little
+information about the state of affairs of everything and I took it out on Crag
+even though he didn't have a lot to do with the way things have been going
+anyway..
+
+Anyway, what with the newer release of 0.12, and having talked a little bit
+with Jordan about things, if nobody has any objections I'd be happy to take
+over the role of semi-official server-worker-on and bug-yeller-at-about for
+this list (and I promise I won't go off and lose my net connection or move to
+Mongolia or something like that).. after being actively on the other end for a
+while it seems only reasonable that I take on some of the responsibility too,
+and since I'm planning on working on some of this stuff anyway..
+
+I'll go back through the list and try to make up a list of all the stuff people
+have been wanting/needing and post here with what I come up with for comments,
+then (hopefully) set in about doing something about some of them soon..  If you
+have your own lists out there, feel free to send them to me and I'll include
+them..
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

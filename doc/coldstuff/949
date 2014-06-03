@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [949] in "Coldmud discussion meeting"</TITLE>
+<H1>[949] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?949"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="948"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="950"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Compiling Genesis</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 26 11:16:09 1996
+)</H3>
+<PRE>
+Date: Tue, 26 Mar 1996 10:47:45 -0500
+From: Bill DeVos &lt;watcher@winc.com&gt;
+To: coldstuff@cold.org
+
+Well, I just tried to compile genesis version 0.4.0 under Linux
+(Slackware 3.0) and although it compiles with warnings about comparing
+pointer to integer it has no errors, yet when I attempt to run it with
+"coldcc -h" or "coldcc -v" it just thrashes the hard disk and eventually
+will prevent me from doing anything but press the reset.  If I press
+Ctrl-C quickly enough it will say that it caught the interuppt then
+segfault.
+  I'm running a P100 w/32Meg ram.  Any suggestions would be much
+appreciated.   This is my first attempt at compiling this MUD.  I've
+compiled bunches of other programs with no problems.
+
+-- 
+             Watcher
+
+	watcher@winc.com
+	http://www.winc.com/~watcher/
+
+---  Look Ma! No sig!
+</PRE>

@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [968] in "Coldmud discussion meeting"</TITLE>
+<H1>[968] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?968"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="967"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="969"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] backdoor in a database</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr 19 01:36:25 1996
+)</H3>
+<PRE>
+Date: Thu, 18 Apr 1996 23:16:16 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Should this stay around?  With coldcc -tstdin -p you get the ability to 
+directly diddle with a database, without having to worry about 
+interfacing it through the regular channels.  The problem with it is the 
+database has to be shutdown.  You also dont have the added advantage of 
+allowing network logins from other admins.  However, the backdoor itself 
+can get broke when you seriously foob something, causing you to drop back 
+to coldcc -tstdin -p anyway.  I'm debating removing the backdoor from the 
+coldcore, as it's usefulness has been overgrown by features in coldcc.  
+Does anybody have objections to this?
+
+-Brandon Gilespie-
+
+(BTW, Genesis 1.0 is out; I'm holding off on a major announcement while I 
+get simple bug fixes in, but its available at ftp.cold.org for 
+adventurous souls).
+</PRE>

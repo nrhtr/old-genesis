@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [150] in "Coldmud discussion meeting"</TITLE>
+<H1>[150] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?150"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="146"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="149"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="149"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="151"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: COLD: Status Update?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar  4 17:12:03 1994
+)</H3>
+<PRE>
+Date: Fri, 04 Mar 1994 14:22:08 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; Also, Lynx, I tried connecting to your Cold but it doesn't seem
+&gt; to like me...It just hangs after connect..Probably shouldn't
+&gt; bring it up to the list, but I'm too lazy
+
+Urm.  I may; have re-introduced a bug.  We've had a little problem with
+prompts. (Crag hacked it up so it would display a prompt, if you wanted it to
+(like in Diku/LP style MUDS)).
+
+-Brandon
+</PRE>

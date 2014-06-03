@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [1288] in "Coldmud discussion meeting"</TITLE>
+<H1>[1288] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1288"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1286"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1287"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1287"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1289"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1289"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1297"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] minimal db</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May  5 11:17:14 1997
+)</H3>
+<PRE>
+Date: Mon, 5 May 1997 09:10:26 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+cc: Jess Regal &lt;regal@netline.net&gt;, ColdC ML &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;199705050058.TAA20087@dfw-ix10.ix.netcom.com&gt;
+
+On Sun, 4 May 1997, Jon A. Lambert wrote:
+&gt; &gt; I've downloaded the minimal.db onto a windows 95 system...i don't know
+&gt; &gt; what the makedb thing did in unix, but i was directed by someone to use
+&gt; &gt; copy source+source+source command type thing. so i did, appended the
+&gt; &gt; .cdc files together into textdump, run coldcc..get an error. "Text dump
+&gt; &gt; ended inside method definition.!" go figure..so i try the copy again,
+&gt; &gt; redownloaded the file, finally i tried just compiling the .cdc
+&gt; &gt; files...same message..is it something to do with WinZip? is there
+&gt; &gt; something else in that makedb file/command that i missed? Any help would
+&gt; &gt; be appreciated.
+&gt;
+&gt; Hmm, try 'copy /b source + source + source textdump'
+&gt; 
+&gt; Also, make sure you don't have an extra plus between source and textdump
+
+Make absolutely _sure_ you copy the source files in the correct order. 
+There should be an INDEX file which gives the correct order. 
+
+However, this would not be the cause of your 'textdump ends in a method'
+error.  That is likely something to do with DOS.
+
+BTW, are you sure Minimal DB is what you want?  Its MINIMAL, no VR, no
+login, _nothing_.  It just includes a skeleton system/perms/network set of
+code.
+
+-Brandon Gillespie
+
+</PRE>

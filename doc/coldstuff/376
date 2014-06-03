@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [376] in "Coldmud discussion meeting"</TITLE>
+<H1>[376] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?376"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="375"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="375"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="375"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="377"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="377"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="377"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: objname vs dbref</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul 11 06:24:03 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: deforest@netcom.com (Robert de Forest)
+Date: Mon, 11 Jul 1994 03:19:16 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199407110746.AAA19747@netcom12.netcom.com&gt; from "Robert de Forest" at Jul 11, 94 00:46:53 am
+
+&gt; I did in fact request that the routines which manipulate the object lookup
+&gt;  table refer to the lookup keys as names. That is, I prefer add_objname to
+&gt;  set_name. In the current docs, $foo is a name expression which evaluates
+&gt;  identically to get_name('foo).
+
+I really don't get your logic here, I guess..  seems to me you're saying these
+things should be called objnames because get_name calls them names, even though
+you admit that get_name isn't a good name for it anyway..
+
+&gt;  $foo therefore, is not really a dbref, since
+&gt;  it has the name layer between 'foo and the actual number of the object.
+
+Umm.. so you're saying $foo isn't a dbref because it isn't a object number
+(which is exactly what distinguishes a dbref from an objnum in the first
+place)?  I guess I just don't understand what you're trying to say.
+
+Anyway, on to the real point:
+
+What I proposed at the beginning of this whole thing and what I thought
+everbody more or less agreed on was the use of dbref and _dbnum_, which in my
+opinion makes perfect sense.  I suppose we could change it to objref and
+objnum, but that doesn't sound as nice to me.  I really would prefer that we
+not use the term "name" in any of it for clarity reasons (haven't we been
+through all this several times before?).  I can still see myself trying to
+explain to people that when I say "object name" I mean something completely
+different than when I say the logical abbreviation "objname"..  sigh.
+
+As I've said before, I see no reason why the $foo syntax shouldn't be called a
+dbref.  It is, quite simply, the way database objects are referenced
+("db"-"ref") by anything outside server internals (i.e. by the real world).
+Likewise I don't see why we can't call the numbers dbnums, appropriately.  The
+consistent alternatives to using objnum, however, both have problems, to my
+mind, which is why I suggested dbnum to begin with.
+
+-alex
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+</PRE>

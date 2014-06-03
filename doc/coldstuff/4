@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [4] in "Coldmud discussion meeting"</TITLE>
+<H1>[4] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?4"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="3"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="5"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="5"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="6"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>comments on help</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 12:47:26 1993
+)</H3>
+<PRE>
+Date: Mon, 15 Nov 1993 17:33:05 GMT
+From: snooze &lt;gregb@amber.ecst.CSUChico.EDU&gt;
+To: coldstuff@MIT.EDU
+
+
+I have yet to really peer at the help system on coldmud lately... but
+coolmud had a help system that was quite basic and handy
+if you just did help by itself it echo'd a help file that wasn't in
+the db... a kind of basic help &lt;actually... I model'd it after
+the basic help screen you would get back on TinyMUD, that basicly
+told you how to speak, describe yourself, whisper, page and a few
+other really basic stuff...  when you  type help... if there was an arguement to help it checked to
+see if a help file existed for that... and if not then it checked
+objects in the room for help... 
+
+snooze
+</PRE>

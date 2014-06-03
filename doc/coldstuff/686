@@ -1,0 +1,79 @@
+<HEAD><TITLE>discuss@charon: [686] in "Coldmud discussion meeting"</TITLE>
+<H1>[686] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?686"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="685"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="685"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="687"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="687"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 01:48:17 1995
+)</H3>
+<PRE>
+Date: Thu, 9 Mar 95 22:42:52 -0800
+From: jsp@betz.biostr.washington.edu (Jeff Prothero)
+To: coldstuff@MIT.EDU
+
+
+| &gt;
+| &gt; &lt; Personally, I'd prefer :=..  It's already used in at least one
+| language for
+| &gt; &lt; this purpose
+| &gt;
+| &gt; VMS's DCL (Digital Command Language, aka VMS shell) uses ':==' to
+| set symbols
+| &gt; (i.e. make an assignment, of sorts).
+| 
+| Yuck, if anything, do NOT use DCL as a base or to get ideas for
+| anything. :P
+
+I think these endless squabbles over syntactic minutia
+are a good reason to put compilers in-db rather than
+inserver, personally :).
+
+For what it's worth:
+
+-&gt; I believe DCL uses both := and :== to mean different
+   but similar things (some sort of global/local distinction?)
+
+-&gt; I've been using "-&gt;" as an assignment operator in
+   Muq's MUF syntax (RPN, so the variable assigned to
+   sits on the right ... what's the logic behind putting
+   the destination on the left in infix languages, anyho?)
+   and nobody has complained about it yet... several people
+   have commented favorably.  I'd go for &lt;- in this sort of
+   case, unless += -= etc are being supported... -&lt;- and
+   +&lt;- and so forth just don't do it for me.
+
+-&gt; One relevant design principle is Zipf's Law:  the
+   most frequently used operators should have the
+   shortest representations.  I think this is one of
+   the best arguments for using '=' rather than a
+   digraph.
+
+-&gt; I agree the = / == resemblance is bad.  I've been hacking
+   C pretty solidly since '78, and it _still_ gets me from
+   time to time.  Mostly because I mentally convert from
+   internal to verbal to typewritten, and the last stage is
+   done unconciously, and both "=" and "==" get "equals"
+   as verbal representation.  I'm working on saying "gets"
+   for "=", currently... :)
+
+-&gt; Nobody has suggested Prolog's :- yet.  Be a shame to
+   leave any existing religions out of the debate :)
+
+-&gt; A solution I haven't seen tried is to use '=' for &gt;both&lt;
+   assignment and comparison, and to keep the contexts in
+   which they are allowed mutually exclusive.  This
+   wouldn't be impractical, I don't think, although Cfolk
+   might dislike the restriction.  I doubt novice hackers
+   would.
+
+Cynbe
+
+</PRE>

@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [384] in "Coldmud discussion meeting"</TITLE>
+<H1>[384] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?384"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="381"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="383"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="383"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="385"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Compiling Cold on BSDI</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jul 21 14:37:32 1994
+)</H3>
+<PRE>
+Date: Thu, 21 Jul 94 11:24:25 -0700
+From: jsp@betz.biostr.washington.edu (Jeff Prothero)
+To: coldstuff@MIT.EDU
+
+
+&gt; ------------------------------------------------------------
+&gt; gcc -Wall -O -fomit-frame-pointer -c data.c
+&gt; In file included from /usr/include/ctype.h:50, from data.c:6:
+&gt; /usr/include/runetype.h:59: syntax error before `rune_t'
+&gt; /usr/include/runetype.h:74: syntax error before `rune_t'
+&gt; /usr/include/runetype.h:77: syntax error before `char'
+&gt; /usr/include/runetype.h:81: syntax error before `rune_t'
+&gt; /usr/include/ctype.h: In function toupper:
+&gt; In file included from data.c:6:
+&gt; /usr/include/ctype.h:167: structure has no member named `mapupper'
+&gt; /usr/include/ctype.h:167: subscripted value is neither array nor
+pointer
+&gt; /usr/include/ctype.h: In function tolower:
+&gt; /usr/include/ctype.h:174: structure has no member named `maplower'
+&gt; /usr/include/ctype.h:174: subscripted value is neither array nor
+pointer
+&gt; data.c: In function data_cmp:
+&gt; data.c:83: warning: implicit declaration of function `bcmp'
+&gt; *** Error code 1
+&gt;
+&gt; Stop.
+&gt; ------------------------------------------------------------
+
+Um, I've ported Muq to 7 unices in the last 2-3 weeks, and seen
+a lot of these sorts of errors.  In my case, at least, they
+usually traced to the type in question 'rune_t' being missing.
+I'd check to make absolutely sure that whatever was supposed
+to have typedef'd rune_t, if I were you.
+
+ Cynbe
+
+</PRE>

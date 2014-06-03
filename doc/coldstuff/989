@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [989] in "Coldmud discussion meeting"</TITLE>
+<H1>[989] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?989"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="988"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="990"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] MUDEDIT FIXED!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Apr 27 20:42:09 1996
+)</H3>
+<PRE>
+Date: Sat, 27 Apr 1996 16:51:17 -0700
+From: "Jeffrey P. Kesselman" &lt;jeffk@tenetwork.com&gt;
+Reply-To: jeffk@tenetwork.com
+To: coldstuff@cold.org
+
+Okay,
+I found my verifier problem and the original problem that was making Unix fail.  
+Turns out that there are some differences in behavior btw Motif based awt and 
+Windows based AWT (gonna have to razz 'em about that).  
+
+In addition to the outright bug, which I fixed, there are some minor uglinesses 
+under Motif having to do with default behaviors/settings that are different btw 
+the two AWT implementations.  I guess I should eventually clean it up (or let Lynx 
+do it ;), but its workign and available now off of the old link:
+   http://www.ten.net/~jeffk/mudedit
+
+Jeff Kesselman
+</PRE>

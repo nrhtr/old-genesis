@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [499] in "Coldmud discussion meeting"</TITLE>
+<H1>[499] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?499"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="498"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="500"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="500"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="500"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>How does inheritance work...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 02:34:24 1994
+)</H3>
+<PRE>
+Date: Mon, 31 Oct 1994 23:28:19 -0800
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+
+Pardon another question folks, but I'm having trouble figuring something 
+out from the Coldstuff manual.
+
+Its kind of a two part question:
+	1) When object-variables are inherited, does the inheritor
+           have its own copy or do all inheritors reference the
+           parent's copy?
+        2) I can see a need for both. In some cases you want
+           a variable to act like a c++ static member,
+           at other times you DEFINATELY need your own
+           copy. (For instance, I have a window-object that
+           is defined once but I want independant copies
+           for each oen tahts opened.) How is this handled?
+           Is this what frobs are for?
+
+Thanks
+
+Jeff Kesselman
+
+</PRE>

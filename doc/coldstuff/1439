@@ -1,0 +1,199 @@
+<HEAD><TITLE>discuss@charon: [1439] in "Coldmud discussion meeting"</TITLE>
+<H1>[1439] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1439"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1438"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1440"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1440"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1440"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>First pass (ugly) script for MOO -&gt; Cold</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 19 20:12:26 1998
+)</H3>
+<PRE>
+Date: Thu, 19 Nov 1998 20:03:46 -0500
+From: Jonathan Bradshaw &lt;jonathan@nrgup.com&gt;
+To: coldstuff@cold.org
+
+I am trying to move from a MOO to Cold. The biggest hurdle is moving all the
+objects such as users, rooms, exits and $things to Cold. Unfortunately I know
+about as much about COLD and ColdCore as I did about LambdaMOO when I first
+started (about zilch).
+
+I decided I didn't want to do this one object at a time considering the large
+number I had so I hacked up some scripts to help. They are UGLY. Anyone who
+knows Cold will probably cringe when they see what I did but it works for &gt;
+90% of the objects and I can live with fixing up the rest.
+
+I give you the scripts I used to do with as you wish. I'd love for someone
+with either better MOO or COLD knowledge to refine them. In Tinyfugue I start
+a log, run the program and then use /quote to send them to the Cold system.
+
+-- CUT HERE --
+;" This script creates an object to convert MOO objects to COLD "
+;" Take the output of each program and feed it to Cold as the "
+;" administrator with @mojo turned on. ";
+;
+;"WARNING: This is my first attempt at any type of conversion and I"
+;"am aware that it needs SIGNIFICANT improvements. Contributions will"
+;"be gladly accepted."
+;
+;"To allow passwords to work you must include your system CRYPT libraries"
+;"when compiling cold."
+;
+;"The scripts should be run in the following order"
+;
+;"export_users()"
+;"export_rooms()"
+;"export_exits()"
+;"export_homes()"
+;"export_things()"
+;"export_notes()"
+;
+
+@create $thing named convert
+
+@verb convert:"export_users" this none this
+@program convert:export_users
+for p in (players())
+  if (((p != #2) &amp;&amp; (p.first_connect_time != $maxint)) &amp;&amp; (p.description != $player.description))
+    $command_utils:suspend_if_needed(0);
+    name = $string_utils:strip_all_but($string_utils:lowercase(p.name), "abcdefghijklmnopqrstuvwxyz1234567890");
+    player:tell(";var new; if(!(| valid($user_", name, ") |)) { new = $sys.create_user(\"", p.name, "\", \"", p.realname, "\", \"", p.email_address, "\");}");
+    player:tell(";|as $user_", name, "&lt;$root&gt;; created_on = ", p.first_connect_time, ";");
+    player:tell(";|as $user_", name, "&lt;$user&gt;; connected_at = ", p.last_connect_time, ";");
+    player:tell(";|as $user_", name, "&lt;$user&gt;; password = \"", p.password, "\";");
+    if ((p.gender == "male") || (p.gender == "female"))
+      player:tell(";|as $user_", name, "&lt;$thing&gt;; gender = $gender_", p.gender, ";");
+    endif
+    player:tell(";|as $user_", name, "; .set_user_info(\"rl-name\", $user_info, \"", p.realname, "\");");
+    player:tell(";|as $user_", name, "&lt;$described&gt;; prose = &lt;$ctext_frob, [[\"", $string_utils:from_list(p:description(), " "), "\"], #[]]&gt;;");
+    if (p.wizard)
+      player:tell("@promote ", p:title(), " to wizard");
+    elseif ($object_utils:isa(p, $prog))
+      player:tell("@promote ", p:title(), " to programmer");
+    elseif ($object_utils:isa(p, $builder))
+      player:tell("@promote ", p:title(), " to builder");
+    endif
+  endif
+endfor
+.
+
+@verb convert:"export_rooms" this none this
+@program convert:export_rooms
+for room in ($object_utils:leaves_suspended($generic_room))
+  $command_utils:suspend_if_needed(0);
+  if ((room.entrances == {}) || (room:exits() == {}))
+  else
+    username = tostr("$user_", $string_utils:strip_all_but($string_utils:lowercase(room.owner.name), "abcdefghijklmnopqrstuvwxyz1234567890"));
+    name = tostr(room)[2..$];
+    value = $string_utils:from_list(room:description(), " ");
+    result = "";
+    while (q = index(value, "\"") || index(value, "\\"))
+      if (value[q] == "\"")
+        q = min(q, index(value + "\\", "\\"));
+      endif
+      result = ((result + value[1..q - 1]) + "\\") + value[q];
+      value = value[q + 1..length(value)];
+    endwhile
+    player:tell(";var p, new; if(!(| valid($room_", name, ") |)) { new = $place.spawn(); new.set_objname('room_", name, ");}");
+    player:tell(";|as $room_", name, "&lt;$has_name&gt;; name = ['prop, \"", room:title(), "\", \"", room:title(), "\"];");
+    player:tell(";|as $room_", name, "&lt;$described&gt;; prose = &lt;$ctext_frob,[[\"", result ? result | value, "\"], #[]]&gt;;");
+    player:tell("@chmanage $room_", name, " to ", username);
+  endif
+endfor
+.
+
+@verb convert:"export_exits" this none this
+@program convert:export_exits
+for exit in ($object_utils:leaves_suspended($exit))
+  $command_utils:suspend_if_needed(0);
+  player:tell("@move me to $room_", tostr(exit.location)[2..$]);
+  player:tell("@dig ", exit.name, " to $room_", tostr(exit.dest)[2..$]);
+  player:tell("none");
+  player:tell("@move me to $the_pit");
+endfor
+.
+
+@verb convert:"export_things" this none this
+@program convert:export_things
+for thing in ($object_utils:leaves_suspended($thing))
+  $command_utils:suspend_if_needed(0);
+  if (($object_utils:isa(thing, $exit) || $object_utils:isa(thing, $container)) || $object_utils:isa(thing, $note))
+  else
+    username = tostr("$user_", $string_utils:strip_all_but($string_utils:lowercase(thing.owner.name), "abcdefghijklmnopqrstuvwxyz1234567890"));
+    name = tostr(thing)[2..$];
+    value = $string_utils:from_list(thing:description(), " ");
+    result = "";
+    while (q = index(value, "\"") || index(value, "\\"))
+      if (value[q] == "\"")
+        q = min(q, index(value + "\\", "\\"));
+      endif
+      result = ((result + value[1..q - 1]) + "\\") + value[q];
+      value = value[q + 1..length(value)];
+    endwhile
+    player:tell(";var p, new; if(!(| valid($thing_", name, ") |)) { new = $thing.spawn(); new.set_objname('thing_", name, ");}");
+    player:tell(";|as $thing_", name, "&lt;$has_name&gt;; name = ['prop, \"", thing:title(), "\", \"", thing:title(), "\"];");
+    player:tell(";|as $thing_", name, "&lt;$described&gt;; prose = &lt;$ctext_frob,[[\"", result ? result | value, "\"], #[]]&gt;;");
+    player:tell("@chmanage $thing_", name, " to ", username);
+    player:tell("@move $thing_", name, " to ", username);
+    if ($object_utils:isa(thing.location, $player))
+      user = $string_utils:strip_all_but($string_utils:lowercase(thing.location.name), "abcdefghijklmnopqrstuvwxyz1234567890");
+      player:tell("@move $thing_", name, " to $user_", user);
+    else
+      player:tell("@move $thing_", name, " to $room_", tostr(thing.location)[2..$]);
+    endif
+  endif
+endfor
+.
+
+@verb convert:"export_homes" this none this
+@program convert:export_homes
+for p in (players())
+  if ((((p != #2) &amp;&amp; (p.first_connect_time != $maxint)) &amp;&amp; (p.home != #267)) &amp;&amp; (p.description != $player.description))
+    $command_utils:suspend_if_needed(0);
+    user = $string_utils:strip_all_but($string_utils:lowercase(p.name), "abcdefghijklmnopqrstuvwxyz1234567890");
+    name = tostr(p.home)[2..$];
+    player:tell("@set $user_", user, ":home=$room_", name);
+    player:tell("@move $user_", user, " to $room_", name);
+  endif
+endfor
+.
+
+@verb convert:"export_notes" this none this
+@program convert:export_notes
+for thing in ($object_utils:leaves_suspended($note))
+  $command_utils:suspend_if_needed(0);
+  username = tostr("$user_", $string_utils:strip_all_but($string_utils:lowercase(thing.owner.name), "abcdefghijklmnopqrstuvwxyz1234567890"));
+  name = tostr(thing)[2..$];
+  value = $string_utils:from_list(thing:description(), " ");
+  result = "";
+  while (q = index(value, "\"") || index(value, "\\"))
+    if (value[q] == "\"")
+      q = min(q, index(value + "\\", "\\"));
+    endif
+    result = ((result + value[1..q - 1]) + "\\") + value[q];
+    value = value[q + 1..length(value)];
+  endwhile
+  player:tell(";var p, new; if(!(| valid($note_", name, ") |)) { new = $note.spawn(); new.set_objname('note_", name, ");}");
+  player:tell(";|as $note_", name, "&lt;$has_name&gt;; name = ['prop, \"", thing:title(), "\", \"", thing:title(), "\"];");
+  player:tell(";|as $note_", name, "&lt;$described&gt;; prose = &lt;$ctext_frob,[[\"", result ? result | value, "\"], #[]]&gt;;");
+  player:tell(";|as $note_", name, "&lt;$has_text&gt;; text = [\"", $string_utils:from_list(thing.text), "\"];");
+  player:tell("@chmanage $note_", name, " to ", username);
+  player:tell("@move $note_", name, " to ", username);
+  if ($object_utils:isa(thing.location, $player))
+    user = $string_utils:strip_all_but($string_utils:lowercase(thing.location.name), "abcdefghijklmnopqrstuvwxyz1234567890");
+    player:tell("@move $note_", name, " to $user_", user);
+  else
+    player:tell("@move $note_", name, " to $room_", tostr(thing.location)[2..$]);
+  endif
+endfor
+.
+
+; "End of object creation"
+
+</PRE>

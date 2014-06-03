@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1326] in "Coldmud discussion meeting"</TITLE>
+<H1>[1326] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1326"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1325"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1327"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1327"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1327"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] controlling where the start room is</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 21 00:31:11 1997
+)</H3>
+<PRE>
+Date: Wed, 20 Aug 1997 21:29:09 -0700
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+I think someone already has code for this but---
+
+I'm looking for a way to separate people based on how
+they log in so that certain people will go to certain realms.
+This means that I don't want everyone to login and be at the pit.
+I had considered having different ports for different users or
+a menu where a person can select a realm.  Any suggestions?
+
+Actually this is two problems.  First is the "login to different realms"
+and the second is handling sleeping bodies.  If people change their
+home, then they show as sleeping bodies when they disconnect.  I would
+rather than the housekeeper grab then and then on login they are
+restored.  Or --the mush style-- is to have them dark.
+
+Frank
+
+-- 
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+</PRE>

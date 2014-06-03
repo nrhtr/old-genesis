@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [67] in "Coldmud discussion meeting"</TITLE>
+<H1>[67] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?67"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="65"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="66"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="66"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="68"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Coldmud 0.9 release, Cold World 0.4 release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 26 06:26:42 1993
+)</H3>
+<PRE>
+To: Andrew Wilson &lt;Andrew.Wilson@cm.cf.ac.uk&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Thu, 25 Nov 93 15:13:50 +0000.
+             &lt;9311251513.AA14315@diamond.cm.cf.ac.uk&gt; 
+Date: Fri, 26 Nov 93 06:19:20 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; ;data(this())
+&gt; ERROR: Current object ($programmer1) is the system object.
+&gt; Thrown by function data().
+
+&gt; Shouldn't that be )... is NOT the system object?
+
+Oops.  Fixed in 0.9.1.  This was also wrong in bind(), unbind(),
+connect(), and set_heartbeat_freq().
+
+This is, of course, easy to change by hand in adminop.c.
+
+--GBH
+
+</PRE>

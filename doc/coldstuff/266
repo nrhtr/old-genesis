@@ -1,0 +1,147 @@
+<HEAD><TITLE>discuss@charon: [266] in "Coldmud discussion meeting"</TITLE>
+<H1>[266] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?266"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="265"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="267"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Ports and last eve's Pow Wow</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 14:44:15 1994
+)</H3>
+<PRE>
+Date: Thu, 19 May 1994 12:36:33 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+From last evenings log:
+
+Brandon says, "well, the next thing is the X11 problem."
+Ash nods.
+Brandon says, "people are right, X11 does snag 6xxx ports"
+Brandon asks, "perhaps we should use a different range?"
+Ash says, "heh i ran a moo at 6000 once"
+Brandon says, "like 5xxx"
+Ash says, "couldnt figure out why i couldnt run"
+merlin says, "is there anything binding us to 6k? maybe like 9k :)"
+Brandon asks, "why 9?"
+merlin likes port 9999 for my cold :)
+Ash says, "mm i left my list at work"
+merlin shrugs. i like 9k range
+Ash says, "therse something in the 9xxx range too i think"
+merlin says, "5k would be fine too"
+Ash nods.
+[snip]
+
+We ended up with this list:
+
+Service                      port
+-------                      ----
+Login                        xxx0   -- !Normal connections, most used
+portmapper                   xxx1   -- !specifies what ports are used
+fingerd                      xxx2   -- !rwho/finger port
+Link                         xxx3   -- Mud-&gt;Mud communications/movement
+smtpd                        xxx4   -- !SMTP protocol, can be used for M-M mail
+ftpd                         xxx5   -- FTP
+httpd                        xxx6   -- HTTP
+
+Others?:   load port (returns load?)
+
+where basically xxx is as of yet undefined.  As mentioned above 6xxx is taken
+by X, so we may want to stay away from it.  I would be for 5 or 9, if nothing
+is stealing 9xxx range.  The ports with a ! would be the minimal ones I'd
+expect to find on a beginning CD Core (as in our core will support those on
+startup).
+
+Unfortunately, I didn't log the discussion we had on using 1 port compared to
+multiple ports.  What it came down to was simplicity, having multiple ports is
+simpler and easier to expand.  To add a port through a single port you would
+have to modify two objects, not one.  I lied, here is a part of it:
+
+Brandon says, "where xxx is as of yet an undefined number"
+Brandon says, "could be 666, I'd prefer 555 (because X snaggs 6xxx)"
+Ash asks, "does anything snag anything in the 5 range?"
+Brandon not sure.
+Ash says, "me either i can check it though"
+Brandon says, "I suppose we could put login on xxx6"
+Brandon . o O ( i.e. 6666 )
+Ash says, "not anthing else like X tho, that grabs the who bunch"
+Brandon says, "but if we go 555, then doing that wouldn't make any sense"
+Brandon says, "and would probably confuse most people"
+Ash nods.
+Ash ponders.
+SamIAm says, "There"
+SamIAm says, "is no need to standardise, IMHO."
+SamIAm doesn't really see the benefit, rather.
+Brandon says, "there is no benefit"
+Brandon says, "other than that I'd like to think this is more than your generic
+MUD"
+Brandon says, "and I'm going to try and get a comprehensive core working"
+Ash says, "well, the benifit is its standard"
+Brandon says, "that can work for a wide range of applications"
+SamIAm nods, so the benefit is Brandon feels better... heh.
+SamIAm says, "So long as there's a good reason."
+Brandon says, "no, the benefit is that it is a standard"
+Brandon says, "if somebody fires up a new coldmud"
+Ash winks.
+Brandon says, "you can know that their fingerd is on port xxxx"
+Ash says, "we know what ports to attack! :)"
+Brandon says, "AND"
+Brandon says, "it does add a touch of credibility"
+Brandon says, "if you can say this mud listens to ports xxx-xxx etc"
+Ash nods.
+Brandon says, "for xxxxx services."
+Brandon says, "at least where I'm at"
+Brandon says, "that would help a lot"
+Brandon says, "it would show that your doing more than just writing a game."
+Ash says, "me too prolly"
+SamIAm shrugs, go for it.  I think standards for their own sake are a waste of
+time, and think the portmapper thing's the way to go... but if it makes everyone
+feel better... go for it.
+Ash says, "random ports die in a firewall"
+Brandon says, "I think the portmapper is a bad thing"
+Brandon says, "and only good for extended ports"
+Jeff likes the portmapper.
+Brandon says, "or specialized ports"
+Ash says, "portmapper dies in a firewall :)"
+Brandon says, "but you should have a set default standard that everybody should
+try to stick with."
+Brandon hsm
+---------------------------------
+
+More discussion (on a different matter):
+
+merlin . o O ( btw, anyone have any ideas on getting cold to show hostnames
+instead of strictly ip? )
+Ash says, "mmm"
+Brandon [to merlin]: no, other than connecting to the nameserver externally...?
+Brandon would like coldmud to handle that actually
+Brandon says, "we should hit up SamIAm about it"
+Ash nods.
+Ash says, "or you can make a nameserv object"
+Ash shrugs.
+merlin monitors all connections to his system, and i liked seeing hostnames
+&lt;got to learn everyone's who belonged&gt; but ip nums are harder to memorize :&gt;
+merlin tohught about that, but didn't know how to go about it
+Ash says, "hostnames are easier to forge"
+Brandon says, "well, have both"
+merlin asks, "is there a host/port you can telnet to to convert ip -&gt; name?"
+merlin says, "ash: anyone willing to go thru all that trouble just to fool me,
+can connect to my little insignificant coldmdu :)"
+Ash says, "heh"
+Ash says, "bad for sitelocks tho"
+Brandon says, "nameserver should."
+
+-------------------
+
+Well, thats long, but its most of the generic server related stuff.
+
+-Brandon-
+
+</PRE>

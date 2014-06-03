@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [826] in "Coldmud discussion meeting"</TITLE>
+<H1>[826] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?826"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="825"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="825"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="825"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="827"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="827"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="830"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>protected and private object variables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Oct 14 00:57:57 1995
+)</H3>
+<PRE>
+Date: Fri, 13 Oct 1995 21:47:00 -0700 (PDT)
+From: weber@tungsten.seattle.geoworks.com (Eric Weber)
+In-reply-to: &lt;9510140417.AA06850@smithfield.declab.usu.edu&gt;
+To: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+Cc: coldstuff@pippin.ece.usu.edu
+
+
+First of all, I find the name "private" to be completely misleading.
+Perhaps "global" or "shared" would be better?
+
+Second, I think it is a very useful concept, and in fact something
+very similar exists in smalltalk (the class variable).
+
+Third, speaking as a purist, it does violate encapsulation at some
+level, since method calls can now have side effects in a different
+object.  Of course, all such effects would be to other methods with
+the same definer, so they'd be somewhat controlled.
+
+-- Eric
+
+</PRE>

@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [197] in "Coldmud discussion meeting"</TITLE>
+<H1>[197] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?197"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="196"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="198"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="198"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="198"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>/etc/services</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr  1 11:51:08 1994
+)</H3>
+<PRE>
+Date: Fri, 01 Apr 1994 09:45:42 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I've been thinking lately (ouch).
+
+why don't we define up a bunch of "services" or ports that all coldmuds should
+listen to, just as a standard, for various different things, such as
+(brainstorming):
+
+smtpd (same as SMTP, protocol and all)             6625
+nntpd (hsm, brainstorm)                            66119
+httpd                                             &lt;ack, dont know the usual
+                                                   httpd port, 66 + whatever&gt;
+faucet (it just spams something, like inet faucet) 6663
+rcommands                                          6664
+coldlink (funky idea with ...stuff :)              6665
+connection                                         6666
+
+-----------------
+Anyhow, comments?  the coldlink port is an idea I have for doing expanded
+server-&gt;server linking, which would include passing minor attributes of a user.
+
+We could also figure up some other link aspects (distributed stuff?)
+
+-Brandon
+</PRE>

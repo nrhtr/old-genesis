@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [443] in "Coldmud discussion meeting"</TITLE>
+<H1>[443] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?443"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="442"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="442"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="442"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="444"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="445"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="453"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment, while (etc)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep 23 14:01:56 1994
+)</H3>
+<PRE>
+From: image@expert.cc.purdue.edu (Jeff T.P.)
+To: coldstuff@MIT.EDU
+Date: Fri, 23 Sep 94 12:53:53 EST
+In-Reply-To: &lt;m0qoNVB-000LKBC@colinm.ozemail.com.au&gt;; from "Colin McCormack" at Sep 23, 94 11:10 pm
+
+Original quote by Colin McCormack:
+
+&gt; It strikes me that one of C--'s features is its similarity to C++.
+
+&gt; Hence, assignment `=' (should be an expression)
+&gt;        equality `==' (if you can't tell the difference, learn to program)
+&gt;        while (abomination) { abomination } (abomination) - syntax sucks rocks.
+
+If nothing else, I share the same attitude.  It doesn't quite make sense
+to take a language called C-- and make it like pascal, or worse, add a
+weird conditional structure.  If anything, C-- should mimic C and C++.
+The nice thing about staying inside those bounds is that C-- and ColdMud
+in general have an added benefit of serving instructional purposes with
+the language and environment.  It's hard as hell trying to show LPC or
+worse, TinyMUSH or MUCK or MUSE code to an admin and say that what you
+are doing on his machine will be instructional.  Show him you're C--
+code, and he'll look over it and it's possible he'll understand it.
+-- 
+Life in the So Called Information Age. . .
+              . . .One Man's Garbage is Another Man's Treasure (I Guess).
+
+World Wide Web -=&gt; http://www.mps.ohio-state.edu/cgi-bin/hpp?jefftp.html
+</PRE>

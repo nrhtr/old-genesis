@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [206] in "Coldmud discussion meeting"</TITLE>
+<H1>[206] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?206"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="186"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="189"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="205"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="207"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="207"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="207"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: confusion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Apr  9 11:24:20 1994
+)</H3>
+<PRE>
+To: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Thu, 31 Mar 1994 12:22:12 CST."
+             &lt;01HAMDWHDGTEB8NPTN@cc.usu.edu&gt; 
+Date: Sat, 09 Apr 1994 10:18:46 -0500
+From: Erik Ostrom &lt;eostrom@pepperoncini.gac.edu&gt;
+
+&gt; &lt; As a corellary to point 2 should the core methods that add a parameter
+&gt; &lt; also add the set and retrieve methods for the parameter (pehaps based on
+&gt; &lt; a template?) This would of course be modifiable, but would then be 
+&gt; &lt; useful in preventing typing in the accessor each time. alternately
+&gt; &lt; a template accessor could be called or inherited, although im unclear
+&gt; &lt; on how to inherit a uniqely named method. 
+&gt; 
+&gt; I would definitely say no.  This is because doing such a thing would lead to
+&gt; bad coding immediately, where people yearning for MOO would just fall back in
+&gt; to MOO patterns.  Often times you do not even WANT to have direct
+&gt; accessor methods for values, an example would be $input and
+&gt; $input_parser at tCD.  $input has two parameters ,receiving and
+&gt; ,input.  ,input is only added to by .new_line() 
+
+You don't always want a setter method, but you do pretty often (at
+least I do), and it's a pain to write one each time.  On JH, I wrote a
+verb "@make-setter &lt;object&gt;.&lt;property&gt;" which installs the standard
+thing.  It might make sense to do this, and also provide commands that
+automatically make add/delete methods, or push/pop methods, or
+whatever you commonly use.
+
+It might also make sense to make whatever your equivalent of @property
+is take an extra argument (or more than one) that specifies whether
+you want to have setter/adder/deleter/whatever methods added at the
+same time.
+</PRE>

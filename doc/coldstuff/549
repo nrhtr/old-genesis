@@ -1,0 +1,118 @@
+<HEAD><TITLE>discuss@charon: [549] in "Coldmud discussion meeting"</TITLE>
+<H1>[549] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?549"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="544"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="546"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="548"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="550"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="550"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="551"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ToDo, or not ToDo.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 22:56:00 1994
+)</H3>
+<PRE>
+Date: Sun, 6 Nov 1994 23:42:57 +0000
+From: Jordan Baker &lt;jbb@homer.ncm.com&gt;
+To: brandon@avon.declab.usu.edu
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9411062255.AA07287@avon.declab.usu.edu&gt;
+
+
+
+On Sun, 6 Nov 1994 brandon@avon.declab.usu.edu wrote:
+
+&gt; colinm@colinm.ozemail.com.au (Colin McCormack) writes:
+&gt; &lt; In general, I would rather see nothing done to the server, 
+&gt; &lt; than see a bunch of ill considered hacks thrown into the server,
+&gt; &lt; in the name of I don't know... Progress?  Convenience?
+&gt; &lt; Notional improvement?
+&gt; 
+&gt; Unfortunately (fortunately?), everybody does not share the same position
+&gt; as you on what is 'good' for the driver.  While it seems like you have
+&gt; some holy vision of how the server should be, others also have opinions.
+&gt; Just because you do not like their opinions does not mean they are wrong,
+&gt; it means YOU dont like their opinions.  This whole attitude which people
+&gt; seem to have in regard to driver development that "my ideas are right,
+&gt; because I was touched by God and know the truth, anything you come up
+&gt; with is wrong, period, and I don't care what your reasons are" is sheer
+&gt; stupidity.
+
+Brandon, this is entirely bullshit.  Colin is expressing a valid concern 
+that everyone here has, mainly that the server will get loaded down with 
+useless and idiotic changes.
+It seems to me that you're just trying to create a flamewar or something.
+
+&gt; Speaking from the experience of administrating the development of NetrekII
+&gt; since it's infancy (NetrekII development consists of a team of ~10 developers
+&gt; and ~30k lines of client code and ~40k lines of server code) I feel I can
+&gt; safely say that EVERYBODY has an opinion in where something is going.  If
+&gt; it just happens that 9 out of 10 people on the 'development team' decide
+&gt; they like something, IT DOESNT MATTER if you think the change is selling
+&gt; the soul of the code, what matters is that you are a minority.  Realize that
+&gt; in respect to that change your idea will not find ground.  Deal with it
+&gt; and learn to work as a team--your ideas may be holy and touched by God,
+&gt; but as far as anybody else is concerned so are their ideas.  Try to give a
+&gt; little ground sometime.
+
+It doesn't mean that you'd let some random and his buddies walk in and 
+take over your little majority when in fact they really have no idea what 
+they're doing.  Don't try to sell democratic development techniques 
+because we've already heard it all before.
+
+&gt; As far as Richelieu doing development on the driver, I plan on helping him
+&gt; in this endeavor--even IF I do not like some of the changes he may make.  I
+&gt; have already taken the 0.10 source filetree (with the test directory and
+&gt; documentation) and updated it to 0.12, written a base configure script and
+&gt; revamped the makefiles.  (amoung other changes).
+
+0.10 is really a fucked up version.  It has all the substring stuff which 
+was really somewhat yicky.  If there is a problem with 0.12 based on 0.11 
+(what great version names we're getting now) then please tell me what 
+they are so that I can fix them.
+
+&gt; [snip]
+&gt; &lt; I trust him not to pollute coldmud with poisoned confectionary 
+&gt; &lt; like do {abomination} while {abominable}.
+&gt; 
+&gt; goto: first and second paragraph
+&gt; 
+&gt; Most people want this change (infact, you are the only person I know who
+&gt; finds it an abomination, most people do not care either way or want it).
+
+I haven't yet decided whether or not I want this change, but I know that 
+I will certainly listen to all the arguments for/against it before making 
+my decision.
+
+&gt; [snip]
+&gt; &lt; All you really need is a place to ftp the latest server(s) from [...]
+&gt; 
+&gt; Sticky.usu.edu is open to anything (space is readily available there), and
+&gt; I have done my best to make distinctions between the different sources,
+&gt; documentation, cores, textdumps and other paraphenilia.
+
+homer.ncm.com is where the latest version of 0.12 is available.  Its 
+called 0.12 because the previous version was just a beta of it and really 
+was not intended for general release.
+
+&gt; &lt; Certainly, also, Chaos and Crag would be a moderating interface
+&gt; &lt; between Richelieu and I, to the extent that I might want to
+&gt; &lt; make my position/feelings felt on some issues.
+&gt; 
+&gt; (sigh, feel's pity for Chaos and Crag)
+
+Heh. Mature.
+
+&gt; Colin: please pay attention to headers in a message that indicate the
+&gt; difference between a change Richelieu is going to make, and one which he
+&gt; is requesting discussion on.
+&gt; 
+&gt; -Brandon Gillespie (Lynx)-
+&gt; 
+
+-jordan.
+
+</PRE>

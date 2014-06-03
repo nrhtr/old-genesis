@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [520] in "Coldmud discussion meeting"</TITLE>
+<H1>[520] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?520"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="519"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="521"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>sigh..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov  4 22:10:25 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: coldstuff@MIT.EDU
+Date: Fri, 4 Nov 1994 19:08:21 -0800 (PST)
+
+Well, since Colin doesn't seem to believe anything I say unless he sees it on
+coldstuff..
+
+The "to-do" about in-DB message resolution should go under "Up for Discussion"
+instead.  I made a mistake when I posted that message.  I am still considering
+that particular implementation and no, I'm not set on it, and in fact I'm
+probably not going to go with it for a couple of reasons.. I'll most likely
+settle on an alternative involving catching calls to undefined methods on the
+receiving object.
+
+sheesh.
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

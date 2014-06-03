@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1230] in "Coldmud discussion meeting"</TITLE>
+<H1>[1230] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1230"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1229"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1231"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis 1.0 Patch 23</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Feb  4 12:30:58 1997
+)</H3>
+<PRE>
+Date: Tue, 4 Feb 1997 10:10:29 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+This patch includes:
+
+    * several minor bug fixes in join, split and a few file functions.
+    * the cancel() bug fix.
+    * Standardized arg ... [more]; format to follow scatter assignments,
+      will accept both formats but decompile as @more now.
+    * Compilable Win32 Support (Thanks Jon!)
+
+Read the README file for Win32 support.  To keep the source tree's the
+same you still need access to a unix box, which will generate the files
+for the Win32 platform.  Please, feel free to test this and let me know
+how it goes.  So far it has just been compiled in Borland C.  Also give me
+a log of what you had to do on the Win32 side (as far as setting up
+projects or getting a makefile).  Basically, the source will compile in
+a Win32 platform--however, how you compile it is still up to you :)
+
+Enjoy;
+
+  -Brandon Gillespie
+
+</PRE>

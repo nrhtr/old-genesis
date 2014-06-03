@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [245] in "Coldmud discussion meeting"</TITLE>
+<H1>[245] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?245"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="244"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="244"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="244"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="246"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="247"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="247"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: temporary alternative for no clear_param)?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 17 22:40:01 1994
+)</H3>
+<PRE>
+Date: Tue, 17 May 1994 20:35:04 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Anything that does it, anything.  Basically there are two major things that are
+_bad_ with ColdMUD right now (bad as in I think the server is flawed with them,
+with them fixed the server would need no more mods to function, in my opinion). 
+They are:
+
+    bind()        -- it doesn't work for more than 1 port
+    clear_param() -- of any syntax: we dont have it.
+
+-Brandon/Lyncx-
+
+(BTW, I've been rather waiting for clear_param to do a core release, and I
+would like bind() so I can create a port watcher).
+</PRE>

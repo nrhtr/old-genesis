@@ -1,0 +1,79 @@
+<HEAD><TITLE>discuss@charon: [828] in "Coldmud discussion meeting"</TITLE>
+<H1>[828] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?828"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="825"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="827"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="827"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="829"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="829"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="830"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: protected and private object variables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct 15 18:53:08 1995
+)</H3>
+<PRE>
+Date: Sun, 15 Oct 1995 16:50:14 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+&lt; Maybe, maybe not, but from the way you explained it, the names are 
+&lt; totally wrong.
+
+This depends upon what you are basing 'wrong' off of.
+
+&lt; They should be 'instance' and 'class' variables, or'child' and 'definer' 
+&lt; variables if you want to be obnoxiously classless.
+
+The concept is the same, the name is an important detail, but there is
+no _should_ or _shouldn't_, other than if I'm trying to emulate another
+language, or what my desires are in creating this functionality.
+
+I have intentionally shied away from using instance and class for a
+few reasons, mainly that there ARE NOT instances and classes, and using
+such names would be horribly misleading.
+
+With this in mind, I decided 'private' was good, because it essentially
+functions like the 'private' flag on a method (i.e. only if caller() is
+definer() can it be executed).  'protected' just sortof fell into place
+after that.         
+
+Mind you, I like the suggestions, it was just the sternminded 'you are
+doing it _wrong_' that I dont like.  Frankly, the way it is finally
+implemented is the right way (period) even if it isn't like what others
+do, because its how I've decided to do it, after considering all influences
+I could.  Hmm, basically: I dont care if thats "how the Jones do it", its
+all ones and zeros in the end ;)
+
+I'll brainstorm names here.  First, we have variables which are restricted
+to the defining object, and cannot be redefined on a descendant.  Then you
+have the regular variables, which CAN be redefined.  The first name will
+always be in reference to the !redefinable variables:
+
+    definer (your suggestion)
+    child (your suggestion)
+
+    private (mine)
+    protected (mine)
+
+    limited
+    regular
+
+    restricted
+    normal
+
+    private
+    normal
+
+My mind is currently refusing to help me out, so if anybody else feels like
+it, join in :b
+
+I do believe I will add the functionality, I have not decided upon the
+access 'names' yet though...  I prefer 'private' as its basically the
+same concept as a private method, so it will be easier to transpose
+to variables for beginners.  Dunno about the regular name though...
+
+-Brandon
+</PRE>

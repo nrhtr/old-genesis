@@ -1,0 +1,84 @@
+<HEAD><TITLE>discuss@charon: [168] in "Coldmud discussion meeting"</TITLE>
+<H1>[168] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?168"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="167"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="167"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="167"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="169"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="169"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="178"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Encapsulation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 25 17:51:10 1994
+)</H3>
+<PRE>
+To: rayn@q.crossaccess.com (Ray Nawara jr.)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Fri, 25 Mar 94 13:16:34 -0800.
+             &lt;9403252116.AA38180@q.crossaccess.com&gt; 
+Date: Fri, 25 Mar 94 17:47:38 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; It is true that one object shouldnt directly modify another objects
+&gt; variable, but shouldnt the first object be able to ask the other
+&gt; object to change its variable? or rather, can an object change its
+&gt; own variables....
+
+[...]
+
+&gt; Should accessors exist which enable the data to be modified or
+&gt; viewed, and can be called from other objects? the concept of
+&gt; protected data could be enabled by placing a check in the accessor
+&gt; method if the var were to be private or protected, most likely.
+
+What you're essentially asking for is the existence of an "automatic"
+method which exists whenever a variable exists.  That is, if I have a
+variable 'foo' on an object, you're proposing that the object should
+also have a method foo() which can be used to retrieve or set the
+value of foo.
+
+Coldmud has no such functionality; if you want your object to allow
+other objects to get and set variables, you have to explicitly provide
+the interface for that.  Other people have asked for this
+functionality, and I don't plan to include it in Coldmud for the
+following reasons:
+
+First, it adds complexity.  I am averse to doing lots of things behind
+the programmer's back, and writing part of an object's interface for
+the programmer is not a good thing.
+
+Second, it encourages programmers to think of other objects in terms
+of their state variables rather than their operations.  There's no
+pragmatic difference between "setting a variable on an object" and
+"asking an object to change its variable"; both of these are what
+encapsulation is trying to avoid.  Usually, you should think about
+abstractions in higher terms.  You are not setting the contents
+variable of a container to a list containing an extra item; you are
+adding something to a container's contents.
+
+Third, it doesn't fit in well with the encapsulation barriers across
+ancestors.  Objects don't have just one set of variables; they have a
+set of variables for the parameters of each of their ancestors.
+
+Eric Weber asked what I meant when I said that MOO and Coldmud are
+object-oriented at the database level rather than at the language
+level.  By that, I meant that inheritance, and in the case of Coldmud,
+encapsulation, apply to these big monstrous things called "objects".
+Objects have to be explicitly created and destroyed, and they reside
+on disk quite a bit of the time.  These are not really part of the
+language; they are entries in a database.  If MOO and Coldmud were
+object-oriented at the language level, you would be able to apply the
+OO constructs to data types.  Associative arrays (dictionaries, in
+Coldmud) wouldn't have to be built-in data types for convenience
+(although possibly for speed), because you could implement them in the
+language just as easily.  C++, Clu, Smalltalk, and the like, are
+object-oriented in this way.  (C++ layers it all on top of C, and Clu
+doesn't have inheritance, so they aren't perhaps the best examples.)
+
+--GBH
+
+</PRE>

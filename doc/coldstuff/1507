@@ -1,0 +1,72 @@
+<HEAD><TITLE>discuss@charon: [1507] in "Coldmud discussion meeting"</TITLE>
+<H1>[1507] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1507"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1506"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1508"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>revised patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec  2 11:50:41 1999
+)</H3>
+<PRE>
+Date: Thu, 02 Dec 1999 11:36:00 -0500
+From: Psyclone &lt;psyclone42@geocities.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+--------------E0057DDBAD43365418745976
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+bruce pointed out a missing pop (thanks), and now i can find them. i
+think. whee. anyway, revised patch follows.
+--------------E0057DDBAD43365418745976
+Content-Type: text/plain; charset=us-ascii;
+ name="borland-ctime-2.diff"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline;
+ filename="borland-ctime-2.diff"
+
+--- Genesis-1.1.8-STABLE/src/ops/misc.c	Tue Jul 13 17:05:03 1999
++++ driver-src/src/ops/misc.c	Thu Dec  2 10:47:20 1999
+@@ -85,6 +85,13 @@
+     } else
+         time(&amp;t);
+ 
++#ifdef __BORLANDC__
++    if (t &lt; 18000) {
++        THROW((type_id, 
++     "Borland's time util is broken, and requires time values above 18000"))
++    }
++#endif
++
+     tms = localtime(&amp;t);
+ 
+     l = list_new(12);
+@@ -154,6 +161,15 @@
+ 	return;
+ 
+     tval = (num_args) ? args[0].u.val : time(NULL);
++
++#ifdef __BORLANDC__
++    if (tval &lt; 18000) {
++        pop(num_args);
++        THROW((type_id, 
++     "Borland's time util is broken, and requires time values above 18000"))
++    }
++#endif
++
+     timestr = ctime(&amp;tval);
+     str = string_from_chars(timestr, 24);
+ 
+
+--------------E0057DDBAD43365418745976--
+
+</PRE>

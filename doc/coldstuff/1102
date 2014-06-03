@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [1102] in "Coldmud discussion meeting"</TITLE>
+<H1>[1102] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1102"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1101"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1103"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Patch 15 quickfix</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Oct 24 21:35:14 1996
+)</H3>
+<PRE>
+Date: Thu, 24 Oct 1996 17:29:42 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: coldstuff@cold.org
+
+Due to confusion in submitted patches, there is a minor problem (with a
+major impact, if hit right) in patch 15.  Edit src/dbpack.c and add an
+include for &lt;limits.h&gt;, then change MINLONG to LONG_MIN where it occurs
+(there are two occurances).
+
+-Brandon Gillespie
+
+</PRE>

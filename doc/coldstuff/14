@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [14] in "Coldmud discussion meeting"</TITLE>
+<H1>[14] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?14"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="13"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="13"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="13"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="15"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="16"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="17"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: $connection and $sys.startup()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 20:48:08 1993
+)</H3>
+<PRE>
+To: Lynx &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Mon, 15 Nov 93 18:04:22 -0600.
+             &lt;01H5CQHSNW6YANHKWW@cc.usu.edu&gt; 
+Date: Mon, 15 Nov 93 20:43:33 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+Sorry, maybe I didn't explain well enough.
+
+&gt; for obj in ($connection.children())
+&gt;   destroy(obj);
+
+&gt; well, this wouldnt work, so I changed it to:
+
+&gt; for obj in ($connection.children())
+&gt;    obj.destroy();
+
+I'd like to hear why my code wouldn't work.  Keep in mind that nothing
+keeps track of connection objects except for $sys, which starts off
+with a clean slate.
+
+&gt; _dont_ do this, you cannot re-connect.
+
+If you put it in the wrong place, yes.  The code should be placed near
+the beginning of $sys.startup().
+
+&gt;   olist = $connection.children();
+&gt;   for o in [1..listlen(olist) -1]
+&gt;     olist[o].destroy();
+
+&gt; this will leave 1 child of $connection, so you can connect.  I dont
+&gt; know if this is the best way to do it, but it works :)
+
+This is *not* the right way to do it.  It will leave one connection
+object, but there is no guarantee that it is the particular one that
+the system object has as the receiver on the port.  You got lucky.
+
+--GBH
+
+</PRE>

@@ -1,0 +1,64 @@
+<HEAD><TITLE>discuss@charon: [1432] in "Coldmud discussion meeting"</TITLE>
+<H1>[1432] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1432"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1431"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1433"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1436"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1438"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re:  ColdCore Roadmap</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Oct 28 02:49:51 1998
+)</H3>
+<PRE>
+From: "Bruce Mitchener, Jr." &lt;bruce@puremagic.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Tue, 27 Oct 1998 23:46:35 -0800
+
+I sent this to coldcore@cold.org earlier, but have since discovered that
+most people aren't on that list.
+
+Here goes again:
+
+Some comments on the roadmap.
+
+Looking at the core as it exists today, there are a number of things that
+spring to mind.  While it has many advanced or very cool features in it,
+very often, they are not used as widely as they could (or should) be
+throughout the entire core.
+
+Often, this has been due to the evolutionary process through which the core
+has been developed.  Some examples of this are the message system, the
+setting system (which is getting there these days), CML (doesn't quite work
+yet in mail messages), and so on.  There are also bugs in existing pieces of
+code which limit their functionality ($pop3_daemon for one).
+
+What are the problems for someone new approaching ColdCore as a potential
+development platform?  I'd love to hear from anyone and everyone on this
+subject.  I suspect that the answers will be lack of documentation
+explaining what the various subsystems are, overviews of how they work.  How
+does one have code run everytime an object leaves a particular room?  Should
+you override the 'did_leave method on that location?  Is there an event that
+is broadcast?  If there isn't an event, should there be one?  How do you add
+a new CML generator?  What is involved in adding a new CML formatter?  What
+if it needs to be compiled differently from the average tag?  (These are
+hypothetical questions.)
+
+What systems in the core are most often modified by people using the core?
+What difficulties does that cause them in core-upgrades?  Does anyone that
+has gone through this process have feedback?
+
+In short, why don't we look at how people use the core and make their lives
+easier?  Let's modularize code further and document what a module does and
+what
+the interface of it is.  Make the system usable for the end user.
+
+- Bruce
+
+
+
+</PRE>

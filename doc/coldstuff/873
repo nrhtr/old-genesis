@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [873] in "Coldmud discussion meeting"</TITLE>
+<H1>[873] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?873"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="871"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="872"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="872"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="874"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="874"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="875"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ColdCore</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan  4 16:44:08 1996
+)</H3>
+<PRE>
+Date: Thu, 04 Jan 1996 16:23:26 +0500
+To: coldstuff@tombstone.sunrem.com
+From: mwilson@vt.edu (Mike "Zaphod" Wilson)
+
+&gt;&gt; 2) Will ColdCore Indeed do the kinda 'relational' system I'm looking for.
+&gt;There will be a system that keeps the spatial relations between objects - 
+&gt;we need some way to generate VRML from the room contents. :)
+
+Good point.  Need to study up on VRML to see if its got the same 
+direction as I wanna go.
+
+&gt;&gt; 3) Will it be easier to take ColdCore, delete all the frills that I don't 
+&gt;&gt; want in my core, or go ahead and start from Minimal and go up?
+&gt;
+&gt;Did you think about keeping the rooms we have now and parenting
+&gt;all the objects intended to keep other objects to it?
+&gt;
+&gt;After all, with multiple parenting you don't need to think too much about
+&gt;changing the stuff. :)
+
+Hrmm... I'll have to give that some serious thought.  The reason I thought
+about doing from the Minimal up was simply that, the scope of calculations
+that I *eventually* want to encompass (line of sight, 'hearing' based more
+on distance between objects rather than in a room, and other things
+that need to be based strictly on one objects position relative to another,
+rather than a 'grouping' by rooms which may or may not have any relation
+to size, etc) is going to be a CPU killer I think.  My though was to
+start fresh, and leave alot of the things that I *don't* need out so as
+to save ticks/etc.  However, I will have to look much more deeply into
+ColdCore to make these decisions.
+
+Ok, so now who do I bombard with email to get docs updated and a ColdCore
+compatible with Genesis .3 ??  
+
+-Mike
+
+P.S.  First one that tells me to get off my keister and finish it myself,
+had better be prepared for the end result :)
+mwilson@glock.com                                             mwilson@vt.edu
+    It's difficult to kiss a woman one moment, and kill her the next.
+   If Bill Clinton is the answer, it must be one very stupid question.
+
+</PRE>

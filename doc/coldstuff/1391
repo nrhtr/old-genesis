@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [1391] in "Coldmud discussion meeting"</TITLE>
+<H1>[1391] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1391"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1389"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1390"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1390"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1392"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Cheap CORBA??</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Dec  7 12:31:34 1997
+)</H3>
+<PRE>
+From: ubmitche@mcs.drexel.edu (Bruce Mitchener)
+To: bmccarty@apu.edu (Bill McCarty)
+Date: Sun, 7 Dec 1997 12:01:46 -0500 (EST)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.HPP.3.91.971206171139.4908A-100000@apu.apu.edu&gt; from "Bill McCarty" at Dec 6, 97 05:17:28 pm
+
+Bill McCarthy wrote:
+&gt; Unless you're working with a mixture of Java and non-Java code, you may 
+&gt; find that RMI (included in JDK 1.1) meets all your needs and adds the 
+&gt; ability to execute downloaded code as well. CORBA lacks this potentially 
+&gt; useful capability, though there's talk of adding it to the standard.
+
+Visigenic (now part of of Borland) and Netscape had Caffeine for handling 
+this which appears to headed towards being official.  There are several 
+free CORBA ORBs, including a couple of Java ones.  Look in 
+comp.object.corba and http://adams.patriot.net/~tvalesky/freecorba.html
+and http://linas.org/linux/corba.html
+
+However, I would be really concerned about speed.
+
+ - Bruce
+
+&gt; On Fri, 5 Dec 1997 jeffk@tenetwork.com wrote:
+&gt; &gt; Hey all,
+&gt; &gt; 
+&gt; &gt; I've started playing with Kelvin again.  This version is beig coded in JAVA
+&gt; &gt; for a variety of reasons.
+&gt; &gt; 
+&gt; &gt; An issue I've come across -- I've been reading up on CORBA and it looks
+&gt; &gt; like a very intresting thing to base this on.  Th one problem is that JAVA
+&gt; &gt; CORBA ORBs and coding kits all seem VERY expensve (int the 1 to 3 grand
+&gt; &gt; range.)
+&gt; &gt; 
+&gt; &gt; I don't suppsoe anyone knows of a cheap but decent JAVA CORBA implementation?
+&gt; &gt; 
+&gt; &gt; Just checking.
+
+-- 
+Bruce Mitchener, Jr.
+ubmitche@mcs.drexel.edu
+
+Vote Monarchist!  (licensed from Black Unicorn &lt;unicorn@schloss.li&gt;)
+Ego sum rex romanus, et super grammatica.
+
+</PRE>

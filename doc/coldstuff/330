@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [330] in "Coldmud discussion meeting"</TITLE>
+<H1>[330] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?330"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="329"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="331"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>latest coldmud (11.*)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 26 01:49:04 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Wed, 25 May 1994 22:43:01 -0700 (PDT)
+
+I thought I made this clear in my post mentioning 11.* before, but I guess not.
+
+11.x is not 'released'. I am now aware of three moderately serious bugs, two
+ related to cacheing, one is a problem with the use of sublist() and list
+ addition.
+
+In other words, you don't want it. It's not much better than 10, other than
+ nice code changes that only a server hacker would notice. I mentioned the 
+ changes to the language just so people would be informed.
+
+As far as I know, 11.x will never be released. The next version, whatever its
+ number, will be (untill further notice) written in C++, but otherwise
+ identical to 11.x as far as the user is concerned. When it comes out, you will
+ want to make the changes I described in order to upgrade.
+
+This is months down the line, so feel free to work with 10.3 until then.
+
+Crag, unofficial press agent.
+</PRE>

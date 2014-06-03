@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [170] in "Coldmud discussion meeting"</TITLE>
+<H1>[170] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?170"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="167"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="169"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="169"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="171"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="174"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="178"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Encapsulation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 25 19:32:22 1994
+)</H3>
+<PRE>
+From: zachary@io.com (Zachary )
+To: rayn@q.crossaccess.com (Ray Nawara jr.)
+Cc: ghudson@MIT.EDU (Greg Hudson), coldstuff@MIT.EDU, zachary@io.com
+In-Reply-To: Your message of Fri, 25 Mar 94 15:32:21.
+             &lt;9403252332.AA20006@q.crossaccess.com&gt; 
+Date: Fri, 25 Mar 94 18:28:32 CST
+
+
+&gt;&gt; Well, i was actually suggesting a core modification, as opposed to a server
+&gt;&gt; modification, sorry if you dont want to talk about core issues here...
+
+Greg: *is* there a place for folks to talk about MI core issues?
+Designing an MI core poses some interesteing problems, and I was
+wondering if there's any place to discuss some of them... 
+
+&gt;&gt; &gt; Second, it encourages programmers to think of other objects in terms
+&gt;&gt; &gt; of their state variables rather than their operations.  There's no
+&gt;&gt; &gt; pragmatic difference between "setting a variable on an object" and
+&gt;&gt; &gt; "asking an object to change its variable"; both of these are what
+&gt;&gt; &gt; encapsulation is trying to avoid.  Usually, you should think about
+&gt;&gt; &gt; abstractions in higher terms.  You are not setting the contents
+&gt;&gt; &gt; variable of a container to a list containing an extra item; you are
+&gt;&gt; &gt; adding something to a container's contents.
+&gt;&gt; 
+&gt;&gt; Umm, whats the difference between adding something to the containers contents, 
+&gt;&gt; and asking the container to add someting to its contents? and why is adding 
+&gt;&gt; someting to the cointaier's contents not setting the containers contents variable?
+
+The difference is the conceptual level aat which you and the code operate
+on.  Directly adding something to a containers contents by manipulating
+its internal variables is the wrong kind of thinking... There may be some
+other kinds of things that need to be done when a container adds
+something to its contents - some checking for this or that or whatever -
+that won't be done if you think of the way to put things into a container
+is to get it to manipulate its variables in a certain way.  You need to
+think, instead, of getting the object to ask the container to put be put
+in its contents... this way both objects have ways to 'hook into' the
+process of being moved into the container.  I know this all sounds sort
+of confusing, but basically it says to try to think at a higher level of
+abstraction than code and objects - think of actions instead of code...
+especially when conceptualizing.  Then translate each little action that
+makes upt he overall action into code... 
+
+ --Zachary
+</PRE>

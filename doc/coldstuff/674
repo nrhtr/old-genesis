@@ -1,0 +1,87 @@
+<HEAD><TITLE>discuss@charon: [674] in "Coldmud discussion meeting"</TITLE>
+<H1>[674] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?674"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="672"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="673"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="675"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="680"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar  9 08:29:53 1995
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: nop@ccs.neu.edu (Jay Carlson)
+Date: Thu, 9 Mar 1995 05:18:48 -0800 (PST)
+Cc: cadams@weather.brockport.edu, crag@serial.mit.edu, coldstuff@MIT.EDU,
+        nop@fuji.ccs.neu.edu, eostrom@ccs.neu.edu
+In-Reply-To: &lt;199503081855.NAA14932@fuji.ccs.neu.edu&gt; from "Jay Carlson" at Mar 8, 95 01:55:39 pm
+
+Ok, I might as well stick in my 2 cents once again, for whatever good (or bad)
+it may do..
+
+Basically, I agree with Jay on just about everything he said, so go read his
+message :)
+
+The one thing I don't quite agree on is the symbol for assignment-expression
+(of course)..
+
+Personally, I'd prefer :=..  It's already used in at least one language for
+this purpose (and I don't believe that just because Pascal uses something it
+must be shunned from the face of computing land foerverafter, unlike some
+people apparently do), so it's no great stretch, it has an '=' in it (something
+which I actually believe fairly strongly about in this area, as it makes it a
+_lot_ more obvious by looking at it what it might have to do with), it just
+kinda generally looks like an assignment-type-thing (I dunno, just my aesthetic
+sense, I guess), and it doesn't have any potentially confusing alternate
+meanings in other languages that I know of..
+
+'=:' could be argued similarly, but I dunno, just kinda looks like it's got
+something hanging off the end of it.. rather unappealing to look at as far as
+I'm concerned (sorry, it's that pesky aesthetic sense again, and partially my
+character set in this font, which puts the : lower than the =)
+
+I really don't like -&gt; because it's got a completely different meaning in one
+of the most havily used languages currently available, and would just get
+horribly confusing, I think.  Anyway, it goes the wrong way.
+
+I don't particularly like &lt;- mainly because it doesn't have an = in it (as I
+mentioned above), and because it doesn't much look like an expression either
+(it looks like a statement.. tho I suppose any assignment will conceptually
+seem more like a statement, even if it isn't, but at least '='-based things
+have a history of expressionism(?) to back them up..)
+
+Oh, and Gustavo, I don't know _what_ you're talking about with ':=' and
+mistyping it as '=' (which doesn't exist as an operator).. So what?  they get a
+parse error and they go fix it.. it's not like they're mistyping '==' as '=',
+which is where the huge problem arises in C and MOO and other things..
+
+Anyway, just a couple of comments on Jay's message:
+
+&gt; = is RIGHT OUT.
+
+ditto, ditto, ditto.
+
+&gt; &gt; The
+&gt; &gt; (IMO sad) fact of the matter is that fewer and fewer students are even
+&gt; &gt; taught Pascal before C, so I REALLY think diverging away from C syntax
+&gt; &gt; just because of some misguided notion that "we can do it better" is a BAD
+&gt; &gt; idea.  
+
+Actually, Pascal was officially declared a dead language a little while back..
+Haven't you heard?  Mind you, I'm not particularly sad to see it go, tho there
+are some others who shall remain nameless which I'd rather see bite it..
+
+(I wonder if it signed its operator-donor card..)
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+"We are the music makers, and we are the dreamers of the dreams" -- Willy Wonka
+</PRE>

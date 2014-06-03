@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [777] in "Coldmud discussion meeting"</TITLE>
+<H1>[777] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?777"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="776"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="776"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="776"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="778"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="779"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="781"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Stupid Question Time</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Aug 20 20:17:37 1995
+)</H3>
+<PRE>
+Date: Sun, 20 Aug 1995 18:15:25 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+&lt; Cool!  Guess that means I better get that patch in so I can upgrade.
+&lt; Speakign of which, I have a question for everyone.
+
+BTW, I integrated all of your changes except for the bitwise ops.  You were
+missing some of the stuff required for logical grammar as well as decompiling
+them.
+
+I would suggest patching off 0.1-5 (or whatever you built off) and I can
+gut what I dont need, as 6 and higher are getting very different than what
+you are used to (6 moves all of the non-integral functions to a modules
+subdirectory, where they are turned into libraries, in anticipation of
+me adding native methods on objects).
+
+&lt;    buffer_tail(buff,length(buff)+1);
+
+Umm, I dunno, it should throw a range error, no?  You are asking for something
+out of range.  Otherwise, sublist([1,2,3], 5) should also return []...
+
+&lt; BTW: What do these do? Obviously they are methods on D, I'm just curious.
+
+Umm, it sets the connection object as active, and give's it the host. (grin).
+
+-Brandon
+</PRE>

@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [794] in "Coldmud discussion meeting"</TITLE>
+<H1>[794] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?794"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="790"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="793"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="793"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="795"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="795"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="797"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: exception handling...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 31 18:37:24 1995
+)</H3>
+<PRE>
+To: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Thu, 31 Aug 1995 16:24:05 MDT."
+             &lt;9508312224.AA04443@smithfield.declab.usu.edu&gt; 
+Date: Thu, 31 Aug 1995 18:28:40 EDT
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt;&gt; This isn't an exception handler, it's a switch statement.
+
+&gt; No, it is both.
+
+FYI, CLU (a languaged developed a long time ago to teach software
+engineering at MIT) has a similar exception handling structure:
+
+	statement
+		except	when exception1: statements end
+			when exception2, exception3: statements end
+			others: statements end
+
+It doesn't have an "otherwise," though.  I'm not convinced that
+"otherwise" conveys the right meaning; something like "handle success"
+seems better.
+
+</PRE>

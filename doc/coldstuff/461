@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [461] in "Coldmud discussion meeting"</TITLE>
+<H1>[461] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?461"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="460"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="462"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Why?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct  9 20:59:28 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Sun, 09 Oct 1994 18:37:34 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+coldmud 0.10-3:
+
+;;return "E" in "AEIOU";
+
+=&gt; 2
+
+coldmud 0.12-0:
+
+;;return "E" in "AEIOU";
+
+=&gt; 0
+
+Why the change?
+</PRE>

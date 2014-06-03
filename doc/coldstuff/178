@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [178] in "Coldmud discussion meeting"</TITLE>
+<H1>[178] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?178"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="167"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="177"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="177"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="179"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Encapsulation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 25 21:35:06 1994
+)</H3>
+<PRE>
+Date: Fri, 25 Mar 1994 21:30:56 -0500 (EST)
+From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+To: ghudson@MIT.EDU (Greg Hudson)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9403252332.AA20006@q.crossaccess.com&gt;
+
+Well, my only point worth spewing (if you can call it worth it) is that
+encapsulation is a Good Idea.  For instance:
+Given Player_X and Programmer_Y:
+y does:
+;$player_x.passwd(crypt("newpassword")); // OK, make it proper C-- if it isn't
+If you are not careful (OK, it's an extreme case, but IT COULD HAPPEN), it
+would happen.  Granted, there are ways around this as it is, I suspect, but
+I wouldn't know them, given the fact that I don't know the current core
+well enough to suit me.  If you force each object to define set_param
+methods, then you know exactly which params can be set by other objects.
+As a 'programmer' who spends much of his private time being paranoid about
+privacy (on the net? pfeh), this is a Good Thing.  YMMV,AIIDFT/dev/null
+
+
+</PRE>

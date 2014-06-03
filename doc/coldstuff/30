@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [30] in "Coldmud discussion meeting"</TITLE>
+<H1>[30] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?30"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="29"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="31"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="32"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="46"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Regular expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 16:52:27 1993
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Tue, 16 Nov 93 16:42:42 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+I'm currently leaning against regular expressions.
+
+My reasons:
+
+First, I already provide two matching primitives, match_pattern() and
+match_template(), which should handle some of the cases.  (I'm
+interested in hearing about cases where these aren't useful.)  I don't
+want to provide a complicated tool which will be used for tasks for
+which simpler tools are more appropriate.
+
+Second, regular expressions are slow compared to simpler matching
+primitives.  Precompiling them helps (I would probably implement this
+internally, with some form of caching, rather than add another data
+type), but don't solve the problem.
+
+Third, regular expressions are complicated.  I can fairly easily link
+in, say, the gnu regexp library, but this means I have to worry about
+the GPL, the portability issues associated with gnu code, all the
+cruft that comes with general reusable code (fairly minimal in this
+case, granted), etc..
+
+Fourth, regular expressions are unreadable.  You can do wonderful
+things with them, but they're essentially a write-only language.
+
+Fifth, I'm kind of wary of totally in-server robots.  I think that
+decision mechanisms in robots should generally be done client-side
+(there are plenty of client tools for this).
+
+Sixth, regexps are not a backward-incompatible change, so they can be
+added to a post-1.0 release fairly easily.
+
+That said, I would be happy to implement a simpler pattern-matching
+mechanism (or perhaps modify the behavior of match_pattern()) to
+handle common cases that the current matching primitives aren't good
+for, if they can be organized well enough.  I'll talk to Quinn about
+AHaB's patterns and see what I can do.
+
+--GBH
+
+</PRE>

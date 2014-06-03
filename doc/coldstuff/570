@@ -1,0 +1,66 @@
+<HEAD><TITLE>discuss@charon: [570] in "Coldmud discussion meeting"</TITLE>
+<H1>[570] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?570"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="565"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="569"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="569"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="571"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="571"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Assignment Operator.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  8 20:44:47 1994
+)</H3>
+<PRE>
+To: brandon@avon.declab.usu.edu
+Date: Wed, 9 Nov 1994 06:39:37 -0500 (EST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9411090123.AA01655@avon.declab.usu.edu&gt; from "brandon@avon.declab.usu.edu" at Nov 8, 94 06:23:42 pm
+From: colinm@colinm.ozemail.com.au (Colin McCormack)
+Reply-To: colinm@colinm.ozemail.com.au
+
+colinm@colinm.ozemail.com.au
+
+&gt; &lt; Make ':=' a synonym for '='.
+
+&gt; ... so you would suggest adding the operator ':=' to the driver along
+&gt; side '='?  I would be rather reluctant to make such a change because
+&gt; it is 'dirty' (so to speak).
+
+In my opinion, the act of changing the server to accomodate specific
+learning difficulties (like an inability to comprehend `=') is dirty.
+It's a notational convention, and I believe the assertion that there
+are people out there who can simultaneously have real difficulty with
+'=', and still produce worthwhile code is false. 
+
+Your stated problem is that people have difficulty using one form.
+I don't know if that is so, as I've never met anyone for whom that
+would present a serious problem, but if one assumes that it is so,
+and wants to accomodate them, that is still no reason to indicate
+a preference for one form over the conventional form.  I'd argue
+that people familiar with C++ (on which C-- is modelled) would 
+have more difficulty if we forced a parochial dialect on them,
+and that while this difficulty is no big deal, it's more of a 
+productivity loss than the alternative.
+
+So I recommend that the choice between the two forms remain in the
+hands of the programmer, in this case, since there's no real cost.
+
+&gt; Not to mention that if the idea were
+&gt; to measure how much of either is used when would we put a stopping
+&gt; point to collect the data and make a decision?
+
+As to measurement, I believe it'd be an ongoing source of raw data
+and amusement.  I see no need for a decision point, as I see no 
+inherent difference in the two forms, ":=" is just syntactic 
+saccharine.  The two forms can coexist until doomsday, for all I care.
+
+In summary: I have no desire to foist "=" onto anyone.   I have no intention
+of having ":=" foisted onto me.
+
+Colin.
+
+</PRE>

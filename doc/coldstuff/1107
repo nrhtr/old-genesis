@@ -1,0 +1,66 @@
+<HEAD><TITLE>discuss@charon: [1107] in "Coldmud discussion meeting"</TITLE>
+<H1>[1107] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1107"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1105"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1106"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1106"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1108"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1108"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1108"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] minimal core</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Oct 26 14:05:48 1996
+)</H3>
+<PRE>
+To: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;, coldstuff@cold.org
+In-reply-to: Your message of "Sat, 26 Oct 1996 11:22:45 MDT."
+             &lt;Pine.NEB.3.95.961026111915.18633A-100000@glacier.cold.org&gt; 
+Date: Sat, 26 Oct 1996 12:52:49 -0500
+From: Zachary DeAquila &lt;zachary@zachs.place.org&gt;
+
+On Saturday, Oct 26, 1996, Brandon Gillespie writes:
+&gt;On Sat, 26 Oct 1996, Zachary DeAquila wrote:
+&gt;&gt; Well, I decided to mess around a bit with the latest driver, so I
+&gt;&gt; compiled it up on my linux box (no problems at all.. very cool) and
+&gt;&gt; pulled a brand new Minimalcore out of the box and ran it.
+&gt;
+&gt;I'm hoping to have another ALPHA4 core available today--with @build and
+&gt;company fixed.
+&gt;
+&gt;&gt; Except:
+&gt;&gt; It has one command, QUIT. Said command doesn't seem to work.
+&gt;&gt; 
+&gt;&gt; Really. I mean it. I type QUITE and it responds with Goodbye.
+&gt;&gt; but I stay connected.  Anyone care to explain this?  I read the code
+&gt;&gt; and it all seems to look okay.  I don't grok.
+&gt;
+&gt;Erm, it should have said:
+&gt;
+&gt;  &gt; QUIT
+&gt;  Oops, `QUIT` is not supported here.  Try `@quit`
+&gt;  Use `@help commands` for an explanation on the differences in commands.
+&gt;
+&gt;There is an object in your command cache that knows a few of the
+&gt;unsupported commands, and points you in the right direction (I opted to do
+&gt;this rather than dirty up the actual command environment with lots of
+&gt;different awkward non-standard (by my standards :) aliases)  Use the
+&gt;command '@which QUIT' to see all of the places it shows up (@which does
+&gt;not check command aliases, as they are from a different parser).
+
+Uh, this is MINIMALCORE-3.2.  You're talking about ColdCore.  
+
+&gt;Typing QUITE does:
+&gt;
+&gt;  I don't understand QUITE.
+
+erp. that was a typo on my part. I really typed QUIT.
+
+Under MinimalCore-3.2.  Really. Not Coldcore. or CDC or anything like that.
+MinimalCore.   Someone else already acknowledged that it was broken in 
+private email and said he'd u/l'd a fix to /Incoming  already.
+
+ --Zachary
+</PRE>

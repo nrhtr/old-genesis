@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [661] in "Coldmud discussion meeting"</TITLE>
+<H1>[661] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?661"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="660"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="662"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Signals</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar  3 12:17:59 1995
+)</H3>
+<PRE>
+Date: Fri, 3 Mar 1995 10:12:31 -0700
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+Would somebody email me a copy of /usr/include/signal.h from Linux?  It
+seems Linux defines signals slightly off from the norm (for instance, it
+doesn't even have a SIGSYS (which I know most systems define as 12 (most
+systems being OSF1, Ultrix, Solaris (SunOS 5.4), FreeBSD and I believe
+HP-UX.  Soon as I get my new RS6k online I can check it too...))).
+
+If you are compiling ColdX, just edit sig.c and yank all occurances of
+SIGSYS.
+
+-Brandon
+</PRE>

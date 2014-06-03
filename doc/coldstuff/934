@@ -1,0 +1,96 @@
+<HEAD><TITLE>discuss@charon: [934] in "Coldmud discussion meeting"</TITLE>
+<H1>[934] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?934"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="933"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="935"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="937"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="937"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] MUD system -&gt; MUD system conversion...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar 14 20:54:54 1996
+)</H3>
+<PRE>
+Date: Thu, 14 Mar 1996 18:12:01 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org, moo-cows@parc.xerox.com
+
+I would like input on the following, for anybody who feels up to giving 
+it.  The intention of such a system is to make converting VR aspects of a 
+specific MUD system to another mud system.  It does this by abstracting 
+the information to a command standard format.  The format is negotiable 
+at this moment, what I use is primarily what I could think of at the 
+moment.  The concept is workable; the format needs work, which is why I'm 
+posting here :)
+
+--------------------------------
+Most MOO's, MUSH's, etc have a generic object system which is relatively
+similar (i.e. they all have rooms, or some such similar concept for a
+location).  The following idea is to create 'templates' which objects
+from any system can be dumped to, and which any other system can read back
+into their own db format.  The intention is to create a generic high-level
+specification for Virtual Environment System topology, so that the topology
+can easilly convert from driver to driver.
+
+While these templates do not follow a coordinated heirarchy of 'objects', they
+can be grouped within their own private inheritance tree.  For instance,
+another template could be defined using the generic location template,
+this second template would take on all of the aspects of the generic template,
+plus it would also further define a location.
+
+To reexamine; the purpose of this system is to create a standard set of
+templates which can be used to abstractly represent the topology of most
+systems (MOO, MUSH, TinyMUSH, etc).  With this abstraction one could easilly
+convert from one system to another.  The level of detail/depth that is created
+would be restricted.  However, this system would enable one to convert
+the grunt portion of a system's topology easilly.
+
+Along with templates there is also a generic set of 'data' types
+(dropping back to C for syntax conventions):
+
+    INT (integer)                       125
+    STR (string, lists of characters)   "string"
+    LIST                                {item, item, item}
+    REF                                 $object
+
+The following are examples of template definitions:
+
+template described
+    LIST desc                             // a list of strings
+
+template named
+    STRING name                           // the exit name
+
+
+template location (named, described)
+    LIST exits                            // a list of object references
+
+// a generic exit, it links two rooms, the concept of 'left' and
+// 'right' is abstract, this is just a link connecting both rooms.
+template exit (named, described)
+    REF left
+    REF right
+
+Using these templates as a standard, one could dump a few rooms simply with:
+
+// define the names first, sortof a 'prototype'
+define location $room_1
+    name "Lounge"
+    desc {"The lounge is a quite place where you relax"}
+    exits {$exit_1}
+
+define location $room_2
+    name "Closet"
+    desc {"This is a dark closet, you can't see anything."}
+    exits {$exit_1}
+
+define exit $exit_1
+    name "Door"
+    desc {"a reely bland door."}
+    left $room_1
+    right $room_2
+</PRE>

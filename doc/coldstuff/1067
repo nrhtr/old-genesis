@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1067] in "Coldmud discussion meeting"</TITLE>
+<H1>[1067] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1067"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1066"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1068"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis patch level 12 is available.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug 13 13:58:09 1996
+)</H3>
+<PRE>
+Date: Tue, 13 Aug 1996 11:32:23 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Changes:
+
+      * Added bitwise native methods to $integer, in the cdc module.
+      * our own inet_aton() is added for those systems that do not have it.
+      * the pre-generated salt in crypt_string() was one element too short,
+        which caused it to overflow into other memory.
+      * fixed the textdump reading quote problem
+      * open_connection() was not returning after it threw an error (bad)
+
+You can get it at:
+
+    ftp://ftp.cold.org/cold/drivers/Genesis-1.0p12.tar.gz
+
+-Brandon
+</PRE>

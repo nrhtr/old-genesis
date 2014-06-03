@@ -1,0 +1,787 @@
+<HEAD><TITLE>discuss@charon: [1486] in "Coldmud discussion meeting"</TITLE>
+<H1>[1486] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1486"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1485"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1487"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Messaging system report</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 20 21:03:49 1999
+)</H3>
+<PRE>
+From: "Charles Lance Woodson" &lt;AE-Wauric@aephirsden.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Sat, 20 Nov 1999 19:49:53 -0800
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00AC_01BF3390.69C52C20
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Here is the report on the messaging system that I have written up for =
+Aeternity.  I'm posting it here as it might be helpful documenting for =
+others and to get feedback from you all concerning anything I might have =
+missed or should correct.  Thanks!
+
+Also, thanks to Levi for the help in this.
+
+Lance
+
+The Difference Between Ctext and CML
+-------------------------------------------------------
+Before I explain the messaging system, you need to know the difference
+between CML and Ctext.  CML is the tag imbedded text that staffers will
+enter messaging as.  It looks like:
+
+You take [this].
+
+Ctext is the compiled form of CML that cold C can work with.  It is a =
+frob
+datatype using the $ctext_frob object class.  It looks like:
+
+&lt;$ctext_frob, [["You take ", &lt;$generator, ["this", [], [], 'gen_this]&gt;
+
+In general, a coder making use of any of these existing systems does not
+have to work with Ctext directly.  They only need to call methods that
+generate or retrieve the Ctext and send it to other methods.
+
+Messaging system
+--------------------------
+Help definition of a message:  The message system is used to group =
+several
+different Ctext messages under a specific message type for single
+evaluation. A message is composed of a base and any number of branches. =
+The
+branches defne each specific variation on the message, such as with =
+teleport
+messages--there is the actor's message, the source message and the
+destination message. This message's base is "teleport" with the branches =
+of
+"actor", "source" and "dest". By default if no branch is specified, the
+"general" branch is used instead (so referencing a message with no =
+branch,
+and with the "general" branch are equivalent).
+
+What this means:  This is essentially a callback system to objects to =
+return
+uncompiled Ctext (CML) messages for use by other systems.  A message =
+base
+can be considered a single message case.  Branches can be considered =
+facets
+of a base.  For example, here is a look at the exit-close message base
+defined on $path (as seen with @msg $path:)
+
+  exit-close =3D [actor] closes [this].
+  exit-close.actor =3D You close [this].
+
+In this case, exit-close is the message base, and general and actor are =
+the
+branches.  When a person opens this particular path, the open command =
+method
+will make a call to the path to retrieve this messaging.  The "You close
+[this]." actor branch will be displayed to the person invoking the =
+command,
+while the "[actor] closes [this]." general branch will be displayed to =
+the
+rest of the room.
+
+Message bases and branches can easily be added or subtracted with the
+@msg-define and @msg-undefine commands.  Further customization of =
+messages
+can be accomplished with the addition of new CML tags.
+
+The strengths of this system are:
+=B7 It lets a non-coder override default messaging for different =
+object's
+(people, places, things, paths, etc.) without ever having to code on the
+object or know anything more than how to use the @msg command and CML.
+=B7 It lets a coder derive unique messaging from an object for use by =
+their
+systems.
+=B7 It gives a unique 'look' to different game systems while preserving =
+how
+their mechanics work.
+=B7 Message's are inherited, enabling us to set default messaging for =
+object's
+on core object classes as opposed to each individual object, saving =
+memory
+space and making it unnecessary for GM's to set messaging on every =
+object
+they create.  For example, all default messaging for paths are defined =
+on
+the $path object.  When a GM creates a new path, say $path_22, anything =
+that
+makes use of messages on it will look first at $path_22 for the =
+messaging
+and then at $path for the default if nothing is found.
+=B7 Message bases and branches can be added or subtracted from objects =
+as
+needed with in-game commands (@def-msg and @undef-msg).  No coding is
+necessary.
+=B7 The messaging system is further expandable with the addition of new =
+CML
+tags.
+
+The drawbacks of the present system are:
+=B7 It is not very "intelligent."  You have to write different messaging =
+for
+different viewpoints, even if all parts of the message are the same.  It =
+is
+possible to have a more intelligent messaging system that is able to
+generate messaging for different viewpoints from one single message in =
+these
+instances.
+=B7 Though the system is easy on coders, it could be made even more easy =
+by
+creating a standard method to call to objects to return the dictionary =
+of
+ctext variables for use with the .eval_message() method (see the =
+Retrieving
+&amp; Displaying A Message Via Cold C Section).
+=B7 The command parser itself could generate the ctext variable =
+dictionary
+based on those defined in the command invoking object.  It could then =
+pass
+this directly to the command method for use in the .eval_message() =
+method
+(see the Retrieving &amp; Displaying A Message Via Cold C Section).
+
+Viewing &amp; Modifying Messages
+--------------------------------------------
+To view or modify messages on an object, you must use the @msg command.
+Syntax:
+
+@msg|@message [-clear] [&lt;target&gt;:][&lt;msg&gt;=3D&lt;value&gt;]
+
+&lt;target&gt; is the target object
+&lt;msg&gt; is the message branch and base in the format base.branch.
+&lt;value&gt; is the new message.
+&lt;-clear&gt; will clear the message.
+
+Example:
+ @msg $place_42:
+ -- Messages on the place ($place):
+  connect =3D [actor] wakes up.
+  disconnect =3D [actor] falls asleep.
+  housekeeper =3D The housekeeper arrives and takes [actor]'s body away.
+---
+
+@msg $place_42:connect =3D [actor] blinks his eyes confusedly, as if =
+startled
+out of a trance.
+-- Message changed to:
+  connect =3D [actor] blinks his eyes confusedly, as if startled out of =
+a
+trance.
+
+Defining And Undefining Messages
+-------------------------------------------------
+To define a new message base on an object, you must use the @def-msg
+command.  Syntax is:
+
+@def-msg &lt;target&gt;:&lt;msg&gt; [options]
+&lt;target&gt; is the object.
+&lt;msg&gt; is the message base.
+[options] are the options for the command, as follows:
+
+      +b?ranches       Define the branches, in a comma delimited list =
+(no
+spaces).
+      +c?ompiler       Define the CML compiler object. Defaults to
+$compiler.
+      +e?valuator      Define the CML evaluator object. Defaults to
+$bs_eval.
+      +g?etter            Define the getter. Defaults to =
+'standard_get_msg
+
+Example:
+@def-msg me:test +b=3Dgeneral,actor
+Message $user_wauric:test defined.
+Message branches defined:
+   $user_wauric:test.general
+   $user_wauric:test.actor
+
+In general, the compiler, evaluator and getter should remain the same,
+though this does give us the ability to create new compilers, evaluaters =
+and
+getters. do have the ability to create new compilers, evaluators
+
+To undefine a message base and all branches from an object, you must use =
+the
+@udef-msg command.  Syntax is:
+
+@undef-msg &lt;target&gt;:&lt;msg&gt;
+&lt;target&gt; is the object.
+&lt;msg&gt; is the message base.
+
+Example:
+@undef-msg me:jump
+Message $user_lance:jump undefined.
+
+
+Retrieving &amp; Displaying A Message From An Object Via Cold C
+-------------------------------------------------------------------------=
+---
+------------
+The messaging system is contained in the $foundation object, which makes =
+it
+definable on most object's in the core.  The message definitions are =
+stored
+in the object's defined_msgs variable, while the actual messages are =
+found
+in the msgs variable.  The method for retrieving these messages for =
+display
+is:
+
+$foundation.eval_message(name, definer, vars)
+
+This method will retrieve the ctext messaging for all branches of a =
+message
+base.  The name argument is a string of the message base.  The definer
+argument should be the object name of the object that the message is =
+defined
+in.  The vars argument should be a dictionary containing the Ctext =
+variables
+for the message.  The keys to this vars dictionary should be strings, =
+while
+their associated values should be objnames for the $-variables and =
+whatever
+data types are appropriate for the others.  If the object receiving this
+call does not have a message-definition or actual message stored on it =
+for
+the name specified, then this method will look at the definer object for
+defaults.  Example call:
+
+cvars =3D #[["actor", sender().name()], ["$actor", sender()], ["this",
+this().name()], ["$this", this()]];
+msg =3D $path.eval_message("exit-close", $path, vars);
+
+The return value of a call to .eval_message is a message frob (class
+$message_frob).  Its data part is a dictionary.  The dictionary keys are =
+the
+objnames of the message branch targets (except for the general branch, =
+if it
+exists, which remans string "general").  The associated values of those =
+keys
+are Ctext frobs that contain the text to be displayed to the targets.
+Example return from the above call:
+
+&lt;$message_frob, #[["general", &lt;$ctext_frob, [["Lance", " closes ", =
+"Lance",
+"."], #[["actor", "Lance"], ["$actor", $user_lance], ["this", "Lance"],
+["$this", $user_lance], ['evaluator, $bs_eval], ['varkeys, 0], ['this,
+$path], ['time, 'pre], ['sender, $message_frob]]]&gt;], [$user_lance,
+&lt;$ctext_frob, [["You close ", "Lance", "."], #[["actor", "Lance"],
+["$actor", $user_lance], ["this", "Lance"], ["$this", $user_lance],
+['evaluator, $bs_eval], ['varkeys, 0], ['this, $path], ['time, pre],
+['sender, $message_frob]]]&gt;]]&gt;
+
+The coder does not need to be concerned with that value, however.  I =
+list it
+here only for reference.  To make it display the branches correctly to =
+the
+different parties, all the coder has to do is call .announce() in the
+appropriate locations sending this message frob as the argument.  =
+Continuing
+the above example, this would be:
+
+ sender().location().announce(msg);
+
+In this case, this will display the actor branch to the actor and the
+general branch to the rest of the room.
+
+One of the ways the system could be improved is to create a standard =
+method
+for retrieving the ctext variables from an object.  On some objects =
+there is
+a method that returns this variable dictionary for you, such as
+$path.path_msg_vars(), while on others you have to know the variable
+dictionary to send it as an argument, such as when calling =
+.eval_message()
+to a descendant of $user.
+
+Walkthrough Of Message System Use
+-----------------------------------------------------
+The following is a walkthrough for creating the jump verb on =
+$user_wauric
+that uses messaging defined on $user_wauric.  I also show how the =
+messaging
+can be changed easily in game with the @msg command, though the verb
+mechanics remain the same.
+
+@def-msg me:jump +b=3Dgeneral,actor
+Message $user_wauric:jump defined.
+Message branches defined:
+  $user_wauric:jump.general
+  $user_wauric:jump.actor
+
+@msg me:jump=3D[actor] jumps up and down!
+-- Message changed to:
+  jump =3D [actor] jumps up and down!
+
+@msg me:jump.actor=3DYou jump up and down!
+-- Message changed to:
+  jump.actor =3D You jump up and down!
+
+@program .jump_cmd
+-- Reprogramming public method $user_wauric.jump_cmd() --
+arg cmdstr, cmd;
+var vars, message;
+
+vars =3D #[["actor", sender().name()], ["$actor", sender()]];
+message =3D .eval_message("jump", $user_wauric, vars);
+sender().location().announce(message);
+.
+
+@ac "jump" to $user_wauric.jump_cmd
+Command "jump" added to $user_wauric.jump_cmd()
+
+@rehash
+Rehashing (raw) commands on Wauric ($user_wauric)...
+Done.
+
+jump
+You jump up and down!
+
+Rest of room sees:
+Wauric jumps up and down!
+
+@msg me:jump=3D[actor] hops around in circles.
+-- Message changed to:
+  jump =3D [actor] hops around in circles.
+
+@msg me:jump.actor=3DYou hop around in a circle.
+-- Message changed to:
+  jump.actor =3D You hop around in a circle.
+
+jump
+You hop around in a circle.
+
+Rest of room sees:
+Wauric hops around in circles.
+
+Improving The System With Ctext Variable Retrieval Methods
+-------------------------------------------------------------------------=
+---
+--------
+To give an example of how the current system can be made easier to use
+through ctext variable retrieval methods, I created the following
+.get_ctext_vars() method on $user_wauric:
+
+
+arg @args;
+var vars;
+
+// Standard ctext variable initialization method.
+//
+// args argument is for a list of optional objects (if needed).
+//
+// args[1] =3D the target object
+// args[2] =3D the destination place
+//
+
+vars =3D #[];
+vars =3D dict_add(vars, "actor", .name());
+vars =3D dict_add(vars, "$actor", this());
+vars =3D dict_add(vars, "source", .location());
+vars =3D dict_add(vars, "$source", .location());
+(| vars =3D dict_add(vars, "target", args[1].name()) |);
+(| vars =3D dict_add(vars, "$target", args[1]) |);
+(| vars =3D dict_add(vars, "dest", args[2]) |);
+(| vars =3D dict_add(vars, "$dest", args[2]) |);
+return vars;
+
+I then reprogrammed the $user_wauric.jump_cmd() method as
+follows:
+
+  arg cmdstr, cmd;
+  var vars, message;
+
+  vars =3D .get_ctext_vars();
+  message =3D .eval_message("jump", $user_wauric, vars);
+  sender().location().announce(message);
+
+The benefit of creating these retrieval methods is that coders do not =
+have to remember what Ctext variables exist on an object or what format =
+to pass them as an  argument to .eval_message().  Needless to say, this =
+would save coder time down the road.
+
+
+
+------=_NextPart_000_00AC_01BF3390.69C52C20
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META content=3D"text/html; charset=3Diso-8859-1" =
+http-equiv=3DContent-Type&gt;
+&lt;META content=3D"MSHTML 5.00.2314.1000" name=3DGENERATOR&gt;
+&lt;STYLE&gt;&lt;/STYLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY bgColor=3D#ffffff&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;Here is the report on the messaging system that I =
+have written=20
+up for Aeternity.&amp;nbsp; I'm posting it here as it might be helpful =
+documenting=20
+for others and to get&amp;nbsp;feedback from you all concerning anything I =
+might=20
+have missed or should correct.&amp;nbsp; Thanks!&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;Also, thanks to Levi for the help in =
+this.&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;Lance&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;The Difference Between Ctext and=20
+CML&lt;BR&gt;-------------------------------------------------------&lt;BR&gt;Before =
+I=20
+explain the messaging system, you need to know the difference&lt;BR&gt;between =
+CML and=20
+Ctext.&amp;nbsp; CML is the tag imbedded text that staffers will&lt;BR&gt;enter =
+messaging=20
+as.&amp;nbsp; It looks like:&lt;BR&gt;&lt;BR&gt;You take [this].&lt;BR&gt;&lt;BR&gt;Ctext is the =
+compiled=20
+form of CML that cold C can work with.&amp;nbsp; It is a frob&lt;BR&gt;datatype =
+using the=20
+$ctext_frob object class.&amp;nbsp; It looks like:&lt;BR&gt;&lt;BR&gt;&amp;lt;$ctext_frob, =
+[["You=20
+take ", &amp;lt;$generator, ["this", [], [], 'gen_this]&amp;gt;&lt;BR&gt;&lt;BR&gt;In =
+general, a=20
+coder making use of any of these existing systems does not&lt;BR&gt;have to =
+work with=20
+Ctext directly.&amp;nbsp; They only need to call methods that&lt;BR&gt;generate or =
+
+retrieve the Ctext and send it to other methods.&lt;BR&gt;&lt;BR&gt;Messaging=20
+system&lt;BR&gt;--------------------------&lt;BR&gt;Help definition of a =
+message:&amp;nbsp; The=20
+message system is used to group several&lt;BR&gt;different Ctext messages =
+under a=20
+specific message type for single&lt;BR&gt;evaluation. A message is composed of =
+a base=20
+and any number of branches. The&lt;BR&gt;branches defne each specific =
+variation on the=20
+message, such as with teleport&lt;BR&gt;messages--there is the actor's =
+message, the=20
+source message and the&lt;BR&gt;destination message. This message's base is =
+"teleport"=20
+with the branches of&lt;BR&gt;"actor", "source" and "dest". By default if no =
+branch is=20
+specified, the&lt;BR&gt;"general" branch is used instead (so referencing a =
+message=20
+with no branch,&lt;BR&gt;and with the "general" branch are =
+equivalent).&lt;BR&gt;&lt;BR&gt;What=20
+this means:&amp;nbsp; This is essentially a callback system to objects to=20
+return&lt;BR&gt;uncompiled Ctext (CML) messages for use by other =
+systems.&amp;nbsp; A=20
+message base&lt;BR&gt;can be considered a single message case.&amp;nbsp; Branches =
+can be=20
+considered facets&lt;BR&gt;of a base.&amp;nbsp; For example, here is a look at the =
+
+exit-close message base&lt;BR&gt;defined on $path (as seen with @msg=20
+$path:)&lt;BR&gt;&lt;BR&gt;&amp;nbsp; exit-close =3D [actor] closes [this].&lt;BR&gt;&amp;nbsp;=20
+exit-close.actor =3D You close [this].&lt;BR&gt;&lt;BR&gt;In this case, exit-close =
+is the=20
+message base, and general and actor are the&lt;BR&gt;branches.&amp;nbsp; When a =
+person=20
+opens this particular path, the open command method&lt;BR&gt;will make a call =
+to the=20
+path to retrieve this messaging.&amp;nbsp; The "You close&lt;BR&gt;[this]." actor =
+branch=20
+will be displayed to the person invoking the command,&lt;BR&gt;while the =
+"[actor]=20
+closes [this]." general branch will be displayed to the&lt;BR&gt;rest of the=20
+room.&lt;BR&gt;&lt;BR&gt;Message bases and branches can easily be added or =
+subtracted with=20
+the&lt;BR&gt;@msg-define and @msg-undefine commands.&amp;nbsp; Further =
+customization of=20
+messages&lt;BR&gt;can be accomplished with the addition of new CML =
+tags.&lt;BR&gt;&lt;BR&gt;The=20
+strengths of this system are:&lt;BR&gt;=B7 It lets a non-coder override =
+default=20
+messaging for different object's&lt;BR&gt;(people, places, things, paths, =
+etc.)=20
+without ever having to code on the&lt;BR&gt;object or know anything more than =
+how to=20
+use the @msg command and CML.&lt;BR&gt;=B7 It lets a coder derive unique =
+messaging from=20
+an object for use by their&lt;BR&gt;systems.&lt;BR&gt;=B7 It gives a unique 'look' =
+to=20
+different game systems while preserving how&lt;BR&gt;their mechanics =
+work.&lt;BR&gt;=B7=20
+Message's are inherited, enabling us to set default messaging for =
+object's&lt;BR&gt;on=20
+core object classes as opposed to each individual object, saving =
+memory&lt;BR&gt;space=20
+and making it unnecessary for GM's to set messaging on every =
+object&lt;BR&gt;they=20
+create.&amp;nbsp; For example, all default messaging for paths are defined =
+on&lt;BR&gt;the=20
+$path object.&amp;nbsp; When a GM creates a new path, say $path_22, anything =
+
+that&lt;BR&gt;makes use of messages on it will look first at $path_22 for the=20
+messaging&lt;BR&gt;and then at $path for the default if nothing is =
+found.&lt;BR&gt;=B7 Message=20
+bases and branches can be added or subtracted from objects as&lt;BR&gt;needed =
+with=20
+in-game commands (@def-msg and @undef-msg).&amp;nbsp; No coding=20
+is&lt;BR&gt;necessary.&lt;BR&gt;=B7 The messaging system is further expandable with =
+the=20
+addition of new CML&lt;BR&gt;tags.&lt;BR&gt;&lt;BR&gt;The drawbacks of the present system=20
+are:&lt;BR&gt;=B7 It is not very "intelligent."&amp;nbsp; You have to write =
+different=20
+messaging for&lt;BR&gt;different viewpoints, even if all parts of the message =
+are the=20
+same.&amp;nbsp; It is&lt;BR&gt;possible to have a more intelligent messaging =
+system that=20
+is able to&lt;BR&gt;generate messaging for different viewpoints from one =
+single=20
+message in these&lt;BR&gt;instances.&lt;BR&gt;=B7 Though the system is easy on =
+coders, it=20
+could be made even more easy by&lt;BR&gt;creating a standard method to call to =
+objects=20
+to return the dictionary of&lt;BR&gt;ctext variables for use with the =
+.eval_message()=20
+method (see the Retrieving&lt;BR&gt;&amp;amp; Displaying A Message Via Cold C=20
+Section).&lt;BR&gt;=B7 The command parser itself could generate the ctext =
+variable=20
+dictionary&lt;BR&gt;based on those defined in the command invoking =
+object.&amp;nbsp; It=20
+could then pass&lt;BR&gt;this directly to the command method for use in the=20
+.eval_message() method&lt;BR&gt;(see the Retrieving &amp;amp; Displaying A Message =
+Via=20
+Cold C Section).&lt;BR&gt;&lt;BR&gt;Viewing &amp;amp; Modifying=20
+Messages&lt;BR&gt;--------------------------------------------&lt;BR&gt;To view or =
+modify=20
+messages on an object, you must use the @msg=20
+command.&lt;BR&gt;Syntax:&lt;BR&gt;&lt;BR&gt;@msg|@message [-clear]=20
+[&amp;lt;target&amp;gt;:][&amp;lt;msg&amp;gt;=3D&amp;lt;value&amp;gt;]&lt;BR&gt;&lt;BR&gt;&amp;lt;target&amp;gt; is =
+the target=20
+object&lt;BR&gt;&amp;lt;msg&amp;gt; is the message branch and base in the format=20
+base.branch.&lt;BR&gt;&amp;lt;value&amp;gt; is the new message.&lt;BR&gt;&amp;lt;-clear&amp;gt; will =
+clear=20
+the message.&lt;BR&gt;&lt;BR&gt;Example:&lt;BR&gt;&amp;nbsp;@msg $place_42:&lt;BR&gt;&amp;nbsp;-- =
+Messages on=20
+the place ($place):&lt;BR&gt;&amp;nbsp; connect =3D [actor] wakes up.&lt;BR&gt;&amp;nbsp; =
+disconnect =3D=20
+[actor] falls asleep.&lt;BR&gt;&amp;nbsp; housekeeper =3D The housekeeper arrives =
+and takes=20
+[actor]'s body away.&lt;BR&gt;---&lt;BR&gt;&lt;BR&gt;@msg $place_42:connect =3D [actor] =
+blinks his=20
+eyes confusedly, as if startled&lt;BR&gt;out of a trance.&lt;BR&gt;-- Message =
+changed=20
+to:&lt;BR&gt;&amp;nbsp; connect =3D [actor] blinks his eyes confusedly, as if =
+startled out=20
+of a&lt;BR&gt;trance.&lt;BR&gt;&lt;BR&gt;Defining And Undefining=20
+Messages&lt;BR&gt;-------------------------------------------------&lt;BR&gt;To =
+define a new=20
+message base on an object, you must use the @def-msg&lt;BR&gt;command.&amp;nbsp; =
+Syntax=20
+is:&lt;BR&gt;&lt;BR&gt;@def-msg &amp;lt;target&amp;gt;:&amp;lt;msg&amp;gt; =
+[options]&lt;BR&gt;&amp;lt;target&amp;gt; is=20
+the object.&lt;BR&gt;&amp;lt;msg&amp;gt; is the message base.&lt;BR&gt;[options] are the =
+options for=20
+the command, as follows:&lt;BR&gt;&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;=20
++b?ranches&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Define the branches, in a =
+comma=20
+delimited list (no&lt;BR&gt;spaces).&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;=20
++c?ompiler&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Define the CML compiler =
+object.=20
+Defaults to&lt;BR&gt;$compiler.&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;=20
++e?valuator&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Define the CML evaluator =
+object.=20
+Defaults to&lt;BR&gt;$bs_eval.&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;=20
++g?etter&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp=
+;=20
+Define the getter. Defaults to =
+'standard_get_msg&lt;BR&gt;&lt;BR&gt;Example:&lt;BR&gt;@def-msg=20
+me:test +b=3Dgeneral,actor&lt;BR&gt;Message $user_wauric:test =
+defined.&lt;BR&gt;Message=20
+branches defined:&lt;BR&gt;&amp;nbsp;&amp;nbsp; =
+$user_wauric:test.general&lt;BR&gt;&amp;nbsp;&amp;nbsp;=20
+$user_wauric:test.actor&lt;BR&gt;&lt;BR&gt;In general, the compiler, evaluator and =
+getter=20
+should remain the same,&lt;BR&gt;though this does give us the ability to =
+create new=20
+compilers, evaluaters and&lt;BR&gt;getters. do have the ability to create new=20
+compilers, evaluators&lt;BR&gt;&lt;BR&gt;To undefine a message base and all branches =
+from an=20
+object, you must use the&lt;BR&gt;@udef-msg command.&amp;nbsp; Syntax=20
+is:&lt;BR&gt;&lt;BR&gt;@undef-msg &amp;lt;target&amp;gt;:&amp;lt;msg&amp;gt;&lt;BR&gt;&amp;lt;target&amp;gt; is =
+the=20
+object.&lt;BR&gt;&amp;lt;msg&amp;gt; is the message =
+base.&lt;BR&gt;&lt;BR&gt;Example:&lt;BR&gt;@undef-msg=20
+me:jump&lt;BR&gt;Message $user_lance:jump undefined.&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;Retrieving =
+&amp;amp;=20
+Displaying A Message From An Object Via Cold=20
+C&lt;BR&gt;--------------------------------------------------------------------=
+--------&lt;BR&gt;------------&lt;BR&gt;The=20
+messaging system is contained in the $foundation object, which makes=20
+it&lt;BR&gt;definable on most object's in the core.&amp;nbsp; The message =
+definitions are=20
+stored&lt;BR&gt;in the object's defined_msgs variable, while the actual =
+messages are=20
+found&lt;BR&gt;in the msgs variable.&amp;nbsp; The method for retrieving these =
+messages=20
+for display&lt;BR&gt;is:&lt;BR&gt;&lt;BR&gt;$foundation.eval_message(name, definer,=20
+vars)&lt;BR&gt;&lt;BR&gt;This method will retrieve the ctext messaging for all =
+branches of a=20
+message&lt;BR&gt;base.&amp;nbsp; The name argument is a string of the message =
+base.&amp;nbsp;=20
+The definer&lt;BR&gt;argument should be the object name of the object that the =
+message=20
+is defined&lt;BR&gt;in.&amp;nbsp; The vars argument should be a dictionary =
+containing the=20
+Ctext variables&lt;BR&gt;for the message.&amp;nbsp; The keys to this vars =
+dictionary=20
+should be strings, while&lt;BR&gt;their associated values should be objnames =
+for the=20
+$-variables and whatever&lt;BR&gt;data types are appropriate for the =
+others.&amp;nbsp; If=20
+the object receiving this&lt;BR&gt;call does not have a message-definition or =
+actual=20
+message stored on it for&lt;BR&gt;the name specified, then this method will =
+look at=20
+the definer object for&lt;BR&gt;defaults.&amp;nbsp; Example call:&lt;BR&gt;&lt;BR&gt;cvars =3D =
+
+#[["actor", sender().name()], ["$actor", sender()], =
+["this",&lt;BR&gt;this().name()],=20
+["$this", this()]];&lt;BR&gt;msg =3D $path.eval_message("exit-close", $path,=20
+vars);&lt;BR&gt;&lt;BR&gt;The return value of a call to .eval_message is a message =
+frob=20
+(class&lt;BR&gt;$message_frob).&amp;nbsp; Its data part is a dictionary.&amp;nbsp; The =
+
+dictionary keys are the&lt;BR&gt;objnames of the message branch targets =
+(except for=20
+the general branch, if it&lt;BR&gt;exists, which remans string =
+"general").&amp;nbsp; The=20
+associated values of those keys&lt;BR&gt;are Ctext frobs that contain the text =
+to be=20
+displayed to the targets.&lt;BR&gt;Example return from the above=20
+call:&lt;BR&gt;&lt;BR&gt;&amp;lt;$message_frob, #[["general", &amp;lt;$ctext_frob, =
+[["Lance", "=20
+closes ", "Lance",&lt;BR&gt;"."], #[["actor", "Lance"], ["$actor", =
+$user_lance],=20
+["this", "Lance"],&lt;BR&gt;["$this", $user_lance], ['evaluator, $bs_eval], =
+['varkeys,=20
+0], ['this,&lt;BR&gt;$path], ['time, 'pre], ['sender, $message_frob]]]&amp;gt;],=20
+[$user_lance,&lt;BR&gt;&amp;lt;$ctext_frob, [["You close ", "Lance", "."], =
+#[["actor",=20
+"Lance"],&lt;BR&gt;["$actor", $user_lance], ["this", "Lance"], ["$this",=20
+$user_lance],&lt;BR&gt;['evaluator, $bs_eval], ['varkeys, 0], ['this, $path], =
+['time,=20
+pre],&lt;BR&gt;['sender, $message_frob]]]&amp;gt;]]&amp;gt;&lt;BR&gt;&lt;BR&gt;The coder does not =
+need to=20
+be concerned with that value, however.&amp;nbsp; I list it&lt;BR&gt;here only for=20
+reference.&amp;nbsp; To make it display the branches correctly to =
+the&lt;BR&gt;different=20
+parties, all the coder has to do is call .announce() in =
+the&lt;BR&gt;appropriate=20
+locations sending this message frob as the argument.&amp;nbsp; =
+Continuing&lt;BR&gt;the=20
+above example, this would=20
+be:&lt;BR&gt;&lt;BR&gt;&amp;nbsp;sender().location().announce(msg);&lt;BR&gt;&lt;BR&gt;In this case, =
+this=20
+will display the actor branch to the actor and the&lt;BR&gt;general branch to =
+the rest=20
+of the room.&lt;BR&gt;&lt;BR&gt;One of the ways the system could be improved is to =
+create a=20
+standard method&lt;BR&gt;for retrieving the ctext variables from an =
+object.&amp;nbsp; On=20
+some objects there is&lt;BR&gt;a method that returns this variable dictionary =
+for you,=20
+such as&lt;BR&gt;$path.path_msg_vars(), while on others you have to know the=20
+variable&lt;BR&gt;dictionary to send it as an argument, such as when calling=20
+.eval_message()&lt;BR&gt;to a descendant of $user.&lt;BR&gt;&lt;BR&gt;Walkthrough Of =
+Message=20
+System =
+Use&lt;BR&gt;-----------------------------------------------------&lt;BR&gt;The=20
+following is a walkthrough for creating the jump verb on =
+$user_wauric&lt;BR&gt;that=20
+uses messaging defined on $user_wauric.&amp;nbsp; I also show how the=20
+messaging&lt;BR&gt;can be changed easily in game with the @msg command, though =
+the=20
+verb&lt;BR&gt;mechanics remain the same.&lt;BR&gt;&lt;BR&gt;@def-msg me:jump=20
++b=3Dgeneral,actor&lt;BR&gt;Message $user_wauric:jump defined.&lt;BR&gt;Message =
+branches=20
+defined:&lt;BR&gt;&amp;nbsp; $user_wauric:jump.general&lt;BR&gt;&amp;nbsp;=20
+$user_wauric:jump.actor&lt;BR&gt;&lt;BR&gt;@msg me:jump=3D[actor] jumps up and =
+down!&lt;BR&gt;--=20
+Message changed to:&lt;BR&gt;&amp;nbsp; jump =3D [actor] jumps up and =
+down!&lt;BR&gt;&lt;BR&gt;@msg=20
+me:jump.actor=3DYou jump up and down!&lt;BR&gt;-- Message changed =
+to:&lt;BR&gt;&amp;nbsp;=20
+jump.actor =3D You jump up and down!&lt;BR&gt;&lt;BR&gt;@program .jump_cmd&lt;BR&gt;-- =
+Reprogramming=20
+public method $user_wauric.jump_cmd() --&lt;BR&gt;arg cmdstr, cmd;&lt;BR&gt;var =
+vars,=20
+message;&lt;BR&gt;&lt;BR&gt;vars =3D #[["actor", sender().name()], ["$actor",=20
+sender()]];&lt;BR&gt;message =3D .eval_message("jump", $user_wauric,=20
+vars);&lt;BR&gt;sender().location().announce(message);&lt;BR&gt;.&lt;BR&gt;&lt;BR&gt;@ac "jump" =
+to=20
+$user_wauric.jump_cmd&lt;BR&gt;Command "jump" added to=20
+$user_wauric.jump_cmd()&lt;BR&gt;&lt;BR&gt;@rehash&lt;BR&gt;Rehashing (raw) commands on =
+Wauric=20
+($user_wauric)...&lt;BR&gt;Done.&lt;BR&gt;&lt;BR&gt;jump&lt;BR&gt;You jump up and =
+down!&lt;BR&gt;&lt;BR&gt;Rest of=20
+room sees:&lt;BR&gt;Wauric jumps up and down!&lt;BR&gt;&lt;BR&gt;@msg me:jump=3D[actor] =
+hops around=20
+in circles.&lt;BR&gt;-- Message changed to:&lt;BR&gt;&amp;nbsp; jump =3D [actor] hops =
+around in=20
+circles.&lt;BR&gt;&lt;BR&gt;@msg me:jump.actor=3DYou hop around in a circle.&lt;BR&gt;-- =
+Message=20
+changed to:&lt;BR&gt;&amp;nbsp; jump.actor =3D You hop around in a=20
+circle.&lt;BR&gt;&lt;BR&gt;jump&lt;BR&gt;You hop around in a circle.&lt;BR&gt;&lt;BR&gt;Rest of room=20
+sees:&lt;BR&gt;Wauric hops around in circles.&lt;BR&gt;&lt;BR&gt;Improving The System With =
+Ctext=20
+Variable Retrieval=20
+Methods&lt;BR&gt;--------------------------------------------------------------=
+--------------&lt;BR&gt;--------&lt;BR&gt;To=20
+give an example of how the current system can be made easier to =
+use&lt;BR&gt;through=20
+ctext variable retrieval methods, I created the =
+following&lt;BR&gt;.get_ctext_vars()=20
+method on $user_wauric:&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;arg @args;&lt;BR&gt;var vars;&lt;BR&gt;&lt;BR&gt;// =
+Standard=20
+ctext variable initialization method.&lt;BR&gt;//&lt;BR&gt;// args argument is for a =
+list of=20
+optional objects (if needed).&lt;BR&gt;//&lt;BR&gt;// args[1] =3D the target =
+object&lt;BR&gt;//=20
+args[2] =3D the destination place&lt;BR&gt;//&lt;BR&gt;&lt;BR&gt;vars =3D #[];&lt;BR&gt;vars =3D =
+
+dict_add(vars, "actor", .name());&lt;BR&gt;vars =3D dict_add(vars, "$actor",=20
+this());&lt;BR&gt;vars =3D dict_add(vars, "source", .location());&lt;BR&gt;vars =3D=20
+dict_add(vars, "$source", .location());&lt;BR&gt;(| vars =3D dict_add(vars, =
+"target",=20
+args[1].name()) |);&lt;BR&gt;(| vars =3D dict_add(vars, "$target", args[1]) =
+|);&lt;BR&gt;(|=20
+vars =3D dict_add(vars, "dest", args[2]) |);&lt;BR&gt;(| vars =3D =
+dict_add(vars, "$dest",=20
+args[2]) |);&lt;BR&gt;return vars;&lt;BR&gt;&lt;BR&gt;I then reprogrammed the=20
+$user_wauric.jump_cmd() method as&lt;BR&gt;follows:&lt;BR&gt;&lt;BR&gt;&amp;nbsp; arg cmdstr,=20
+cmd;&lt;BR&gt;&amp;nbsp; var vars, message;&lt;BR&gt;&lt;BR&gt;&amp;nbsp; vars =3D=20
+.get_ctext_vars();&lt;BR&gt;&amp;nbsp; message =3D .eval_message("jump", =
+$user_wauric,=20
+vars);&lt;BR&gt;&amp;nbsp; sender().location().announce(message);&lt;BR&gt;&lt;BR&gt;The =
+benefit of=20
+creating these&amp;nbsp;retrieval methods is that coders do not have to =
+remember=20
+what Ctext variables exist on an object or what format to pass them as =
+an&amp;nbsp;=20
+argument to .eval_message().&amp;nbsp; Needless to say, this would save =
+coder time=20
+down the road.&lt;/FONT&gt;&lt;FONT size=3D2&gt;&lt;BR&gt;&lt;BR&gt;&lt;/DIV&gt;&lt;/FONT&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+
+------=_NextPart_000_00AC_01BF3390.69C52C20--
+
+</PRE>

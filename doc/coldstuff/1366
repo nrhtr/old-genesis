@@ -1,0 +1,91 @@
+<HEAD><TITLE>discuss@charon: [1366] in "Coldmud discussion meeting"</TITLE>
+<H1>[1366] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1366"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1365"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1367"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1367"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1368"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Having problems tranferring users from old db to new</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  9 23:47:23 1997
+)</H3>
+<PRE>
+Date: Sun, 09 Nov 1997 21:46:27 -0900
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+
+--------------4766E2755D2CB068B3EFBFDC
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+What is a good way of moving a user from an old db to a newer db?
+
+I'm trying to upgrade from a7 to a9.02, but I' m having some problems
+with moving the user accounts.  I can transfer the $user_*s to the new
+database, but if I try to connect as one of my test users, I get an
+error message that the the user either doesn't exist or the password is
+wrong.  If i try to create another user with the same name, i get the
+message that the name is in use.
+
+I also created a new test user and logged in and could see all the users
+with @child $user, so I know that the users have been moved.
+
+I also tried to @dump a user from one db and use tinyfugue to create the
+user at a new db.  I still had the same problem.
+
+Essentially I have a a9.02 database with my old rooms, exits, objects,
+and people.  But the users can't log in although the password is still
+the same.
+
+frank
+
+--
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+
+
+
+--------------4766E2755D2CB068B3EFBFDC
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+&lt;HTML&gt;
+&lt;BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000"&gt;
+What is a good way of moving a user from an old db to a newer db?
+
+&lt;P&gt;I'm trying to upgrade from a7 to a9.02, but I' m having some problems
+with moving the user accounts.&amp;nbsp; I can transfer the $user_*s to the
+new database, but if I try to connect as one of my test users, I get an
+error message that the the user either doesn't exist or the password is
+wrong.&amp;nbsp; If i try to create another user with the same name, i get
+the message that the name is in use.
+
+&lt;P&gt;I also created a new test user and logged in and could see all the users
+with @child $user, so I know that the users have been moved.
+
+&lt;P&gt;I also tried to @dump a user from one db and use tinyfugue to create
+the user at a new db.&amp;nbsp; I still had the same problem.
+
+&lt;P&gt;Essentially I have a a9.02 database with my old rooms, exits, objects,
+and people.&amp;nbsp; But the users can't log in although the password is still
+the same.
+
+&lt;P&gt;frank
+&lt;PRE&gt;--&amp;nbsp;
+_______________________________________
+maddog's studio &lt;A HREF="http://www.maddog.com/"&gt;http://www.maddog.com/&lt;/A&gt;
+Frank Crowell frankc@maddog.com&lt;/PRE&gt;
+&amp;nbsp;
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+
+--------------4766E2755D2CB068B3EFBFDC--
+
+</PRE>

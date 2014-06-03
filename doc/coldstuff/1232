@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [1232] in "Coldmud discussion meeting"</TITLE>
+<H1>[1232] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1232"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1231"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1233"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis 1.0p24 released</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Feb 10 19:12:36 1997
+)</H3>
+<PRE>
+Date: Mon, 10 Feb 1997 17:02:09 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+This is more of a feature release, Major Changes:
+
+   * $string.html_escape added, does the minimal necessary escapes.
+   * new functions listidx() and bufidx() (to go along stridx())
+   * genesis can setuid to another user now (-g and -u options)
+   * genesis can prebind network ports, if running as root (so that
+     later after an suid it can use them).  Use the -p option, formatted
+     as [ADDR]:PORT.  UDP ports are specified as with bind_port() by
+     specifying a negative port number. ADDR must be a valid IP
+     address--not a domain name.
+
+Minor Changes:
+
+   * The third argument to list_method() now is a bitfield, see:
+     http://www.cold.org:1180/bin/help?node=help_func_list_method
+   * updated configure scripts to handle newer OS's
+   * if the driver dies at startup it'll print to both errlog and stderr
+   * Redid all genesis arguments to allow for easier expanding.
+     Full list is (as always) available with genesis -h.
+   * Bugfixes: objects were not dirtied when the objname was changed;
+     `[buf] in `[buf] would fail sometimes; fchmod() would get its
+     args confused.
+   * Made the path argument to fremove() required.
+   * Any 'stat' info returned from a file function will now format the
+     file mode as an octal number in a string
+   * a touch more cleanup with Win32 and Win32 docs (Jon Lambert)
+
+As always, it is available at:
+
+    ftp://ftp.cold.org/cold/drivers/Genesis.tar.gz
+
+There is a patch as well.
+
+-Brandon Gillespie
+
+</PRE>

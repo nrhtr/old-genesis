@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [906] in "Coldmud discussion meeting"</TITLE>
+<H1>[906] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?906"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="905"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="907"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>2-10 crash ?? (weird)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan 22 18:48:50 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@MIT.EDU
+Date: Mon, 22 Jan 1996 15:43:10 +0000
+
+Hey all,
+
+I did some work this weekend on my Liux box using genesis 2-10 that I 
+have there.  It all worked fine.
+
+I brought my textdump into work and tried to run it with my 2-10 on 
+Solaris and coldcc crahed out with a null pointer reference.
+
+This is REALLY weird.
+
+Any suggestions?
+
+JK
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+Clinton Gingrich Atomic Biological Bomb NSA -- Hi John!
+(A message for my friend in the NSA)
+*******************************************************
+</PRE>

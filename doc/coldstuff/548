@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [548] in "Coldmud discussion meeting"</TITLE>
+<H1>[548] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?548"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="547"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="549"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="552"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="556"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>coldmud compile, not good at netcom</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 22:03:57 1994
+)</H3>
+<PRE>
+From: frankc@netcom.com (Frank Crowell)
+To: coldstuff@MIT.EDU
+Date: Sun, 6 Nov 1994 18:59:27 -0800 (PST)
+
+On netcom, I am having trouble compiling coldmud (0.10 and 0.12-1).
+I get the same warnings and error messages.  Util.c gives
+a fatal error concerning RAND_MAX and i also get a lot
+of implicit warnings.
+
+Anyone out there from netcom know if anything has changed
+that would cause coldmud (and fmpl 1.6) to not compile?
+
+I think the only server that I have been able to build tonight
+is LambdaMOO (lastest version).
+
+well so much for muds, I think i will go get a pizza.
+
+-frank
+
+-- 
+[Frank Crowell  			 frankc@netcom.COM]
+[Home page	ftp://ftp.netcom.com/pub/frankc/pages.html]
+</PRE>

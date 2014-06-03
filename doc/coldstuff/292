@@ -1,0 +1,218 @@
+<HEAD><TITLE>discuss@charon: [292] in "Coldmud discussion meeting"</TITLE>
+<H1>[292] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?292"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="291"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="293"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ip-&gt;host, host-&gt;ip</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 21 02:21:05 1994
+)</H3>
+<PRE>
+From: merlin@kernighan.cba.csuohio.edu (Randy Beiter)
+To: coldstuff@MIT.EDU
+Date: Sat, 21 May 1994 01:44:19 -0400 (EDT)
+
+as per the mumblings i made in the meeting about port numbers, i've found a
+way to have cold convert to/from ip/hostnames, the hostname to ip might come
+in handy for things that use connect(). patch file follows for anyone at
+all interested. forgive me if their coded badly, first coldmud internal
+hacking i've done =)
+
+*note, this also includes patches for the problem with bind() and a small
+ dictionary error. simply delete those lines if you don't want them
+ fixed too.*
+
+---
+
+diff -c srcp2/adminop.c src/adminop.c
+*** srcp2/adminop.c	Tue Apr 12 21:37:29 1994
+--- src/adminop.c	Sat May 21 00:55:48 1994
+***************
+*** 552,555 ****
+--- 554,587 ----
+      if (!func_init_0())
+          return;
+      push_int(cur_frame-&gt;ticks);
++ }
++ 
++ void op_hostname(void)
++ {
++     Data *args;
++     String *r;
++ 
++     /* Accept a port number. */
++     if (!func_init_1(&amp;args, STRING))
++         return;
++ 
++     r = hostname(data_sptr(&amp;args[0]));
++ 
++     pop(1);
++     push_string(r);   
++ }
++ 
++ void op_ip(void)
++ {
++     Data *args;
++     String *r;
++ 
++     /* Accept a hostname. */
++     if (!func_init_1(&amp;args, STRING))
++         return;
++ 
++     r = ip(data_sptr(&amp;args[0]));
++ 
++     pop(1);
++     push_string(r);
+  }
+diff -c srcp2/dict.c src/dict.c
+*** srcp2/dict.c	Mon Jan  3 22:36:30 1994
+--- src/dict.c	Thu May 12 20:35:08 1994
+***************
+*** 180,186 ****
+  
+      /* Copy the links beyond i backward. */
+      MEMMOVE(dict-&gt;links + i, dict-&gt;links + i + 1, dict-&gt;keys-&gt;len - i);
+!     dict-&gt;links[dict-&gt;keys-&gt;len - 1] = -1;
+  
+      /* Since we've renumbered all the elements beyond i, we have to check
+       * all the links and hash table entries.  If they're greater than i,
+--- 180,186 ----
+  
+      /* Copy the links beyond i backward. */
+      MEMMOVE(dict-&gt;links + i, dict-&gt;links + i + 1, dict-&gt;keys-&gt;len - i);
+!     dict-&gt;links[dict-&gt;keys-&gt;len] = -1;
+  
+      /* Since we've renumbered all the elements beyond i, we have to check
+       * all the links and hash table entries.  If they're greater than i,
+diff -c srcp2/grammar.y src/grammar.y
+*** srcp2/grammar.y	Tue Apr 12 21:37:30 1994
+--- src/grammar.y	Sat May 21 01:15:28 1994
+***************
+*** 105,111 ****
+  %token CHILDREN ANCESTORS HAS_ANCESTOR SIZE
+  %token CREATE CHPARENTS DESTROY LOG CONN_ASSIGN BINARY_DUMP TEXT_DUMP
+  %token RUN_SCRIPT SHUTDOWN BIND UNBIND CONNECT SET_HEARTBEAT_FREQ DATA SET_NAME
+! %token DEL_NAME DB_TOP TICKS_REMAINING
+  
+  /* Reserved for future use. */
+  %token FORK ATOMIC NON_ATOMIC
+--- 105,111 ----
+  %token CHILDREN ANCESTORS HAS_ANCESTOR SIZE
+  %token CREATE CHPARENTS DESTROY LOG CONN_ASSIGN BINARY_DUMP TEXT_DUMP
+  %token RUN_SCRIPT SHUTDOWN BIND UNBIND CONNECT SET_HEARTBEAT_FREQ DATA SET_NAME
+! %token DEL_NAME DB_TOP TICKS_REMAINING HOSTNAME IP
+  
+  /* Reserved for future use. */
+  %token FORK ATOMIC NON_ATOMIC
+diff -c srcp2/net.c src/net.c
+*** srcp2/net.c	Mon Jan  3 22:36:22 1994
+--- src/net.c	Sat May 21 00:54:55 1994
+***************
+*** 52,57 ****
+--- 52,58 ----
+      setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, (char *) &amp;one, sizeof(int));
+  
+      /* Bind the socket to port. */
++     memset(&amp;sin, 0, sizeof(sin));
+      sin.sin_family = AF_INET;
+      sin.sin_port = htons((unsigned short) port);
+      if (bind(fd, (struct sockaddr *) &amp;sin, sizeof(sin)) &lt; 0) {
+***************
+*** 244,248 ****
+--- 245,281 ----
+        default:
+  	return other_id;
+      }
++ }
++ 
++ String *hostname(char *chaddr)
++ {
++    unsigned addr;
++    register struct hostent *hp;
++ 
++    addr = inet_addr(chaddr);
++    if (addr == -1)
++      return string_from_chars(chaddr, strlen(chaddr));
++ 
++    hp = gethostbyaddr((char *) &amp;addr, 4, AF_INET);
++    if (hp)
++      return string_from_chars(hp-&gt;h_name, strlen(hp-&gt;h_name));
++    else
++      return string_from_chars(chaddr, strlen(chaddr));
++ }
++ 
++ String *ip(char *chaddr)
++ {
++    unsigned addr;
++    register struct hostent *hp;
++ 
++    addr = inet_addr(chaddr);
++    if (addr == -1) {
++      hp = gethostbyname(chaddr);
++      if (hp)
++        return string_from_chars(inet_ntoa(*(struct in_addr *)hp-&gt;h_addr), strlen(inet_ntoa(*(struct in_addr *)hp-&gt;h_addr)));
++      else
++        return string_from_chars("-1", 2);
++    } else
++        return string_from_chars(chaddr, strlen(chaddr));
+  }
+  
+diff -c srcp2/net.h src/net.h
+*** srcp2/net.h	Mon Jan  3 22:36:29 1994
+--- src/net.h	Sat May 21 00:56:14 1994
+***************
+*** 8,13 ****
+--- 8,15 ----
+  int io_event_wait(long sec, Connection *connections, Server *servers,
+  		  Pending *pendings);
+  long non_blocking_connect(char *addr, int port, int *socket_return);
++ String *hostname(char *addr);
++ String *ip(char *addr);
+  
+  extern long server_failure_reason;
+  
+diff -c srcp2/opcodes.c src/opcodes.c
+*** srcp2/opcodes.c	Tue Apr 12 21:37:32 1994
+--- src/opcodes.c	Sat May 21 00:56:41 1994
+***************
+*** 208,215 ****
+      { SET_NAME,		"set_name",	op_set_name,	0,	0 },
+      { DEL_NAME,		"del_name",	op_del_name,	0,	0 },
+      { DB_TOP,		"db_top",	op_db_top,	0,	0 },
+!     { TICKS_REMAINING,	"ticks_remaining", op_ticks_remaining, 0, 0 }
+! 
+  };
+  
+  void init_op_table(void)
+--- 208,216 ----
+      { SET_NAME,		"set_name",	op_set_name,	0,	0 },
+      { DEL_NAME,		"del_name",	op_del_name,	0,	0 },
+      { DB_TOP,		"db_top",	op_db_top,	0,	0 },
+!     { TICKS_REMAINING,	"ticks_remaining", op_ticks_remaining, 0, 0 },
+!     { HOSTNAME,		"hostname", 	op_hostname,	0,	0 },
+!     { IP,		"ip",		op_ip,		0,	0 }
+  };
+  
+  void init_op_table(void)
+diff -c srcp2/operator.h src/operator.h
+*** srcp2/operator.h	Tue Apr 12 21:37:32 1994
+--- src/operator.h	Sat May 21 00:57:00 1994
+***************
+*** 196,201 ****
+--- 196,203 ----
+  void op_del_name(void);
+  void op_db_top(void);
+  void op_ticks_remaining(void);
++ void op_hostname(void);
++ void op_ip(void);
+  
+  #endif
+  
+</PRE>

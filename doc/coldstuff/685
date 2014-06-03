@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [685] in "Coldmud discussion meeting"</TITLE>
+<H1>[685] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?685"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="680"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="684"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="686"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="686"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 01:35:12 1995
+)</H3>
+<PRE>
+From: abakun@rci.ripco.com (Thwarted Efforts)
+To: brandon@avon.declab.usu.edu
+Date: Fri, 10 Mar 1995 00:29:24 -0600 (CST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9503091926.AA03433@avon.declab.usu.edu&gt; from "brandon@avon.declab.usu.edu" at Mar 9, 95 12:26:17 pm
+
+&gt; 
+&gt; &lt; Personally, I'd prefer :=..  It's already used in at least one language for
+&gt; &lt; this purpose
+&gt; 
+&gt; VMS's DCL (Digital Command Language, aka VMS shell) uses ':==' to set symbols
+&gt; (i.e. make an assignment, of sorts).
+
+Yuck, if anything, do NOT use DCL as a base or to get ideas for anything. :P
+</PRE>

@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [505] in "Coldmud discussion meeting"</TITLE>
+<H1>[505] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?505"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="495"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="503"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="504"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="506"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: driver database dumping</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 18:36:35 1994
+)</H3>
+<PRE>
+Date: Tue,  1 Nov 1994 18:32:26 -0500 (EST)
+From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+To: coldstuff@MIT.EDU
+Cc: 
+In-Reply-To: &lt;9411012259.AA00528@riverheights.declab.usu.edu&gt;
+
+Re: object numbers and so forth:
+
+I'm for keeping track of object numbers wherever.  This is probably a hold-
+over from TinyMU*s, where object numbers were the easiest way to deal with
+either remote objects or duplicate name objects.  The problem with just
+$name stuff is remembering the names.  At least, that's as I see it.  I
+don't know if there are currently commands to get to the list of names in
+the core.  If you don't have object numbers, then make sure players can
+list the objects they own somehow.
+
+
+</PRE>

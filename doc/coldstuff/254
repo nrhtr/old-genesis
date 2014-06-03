@@ -1,0 +1,77 @@
+<HEAD><TITLE>discuss@charon: [254] in "Coldmud discussion meeting"</TITLE>
+<H1>[254] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?254"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="241"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="253"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="253"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="255"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Connection()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 18 06:43:57 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: colinm@extro.ucc.su.OZ.AU (Colin McCormack)
+Date: Wed, 18 May 1994 01:35:03 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+Reply-To: coldstuff@MIT.EDU
+In-Reply-To: &lt;199405172035.GAA12040@extro.ucc.su.OZ.AU&gt; from "Colin McCormack" at May 18, 94 06:35:47 am
+
+&gt; This would require each function to know, for the uttermost descendant of
+&gt; a call tree descending from it, that some function will need stdio.
+&gt; Does this break information hiding?  How about for virtual functions?
+
+I'm afraid your defense is based on another bad design practice, namely the
+inclination to access stdio from within subroutines and functions, which in
+itself breaks encapsulation.  The point is that in a proper system design,
+nothing except the topmost execution level (the user-interface level) should
+ever access stdio anyway.
+
+In a proper design, all output information should be returned from subfunctions
+as return values, and output by the topmost calling function if appropriate.
+
+&gt; There is a primitive which makes use of connection information,
+&gt; echo() or somesuch... are you suggesting that this is not needed,
+&gt; or rather that the appropriate place for accessing current connection
+&gt; is the server, and only there?
+
+Actually, the current functioning of echo(), in my opinion, is something to be
+changed, rather than emulated.  In my opinion, echo() should only work when
+this() is an object with a current connection bound to it, and should echo to
+all connections bound to the current object, thus preserving encapsulation and
+a consistent connection&lt;-&gt;object interface.
+
+&gt; You can stop people writing bad code by making a language that can't 
+&gt; express `bad constructs', but that does not make people write good code.
+
+I do not propose any of these measures as mechanisms for controlling
+programming styles.  I am fundamentally opposed to any decisions based solely
+on one person's aesthetic for "good code", in fact.  What I'm discussing here
+is not programming issues but system design issues.  Exceptions to the base
+principles of a system are rather like cutting through a support beam to get a
+little more ventilation.  It adds a little convenience but weakens the overall
+strength and power of the system, and eventually it ends up caving in on you.
+
+There are examples of this, if you look for them, in nearly all major computer
+system designs (but particularly in they type of general-purpose systems that
+M*s have become over the years).  I don't want ColdMUD to be just another
+example..
+
+It should be noted that I am not saying anything about whether the base
+principles of ColdMUD are good or bad, I am simply saying that if they aren't
+good enough, patching them with exceptions will most likely only make matters
+worse in the long run.  If changes are really necessary (which in my opinion
+they aren't for this type of thing), then the whole foundation for the system
+should be reconsidered as a whole.
+
+Anyway, that's my tirade for the day :)
+
+-Riche
+
+
+</PRE>

@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [357] in "Coldmud discussion meeting"</TITLE>
+<H1>[357] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?357"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="356"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="356"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="356"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="358"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: more re: text_dump()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun 22 21:51:24 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: deforest@netcom.com (Robert de Forest)
+Date: Wed, 22 Jun 1994 18:45:46 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199406221925.MAA07777@netcom2.netcom.com&gt; from "Robert de Forest" at Jun 22, 94 12:25:28 pm
+
+&gt; 
+&gt; I thought the question was why output which was echo()ed before the call to
+&gt;  text_dump() was seen after the dump had lagged things.
+
+This was a preliminary question into the matter, yes.
+
+&gt; So is the actual question how to get around this problem with a db code change
+&gt;  or how to get around this with a server change?
+
+I think the point of the previous question was to determine which of these
+questions was most feasable/appropriate as the next step in inquiries.
+
+&gt; I would vote for an in-db solution so as not to risk introducing a server bug.
+
+Well, I would vote for an in-server implementation on principle (and I believe
+principle should come above fears of bugs, since bugs can be fixed a lot more
+easily than a flawed design can).  The principle being that it's the server's
+job to get output sent with the echo() builtin out onto the network in a timely
+fashion, and since text_dump is a decidedly un-timely thing, all pending IO
+should be resolved before the server engages in any tasks that are known to
+eat up large amounts of system time with no interruption.
+
+Actually, it seems to me the best design would be to have network IO
+event-driven anyway (I had rather assumed that this was the case already, given
+that ColdMUD is better designed than MOO on most other fronts).  hopefully this
+will be part of SamIAm's multithreading of the server code (anybody heard from
+him at all recently, BTW?)
+
+-Riche
+
+</PRE>

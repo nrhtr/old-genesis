@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [241] in "Coldmud discussion meeting"</TITLE>
+<H1>[241] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?241"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="240"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="242"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="242"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="254"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Connection()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 17 16:44:13 1994
+)</H3>
+<PRE>
+From: Colin McCormack &lt;colinm@extro.ucc.su.OZ.AU&gt;
+To: coldstuff@MIT.EDU
+Date: Wed, 18 May 1994 06:35:47 +1000 (EST)
+
+In defense of connection(), mooted primitive returning current connection:
+
+To follow the encapsulation argument, wouldn't have to conclude that that
+in order to address stdio in C, one should pass in their value, or a reference
+to some package containing them not merely where ever they were used, but
+whenever one wished to interface with a subsystem that might use them?
+
+This would require each function to know, for the uttermost descendant of
+a call tree descending from it, that some function will need stdio.
+Does this break information hiding?  How about for virtual functions?
+
+There is a primitive which makes use of connection information,
+echo() or somesuch... are you suggesting that this is not needed,
+or rather that the appropriate place for accessing current connection
+is the server, and only there?
+
+You can stop people writing bad code by making a language that can't 
+express `bad constructs', but that does not make people write good code.
+
+Colin.
+
+</PRE>

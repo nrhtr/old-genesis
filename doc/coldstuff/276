@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [276] in "Coldmud discussion meeting"</TITLE>
+<H1>[276] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?276"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="271"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="275"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="277"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="278"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 00:17:52 1994
+)</H3>
+<PRE>
+Date: Thu, 19 May 1994 22:14:13 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I'd like more comments here...
+
+A: what do _you_ feel about moving the default port to the 5xxx range?
+   the 9xxx range?
+
+B: what do you feel about having a few "known" basic ports, such as those
+   including a fingerd, login, and a few other simple services?
+
+   would you mind following the scheme:
+
+      login:     xxx0
+      portmapper xxx1
+      fingerd    xxx2
+
+   etc?  (i.e. login 5550 portmapper 5551 fingerd 5552 etc).
+
+For simplicity we could define login as whatever x number we use (i.e. login
+with 5xxx woudl be 5555 or 9xxx would be 9999).
+
+-Brandon-
+</PRE>

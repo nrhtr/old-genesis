@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [1320] in "Coldmud discussion meeting"</TITLE>
+<H1>[1320] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1320"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1319"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1321"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1322"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1322"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] The disconnect bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Aug 10 18:24:23 1997
+)</H3>
+<PRE>
+Date: Sun, 10 Aug 1997 15:20:52 -0700
+To: coldstuff@cold.org
+From: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+
+Has the order bug been fixed  in the disconnect event code in the driver
+that I repot red a month or so ago, yet?
+
+If not soon ill do it nmyself and send you the patch (thiugh its a 2 line fix)
+Jeff Kesselman
+Snr. Game Integration Engineer
+TEN -- The Total Entertainment Network -- www.ten.net
+
+-----BEGIN GEEK CODE BLOCK-----
+     Version: 3.1
+     GCS/CC/E/IT/MC d+(++)@ s: a C++++$ ULSC+++(++++)$ P++(+++)$ L++ 
+     E--- W++$ N++$ o+ K--? w++(+++)$@&gt;--- O+(++)&gt;$ M+&gt;$ !V PS++ PE+ 
+     Y+ PGP- t+ 5+ X- R+(++)$&gt;+++* tv+ b+&gt;++ DI+++ !D G e++ h r+++ y+++
+------END GEEK CODE BLOCK------ 
+
+Speak Geek!
+http://krypton.mankato.msus.edu/~hayden/geek.html
+</PRE>

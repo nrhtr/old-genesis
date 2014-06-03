@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [764] in "Coldmud discussion meeting"</TITLE>
+<H1>[764] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?764"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="763"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="765"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="770"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="786"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>fork() vs send()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 16 01:15:18 1995
+)</H3>
+<PRE>
+Date: Tue, 15 Aug 1995 23:13:04 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+I've been toying with the implementation of fork(), and Jeff brought up that
+it may be better to implement something slightly different, such as:
+
+    send(object, 'method, [args])
+
+Which would be virtually the same as object.method(args), except for that
+it "forks" off.
+
+Anybody have comments on this, compared to a direct fork() implementation?
+
+-Brandon
+</PRE>

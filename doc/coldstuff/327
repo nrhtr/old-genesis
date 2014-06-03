@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [327] in "Coldmud discussion meeting"</TITLE>
+<H1>[327] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?327"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="326"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="328"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="337"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="338"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>run_script() (odd random thoughts after lots of hour of sleep loss)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 25 07:53:26 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Wed, 25 May 1994 05:48:29 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+You could technically create a method to allow admins to write to the file
+system by having a series of scripts called where they have 1 line send through
+the argument line, which is then concatenated onto a file (or whatever).
+
+Just thought I'd let it be known that if somebody was desperate enough the
+loophole is actually there to write to the system, it just takes an incredibly
+complex process.
+</PRE>

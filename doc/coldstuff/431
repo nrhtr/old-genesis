@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [431] in "Coldmud discussion meeting"</TITLE>
+<H1>[431] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?431"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="430"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="432"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="439"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="440"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>assignments as expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 14:12:05 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@netcom.com
+Date: Thu, 22 Sep 1994 10:53:37 -0700 (PDT)
+
+It has been said that having assignments be expressions will not affect those
+ who do not wish to use them this way, but I beg to differ.
+
+Just as Geust@Lambda.
+
+I don't think the point was half as much to enforce a style as to prevent an
+ error, specifically the miss-typing of == as = causing masive dammage.
+
+Anyway...
+
+My own preference would be to make the expressions. Cold is case-sensitive, so
+ how much can it care what a good typer I am? :)
+
+I still belive the change should be made and released under a different name.
+
+</PRE>

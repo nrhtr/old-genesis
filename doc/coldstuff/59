@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [59] in "Coldmud discussion meeting"</TITLE>
+<H1>[59] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?59"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="57"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="57"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="58"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="60"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Defining frobs...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 19 22:18:27 1993
+)</H3>
+<PRE>
+To: snooze &lt;gregb@amber.ecst.CSUChico.EDU&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Sat, 20 Nov 93 00:28:23 +0000.
+             &lt;199311200028.AAA15566@amber.ecst.csuchico.edu&gt; 
+Date: Fri, 19 Nov 93 22:11:48 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; Is there something wrong with this line:
+&gt; var exit lock &lt;$lock_class, #[['type, 'true]]&gt;
+
+It's fine.  There's a bug in Coldmud 0.8 in reading in frobs from
+'var' declarations.  I'll be putting out 0.8.1 shortly; if you're
+impatient, you can fix the problem by inserting a line before line 456
+of data.c so that lines 455-457 read:
+
+		d-&gt;u.frob.class = class.u.dbref;
+		d-&gt;u.frob.rep = rep.u.dict;
+		return (*s) ? s + 1 : s;
+
+--GBH
+
+</PRE>

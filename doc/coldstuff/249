@@ -1,0 +1,79 @@
+<HEAD><TITLE>discuss@charon: [249] in "Coldmud discussion meeting"</TITLE>
+<H1>[249] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?249"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="248"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="250"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="250"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="251"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>common ports and bind()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 18 01:34:48 1994
+)</H3>
+<PRE>
+Date: Tue, 17 May 1994 23:30:34 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Alright.  Greg found it in his graces to help me out and he found the problem
+with bind().  I just re-compiled 0.10.2 with his fix and it works great! 
+(Thanks Greg).  Here is the fix (for others):
+
+net.c (around line 55) is currently:
+
+    /* Bind the socket to port. */
+    sin.sin_family = AF_INET;
+    sin.sin_port = htons((unsigned short) port);
+    if (bind(fd, (struct sockaddr *) &amp;sin, sizeof(sin)) &lt; 0) {
+        server_failure_reason = bind_id;
+        return -1;
+    }
+
+change it to:
+
+    /* Bind the socket to port. */
+    memset(&amp;sin, 0, sizeof(sin));
+    sin.sin_family = AF_INET;
+    sin.sin_port = htons((unsigned short) port);
+    if (bind(fd, (struct sockaddr *) &amp;sin, sizeof(sin)) &lt; 0) {
+        server_failure_reason = bind_id;
+        return -1;
+    }
+
+(i.e. add in the 'memset' line just after the comment).
+
+Now that this works, I would like to request a scheme for common port numbers
+between ColdMUDs.  The idea I like the most, so far, is to basically:
+
+    for existing ports in a regular OS, use the same portnumber with a prefix
+of 66.  I.e. to listen to the FTP port you would have port '6621', telnet port
+would be '6623', http would be '6680', etc.  Following this scheme it would be
+a good idea to change 6666 to 6623 (telnet), although that is only a shy
+rationalization, since you should be using a client other than telnet. 
+Therefore using port '66' would not be a problem (since as far as I know it is
+not assigned to anything yet).  This is just an idea though.  Any comments?
+The ports I would like to code watchers for are:
+
+
+        6621         FTP    (have objects act as "files", would be a handy
+                             utility for extracting objects?)
+        6625         SMTP   (mail, uses SMTP protocol)
+        6680         HTTP   (World Wide Web, same as FTP but http protocol)
+
+And then IES (so I like the term, sue me--it is not a "MUD"):
+
+        66***        Connection  (regular connection)
+        66***        who         (facuet of who is connected, could be
+                                  6679 (finger))
+        66***        Link        (some type of server-&gt;server protocol
+                                  for object migration and movement?).
+
+Comments?  (PLEASE, comment, this list needs discussion).
+
+-Brandon/Lyncx-
+</PRE>

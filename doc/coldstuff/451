@@ -1,0 +1,76 @@
+<HEAD><TITLE>discuss@charon: [451] in "Coldmud discussion meeting"</TITLE>
+<H1>[451] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?451"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="442"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="445"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="450"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="452"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="452"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="453"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment, while (etc)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep 24 15:40:57 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: BRANDON@cc.usu.edu
+Date: Sat, 24 Sep 1994 00:13:32 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;01HHGH2HYPXUDE2OU9@cc.usu.edu&gt; from "BRANDON@cc.usu.edu" at Sep 23, 94 04:06:45 pm
+
+&gt; ColdC (aka C-- (Greg's) is not C, nor is it C++).
+
+Nor should it be.
+
+Greg actually raised a few good points about things..  as did Erik.
+
+However, the argument that you should use a while (1) ... if (...) break; ...
+is in my opinion one of the stupidest things anybody could deliberately design
+into a language.  If we're going to do hacks like this as standard practice,
+why not just get rid of while entirely (since you're not using it's abilities
+anyway) and just replace it with a "loop" operation that loops endlessly and do
+everything this way?  more consistent and apparently the preferred way to
+design programs..  well it's just plain a stupid way to do things in my opinion
+if you have any choice, and I'd like to have some choice to do things properly.
+(I refuse to be pressured into writing bad code by a bad language design)
+
+Erik is probably right, however, that changing the while statement's syntax
+could be more confusing than it's worth, which leaves us with the only other
+viable option (as far as I can see):  assignment-expressions.  I actually agree
+to some extent with Greg's position against indirect effects of evaluating
+expressions, but I don't see any other real alternatives.  sigh.
+
+I do not think that an assignment-expression should be a single equals sign,
+however.  That's fine for assignment-statements because there's no room for
+confusion, and that's fine for pathetic backwards languages like C++ because
+they don't know any better, but this is a real language and it should be
+designed properly.
+
+I don't really care what the assignment operator looks like.  I didn't suggest
+:= because it's like Pascal, I simply suggested it because it wasn't taken and
+its appearance rather reflects its function (as colon is often used to
+establish a correlation in human language as well).
+
+I'd actually vote against += and -=, and definitely against ++ and --.  They're
+unnecessary complexities to the language and, particularly if they're allowed
+to be expressions (which I think they'd have to be if simple-assignment was),
+can result in all kinds of really confusing expressions (at least with only
+assignment, it requires people to spell things out more so people can tell
+what's going on).
+
+And I'd just like to say to all those who can't do anything except compare
+ColdC to C, C++, and Pascal: Those languages are all flawed and mangled anyway.
+If you're going to compare this to something, at least pick something decent
+(and no, I don't have any suggestions.. I've got quite a bit of contempt for
+almost all the languages I've come across so far.  That's why I'm making
+suggestions based on design principles instead of conformity with some lesser
+language).
+
+-R
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+</PRE>

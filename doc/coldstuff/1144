@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [1144] in "Coldmud discussion meeting"</TITLE>
+<H1>[1144] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1144"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1141"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1143"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1143"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1145"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1145"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1149"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] scatter/optional assignments - request for discussion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 29 16:25:24 1996
+)</H3>
+<PRE>
+From: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+To: Miroslav Silovic &lt;Miroslav.Silovic@public.srce.hr&gt;
+Date: Fri, 29 Nov 1996 19:48:20 +0000 (GMT)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;199611291401.PAA11414@jagor.srce.hr&gt; from "Miroslav Silovic" at Nov 29, 96 03:01:55 pm
+
+I didn't look too closely at this patch, but am I right in thinking
+that the ?= operator is a simple test of existing value, rather
+then an operation which is only performed if a variable has not
+been assigned to previously?
+
+Perl has a useful:
+
+	$foo = $bar unless $foo;
+
+construction, which only assigns a value to $foo if no previous
+assignment has taken place.
+
+Wouldn't this be logic (expressed as '$foo ?= $bar') be more useful?
+
+Ay (prepared to be clueless...)
+
+&gt; This patch implements two new features:
+&gt; 
+&gt; Optional assignment expression:
+&gt; 
+&gt; 	foo ?= bar;
+&gt; 
+&gt; is equivalent to
+&gt; 
+&gt; 	if (!foo) foo=bar;
+&gt; 
+&gt; Scatter assignment is easiest to explain with a few examples:
+&gt; 
+&gt; 	[foo, bar] = [1,2]
+&gt; 	=&gt; foo=1, bar=2
+&gt; 
+&gt; 	[foo, bar ?= 10] = [1]
+&gt; 	=&gt; foo=1, bar=10
+&gt; 
+&gt; 	[foo, bar, @baz] = [1,2,3,4,5]
+&gt; 	=&gt; foo=1, bar=2, baz=[3,4,5]
+&gt; 
+&gt; 	[[foo, bar], @rest] = [[1,2],[3,4],[5,6]]
+&gt; 	=&gt; foo=1, bar=2, rest=[[3,4],[5,6]]
+&gt; 
+[snip]
+</PRE>

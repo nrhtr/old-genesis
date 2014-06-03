@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [106] in "Coldmud discussion meeting"</TITLE>
+<H1>[106] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?106"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="105"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="107"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>tiny-splatters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec  8 10:26:49 1993
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Wed, 08 Dec 1993 07:19:03 -0800
+From: jason downs &lt;downsj@CSOS.ORST.EDU&gt;
+
+
+It has occurred to several of us that the development of TinyM* related
+servers is all following similar lines, and is, in fact, all merging to
+some extent.
+
+With this in mind, we have set up a new mailing list, devoted to discussion
+amongst those working on TinyM* genre servers.  If you are one of those
+people, you are invited to subscribe to the list, where you'll be kept
+in contact with your peers in this field.  (Yes, as TinyM* servers grow
+into pseudo operating systems, this should be considered a field.)  The
+mailing list is primarily meant for discussion of what we're currently
+working on, with emphasis on modularity and implementation.  As the purpose
+of this group implies, those working on all TinyM* genre servers are
+welcome to participate.
+
+		    &lt;tiny-splatters@CSOS.ORST.EDU&gt;
+
+		      To subscribe, send mail to:
+		&lt;tiny-splatters-request@CSOS.ORST.EDU&gt;
+
+--
+                     - jason downs  downsj@csos.orst.edu -
+
+               NetBSD: It's not just an OS, it's a drinking game.
+</PRE>

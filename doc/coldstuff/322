@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [322] in "Coldmud discussion meeting"</TITLE>
+<H1>[322] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?322"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="306"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="320"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="321"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="323"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: logging, fact and fiction</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 24 15:05:55 1994
+)</H3>
+<PRE>
+Date: Tue, 24 May 1994 11:54:54 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;9405241808.AA09597@tungsten.seattle.geoworks.com&gt; (weber@tungsten.seattle.geoworks.com)
+
+Eric says:
+
+&gt; It seems like a good idea to run an external program on the text
+&gt; dump to watch for certain types of changes to $sys, such as changes
+&gt; to verb code or security related properties.  This wouldn't give you
+&gt; any information on precisely when or how a change occurred, but
+&gt; would give you an out-of-db method for noticing an attack that
+&gt; slipped through the log somehow.
+
+It wouldnt be too difficult to write a perl script that periodically
+checked the textdump for such changes, and could in addition make a
+backup copy (and do other nifty maintenace things). Of course how much
+processor time would be eaten up by it, I'm not sure. You could even
+(I think) modify backup so that it called this script first, and only
+the site admin could turn it off. (of course, being able to just
+change shutdown would make that useless). But if the script didnt
+overwrite the backup if certain criteria were met, and could kill the
+server if others were met, then it might be useful for a high-security
+situation.
+
+Of course, I want to get a running server and DB before I work on
+extra security measures :)
+
+	Ray
+
+
+
+
+
+
+
+
+
+
+</PRE>

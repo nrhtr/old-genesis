@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [356] in "Coldmud discussion meeting"</TITLE>
+<H1>[356] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?356"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="355"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="357"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="357"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="357"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>more re: text_dump()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun 22 15:34:27 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Wed, 22 Jun 1994 12:25:28 -0700 (PDT)
+
+I thought the question was why output which was echo()ed before the call to
+ text_dump() was seen after the dump had lagged things.
+
+So is the actual question how to get around this problem with a db code change
+ or how to get around this with a server change?
+
+I would answer the first with the following: Have a warn_time param on $sys,
+ and when you reach warn_time seconds before the usual backup time, make the
+ announcement. As long as warn_time is at least 1 you will see the output
+ in time (assuming my as yet untested theory is correct).
+
+My answer to the second would be to find out what dispatches waiting outbound
+ net IO, and call it inside of the server text_dump() routine before starting
+ the dump.
+
+I would vote for an in-db solution so as not to risk introducing a server bug.
+
+Crag,
+wondering if he's even close to what was asked...
+</PRE>

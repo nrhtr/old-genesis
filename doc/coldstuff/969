@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [969] in "Coldmud discussion meeting"</TITLE>
+<H1>[969] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?969"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="968"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="970"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="970"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="983"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] 'user()' builtin function..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Apr 22 15:32:05 1996
+)</H3>
+<PRE>
+Date: Mon, 22 Apr 1996 13:00:50 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Ok, I'm breaking down here.  Should we add a 'user()' builtin?  This 
+function would go alongside 'sender()' and 'caller()', it would be more 
+appropriately called 'controller()'.  Since ColdC is developed for a 
+multi-connection server environment it only makes sense that there would 
+be a central object to control a single 'connection'.  How this builtin 
+would work is there would be a controller variable which defaults to the 
+connection starting the task, but allow the task to set a different 
+controller as things go..
+
+-Brandon Gillespie-
+
+Do you prefer 'user()' or 'controller()'?
+</PRE>

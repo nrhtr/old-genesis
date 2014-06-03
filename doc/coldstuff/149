@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [149] in "Coldmud discussion meeting"</TITLE>
+<H1>[149] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?149"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="146"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="148"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="148"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="150"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="150"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="150"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: COLD: Status Update?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar  4 16:00:29 1994
+)</H3>
+<PRE>
+Date: Fri,  4 Mar 1994 15:44:50 -0500 (EST)
+From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;01H9K10L3YIEAWDA1M@cc.usu.edu&gt;
+
+What are the currently known bugs?  Lynx mentions the
+dbref bug and the disappearing parameter bug..are these 
+fixed bugs that were a problem before or currently-being-worked-
+on bugs?
+
+Also, Lynx, I tried connecting to your Cold but it doesn't seem
+to like me...It just hangs after connect..Probably shouldn't
+bring it up to the list, but I'm too lazy
+
+wbfst1@pitt.edu | PGP 2.3A user - Ask for my public key | William Fisher
+</PRE>

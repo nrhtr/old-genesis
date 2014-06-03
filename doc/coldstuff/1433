@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [1433] in "Coldmud discussion meeting"</TITLE>
+<H1>[1433] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1433"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1432"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1434"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1434"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1434"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Future of Genesis</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Oct 31 03:52:52 1998
+)</H3>
+<PRE>
+From: bruce@portland.puremagic.com
+To: coldstuff@cold.org
+Date: Sat, 31 Oct 1998 00:40:39 -0800 (PST)
+
+Good day all!
+
+Some of you already know that Genesis is back under active development.
+The 1.2 version brings a lot of change internally to the driver.  Some of
+the upcoming changes will include the use of threads inside the driver.
+This will not be affecting the multitasking model of the ColdC language
+for now, but things like the ColdC compiler, the network layer, and
+possibly file I/O.  However, like all changes, this has problems.  Threads
+are not supported on all platforms.
+
+Are any of you out there using Genesis on such platforms?  Does anyone out
+there need to have a non-threaded version?
+
+Please feel free to respond back to the list or to me privately with any
+issues, comments, concerns or questions.
+
+ - Bruce
+</PRE>

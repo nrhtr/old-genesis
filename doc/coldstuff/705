@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [705] in "Coldmud discussion meeting"</TITLE>
+<H1>[705] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?705"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="700"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="704"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="706"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="708"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar 11 19:37:16 1995
+)</H3>
+<PRE>
+From: The Importance of Being Chuck &lt;cadams@weather.Brockport.EDU&gt;
+To: jeffpk@netcom.com (Jeff Kesselman)
+Date: Sat, 11 Mar 1995 19:34:40 -0500 (EST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199503110454.UAA23074@netcom20.netcom.com&gt; from "Jeff Kesselman" at Mar 10, 95 08:54:07 pm
+
+Jeff Kesselman drew these heiroglyphs:
+&gt; &gt;Your whining about "but it's not like C"
+&gt; &gt;is really one of the most insignificant aspects of this whole issue I can think
+&gt; &gt;of.  It was NEVER exactly like C, and it's not supposed to be!  Changing this
+&gt; &gt;one operator won't suddenly make people go "oh, I could handle all the other
+&gt; &gt;changes, but I just can't learn this language if assignment isn't '='"..
+&gt; &gt;sheesh.
+&gt; 
+&gt; Youa re taking this MUCH too personally and obviously were scared by an
+&gt; assignment operator at a young age.
+&gt; 
+&gt; Actually your mention of the fact that you never learned to avoid this C
+&gt; pitfall in your earlier post explains a great deal.  MOST competant C
+&gt; programmers make this mistake twice and never again.  I consider your
+&gt; "whining about how it was a bad K&amp;R decision" the msot irrelevent thing in
+&gt; ths dicussion.  One mans logic is another mans whining irrelevancy.  You'ld
+&gt; do well to grow up and learn that if you EVER plan to do ANY programmign in
+&gt; a competant group environment.
+&gt; (In case you're wondreing I've been programming professionally, both singly
+&gt; and in groups, for about 10 years now.)
+
+WOO, religious flamewar! :) Actually, I make this mistake all the
+time.  I can also live with it.  Especially since many compilers have
+a 'possibly unintended assignment' warning that saves my ass.
+Warnings can be done in-db, and turned off by experienced programmers
+who don't want to be bothered by them.
+
+The point: warnings are good.  write a db that generates them.
+</PRE>

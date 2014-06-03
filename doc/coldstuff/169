@@ -1,0 +1,84 @@
+<HEAD><TITLE>discuss@charon: [169] in "Coldmud discussion meeting"</TITLE>
+<H1>[169] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?169"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="167"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="168"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="168"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="170"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="170"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="178"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Encapsulation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 25 19:02:56 1994
+)</H3>
+<PRE>
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: ghudson@MIT.EDU (Greg Hudson)
+Date: Fri, 25 Mar 1994 15:32:21 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9403252247.AA10851@maze.MIT.EDU&gt; from "Greg Hudson" at Mar 25, 94 05:47:38 pm
+
+&gt; Coldmud has no such functionality; if you want your object to allow
+&gt; other objects to get and set variables, you have to explicitly provide
+&gt; the interface for that.  Other people have asked for this
+&gt; functionality, and I don't plan to include it in Coldmud for the
+&gt; following reasons:
+&gt; 
+&gt; First, it adds complexity.  I am averse to doing lots of things behind
+&gt; the programmer's back, and writing part of an object's interface for
+&gt; the programmer is not a good thing.
+&gt; 
+
+Well, i was actually suggesting a core modification, as opposed to a server
+modification, sorry if you dont want to talk about core issues here...
+
+Also, I thought one of the points of encapsulation was to abstract
+the assignment of variables, so that instead of doing x = 1 you do x(1)
+
+&gt; Second, it encourages programmers to think of other objects in terms
+&gt; of their state variables rather than their operations.  There's no
+&gt; pragmatic difference between "setting a variable on an object" and
+&gt; "asking an object to change its variable"; both of these are what
+&gt; encapsulation is trying to avoid.  Usually, you should think about
+&gt; abstractions in higher terms.  You are not setting the contents
+&gt; variable of a container to a list containing an extra item; you are
+&gt; adding something to a container's contents.
+&gt; 
+
+Umm, whats the difference between adding something to the containers contents, 
+and asking the container to add someting to its contents? and why is adding 
+someting to the cointaier's contents not setting the containers contents variable?
+
+&gt; Third, it doesn't fit in well with the encapsulation barriers across
+&gt; ancestors.  Objects don't have just one set of variables; they have a
+&gt; set of variables for the parameters of each of their ancestors.
+&gt; 
+How is this delt with? I'm even less familier with MI than i am with OO :)
+
+&gt; 
+&gt; --GBH
+&gt; 
+&gt; 
+
+I seem to be missing the point of encapsulation, I thought it was to provide
+a control as to how the data was accessed, not limit the access of the data to
+the object. This of course is most likely related to the fact that as you said, 
+were dealing with a modification of OO, in that we have VR objects and are treating
+them in an OO manner, while encapsulation is more often used for data structures
+which have rarely the need to interact with other data structures, except by
+refering to them.
+Also, I usually, probably due to the majority of my OO programming being MOO 
+programming, dont think of using inheritence in the correct manner, and generally
+see it as a tool for getting the functions you want on the object.
+Anyway, a lot of my difficulties will probably be solved when i move from abstract
+to actually writing code, since i've only been looking at code thusfar. I had
+just thought of the concept of making the accessors to variables deal with assignment
+as well as returning the value (in the case of the core) and wsa wondering what
+more experienced OO programmers thought of this :)
+Ash
+
+
+</PRE>

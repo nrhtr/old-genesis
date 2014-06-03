@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [119] in "Coldmud discussion meeting"</TITLE>
+<H1>[119] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?119"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="117"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="118"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="118"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="120"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="120"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="124"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: getting it to work..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 13 16:45:15 1993
+)</H3>
+<PRE>
+Date: Mon, 13 Dec 1993 16:27:41 -0500
+From: Quinn Avery &lt;quinn@DUS.Mountain.Net&gt;
+To: gblake@mis.nu.edu, seth@alchemy.TN.Cornell.EDU
+Cc: coldstuff@MIT.EDU
+
+&gt;I'm looking to create a core that is more accessable to the TinyMUD
+&gt; family people out there, because that's one way to attract them.
+
+What does that mean `accessable to the TinyMUD family'?  Isn't that
+ taking a step backwards?  After MOO, tinymuds seem so awkward and
+ primitive to me.
+
+It is nice that we have several cores being developed.  Maybe one
+ of MOO's drawbacks is that there is only one real core-db being
+ used (besides maybe an OpalCore someday).
+
+-quinn
+</PRE>

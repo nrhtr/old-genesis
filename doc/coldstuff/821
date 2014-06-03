@@ -1,0 +1,26 @@
+<HEAD><TITLE>discuss@charon: [821] in "Coldmud discussion meeting"</TITLE>
+<H1>[821] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?821"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="820"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="822"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="822"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="824"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Linux</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Oct 11 19:18:03 1995
+)</H3>
+<PRE>
+Date: Wed, 11 Oct 1995 18:55:56 -0400 (EDT)
+From: Dave Wallace &lt;dwallace@ssnet.com&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+Anyone have any luck running COLDX under Linux? It compiles fine after I 
+tell it to link to the gdbm library, but it fails the test source with 
+parse errors and omits some of the tests.
+
+</PRE>

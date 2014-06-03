@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [514] in "Coldmud discussion meeting"</TITLE>
+<H1>[514] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?514"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="509"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="509"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="513"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="515"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="515"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="515"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: quick note: known bugs</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov  3 08:09:37 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: deforest@netcom.com (Robert de Forest)
+Date: Thu, 3 Nov 1994 05:07:49 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199411020146.RAA17021@netcom8.netcom.com&gt; from "Robert de Forest" at Nov 1, 94 05:46:28 pm
+
+&gt; The server becomes entirely unstable when forced to diskbase.
+
+How do you mean "forced to diskbase"?
+
+&gt; match_regexp is fckd.
+
+crashes-the-server fckd or just doesn't-do-what-it's-supposed-to fckd?
+No chance of an example instance, I suppose..
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

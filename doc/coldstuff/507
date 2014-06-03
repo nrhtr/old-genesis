@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [507] in "Coldmud discussion meeting"</TITLE>
+<H1>[507] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?507"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="506"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="508"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>oh, hey, more gratuitous driver changes.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 19:10:40 1994
+)</H3>
+<PRE>
+From: brandon@riverheights.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Tue, 01 Nov 94 17:08:28 -0700
+
+I would like to change the filesystem end of how the driver functions
+to something more standard (at least standard as far as the various
+public services packages I've used (httpd/gopher/netrek (heh)).
+
+Currently:
+
+coldmud [world location] [args to be passed to $sys.startup()] &gt;&gt;&amp; logfile &amp;
+
+Where you redirect stderr to a logfile, if you wish to log whatever.
+
+What I would like to have:
+
+coldmud [-r cold root] [args to be passed to $sys.startup()]
+
+The way this would work is cold-root would have:
+
+       src/
+       bin/
+       world/
+             binary/
+             text/
+             src/
+       logs/
+
+logs/ would be where it writes an argv[0].log and an argv[0].pid (the .pid is
+very handy).  bin/ would be where execute() would check for scripts.
+world/src/ would be where the world core source is (this actually could be
+called anything, and has no effect upon the driver).  text/ and binary/ are
+the same as they are now.  The textdump would go in world/textdump.
+
+The reason I would like to have it handle it's own logfiles, rather than
+redirecting stderr is primarily out of personal preference (it feels cleaner
+to have coldmud do it itself, and isn't much harder).
+
+If -r coldroot is not specified in the arguments, it would default to "../". 
+The way args would be handled is if they exist, and the first argument is -r,
+the driver munges it and passes whatever is left.  If -r is not the first
+arg the driver passes it all to the system object.
+ 
+     
+
+</PRE>

@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1019] in "Coldmud discussion meeting"</TITLE>
+<H1>[1019] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1019"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1016"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1016"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1018"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1020"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Reducing backups to 1 second, ALWAYS ... (or there abouts)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun 12 17:22:46 1996
+)</H3>
+<PRE>
+Date: Wed, 12 Jun 1996 13:42:48 -0700
+From: Foxen/Revar &lt;foxen@belfry.com&gt;
+To: coldstuff@cold.org
+
+I had to laugh when I heard the phrase:
+
+&gt; Overall I doubt it would take more than a second to sync the db
+&gt; except in the rare situations.
+
+When I hear a phrase like the one on the subject line, or like that one
+quoted above, it sets off little warning bells in my head, that tells
+me, "This person might not be thinking far enough in advance."
+
+Success sometimes happens.  If you had a COLD server that serviced 350
+simultenous players, had an 80 meg database (when dumped to a flat
+textfile) with 160,000+ objects in it, that is doing 30,000 attribute
+accesses a minute average, then I'm pretty sure the server will pause
+for just a wee bit more than a second to sync.  (These numbers are from
+the largest MU* I know of, just for an example.)
+
+There aren't any COLDs that large yet, but, I think, someday there will
+be.  Give it a few years.  (Previous said MU* took 5.)
+ 
+What is the point of this babbling?  Just to remind people to think big.
+After all, there are tens of millions of potential customers coming
+online in the USA alone.  Out of that population base, surely it's not
+that unlikely to find a few thousand who might want to use a particular
+COLD.
+
+	- Foxen/Revar
+</PRE>

@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [434] in "Coldmud discussion meeting"</TITLE>
+<H1>[434] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?434"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="430"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="433"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="433"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="435"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="444"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="444"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: "fixing" while loops</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 18:36:34 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: deforest@netcom.com (Robert de Forest)
+Date: Thu, 22 Sep 1994 15:27:58 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199409221747.KAA23309@netcom14.netcom.com&gt; from "Robert de Forest" at Sep 22, 94 10:47:12 am
+
+&gt; while a test (.test())
+&gt;   .do_something();
+
+I'd kinda been considering this too but I hjust couldn't come up with a syntax
+that didn't look butt ugly or make no syntactic sense within the language.. now
+that I think about it some more, tho, howabout:
+
+while {statements} (testexpr) statement(s)
+
+(where the first statement block would be executed before the expressoion was
+tested for truth value)  This actually has the advantage that it would
+automatically expand the while statement to be able to do "until" loops, too,
+and makes it a lot more flexible than a simple var addition.  Also, the old
+'while (expr)' format could still be retained (just make it equivalent to
+'while {} (expr)') for backwards compatibility and overall clarity in code that
+tdidn't need the new feature.
+
+maybe that would be the best way to deal with while loops anyway (regardless of
+how the assignment-expression thing works out)..
+
+-R
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+</PRE>

@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [101] in "Coldmud discussion meeting"</TITLE>
+<H1>[101] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?101"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="98"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="98"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="100"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="102"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ANSI</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 21:55:53 1993
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: coldstuff@MIT.EDU
+Date: Sat, 4 Dec 93 18:40:09 PST
+
+Ok, first of all, I reconsidered my position about server IO stuff and came to
+the conclusion that it should be possible for the server to send and receive
+ANY characters supported by the transmission protocol.  Anything else would be
+unnecessarily limiting and likely to cause problems in the future as this type
+of system is used for more and more diverse applications.  This does not mean,
+however, that _users_ should be able to enter anything they want to into
+messages and such.  I believe Greg's solution to this is quite reasonable
+(except that I don't really see the need for a separate data type).
+
+I do _not_ believe that allowing non cooked input from text-dump stuff is a
+bug.  This should be allowed, particularly if the IO is modified to allow
+such characters, because then important data may be lost in the process of a
+text dump/reload (although then a text dump wouldn't be a text dump anymore,
+also.. I'm not sure how this should be dealt with).
+
+As for the rest of this stuff, what I would suggest is that everyone who can
+should move over to rec.games.mud and start working out an actual protocol.
+This is not a task that needs to be taken on by just one person, and this is a
+perfect use for that newsgroup, since it really has very little to do with
+ColdMUD specifically.  Up till now I've paid very little attention to
+rec.games.mud, but I'll start looking at it more.  Basically, stop whining
+about the lack of a protocol and &lt;revolutionary concept warning&gt; let's actually
+MAKE one.
+
+-Richelieu
+-- 
+</PRE>

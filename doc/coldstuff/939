@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [939] in "Coldmud discussion meeting"</TITLE>
+<H1>[939] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?939"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="938"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="940"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="940"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="943"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] regular expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 22 15:38:07 1996
+)</H3>
+<PRE>
+Date: Fri, 22 Mar 1996 12:58:31 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Since there is a POSIX standard for regular expressions, should we hook into
+the system regular expressions if they exist, resorting to our own regexp 
+code if it does not?
+
+The problems which could arise with this is that the current POSIX 
+standard seems to be somewhat vague, leaving openings for interpretation 
+by implementors.  Basically, certain aspects of regular expressions could 
+change depending on what OS the driver is running under.
+
+From the FreeBSD man pages on POSIX regular expressions (to explain how 
+the vagueness is handled in one OS):
+
+BUGS
+       Having two kinds of REs is a botch.
+
+       The current 1003.2 spec says that `)' is an ordinary char-
+       acter in the absence of an  unmatched  `(';  this  was  an
+       unintentional  result  of  a  wording error, and change is
+       likely.  Avoid relying on it.
+
+       Back references are a dreadful botch, posing  major  prob-
+       lems  for  efficient implementations.  They are also some-
+       what  vaguely  defined   (does   `a\(\(b\)*\2\)*d'   match
+       `abbbd'?).  Avoid using them.
+
+       1003.2's  specification  of  case-independent  matching is
+       vague.  The ``one  case  implies  all  cases''  definition
+       given  above is current consensus among implementors as to
+       the right interpretation.
+
+       The syntax for word boundaries is incredibly ugly.
+
+-Brandon
+</PRE>

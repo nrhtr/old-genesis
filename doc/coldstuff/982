@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [982] in "Coldmud discussion meeting"</TITLE>
+<H1>[982] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?982"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="969"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="977"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="981"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="983"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="983"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="983"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] 'user()' builtin function..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr 26 01:10:43 1996
+)</H3>
+<PRE>
+Date: Thu, 25 Apr 1996 22:52:15 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;m0uC3A6-0000EQC@thelbane.brisnet.org.au&gt;
+
+On Wed, 24 Apr 1996, Dancer wrote:
+&gt; &gt; Okay, I agree with Quinn, 'issuer' sounds more generic, if not, I vote 
+&gt; &gt; for 'controller'.
+&gt; 
+&gt; If you want generic, try 'initiator()'. Personally, I'd really like
+&gt; something like that. There are quite a lot of times when I'd like to pin
+&gt; down where  .tell() came from (usually from a room announce, from some
+&gt; code on a user, started by...who? Being able to get the dbref of the
+&gt; enactor would be a BIG help).
+
+Ok, from discussions here and numerous online I'm personally narrowing it 
+down to one of:
+
+      origin()
+      user()
+
+Both of which work.  The primary bonus of 'user()' is it is short, and
+should be easy to pickup by most beginning users--but it is not as
+appropriate in more proffesional applications (however, it is also not
+absolutely inappropriate either).  The drawback to 'origin()' is that it
+doesn't imply you can change it (of course, it doesn't imply you can't
+either.. ;) I'm going to be making these changes soon, of these two which
+do people prefer? 
+
+-Brandon
+</PRE>

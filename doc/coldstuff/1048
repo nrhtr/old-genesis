@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1048] in "Coldmud discussion meeting"</TITLE>
+<H1>[1048] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1048"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1047"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1049"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1050"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1051"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] ~non_terminated...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jul 27 14:53:04 1996
+)</H3>
+<PRE>
+From: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+To: coldstuff@cold.org
+Date: Sat, 27 Jul 1996 18:55:23 +0100 (BST)
+
+Oh, and another thing...
+
+The ~non_terminated behaviour is there to make output to telnet
+clients look neat:
+
+    Please enter yes or no [yes]: no
+    
+    ^ server output.............. ^ user input
+
+Which is kind of pointless if you're not using telnet, but are
+instead using a 'split screen' client which separates input from
+output.
+
+Mmm.
+
+Ay.
+</PRE>

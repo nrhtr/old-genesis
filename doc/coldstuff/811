@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [811] in "Coldmud discussion meeting"</TITLE>
+<H1>[811] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?811"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="810"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="812"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>bugnote: (data).(method)() exectuion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Sep 19 22:35:58 1995
+)</H3>
+<PRE>
+Date: Tue, 19 Sep 1995 20:24:44 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+Basically, it doesn't work.  Doing:
+
+method = 'execute_this;
+"test".(method)();
+
+Sends ['execute_this] as the argument to (method), rather than ["test"], as
+you would expect.  I suspect this is a simple fix.
+
+-Brandon
+</PRE>

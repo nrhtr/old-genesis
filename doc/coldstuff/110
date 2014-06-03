@@ -1,0 +1,71 @@
+<HEAD><TITLE>discuss@charon: [110] in "Coldmud discussion meeting"</TITLE>
+<H1>[110] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?110"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="108"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="109"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="109"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="111"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="111"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="113"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Proposed change regarding MI ambiguities</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec 10 21:05:53 1993
+)</H3>
+<PRE>
+To: Andrew Wilson &lt;Andrew.Wilson@cm.cf.ac.uk&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Sat, 11 Dec 93 01:23:29 +0000.
+             &lt;9312110123.AA19035@ruby.cm.cf.ac.uk&gt; 
+Date: Fri, 10 Dec 93 20:59:27 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; Absolutely not.  It is evident that the ambiguities, if any, can be
+&gt; detected when the method is defined.  Such ambiguities are, after
+&gt; all, merely syntactic.  There really is no reason at all for not
+&gt; creating a @lint, or equivalent mechanism for flagging any
+&gt; ambiguities and for refusing to construct an ambiguous lattice.
+&gt; Force the semantics to be unambiguous and you are saved the horror
+&gt; of run-time lattice verification.  I'd suggest that you read up on
+&gt; the implementation of the Eiffel programming language NOW rather
+&gt; than later.  Do it right, or don't bother.
+
+Two disagreements:
+
+(1) I disagree that run-time lattice verification is a "nightmare".
+As I said, I'm pretty sure I can do it in linear time, which is how
+long a method search is going to take in the general case anyway.
+There won't be a performance penalty relative to the current system.
+
+If there's some other reason why this isn't "doing it right," then I'd
+like to hear it.  Please leave the implementation details up to me,
+though.
+
+(2) You're not thinking in terms of a mud language.  I can't restrict
+programmers from defining methods on their objects because other
+programmers have defined methods on their objects.  Consider the
+following hierarchy:
+
+	A
+
+      B   C
+
+	D
+
+Suppose I own B and you own C.  Someone else owns D.  You define a
+method 'foo' on C.  Now I can't define a method 'foo' on B, I can't
+undefine your method on C because I don't own C, and I can't remove
+B as an ancestor of D because I don't own D.  But D's owner is the one
+who should have to deal with the problem, since it's D that's (after I
+define the 'foo' method) inheriting from incompatible parents.
+
+Also, with a disk-based db, having to check non-local conditions while
+making a local change carries severe performance penalties.
+
+--GBH
+Remember, MUDs are a harder problem than real programming languages.
+
+</PRE>

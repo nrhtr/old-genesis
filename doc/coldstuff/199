@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [199] in "Coldmud discussion meeting"</TITLE>
+<H1>[199] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?199"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="198"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="200"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>hsm, hsm.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Apr  2 21:39:28 1994
+)</H3>
+<PRE>
+Date: Sat, 02 Apr 1994 19:36:52 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+
+I'm trying to figure out what this is, and it just hit me what it MAY be, but
+i'm not sure.  Basically every so often the server will simply crash on a
+textdump (logfile):
+
+Sat Apr  2 19:30:24 1994: PANIC: Cannot remove file 'clean'.
+Sat Apr  2 19:30:24 1994: RECURSIVE PANIC: Cannot remove file 'clean'.
+
+Now, the server is on a hard NFS mount, however with our network being
+overhauled the NFS link has become so damn bad that you get NFS pauses about
+once every 5 minutes (pauses being more than a slight thing, in that it sends
+you NFS server not responding...NFS server ok, etc).  The pauses are usually
+only 30 seconds to a minute, but they can be longer.  Would this cause a
+problem with coldmud?  Could it just get frustrated trying to access files
+on disk, through the NFS pauses, and just crash when the NFS server doesnt
+respond in time?  I know this is reaching but I cannot find any other reason,
+as there are 93 megs currently on the disk...
+
+-Brandon
+</PRE>

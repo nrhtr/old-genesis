@@ -1,0 +1,121 @@
+<HEAD><TITLE>discuss@charon: [818] in "Coldmud discussion meeting"</TITLE>
+<H1>[818] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?818"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="817"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="819"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>new textdump format.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Oct 10 18:29:13 1995
+)</H3>
+<PRE>
+From: brandon@smithfield.declab.usu.edu
+Date: Tue, 10 Oct 1995 16:18:08 -0600
+To: coldstuff@pippin.ece.usu.edu
+
+The following is a document explaining the new textdump format which I am
+considering, and which can also be used to 'patch' a db (coldcc will handle
+partial compiles in this manner).  Also, I really honestly do read everybodies
+messages, even if I dont reply to them :)  I still have a partially composed
+response to everybodies multitasking notes...(time, need time, damnit).
+
+-Brandon
+
+--------------
+
+ColdCC format, broken into directives, once 'object' is defined, it is
+always assumed that directives are in respect to that object, using
+directives without specifying an object will result in an error.
+
+ColdCC will use heuristic rules in deciding how to handle each
+directive.  For instance, stating an object, followed by a method
+definition would assume that the object already exists and has parents,
+and that you are simply recompiling the method or changing the method
+flags.  The keywords 'new' and 'old' can be used in some places to state
+whether the directive is in regard to a new object, or old object ('old'
+is primarily used with 'object' to state that an object should be
+destroyed).
+
+The following uses a pseudo BNF format, with some regexp twists,
+whitespace is assumed to be seperating words.
+
+ident          = [a-z][a-z_0-9]*
+object         = ("#" [0-9]+) | ("$" ident)
+action         = ("new" | "old")
+
+obj_cmd        = [action] "object" object ";"
+
+Examples:        old object $test_user;
+                 object $foo;
+
+    Define the object, $name and #num are acceptable, if $name exists
+    it uses the next available #num and assigns $name to that #num.
+    Furthermore the keyword 'new' or 'old' can be used.  Stating 'new'
+    will let the compiler know that it should be a new object, possibly
+    altering some heuristic rules.  Stating 'old' will destroy the
+    object, if it exists.
+
+parent_cmd     = [action] "parent" object ";"
+
+Examples:        parent $bar;
+                 old parent $baz;
+
+    Define parents for object.  If neither 'new' or 'old' are defined,
+    it adds them to the parents list as if it were a set.  'new' is
+    treated the same way, for now.  'old' will remove the parent from
+    the parents list.
+
+var_cmd        = [action] "var" [object] ident ["=" data] ";"
+
+Examples:        old var $obj foo;
+                 var text = [];
+
+    This sets or defines an object variable.  object represents the
+    definer, if the definer is not specified it defaults to the current
+    object.  data represents any valid ColdC data.  data is not
+    required.  Specifying 'old' will either clear the variable, if it
+    is not defined on this object, or will remove the variable, if this
+    is the defining object.
+
+access         = ("root" | "driver" | "public" | "protected" | "private")
+flags          = "locked" "nooverride" "synchronized" "forked" "native"
+name           = ident ["~" ident]
+method_cmd     = [action] access name [":" flags] [method code] ";"
+
+Examples:
+
+old private foo_cmd;
+
+protected foo_cmd: locked, nooverride {
+    arg cmd, cmdstr, [args];
+    var x;
+
+    return x;
+}
+
+    This allows you to define various aspects of a method, and possible
+    even define the method itself.  Furthermore, you can specify renamed
+    methods in the method name by seperating the old name from the new
+    name with a tilde.  This is useful when protecting native methods.
+    For instance, if the native method 'status' was initialized as:
+
+public status: native;
+
+    And you wanted to protect it, but still have it be a native methods
+    accross restarts.  You would change it to be 'private', rename it,
+    and create an accessor method.  The final saved format would be:
+
+private status~_status: native;
+public status: nooverride {
+    (&gt; .perms(...) &lt;);
+    return ._status();
+}
+
+    Renamed methods are only stored online, in respect to native methods.
+</PRE>

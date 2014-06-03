@@ -1,0 +1,75 @@
+<HEAD><TITLE>discuss@charon: [214] in "Coldmud discussion meeting"</TITLE>
+<H1>[214] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?214"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="211"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="213"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="213"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="215"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="215"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="215"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: match_template() needs help with consistancy</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Apr 28 09:06:37 1994
+)</H3>
+<PRE>
+To: stewarta@netcom.com (Alex Stewart)
+Cc: ghudson@MIT.EDU (Greg Hudson), coldstuff@MIT.EDU
+In-Reply-To: Your message of Wed, 27 Apr 94 23:47:37 -0700.
+             &lt;199404280647.XAA06883@netcom.com&gt; 
+Date: Thu, 28 Apr 94 09:03:26 EDT
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt;&gt; * If the user wants to match a wildcard with something that includes
+&gt;&gt; text that would match the next word pattern, the user should simply
+&gt;&gt; quote the entire argument as a C string literal, and leave it at that.
+
+&gt; I don't think anybody's objecting to this (if I understand what
+&gt; you're referring to properly).
+
+People are objecting to it; they are saying that the user should be
+able to quote part of the argument as a C string literal.
+
+&gt;&gt; * The user generally doesn't want any processing to get in the way
+&gt;&gt; when it's not necessary; therefore, no processing at all is done on
+&gt;&gt; the last argument.
+
+&gt; This is bad.  It is bad quite simply because it means parsing is
+&gt; handled differently in some cases than in others and it's not always
+&gt; immediately obvious which is which.  Rules should be consistent for
+&gt; the entire match or not exist at all.
+
+I disagree.  For user-level parsing, the primary job of the parser is
+to keep its nose out of the user's business (for examples of parsers
+which forget this rule, see Mush).  Consistency is secondary; the user
+spends a lot of time in the parser and will learn its rules quickly
+enough.
+
+On the other hand, assuming you retain the "quote the whole argument
+or none of it" rule, it may be worth applying consistency here instead
+of non-meddling; it's very rare for arguments to begin with quotes,
+except when the user wants to quote them.  (On the other hand, it's
+very common for arguments to *contain* quotes which the user does not
+want stripped; see below.)
+
+&gt; No, MOO parsing does not function this way (iobjstr quoting is
+&gt; handled exactly the same as dobjstr quoting, the way it should be),
+&gt; nor does anything else that I am familiar with.
+
+You are correct; it is Coolmud's verb-dobj-prep-iobj parsing which
+works the same way as Coldmud's "verb * prep *" template matching.
+
+Here are some examples of user commands which show why I prefer the
+"quote the whole argument or none of it" rule.
+
+	@desc here as A sign on the road says, "Burma Shave."
+	whisper The spy told me, "Ken sent me." to dave
+
+MOO mangles both of these.
+
+--GBH
+
+</PRE>

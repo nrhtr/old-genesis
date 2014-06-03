@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1266] in "Coldmud discussion meeting"</TITLE>
+<H1>[1266] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1266"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1264"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1265"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1265"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1267"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1267"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1268"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] A bug??</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Apr  1 03:38:01 1997
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+In-Reply-To: &lt;3.0.32.19970401002326.007676cc@mail.tenetwork.com&gt; from Jeff Kesselman at "Apr 1, 97 00:23:29 am"
+To: jeffk@tenetwork.com (Jeff Kesselman)
+Date: Tue, 1 Apr 1997 10:29:49 +0200 (MET DST)
+Cc: coldstuff@cold.org
+
+&gt; What could cause the damn thing to think tehre is a parameter ebgin passed
+&gt; where there is none in the source code??
+&gt; 
+&gt; Im doing a call of the form 
+&gt;   out = (fooobj).myfunc();
+&gt; Where foobj is a variable containing an obj reference
+&gt;  and myfunc is a method on the referenced obejct tha ttakes no arguments.
+&gt; 
+&gt; im gettign a "called with one argument, requires none" error
+&gt; 
+&gt; ?????  bad stack?  that would be scary....
+&gt; 
+&gt; JK
+
+It could be - we had bad stack bug in the past. Could you send in some code
+that exactly reproduces it (with a7 core)?
+
+	Miro
+
+</PRE>

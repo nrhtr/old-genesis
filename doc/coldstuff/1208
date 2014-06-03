@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [1208] in "Coldmud discussion meeting"</TITLE>
+<H1>[1208] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1208"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1207"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1209"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] let's try that again...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan  4 22:49:25 1997
+)</H3>
+<PRE>
+Date: Sat, 04 Jan 1997 17:29:15 -0800
+To: coldstuff@cold.org
+From: Will Orton &lt;worton@romt.com&gt;
+
+Sorry about that previous message... ctrl-e varies from machine to
+machine... anyway:
+
+I'm using genesis 1.0 p21 and coldcore 3.0 a6
+I @spawn a $thing.
+I @chroot $newthing to $root
+
+;$newthing.data() give something like this:
+=&gt; #[[$root, #[['manager, $user_will], ['flags, ['variables, 'methods,
+'code]], ['created_on, 
+852372937], ['inited, 1]]], [$has_messages, #[['messages, 0]]],
+[$has_settings, 
+#[['defined_settings, 0], ['local_settings, 0], ['settings, 0]]],
+[$has_name, #[['name, ['prop, 
+"testo", "testo"]]]], [$has_gender, #[['gender, $gender_neuter]]],
+[$has_commands, #[['shortcuts, 
+#[]], ['remote, #[]], ['local, #[]]]], [$described, #[['prose, 0]]],
+[$located, #[['location, 
+$user_will], ['obvious, 1]]]]
+
+note the various references to parent objects that most definately aren't root
+
+@del-p $some_supposed_parent says those objects are not ancestors of $newthing
+@del-v says "object variable location does not exist"
+
+decompiling the database shows $newthing's only parent as $root, but shows
+object vriables defined like they were when $newthing was derived from $thing.
+
+deleting the var references in the textdump and recompiling gives me what I
+wanted in the first place -- a child of $root.
+
+I don't really want to do this, I'm just wondering if @chparent is working
+properly...
+
+
+-Will Orton &lt;worton@romt.com&gt;
+</PRE>

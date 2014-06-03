@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1363] in "Coldmud discussion meeting"</TITLE>
+<H1>[1363] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1363"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1362"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1364"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1364"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1365"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] location, located, and thing_frob</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov  7 01:09:07 1997
+)</H3>
+<PRE>
+Date: Thu, 6 Nov 1997 22:01:02 -0800 (PST)
+From: BRANDON JOSEPH RICKMAN &lt;ashes@ucla.edu&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.96.970919083943.6892A-100000@roguetrader.com&gt;
+
+Some things I've noticed poking through the code for $located &amp;c in my 
+ColdCore 3.0a9.02 db:
+
+$location.add_to_contents() - seems to be an outdated method, does this 
+get called by anything?
+
+
+$located.realm() - Gives: "Object variable realm not found", probably not 
+a useful method anyway.
+
+
+$located.uninit_guest_guest() - looks suspicious to me, maybe it's legit.
+
+
+$located,obvious - used by .set_obvious(), but ignored by .is_obvious_to()
+
+
+This is a very funny piece of code:
+@program $located.environment() +access=pub
+  return [this()] + location.environment().setremove(this());
+</PRE>

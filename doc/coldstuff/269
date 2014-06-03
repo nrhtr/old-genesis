@@ -1,0 +1,66 @@
+<HEAD><TITLE>discuss@charon: [269] in "Coldmud discussion meeting"</TITLE>
+<H1>[269] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?269"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="268"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="270"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ports and things</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 15:35:16 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: coldstuff@MIT.EDU
+Date: Thu, 19 May 1994 12:26:24 -0700 (PDT)
+Reply-To: coldstuff@MIT.EDU
+
+:sighs and thwaps himself again for sleeping through the meeting..
+
+Anyway, a couple of points..  Crag, it's quite easy (and done all the time,
+look at the standard user-connect code) in ColdMUD to redirect a connection to
+another object at any time.  Lynx, if you're going to be
+adding/removing/changing these ports that often, then this is some odd
+definition of "standard" you're using..
+
+However, in the logs a good point was brought up (firewalls), which is both a
+pro and con argument for multi-ports.  The pro argument is from a security
+standpoint (firewalls could screen out specific services they didn't feel were
+secure enough while allowing others).  The con argument is from a flexibility
+standpoint (it's a lot easier in most cases to get someone to open up a hole in
+a firewall for one port than for 15 ports).  However, anybody that manages to
+get a ColdMUD server set up behind a firewall is going to be in a really wierd
+situation anyway, I suspect (since these services are primarily
+ColdMUD&lt;-&gt;ColdMUD based, one of the two ends would presumably need to be inside
+a firewall for these to be issues), but still..
+
+However, here's another point:  If you want to add a new standard service under
+Lynx's plan, you need to go through this whole process all over again to pick a
+port number and get everybody to agree that that number will represent that
+service forever and all time, and then hope that nothing you don't know about
+is going to kill everything dead...
+
+In my opinion, it is MUCH preferable to set up a system whereby services can be
+looked up and accessed by name, rather than some arbitrary
+more-or-less-standard number.  Crag's portmapper suggestion is much better for
+this reason, but it runs into problems with firewalls because the IP port for a
+given service can't be easily known ahead of time.  A single-port approach,
+however, allows for maximum flexibility (services and options can be determined
+as verbosely and with whatever granularity one wants (protocol permitting)) and
+has minimal problems with firewalls or other port-based mechanisms because
+there's only one port anyone needs to access.
+
+(The portmapper idea could still be useful, however, and I don't see any reason
+why it couldn't or shouldn't be a part of the default services provided by a
+standard single-port multiplexer, for extensions and unforseeables, if nothing
+else.. It could also be used to report what services are available through the
+metaport itself..)
+
+Anyway, that's still the way I see things..
+-Riche
+</PRE>

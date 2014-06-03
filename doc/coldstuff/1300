@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [1300] in "Coldmud discussion meeting"</TITLE>
+<H1>[1300] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1300"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1298"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1299"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1299"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1301"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1301"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1301"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] prefix/suffix for Cold</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun  4 04:13:45 1997
+)</H3>
+<PRE>
+Date: Wed, 04 Jun 1997 01:05:50 -0700
+From: greg blake &lt;snooze@crl.com&gt;
+Reply-To: snooze@crl.com
+To: coldstuff@cold.org
+
+Frank Crowell wrote:
+&gt; 
+&gt; I finally decided to start playing around with my external bots again.
+&gt; The C language version is a chopped up version of Mauldin's Colins and I
+&gt; had to noop all the prefix/suffix stuff so that the bot could operate on
+&gt; the Cold world.  The purpose of the prefix/suffix stuff is to say "I'm
+&gt; done" when certain time-consuming commands are done.
+
+I also believe the mass-neotek stuff used that to help prevent people
+from spoofing the bot.  It would be able to tell what output was from
+what it was doing or something like that.  Back in the old days there
+were times when Julia was abused many times by things like that.
+
+ 
+&gt; I can play around without the prefix/suffix feature, but I don't think I
+&gt; can get full use of the bots without the feature.  I believe that
+&gt; Brandon sometime ago mentioned that I could use VEIL to do the same
+&gt; thing.
+&gt; 
+&gt; Is there an easy way to add the prefix/suffix or to at least fake it?
+
+I'd think it wouldn't be too hard at all.  All you have to do is add
+something into the command parser that echos stuff out before a command
+is executed and after.
+
+Peace,
+snooze
+
+-- 
+P          Gregory Blake (aka snooze@deepseas,The
+Pause,TooMUSH,etc)       P
+L                      Peace * Love * Unity *
+Respect                      L
+U          email: snooze@crl.com  |  url:
+http://www.crl.com/~snooze       U
+R              "Who are you? What do you want?" | ICQ#
+1367921             R
+</PRE>

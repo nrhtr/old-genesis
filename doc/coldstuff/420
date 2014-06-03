@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [420] in "Coldmud discussion meeting"</TITLE>
+<H1>[420] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?420"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="419"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="419"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="419"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="421"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="422"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="422"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: server stuff</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Sep 20 19:38:24 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: stewarta@netcom.com (Alex Stewart)
+Date: Tue, 20 Sep 1994 16:20:15 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199409202308.QAA07321@netcom12.netcom.com&gt; from "Alex Stewart" at Sep 20, 94 04:08:41 pm
+
+&gt; 
+&gt; Is there any more information on the situation with ColdMUD under Linux (I'm
+&gt; finally getting around to setting it up on my linux system, but I don't like
+&gt; hangs.  I'm wondering if anybody has any more information before I start going
+&gt; after the bug aggressively on my own)?
+&gt; 
+&gt; BTW, now that I've looked a bit at the code, I'm gonna go ahead and fix the
+&gt; fork/suspend(0) problem and release a patch if nobody has any objections..  I
+&gt; see a fairly simple way to do it, I think.
+&gt; 
+&gt; -R
+&gt; -------------------------------------------------------------------------------
+&gt;    Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+&gt;              ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+&gt; 
+
+What problem? 0.12 has suspend and pause() can be used for long loops. I see
+ no use for fork as it appears in MOO. We have the heartbeat for timing and
+ much better error control than you'd get with any sort of fork, I think.
+
+So uh.. yeah..I have objections. What problem are you gonna fix?
+
+Crag
+</PRE>

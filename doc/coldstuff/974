@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [974] in "Coldmud discussion meeting"</TITLE>
+<H1>[974] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?974"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="973"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="975"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="975"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="980"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] controlling object of a task (user()/controller()/etc)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Apr 23 19:52:22 1996
+)</H3>
+<PRE>
+Date: Tue, 23 Apr 1996 17:22:20 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Ok, it sounds like the general concept is accepted (assuming this since 
+everybody I talked to and those on the list instantly jumped to syntax :)
+
+Frankly I would rather use 'user()' because it is short, it is not always 
+conceptually correct--which is also a large drawback for me.  The two goals
+I have with naming it are: ease of use (I really dont like long function 
+names in high-use positions) and appropriateness.  Since I plan on 
+evolving ColdC more and more to handle more tasks, I'd like to keep 
+appropriateness in mind.  Anybody have a thesarus?  :)  Suggestions on 
+the table:
+
+     controller()      -- most appropriate, too bulky and long
+     server()
+     con()
+     user()
+     requestor()
+     client()
+
+(I forget any others...)
+
+I'm actually liking 'client()' or 'server()' (both are appropriate, 
+depending upon the point of view you are taking).
+</PRE>

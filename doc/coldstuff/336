@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [336] in "Coldmud discussion meeting"</TITLE>
+<H1>[336] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?336"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="333"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="335"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="335"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="337"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: spell checking</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 28 08:31:46 1994
+)</H3>
+<PRE>
+From: Colin McCormack &lt;colinm@extro.ucc.su.OZ.AU&gt;
+To: BRANDON@cc.usu.edu
+Date: Sat, 28 May 1994 22:24:23 +1000 (EST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;01HCULOP5JIABWE83K@cc.usu.edu&gt; from "BRANDON@cc.usu.edu" at May 27, 94 10:19:44 pm
+
+
+&gt; For the actual question though, any comments?
+
+As to the feasibility/advisability of feeding stdout/stderr to
+coldmud?  Eminently... medium term.
+
+It's one of the subgoals I've had for a long while.
+It's not as easy to do, well, as to suggest, however.
+
+May I suggest you collect your spell checking output in a file,
+and use the builtin to echo it, when complete, or use the
+faucet approach you suggested?  I know it's not optimal, from
+an execution point of view, but it is from a systemic Coldmud
+development point of view (ie: mine :)
+
+Please don't be worried that it's an implementation hack,
+after all, isn't the hiding of necessary kludges one of the
+benefits of encapsulation?
+
+Colin.
+
+</PRE>

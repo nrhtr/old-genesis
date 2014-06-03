@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1165] in "Coldmud discussion meeting"</TITLE>
+<H1>[1165] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1165"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1164"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1166"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1166"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1168"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Re:coldcc -d -#...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 22:07:15 1996
+)</H3>
+<PRE>
+From: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+To: coldstuff@cold.org
+Date: Mon, 2 Dec 1996 23:06:13 +0000 (GMT)
+In-Reply-To: &lt;3.0.32.19961202115837.006c9c50@mail.tenetwork.com&gt; from "Jeff Kesselman" at Dec 2, 96 11:58:38 am
+
+Hi,
+
+	I think that coldcc's args parser needs to be toughened 
+up to avoid a little problem I just encountered.
+
+	coldcc -d -#
+
+		means decompile from binary to textdump, use object names
+		instead of numbers when writing out the text...
+
+	coldcc -#d
+
+		actually compiles from textdump to binary.
+
+Sucky.
+
+Ay.
+</PRE>

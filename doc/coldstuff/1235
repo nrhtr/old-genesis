@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1235] in "Coldmud discussion meeting"</TITLE>
+<H1>[1235] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1235"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1234"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1236"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1236"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1241"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] public/private/protected object variables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Feb 28 23:17:43 1997
+)</H3>
+<PRE>
+Date: Fri, 28 Feb 1997 21:09:59 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+Back when I added public/private/protected methods I considered diong the
+same with variables.  Once again I'm considering it--simply because the
+need for such a beast is more and more becoming a need for some people. 
+What I'm thinking of implementing is three types of object variables.  We
+would still keep encapsulation in that only the definer can access
+variables and instances it defines.  What we would be expanding on is the
+default value for these instances (i.e. what is inherited and how). 
+Basically: 
+
+        private     -- act as they do now--if no instance is defined
+                       simply return zero.  This would be the default
+        protected   -- if there is no instance, use the _definers_
+                       instance (and only the definers)
+        public      -- get the first instance in the ancestor tree--using
+                       the same search requirements as for methods.  We
+                       would likely want a cache like with methods..or not.
+
+Comments?
+
+-Brandon Gillespie
+
+</PRE>

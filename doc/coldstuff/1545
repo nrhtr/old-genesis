@@ -1,0 +1,201 @@
+<HEAD><TITLE>discuss@charon: [1545] in "Coldmud discussion meeting"</TITLE>
+<H1>[1545] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1545"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1544"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1546"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>it's all Kipp's fault! i swear!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 23 01:16:15 2000
+)</H3>
+<PRE>
+Date: Sun, 23 Jan 2000 01:08:05 -0500
+From: Psyclone &lt;psyclone42@geocities.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+--------------7094BD1F14E4C6194113E4F2
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+At Kipp's urging, I wrote a patch to do two things.
+
+1. Have stack(1) not bother to return the line numbers or opcodes.
+(actually it doesn't care what the arg is, as long as it's there.) He
+says straight stack() is slow due to decompilation (&lt;driver_hacker&gt; from
+line_number() call &lt;/driver_hacker&gt;). I have no opinion.
+
+2. Have calling_method() return the calling method. Like stack()[2][3].
+See above.
+
+Don't blame me, blame him. please. His email is: mmudge1@twcny.rr.com
+I don't think he subscribes to coldstuff or any other @cold.org
+listserv.
+
+----- Kipp says:
+Kipp says, "You might want to explain the reason for these two
+things."        
+Kipp says, "For one, stack() is definitely for debugging, but even in
+ debugging, wasting time unnecessarily is repetitiously redundantly
+
+unnecessary."                                                                 
+Kipp says, "Second, calling_method() is a good way for a program to
+determine
+ if the program that called it has permission to.  Especially since
+Redi's
+ permission system goes down to the method resolution.  Methods on the
+same
+ object can be owned by different people, and so the recieving programs
+need to
+ be able to determine what method called it so it can tell if the owner
+of the
+ method has permission to be doing the
+calling."                               
+-----
+
+(Redi is his core)
+
+:puts on his asbestos underwear and hides.
+--------------7094BD1F14E4C6194113E4F2
+Content-Type: text/plain; charset=us-ascii;
+ name="stack-kluge.diff"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline;
+ filename="stack-kluge.diff"
+
+diff -ur Genesis-1.1.8-STABLE/src/execute.c driver-src/src/execute.c
+--- Genesis-1.1.8-STABLE/src/execute.c	Tue Jul 13 17:13:51 1999
++++ driver-src/src/execute.c	Sun Jan 23 00:16:20 2000
+@@ -568,6 +568,33 @@
+     return r;
+ }
+ 
++cList * task_stack_2(void) {
++    cList * r;
++    cData   d,
++           * list;
++    Frame  * f;
++  
++    r = list_new(0);
++    d.type = LIST;
++    for (f = cur_frame; f; f = f-&gt;caller_frame) {
++
++        d.u.list = list_new(3);
++        list = list_empty_spaces(d.u.list, 3);
++
++        list[0].type = OBJNUM;
++        list[0].u.objnum = f-&gt;object-&gt;objnum;
++        list[1].type = OBJNUM;
++        list[1].u.objnum = f-&gt;method-&gt;object-&gt;objnum;
++        list[2].type = SYMBOL;
++        list[2].u.symbol = ident_dup(f-&gt;method-&gt;name);
++
++        r = list_add(r, &amp;d);
++        list_discard(d.u.list);
++    }
++
++    return r;
++}
++
+ /*
+ // ---------------------------------------------------------------
+ */
+diff -ur Genesis-1.1.8-STABLE/src/grammar.y driver-src/src/grammar.y
+--- Genesis-1.1.8-STABLE/src/grammar.y	Tue Jul 13 16:47:29 1999
++++ driver-src/src/grammar.y	Sun Jan 23 00:31:08 2000
+@@ -157,7 +157,7 @@
+ %token F_CACHE_INFO F_BIND_FUNCTION F_UNBIND_FUNCTION F_ATOMIC
+ %token F_METHOD_INFO F_ENCODE F_DECODE F_SIN F_EXP F_LOG F_COS
+ %token F_TAN F_SQRT F_ASIN F_ACOS F_ATAN F_POW F_ATAN2 F_CONFIG F_ROUND
+-%token F_FLUSH OP_HANDLED_FROB F_VALUE F_HANDLER
++%token F_FLUSH OP_HANDLED_FROB F_VALUE F_HANDLER F_CALLINGMETHOD
+ 
+ /* Reserved for future use. */
+ /*%token FORK*/
+diff -ur Genesis-1.1.8-STABLE/src/include/execute.h driver-src/src/include/execute.h
+--- Genesis-1.1.8-STABLE/src/include/execute.h	Tue Jul 13 17:05:03 1999
++++ driver-src/src/include/execute.h	Sun Jan 23 00:37:57 2000
+@@ -215,6 +215,7 @@
+ VMState *task_lookup(Long tid);
+ cList * task_list(void);
+ cList * task_stack(void);
++cList * task_stack_2(void);
+ void run_paused_tasks(void);
+ void bind_opcode(Int opcode, cObjnum objnum);
+ 
+diff -ur Genesis-1.1.8-STABLE/src/include/functions.h driver-src/src/include/functions.h
+--- Genesis-1.1.8-STABLE/src/include/functions.h	Tue Jul 13 16:47:31 1999
++++ driver-src/src/include/functions.h	Sun Jan 23 00:28:09 2000
+@@ -157,6 +157,7 @@
+ COLDC_FUNC(tasks);
+ COLDC_FUNC(tick);
+ COLDC_FUNC(stack);
++COLDC_FUNC(calling_method);
+ COLDC_FUNC(method);
+ COLDC_FUNC(this);
+ COLDC_FUNC(definer);
+diff -ur Genesis-1.1.8-STABLE/src/opcodes.c driver-src/src/opcodes.c
+--- Genesis-1.1.8-STABLE/src/opcodes.c	Tue Jul 13 16:47:29 1999
++++ driver-src/src/opcodes.c	Sun Jan 23 00:30:04 2000
+@@ -176,6 +176,7 @@
+     { F_PAUSE,            "pause",                func_pause },
+     { F_REFRESH,          "refresh",              func_refresh },
+     { F_TICKS_LEFT,       "ticks_left",           func_ticks_left },
++    { F_CALLINGMETHOD,    "calling_method",       func_calling_method },
+     { F_METHODOP,         "method",               func_method },
+     { F_THIS,             "this",                 func_this },
+     { F_DEFINER,          "definer",              func_definer },
+diff -ur Genesis-1.1.8-STABLE/src/ops/task.c driver-src/src/ops/task.c
+--- Genesis-1.1.8-STABLE/src/ops/task.c	Tue Jul 13 14:51:02 1999
++++ driver-src/src/ops/task.c	Sun Jan 23 00:40:20 2000
+@@ -152,6 +152,7 @@
+ }
+ 
+ /* ----------------------------------------------------------------- */
++/*
+ void func_stack(void) {
+     cList * list;
+ 
+@@ -162,6 +163,31 @@
+ 
+     push_list(list);
+     list_discard(list);
++}
++*/
++
++void func_stack(void) {
++    cList *list;
++
++    INIT_0_OR_1_ARGS(INTEGER);
++
++    if (argc) {
++        list = task_stack_2();
++        pop(1);
++    } else {
++        list = task_stack();
++    }
++
++    push_list(list);
++    list_discard(list);
++}
++
++void func_calling_method() {
++    /* Accept no arguments, and push the name of the calling method. */
++    if (!func_init_0())
++        return;
++
++    push_symbol(cur_frame-&gt;caller_frame-&gt;method-&gt;name);
+ }
+ 
+ void func_method(void) {
+
+--------------7094BD1F14E4C6194113E4F2--
+
+</PRE>

@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [404] in "Coldmud discussion meeting"</TITLE>
+<H1>[404] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?404"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="402"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="403"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="403"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="405"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="405"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="405"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Looking for Cores</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Sep 12 12:03:31 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Mon, 12 Sep 1994 08:54:38 -0600 (MDT)
+To: COLDSTUFF@MIT.EDU
+X-Vms-To: COLDSTUFF@MIT.EDU
+
+The Cold Dark isn't a 'Core' in the common sense.  It is just the last textdump
+from a previously running Server.  There is a lot there you probably don't want
+for a core, but if you are up to it, it wouldn't take too much effort to strip
+out all that you don't want and start anew.  Also, there are a lot of projects
+only half finished.  The help system doesn't work because it was intentionally
+broken (it actually did work).  It was an older one written by Quo Vadis which
+I wasn't too fond of and was going to rewrite (it is 'hypertext' but not a very
+good system--it is a tree structure and I prefer web structures better).
+
+-Brandon-
+
+(BTW, if you have any questions about TCD feel free to ask me)
+</PRE>

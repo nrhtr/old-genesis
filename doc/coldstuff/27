@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [27] in "Coldmud discussion meeting"</TITLE>
+<H1>[27] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?27"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="26"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="28"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>new server...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 13:03:57 1993
+)</H3>
+<PRE>
+Date: Tue, 16 Nov 1993 17:52:02 GMT
+From: snooze &lt;gregb@amber.ecst.CSUChico.EDU&gt;
+To: coldstuff@MIT.EDU
+
+
+Has the world file been updated to deal with this yet? I just tried starting
+up something and none of the lock code had been updated...
+
+or... is someone working on correcting this...
+
+snooze
+</PRE>

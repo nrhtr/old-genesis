@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [37] in "Coldmud discussion meeting"</TITLE>
+<H1>[37] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?37"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="19"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="36"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="36"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="38"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="38"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="48"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: clear parameters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 19:13:34 1993
+)</H3>
+<PRE>
+Date: Tue, 16 Nov 1993 16:03:19 -0800
+From: dougo@pure.com (Doug Orleans)
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;9311162304.AA00973@gac.edu&gt;
+
+ &gt; Obviously there are ways to avoid this particular example.  Still, I
+ &gt; really don't like the assumption that because a child's value is equal
+ &gt; to the parent's value, the two are somehow linked.
+
+Basically, there are two notions of `default value':
+
+    1) I want the child's property to always be the default, which is
+       chosen by the parent and changes dynamically;
+
+    2) I want the child's property to be fixed at x, where x was the
+       `factory default' given by the parent when the child was created.
+
+MOO deals with this by having 1) be a clear property, and 2) be a
+property that was explicitly set to the default (foo.bar = foo.bar).
+FMPL deals with this by doing property lookup dynamically at runtime;
+when you reference the child's property, if it's not defined directly
+on the child, it looks up the parent tree until it finds the
+definition, but when you assign a value to the property, it makes a
+new binding on the child.  (This behavior happens because there's
+really no difference between `verbs' and `properties' in FMPL, just
+`bindings', so there's only one lookup mechanism.)  These seem to be
+semantically equivalent, with the only difference being that FMPL
+doesn't store a `clear property' marker on the child -- which is a win
+in most cases, because then an empty object takes virtually no space,
+instead of the same amount of space as its parent's properties; the
+only downside I can see is that if you try to reference a property
+that isn't defined, you have to traverse the whole tree to find this
+out.
+
+I dunno how Cold does it; from the remarks Greg has made it I'm
+guessing that properties (data members, slots, whatever you want to
+call them) aren't inherited at all except at creation time, which
+means that it's like MOO before it had clear properties.  I guess you
+can simulate clear properties with methods that lookup the parent tree
+manually if the property is equal to a certain out-of-band value (e.g.
+'clear), but it seems like it would be nicer if there were some
+in-server way of doing this.
+
+--dougo@pure.com
+</PRE>

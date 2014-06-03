@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [585] in "Coldmud discussion meeting"</TITLE>
+<H1>[585] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?585"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="584"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="586"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Cold Dark Core 1.1</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 15 02:20:41 1994
+)</H3>
+<PRE>
+Date: Tue, 15 Nov 1994 00:14:33 -0700
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+
+Ok, with the help of Jeff Kesselman I've got the textdump split into
+each of it's relative files.  I also added in the command_environment
+which sped up parsing a bit (you do not notice the time used in parsing
+when there are low users and not many commands, but it soon becomes
+an issue).  This one is also much cleaner.  I don't think there will
+be another release until 2.0, which will include ctext and hypertext
+help (not the same as QV's, I wasn't happy with that design--wanted more
+flexibility).
+
+-Brandon
+
+</PRE>

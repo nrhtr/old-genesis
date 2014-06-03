@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [76] in "Coldmud discussion meeting"</TITLE>
+<H1>[76] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?76"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="75"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="77"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="77"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="78"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Best Platform for ColdMUD?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 29 10:15:25 1993
+)</H3>
+<PRE>
+Date: Mon, 29 Nov 1993 09:13:31 -0600
+From: Steven Owens &lt;uso01@mailhost.unidata.com&gt;
+To: coldstuff@MIT.EDU
+
+
+Hi all,
+
+	You may remember a question or two I posted a couple of weeks
+ago.  In a nutshell, a friend of mine, Scott, wants to start up a BBS
+running some sort of MUD.  I'm talking him into using ColdMUD, because
+I think it's nifty.  I could really use some advice on the platform.
+
+	Question is, what's the best platform to set it up on, taking
+into account feasibility and cost?  And what's the best way to
+establish connectivity?
+
+	Scott just went out and purchased a Packard Bell 486 DX 66Mhz
+with 8meg of ram and a 400-odd meg hard drive, but he can still return
+it if it's horribly wrong (Best Buy 30-day "no questions asked" return
+policy).
+
+	I'm assuming that running Linux or some other brand of free
+UNIX for x86 machines is best.  How do FreeBSD and such measure up
+against Linux?
+
+	What kind of a load (disk space, RAM, CPU) would ColdMUD
+impose on a regular UNIX system (i.e. what if he rents space on one of
+Netcom's systems, or Colorado SuperNet?)?
+
+	We're based in Denver, Colorado.  Scott wants to eventually
+set up a multi-line BBS for players, but right now he's looking for
+the most cost-effective method to run the system in a "development"
+mode; probably SLIPping into Netcom or something similar, to allow the
+developers to connect and work on stuff.  He's not independently
+wealthy, but he's committed to doing this; any suggestions for the
+most cost-effective method?
+
+Steven J. Owens
+uso01@unidata.com
+
+</PRE>

@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [1158] in "Coldmud discussion meeting"</TITLE>
+<H1>[1158] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1158"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1157"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1159"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Java Stuff (was Re: [COLD] Is there a shortcut ...)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 17:27:48 1996
+)</H3>
+<PRE>
+Date: Mon, 02 Dec 1996 15:17:23 -0800
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+Jeff Kesselman wrote:
+
+&gt; 
+&gt; I've looked at both E and Java as alternatives to ColdX and rejected them
+&gt; both for the following reasons:
+
+I agree that I've been slow in considering Java, but the problem is 
+the virtual worlds needs something that can generate critical mass. 
+Java
+right now has the critical mass.  This means that I actually can go out
+and hire Java programmers.  And of course there is funding for projects
+that have "Java" as the buzzword. 
+
+&gt; In re implementing ColdX in JAVA (or E), the efficiency issues would scare
+&gt; me. You are putting an interpreter on top of another interpreter. JAVA has
+&gt; become a pretty fast interpreter but it still is NOT even in the same order
+&gt; of magnitude i think as good C or C++ code..
+
+Java has to get faster, that's all there is to it.  A lot of companies
+are
+concerned about the speed. 
+
+I think the evolution of Java will be towards better performance so that
+you
+can write reasonably fast servers with stronger security and distributed
+computing.
+I don't know what the scripting language will look like or how you
+handle the
+dynamic mechanisms.  Python does it better, but it's a speciality
+language without
+the critical mass.
+
+Yes, this is still a Cold-related topic.  It's for version 2.x, 3.x,
+whatever...
+
+Frank
+ 
+-- 
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+</PRE>

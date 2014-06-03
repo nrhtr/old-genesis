@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [1322] in "Coldmud discussion meeting"</TITLE>
+<H1>[1322] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1322"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1320"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1320"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1321"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1323"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] The disconnect bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Aug 11 16:11:48 1997
+)</H3>
+<PRE>
+From: Miroslav Silovic &lt;silovic@petra.zesoi.fer.hr&gt;
+In-Reply-To: &lt;3.0.2.32.19970810152052.00b10ea0@mail.tenetwork.com&gt; from Jeff Kesselman at "Aug 10, 97 03:20:52 pm"
+To: jeffk@tenetwork.com (Jeff Kesselman)
+Date: Mon, 11 Aug 1997 21:57:26 +0200 (MET DST)
+Cc: coldstuff@cold.org
+
+&gt; Has the order bug been fixed  in the disconnect event code in the driver
+&gt; that I repot red a month or so ago, yet?
+&gt; 
+&gt; If not soon ill do it nmyself and send you the patch (thiugh its a 2 line fix)
+&gt; Jeff Kesselman
+&gt; Snr. Game Integration Engineer
+&gt; TEN -- The Total Entertainment Network -- www.ten.net
+&gt; 
+
+I don't remember seething this report. Although, if it's only two lines,
+just send the patch with a quick explanation, I think it'll be easier. :)
+
+	Miro
+</PRE>

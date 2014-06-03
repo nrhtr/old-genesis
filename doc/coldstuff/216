@@ -1,0 +1,81 @@
+<HEAD><TITLE>discuss@charon: [216] in "Coldmud discussion meeting"</TITLE>
+<H1>[216] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?216"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="215"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="217"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="217"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="218"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>consistency in match_template</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Apr 28 16:44:13 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: coldstuff@MIT.EDU
+Date: Thu, 28 Apr 1994 13:33:48 -0700 (PDT)
+
+(I renamed the subject because I just couldn't stand seeing "consistency"
+mangled any longer :)
+
+&gt; People are objecting to it; they are saying that the user should be
+&gt; able to quote part of the argument as a C string literal.
+
+Aha, but you didn't say anything about this case in your statement.  I am
+saying that the user should be able to do _both_, which does not disagree with
+your original statement, only append to it.  Anyway, this is beside the main
+point.
+
+&gt; I disagree.  For user-level parsing, the primary job of the parser is
+&gt; to keep its nose out of the user's business (for examples of parsers
+&gt; which forget this rule, see Mush).  Consistency is secondary; the user
+&gt; spends a lot of time in the parser and will learn its rules quickly
+&gt; enough.
+
+I agree, however, we apparently have different ideas about what "keeping its
+nose out of the user's business" means.  I maintain that if I have to stop and
+think every time I issue a command about whether my quotes will show up in the
+output or not based on what the template looks like (which I may not even know,
+and certainly shouldn't be required to know), that the parser is most
+definitely sticking its nose into my business in a very arbitrary way.
+Consistency is required for a decent user interface, and simply saying "they'll
+figure it out" is not good enough because they shouldn't have to if it's
+properly done in the first place.
+
+&gt; You are correct; it is Coolmud's verb-dobj-prep-iobj parsing which
+&gt; works the same way as Coldmud's "verb * prep *" template matching.
+
+Oh.. I assumed you were talking MOO since CoolMUD is, from all reports I've
+gotten, essentially dead.
+
+&gt; 	whisper The spy told me, "Ken sent me." to dave
+
+Just a note, this form of use is dangerous at best anyway.  For example, what
+if I said instead:
+
+	whisper The spy said to me, "Ken sent me." to dave
+
+In short, none of these solutions are really adequate..
+
+Lynx's suggestion about using something like ` seems the best alternative, but
+actually, what I'm leaning towards at this point is simply expanding the
+options for how match_template functions, thus allowing people to determine
+in-DB which type of matching they wish to use for any given application..
+something along the lines of
+
+match_template(template, string, quote-char, quote-handling, field-handling)
+
+where quote-char is a single-char string (specifying which char should be used
+in the place " is used currently) or a double-char string (specifying an
+open-close pair), quote-handling is a symbol specifying whether quotes are
+transparent (removed from output), passed thru intact, etc. and field-handling
+specifies whether quotes denote field breaks and whether quoted portions can
+match keywords as well as wildcards, etc.
+
+-Riche
+
+</PRE>

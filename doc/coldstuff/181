@@ -1,0 +1,28 @@
+<HEAD><TITLE>discuss@charon: [181] in "Coldmud discussion meeting"</TITLE>
+<H1>[181] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?181"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="180"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="182"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="183"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="183"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>vt or cold problem?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar 27 00:45:41 1994
+)</H3>
+<PRE>
+Date: Sat, 26 Mar 1994 22:39:36 -0600 (MDT)
+From: Lynxian Theologies &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I'm thinking this is a vaportalk problem, but i've only seen it show up on the
+cold dark.  Basically if you use /add_line, and perhaps /add_mud with a
+character that doesnt exist, when you connect it will occasionally flip out
+sending (i'm assuming) uncountable blank returns to the server, which in return
+spamms the hell out of you and all existance.  What is up????  Anybody????
+</PRE>

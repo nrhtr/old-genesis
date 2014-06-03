@@ -1,0 +1,131 @@
+<HEAD><TITLE>discuss@charon: [687] in "Coldmud discussion meeting"</TITLE>
+<H1>[687] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?687"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="686"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="686"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="688"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="689"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 04:43:12 1995
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: jsp@betz.biostr.washington.edu (Jeff Prothero)
+Date: Fri, 10 Mar 1995 01:40:17 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9503100642.AA03633@betz.biostr.washington.edu&gt; from "Jeff Prothero" at Mar 9, 95 10:42:52 pm
+
+Ok, here's a bunch of comments on a bunch of tidbits from various messages..
+
+"Important Chuck":
+&gt; So what do the developers think of index/subrange as lvalue?
+
+I'm not really a developer anymore, more of a kibbitzer, but..
+
+While I recognize that this syntax can be neat looking and kinda nice sometimes
+I would much rather see some form of rangeset() builtin instead, for
+consistency and conceptual purity reasons..
+
+The problem with subrange-as-lvalue is that it isn't really.  It is sometimes
+but it isn't other times and expressions work as mutable sometimes and
+immutable other times and it's just not very clean.  For an example of what I
+mean, take a look at the following:
+
+  foo = [1, 2, 3];
+  foo[2] = 4;
+   ^     ^--(modifies value of foo, because foo[2] points to part of foo)
+   `--(foo[2] is a pointer to part of foo)
+  return foo;
+
+  (expected value: [1, 4, 3])
+  =&gt; [1, 4, 3]
+
+..so far so good..
+
+  foo = [1, 2, 3];
+  bar = foo[2];
+      ^   ^--(foo[2] is a pointer to part of foo)
+      `--(ergo bar is set to a pointer to part of foo)
+  bar = 4;
+      ^--(modifies foo, because bar = foo[2] = pointer to part of foo)
+  return foo;
+
+  (expected value: [1, 4, 3])
+  =&gt; [1, 2, 3]
+
+..oops!
+
+If the results of expressions are going to be lvalues, they should be lvalues
+_consistently_, and not just when it's convenient (note also that there are
+significant security problems inherent in consistent lvalue-states, too).
+
+With rangeset(), etc, this problem doesn't arise because expressions are always
+immutable rvalues and you're assigning them as a whole to the variables.
+
+Brandon:
+&gt; VMS's DCL (Digital Command Language, aka VMS shell) uses ':==' to set symbols
+
+Actually, technically, DCL uses :== for assigning global symbols (variables).
+It uses := for assigning local symbols..
+
+Then again, it uses .EQ. to test equality, too :)
+
+Heh.. I'd almost entirely forgotten about DCL..
+
+Thwarted:
+&gt; Yuck, if anything, do NOT use DCL as a base or to get ideas for anything. :P
+
+Heh.. also true enough :) (tho I still enjoy programming in it every so often..
+provides a nice diversion from those straightforward, predictable languages
+people use so much nowadays..)
+
+Brandon:
+&gt; &lt; are some others who shall remain nameless which I'd rather see bite it..
+&gt;                   ^^^
+&gt; Ack, you can tell when you have been programming too long when you start
+&gt; referring to programming languages as entities/people rather than objects 8)
+
+Geez, you'd think an english major could recognize a common literary mechanism
+such as personification in action.. (which, given the context, I would contend
+was quite appropriate) :)
+
+Jeff:
+&gt; -&gt; One relevant design principle is Zipf's Law:  the
+&gt;    most frequently used operators should have the
+&gt;    shortest representations.  I think this is one of
+&gt;    the best arguments for using '=' rather than a
+&gt;    digraph.
+
+While I'm generally in favor of this law, this is the one situation where I
+strongly disagree.. the convenience just isn't worth the hassle.
+
+&gt; -&gt; Nobody has suggested Prolog's :- yet.  Be a shame to
+&gt;    leave any existing religions out of the debate :)
+
+Heh.. I always wondered whether this was really as much a result of sex-starved
+computer geeks as it looked like.. (I'll leave it as an excercise for the
+reader to figure out what I'm referring to :)
+
+&gt; -&gt; A solution I haven't seen tried is to use '=' for &gt;both&lt;
+&gt;    assignment and comparison, and to keep the contexts in
+&gt;    which they are allowed mutually exclusive.  This
+&gt;    wouldn't be impractical, I don't think, although Cfolk
+&gt;    might dislike the restriction.  I doubt novice hackers
+&gt;    would.
+
+Umm.. well, actually, what you're describing as "the restriction" is exactly
+the current situation that people have decided they don't like (non-expression
+assignments), so I don't think this suggestion would work very well either..
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+"We are the music makers, and we are the dreamers of the dreams" -- Willy Wonka
+</PRE>

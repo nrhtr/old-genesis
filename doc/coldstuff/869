@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [869] in "Coldmud discussion meeting"</TITLE>
+<H1>[869] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?869"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="867"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="868"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="868"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="870"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Active ColdMUD Sites?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan  2 15:33:05 1996
+)</H3>
+<PRE>
+Date: Tue, 2 Jan 1996 13:13:39 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+cc: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;2.2.32.19960102190735.006a5c5c@vv.com&gt;
+
+&gt; Is there a list of active ColdMUD servers?  I know only of tCD@pippin
+&gt; now, and it blows up in my face every time I try to login.
+
+tCD@pippin (actually, tCD@ice.cold.org) had a bogus record for 'Quinn', 
+which is why it was blowing up, it is now fixed.
+
+I have Genesis-0.3-1 running at 'cold.org' on port 1138 (different from 
+'ice.cold.org').  This is where development will occur, the site at 
+ice.cold.org will be tossed into the bit bucket.
+
+-Brandon
+</PRE>

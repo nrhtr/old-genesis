@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [854] in "Coldmud discussion meeting"</TITLE>
+<H1>[854] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?854"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="853"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="855"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Yet another memory bugfix</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec 12 13:24:36 1995
+)</H3>
+<PRE>
+From: Miroslav Silovic &lt;silovic@student.math.hr&gt;
+To: coldstuff@tombstone.sunrem.com
+Date: Tue, 12 Dec 95 19:03:08 MET
+
+
+
+Regexp didn't release reference to the integer pairs, causing a minor leak
+each time a match was called. Unfortunately, commands like @display and
+@show called regexp matches hundreds of times, resulting in bloat during
+intensive programming.
+
+Here is the diff for Genesis-0.2-7:
+
+
+--- cdc_string.c
+***************
+*** 344,349 ****
+--- 344,350 ----
+            d.type = LIST;
+            d.u.list = elemlist;
+            fields = list_add(fields, &amp;d);
++           list_discard(elemlist);
+        }
+      }
+  
+
+--
+
+#######################################################################
+#############  Our hope's with you - Rider in the blue  ###############
+##############  Welcome's waiting, We're anticipating  ################
+======  You'll be celebrating, when you're down, and breaking  ========
+===================  ---------o-o-O-o-o---------  =====================
+-----------------  Climbing out - climbing climbing  ------------------
+----------------  Five miles out - climbing climbing  -----------------
+-----------------------------------------------------------------------
+
+</PRE>

@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [20] in "Coldmud discussion meeting"</TITLE>
+<H1>[20] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?20"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="19"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="21"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="26"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="26"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>looking into the future</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 04:19:34 1993
+)</H3>
+<PRE>
+Date: Mon, 15 Nov 1993 22:43:29 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+Just some ponderings on merging core's
+
+First off it should be much easier with ColdMUD, as you dont have object
+numbers, just dbref's.  From here you can probably write up a perl or whatever
+program which takes the textdump and basically takes each object, checks for
+.core, extract all .core objects to another work file (less overhead) and then
+does some matching/diffing/etc on each core object, with the new ones.
+
+Now, EVERYBODY modifies their own core, this is a known fact.  It would really
+suck to rewrite an old core method with some brilliant new method, only to have
+it written over by somebody else's brilliant new method.  I say we do the
+following with core objects, and releases.  first off:
+
+keep a copy of the old core around (you want to release both old, and new, so
+the program can tell what has changed in comparison to the one it is trying to
+merge with).  Then, with each core method have a statement at the end such as:
+
+// **** CORE METHOD ****
+
+then if it is ever modified this statement is removed.  Then when the merger
+comes along to update to spiffier methods it first checks for this statement,
+if it cannot find this statement it creates &lt;method&gt;2, so that the gods can go
+back after the merge and diff each method to see which is better, modifying it
+from there.
+
+I'm still trying to figure out what to do with parameters...
+
+-Lynx/Brandon/Me.  (just some thoughts, like I said)
+
+Oh, make some comments, if I dont hear any major negative flammage i'm going to
+start adding // **** CORE METHOD **** at the end of each core object
+</PRE>

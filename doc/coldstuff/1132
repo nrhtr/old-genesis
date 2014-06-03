@@ -1,0 +1,550 @@
+<HEAD><TITLE>discuss@charon: [1132] in "Coldmud discussion meeting"</TITLE>
+<H1>[1132] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1132"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1131"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1133"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Symbol speedup patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 14 11:49:46 1996
+)</H3>
+<PRE>
+Date: Thu, 14 Nov 1996 17:07:43 +0100 (MET)
+From: Miroslav.Silovic@public.srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+
+This patch should speed up the driver noticably, as it avoids
+unnecessary calls to hash() function on each method/variable
+lookup. The hash() used to take 10% of the execution time
+with ColdDark core, and is likely to take even more in
+cores that do large ammount of object shuffling, so the speedup
+should be quite noticable.
+
+------------------------------------------------------------------
+
+diff -C 8 -r ../Genesis-1.0p18/src/data/data.c src/data/data.c
+*** ../Genesis-1.0p18/src/data/data.c	Thu Sep 19 22:27:15 1996
+--- src/data/data.c	Thu Nov 14 16:46:11 1996
+***************
+*** 133,149 ****
+  
+        case LIST:
+  	if (list_length(d-&gt;u.list) &gt; 0)
+  	    return data_hash(list_first(d-&gt;u.list));
+  	else
+  	    return 100;
+  
+        case SYMBOL:
+! 	return hash(ident_name(d-&gt;u.symbol));
+  
+        case T_ERROR:
+  	return hash(ident_name(d-&gt;u.error));
+  
+        case FROB:
+  	return d-&gt;u.frob-&gt;cclass + data_hash(&amp;d-&gt;u.frob-&gt;rep);
+  
+        case DICT:
+--- 133,149 ----
+  
+        case LIST:
+  	if (list_length(d-&gt;u.list) &gt; 0)
+  	    return data_hash(list_first(d-&gt;u.list));
+  	else
+  	    return 100;
+  
+        case SYMBOL:
+! 	return ident_hash(d-&gt;u.symbol);
+  
+        case T_ERROR:
+  	return hash(ident_name(d-&gt;u.error));
+  
+        case FROB:
+  	return d-&gt;u.frob-&gt;cclass + data_hash(&amp;d-&gt;u.frob-&gt;rep);
+  
+        case DICT:
+diff -C 8 -r ../Genesis-1.0p18/src/data/ident.c src/data/ident.c
+*** ../Genesis-1.0p18/src/data/ident.c	Tue Oct 22 19:43:07 1996
+--- src/data/ident.c	Thu Nov 14 16:33:03 1996
+***************
+*** 11,26 ****
+--- 11,27 ----
+   * of two, assuming an Int is four bytes. */
+  /* HACKNOTE: BAD */
+  #define MALLOC_DELTA 8
+  #define INIT_TAB_SIZE (512 - MALLOC_DELTA)
+  
+  typedef struct xident_entry {
+      char *s;
+      Int refs;
++     uLong hash;
+      Long next;
+  } xIdent_entry;
+  
+  static xIdent_entry *tab;
+  static Long *hashtab;
+  static Long tab_size, blanks;
+  
+  Ident perm_id, type_id, div_id, integer_id, float_id, string_id, objnum_id,
+***************
+*** 134,150 ****
+  Ident ident_get(char *s)
+  {
+      uLong hval = hash(s);
+      Long ind, new_size, i;
+  
+      /* Look for an existing identifier. */
+      ind = hashtab[hval % tab_size];
+      while (ind != -1) {
+! 	if (strcmp(tab[ind].s, s) == 0) {
+  	    tab[ind].refs++;
+  #ifdef IDENT_DEBUG
+  	    write_err("get(old) %s: %d refs %d", s, ind, tab[ind].refs);
+  #endif
+  
+  	    return ind;
+  	}
+  	ind = tab[ind].next;
+--- 135,151 ----
+  Ident ident_get(char *s)
+  {
+      uLong hval = hash(s);
+      Long ind, new_size, i;
+  
+      /* Look for an existing identifier. */
+      ind = hashtab[hval % tab_size];
+      while (ind != -1) {
+! 	if (tab[ind].hash == hval &amp;&amp; strcmp(tab[ind].s, s) == 0) {
+  	    tab[ind].refs++;
+  #ifdef IDENT_DEBUG
+  	    write_err("get(old) %s: %d refs %d", s, ind, tab[ind].refs);
+  #endif
+  
+  	    return ind;
+  	}
+  	ind = tab[ind].next;
+***************
+*** 165,192 ****
+  	blanks = tab_size;
+  
+  	/* Reset hash table. */
+  	for (i = 0; i &lt; new_size; i++)
+  	    hashtab[i] = -1;
+  
+  	/* Install old symbols in hash table. */
+  	for (i = 0; i &lt; tab_size; i++) {
+! 	    ind = hash(tab[i].s) % new_size;
+  	    tab[i].next = hashtab[ind];
+  	    hashtab[ind] = i;
+  	}
+  
+  	tab_size = new_size;
+      }
+  
+      /* Install symbol at first blank. */
+      ind = blanks;
+      blanks = tab[ind].next;
+      tab[ind].s = tstrdup(s);
+      tab[ind].refs = 1;
+      tab[ind].next = hashtab[hval % tab_size];
+      hashtab[hval % tab_size] = ind;
+  
+  #ifdef IDENT_DEBUG
+      write_err("get(new) %s: %d refs %d", s, ind, tab[ind].refs);
+  #endif
+  
+--- 166,194 ----
+  	blanks = tab_size;
+  
+  	/* Reset hash table. */
+  	for (i = 0; i &lt; new_size; i++)
+  	    hashtab[i] = -1;
+  
+  	/* Install old symbols in hash table. */
+  	for (i = 0; i &lt; tab_size; i++) {
+! 	    ind = tab[i].hash % new_size;
+  	    tab[i].next = hashtab[ind];
+  	    hashtab[ind] = i;
+  	}
+  
+  	tab_size = new_size;
+      }
+  
+      /* Install symbol at first blank. */
+      ind = blanks;
+      blanks = tab[ind].next;
+      tab[ind].s = tstrdup(s);
++     tab[ind].hash = hval;
+      tab[ind].refs = 1;
+      tab[ind].next = hashtab[hval % tab_size];
+      hashtab[hval % tab_size] = ind;
+  
+  #ifdef IDENT_DEBUG
+      write_err("get(new) %s: %d refs %d", s, ind, tab[ind].refs);
+  #endif
+  
+***************
+*** 233,240 ****
+--- 235,246 ----
+      return id;
+  }
+  
+  char *ident_name(Ident id)
+  {
+      return tab[id].s;
+  }
+  
++ uLong ident_hash(Ident id)
++ {
++     return tab[id].hash;
++ }
+diff -C 8 -r ../Genesis-1.0p18/src/data/object.c src/data/object.c
+*** ../Genesis-1.0p18/src/data/object.c	Sat Oct 19 23:08:05 1996
+--- src/data/object.c	Thu Nov 14 16:45:23 1996
+***************
+*** 459,475 ****
+  Long object_del_var(Obj *object, Long name)
+  {
+      Int *indp;
+      Var *var;
+  
+      /* This is the index-thread equivalent of double pointers in a standard
+       * linked list.  We traverse the list using pointers to the -&gt;next element
+       * of the variables. */
+!     indp = &amp;object-&gt;vars.hashtab[hash(ident_name(name)) % object-&gt;vars.size];
+      for (; *indp != -1; indp = &amp;object-&gt;vars.tab[*indp].next) {
+  	var = &amp;object-&gt;vars.tab[*indp];
+  	if (var-&gt;name == name &amp;&amp; var-&gt;cclass == object-&gt;objnum) {
+  	/*  write_err("##object_del_var %d %s", var-&gt;name, ident_name(var-&gt;name));*/
+  	    ident_discard(var-&gt;name);
+  	    data_discard(&amp;var-&gt;val);
+  	    var-&gt;name = -1;
+  
+--- 459,475 ----
+  Long object_del_var(Obj *object, Long name)
+  {
+      Int *indp;
+      Var *var;
+  
+      /* This is the index-thread equivalent of double pointers in a standard
+       * linked list.  We traverse the list using pointers to the -&gt;next element
+       * of the variables. */
+!     indp = &amp;object-&gt;vars.hashtab[ident_hash(name) % object-&gt;vars.size];
+      for (; *indp != -1; indp = &amp;object-&gt;vars.tab[*indp].next) {
+  	var = &amp;object-&gt;vars.tab[*indp];
+  	if (var-&gt;name == name &amp;&amp; var-&gt;cclass == object-&gt;objnum) {
+  	/*  write_err("##object_del_var %d %s", var-&gt;name, ident_name(var-&gt;name));*/
+  	    ident_discard(var-&gt;name);
+  	    data_discard(&amp;var-&gt;val);
+  	    var-&gt;name = -1;
+  
+***************
+*** 513,529 ****
+  
+      /* find the parameter definition in cclass (method object). */
+      if (!object_find_var(cclass, cclass-&gt;objnum, name))
+          return varnf_id;
+  
+      /* Get variable slot on object */
+      var = object_find_var(object, cclass-&gt;objnum, name);
+      if (var) {
+!         indp=&amp;object-&gt;vars.hashtab[hash(ident_name(name))%object-&gt;vars.size];
+          for (; *indp != -1; indp = &amp;object-&gt;vars.tab[*indp].next) {
+              var = &amp;object-&gt;vars.tab[*indp];
+              if (var-&gt;name == name &amp;&amp; var-&gt;cclass == cclass-&gt;objnum) {
+                  ident_discard(var-&gt;name);
+                  data_discard(&amp;var-&gt;val);
+                  var-&gt;name = -1;
+  
+                  /* Remove ind from hash table thread, and add it to blanks
+--- 513,529 ----
+  
+      /* find the parameter definition in cclass (method object). */
+      if (!object_find_var(cclass, cclass-&gt;objnum, name))
+          return varnf_id;
+  
+      /* Get variable slot on object */
+      var = object_find_var(object, cclass-&gt;objnum, name);
+      if (var) {
+!         indp=&amp;object-&gt;vars.hashtab[ident_hash(name)%object-&gt;vars.size];
+          for (; *indp != -1; indp = &amp;object-&gt;vars.tab[*indp].next) {
+              var = &amp;object-&gt;vars.tab[*indp];
+              if (var-&gt;name == name &amp;&amp; var-&gt;cclass == cclass-&gt;objnum) {
+                  ident_discard(var-&gt;name);
+                  data_discard(&amp;var-&gt;val);
+                  var-&gt;name = -1;
+  
+                  /* Remove ind from hash table thread, and add it to blanks
+***************
+*** 588,604 ****
+  	new_size = object-&gt;vars.size * 2 + MALLOC_DELTA + 1;
+  	object-&gt;vars.tab = EREALLOC(object-&gt;vars.tab, Var, new_size);
+  	object-&gt;vars.hashtab = EREALLOC(object-&gt;vars.hashtab, Int, new_size);
+  
+  	/* Refill hash table. */
+  	for (i = 0; i &lt; new_size; i++)
+  	    object-&gt;vars.hashtab[i] = -1;
+  	for (i = 0; i &lt; object-&gt;vars.size; i++) {
+! 	    ind = hash(ident_name(object-&gt;vars.tab[i].name)) % new_size;
+  	    object-&gt;vars.tab[i].next = object-&gt;vars.hashtab[ind];
+  	    object-&gt;vars.hashtab[ind] = i;
+  	}
+  
+  	/* Create new thread of blanks, setting names to -1. */
+  	for (i = object-&gt;vars.size; i &lt; new_size; i++) {
+  	    object-&gt;vars.tab[i].name = -1;
+  	    object-&gt;vars.tab[i].next = i + 1;
+--- 588,604 ----
+  	new_size = object-&gt;vars.size * 2 + MALLOC_DELTA + 1;
+  	object-&gt;vars.tab = EREALLOC(object-&gt;vars.tab, Var, new_size);
+  	object-&gt;vars.hashtab = EREALLOC(object-&gt;vars.hashtab, Int, new_size);
+  
+  	/* Refill hash table. */
+  	for (i = 0; i &lt; new_size; i++)
+  	    object-&gt;vars.hashtab[i] = -1;
+  	for (i = 0; i &lt; object-&gt;vars.size; i++) {
+! 	    ind = ident_hash(object-&gt;vars.tab[i].name) % new_size;
+  	    object-&gt;vars.tab[i].next = object-&gt;vars.hashtab[ind];
+  	    object-&gt;vars.hashtab[ind] = i;
+  	}
+  
+  	/* Create new thread of blanks, setting names to -1. */
+  	for (i = object-&gt;vars.size; i &lt; new_size; i++) {
+  	    object-&gt;vars.tab[i].name = -1;
+  	    object-&gt;vars.tab[i].next = i + 1;
+***************
+*** 615,647 ****
+  
+      /* Fill in new variable. */
+      cnew-&gt;name = ident_dup(name);
+      cnew-&gt;cclass = cclass;
+      cnew-&gt;val.type = INTEGER;
+      cnew-&gt;val.u.val = 0;
+  
+      /* Add variable to hash table thread. */
+!     ind = hash(ident_name(name)) % object-&gt;vars.size;
+      cnew-&gt;next = object-&gt;vars.hashtab[ind];
+      object-&gt;vars.hashtab[ind] = cnew - object-&gt;vars.tab;
+  
+      object-&gt;dirty = 1;
+  
+      return cnew;
+  }
+  
+  /* Look for a variable on an object. */
+  static Var *object_find_var(Obj *object, Long cclass, Long name)
+  {
+      Int ind;
+      Var *var;
+  
+      /* Traverse hash table thread, stopping if we get a match on the name. */
+!     ind = object-&gt;vars.hashtab[hash(ident_name(name)) % object-&gt;vars.size];
+      for (; ind != -1; ind = object-&gt;vars.tab[ind].next) {
+  	var = &amp;object-&gt;vars.tab[ind];
+  	if (var-&gt;name == name &amp;&amp; var-&gt;cclass == cclass)
+  	    return var;
+      }
+  
+      return NULL;
+  }
+--- 615,647 ----
+  
+      /* Fill in new variable. */
+      cnew-&gt;name = ident_dup(name);
+      cnew-&gt;cclass = cclass;
+      cnew-&gt;val.type = INTEGER;
+      cnew-&gt;val.u.val = 0;
+  
+      /* Add variable to hash table thread. */
+!     ind = ident_hash(name) % object-&gt;vars.size;
+      cnew-&gt;next = object-&gt;vars.hashtab[ind];
+      object-&gt;vars.hashtab[ind] = cnew - object-&gt;vars.tab;
+  
+      object-&gt;dirty = 1;
+  
+      return cnew;
+  }
+  
+  /* Look for a variable on an object. */
+  static Var *object_find_var(Obj *object, Long cclass, Long name)
+  {
+      Int ind;
+      Var *var;
+  
+      /* Traverse hash table thread, stopping if we get a match on the name. */
+!     ind = object-&gt;vars.hashtab[ident_hash(name) % object-&gt;vars.size];
+      for (; ind != -1; ind = object-&gt;vars.tab[ind].next) {
+  	var = &amp;object-&gt;vars.tab[ind];
+  	if (var-&gt;name == name &amp;&amp; var-&gt;cclass == cclass)
+  	    return var;
+      }
+  
+      return NULL;
+  }
+***************
+*** 823,839 ****
+  
+  /* Look for a method on an object. */
+  Method *object_find_method_local(Obj *object, Long name, Bool is_frob)
+  {
+      Int ind, method;
+      Method *meth;
+  
+      /* Traverse hash table thread, stopping if we get a match on the name. */
+!     ind = hash(ident_name(name)) % object-&gt;methods.size;
+      method = object-&gt;methods.hashtab[ind];
+      if (is_frob == FROB_ANY) {
+  	for (; method != -1; method = object-&gt;methods.tab[method].next) {
+  	    meth=object-&gt;methods.tab[method].m;
+  	    if (meth-&gt;name == name)
+  		return object-&gt;methods.tab[method].m;
+  	}
+      }
+--- 823,839 ----
+  
+  /* Look for a method on an object. */
+  Method *object_find_method_local(Obj *object, Long name, Bool is_frob)
+  {
+      Int ind, method;
+      Method *meth;
+  
+      /* Traverse hash table thread, stopping if we get a match on the name. */
+!     ind = ident_hash(name) % object-&gt;methods.size;
+      method = object-&gt;methods.hashtab[ind];
+      if (is_frob == FROB_ANY) {
+  	for (; method != -1; method = object-&gt;methods.tab[method].next) {
+  	    meth=object-&gt;methods.tab[method].m;
+  	    if (meth-&gt;name == name)
+  		return object-&gt;methods.tab[method].m;
+  	}
+      }
+***************
+*** 928,944 ****
+  				       new_size);
+  	object-&gt;methods.hashtab = EREALLOC(object-&gt;methods.hashtab, Int,
+  					   new_size);
+  
+  	/* Refill hash table. */
+  	for (i = 0; i &lt; new_size; i++)
+  	    object-&gt;methods.hashtab[i] = -1;
+  	for (i = 0; i &lt; object-&gt;methods.size; i++) {
+! 	    ind = hash(ident_name(object-&gt;methods.tab[i].m-&gt;name)) % new_size;
+  	    object-&gt;methods.tab[i].next = object-&gt;methods.hashtab[ind];
+  	    object-&gt;methods.hashtab[ind] = i;
+  	}
+  
+  	/* Create new thread of blanks and set method pointers to null. */
+  	for (i = object-&gt;methods.size; i &lt; new_size; i++) {
+  	    object-&gt;methods.tab[i].m = NULL;
+  	    object-&gt;methods.tab[i].next = i + 1;
+--- 928,944 ----
+  				       new_size);
+  	object-&gt;methods.hashtab = EREALLOC(object-&gt;methods.hashtab, Int,
+  					   new_size);
+  
+  	/* Refill hash table. */
+  	for (i = 0; i &lt; new_size; i++)
+  	    object-&gt;methods.hashtab[i] = -1;
+  	for (i = 0; i &lt; object-&gt;methods.size; i++) {
+! 	    ind = ident_hash(object-&gt;methods.tab[i].m-&gt;name) % new_size;
+  	    object-&gt;methods.tab[i].next = object-&gt;methods.hashtab[ind];
+  	    object-&gt;methods.hashtab[ind] = i;
+  	}
+  
+  	/* Create new thread of blanks and set method pointers to null. */
+  	for (i = object-&gt;methods.size; i &lt; new_size; i++) {
+  	    object-&gt;methods.tab[i].m = NULL;
+  	    object-&gt;methods.tab[i].next = i + 1;
+***************
+*** 953,985 ****
+      method-&gt;name = ident_dup(name);
+  
+      /* Add method at first blank. */
+      ind = object-&gt;methods.blanks;
+      object-&gt;methods.blanks = object-&gt;methods.tab[ind].next;
+      object-&gt;methods.tab[ind].m = method_dup(method);
+  
+      /* Add method to hash table thread. */
+!     hval = hash(ident_name(name)) % object-&gt;methods.size;
+      object-&gt;methods.tab[ind].next = object-&gt;methods.hashtab[hval];
+      object-&gt;methods.hashtab[hval] = ind;
+  
+      object-&gt;dirty = 1;
+  }
+  
+  Int object_del_method(Obj *object, Long name) {
+      Int *indp, ind;
+  
+      /* Invalidate the method cache. */
+      cur_stamp++;
+  
+      /* This is the index-thread equivalent of double pointers in a standard
+       * linked list.  We traverse the list using pointers to the -&gt;next element
+       * of the method pointers. */
+!     ind = hash(ident_name(name)) % object-&gt;methods.size;
+      indp = &amp;object-&gt;methods.hashtab[ind];
+      for (; *indp != -1; indp = &amp;object-&gt;methods.tab[*indp].next) {
+  	ind = *indp;
+  	if (object-&gt;methods.tab[ind].m-&gt;name == name) {
+              /* check the lock at a higher level, this is a better
+                 location to put it, but it causes logistic problems */
+              /* ack, we found it, but its locked! */
+              if (object-&gt;methods.tab[ind].m-&gt;m_flags &amp; MF_LOCK)
+--- 953,985 ----
+      method-&gt;name = ident_dup(name);
+  
+      /* Add method at first blank. */
+      ind = object-&gt;methods.blanks;
+      object-&gt;methods.blanks = object-&gt;methods.tab[ind].next;
+      object-&gt;methods.tab[ind].m = method_dup(method);
+  
+      /* Add method to hash table thread. */
+!     hval = ident_hash(name) % object-&gt;methods.size;
+      object-&gt;methods.tab[ind].next = object-&gt;methods.hashtab[hval];
+      object-&gt;methods.hashtab[hval] = ind;
+  
+      object-&gt;dirty = 1;
+  }
+  
+  Int object_del_method(Obj *object, Long name) {
+      Int *indp, ind;
+  
+      /* Invalidate the method cache. */
+      cur_stamp++;
+  
+      /* This is the index-thread equivalent of double pointers in a standard
+       * linked list.  We traverse the list using pointers to the -&gt;next element
+       * of the method pointers. */
+!     ind = ident_hash(name) % object-&gt;methods.size;
+      indp = &amp;object-&gt;methods.hashtab[ind];
+      for (; *indp != -1; indp = &amp;object-&gt;methods.tab[*indp].next) {
+  	ind = *indp;
+  	if (object-&gt;methods.tab[ind].m-&gt;name == name) {
+              /* check the lock at a higher level, this is a better
+                 location to put it, but it causes logistic problems */
+              /* ack, we found it, but its locked! */
+              if (object-&gt;methods.tab[ind].m-&gt;m_flags &amp; MF_LOCK)
+diff -C 8 -r ../Genesis-1.0p18/src/include/ident.h src/include/ident.h
+*** ../Genesis-1.0p18/src/include/ident.h	Tue Oct 22 19:43:37 1996
+--- src/include/ident.h	Thu Nov 14 16:46:04 1996
+***************
+*** 28,38 ****
+--- 28,39 ----
+  /* method id's */
+  extern Ident signal_id;
+  
+  void   init_ident(void);
+  Ident  ident_get(char *s);
+  void   ident_discard(Ident id);
+  Ident  ident_dup(Ident id);
+  char * ident_name(Ident id);
++ uLong  ident_hash(Ident id);
+  
+  #endif
+  
+</PRE>

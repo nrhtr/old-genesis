@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1298] in "Coldmud discussion meeting"</TITLE>
+<H1>[1298] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1298"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1297"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1299"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1299"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1301"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] prefix/suffix for Cold</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun  4 02:41:18 1997
+)</H3>
+<PRE>
+Date: Tue, 03 Jun 1997 23:39:09 -0700
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+I finally decided to start playing around with my external bots again. 
+The C language version is a chopped up version of Mauldin's Colins and I
+had to noop all the prefix/suffix stuff so that the bot could operate on
+the Cold world.  The purpose of the prefix/suffix stuff is to say "I'm
+done" when certain time-consuming commands are done.
+
+I can play around without the prefix/suffix feature, but I don't think I
+can get full use of the bots without the feature.  I believe that
+Brandon sometime ago mentioned that I could use VEIL to do the same
+thing.
+
+Is there an easy way to add the prefix/suffix or to at least fake it?
+
+
+Frank
+
+
+--
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+</PRE>

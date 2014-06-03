@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [1280] in "Coldmud discussion meeting"</TITLE>
+<H1>[1280] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1280"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1279"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1281"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1283"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1283"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] [patch] bufidx</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Apr 21 09:18:56 1997
+)</H3>
+<PRE>
+Date: Mon, 21 Apr 1997 15:08:55 +0200 (MET DST)
+From: Miroslav Silovic &lt;silovic@mare.zesoi.fer.hr&gt;
+To: coldstuff@cold.org
+
+
+This (hopefully) fixes the crash. :)
+
+--- orig/Genesis-1.0p27/src/data/buffer.c	Mon Feb 10 05:28:20 1997
++++ Genesis-1.0p27/src/data/buffer.c	Mon Apr 21 15:08:01 1997
+@@ -384,7 +384,8 @@
+ int buffer_index(cBuf * buf, uChar * ss, int slen, int origin) {
+     int     len;
+     uChar * s,
+-          * p;
++          * p,
++	  * lastp;
+     Bool    reverse = NO;
+ 
+     s = buf-&gt;s;
+@@ -417,10 +418,12 @@
+             return p ? ((p - s) + 1) : 0;
+         } else {
+             slen--;
++	    lastp = s - 1;
+             while (p) {
+                 if (MEMCMP(p + 1, ss + 1, slen) == 0)
+                     return (p - s) + 1;
+-                len -= (p - s)+1;
++                len -= p - lastp;
++                lastp = p;
+                 p = (uChar *) memchr(p+1, *ss, len);
+             }
+         }
+</PRE>

@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [1518] in "Coldmud discussion meeting"</TITLE>
+<H1>[1518] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1518"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1517"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1517"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1519"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1519"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec  7 18:41:35 1999
+)</H3>
+<PRE>
+Date: Tue, 7 Dec 1999 15:26:20 -0800 (PST)
+From: Jeff Kesselman &lt;Jeffrey.Kesselman@eng.sun.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+ncoding: 7bit
+&gt;
+&gt;I wrote:
+&gt;&gt; &gt;     I think the majority of the geek world recognize that the
+&gt;&gt; &gt;majority of the "advancements" beyond text are just bloat and feature
+&gt;&gt; &gt;creep.  Now if you wanted to maintain the docs in FrameMaker format
+&gt;
+&gt;Jeff Kesselman writes:
+&gt;&gt; This is a pointless religous debate I fear.
+&gt;
+&gt;     Then why are you debating it? :-)
+
+Good idea. lets not.
+
+(1) Unchangeable fact.  The new manual is in word format.
+(2) Issue: brandon can't read Word, also i beoieve Brandoin wants more then a
+read only copy.
+(3) Offer: I've already fofered to do a PDF translation which certainly solves 
+readability though may not solve brandon's write problem.
+(4) Unless somebody else is offering to either do a hand translation, write 
+debug and maintain a tool that translates from a word supported format, or 
+translate by hand, the only other formats available are ones word can write.
+
+So the only real issue on the table, to my knowlegde, is what format which Word 
+can write would Brandon (and perhapse others) like a copy in?
+
+
+All the rest of this is nosnense and noise.
+
+Jeff Kesselman
+Member of Technical Staff IV
+JDK Performance/RAS Team
+SUN Microsystems
+
+Thought to meditate on:
+
+No two objects in nature are equal, any two apples are in fact quite different 
+from any other two apples in the world.
+
+Thus can Math really be said to be True in an absolute concrete sense, 
+or is it merely an internally consistent abstraction?
+
+</PRE>

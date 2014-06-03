@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [984] in "Coldmud discussion meeting"</TITLE>
+<H1>[984] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?984"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="983"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="985"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Bug Report: genesis-1.0p4</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr 26 20:05:10 1996
+)</H3>
+<PRE>
+Date: Fri, 26 Apr 1996 18:37:06 -0500 (CDT)
+From: Stephen Smoogen &lt;smooge@duracef.shout.net&gt;
+To: coldstuff@cold.org
+
+
+
+Did a build on a Linux-1.2.13 (Redhat 3.0.3 system.) Other than a lot of 
+the usual (pointer -&gt; integer warnings..) the following occured.
+
+
+gcc -Wall -g -O -Iinclude -Imodules   -c genesis.c -o genesis.o
+genesis.c: In function `main_loop':
+genesis.c:283: storage size of `tp' isn't known
+genesis.c:298: warning: implicit declaration of function `gettimeofday'
+genesis.c:283: warning: unused variable `tp'
+make[1]: *** [genesis.o] Error 1
+
+The fix was to add a #include &lt;sys/time.h&gt; right below #include &lt;time.h&gt;
+
+Stephen
+
+
+------------------------------------------------------------------------------
+Stephen John Smoogen 	
+Recovering Sysadmin (well ok... I still sysadmin... I cant stop)..
+217-351-8093
+
+</PRE>

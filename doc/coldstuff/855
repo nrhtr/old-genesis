@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [855] in "Coldmud discussion meeting"</TITLE>
+<H1>[855] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?855"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="854"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="856"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Echo file</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec 13 09:32:51 1995
+)</H3>
+<PRE>
+From: Miroslav Silovic &lt;silovic@student.math.hr&gt;
+To: coldstuff@tombstone.sunrem.com
+Date: Wed, 13 Dec 95 15:10:42 MET
+
+
+I'm haven't tested this, but I stongly suspect that echo_file() will block
+the server if a large file is served through a slow connection. Anyone
+tried to do this? 
+
+
+--
+
+#######################################################################
+#############  Our hope's with you - Rider in the blue  ###############
+##############  Welcome's waiting, We're anticipating  ################
+======  You'll be celebrating, when you're down, and breaking  ========
+===================  ---------o-o-O-o-o---------  =====================
+-----------------  Climbing out - climbing climbing  ------------------
+----------------  Five miles out - climbing climbing  -----------------
+-----------------------------------------------------------------------
+
+</PRE>

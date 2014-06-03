@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [967] in "Coldmud discussion meeting"</TITLE>
+<H1>[967] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?967"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="966"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="968"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis 0.4-4; MinimalCore 3.1</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Apr 18 14:40:08 1996
+)</H3>
+<PRE>
+Date: Thu, 18 Apr 1996 12:10:13 -0600
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+These are both available, and work together.  There is one large bug to be
+aware of, when calling a native method do NOT do (data).method(), such as
+[1,2,3,4].reverse(), where 'reverse' is a native method.  This will crash
+the server (SEGV).  I'm working on it.
+
+-Brandon Gillespie-
+
+(Calling a native method all other ways works just fine)
+</PRE>

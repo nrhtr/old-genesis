@@ -1,0 +1,99 @@
+<HEAD><TITLE>discuss@charon: [1061] in "Coldmud discussion meeting"</TITLE>
+<H1>[1061] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1061"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1060"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1062"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] The inherent problem with frobs</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Aug 10 16:58:15 1996
+)</H3>
+<PRE>
+Date: Sat, 10 Aug 1996 14:43:06 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Some recent discussion on MOO-COWS has sparked some new thoughts on the 
+problem with frobs.  I'm going to discuss the problem, then discuss 
+possibilities (so wait to jump all over me until the end :)
+
+What it boils down to is we are attempting to use a class/object concept
+in an environment which is classless.  The main problem this occurs in is
+with method inheritance.  Assume the following heirarchy: 
+
+             $root
+         .---'   `---.
+    [stuff]         $frob
+
+The object $root defines the following method:
+
+    public method $root.name(): nooverride {
+        // no args
+        return name;
+    };
+
+And througout the core it is called without arguments, as is correct. 
+However, $frob is created, and you want to use it to create pseudo
+objects.  The first problem you hit is that .name() is non overridable. 
+You can either destroy the integrity of your database by making
+$root.name() overidable, or you can scrap the idea of having $frob.  For
+now, assume $root.name() _is_ overridable.  You then create the method: 
+
+    public method $frob.name() {
+        arg dict;
+
+        return dict['name];
+    };
+
+Everything works fine, as long as '$frob' is ONLY used as a class (i.e. 
+as the class to a frob, such as: &lt;$frob, #[['name, "frob"]]&gt;).  The 
+problem is, $frob is _not_ just a class, it is also an object; so if you 
+want to do 'frob.name()' as it _should_ be called (and as (&lt;frob&gt;).name() 
+also works) it will BREAK everything, as it has been overridden and the 
+normal behavior of .name() is changed.
+
+It is possible to get around this with a hack:
+
+    public method $frob.name() {
+        arg [args];
+
+        if (args &amp;&amp; type(args[1]) == 'dictionary)
+            return args[1]['name];
+        return pass();
+    };
+
+However, the actual problem is that the entire behavior of the method is
+changed when used as a frob versus being used as an object.  To explain
+better lets abstract to the 'messaging' concept.  An object defines a
+message it will listen to: 'name'.  It also defines that this message will
+accept no arguments and will return the name of the object.  Because of 
+'(frob).name()' and 'obj.name()' are actually two different methods, 
+because their internal handling is different.  Why should we try to bend 
+them into the same method?
+
+You also have the added problem of wanting to define _different_ behavior
+for $frob.name() and (&lt;$frob, ..&gt;).name() on the same object.
+
+Solutions:
+
+  * Prefix frob methods with 'frob_' (or some other such prefix), which 
+    is handled behind the scenes and on-the-fly.  This is _ok_, but it
+    would kill any efficiency with using Frobs.
+  * Create multiple 'scopes' for methods where they do not cross.  I.e.
+    you could have two .name() methods, one for use when it is called
+    from a frob, and one for when it is called from an object.  This could
+    be further extended to private methods as well, although then you
+    would either have to devise a special 'local-call' operator (other
+    than '.') or you would have to add more lookup steps to the current
+    method lookup.
+
+Anybody have any other ideas?
+
+-Brandon Gillespie
+</PRE>

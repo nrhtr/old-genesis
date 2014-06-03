@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [220] in "Coldmud discussion meeting"</TITLE>
+<H1>[220] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?220"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="219"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="221"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>on match_template</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun May  1 01:10:54 1994
+)</H3>
+<PRE>
+Date: Sat, 30 Apr 1994 23:07:28 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I agree with richelieu on match_template, currently it DOES get in the user's
+face by making decisions.  Having it a little more flexible would probably
+clean up the problems, as then the database could set it how it wanted.  I
+personally think that using ` instead of " would be the way to go.  Now I know
+this is aside from normal standards, but for the usages we have it makes a lot
+of sense.  First: " is a HEAVILLY used character in our style of muds.  From
+simple "say" text to users quoteing everything they use the " character.  The
+next most used character of this type would be ', which is used often in
+punctuation.  But ` is rarely EVER used.  As Greg pointed out having the parser
+spontaneously remove " from any string usually screws up things more than it
+helps.  However spontaneously removing ` from any string (I'd say if its
+matched, but that could get ugly) would rarely ever cause I problem, _I_ think. 
+AND for how often it would have to be used, people would not mind the
+difference (how often being rarely).
+
+_Brandon_
+</PRE>

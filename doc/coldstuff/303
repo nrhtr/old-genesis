@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [303] in "Coldmud discussion meeting"</TITLE>
+<H1>[303] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?303"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="297"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="298"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="302"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="304"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: coldmud hanging</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 23 16:40:35 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Mon, 23 May 1994 14:36:51 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+[snip]
+&lt; i've had this problem when running under solaris 2.3 as well
+&lt;
+[snip]
+&lt; anyone managed to compile it under hp/ux yet?  i still don't know
+&lt; whether it's my machine (hp/ux 9.0) or an OS incompatibility.
+
+I dont know what your problem would be off hand.  I'll take the 0.10-3 source
+and compile it on Solaris and HP-UX and see what happens (i'll use the CD
+core).  More later (oh, and I dont have access to SunOS so I dont know what to
+say).
+
+-Brandon-
+</PRE>

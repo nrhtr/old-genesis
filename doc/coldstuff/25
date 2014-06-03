@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [25] in "Coldmud discussion meeting"</TITLE>
+<H1>[25] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?25"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="24"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="26"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>No subject found in mail header</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 11:20:46 1993
+)</H3>
+<PRE>
+Date: Tue, 16 Nov 93 11:12:40 EST
+From: Philippe Hebrais &lt;hebrais@IRO.UMontreal.CA&gt;
+To: coldstuff@MIT.EDU
+In-Reply-To: Quinn Avery's message of Mon, 15 Nov 1993 23:31:57 -0500 &lt;199311160431.AA21059@DUS.Mountain.Net&gt;
+
+QA&gt; From: Quinn Avery &lt;quinn@dus.mountain.net&gt;
+
+QA&gt; I would -really- like to see some regular expression matching
+QA&gt;  eventually.  This is really the only thing I'll miss about MOO.
+
+I also would like to have regexp for the same reason, however, unlike
+MOO I think compiling the regexp and matching it should be two
+seperate builtins if possible.  Compiling regexps is quite resource
+consuming when you are trying to do some non-trivial expressions.
+
+The idea is that a robot only needs to compile the regexp once, but it
+matches many many strings with that regexp.
+
+Of course, this would only be possible if coldmud strings can store
+arbitrary binary data (you need something to store the compiled
+regexp).
+
+Also, it might be useful to go for the fuzzy regexp matching algorithm
+(called agrep) instead of the standard grep or egrep style regexps.
+
+   --QV
+--        ,
+Philippe Hebrais
+Voix: 1(514)731-9146                           hebrais@iro.umontreal.ca
+</PRE>

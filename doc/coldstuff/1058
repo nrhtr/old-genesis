@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1058] in "Coldmud discussion meeting"</TITLE>
+<H1>[1058] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1058"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1057"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1057"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1057"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1059"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] p11 hang...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Aug  3 10:29:59 1996
+)</H3>
+<PRE>
+Date: Sat, 3 Aug 1996 08:12:45 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199608030731.IAA01866@aaaaaaaa.demon.co.uk&gt;
+
+On Sat, 3 Aug 1996, Andrew Wilson wrote:
+&gt; So, p11 is hanging.  Telnetting to 1138 gives me the usual 'Escape
+&gt; character is ^]' message but no welcome screen.  Is there some new
+&gt; .db hackery I need to get this working?  Reverting to p10 till then.
+
+Yup, its in the CHANGES file (as always :)
+
+Change $connection.connect() (and any other connection handling 
+.connect()) from/to (pulling from memory):
+
+driver method .connect() {
+    arg host, socket;
+
+    set_var('host, socket);
+    (| daemon.new_connection() |);
+}
+
+to:
+
+driver method .connect() {
+    arg client, server, socket;
+
+    host = client;
+    daemon.new_connection();
+}
+
+Enjoy :)
+
+-Brandon
+</PRE>

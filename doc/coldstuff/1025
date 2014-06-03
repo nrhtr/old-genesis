@@ -1,0 +1,126 @@
+<HEAD><TITLE>discuss@charon: [1025] in "Coldmud discussion meeting"</TITLE>
+<H1>[1025] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1025"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1024"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1026"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] binarydb.c patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul  8 16:10:33 1996
+)</H3>
+<PRE>
+Date: Sat, 6 Jul 1996 07:52:24 +0200
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@tombstone.sunrem.com
+
+
+This patch should fix the binary database bloat. There could be some
+slowdown with VERY many objects in the db (could become noticable on
+object creation, with about 25-100 MB database). This code needs some
+testing, in other words. :) Good luck!
+
+
+*** binarydb_old.c	Wed Jul  3 01:01:52 1996
+--- binarydb.c	Sat Jul  6 07:33:33 1996
+***************
+*** 321,358 ****
+  
+  static int db_alloc(int size)
+  {
+      int blocks_needed, b, count, starting_block, over_the_top;
+  
+      b = last_free;
+      blocks_needed = NEEDED(size, BLOCK_SIZE);
+      over_the_top = 0;
+  
+      while (1) {
+  	if (b &gt;= bitmap_blocks) {
+  	    /* Only wrap around once. */
+  	    if (!over_the_top) {
+  		b = 0;
+  		over_the_top = 1;
+  	    } else {
+  		grow_bitmap(b + DB_BITBLOCK);
+  	    }
+  	}
+  
+  	starting_block = b;
+  
+  	for (count = 0; count &lt; blocks_needed; count++) {
+  	    if (bitmap[b &gt;&gt; 3] &amp; (1 &lt;&lt; (b &amp; 7)))
+  		break;
+  	    b++;
+  	    if (b &gt;= bitmap_blocks)
+! 		grow_bitmap(b + DB_BITBLOCK);
+  	}
+  
+  	if (count == blocks_needed) {
+  	    /* Mark these blocks taken and return the starting block. */
+  	    for (b = starting_block; b &lt; starting_block + count; b++)
+  		bitmap[b &gt;&gt; 3] |= (1 &lt;&lt; (b &amp; 7));
+  	    last_free = b;
+  	    return starting_block;
+  	}
+  
+--- 321,374 ----
+  
+  static int db_alloc(int size)
+  {
+      int blocks_needed, b, count, starting_block, over_the_top;
+  
+      b = last_free;
+      blocks_needed = NEEDED(size, BLOCK_SIZE);
+      over_the_top = 0;
+  
+      while (1) {
++ 
++ 	if (b &lt; bitmap_blocks &amp;&amp; bitmap[b &gt;&gt; 3] == (char)255) {
++ 	    /* 8 full blocks. Let's run away from this! */
++ 	    b = (b &amp; ~7) + 8;
++ 	    while (b &lt; bitmap_blocks &amp;&amp; bitmap[b &gt;&gt; 3] == (char)255) {
++ 		b += 8;
++ 	    }
++ 	}
++ 
+  	if (b &gt;= bitmap_blocks) {
+  	    /* Only wrap around once. */
+  	    if (!over_the_top) {
+  		b = 0;
+  		over_the_top = 1;
++ 		continue;
+  	    } else {
+  		grow_bitmap(b + DB_BITBLOCK);
+  	    }
+  	}
+  
+  	starting_block = b;
+  
+  	for (count = 0; count &lt; blocks_needed; count++) {
+  	    if (bitmap[b &gt;&gt; 3] &amp; (1 &lt;&lt; (b &amp; 7)))
+  		break;
+  	    b++;
+  	    if (b &gt;= bitmap_blocks)
+! 		/* time to wrap around if we still haven't */
+! 		if (!over_the_top) {
+! 		    b=0;
+! 		    over_the_top=1;
+! 		    break;
+! 		} else
+! 		    grow_bitmap(b + DB_BITBLOCK);
+  	}
+  
+  	if (count == blocks_needed) {
+  	    /* Mark these blocks taken and return the starting block. */
+  	    for (b = starting_block; b &lt; starting_block + count; b++)
+  		bitmap[b &gt;&gt; 3] |= (1 &lt;&lt; (b &amp; 7));
+  	    last_free = b;
+  	    return starting_block;
+  	}
+  
+</PRE>

@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [763] in "Coldmud discussion meeting"</TITLE>
+<H1>[763] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?763"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="762"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="764"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="765"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="767"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>database management package...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug 15 00:05:38 1995
+)</H3>
+<PRE>
+Date: Mon, 14 Aug 1995 22:03:56 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@hydepark.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+Does anybody forsee any problem with switching the driver to use gnu's
+dbm package, over the standard unix package?  The reason for this switch
+is that there are a few os's which don't implement ndbm right, or buggy
+(such as solaris), and centralizing on a readily available and free
+package may help out some people...
+
+(but it does mean more hassle in getting the driver off the ground)
+
+-Brandon
+</PRE>

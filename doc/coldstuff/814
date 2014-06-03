@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [814] in "Coldmud discussion meeting"</TITLE>
+<H1>[814] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?814"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="813"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="815"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="815"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="815"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>driver #xxxx =&gt; $name lookups</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct  2 17:16:48 1995
+)</H3>
+<PRE>
+Date: Mon, 2 Oct 1995 15:14:34 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+Right now the driver cannot do this.  The database does it by setting a
+a root variable each time you change the name.  The reason the driver cannot
+do this is because it only keeps track of it from the $name-&gt;#xxx angle.
+We _could_ add another table, but this would get crufty and wouldn't be
+too useful.  However, it would be a very nice thing to let the driver
+do #xxx -&gt; $name lookups.  I've been considering having a 'known' variable
+that it looks for on root, but this gets really ugly, like MOO.  However,
+what if we were to do this, but have the known variable be set online,
+with the default being no variable (and no #xxx-&gt;$name lookups).  Then,
+the db could perhaps call set_objname_lookup('objname), to set it to
+lookup on 'objname variable defined on root, or set_objname_lookup(0), which
+would shut it off...
+
+Does this repulse/appeal to anybody?  This would definitely simplify a
+lot of things...
+
+-Brandon
+</PRE>

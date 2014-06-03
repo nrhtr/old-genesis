@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [936] in "Coldmud discussion meeting"</TITLE>
+<H1>[936] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?936"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="935"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="935"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="935"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="937"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="938"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="938"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Re: MUD system -&gt; MUD system conversion...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 15 13:31:16 1996
+)</H3>
+<PRE>
+Date: Fri, 15 Mar 1996 10:56:32 -0700 (MST)
+From: Graeme Smith &lt;grysmith@freenet.edmonton.ab.ca&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+Cc: moo-cows@parc.xerox.com, coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.960315091429.4901A-100000@tombstone.sunrem.com&gt;
+
+
+
+GRAEME SMITH                         email: grysmith@freenet.edmonton.ab.ca
+2536 138A ave Edmonton             
+
+On Fri, 15 Mar 1996, Brandon Gillespie wrote:
+
+&gt; There are groups of muds which share the same concepts in topology 
+&gt; design.  For instance, a room is MOO is similar to a place in Cold.  The 
+&gt; idea is to cater to these similarities.  Diku is as far from a similarity 
+&gt; as you can get, and its not intended for converting diku topology.
+&gt; 
+&gt; What is dumped would not have much depth, but it would get 90% of the 
+&gt; grunt work converted to a db, if somebody wanted to convert.
+&gt; 
+So what you are saying, is that this would be a generic Architectural
+Language, that could then be translated into any compatible M* design.
+and would lay out the basic architecture, for later fleshing out?
+
+Sort of like a Map of a city, in the City Planners Office, it indicates
+the nature of the city, yet still has to be built out.....
+
+I like the concept..... Although how you would describe the "toilets that
+really clog" so that it could get transfered from one M* system to another
+is going to be a problem. Perhaps, you could outline the nature of the
+verbs, and properties, in some manner. Problem is that the Metaphor of
+the object, is realy only about 10% of its implimentation. 
+
+Still if you like empty streets, and quiet buildings, I suppose it's a
+valid approach. We could then have Environmental Artists, publishing in
+this "Standard" and hundreds of Mirrored M* sites, using different servers.
+A great way to popularize the M* concept. I can see it now, a CD rom with
+a whole set of "Standard" architectural files, and a set of M* servers, that
+could then be used to impliment and experiment with them.
+
+Why am I not excited by the idea?
+
+				GREY
+</PRE>

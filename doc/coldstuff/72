@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [72] in "Coldmud discussion meeting"</TITLE>
+<H1>[72] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?72"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="71"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="71"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="71"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="73"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: world 4.0</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 27 15:31:09 1993
+)</H3>
+<PRE>
+To: Lynx &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Sat, 27 Nov 93 13:20:22 -0600.
+             &lt;01H5T83VD7WYANQ33S@cc.usu.edu&gt; 
+Date: Sat, 27 Nov 93 15:23:48 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+You should be able to drop the old has_help objects into the hierarchy
+where they were before, and add back verbs for them.  Likewise
+$event_handling.
+
+I got rid of them because I decided I needed to take a step back on
+deciding how help works, and I'm not sure I have the right concept of
+events either.
+
+--GBH
+
+</PRE>

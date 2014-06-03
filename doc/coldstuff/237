@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [237] in "Coldmud discussion meeting"</TITLE>
+<H1>[237] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?237"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="236"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="236"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="236"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="238"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="238"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="240"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Finding out the call stack in ColdMUD</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 16 23:48:54 1994
+)</H3>
+<PRE>
+To: "John P. Landahl III" &lt;jpl3@access.digex.net&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Mon, 16 May 94 23:29:32 -0400.
+             &lt;Pine.3.89.9405162333.A3274-0100000@access2.digex.net&gt; 
+Date: Mon, 16 May 94 23:43:58 EDT
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; I want something like MOO's 'callers()' or 'player' in ColdMUD.  Is
+&gt; this possible?  sender() only gives you the info from one level
+&gt; back.  I need to know who or what is ultimately responsible for
+&gt; calling the current method.  I'm trying to write a parser that can
+&gt; call the user's .match_environment() so that all parsing is done by
+&gt; one method call.  But sender() is useless beyond the first call, and
+&gt; I can't find anything else that would do it.  Any ideas?
+
+This is tantamount to accessing global state, and is a poor design.
+If you need this information, pass it in as an argument.
+
+--GBH
+
+</PRE>

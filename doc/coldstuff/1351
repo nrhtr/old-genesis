@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [1351] in "Coldmud discussion meeting"</TITLE>
+<H1>[1351] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1351"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1350"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1352"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Locks</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 29 01:44:14 1997
+)</H3>
+<PRE>
+From: "Luther, Clay" &lt;clay@selsius.com&gt;
+To: "ColdStuff Mailing List (E-mail)" &lt;coldstuff@cold.org&gt;
+Date: Fri, 29 Aug 1997 00:36:47 -0500
+
+Can someone please explain ColdCore's locking mechanism/syntax?
+
+@set object:lock = ????
+
+Thanks.
+
+---
+Clay Luther
+clay@selsius.com
+
+
+</PRE>

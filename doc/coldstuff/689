@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [689] in "Coldmud discussion meeting"</TITLE>
+<H1>[689] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?689"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="687"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="688"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="690"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="690"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 12:34:43 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Fri, 10 Mar 95 10:16:30 -0700
+
+&lt; I think these endless squabbles over syntactic minutia
+&lt; are a good reason to put compilers in-db rather than
+&lt; inserver, personally :).
+
+Because of a reason you yourself brought up (twisting it a little).  The most
+frequently used sequence/procedure should be the most optimized.  Doing it
+in-db means it will not be very optimized.  Doing it in-driver means it will
+be (referring to both compile and decompile).
+
+Actually, with the change Crag is working on we can remove "compile()"
+and have an 'add_method(name, flags, args, vars, body)', then take the
+parsing code in compile and make a 'coldc_to_method()' and a
+'method_to_coldc()' (so, if people wanted to they could easilly add more
+parsing functions).
+
+The end result is, to compile code you would do:
+
+  add_method('foo, @coldc_to_method(["arg foo; return foo;"]))
+
+Instead of:
+
+  compile(["arg foo; return foo;"], 'foo);
+
+-Brandon
+</PRE>

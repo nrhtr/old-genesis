@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [1002] in "Coldmud discussion meeting"</TITLE>
+<H1>[1002] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1002"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="994"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="994"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1001"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1003"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1003"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1003"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Memory leak</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 17 01:12:19 1996
+)</H3>
+<PRE>
+Date: Fri, 17 May 1996 06:51:40 +0200
+From: silovic@srce.hr (Miroslav Silovic)
+To: brandon@tombstone.sunrem.com, coldstuff@cold.org
+
+
+Okay, I found the bug. This is the cause of the problem:
+
+Most (but not all) natives modify their argument by calling stuff from
+src/data directory, that in turn forwards the problem to
+prepare_to_modify. And prepare_to_modify discards its argument. So,
+most native methods discard their first argument. Those that don't
+(like, listlen, strlen... you got the idea. Whole bunch of methods),
+leave an extra reference to the arg.
+
+I could fix it the easier way, by dupping the first argument before
+calling the method, but that would screw anticipate_assignment call
+(which does NOT want its argument to be dupped. Its purpose is to
+deal with cases like l=l.replace(1,x), where value of variable l is
+going to be immediately overwritten, so it can be freed before the
+call to prepare_to_modify on l, leaving, in most cases, only a single
+reference to the contents of l, so that it won't be copied).
+
+So I'm going to fix all the modules with *_discard calls, and also
+with anticipate_assignment calls wherever appropriate (Lynx hasn't done
+this yet).
+
+	Jenner
+</PRE>

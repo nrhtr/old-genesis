@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [679] in "Coldmud discussion meeting"</TITLE>
+<H1>[679] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?679"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="676"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="677"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="678"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="680"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="698"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="698"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assexp op</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar  9 13:38:25 1995
+)</H3>
+<PRE>
+To: Quinn &lt;quinn@access.mountain.net&gt;
+Cc: cadams@weather.brockport.edu, crag@serial.mit.edu, coldstuff@MIT.EDU,
+        nop@batu.ccs.neu.edu
+In-Reply-To: Your message of "Thu, 09 Mar 95 12:30:15 EST."
+             &lt;199503091730.MAA20505@Access.Mountain.Net&gt; 
+Date: Thu, 09 Mar 95 13:33:51 -0500
+From: Jay Carlson &lt;nop@ccs.neu.edu&gt;
+
+&gt; I like '&lt;-', but it really doesn't imply expression anymore than
+&gt;  an equals sign does.  I'd suggest '&lt;&gt;', since its easy to type
+&gt;  and kind of implies "we are not both equal and we want the whole
+&gt;  world to know it, that is why we are pointing outward."
+
+But assignment really isn't symmetric.  There's a deep difference 
+between lvalues (the stuff on the left hand side) and rvalues (the 
+stuff on the right hand side).
+
+&gt; As for the local method character, instinctively I like ',' since
+&gt; it's a less emphatic period.  
+
+Been using @d lately? :-)
+
+&gt; But I don't know the repercussions of using a comma in such a way.
+
+My brain's too fried to figure out if this language is in LALR(1), I 
+had a midterm on code generation today, we already had our test on 
+parsers, I shouldn't have to know this any more etc etc etc.
+
+Anyway, I really wish you wouldn't use , for this.  I read , as a 
+separator.  Actually, I don't like .foo much as a call-on-self 
+syntax, because it's too easy for my eyes to skip over that little 
+one-pixel dot, since . isn't a separator in that case either. 
+
+&gt; blah blah blah
+
+Yeah.
+
+Jay Carlson
+nop@io.com    nop@ccs.neu.edu
+
+Flat text is just *never* what you want.   ---stephen p spackman
+
+</PRE>

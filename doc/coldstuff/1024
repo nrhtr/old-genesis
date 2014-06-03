@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [1024] in "Coldmud discussion meeting"</TITLE>
+<H1>[1024] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1024"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1023"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1025"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Back Online, driver p8 is released</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul  8 16:04:53 1996
+)</H3>
+<PRE>
+Date: Mon, 8 Jul 1996 13:40:25 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Sorry for the outage, our router's entire OS in flash ROM became 
+corrupted, and I just now finally installed a non-corrupted version.  
+Needless to say, cold.org is back online.
+
+There is also a new release of the driver, fixing many problems/bugs/etc. 
+I am not releasing a patch file because I believe it would be larger than
+the tar (I made many changes, in order to get it closer to working in
+Win32). 
+
+The only db-impacting change to be concerned about is the arguments to 
+$sys.signal() have changed, it now only receives one argument, which is a 
+symbol for the signal (i.e. 'INT, or 'TERM).
+
+However, you SHOULD read the CHANGES file and the README file, always.
+
+Quick Notes on p8:
+
+  * I suspect it will work on a DEC Alpha system, I will try later today
+    on a Dec alpha with osf/1.
+  * lots of bug fixes, including the critical expression bug fix
+  * a few features you can enable in defs.h, read the CHANGES file.
+
+It is available at: ftp://cold.org/cold/drivers/Genesis-1.0p8.tar.gz
+
+-Brandon Gillespie
+</PRE>

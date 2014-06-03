@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [21] in "Coldmud discussion meeting"</TITLE>
+<H1>[21] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?21"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="20"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="22"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="23"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="29"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>more ponderings</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 04:19:34 1993
+)</H3>
+<PRE>
+Date: Mon, 15 Nov 1993 22:49:39 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+Ok, how about having fetch_file() which works like echo_file() but it returns
+it in strings, so you can manipulate it from there.
+
+Now this next suggestion is getting almost into a security hole, but hey.  What
+about creating a write_file() for gods, which has a builtin max of bytes that
+they can write, modifyable only by the arch (programmer1)...  this would be
+very hard to keep track of, but it would make it much easier for the other gods
+to deal with disk based files, rather than having to create objects to hold all
+the text.  Also with help, I would love to have a disk based help setup, where
+$has_help simply echo's the files or whatever (so you dont have to load mongo
+objects into mem every time somebody asks for help on something).
+
+Anyhow.
+
+-Brandon
+</PRE>

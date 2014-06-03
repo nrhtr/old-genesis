@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [89] in "Coldmud discussion meeting"</TITLE>
+<H1>[89] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?89"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="87"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="88"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="88"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="90"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="90"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="99"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ANSI codes and unreadables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 04:06:11 1993
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Fri, 03 Dec 1993 21:13:37 PST."
+             &lt;199312040513.VAA00409@mail.netcom.com&gt; 
+Date: Sat, 04 Dec 1993 00:37:01 -0800
+From: Ian McCloghrie &lt;imcclogh@cs.ucsd.edu&gt;
+
+&gt; I don't believe that control characters in MUD output would actually "break"
+&gt; most clients per se.  The point is that if you allow anyone to put control
+
+	that depends on what you define as "break".  tf line wrapping
+breaks, as thus works by counting characters.  ^[[5m is 4 characters,
+but they don't show up on the screen, so a line with one of those
+embedded wraps in the wrong place.
+
+	This discussion has been had, many times, on rec.games.mud.*.
+ANSI escape codes are _not_ a good thing to put into the server.  If
+you want to do color hiliting, etc, have a flag the player can set
+which enables this, and have him load triggers into his tf, which
+supports color hiliting in the later version.  Basically, design a
+protocol so that the server can send display independant information,
+and the client can translate this into whatever is appropriate
+behaviour for the local display.
+
+--
+ /~&gt; Ian McCloghrie      | Commandant of Secret Police - Cal Animage Beta.
+&lt; &lt;  /~\ |~\ |~&gt; |  | &lt;~ | email: ian@ucsd.edu               Net/2, USL 0!
+ \_&gt; \_/ |_/ |~\ |__| _&gt; | Card Carrying Member, UCSD Secret Islandia Club
+</PRE>

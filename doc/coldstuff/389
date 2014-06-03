@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [389] in "Coldmud discussion meeting"</TITLE>
+<H1>[389] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?389"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="386"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="388"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="388"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="390"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="390"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="392"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Out of curiosity</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug 23 21:37:52 1994
+)</H3>
+<PRE>
+From: Dave Richards &lt;dave@richards.connected.com&gt;
+To: deforest@netcom.com (Robert de Forest)
+Date: Tue, 23 Aug 1994 18:32:28 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199408232256.PAA21539@netcom3.netcom.com&gt; from "Robert de Forest" at Aug 23, 94 03:56:04 pm
+
+&gt; Anyway, what other machines have people tried and succeeded or failed?
+
+I have it running under BSDI UNIX, but given the general lack of support
+for the driver I have not done anything with it.  I was considering
+spiffing it up a bit, converting it to C++ and adding some other useful
+features, but seeing as my interests are commercial by nature I decided
+not to risk any copyright infringement problems and so I bagged it.
+
+	Dave Richards
+</PRE>

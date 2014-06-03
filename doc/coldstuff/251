@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [251] in "Coldmud discussion meeting"</TITLE>
+<H1>[251] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?251"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="249"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="250"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="250"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="252"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: common ports and bind()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 18 02:15:03 1994
+)</H3>
+<PRE>
+Date: Wed, 18 May 1994 00:10:23 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt;&gt; for existing ports in a regular OS, use the same portnumber with a
+&lt;&gt; prefix of 66.
+&lt;
+&lt; This idea doesn't work so well for ports above 99 (e.g. news at 117).
+
+I was under the impression that ports could be larger than 5 didgits (I cannot
+remember the actual maxint, but I do know you could get 5 didgits out of it). 
+I just fired up a facuet on port 100000 and it worked... (damn, whats the
+maxint?)
+
+&lt;&gt; Following this scheme it would be a good idea to change 6666 to 6623
+&lt;&gt; (telnet), although that is only a shy rationalization, since you
+&lt;&gt; should be using a client other than telnet.
+&lt;
+&lt; Moreover, as far as I know, no existing core implements the telnet
+&lt; protocol (see RFC 854).
+
+
+Yeah.
+</PRE>

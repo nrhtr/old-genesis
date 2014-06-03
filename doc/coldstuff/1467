@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [1467] in "Coldmud discussion meeting"</TITLE>
+<H1>[1467] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1467"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1466"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1468"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1468"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1468"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>driver.log not y2k-compliant</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 10 15:20:13 1999
+)</H3>
+<PRE>
+Date: Wed, 10 Nov 1999 14:48:58 -0500
+From: Nobody &lt;psyclone42@geocities.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+i overheard somebody on tCD (Bruce?) say how y2k was on the agenda for
+some meeting today, and thought of the driver.log..
+
+an excerpt from my (tiny) core's driver.log:
+[10 Nov 99 13:03] Caught signal 15: TERM
+
+yes, i shut it down with kill, but still, two digit years?
+
+i'd make a patch for this, but i'm not sure what to make it do..
+personally i'd like ctime() format, but there are other perfectly good,
+valid formats..
+</PRE>

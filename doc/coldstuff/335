@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [335] in "Coldmud discussion meeting"</TITLE>
+<H1>[335] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?335"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="333"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="334"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="334"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="336"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="336"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="336"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: spell checking</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 28 00:26:15 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Fri, 27 May 1994 22:19:44 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt;&gt; (Oh, also, I think that run_shell would be a better term no?)
+&lt;
+&lt; run_script() does not invoke a shell.
+
+oh yeah.  perhaps run_exec()?  or execute()?  (since its not always a script)
+
+(shrug).
+
+For the actual question though, any comments?
+</PRE>

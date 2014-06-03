@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [790] in "Coldmud discussion meeting"</TITLE>
+<H1>[790] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?790"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="789"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="791"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="792"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="797"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>exception handling...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 31 03:27:22 1995
+)</H3>
+<PRE>
+Date: Thu, 31 Aug 1995 01:25:08 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+I'm mulling over the reconstruction of exception handling (catch) to be
+slightly different.  The best way to explain this is with an example:
+
+for obj in (list) {
+    catch {
+        obj.query_test();
+    } handle ~locked {
+        sender().print("Object is locked.");
+    } handle others {
+        sender().print("Error: " + toliteral(error) + " encountered!");
+    } otherwise {
+        sender().print("Test is sucessful for: " + obj.name());
+        valid = valid + [obj];
+    }
+}
+
+Basically, each handle ~error line is for whichever error, where the
+handle others is for all others.  If it does not exist, the error
+is propogated normally.
+
+The otherwise clause we are still hung up on, but Jeff Bellegarde and
+I feel it is better than:
+
+for obj in (list) {
+    catch {
+        obj.query_test();
+        sender().print("Test is sucessful for: " + obj.name());
+        valid = valid + [obj];
+    } handle ~locked {
+        sender().print("Object is locked.");
+    } handle others {
+        sender().print("Error: " + toliteral(error) + " encountered!");
+    }
+}
+
+But we are still undecided.
+
+What does everybody else feel about this?
+
+-Brandon
+</PRE>

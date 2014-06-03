@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [787] in "Coldmud discussion meeting"</TITLE>
+<H1>[787] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?787"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="785"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="785"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="786"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="788"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Diogenes Club skeleton up and running</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 25 19:50:56 1995
+)</H3>
+<PRE>
+From: Colin McCormack &lt;colin@field.medicine.adelaide.edu.au&gt;
+To: coldstuff@MIT.EDU
+Date: Sat, 26 Aug 1995 09:19:31 +0930 (CST)
+In-Reply-To: &lt;199508251607.JAA22484@netcom10.netcom.com&gt; from "Jeff Kesselman" at Aug 25, 95 09:07:28 am
+
+&gt; 3) Currently all that is supported is login, look, and @logout.
+
+It appears that only look and @logout are supported.
+
+Colin.
+
+</PRE>

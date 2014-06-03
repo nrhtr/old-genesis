@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [1489] in "Coldmud discussion meeting"</TITLE>
+<H1>[1489] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1489"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1488"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1488"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1488"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1490"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Genesis on Linux / seth law</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 24 14:27:06 1999
+)</H3>
+<PRE>
+From: "Bruce Mitchener, Jr." &lt;bruce@puremagic.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Wed, 24 Nov 1999 11:11:33 -0800
+Reply-To: coldstuff@cold.org
+
+I think the 1.1.8 release (which never seemed to have been announced) fixed
+that.
+
+Brandon?
+
+ - Bruce
+
+Ilya, Game Commandos wrote:
+&gt;I have done this recently, and remember it well.  Assuming
+&gt;nobody else has already answered this, I'll give it a crack.
+&gt;
+&gt;I found that on my mandrake linux, I had to be sure perl5
+&gt;was installed, because it had the ndbm.h header file I needed.
+&gt;
+&gt;That header file ended up in /usr/include/db1
+&gt;I guessed it would be needed in /usr/include as well, so
+&gt;copied it into there as well.  Yes, I know, a link would probably
+&gt;have been wiser, but I didn't.
+&gt;
+&gt;Anyway, that solved my problem and genesis compiled
+&gt;fine after that.
+&gt;
+&gt;--
+&gt;  Ilya, Game Commandos     http://www.gamecommandos.com
+&gt;
+&gt;
+
+</PRE>

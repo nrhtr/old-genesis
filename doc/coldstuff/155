@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [155] in "Coldmud discussion meeting"</TITLE>
+<H1>[155] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?155"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="154"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="156"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>random(0) bugfix</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 22 14:09:45 1994
+)</H3>
+<PRE>
+From: zachary@io.com (Zachary )
+To: coldstuff@MIT.EDU
+Date: Tue, 22 Mar 94 13:04:54 CST
+
+
+After a bit of consulting, and realizing that this can be changed later, here's 
+a bugfix for the random() bug... replace the op_random() function that's in 
+miscops.c with this one:
+
+void op_random(void)
+{
+    Data *args;
+
+    /* Take one integer argument. */
+    if (!func_init_1(&amp;args, INTEGER))
+        return;
+
+    /* Do range checking */
+    if (args[0].u.val &lt;= 0) {
+       throw(range_id,"Argument to random() must be greater than zero.");
+    } else {
+       /* Replace argument on stack with a random number. */
+       args[0].u.val = random_number(args[0].u.val);
+    }
+}
+
+and all should be well - it is a range error to hand random() a range less than one...
+
+ --Zachary
+</PRE>

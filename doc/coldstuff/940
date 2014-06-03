@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [940] in "Coldmud discussion meeting"</TITLE>
+<H1>[940] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?940"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="939"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="939"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="939"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="941"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="941"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="943"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] regular expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 22 19:03:59 1996
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+Date: Sat, 23 Mar 1996 00:35:29 +0100 (MET)
+In-Reply-To: &lt;Pine.BSF.3.91.960322124011.4983A-100000@tombstone.sunrem.com&gt; from "Brandon Gillespie" at Mar 22, 96 12:58:31 pm
+
+&gt; 
+&gt; Since there is a POSIX standard for regular expressions, should we hook into
+&gt; the system regular expressions if they exist, resorting to our own regexp 
+&gt; code if it does not?
+&gt; 
+&gt; The problems which could arise with this is that the current POSIX 
+&gt; standard seems to be somewhat vague, leaving openings for interpretation 
+&gt; by implementors.  Basically, certain aspects of regular expressions could 
+&gt; change depending on what OS the driver is running under.
+&gt; 
+
+I think we should use Perl regexp (if you feel like isolating its
+source). At least I can tell which characters need to be backslashed and
+when in Perl regexp. :) It's also somewhat standard and powerful
+enough.
+
+	Miro
+
+</PRE>

@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [1348] in "Coldmud discussion meeting"</TITLE>
+<H1>[1348] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1348"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1347"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1347"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1347"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1349"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1350"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1354"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>RE: [COLD] FIX: $english_lib:indef_article(), ColdCore 3.0a9.02</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 29 00:02:22 1997
+)</H3>
+<PRE>
+From: "Luther, Clay" &lt;clay@selsius.com&gt;
+To: "ColdStuff Mailing List (E-mail)" &lt;coldstuff@cold.org&gt;
+Date: Thu, 28 Aug 1997 22:55:50 -0500
+
+It appears that the mailing list consumed some of the patch listing:
+
+I will try again below:
+
+
+| @program $english_lib.vowel_exception() +access=pub
+|  arg word;
+|   var prefix, word1;
+|   
+|   word1 = split(word, "\s+")[1];
+|   return match_regexp(word1, vowel_exceptions) ? 1 : 0;
+|   
+| .
+
+
+
+| @program $english_lib.nonvowel_exception() +access=pub
+|   arg word;
+|   var prefix, word1;
+|   
+|   word1 = split(word, "\s+")[1];
+|   return match_regexp(word1, nonvowel_exceptions) ? 1 : 0;
+| . 
+
+---
+Clay Luther
+clay@selsius.com
+
+
+&gt; -----Original Message-----
+&gt; From:	Luther, Clay [SMTP:clay@selsius.com]
+&gt; Sent:	Thursday, August 28, 1997 10:25 PM
+&gt; To:	ColdStuff Mailing List (E-mail)
+&gt; Subject:	[COLD] FIX: $english_lib:indef_article(), ColdCore
+&gt; 3.0a9.02
+&gt; 
+&gt; Here is a fix for the small bug in ColdCore 3.0a9.02
+&gt; $english_lib:indef_article().
+&gt; 
+&gt; Problem Occurs:
+&gt; 
+&gt; This problem was found while trying to @rename an object.
+&gt; 
+</PRE>

@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [626] in "Coldmud discussion meeting"</TITLE>
+<H1>[626] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?626"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="624"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="625"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="625"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="627"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="627"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="627"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Adding a command, HELP!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan  4 12:48:56 1995
+)</H3>
+<PRE>
+From: rayn@crossaccess.com
+Date: Wed, 4 Jan 1995 09:33:44 -0800
+To: jeffpk@netcom.com
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199412250519.VAA26279@netcom16.netcom.com&gt; (jeffpk@netcom.com)
+
+
+Jeff says:
+   I'm working  on that littel tiemr manager of mine, but I've been stumped 
+   for a week. I CANNOT get CDC to recognize my new command (@tqueue).
+
+   I did the follwoing:
+	   1) defined a method queue_cmd
+	   2) inherited has_commands
+	   3) defined the following:
+		   var $has_commands commands [["@tqueue",'queue_cmd]]
+		   var $has_commands aliases []
+
+   It compiled fine but when I type @queue it gives the usual mesages i see 
+   for an unknown command.
+
+   Do I have to attach this thing somewhere other then as a chidl of 
+   has_commands to enable it to see input?  Are there any other steps I'm 
+   missing??
+
+   This is REALLY frustrating me.
+
+
+Well, hopefully you've solved this by now, but reading your
+description of the problem the obvious discrepancy leaps out at me:
+	
+&gt; var $has_commands commands [["@tqueue",'queue_cmd]] typing the
+command @queue won't activate this command... hopefully it's just a
+typo in the problem description ;)
+
+I was having a problem with commands that sounded similar, but I
+forgot what it was, it was I believe, related to the rehashing as
+Brandon implied, also it was after I grabbed the new server (although
+I still only use .10.3 as of yet so by new server I mean .10.3 instead
+of .10 with a patch or two.) I'll try and find out what the problem
+was once I have time again ;)
+
+
+	Ray
+
+</PRE>

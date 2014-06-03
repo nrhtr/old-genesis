@@ -1,0 +1,70 @@
+<HEAD><TITLE>discuss@charon: [692] in "Coldmud discussion meeting"</TITLE>
+<H1>[692] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?692"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="690"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="691"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="693"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="694"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 14:36:27 1995
+)</H3>
+<PRE>
+Date: Fri, 10 Mar 95 11:29:29 -0800
+From: jsp@betz.biostr.washington.edu (Jeff Prothero)
+To: coldstuff@MIT.EDU
+
+
+| &lt; I think these endless squabbles over syntactic minutia
+| &lt; are a good reason to put compilers in-db rather than
+| &lt; inserver, personally :).
+| 
+| Because of a reason you yourself brought up (twisting it a little).  The most
+| frequently used sequence/procedure should be the most optimized.  Doing it
+| in-db means it will not be very optimized.  Doing it in-driver means it will
+| be (referring to both compile and decompile).
+
+Um.  I'm not sure I agree.
+
+It's generally accepted in the industry that programs spend
+90% of their time in 10% of the code:  One doesn't have to
+C-code the complete compiler to get essentially C-level
+performance.  Coding a few crucial prims should suffice.
+
+I could also comment that just 'cause it's in C doesn't
+mean it's efficient... I'd bet Larry Wall can write Perl
+that would run circles around a lot of undergrad's C code,
+say... :)
+
+Your next paragraph sounds like it is making very nearly
+this point anyhow...
+
+| Actually, with the change Crag is working on we can remove "compile()"
+| and have an 'add_method(name, flags, args, vars, body)', then take the
+| parsing code in compile and make a 'coldc_to_method()' and a
+| 'method_to_coldc()' (so, if people wanted to they could easilly add more
+| parsing functions).
+| 
+| The end result is, to compile code you would do:
+| 
+|   add_method('foo, @coldc_to_method(["arg foo; return foo;"]))
+| 
+| Instead of:
+| 
+|   compile(["arg foo; return foo;"], 'foo);
+| 
+| -Brandon
+
+If you can rig it so in-db parse/compile functions can't hang
+or crash the server by deliberately producing bad code, you've
+got it.  If not, you can't really afford to open up the
+facility to non-wizards, and you're pretty much back where you
+started... imho, anyhow :)
+
+
+</PRE>

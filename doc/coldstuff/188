@@ -1,0 +1,97 @@
+<HEAD><TITLE>discuss@charon: [188] in "Coldmud discussion meeting"</TITLE>
+<H1>[188] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?188"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="186"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="187"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="187"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="189"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="189"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="207"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: confusion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar 31 14:30:46 1994
+)</H3>
+<PRE>
+Date: Thu, 31 Mar 1994 12:22:12 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt;	How do the current cores deal with general setting of variables
+&lt; (and by this i dont mean other objects setting a var, just the object
+&lt; that owns the var setting it for internal use).
+
+In world 6 you have to first use .add_parameter, then you have to create a
+method to modify the parameter and set its initial value.  In CDC we've hacked
+.add_parameter so it can also set the initial value.
+
+&lt; 	Would it be bad to have one method that either set the var or
+&lt; returned the var, based upon the context it was called in? This may
+&lt; be a bit confusing to the programmer, so I could see why it wouldnt
+&lt; be desireable, it just seemed like a neat idea at the time :)
+
+Im vague as to what your asking, are you saying you have a method which
+accesses parameter ,foo, where the method accessing it can either set the
+parameter to a value, or return the value?  Like:
+
+	.foo() =&gt; [value of foo]
+	.foo([value of foo]) =&gt; $object
+
+?
+I would personally not like this idea, as it just makes sense doing it the
+other way and probably takes less code in the long run:
+
+method foo &lt;1&gt;
+arg [args]
+
+.perms(sender());
+if (!args)
+  return foo;
+foo = args[1];
+.
+
+or:
+
+method foo &lt;2&gt;
+return foo;
+.
+method set_foo
+arg value;
+
+.perms(sender());
+foo = value;
+.
+
+----
+hsm, dunno, I like the set better anyhow... :)
+
+&lt; As a corellary to point 2 should the core methods that add a parameter
+&lt; also add the set and retrieve methods for the parameter (pehaps based on
+&lt; a template?) This would of course be modifiable, but would then be 
+&lt; useful in preventing typing in the accessor each time. alternately
+&lt; a template accessor could be called or inherited, although im unclear
+&lt; on how to inherit a uniqely named method. 
+
+I would definitely say no.  This is because doing such a thing would lead to
+bad coding immediately, where people yearning for MOO would just fall back into
+MOO patterns.  Often times you do not even WANT to have direct accessor methods
+for values, an example would be $input and $input_parser at tCD.  $input has
+two parameters ,receiving and ,input.  ,input is only added to by .new_line(),
+only returns text when .finish_receiving is called, and is cleared by
+.reset_input()
+
+&lt; Sorry about continuously restating my point, but i keep getting responses
+&lt; to the parts I mostly already know (i.e. other objects should directly 
+&lt; set vars on an object). my point is that there should be only one method
+&lt; period that sets a var on an object, and that object should use that 
+&lt; method...
+
+Yeah.  I'd suggest just sticking with eval.  Actually, I suppose we can hack up
+an "as * eval *" and "def * as * eval *" for $programmer, with security checks
+8)
+
+-Brandon (Lynx)
+</PRE>

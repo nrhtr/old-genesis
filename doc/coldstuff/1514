@@ -1,0 +1,80 @@
+<HEAD><TITLE>discuss@charon: [1514] in "Coldmud discussion meeting"</TITLE>
+<H1>[1514] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1514"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1513"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1513"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1515"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1515"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec  3 22:04:30 1999
+)</H3>
+<PRE>
+Date: Thu, 2 Dec 1999 08:59:53 -0500
+From: Fabien Ninoles &lt;fabien@Nightbird.TZoNE.ORG&gt;
+To: coldstuff@cold.org
+Mail-Followup-To: coldstuff@cold.org
+In-Reply-To: &lt;199912011921.LAA20148@taller.eng.sun.com&gt;; from Jeffrey.Kesselman@eng.sun.com on Wed, Dec 01, 1999 at 11:21:48AM -0800
+Reply-To: coldstuff@cold.org
+
+On Wed, Dec 01, 1999 at 11:21:48AM -0800, Jeff Kesselman wrote:
+&gt; 
+&gt; &gt;
+&gt; &gt;Of course keeping it in a word format is also an option, just not on my
+&gt; &gt;list ;)
+&gt; &gt;
+&gt; 
+&gt; I THINK this falls into "if your gonna sue volunteers ya gotta let em use the 
+&gt; tools they're comofrtable with". The vast majority of the non-geek world 9and i 
+&gt; thin keven the good majoprity of the geek world) have moved beyond text editor 
+&gt; and lay out macros And don't really want to return.
+
+Why? I go from Word to LaTeX to SGML to XML. Conversion was quiet easy since
+I don't have to care about the presentation of my documents in the last ones.
+BTW, WordPerfect is able to read/write SGML and an open format that can be
+write in Words too is HTML. However, Words can do a real mess of HTML
+documents. You should use HotMetal instead, and write XML (which can be easy
+converted to anything).
+
+&gt; 
+&gt; Best solution would be to find a reasonable intermiediary from that word can 
+&gt; write and that can be translated automaticly to what you want, Brandon.
+&gt; (As a side note, you CAN read PDF, if you can run Java. There is a JAVA PDF 
+&gt; viewer available form Adobe.)
+
+You can read it but you can't edit it. So, if Brandon want to make some update,
+it has to buy Words. When MS will get Words run on BSD? on Java at least
+[not the MS extended one, it would be silly to run MS Words for Java on
+Windows].
+
+&gt; 
+&gt; Word writes a LOT of formats. One I knwo f thats suppsoed top be resonably 
+&gt; portable is RTF...
+&gt; 
+
+Can you translate words doc to cml/ctext? I think not. Same thing for RTF.
+You lost a lot of information in both RTF and Words format. HTML is a better
+format if you don't use Words to write and follow a strict convention.
+
+&gt; 
+&gt; Jeff Kesselman
+&gt; Member of Technical Staff IV
+&gt; JDK Performance/RAS Team
+&gt; SUN Microsystems
+&gt; 
+
+
+-- 
+------------------------------------------------------------------------
+Fabien Ninoles        Chevalier servant de la Dame Catherine des Rosiers
+aka Corbeau aka le Veneur Gris               Debian GNU/Linux maintainer
+E-mail:                                                    fab@tzone.org
+WebPage:                                    http://www.tzone.org/~fabien
+RSA PGP KEY [E3723845]: 1C C1 4F A6 EE E5 4D 99  4F 80 2D 2D 1F 85 C1 70
+------------------------------------------------------------------------
+</PRE>

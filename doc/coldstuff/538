@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [538] in "Coldmud discussion meeting"</TITLE>
+<H1>[538] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?538"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="537"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="539"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="543"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="543"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Timed out input.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 23:42:15 1994
+)</H3>
+<PRE>
+Date: Sat, 5 Nov 1994 20:41:44 -0800
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+
+
+I'm writing combat-mode code right now in c-- (or ColdC as Brandon
+suggests it be called.) Anyway, if someone is part of a combat I need to
+querey him each segment to find out if he wants to do anything (combat 
+is sequentail, based on the Hero System.) Anyway I need to querey the 
+character, but don't want the whole combat to hang if someone for some 
+reasin can't or doesnt want to repsond.
+
+What i need is a way to time out the attempt to get info from the user.
+
+I realize that usually cold-mud code is driven by the user input, not the 
+other way around.
+
+Can someone tell me how to get th effect I'm after???
+
+Thanks
+
+Jeff Kesselman
+
+
+</PRE>

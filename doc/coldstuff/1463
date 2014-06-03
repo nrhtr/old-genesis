@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [1463] in "Coldmud discussion meeting"</TITLE>
+<H1>[1463] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1463"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1457"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1458"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1462"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1464"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: pueblo format bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  9 23:42:03 1999
+)</H3>
+<PRE>
+From: "Pabo Wakataeo" &lt;pabo@onebox.com&gt;
+To: coldstuff@cold.org
+Date: Tue, 9 Nov 1999 20:27:23 -0800
+Reply-To: coldstuff@cold.org
+
+Hi there...
+ 
+Please take me and or any "@section8.com" emails off your mailing list as I am being spammed to death by the constant emails.  
+ 
+I am the owner of the domain and any email address @ section8.com comes to my personal email.   
+ 
+Thanks...I regt to say I am too busy to read or stay up with the events on cold.org  
+
+                 _        _  
+ _ _  _ _   ___ | |__  __/_/ __ __    __  ___  _ __
+/ _ \| ' \ / -_)| '_ \|.__|: \ \ / _ / _|/ _ \| '  \
+\___/|_||_|\___||_.__/|/__|/ /_\_\(_)\__|\___/|_|_|_|
+email : pabo@onebox.com|voicemail|1-773-377-5000 x3742
+ 
+
+
+
+
+---- "Bruce Mitchener, Jr." &lt;bruce@puremagic.com&gt; wrote:
+&gt; Tony Dorge wrote:
+&gt; &gt; i have noticed that in the $pueblo_format.format() method
+&gt; &gt; that the 12th line has an error, it currently reads.
+&gt; &gt;
+&gt; &gt;
+&gt; &gt; return str_to_buf(str + "\n");
+&gt; &gt;
+&gt; &gt; but shouuld read
+&gt; &gt;
+&gt; &gt;
+&gt; &gt; return str_to_buf(str + "&gt; );
+&gt; 
+&gt; 
+&gt; I applied this fix to the Cold Dark, with the only change being that I kept
+&gt; the \n and added a \n to the same line in $html_format.format()
+&gt; 
+&gt; It should show in a new core extraction, whenever that happens.
+&gt; 
+&gt;  - Bruce
+&gt; 
+&gt; 
+
+__________________________________________________
+FREE voicemail, email, and fax...all in one place.
+Sign Up Now! http://www.onebox.com
+
+</PRE>

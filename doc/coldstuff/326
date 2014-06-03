@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [326] in "Coldmud discussion meeting"</TITLE>
+<H1>[326] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?326"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="325"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="327"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>cold dark and grimy</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 25 02:40:01 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Wed, 25 May 1994 00:34:45 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+our whole ultrix network (*.declab.*) is bombed for the evening, kereberos
+died.  So basically, the Cold Dark is dead for the night.  We are overhauling
+the whole subnet, (we have about 50 Gigs worth of random drives we'll be
+distributing to lessen the NFS load on the servers and network (amoung some of
+the things we are doing)), which means that it won't be going down as often
+(sigh).
+
+-Brandon-
+</PRE>

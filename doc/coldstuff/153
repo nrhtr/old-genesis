@@ -1,0 +1,28 @@
+<HEAD><TITLE>discuss@charon: [153] in "Coldmud discussion meeting"</TITLE>
+<H1>[153] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?153"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="152"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="154"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="154"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="156"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>hrm, and mod by zero</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 14 03:23:55 1994
+)</H3>
+<PRE>
+Date: Mon, 14 Mar 1994 01:21:52 -0600 (MDT)
+From: "God is dead, and no one seems to care." &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I guess the mod by zero isn't fixed yet, either..
+
+(thought it was fixed in .10)
+
+-Brandon
+</PRE>

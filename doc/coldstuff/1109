@@ -1,0 +1,27 @@
+<HEAD><TITLE>discuss@charon: [1109] in "Coldmud discussion meeting"</TITLE>
+<H1>[1109] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1109"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1108"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1110"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] New Minimal Core</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Oct 26 14:50:02 1996
+)</H3>
+<PRE>
+Date: Sat, 26 Oct 1996 12:44:08 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: coldstuff@cold.org
+
+I just updated the Minimal core, updating the libraries from ColdCore and
+fixing a few problems.
+
+-Brandon Gillspie
+
+</PRE>

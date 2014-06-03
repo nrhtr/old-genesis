@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [881] in "Coldmud discussion meeting"</TITLE>
+<H1>[881] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?881"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="880"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="882"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="882"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="882"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>code</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan  8 00:05:12 1996
+)</H3>
+<PRE>
+Date: Sun, 07 Jan 1996 23:51:03 +0500
+To: coldstuff@tombstone.sunrem.com
+From: mwilson@vt.edu (Mike "Zaphod" Wilson)
+
+I was trying to write a simple little program to demonstrate some
+code to a friend, and I can't seem to get it to compile, nor do I
+understand why it won't .... anyone care to point out what
+I'm doing wrong?
+-----
+&gt;arg l , [dummy];
+&gt;var x,y,temp;
+&gt;
+&gt;if (type(l) != 'list){
+&gt;   throw (~type, "Must be list of strings");}
+&gt;for x in (substitutions)
+&gt;    if (.find_method(x[2]))
+&gt;        for y in [1 .. l.length()]  {
+&gt;             temp = tosym(x[2]);
+&gt;             temp =  (| .(temp)() |);
+&gt;             l[y] = $string.replace(l[y],x[1],temp) ;
+&gt;}
+&gt;return l;
+
+thanks,
+Mike
+mwilson@glock.com                                             mwilson@vt.edu
+    It's difficult to kiss a woman one moment, and kill her the next.
+   If Bill Clinton is the answer, it must be one very stupid question.
+
+</PRE>

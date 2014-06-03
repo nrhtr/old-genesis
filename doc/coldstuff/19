@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [19] in "Coldmud discussion meeting"</TITLE>
+<H1>[19] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?19"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="18"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="20"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="28"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="48"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>clear parameters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 04:01:35 1993
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Tue, 16 Nov 93 0:54:50 PST
+
+As a former MOO programmer, I have become used to clear props for default
+options and the like. Parameters in ColdMUD do not appear to be clearable.
+Is there a design reason for this or could it be changed?
+
+I realize values can be initialized in .init(), but I'd like to be able to
+change default values without looking for all the players who haven't changed
+theirs.
+
+I also wonder if unset parameters take up db space.
+
+Robert de Forest / Crag@MostMOOs, tCD and MH.
+-- 
+</PRE>

@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [782] in "Coldmud discussion meeting"</TITLE>
+<H1>[782] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?782"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="781"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="783"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="784"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="784"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Regexp matching and escaping characters...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 24 00:37:32 1995
+)</H3>
+<PRE>
+Date: Wed, 23 Aug 1995 22:33:21 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+I dont know why I didn't realize this earlier quinn, but the problem with:
+  
+    ;match_regexp("\$test", "we $test this")
+
+Is that you have a coldc compilation layer between the function call and
+setting the string "\$test".  To get around it you just do:
+
+    ;match_regexp("\\$test", "we $test this")
+
+-Brandon
+</PRE>

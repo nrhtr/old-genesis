@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [845] in "Coldmud discussion meeting"</TITLE>
+<H1>[845] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?845"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="843"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="844"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="844"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="846"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="851"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="851"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: inheritance</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 30 16:49:59 1995
+)</H3>
+<PRE>
+Date: Thu, 30 Nov 1995 17:31:06 -0500 (EST)
+From: Dave Wallace &lt;dwallace@ssnet.com&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+cc: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;Pine.BSF.3.91.951130133127.547B-100000@tombstone.sunrem.com&gt;
+
+
+
+On Thu, 30 Nov 1995, Brandon Gillespie wrote:
+
+&gt; Encapsulation.  MOO breaks encapsulation by allowing one to inherit 
+&gt; values, which is incorrect.  Cold is simply more strict about it.  It 
+&gt; does cause problems when trying to code designes based off the MOO model, 
+&gt; but once you get used to how it works in relation to the Cold model, it 
+&gt; is actually a nice addition.
+
+Ok, I can see that, but did you mention once that you were planing allow 
+individual parameters to be marked for some such behavior? 
+
+At any rate I can adapt :) 
+
+
+This leads then to another question:
+  If I specificly assign the parameter from the parent in an .init_ 
+method that is called on the child at the time of @spawning:
+  
+	that_parameter = .parents()[1].get_that_value(); 
+
+and if that_value happens to be a long list, is the whole list _copied_ or 
+is a reference passed?
+
+
+</PRE>

@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [915] in "Coldmud discussion meeting"</TITLE>
+<H1>[915] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?915"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="914"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="916"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="916"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="916"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] More efficient diskbasing</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Feb  7 16:31:58 1996
+)</H3>
+<PRE>
+Date: Wed, 7 Feb 1996 21:49:41 +0100
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@tombstone.sunrem.com
+Reply-To: coldstuff@cold.org
+
+
+It just occured to me that most of the checkpointing time is wasted on
+cp - the database has to be copied clean. I thought of a way to keep the
+database clean 95% of the time. This would also make the server a lot safer.
+
+The thing that would have to be modified is the cache handling. I suggest
+that modified objects could be kept in RAM till the next checkpoint, and
+the checkpoint would be when a) 30 minutes (or whatever) passes, or b)
+more than 75% of the cached objects are modified. Then we could dump
+just the modified objects, and the database would be non-clean only during
+the dump, the cp being unnecessary.
+
+What do you all think about this?
+
+	Jenner
+</PRE>

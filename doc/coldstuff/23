@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [23] in "Coldmud discussion meeting"</TITLE>
+<H1>[23] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?23"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="21"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="21"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="22"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="24"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="29"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="29"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: more ponderings</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 04:32:27 1993
+)</H3>
+<PRE>
+To: Lynx &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Mon, 15 Nov 93 22:49:39 CST."
+             &lt;01H5D0FB8I5AANHKWW@cc.usu.edu&gt; 
+Date: Tue, 16 Nov 93 04:27:32 -0500
+From: Jay Carlson &lt;nop@ccs.neu.edu&gt;
+
+&gt; What about creating a write_file() for gods, which has a builtin max
+&gt; of bytes that they can write, modifyable only by the arch (programmer1)...
+
+I must have missed this.  What serious advantage do disk files for
+help have?
+
+Jay Carlson
+nop@io.com    nop@ccs.neu.edu
+
+Flat text is just *never* what you want.   ---stephen p spackman
+</PRE>

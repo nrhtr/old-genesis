@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [914] in "Coldmud discussion meeting"</TITLE>
+<H1>[914] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?914"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="910"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="912"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="913"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="915"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] ColdCore 3.0 TODO</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 28 21:46:59 1996
+)</H3>
+<PRE>
+Date: Sun, 28 Jan 1996 19:25:48 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;199601280614.WAA07682@yam.tenetwork.com&gt;
+
+&gt; I'm working on my "timezones" at the moment which are a super-set of 
+&gt; realms, so I'm happy to help there.
+&gt; 
+&gt; For me, realms are used to define diffrent areas of construction to 
+&gt; allow different wizard-types to build different parts of the world.
+&gt; 
+&gt; Does that make sense to others?
+
+Realms are one of the area's I have given a disservice.  To ease further 
+confusion I'll explain them (finally), or at least my concept of them (as 
+they were never actually implemented, a skeleton structure was created but 
+not much else).
+
+Realms are a sort of 'meta-locations'.  They are controlling/guidance 
+objects for a group of other locations (which can also include realms).  
+When a location wishes information about itself, it asks it's realm, 
+which may ask it's realm, and so on, until you hit the base realm object 
+(depending upon the nature of the need).  This is best explained with 
+examples.
+
+You have an Inn.  Each room in the Inn is located within the realm of the 
+$mountain_inn (assuming that is the name of the realm).  The 
+$mountain_inn realm is located inside the realm which controls the street 
+it is on, which is within the realm of the city, which is within the 
+realm of the local area, which is in the realm of the world.  If somebody 
+were in a room in the Inn, and the room wished to know the weather so it 
+could place correct descriptions in the prose (using CML/Ctext), it would 
+query the $mountain_inn.  Since this realm has no control over the 
+weather it passes on up the line, until one realm returns a response.
+
+Furthermore, realms are also inversely applicable.  If somebody were 
+singing a bawdy drinking song at the top of their lungs, it is likely 
+that others within the inn would hear it (abeit muffled).  Howerver, it 
+is unlikely that those venturing on the busy bustling street outside 
+would notice anything. (although this is not a great example, such an 
+effect may be better handled by passing it through the exits, using a 
+measurement of the noise and reducing it by factors based on the exit).
+
+Realms also have the handy side effect of grouping like locations.
+
+I used frobs as realms because at the time there was to be information 
+relative to the realm for each object (such as where it is located in the 
+realm (interior vs bordering on another realm)).
+
+-Brandon Gillespie-
+</PRE>

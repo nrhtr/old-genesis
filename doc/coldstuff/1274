@@ -1,0 +1,80 @@
+<HEAD><TITLE>discuss@charon: [1274] in "Coldmud discussion meeting"</TITLE>
+<H1>[1274] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1274"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1272"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1272"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1273"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1275"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Parser instability</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Apr  7 13:00:38 1997
+)</H3>
+<PRE>
+Date: Mon, 7 Apr 1997 10:55:42 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;3.0.32.19970407000444.0072c698@mail.tenetwork.com&gt;
+
+On Mon, 7 Apr 1997, Jeff Kesselman wrote:
+&gt; I've foudn a number of places in my debuygging where code of teh form
+&gt; 
+&gt; if (expression)
+&gt;    statement;
+&gt; 
+&gt; Fails and
+&gt; 
+&gt; if (expression) {
+&gt;   statement;
+&gt; }
+
+fails?  how does it fail?  I know there is a bug in line counting, but it
+hasn't been a big deal.  The problem is there are two seperate
+decompilers--one which builds text and one which pretends to buildtext,
+but actually just counts when it would have a newline.  The second one is
+where the 'bug' exists--if this is what you are referring to.
+
+Specific instances that I know cause mis-counting are:
+
+  if (blah)
+      ;
+
+(i.e. null stmt) and:
+
+   case
+     single-stmt;
+   with
+     single-stmt;
+
+(i.e. where it doesn't bracket the case and handler)
+
+&gt; This however reinforces a beleif of mien that the entire parser aught to be
+&gt; re-written.  At the same time the issues of &lt;cr&gt; not being a proper white
+&gt; space character in the outer-syntax could also be addressed...
+
+Umm.. I don't see why this implies the compiler should be rewritten :) 
+
+However, I do agree, I want to rewrite it.  As for newlines--thats
+actually an enforced rule in the compiler (that newlines are not
+whitespace _when in strings_), not just a side effect.
+
+&gt; If someone wanted to write a BNF, and write the action routines, ild be
+&gt; willing to do a parser in PCCTS.  This has the additional advanatge of,
+&gt; since PCCTS is LL(k) as oppsoed to ACC being LALR, of meanign it woudl
+&gt; generate more intelligent syntax error messages.
+
+yacc is just fine, imho--and its standard.  You can get yacc to do
+intelligent error messages without problem (starting from that sort of
+compiler in the beginning).  The current model doesn't do it, but thats
+just because of the way it was written (at one point I had the compiler
+torn to pieces in a partial rewrite to support better messages--but I
+decided it would be better just to start from scratch). 
+
+-Brandon Gillespie
+
+</PRE>

@@ -1,0 +1,74 @@
+<HEAD><TITLE>discuss@charon: [1390] in "Coldmud discussion meeting"</TITLE>
+<H1>[1390] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1390"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1389"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1389"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1389"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1391"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1391"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1391"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Cheap CORBA??</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  6 20:24:13 1997
+)</H3>
+<PRE>
+Date: Sat, 6 Dec 1997 17:17:28 -0800 (PST)
+From: Bill McCarty &lt;bmccarty@apu.edu&gt;
+To: jeffk@tenetwork.com
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;3.0.32.19971205231017.0077b218@mail.tenetwork.com&gt;
+
+Jeff,
+
+See JacORB at:
+
+     http://www.inf.fu-berlin.de/%7Ebrose/jacorb/
+
+Also, I recall that Java 1.2 (due in beta real soon now) will include a
+free ORB, though it won't have a lot of functionality. 
+
+Unless you're working with a mixture of Java and non-Java code, you may 
+find that RMI (included in JDK 1.1) meets all your needs and adds the 
+ability to execute downloaded code as well. CORBA lacks this potentially 
+useful capability, though there's talk of adding it to the standard.
+
+--Bill 
+
+On Fri, 5 Dec 1997 jeffk@tenetwork.com wrote:
+
+&gt; Hey all,
+&gt; 
+&gt; I've started playing with Kelvin again.  This version is beig coded in JAVA
+&gt; for a variety of reasons.
+&gt; 
+&gt; An issue I've come across -- I've been reading up on CORBA and it looks
+&gt; like a very intresting thing to base this on.  Th one problem is that JAVA
+&gt; CORBA ORBs and coding kits all seem VERY expensve (int the 1 to 3 grand
+&gt; range.)
+&gt; 
+&gt; I don't suppsoe anyone knows of a cheap but decent JAVA CORBA implementation?
+&gt; 
+&gt; Just checking.
+&gt; 
+&gt; Jeffk
+&gt; Jeffrey P. Kesselman
+&gt; Senior Game Integration Engineer
+&gt; Total Entertainment Network
+&gt; 
+&gt; Unite for Java! - http://www.javalobby.org
+&gt; 
+&gt; ** Tired of unsolicited email? TAKE BACK OUR MAILBOXES! --
+&gt; http://www.ten.net/~jeffk/stopspam.htm ** 
+&gt; 
+
+----------------------------------------------------------
+Bill McCarty, Associate Professor
+Department of Computer Science
+Azusa Pacific University               Ph.    818 815-5311
+901 East Alosta Avenue                 Secty. 818 815-5310
+Azusa, CA 91702 USA                    Fax    818 815-5323
+
+</PRE>

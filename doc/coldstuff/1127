@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [1127] in "Coldmud discussion meeting"</TITLE>
+<H1>[1127] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1127"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1124"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1126"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1126"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1128"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1128"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1130"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] How to compile?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov  6 19:19:33 1996
+)</H3>
+<PRE>
+Date: Wed, 6 Nov 1996 16:59:50 -0700
+To: abn@plaza.ds.adp.com, brandon@glacier.cold.org, coldstuff@cold.org
+From: gestalt@sedona.net (Gestalt)
+
+&gt; At 09:15 AM 11/6/96 -0700, Brandon Gillespie wrote:
+&gt; &gt;Send the output from Make, and the output from: /bin/uname -a
+&gt; &gt;
+&gt; &gt;You may be out of luck--the older SunOS has some problems and is not
+&gt; &gt;ANSI/POSIX standard, which Genesis assumes your compiler is.  My
+&gt; &gt;suggestion would be to hitup the administrator to upgrade to Solaris or to
+&gt; &gt;install NetBSD on it, both of which are ANSI and mostly POSIX compliant
+&gt; &gt;(enough that it doesnt matter anymore).
+&gt;
+&gt;         What C compiler are you using?
+
+I'm using gcc... here's what the latest version of Genesis comes out as...
+I seem to remember that the older ones which I tried before got MUCH
+farther before failing. This was done with the Web module out as I thought
+that may avoid extra problems.
+
+(4:45pm) merlin [~/Genesis-1.0p18]&gt; make
+cd src/; make
+yacc -d grammar.y
+
+ fatal error: too many terminals, limit 300, line 197
+*** Error code 1
+make: Fatal error: Command failed for target `grammar.o'
+Current working directory /u2/home/jc/Genesis-1.0p18/src
+*** Error code 1
+make: Fatal error: Command failed for target `all'
+
+Shall I try another version? Which one?
+
+Oh yes... /bin/jc/ doesn't even exist (jc is the uname I'm using to compile
+it, though I've tried others).
+
+And you run and you run to catch up with the sun but it's sinking
+Racing around to come up behind you again.
+The sun is the same in a relative way but you're older,
+Shorter of breath and one day closer to death.
+
+
+</PRE>

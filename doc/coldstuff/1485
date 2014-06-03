@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [1485] in "Coldmud discussion meeting"</TITLE>
+<H1>[1485] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1485"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1471"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1473"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1484"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1486"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Questions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 23:29:43 1999
+)</H3>
+<PRE>
+Date: Wed, 17 Nov 1999 21:09:02 -0700
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;000901bf2fec$6d8c93e0$3c302bd1@Samantha&gt;; from Soth on Mon, Nov 15, 1999 at 11:38:27PM -0500
+Reply-To: coldstuff@cold.org
+
+
+--pWyiEgJYm5f9v55/
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Nov 15, 1999 at 11:38:27PM -0500, Soth wrote:
+&gt; Hello, I have a couple questions that hopefully someone can help me with.
+&gt; 1) Is ANSI colors supported what so ever inside the code? I was wanting
+&gt; to add color to $body.say_cmd and a few others.
+
+As was mentioned earlier, you want to use CML/Ctext if anything at
+all.  Imho you dont want to do it--that should be done by the client.
+You can add triggers to nearly any decent mud client for it to
+'colorize' things in certain ways.  This is advantageous because it
+moves the processing to the client's CPU, instead of the server's.
+
+&gt; 2) I recently was working with $described.description and noticed
+&gt; sender() returns $the_pit or whereever you are located. Is there
+&gt; something I can use to return the user like $user_soth? I'm trying
+&gt; to check to see if the user has a certain flag in a variable I've
+&gt; created named pflags so was wanting to check if(flag in pflags).=20
+
+Pass the 'flags' variable to .debug().  It probably contains what you
+are interested in.  Specifically, you are probably interested in the
+value of flags['actor].  But there are a few others of interest.
+
+-Brandon Gillespie
+
+--pWyiEgJYm5f9v55/
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: wJ0ynPGEFFUPLm5kItc21y0DXlmX/S7M
+
+iQA/AwUBODN73Uv5XoQiMgn6EQLcaQCeNkFwBFYGTkKR6xHQ8B/pWCl8jqcAnRSk
+yWjMuWqoX7cIqY54Be9XGZuk
+=ZeyH
+-----END PGP SIGNATURE-----
+
+--pWyiEgJYm5f9v55/--
+</PRE>

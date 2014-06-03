@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [288] in "Coldmud discussion meeting"</TITLE>
+<H1>[288] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?288"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="282"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="282"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="287"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="289"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="289"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="293"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: time in the log</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 18:58:54 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: rayn@q.crossaccess.com (Ray Nawara jr.)
+Date: Fri, 20 May 1994 15:52:52 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9405192100.AA22164@q.crossaccess.com&gt; from "Ray Nawara jr." at May 19, 94 02:00:34 pm
+
+&gt; 
+&gt; I definitely dont think time should be made in-db. That makes it
+&gt; modifiable from the db, and therefore prettymuch invalid as a logging
+&gt; tool security-wise.
+
+It is a $sys-only builtin at the moment, so security is not an issue.
+
+</PRE>

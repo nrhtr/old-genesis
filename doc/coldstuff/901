@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [901] in "Coldmud discussion meeting"</TITLE>
+<H1>[901] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?901"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="899"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="900"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="900"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="902"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="902"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="903"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] New Admin Guide (first draft)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan 18 09:10:49 1996
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@tombstone.sunrem.com
+Date: Thu, 18 Jan 1996 14:47:12 +0100 (MET)
+In-Reply-To: &lt;199601180958.EAA11938@slip102.winc.com&gt; from "Bill DeVos" at Jan 18, 96 04:58:05 am
+Reply-To: coldstuff@tombstone.sunrem.com
+
+&gt; 
+&gt; &gt; &lt;discover this later&gt;
+&gt; &gt; 
+&gt;   Is this part a joke or is there a way to get in if say the admin forget's
+&gt; his/her password?  If so, nice idea...
+&gt; 
+
+This is not a joke, there really is a backdoor login, but you will still
+need a password to use it. The idea is to use backdoor to fix broken
+command parsing and similar problems.
+
+
+</PRE>

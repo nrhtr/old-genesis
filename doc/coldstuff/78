@@ -1,0 +1,66 @@
+<HEAD><TITLE>discuss@charon: [78] in "Coldmud discussion meeting"</TITLE>
+<H1>[78] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?78"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="76"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="77"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="77"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="79"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Best Platform for ColdMUD?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 29 11:51:02 1993
+)</H3>
+<PRE>
+To: Steven Owens &lt;uso01@mailhost.unidata.com&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Mon, 29 Nov 93 09:13:31 -0600.
+             &lt;199311291513.AA11843@mailhost.unidata.com&gt; 
+Date: Mon, 29 Nov 93 11:44:38 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; Scott just went out and purchased a Packard Bell 486 DX 66Mhz with
+&gt; 8meg of ram and a 400-odd meg hard drive, but he can still return it
+&gt; if it's horribly wrong (Best Buy 30-day "no questions asked" return
+&gt; policy).
+
+This should be quite adequate for running a Coldmud server, although
+it may be a little low on RAM for running, say, Xwindows.  I'd make
+sure it's upgradable to at least 16MB of RAM, but that's usually not a
+problem.  Certainly, for just developing a core database (that is, low
+usage, without lots of people creating garbage as people do on
+production muds), you're not likely to find memory or disk space
+constraining.
+
+Keep in mind that no one has experience with large Coldmud systems at
+the moment.  Under Linux, Coldmud with the Cold World core database
+loaded takes up about half a meg of RAM, but it will get considerably
+larger than that before the disk-based database routines kick in and
+hold down the in-memory size.
+
+&gt; I'm assuming that running Linux or some other brand of free UNIX for
+&gt; x86 machines is best.  How do FreeBSD and such measure up against
+&gt; Linux?
+
+I personally prefer Linux for its shared libraries, level of
+documentation, and rate of improvement.
+
+&gt; What kind of a load (disk space, RAM, CPU) would ColdMUD impose on a
+&gt; regular UNIX system (i.e. what if he rents space on one of Netcom's
+&gt; systems, or Colorado SuperNet?)?
+
+I don't know what Netcom's policies are about leaving processes
+running (especially mud processes, which have had a bad reputation
+ever since LPmud).  As I said, nobody knows what the RAM requirements
+are yet (hopefully not more than a few meg), and disk space is going
+to grow linearly with the size of your database.  With just the Cold
+World core database loaded, Coldmud's binary database is 88K, and the
+text dump is 58K.
+
+--GBH
+
+</PRE>

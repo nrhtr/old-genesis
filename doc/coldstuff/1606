@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [1606] in "Coldmud discussion meeting"</TITLE>
+<H1>[1606] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1606"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1605"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1607"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Adding an option to toliteral() for decomp to obj numbers</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul 11 21:41:48 2000
+)</H3>
+<PRE>
+Date: Tue, 11 Jul 2000 18:36:23 -0700 (PDT)
+From: Jeremy Weatherford &lt;xidus@xidus.net&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+
+Hello,
+
+The ColdC function toliteral() currently calls data_to_literal with the
+DF_WITH_OBJNAMES flag set, so that objnums are looked up to objnames
+whereever possible.  I'd like to be able to pass an option to toliteral()
+that passes DF_NO_OPTS to data_to_literal instead, always returning
+objnums as is.
+
+I need this functionality for an in-game textdump routine, btw.  I've
+implemented it in my own code in a quick-and-dirty manner.  I don't
+understand the Genesis hardcode well enough to implement in correctly yet.
+Below is my version of COLDC_FUNC(toliteral) in src/ops/data.c, though.
+
+Thanks,
+Jeremy Weatherford
+xidus@xidus.net
+http://xidus.net
+
+----------------8&lt;-------------
+
+COLDC_FUNC(toliteral) {
+    cStr *str;
+
+	INIT_1_OR_2_ARGS(ANY_TYPE, ANY_TYPE);
+
+	str = data_to_literal(&amp;args[0], (argc == 2) ? FALSE : TRUE);
+
+    pop(argc);
+    push_string(str);
+    string_discard(str);
+}
+
+
+</PRE>

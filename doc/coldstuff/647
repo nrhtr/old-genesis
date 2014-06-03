@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [647] in "Coldmud discussion meeting"</TITLE>
+<H1>[647] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?647"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="646"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="648"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>select: forever wait</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan 24 16:38:36 1995
+)</H3>
+<PRE>
+From: crag@serial.io.com (Crag@JHM)
+To: coldstuff@MIT.EDU
+Date: Tue, 24 Jan 1995 15:01:35 -0600 (CST)
+
+The message select: forever wait happens when the textdump finishes loading, $sys.startup has
+ been called (whether it exists or not), and the heartbeat has not been set. This most commonly
+ happened to me when I somehow trashed the textdump resulting in a nil binary directory (one
+ file, 'clean' contains the version of the binary and the rest are empty). I do not know how
+ the binary db gets trashed but I never started reliably from a binary db after version 0.10.3.
+
+The select line is from (I think) net.c where there is a function to wait for an event. Possible
+ events are io coming in and the heartbeat.
+
+This information should be available either in the FAQ, the manual or both.
+
+Crag
+</PRE>

@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [334] in "Coldmud discussion meeting"</TITLE>
+<H1>[334] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?334"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="333"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="333"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="333"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="335"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="335"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="336"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: spell checking</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 27 22:53:25 1994
+)</H3>
+<PRE>
+To: BRANDON@cc.usu.edu
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Fri, 27 May 94 20:38:23 -0600.
+             &lt;01HCUI04QVUQBWE5BU@cc.usu.edu&gt; 
+Date: Fri, 27 May 94 22:49:35 EDT
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; (Oh, also, I think that run_shell would be a better term no?)
+
+run_script() does not invoke a shell.
+
+--GBH
+
+</PRE>

@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [1269] in "Coldmud discussion meeting"</TITLE>
+<H1>[1269] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1269"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1260"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1263"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1268"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1270"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] match_regexp bug...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Apr  2 11:30:03 1997
+)</H3>
+<PRE>
+Date: Wed, 2 Apr 1997 09:19:37 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: Miroslav Silovic &lt;silovic@srce.hr&gt;
+cc: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;, coldstuff@cold.org
+In-Reply-To: &lt;199703312213.AAA15153@regoc.srce.hr&gt;
+
+On Tue, 1 Apr 1997, Miroslav Silovic wrote:
+&gt; &gt; match_regexp appears to get confused if there are square brackets in the
+&gt; &gt; string to be matched. My matching against the string "Class: []" throws a
+&gt; &gt; "umatched []" error.  In all other cases the match works fine.
+&gt; &gt; 
+&gt; &gt; JK
+&gt; &gt; 
+&gt; 
+&gt; Actually it's not a bug. When ']' appears right after the '[', it's assumed
+&gt; to be part of the character list in a [] expresssion. This means that
+&gt; [] is a syntax error (correct versions are []] or \[\], depending on what
+&gt; you want to do).
+
+Yup, this is how it behaves, becuse a backslash within a range (the square
+brackets) does not escape--it is just a backslash.  I clarified all of
+this in the regexp docs at:
+
+       http://www.cold.org:1180/bin/help?node=$help_coldc_regexp
+
+-Brandon
+
+</PRE>

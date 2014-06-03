@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [113] in "Coldmud discussion meeting"</TITLE>
+<H1>[113] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?113"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="108"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="112"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="112"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="114"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Proposed change regarding MI ambiguities</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec 11 03:30:16 1993
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: coldstuff@MIT.EDU
+Date: Sat, 11 Dec 1993 00:22:48 -0800 (PST)
+
+I don't understand.  Are you proposing that if a method call or a pass is
+ambiguous that it throws an error and that's it?  There's no way to call those
+methods at all if there's an ambiguity in the way?  This can't possibly be what
+you're suggesting, but it seems like it.  How are things supposed to handle
+such a thrown error?  Is there a way to specify which ancestor's method to use
+and call it?
+
+Even if there is, I have a problem with something alluded to by Andy, which is
+that in the structure:
+
+    A
+  B   C
+    D
+
+if the method 'foo' is defined on B only, everything works fine and people can
+call D.foo etc, but if at a later date someone decides to make a C.foo, it then
+breaks D and every descendent of D for that method, which might by that time be
+being used by countless other things.  This is not good.  Merely Adding a
+method should not cripple an entire heirarchy of other objects.
+
+I can see why ambiguities could be a problem as is, but it's my feeling that
+they're far, far less of a problem currently then they would be with an
+error-based system.
+
+-Richelieu
+</PRE>

@@ -1,0 +1,74 @@
+<HEAD><TITLE>discuss@charon: [963] in "Coldmud discussion meeting"</TITLE>
+<H1>[963] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?963"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="962"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="964"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis 1.0 alpha (0.4-3)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Apr 16 19:30:15 1996
+)</H3>
+<PRE>
+Date: Tue, 16 Apr 1996 16:57:19 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+After hours of toil it is available.  This is the 1.0 alpha version, all 
+that is left for 1.0 Genesis is:
+
+    * bug fixes (report them!)
+    * math/trig functions need to be hooked in (sin(), cos() etc)
+
+There is no core available for this yet, other than those which have been 
+upgraded.  This is an alpha release, but I would like people to test it, 
+use the minimal db and play around, push native methods; they are the 
+newest and I'd like to try and find any problems with them now, and not 
+later.  If you want to add a native method talk to me online and I can 
+step you through it (ice.cold.org:1138).
+
+From the release notes in the distribution:
+
+If you are using a 0.4 database, you can upgrade easilly.  Dump your
+database to text (coldcc -d), edit it and search for the following
+functions, replacing them with their native counterparts.  Make sure
+you have the objects in your database for those counterparts, and that
+the methods they are using are not already defined:
+
+      hostname()      =&gt;   $network.hostname()
+      ip()            =&gt;   $network.ip()
+      status()        =&gt;   $sys.status()
+      next_objnum()   =&gt;   $sys.next_objnum()
+      version()       =&gt;   $sys.version()
+      strftime()      =&gt;   $time.format()
+      encode()        =&gt;   $http.encode()
+      decode()        =&gt;   $http.decode()
+
+You will also have to update any calls to strfmt(), two changes to the
+function have been made:
+
+      1 - Data arguments are no longer specified in a list, instead
+          they simply follow the format.
+      2 - Formatting has changed, read the documentation at:
+
+             http://www.cold.org/ColdC/Functions/strfmt.html
+
+Known problems:
+
+    * renaming a native method will cause mondo problems when you
+      decompile it to text and try to recompile it back to binary,
+      DO NOT DO THIS right now.
+
+If you want to blow away any regular method definitions with their
+native counterpart (such as $list.length(), etc) then you compile the
+textdb using the '-f' flag to coldcc (force native methods to override
+existing methods).  I would suggest examining each native method first,
+they are listed in 'src/modules/moddef.h'
+
+-Brandon Gillespie-
+</PRE>

@@ -1,0 +1,95 @@
+<HEAD><TITLE>discuss@charon: [65] in "Coldmud discussion meeting"</TITLE>
+<H1>[65] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?65"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="64"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="66"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="66"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="67"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Coldmud 0.9 release, Cold World 0.4 release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 25 07:17:22 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Thu, 25 Nov 93 07:08:42 -0500
+To: coldstuff@MIT.EDU
+
+
+A friend of mine is working on a discuss gateway for the web;
+hopefully I'll be able to make the archive for this mailing list
+accessible via WWW soon.  If there's enough demand for it, I may also
+be able to make it available via ftp.
+
+I've released Coldmud 0.9 and Cold World 0.4 on ftp.ccs.neu.edu,
+pub/mud/servers/coldmud.  I've also updated the postscript and info
+(plain-text) documentation in that directory.
+
+Please tell me about any problems in this release.  I have no plans
+for changes to Coldmud before the 1.0 release, only bug-fixes.  I hope
+to set up a permanent server on one of the SIPB office machines for
+testing as soon as possible, and to release 1.0 sometime near the end
+of winter vacation.
+
+Release engineering is somewhat minimal; I ran the regression tests
+under one platform (Ultrix).  I would appreciate it if people with
+access to Unixware or Univel SysVr4 machines would verify that my
+SysVr4 build instructions work for those architectures.
+
+New in the Coldmud 0.9 release:
+
+Doug Orleans kindly ran Coldmud through Purify, which found, in
+addition to some minor uninitialized data errors that didn't seem to
+be biting anyone, three serious memory leaks, two from startup code
+and one run-time leak.  Correcting the leaks reduced the memory usage
+of Cold World by about 33% under Ultrix.
+
+I've also fixed the has_ancestor() bug in this release, and modified
+shutdown() to flush write buffers on connections before quitting.
+
+I've added match_regexp(), using Henry Spencer's regexp library.  I
+cache regexps internally; although the caching isn't 100%, it should
+be as efficient as manual compilation would be in almost all cases,
+and is significantly more convenient than adding a new data type would
+be.
+
+I've changed the name of substring() to substr() for consistency.
+People with existing databases should do a text dump and manually
+substitute "substr(" for "substring(".  (You'll need to do a text dump
+to upgrade anyway.)
+
+Frob representations can now be lists instead dictionaries if desired;
+this is somewhat more convenient for some frobs, and slightly faster.
+
+I've added task_id(), which gets the ID of the current task.
+connect() now passes the task id as the first argument with the
+'connect' or 'failed' message sent to the receiver object; this will
+be useful when I do task preemption..
+
+The 'connect' message sent to bind() receiver objects now has two
+arguments: the IP address of the remote host, and the port of the
+connection on the remote host.  People with existing databases should
+modify the connect method on $connection (or whatever you're calling
+it) to accept two arguments.
+
+New in the Cold Worlds 0.4 release:
+
+Object initialization is done with no arguments.  This means that
+objects' init methods must put them in a consistent state with no
+initialization data, so you must have a canonical location for located
+objects, a canonical source for exits, etc..  (I haven't actually
+dealt with exits yet, as mentioned in the CHANGES file.)
+
+There's protocol support on the root and system objects; see NOTES.
+You should not have to hardcode dbrefs of core objects in your methods
+for security reasons.
+
+Enjoy.
+
+--GBH
+
+</PRE>

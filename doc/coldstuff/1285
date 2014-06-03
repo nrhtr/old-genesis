@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [1285] in "Coldmud discussion meeting"</TITLE>
+<H1>[1285] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1285"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1284"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1284"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1284"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1286"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] win95 support</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Apr 28 23:16:32 1997
+)</H3>
+<PRE>
+Date: Mon, 28 Apr 1997 21:12:06 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: Jess Regal &lt;regal@netline.net&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;336563CA.7573@netline.net&gt;
+
+On Mon, 28 Apr 1997, Jess Regal wrote:
+&gt; Lemme get this straight..There is no "official" ColdC for Windows95.
+&gt; What then, are the files i found in
+&gt; ftp.cold.org/cold/drivers/Win32-Genesis-1.0p26.zip?
+&gt;  I've looked through the mailing list archives, and i think the
+&gt; questions been asked, and is always answered with a "Yes, but not
+&gt; really" kinda answer. If there is, how do i start the driver? i do have
+&gt; a database. 
+
+Win32 isn't officially supported, but it is supported.  That zip file
+contains Win32 binaries for Genesis.  How do you use them?
+
+*grin*
+
+The same way you would in unix, just in Win32.  Look on the web site, in
+Genesis and ColdCore (start at Genesis, just remember the unix
+instructions are for unix, so adjust accordingly).
+
+-Brandon Gillespie
+
+</PRE>

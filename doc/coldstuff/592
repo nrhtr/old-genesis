@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [592] in "Coldmud discussion meeting"</TITLE>
+<H1>[592] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?592"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="591"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="593"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>New Server</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 23 12:27:14 1994
+)</H3>
+<PRE>
+Date: Wed, 23 Nov 94 12:17:06 EST
+To: coldstuff@MIT.EDU
+From: "Pat 'wu' Moss" &lt;pmoss@gxeng.microserve.com&gt;
+
+Greetings!
+
+I am the proud owner of a bastard child of ColdMUD called AR.  Essentially, 
+its coldmud will full floating point math, advanced math libraries and a 
+dynamic matrix for vector mapping.  It also has a few other nifty features 
+like a full featured editor, mail system and other in-db niceties.
+
+My question is this:  What else is there on the todo list? I would like to 
+keep up with the coldmud development if at all possible.  I've started a 
+'private' function to limit access to a method to other methods on the same 
+object, but beyond that I'm starting to run out of ideas.
+
+I'm gearing AR (Absoulte Reality) as an engineering tool, since I plan to 
+use it to model satellite comms and tracking as part of my PhD.  So, any 
+sugestions to make it a more 'fully bodied' server would be appreciated.
+
+Pat
+--------------------------------------------------------
+Pat 'wu' Moss                   24 bottles to a case,
+Generation X Engineering        24 hours in day.
+pmoss@gxeng.microserve.com      Co-incidence?
+
+http://www.microserve.com/~trek/pmoss.html
+
+</PRE>

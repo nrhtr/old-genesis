@@ -1,0 +1,74 @@
+<HEAD><TITLE>discuss@charon: [1429] in "Coldmud discussion meeting"</TITLE>
+<H1>[1429] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1429"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1427"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1428"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1428"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1430"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1430"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1430"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Question about Genesis</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Sep 28 04:19:50 1998
+)</H3>
+<PRE>
+Date: Mon, 28 Sep 1998 02:16:29 -0600
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;3.0.5.32.19980927234226.037ff3d0@mail.tenetwork.com&gt;; from Jeff Kesselman on Sun, Sep 27, 1998 at 11:42:26PM -0700
+
+
+--wac7ysb48OaltWcw
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+On Sun, Sep 27, 1998 at 11:42:26PM -0700, Jeff Kesselman wrote:
+&gt; At 12:17 AM 9/28/98 -0500, Park, Hyun Joon wrote:
+&gt;&gt; Hi !
+&gt;&gt;
+&gt;&gt; Cold is very good MUD server.
+&gt;&gt; I was running Cold witrh MinimalCore the first time.
+&gt;&gt;
+&gt;&gt; Command is exist only QUIT in MinimalCore.
+&gt;&gt; And I was modify source in MinimalCore as "QUIT" ---&gt; "Korean Character"=
+ (
+&gt;&gt; 2Byte Character )=20
+&gt;&gt; But, Every 2Byte Character is eliminated,
+&gt;&gt;
+&gt;&gt; How Can I use the 2Byte Character ?
+&gt;&gt;
+&gt;&gt; Thanks and Best regards,
+&gt;
+&gt; I don't believe Cold supports Unicode yet.  As a result, strings are
+&gt; converetd as single byte characters.
+&gt;=20
+&gt; You might want to suggest to Bruce that Unicode support would be worthwhi=
+le.
+&gt; Beyond that, I think your only option is to build your unicode strings by=
+te
+&gt; by byte in a  buffer as raw data.
+&gt;=20
+&gt; Jeff Kesselman
+
+Unicode support is planned for 1.3-DEV, if I'm not mistaken.  Bruce Mitchner
+has the most current list for upcoming features.
+
+-Brandon Gillespie
+
+--wac7ysb48OaltWcw
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: 52NB82d2Y61Zf4mQ1zhe72rMVXrO7ihW
+
+iQA/AwUBNg9F3Ev5XoQiMgn6EQJKHgCfbyv1fOGP65aMryRxl5cpIEJTcu4An3U+
+2PjVE+qVhps/OxoIqUwJunQa
+=UxyI
+-----END PGP SIGNATURE-----
+
+--wac7ysb48OaltWcw--
+</PRE>

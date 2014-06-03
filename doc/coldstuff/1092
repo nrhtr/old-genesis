@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [1092] in "Coldmud discussion meeting"</TITLE>
+<H1>[1092] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1092"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1091"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1093"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] ALPHA3 notes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Sep 22 12:12:58 1996
+)</H3>
+<PRE>
+Date: Sun, 22 Sep 1996 10:01:03 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: coldstuff@cold.org
+
+This alpha core was created by running $sys.make_core(), so there is no 
+user.  Simply use the 'create' command upon long.
+
+There are no helps, mainly because I was too lazy to add +core to all of 
+them :)
+
+-Brandon
+</PRE>

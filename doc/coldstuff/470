@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [470] in "Coldmud discussion meeting"</TITLE>
+<H1>[470] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?470"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="468"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="468"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="469"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="471"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="471"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="471"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Coldmud Archive</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Oct 21 11:15:33 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Fri, 21 Oct 1994 09:12:29 -0600 (MDT)
+To: COLDSTUFF@MIT.EDU
+X-Vms-To: COLDSTUFF@MIT.EDU
+
+&lt; I'll hapily dnate some space on serial for the archive site.
+&lt; I've started by making pub/coldmud and stuffing everything that looked
+&lt; coldmudish in incoming into there - anyone want to volunteer to maintain it?
+&lt; Crag?  I'll also see what I can do about setting up a web server there in order
+&lt; to support some Coldmud web pages, if anyone is interested in writing such 
+&lt; things.
+
+Well, serial is ungodly slow (Sorry zachary, but it is, took me nearly 10
+minutes to download something from it one time).  If there is dire need for an
+archive I have an Alpha machine with ~1 gig of space available, which is also
+sitting directly on the router to the T1-&gt;T3 (i.e. kickin net connection).
+
+But, since Jay volunteered why not let it be at neu (since there already is a
+nice MUD archive there...).
+
+-Brandon
+</PRE>

@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1030] in "Coldmud discussion meeting"</TITLE>
+<H1>[1030] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1030"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1029"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1031"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] cml</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jul 17 03:04:01 1996
+)</H3>
+<PRE>
+Date: Wed, 17 Jul 1996 08:25:59 +0200
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+
+
+I've uploaded my cml objects to the Cold site. The objects are:
+
+$j_compiler
+$j_evaluator
+  $j_uncompiler
+  $j_bs_eval
+  $j_formatter
+    $j_telnet_format
+
+And the new frobs:
+
+$j_ctext_frob
+$j_tag
+  $j_format
+  $j_generator
+
+Changes:
+
+ctext tags now come in the following format:
+
+&lt;$j_something, ["name",[[flag, value],[flag,value]],[args],'method]&gt;
+
+Quoting rules are (hopefully) consistant.
+
+That's about all. :)
+
+Oh, there are 3 new methods on $list, for associative lists operations.
+
+
+</PRE>

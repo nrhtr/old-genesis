@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [282] in "Coldmud discussion meeting"</TITLE>
+<H1>[282] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?282"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="281"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="283"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="288"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="293"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>time in the log</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 09:53:54 1994
+)</H3>
+<PRE>
+Date: Thu, 19 May 1994 14:00:34 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+
+I definitely dont think time should be made in-db. That makes it
+modifiable from the db, and therefore prettymuch invalid as a logging
+tool security-wise. I do agree that a compile option on format would
+be nice, but i think a log should get as much detail as possible, and
+just have other tools (like grep and sed) extract what you want from
+this. The ability to have a log of the verbose format, or of Lyncx's
+brief format, or any other reasonable format makes sense to me.
+
+	Ray / Ash
+
+
+</PRE>

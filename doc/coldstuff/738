@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [738] in "Coldmud discussion meeting"</TITLE>
+<H1>[738] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?738"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="737"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="737"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="737"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="739"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: strings</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 13 12:54:53 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Sat, 13 May 95 05:43:26 EDT."
+             &lt;199505130943.FAA10073@Access.Mountain.Net&gt; 
+Date: Sat, 13 May 95 10:52:35 -0600
+
+&lt; Lookit this, from 0.12.1-c:
+&lt; 
+&lt; ;"B" in "ABC"
+&lt; --&gt; 0
+&lt; ;"b" in "ABC"
+&lt; --&gt; 2
+&lt; 
+&lt; ;strsub("ABC", "B", "-")
+&lt; --&gt; "ABC"
+&lt; ;strsub("ABC", "b", "-")
+&lt; --&gt; "A-C"
+&lt; 
+&lt; Do you guys already know about this, and just accept it?
+
+Its a known bug, I forgot to add it to the list of bugs on the ColdX
+development list.  It is there now.
+
+&lt; Or is it fixed in "ColdX"?
+
+Nope.
+
+-Brandon
+</PRE>

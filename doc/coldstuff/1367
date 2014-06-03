@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [1367] in "Coldmud discussion meeting"</TITLE>
+<H1>[1367] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1367"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1366"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1366"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1366"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1368"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1368"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1368"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Having problems tranferring users from old db to new</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 10 13:35:58 1997
+)</H3>
+<PRE>
+Date: Mon, 10 Nov 1997 11:28:20 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+cc: Cold Stuff &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;3466ADC3.BB8452EC@maddog.com&gt;
+
+On Sun, 9 Nov 1997, Frank Crowell wrote:
+
+&gt; What is a good way of moving a user from an old db to a newer db?
+&gt; 
+&gt; I'm trying to upgrade from a7 to a9.02, but I' m having some problems
+&gt; with moving the user accounts.  I can transfer the $user_*s to the new
+&gt; database, but if I try to connect as one of my test users, I get an
+&gt; error message that the the user either doesn't exist or the password is
+&gt; wrong.  If i try to create another user with the same name, i get the
+&gt; message that the name is in use.
+&gt; 
+&gt; I also created a new test user and logged in and could see all the users
+&gt; with @child $user, so I know that the users have been moved.
+&gt; 
+&gt; I also tried to @dump a user from one db and use tinyfugue to create the
+&gt; user at a new db.  I still had the same problem.
+&gt; 
+&gt; Essentially I have a a9.02 database with my old rooms, exits, objects,
+&gt; and people.  But the users can't log in although the password is still
+&gt; the same.
+
+Did you use the upgrade script?
+
+The problem you are having is that all users are indexed by their name on
+$user_db, so you need to insert each of them into the database.  You can
+use 'coldcc' to do this:
+
+---------------------------
+% coldcc -p -tstdin
+[..coldcc msgs]
+
+eval {
+    var u;
+
+    for u in ($user.children())
+        $user_db.insert(u.name(), u);
+};
+CTRL-D
+---------------------------
+
+Then things should be ok (I think :)
+
+-Brandon
+
+</PRE>

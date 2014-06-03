@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [1544] in "Coldmud discussion meeting"</TITLE>
+<H1>[1544] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1544"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1543"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1543"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1543"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1545"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1546"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1548"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: 1.1.8 Win32 genesis binaries</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan 22 18:12:51 2000
+)</H3>
+<PRE>
+From: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Sat, 22 Jan 2000 18:06:34 -0500
+Reply-To: coldstuff@cold.org
+
+Psyclone wrote:
+&gt;
+&gt;mtime() always returns 0. Also a library issue -- Win32 apparently
+&gt;doesn't have a function to return microseconds.
+
+
+Hmm.. I'll have a look around.
+
+&gt;ctime() and friends throw when given numbers &lt; 18000. Borland (what I
+&gt;used to compile genesis) has a broken time utility which causes genesis
+&gt;to crash when these functions are given low numbers.
+&gt;
+
+I never got a response back from Borland on this, however I did notice
+something.  time() returns seconds from 1/1/70, already adjusted for
+the timezone.  It is correct.  However ctime() however must be making 
+an adjustment to GMT at some point during it's calculations, although it
+does return the correct date.  The 18000 is of course 5 hours off GMT 
+from EST (where I've been playing).  I suspect anybody using the port in 
+PST (-8 GMT) will crash between values of 18001 and 28800 seconds,
+though I haven't tested it.  I'm not exactly sure where ctime() is fetching the
+timezone from.  Loading it may resolve the problem.
+
+&gt;The pids are negative. No idea why. Win32 thing I guess.
+
+
+Yep. 
+
+--
+--*     Jon A. Lambert - TychoMUD Email: jlsysinc@nospam.ix.netcom.com     *--
+--*     Mud Server Developer's Page &lt;http://jlsysinc.home.netcom.com&gt;      *--
+--* "No Free man shall ever be debarred the use of arms." Thomas Jefferson *--
+
+
+</PRE>

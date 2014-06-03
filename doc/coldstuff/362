@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [362] in "Coldmud discussion meeting"</TITLE>
+<H1>[362] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?362"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="361"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="361"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="361"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="363"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="364"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="368"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: changes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun 30 18:21:35 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: 
+Date: Thu, 30 Jun 1994 15:16:59 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;01HE4U84F5TEBWN3GH@cc.usu.edu&gt; from "BRANDON@cc.usu.edu" at Jun 30, 94 00:40:19 am
+
+&gt; 
+&gt; I'm seriously considering changing the following (basically, I am going to do
+&gt; it unless somebody can come up with some good reasons why they should stay in
+&gt; the current state):
+&gt; 
+&gt;  connect()               =&gt; open_connection()
+&gt;  disconnect()            =&gt; close_connection()
+&gt;  conn_assign()           =&gt; assign_connection()
+Can this be reassign_connection?
+
+&gt;  bind()                  =&gt; bind_port()
+&gt;  unbind()                =&gt; unbind_port()
+&gt;  run_script()            =&gt; system_execute()
+&gt;  filename 'textdump'     =&gt; 'text_dump' (to fit with text_dump())
+Can we change text_dump() to textdump() instead?
+
+&gt;  } with handler {        =&gt; } with {
+&gt; 
+&gt; Anybody?
+&gt; 
+
+Sounds good. I didn't realize you had taken over development of the ColdMUD
+ 'driver'. Perhaps you and Colin should take new names for your versions, so
+ as to avoid confusion. 
+
+What else are you changing if anything?
+
+Crag,
+Ever bitter. :)
+
+-- 
+
+Axle
+
+The mind is in spinning wheels at the
+Navel, heart, throat, head.
+The connecting shaft is emptiness.
+Without an unobstructed route,
+Energy cannot flow.
+</PRE>

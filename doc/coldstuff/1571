@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1571] in "Coldmud discussion meeting"</TITLE>
+<H1>[1571] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1571"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1570"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1570"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1570"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1572"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Effort to create a ColdC reference</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Apr 20 13:35:05 2000
+)</H3>
+<PRE>
+Date: Thu, 20 Apr 2000 10:44:10 -0700
+To: coldstuff@cold.org, coldstuff@cold.org
+From: Jeff Kesselman &lt;Jeffrey.Kesselman@eng.sun.com&gt;
+In-Reply-To: &lt;Pine.LNX.4.10.10004192348570.3188-100000@bork.weath&gt;
+Reply-To: coldstuff@cold.org
+
+Jeremy,
+
+ColdC is very close to the old Coldmud language from which it derived.
+
+There is a very good old Coldmud manual.  You might want to crib liberally 
+from it.  It should be up on the Cold ftp site.
+
+At 11:51 PM 4/19/00 -0700, Jeremy Weatherford wrote:
+
+&gt;Hello,
+&gt;
+&gt;I've been unable to determine what resources are available for learning
+&gt;ColdC.  I've checked the cold.org website and the mailing archives pretty
+&gt;thoroughly.
+&gt;
+&gt;So, I'm currently writing my own little guide as I learn.  The current
+&gt;version is up at http://xidus.xidus.net/cold.html
+&gt;
+&gt;If anyone has any comments or criticisms, I would love to hear them.
+&gt;Especially if I got anything wrong...
+&gt;
+&gt;And also, if there's something like this already available, please just
+&gt;point me to it to save me the trouble.  :)
+&gt;
+&gt;Jeremy Weatherford
+&gt;xidus@xidus.net
+&gt;http://xidus.net
+
+</PRE>

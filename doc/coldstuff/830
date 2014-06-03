@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [830] in "Coldmud discussion meeting"</TITLE>
+<H1>[830] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?830"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="825"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="829"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="829"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="831"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: protected and private object variables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct 16 12:47:36 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+Date: Mon, 16 Oct 1995 10:32:02 -0600
+In-reply-to: Your message of "Sun, 15 Oct 95 21:06:54 EDT."
+ &lt;Pine.3.89.9510152031.A22699-0100000@unixs6.cis.pitt.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+&lt; I'm not sure in what way this functions like the private flag.  "Private" 
+&lt; for a method means it is accessible only from methods defined on its own 
+&lt; definer.  All variables fit this definition of "private."  A 'protected" 
+&lt; variable I would expect to be accessible from methods defined on children of 
+&lt; its definer, as are protected methods.
+
+Hsm, true, I seem to have been looking at it from the wrong angle...
+
+&lt;       shared (Eric Weber's suggestion)
+&lt;       unshared
+&lt; 
+&lt;       shared
+&lt;       individual
+
+I like 'shared'...
+
+Also, I remember an older name we had for methods 'local' ...
+
+-Brandon
+</PRE>

@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1182] in "Coldmud discussion meeting"</TITLE>
+<H1>[1182] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1182"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1181"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1181"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1181"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1183"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1183"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1184"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] patches</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 16 18:39:39 1996
+)</H3>
+<PRE>
+Date: Mon, 16 Dec 1996 16:31:50 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Zachary DeAquila &lt;zachary@zachs.place.org&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;m0vZSC0-0001EgC@zachs.place.org&gt;
+
+On Sun, 15 Dec 1996, Zachary DeAquila wrote:
+&gt; There sure are an awful lot of patches and bugfixes coming out for what
+&gt; is supposed to be a 'stable' system.
+
+All of the 'bugfix' patches are actually in regard to the same 'bug' (that
+sometimes strings aren't properly NULL terminated when passed to
+standard-C functions), the fix is just fragmented across several patches 8)
+Everything else is last minute features.
+
+-Brandon
+
+</PRE>

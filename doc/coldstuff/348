@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [348] in "Coldmud discussion meeting"</TITLE>
+<H1>[348] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?348"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="343"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="347"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="347"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="349"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="349"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="349"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: floating point</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jun  4 02:39:14 1994
+)</H3>
+<PRE>
+Date: Sat, 4 Jun 1994 02:33:59 -0400 (EDT)
+From: "Mike 'uhh.. huh.. huh huh' Wilson" &lt;mike@offroad.async.vt.edu&gt;
+To: Crispin Bivans &lt;rti@mcs.com&gt;
+Cc: Robert de Forest &lt;deforest@netcom.com&gt;, coldstuff@MIT.EDU
+In-Reply-To: &lt;m0q9hpy-000BcdC@mercury.mcs.com&gt;
+
+On Fri, 3 Jun 1994, Crispin Bivans wrote:
+
+&gt; 
+&gt; &gt; While server-based floating point support would be far faster, it would not
+&gt; &gt;  be exceedingly difficult to code floating point in-db. This seems to me
+&gt; &gt;  to be a nicer solution from a server development perspective. Besides,
+&gt; &gt;  I doubt very much that ColdMUD would be fast enough to be useful as a
+&gt; &gt;  simulation language. I think you'd be better off writing your simulation
+&gt; &gt;  in C or C++ and using someone's libraries.
+&gt; 
+&gt; Actually, there is already a Space Simulation running on Micromuse based apon
+&gt; 10 second updates(ships move every 10 secs) with almost 100 'objects' floating
+&gt; around in space currently that is a hybrid of C(in server) and MUSE code(online)to act as an interface. The C portion of the code currently runs in under one
+&gt; second every update. I believe Coldmud due to its unique nature would be able
+&gt; to handle 10 second updates although of course it'd have to been seen to be
+&gt; known.
+
+TrekMOO has a space simulation system running on variable updates.  Movement
+is only computed when reqested by the moving object.  Each object has a 
+variable update time.  Planets, etc. don't move at all, while ships move 
+on a roughly 2 second update.  With over 40 objects in space, we do 
+experience `code lag' from time to time (which the code is made to 
+compensate for), but you mus realize, that 1) its a MOO :) 2) 95% of the 
+code is in db.  The only in-server routines are the ones necessary for 
+floating point calcs. (not nearly as important to a space simulation as 
+you'd think)
+
+mike@offroad.async.vt.edu | It's difficult to kiss a woman one moment, and
+mwilson@csugrad.cs.vt.edu | then kill her the next.
+-----------------------------------------------------------------------------
+#include &lt;stdisclaimer.h&gt;                                 Flames to /dev/null
+
+</PRE>

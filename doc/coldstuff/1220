@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1220] in "Coldmud discussion meeting"</TITLE>
+<H1>[1220] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1220"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1219"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1219"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1219"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1221"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1223"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1224"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Win32 Port</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan 27 13:58:42 1997
+)</H3>
+<PRE>
+Date: Mon, 27 Jan 1997 13:42:49 -0600
+To: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;, &lt;coldstuff@cold.org&gt;
+From: Robert Spier &lt;rspier@cloud9.net&gt;
+
+At 11:47 PM 1/26/97 -0500, Jon A. Lambert wrote:
+&gt;In any event, it stays up and running until I attempt a connection. ;-)
+&gt;A little more debugging and I may have something here.   
+
+
+Jon-
+
+	I'm a COLD-list lurker, who doesn't have quite the time to play with it as
+much as I'd like.  I'm curious about your port though, because it would let
+me (and others) setup a server on a non-unix box, which can be easier to
+maintain sometimes.  My unix box is currently overloaded as is, and while
+I've had cold up and running on it, I worry seriously about the resource
+drain.
+	I was wondering if it would be possible to get a copy of the win32 server
+binary from you once it's complete.  
+
+	Thanks!
+
+(and I'd love to do testing, although I'm not sure what kind of a load I
+can generate...)
+
+-Robert
+---
+Robert Spier &lt;rspier@cloud9.net&gt;    
+... "We are such stuff as dreams are made on"
+
+</PRE>

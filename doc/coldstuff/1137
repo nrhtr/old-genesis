@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [1137] in "Coldmud discussion meeting"</TITLE>
+<H1>[1137] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1137"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1136"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1138"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1138"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1140"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] How easy is it to animate things in ColdX</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 26 04:04:26 1996
+)</H3>
+<PRE>
+Date: Tue, 26 Nov 1996 01:53:46 -0800
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+How easy is it to animate objects and NPCs in ColdX?
+Anyone have samples such as triggered events, roving
+NPCs, fuses, and other animated type objects?
+
+I know that Kipp is working on a ColdX version of Paradigm.
+Paradigm is a Diku-like mud and so it deals with healing,
+and roving mobs and corpses decaying.  Anyone else
+doing related stuff?
+
+I've stolen a theme that I want to develop:
+
+"How'd you like to be livin' in a town like this, with everthing
+a-rottin' and a-dyin', an' boarded-up
+     monster cawlin' an' bleatin' an' barkin' an' hopping' around black
+cellars an' attics every way ye turn?" 
+
+            -H.P. Lovecraft 
+            -"Shadows Over Innsmouth" 
+
+
+Frank
+-- 
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+</PRE>

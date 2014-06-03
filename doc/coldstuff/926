@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [926] in "Coldmud discussion meeting"</TITLE>
+<H1>[926] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?926"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="925"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="927"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] 'ice.cold.org' online..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Feb 24 17:33:27 1996
+)</H3>
+<PRE>
+Date: Sat, 24 Feb 1996 15:19:15 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+ice.cold.org is online as a solitary machine (rather than a shared 
+machine).  For the time being people may notice some delay; the simms 
+currently in use are 80ms (slow).  mail and everything should stay 
+transparent, unless you use the IP address.  If you do, the IP address is 
+199.104.90.103
+
+ice.cold.org is also 'cold.org', ftp, and www.
+
+-Brandon Gillespie-
+</PRE>

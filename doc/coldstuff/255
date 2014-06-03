@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [255] in "Coldmud discussion meeting"</TITLE>
+<H1>[255] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?255"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="254"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="256"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="256"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="257"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ports...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 18 16:21:03 1994
+)</H3>
+<PRE>
+Date: Wed, 18 May 1994 13:09:23 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+
+
+as an aside, 6000 - 6xxx is used very rudely by x (i had a mud killed
+once when i was silly enough to put it on 6000 and someone used x on
+the console). unless your running a server on a host with more than
+600 x instances, this prolly wont be an issue, but i thought i'd
+mention it.
+
+isnt 6667 the irc port?
+
+I think standardized ports for inter ColdMUD stuff is a good idea, but
+they can be pretty much arbitrary, right? It'd probably be better to
+keep them in as tight a range as possible instead of scattered in the
+66xx range, especially considering the equivalency extends up to above
+99, as has been mentioned.
+
+
+	Ray / Ash
+
+
+</PRE>

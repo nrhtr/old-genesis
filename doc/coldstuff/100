@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [100] in "Coldmud discussion meeting"</TITLE>
+<H1>[100] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?100"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="95"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="95"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="99"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="101"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ANSI etc</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 17:18:51 1993
+)</H3>
+<PRE>
+To: Lynx &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Sat, 04 Dec 1993 14:13:58 CST."
+             &lt;01H631TC66FCANYI4O@cc.usu.edu&gt; 
+Date: Sat, 04 Dec 1993 13:50:20 -0800
+From: Ian McCloghrie &lt;imcclogh@cs.ucsd.edu&gt;
+
+&gt; &gt; Note that Greg has not volunteered himself to be the protocol
+&gt; &gt; designer; this is wise, given that it's the sort of project that would
+&gt; &gt; end up taking a large amount of time. 
+&gt; 
+&gt; Exactly, which is why it makes no sense whatsoever to NOT use an established
+&gt; standard which works perfectly fine--IF there is nobody working on creating a
+
+	Sure.  But vt100/ansi escape codes do NOT work "perfectly
+fine".  They're a pain to parse, especially as they don't convey
+intent, but a specific means to achieve that intent.  It's like
+trying to distribute a program as assembly instead of c code,
+possible, but not a good idea.
+
+&gt; standard.  So a few clients may wrap a little soon, BFD--turn off graphics
+
+	'a few'?  try 'all'.  and 'a little soon' may turn into
+wrapping after 10 characters if you drop enough escape codes in
+there.  IMHO, you'll find very few people interested in giving up
+everything tinyfugue does for you so as to be able to see your nifty
+ansi graphics.
+
+&gt;mode.  My argument lies in that there IS no standard to follow, if there is, or
+&gt; will be soon, I would be more than happy to use it and completely forget about
+&gt; ANSI codes.  But I dont see one coming up soon, and I enjoy toying with ansi
+&gt; codes, so I would like the capability in the server...
+
+	ANSI codes are not a solution, no matter what the PC BBS
+community may think of them.  I would guess that less than half the
+people on a random mud have ANSI color display capabilites on their
+terminals.  If you want to give the server the capability of attaching
+extra information to the text it's sending, do it in a broad spectrum,
+general way, NOT by hacking in something display-specific, and limited
+like vt100/ansi escape codes.
+
+--
+ /~&gt; Ian McCloghrie      | Commandant of Secret Police - Cal Animage Beta.
+&lt; &lt;  /~\ |~\ |~&gt; |  | &lt;~ | email: ian@ucsd.edu               Net/2, USL 0!
+ \_&gt; \_/ |_/ |~\ |__| _&gt; | Card Carrying Member, UCSD Secret Islandia Club
+</PRE>

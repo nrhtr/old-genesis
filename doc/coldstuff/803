@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [803] in "Coldmud discussion meeting"</TITLE>
+<H1>[803] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?803"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="802"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="804"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>VEIL Protocol</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Sep 10 22:55:30 1995
+)</H3>
+<PRE>
+Date: Sun, 10 Sep 1995 20:54:59 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+The VEIL Protocol (Virtual Environment Interaction Layers Protocol) is
+partially based off HTTP-NG, and is designed to give multiple i/o streams
+over a single TCP connection.  The draft specification for VEIL is at:
+
+    http://www.cold.org:8080/VEIL.html
+
+Currently, the ColdX (ColdMUD) driver supports VEIL Packets (ColdX 1.0),
+and a client is under development from the ColdX Project, written in python.
+
+
+A list has been created to discuss VEIL and other Virtual Environment
+System protocols:
+
+    ves-protocols@tiny.mcs.usu.edu
+
+Subscribe to it by emailing 'majordomo@tiny.mcs.usu.edu' with a message
+body of 'subscribe ves-protocols'.
+
+Enjoy!
+
+-Brandon Gillespie/Lynx-
+</PRE>

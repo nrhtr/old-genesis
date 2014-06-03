@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1145] in "Coldmud discussion meeting"</TITLE>
+<H1>[1145] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1145"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1141"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1144"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1144"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1146"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1146"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1149"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] scatter/optional assignments - request for discussion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 29 16:44:45 1996
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+In-Reply-To: &lt;199611291948.TAA00594@aaaaaaaa.demon.co.uk&gt; from Andrew Wilson at "Nov 29, 96 07:48:20 pm"
+To: andrew@aaaaaaaa.demon.co.uk (Andrew Wilson)
+Date: Fri, 29 Nov 1996 22:37:01 +0100 (MET)
+Cc: coldstuff@cold.org
+
+&gt; I didn't look too closely at this patch, but am I right in thinking
+&gt; that the ?= operator is a simple test of existing value, rather
+&gt; then an operation which is only performed if a variable has not
+&gt; been assigned to previously?
+&gt; 
+&gt; Perl has a useful:
+&gt; 
+&gt; 	$foo = $bar unless $foo;
+&gt; 
+&gt; construction, which only assigns a value to $foo if no previous
+&gt; assignment has taken place.
+&gt; 
+&gt; Wouldn't this be logic (expressed as '$foo ?= $bar') be more useful?
+&gt; 
+
+I might be wrong about this, but Perl, unlike Cold, has global variables.
+In Cold, you /always/ know if the variable has been assigned (except
+for object vars, but I'm not sure I'd like to see the exception). So,
+this behaviour of ?= would be less useful. IMHO, at least. For optional
+parameters in [] = ... assignment it still won't trigger if right hand
+parameters exist but are false.
+
+	Miro
+
+</PRE>

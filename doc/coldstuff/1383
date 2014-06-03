@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [1383] in "Coldmud discussion meeting"</TITLE>
+<H1>[1383] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1383"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1375"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1382"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1382"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1384"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] NBC Online project</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 21 09:49:33 1997
+)</H3>
+<PRE>
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+Reply-To: zephyr@roguetrader.com
+From: Neale Pickett &lt;neale@lanl.gov&gt;
+Date: 21 Nov 1997 07:40:50 -0700
+In-Reply-To: Brandon Gillespie's message of "Thu, 20 Nov 1997 10:35:23 -0700 (MST)"
+
+-----BEGIN PGP SIGNED MESSAGE-----
+
+&gt;&gt;&gt;&gt;&gt; Brandon Gillespie writes:
+
+ &gt; We are working on a performance test of cold, using a robot Neale
+ &gt; Pickett has created which acts out a play, creating one connection
+ &gt; per actor.  We are going to setup several of these at various remote
+ &gt; points around the net, each in different rooms on the Cold
+ &gt; server--testing performance at each level of connectivity.
+ &gt; Unfortunately my 533mhz alpha is down for the moment, so we will just
+ &gt; be restricted to testing it on ice (120mhz cyrix 6x86 with 32mb ram).
+
+Anyone who wants to run this thing should get themselves a Python
+interpreter from www.python.org
+
+The load-test script is pretty much finished, I'm just working on
+finessing it.  Thankfully, Shakespearean plays tend to be pretty
+consistently formatted ;)
+
+Neale
+
+-----BEGIN PGP SIGNATURE-----
+Version: 2.6.2
+Comment: Processed by Mailcrypt 3.4, an Emacs/PGP interface
+
+iQCVAwUBNHWdarNb7WPqhuIRAQEE/QP/SUwKwf4nQTlafwsIKzbN8SolSx6GA82n
+siRltxIItKIDn3I8UTLiBa06CoHIzdu/yvL+Z7KeMXmKLfLp1V5UymI1SCHnIVQ8
+uF4yR6WTbPF9WkRCGUNFQpc5HR35en8cbWknyp6Srd1F/oScrHUhnxWp1mweyvoq
+PCZ1Xgone0U=
+=181B
+-----END PGP SIGNATURE-----
+</PRE>

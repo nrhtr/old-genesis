@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [1327] in "Coldmud discussion meeting"</TITLE>
+<H1>[1327] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1327"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1326"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1326"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1326"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1328"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] controlling where the start room is</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 21 12:09:14 1997
+)</H3>
+<PRE>
+Date: Thu, 21 Aug 1997 10:06:44 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+cc: Cold Stuff &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;33FBC415.64A9C297@maddog.com&gt;
+
+On Wed, 20 Aug 1997, Frank Crowell wrote:
+&gt; I think someone already has code for this but---
+&gt; 
+&gt; I'm looking for a way to separate people based on how
+&gt; they log in so that certain people will go to certain realms.
+&gt; This means that I don't want everyone to login and be at the pit.
+&gt; I had considered having different ports for different users or
+&gt; a menu where a person can select a realm.  Any suggestions?
+
+    $world.starting_place()
+
+Right now it simply returns a setting (@set $world:) but you can have it
+return whatever..
+
+&gt; Actually this is two problems.  First is the "login to different realms" 
+&gt; and the second is handling sleeping bodies.  If people change their
+&gt; home, then they show as sleeping bodies when they disconnect.  I would
+&gt; rather than the housekeeper grab then and then on login they are
+&gt; restored.  Or --the mush style-- is to have them dark. 
+
+Look at the housekeeper code--rather than taking them home (or ignoring
+them if they are already home) you can do whatever.
+
+-Brandon
+
+</PRE>

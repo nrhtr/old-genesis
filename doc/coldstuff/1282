@@ -1,0 +1,111 @@
+<HEAD><TITLE>discuss@charon: [1282] in "Coldmud discussion meeting"</TITLE>
+<H1>[1282] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1282"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1281"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1283"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] InterMOO: a high-power MOO server (fwd)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Apr 23 06:06:00 1997
+)</H3>
+<PRE>
+From: ubmitche@mcs.drexel.edu (Bruce Mitchener)
+To: coldstuff@cold.org
+Date: Wed, 23 Apr 1997 05:49:44 -0400 (EDT)
+
+Just to keep an eye on what is around:
+Forwarded message:
+&gt; From: Mark Waks &lt;justin@inmet.com&gt;
+&gt; Subject: InterMOO: a high-power MOO server
+&gt; Date: Tue, 22 Apr 1997 16:14:43 -0400
+&gt; To: vworlds-biz@lists.best.com
+&gt; 
+&gt; This verges on advertisement, but since the subject of MOO Servers
+&gt; came up:
+&gt; 
+&gt; Those who are interested in commercial-grade MOO environments should
+&gt; give Intermetrics a call. For the past couple of years, we're been
+&gt; working on InterMOO, a ground-up rewrite of the MOO server, designed
+&gt; specifically for serious applications.
+&gt; 
+&gt; InterMOO is based on a real object-oriented database system, so it is
+&gt; intrinsically persistent -- the bulk of the database is *not* kept in
+&gt; core. This also helps it scale; since much of the database is on disk,
+&gt; you don't need as much RAM and virtual memory as comparably-sized
+&gt; traditional MOOs require. And although the system isn't currently
+&gt; distributed, the distributed version is designed (it was part of the
+&gt; plan from the beginning), and will be implemented soon. The server
+&gt; currently runs on Solaris, with an NT port expected in the
+&gt; not-too-distant future.
+&gt; 
+&gt; Reliability is already high, since the thing was carefully designed
+&gt; from the start instead of just evolving, and is improving steadily as
+&gt; we get some betas deployed and tested; performance already exceeds the
+&gt; LambdaMOO server, and planned enhancements should boost it by another
+&gt; 50% or so.
+&gt; 
+&gt; We have one reasonably substantial world running on InterMOO so far:
+&gt; Wyndhaven, an educational MUD designed for elementary school kids. It
+&gt; can be found at:
+&gt; 
+&gt; 	http://www.wyndhaven.com/
+&gt; 
+&gt; Wyndhaven is a WOO, and is primarily designed for use with a Web
+&gt; Browser. It is specifically currently targeted for client PCs running
+&gt; Netscape 3.0 and Java, with at least 800x600 resolution. (Macs will
+&gt; usually run, but bugs in Java sometimes cause communication problems;
+&gt; Internet Explorer can run with Wyndhaven, but requires a stripped-down
+&gt; client; lower resolution screens will work fine, but the graphics will
+&gt; be clipped a bit.) 
+&gt; 
+&gt; Wyndhaven is highly multimedia, so it's not lightning-fast over a 28.8
+&gt; connection; it's designed to use some clever tricks, so that the
+&gt; multimedia content can be optionally distributed on CD-ROM or in local
+&gt; uploaded files, which are automatically detected and used if present.
+&gt; And some of the fancier rooms require particular plugins (eg, Shockwave).
+&gt; 
+&gt; Wyndhaven is based on a highly extended JHCore; we're in the process
+&gt; of writing a very lean, high-performance core from scratch, to get the
+&gt; kind of speed a commercial multimedia system wants.
+&gt; 
+&gt; If anyone's interested in more information, please write to me and I'll
+&gt; send it along, or put you in touch with the appropriate folks. (I'm not
+&gt; much involved with the server per se; I've mainly been doing the server/
+&gt; browser architecture.) We're definitely looking for more serious
+&gt; commercial applications, particularly for multimedia and multimodal
+&gt; virtual world apps, and applications that stretch the boundaries of
+&gt; what you can do with the MOO environment...
+&gt; 
+&gt; 				-- Justin / Mark Waks
+&gt; 				   Intermetrics, Inc.
+&gt; 
+&gt; Random Quote du Jour:
+&gt; 
+&gt; "The phased approach to implementation could be described in the following
+&gt;  manner:
+&gt;     1. Design, code, and test each module by itself (this is commonly known
+&gt;        as unit test).
+&gt;     2. Throw all the modules into a large bag.
+&gt;     3. Shake the bag very hard (this is commonly known as systems
+&gt;        integration and test).
+&gt;     4. Cross your fingers and hope that it all works (this is commonly known
+&gt;        as field test)."
+&gt; 		-- Yourdon &amp; Constantine
+&gt; ------- End of forwarded message -------
+&gt; 
+
+
+-- 
+Bruce Mitchener, Jr.
+ubmitche@mcs.drexel.edu
+
+Vote Monarchist!  (licensed from Black Unicorn &lt;unicorn@schloss.li&gt;)
+Ego sum rex romanus, et super grammatica.
+
+</PRE>

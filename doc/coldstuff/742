@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [742] in "Coldmud discussion meeting"</TITLE>
+<H1>[742] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?742"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="741"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="743"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="743"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="746"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>idea for custom error handling</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 24 16:49:49 1995
+)</H3>
+<PRE>
+From: Robert de Forest (Crag@JHM) &lt;crag@serial.io.com&gt;
+To: coldstuff@MIT.EDU
+Date: Wed, 24 May 1995 14:14:41 -0500 (CDT)
+
+I had this idea a while ago but I don't remember posting it.
+
+I'd like to add 'global catching' of a sort where the first action taken by
+ the server when an error is thrown is to suspend the task and call
+ $sys.handle_error(error, error_str, error_arg, task_id). If the task is
+ resumed the expression that threw the error would instead return the value
+ the task was resumed with. A new function 'complete_throw' (help me think
+ of a better name) would be added to cause the usual action to happen.
+
+The point of all this is to allow a function to be debugged as it's running.
+ .handle_error could choose to leave the task suspended and tell the
+ programmer about the suspended task, etc.
+
+On a separate topic, I'd like to see traceback and callers include arg info.
+ callers is already an encapsulation breaking function only useful for
+ debugging and such and the same goes for traceback :). This would allow me
+ to inspect the args going into a method which caused it to throw.
+
+I might make these changes myself, or I might not. I'd like to know what other
+ people think.
+
+Crag / Robert
+</PRE>

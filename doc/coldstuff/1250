@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [1250] in "Coldmud discussion meeting"</TITLE>
+<H1>[1250] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1250"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1249"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1251"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis 1.0p25</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 10 11:57:10 1997
+)</H3>
+<PRE>
+Date: Mon, 10 Mar 1997 09:51:26 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+
+Features:
+
+   * handled frobs, ala:
+
+       (&lt;class, rep, handle&gt;)
+
+     where handle is a symbol referencing the method name so:
+
+       (&lt;class, rep, handle&gt;).method(args)
+
+     is called as:
+
+       class.handle(rep, method, args)
+
+   * new mechanism for easilly adding types to the driver.  More info later
+   * added frob_value() and frob_handler()
+   * added round() for floats--rounds to the nearest whole number
+   * toerr() was accepting a string--now requires a symbol
+
+Also includes fixes/changes:
+
+   * fixed bugs with match_begin and a blank seperator
+   * fixed /= ordering args wrong
+   * fixed a bug with parsing large floats from literals
+   * fixed ;1e-9 bug
+   * fixed spelling error
+
+As always, it is available at:
+
+    ftp://ftp.cold.org/cold/drivers/Genesis.tar.gz
+
+We should have a Win32 binary available soon.
+
+-Brandon Gillespie
+
+</PRE>

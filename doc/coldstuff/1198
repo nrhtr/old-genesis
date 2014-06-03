@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [1198] in "Coldmud discussion meeting"</TITLE>
+<H1>[1198] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1198"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1197"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1199"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1201"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1201"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] $motd ideas...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 30 09:28:26 1996
+)</H3>
+<PRE>
+From: "Charles Shepherd" &lt;cshepher@cs.indiana.edu&gt;
+To: coldstuff@cold.org
+Date: Sun, 29 Dec 1996 17:27:24 -0500 (EST)
+
+I've been looking at the $motd code, trying to find a
+simple way to customize it.
+
+One way would be to take $motd.build, and instead
+of passing $motd.build('default) as the logon screen,
+construct a custom message. My first thought was
+to do:
+
+$motd.build('title, 'driver, "", "A brief explanation 1", "more 
+   explanation2, "");
+
+However, this didn't work as all strings are translated to
+"" when used as output. This means that either we need to
+change the code to allow non-null strings, or program 
+in additional cases (such as 'disclaimer, and 'introduction)
+to add to the case statement.
+
+One addition that might be helpful would be the presence
+of a default_motd property. That is, when 'default is passed
+as the argument to $motd.build, it takes the list from default_motd
+as the args. That way, it's easier to customize to the needs of
+a particular world.
+
+-- Chuck
+
+</PRE>

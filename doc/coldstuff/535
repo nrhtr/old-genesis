@@ -1,0 +1,113 @@
+<HEAD><TITLE>discuss@charon: [535] in "Coldmud discussion meeting"</TITLE>
+<H1>[535] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?535"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="534"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="534"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="536"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="536"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 17:23:26 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: jcdst10+@pitt.edu (James C Deikun)
+Date: Sat, 5 Nov 1994 14:22:14 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;Pine.3.89.9411051511.A20462-0100000@unixs2.cis.pitt.edu&gt; from "James C Deikun" at Nov 5, 94 03:48:52 pm
+
+&gt; I was kind of referring to the aspect of replacing pause() with
+&gt; request_callback().
+
+Well from the DB end, all it involves is calling (for example) $sys.pause()
+instead of using the builtin pause(), and having $sys.pause request_callback(),
+save the task_id, and suspend().  Then have $sys.callback check for pending
+task_ids to be resumed (of which the aforementioned task_id would be one) and
+resume() them.
+
+&gt; The proper way to genericise would to me seem to be:
+&gt; 
+&gt;   port =&gt; anything on which an inbound or outbound connection can be made
+&gt;   address =&gt; anywhere a connection can come from or be made to
+&gt;   connection-info =&gt; information about a connection, including the address,
+&gt;                      the port, the direction, things like socket numbers...
+
+I'm not talking about terminology.  That's trivial.  I'm talking about method
+naming, consistent call syntaxes, generic I/O builtins, etc, etc.  For
+starters, come up with a good way to make process-pipe I/O and network
+conneciton I/O work through the same object interface while keeping all the
+useful aspects of the two (such as having two standard receive paths (stdout
+and stderr) for a conneciton to another unix process) and keeping the interface
+consistent (such as making the args to .connection_opened consistent across all
+types of connections).
+
+These are both examples of why I'm now thinking that this isn't such a great
+goal, because it would be much more flexible and easier to work with to make
+the interface between the server and the DB specific to the type of connection,
+and simply leave it up to the DB to genericize things if it wants to in
+whatever way is most appropriate to the tasks it wants to accomplish, instead
+of forcing a particular set of compromises on it.  I.e. if you want $connection
+to work for both files and net connections, then make $connection have both
+.connection_* methods and .pipe_* methods, and let it do its own
+amalgomation/compromising into the common interface it presents to other
+objects in the DB (which is the only way the other objects should be accessing
+these things anyway, so they won't be able to tell the difference).
+
+&gt; I was kind of thinking of open_connection() suspending the task pending
+&gt; completion of the attempt.  Is this a horrible thing?
+
+Well, as I said, it's definitely a step backwards.  Once again, you're
+proposing to require something that's currently optional, with no obvious
+advantage to doing so (unless you consider limiting flexibility an advantage..
+I don't)
+
+&gt; The only problem with this being you'd have a screw case that'd require
+&gt; a significantly different command line to start even just the server
+&gt; part.
+
+I wouldn't call the difference between a "&gt;&amp;" and a "2&gt;" a significantly
+different command line.  Anyway, if your interface to the MOO is so different
+anyway, you're going to be following a completely different procedure for using
+it anyway.. I don't really see how this minor aspect is terribly important in
+that case, and as I said, there are significant advantages to the proposed
+change.
+
+&gt; Like I said, it would make maintenance very awkward,
+
+Only if you're stupid enough to put it on things that need to be maintained
+regularly.
+
+&gt; it would destroy the model of the DB as a more-or-less self-contained system,
+
+How exactly do you come to this conclusion?  I don't see how this makes the DB
+any less self-contained than it was before.  It simply restricts the published
+interface, as it were (do private/local methods make an object less
+self-contained?).
+
+&gt; and it could easily be implemented in-DB with protection for compile() and
+&gt; the like.
+
+Easily, but not as securely, as has been stated several times.
+
+What really gets me when reading all your arguments against this thing more
+than anything else is that I really can't understand why you're so strongly
+opposed to something that is completely optional and adds flexibilty to the
+system, solely, as best I can tell, on the grounds that you wouldn't use it.
+SO DON'T USE IT.  sheesh.
+
+Actually, reading over this whole message, it seems that most of your arguments
+on a lot of things are that people shouldn't be allowed to do things any
+differently than you want to do them, so there shouldn't be any server support
+for anything that you wouldn't use.  This is just a thoroughly stupid attitude,
+in my opinion.
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [318] in "Coldmud discussion meeting"</TITLE>
+<H1>[318] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?318"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="317"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="319"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Logging and $sys hacks.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 24 14:28:42 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Tue, 24 May 1994 12:23:24 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I just hacked $sys.compile() on the Cold Dark to:
+
+@program $sys.compile
+arg code, name;
+var line;
+
+.perms(sender());
+line = "SYSTEM: ." + tostr(name) + "() MODIFIED ";
+line = line + $eng_time.ldate('mdy, 'dash) + "/" + $eng_time.ltime();
+.log(line + " by " + sender().name('ref));
+return compile(code, name);
+.
+
+Looks like:
+
+SYSTEM: .compile() MODIFIED 5-24-94/12:22 pm by Brandon ($user_brandon)
+
+What this means is that ANY change to $sys through the normal channels are
+logged before they occur.  This does not allow for if a careless admin leaves
+another method which writes to $sys open.
+
+-Brandon-
+</PRE>

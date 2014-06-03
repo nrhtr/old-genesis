@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1341] in "Coldmud discussion meeting"</TITLE>
+<H1>[1341] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1341"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1330"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1340"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1340"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1342"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>RE: [COLD] Exit announcements (anomaly?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 22 10:41:26 1997
+)</H3>
+<PRE>
+Date: Fri, 22 Aug 1997 08:34:29 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: "Luther, Clay" &lt;clay@selsius.com&gt;
+cc: "'coldstuff@cold.org'" &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;97D99B08E012D111A0CE00805F70754FB84B@RAPHAEL&gt;
+
+On Thu, 21 Aug 1997, Luther, Clay wrote:
+&gt; Well, I figured out what my problem was.  I hadn't been building $exits,
+&gt; but $exit_frobs (!?!).  Fixed it there, too, and now it works.
+
+Yup, by default exits are frobs (less space).  You can use an object for
+an exit by setting the name (while building--not with @rename) as
+'$obj:NAME' where '$obj' is the class of object you want to use (other
+than $exit_frob).  I.e. '$exit:door,n?orth' would be valid.
+
+-Brandon
+
+</PRE>

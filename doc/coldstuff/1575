@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [1575] in "Coldmud discussion meeting"</TITLE>
+<H1>[1575] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1575"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1573"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1574"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1574"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1576"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1576"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Editing code from in-game</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May  1 18:29:20 2000
+)</H3>
+<PRE>
+Date: Mon, 01 May 2000 15:36:50 -0700
+To: coldstuff@cold.org
+From: Jeff Kesselman &lt;Jeffrey.Kesselman@eng.sun.com&gt;
+In-Reply-To: &lt;Pine.LNX.4.10.10005011328280.12492-100000@bork.weath&gt;
+Reply-To: coldstuff@cold.org
+
+At 01:32 PM 5/1/00 -0700, you wrote:
+&gt;Right at the moment I'm writing everything in Emacs and recompiling and
+&gt;restarting after each change, which is hardly optimal.  I didn't have a
+&gt;working user interface before this, though, so it was the only option.  :)
+
+This is how i am working too.  For me this is best for a number of reasons.
+At a  certain point I'm going to want to be able to load patches while up. 
+I wrote a little parser that reads ColdC and creates and modifies the 
+objects  to do this.
+
+In the past I actually wrote a Java interface that allowed me to edit the 
+database at run-time.  Its not really very hard but I havent ahd the tiem 
+to keep it up. At this point i dont hink i have my old Java prgoram's 
+code.  All it did on the cdoe side though as open up a socekt to an object 
+in the db that listend for editor connections and minipulated objects absed 
+on text commands recieved from the interafce.
+
+</PRE>

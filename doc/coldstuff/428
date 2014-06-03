@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [428] in "Coldmud discussion meeting"</TITLE>
+<H1>[428] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?428"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="425"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="427"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="427"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="429"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="429"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="429"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: implementing 'atomic' designation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 07:23:51 1994
+)</H3>
+<PRE>
+Date: Thu, 22 Sep 1994 05:19:41 -0400
+From: Quinn Avery &lt;quinn@Access.Mountain.Net&gt;
+To: deforest@netcom.com, stewarta@netcom.com
+Cc: coldstuff@MIT.EDU
+
+I want assignments as expressions.
+
+I _do_ know what I'm doing.  I write code as I write fiction.  I like it
+ to look good, to read well, and I think that I as the author know how to
+ best accomplish that.
+
+I see the point of assignments NOT being expressions.  It's a fascist
+ attempt to enforce a certain code style: a CS teacher reading over your
+ shoulder saying, "Now Now you really meant a == didn't you?  And wouldn't
+ it be better to put that assignment on a separate line, Hmm?"
+
+I'd rather have a bit of freedom, eh?  Let ME deal with my typos.
+
+-Q
+
+</PRE>

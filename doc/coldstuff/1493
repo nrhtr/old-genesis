@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [1493] in "Coldmud discussion meeting"</TITLE>
+<H1>[1493] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1493"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1491"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1492"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1492"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1494"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ColdC Reference Manual</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 27 23:52:07 1999
+)</H3>
+<PRE>
+From: Jeff Kesselman &lt;Jeffrey.Kesselman@eng.sun.com&gt;
+Date: Sat, 27 Nov 1999 20:41:44 -0700
+To: &lt;coldstuff@cold.org&gt;
+Reply-To: coldstuff@cold.org
+
+buf_to_str is a single string covnersion.
+buf_to_strings creates an array of strings based on a delimiter, as I recall.
+
+As far as I know there has never been much of any documentation fo the native interface which, frankly,
+is weak as hell.  I learned it frome xaminign the sourc code but ther are a LOT
+of caveats (liek the agfct that yopu cant call back INTO the vm from outside.)
+
+&gt;Oh, and I also added an Index for key terminology and all the functions.
+&gt;
+&gt;ian
+&gt;  ----- Original Message ----- 
+&gt;  From: Ian Klimon, Esq. 
+&gt;  To: coldstuff@cold.org 
+&gt;  Sent: Saturday, November 27, 1999 6:02 PM
+&gt;  Subject: ColdC Reference Manual
+&gt;
+&gt;
+&gt;  I'm just wrapping up my conversion of the ColdC Reference Manual into 
+&gt;Word2k format (Word97 shares the same format).  I've added headings, 
+&gt;footnotes where appropriate, cleaned up the spelling and grammar, tried 
+&gt;to standardized usage of italics/bold and set the document up to be 
+&gt;printed so that it could be then bound double-sided to save space/paper, 
+&gt;etc. 
+&gt;   
+&gt;  I've run into three problems:
+&gt;
+&gt;  The missing section on Textdump Structure
+&gt;  The missing section of Native Method Reference
+&gt;  and unless I'm missing something, buf_to_str and buf_to_strings share 
+&gt;the exact same description (which I believe, belongs to buf_to_strings)
+&gt;
+&gt;  I'm more than happy to share what I've completed with anyone 
+&gt;interested, or even have the doc posted on the cold.org site if that's a 
+&gt;reasonable thing to do.
+&gt;
+&gt;  ian
+&gt;  aephirsden.com
+
+
+</PRE>

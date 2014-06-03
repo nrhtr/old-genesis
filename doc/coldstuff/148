@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [148] in "Coldmud discussion meeting"</TITLE>
+<H1>[148] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?148"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="146"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="147"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="147"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="149"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="149"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="150"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: COLD: Status Update?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar  4 03:19:40 1994
+)</H3>
+<PRE>
+Date: Fri, 04 Mar 1994 01:17:30 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Greg is ressurected for a slight moment and says:
+&gt; I have to apologize for disappearing suddenly, but my life has become
+&gt; very hectic very quickly.
+
+woo, he finally speaks..
+
+&gt; I'm still very interested in coldmud, and plan to get back to it when
+&gt; I have time.  I plan to rewrite the server as a multithreaded C++
+&gt; program and introduce some other innovations; I think I may also be
+&gt; able to solve some of the needling core design issues, but this will
+&gt; all be later.
+
+the C++ bit sounds cool.  As for the other stuff, preety much everything has
+ground to a halt because of the server crashing error.  Nobody can do anything
+until its fixed.  You can live with some errors--like the dbref bug, and
+even the disappearing parameters, but NOT the segfault upon startup.  I think
+Zachary is having a friend run the server through purify, as it seems like its
+a memory problem somewhere along the line.
+
+-Brandon (Lynx/DragonLynx)
+</PRE>

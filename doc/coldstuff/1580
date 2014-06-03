@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [1580] in "Coldmud discussion meeting"</TITLE>
+<H1>[1580] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1580"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1578"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1579"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1579"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1581"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Win32</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun May 21 13:49:36 2000
+)</H3>
+<PRE>
+Date: Sun, 21 May 2000 10:43:56 -0700
+From: Bruce &lt;bruce@puremagic.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+dancer@zeor.simegen.com wrote:
+&gt; 
+&gt; Daniel Forrester wrote:
+&gt; 
+&gt; &gt; You probably get a lot of this,
+&gt; &gt;
+&gt; &gt; Just wondering about when you'll be getting win binaries up on the ftp
+&gt; &gt; site and/or instructions for compiling under windows...
+&gt; &gt;
+&gt; &gt; thanks
+&gt; &gt; daniel
+&gt; 
+&gt; Hmm. Do we support dead platforms? :)
+&gt; 
+&gt; D
+
+Yeah.... :)
+
+The latest version should build under Borland C.  One might suspect that
+it would build under the free compiler that Borland has released, but
+I've never known anyone that tried.  There should be some old Win32
+build instructions that mostly work, but they require access to a Linux
+box I believe.
+
+Good to see you around still Dancer!
+
+ - Bruce
+</PRE>

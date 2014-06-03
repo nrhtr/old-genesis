@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [789] in "Coldmud discussion meeting"</TITLE>
+<H1>[789] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?789"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="788"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="790"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Diogenes Club Problems</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Aug 26 13:07:27 1995
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+Date: Sat, 26 Aug 1995 10:04:08 -0700 (PDT)
+
+Okay,
+
+I'm pretty sure I've found my problem.  Its going to take a number of 
+hours to fix.  I tried to cheat and only implement 50% of the Telnet 
+protocol (basicly sending, not recieving commands). Turns out that his 
+works for a complete Telnet client implementation, but fails pretty badly 
+for soem of the cheesier ones out there (such as both the Windows and 
+amazingly the NCSA implementation.)
+
+Anyway, a thorough implementation on my part aught to solve the problem.
+
+Hopefully the club will be back up, and correct, on Sunday. Will keep 
+all-yall (as they say in Nortenrn Fl.) posted.
+
+Jeff Kesselman
+</PRE>

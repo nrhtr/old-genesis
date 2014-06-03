@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [361] in "Coldmud discussion meeting"</TITLE>
+<H1>[361] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?361"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="360"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="362"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="362"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="368"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>changes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun 30 03:45:13 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Thu, 30 Jun 1994 00:40:19 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I'm seriously considering changing the following (basically, I am going to do
+it unless somebody can come up with some good reasons why they should stay in
+the current state):
+
+ connect()               =&gt; open_connection()
+ disconnect()            =&gt; close_connection()
+ conn_assign()           =&gt; assign_connection()
+ bind()                  =&gt; bind_port()
+ unbind()                =&gt; unbind_port()
+ run_script()            =&gt; system_execute()
+ filename 'textdump'     =&gt; 'text_dump' (to fit with text_dump())
+ } with handler {        =&gt; } with {
+
+Anybody?
+</PRE>

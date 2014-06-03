@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [1526] in "Coldmud discussion meeting"</TITLE>
+<H1>[1526] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1526"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1525"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1525"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1527"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1527"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec  7 20:36:04 1999
+)</H3>
+<PRE>
+Date: Tue, 7 Dec 1999 17:25:26 -0800 (PST)
+From: Jeff Kesselman &lt;Jeffrey.Kesselman@eng.sun.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+Personally I would like to see the manual evolve to a proper manual.  Oen of the 
+good things about Coldmud was that it had a real printed manual and I'd like to 
+see ColdX get back to at least that level for written documentation.  Much of
+the old Coldmud manual can, and IM oshould, be canibalized to make a enw upt to 
+date manual.
+
+For function reference my folder full of html pages is adaquate but not as a 
+real mana`ual I can, for instance, hand to my junior prgormamer and say "here, 
+you can fidn your anseres in this."
+
+My take is that a refernce format will continue to be only a refernce format and 
+thsi it is muche asier to extract refernce from full docs than to go vice versa.
+
+Jeff Kesselman
+Member of Technical Staff IV
+JDK Performance/RAS Team
+SUN Microsystems
+
+Thought to meditate on:
+
+No two objects in nature are equal, any two apples are in fact quite different 
+from any other two apples in the world.
+
+Thus can Math really be said to be True in an absolute concrete sense, 
+or is it merely an internally consistent abstraction?
+
+</PRE>

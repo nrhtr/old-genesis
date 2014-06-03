@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [779] in "Coldmud discussion meeting"</TITLE>
+<H1>[779] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?779"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="776"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="777"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="778"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="780"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="780"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="781"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Stupid Question Time</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Aug 20 21:00:14 1995
+)</H3>
+<PRE>
+Date: Sun, 20 Aug 1995 18:57:57 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+&lt; Hmm.  The bitwise ops are required to make the telenet server work, as
+&lt; you need to check sets of bits for values.  An alternate approach would be 
+&lt; some kind of bit-field operator.
+
+I want the bitwise ops.  Although we could do a bitfield operator function:
+
+    check_bitfield(number, number_bit_mask), ala:
+
+I'd still prefer '&amp;' though :)
+
+&lt; If you have the other stuff already implemented, then until we resovle 
+&lt; the bit-ops issue its probobly not worth my making a patch, yes?
+
+Well, I think the patch you sent me was incomplete.  It WAS broken, eudora
+put in random line breaks, but I think it may have been missing some too...
+
+&lt;    head = buffer_truncate(buff, size);
+&lt;    tail = buffer_tail(buff, size+1);
+
+Do:
+
+   head = buffer_truncate(buff, size);
+   tail = (| buffer_tail(buff, size+1) |) || `[];
+
+(just a suggestion)
+
+-Brandon
+</PRE>

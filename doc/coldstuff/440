@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [440] in "Coldmud discussion meeting"</TITLE>
+<H1>[440] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?440"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="431"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="439"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="439"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="441"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignments as expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 19:37:25 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: deforest@netcom.com (Robert de Forest)
+Date: Thu, 22 Sep 1994 16:01:20 -0700 (PDT)
+Cc: coldstuff@netcom.com
+In-Reply-To: &lt;199409221806.LAA25493@netcom14.netcom.com&gt; from "Robert de Forest" at Sep 22, 94 10:53:37 am
+
+Crag, first of all, what the hell gives you the right to tell everybody else
+what's ColdMUD and what isn't?  Give it a rest.  Nobody's listening.
+
+As for assigment-expressions, this wouldn't have been a problem at all if Greg
+hadn't chosen to stick with an antequated language's operator conventions and
+make a clumsy hack to deal with the implications instead of just fixing the
+language to begin with. (yes, C is an antequated language, despite anything
+people may try to tell you, and in my opinion it's responsible for some of the
+biggest problems in application programming today)
+
+The real problem is that ColdC should never have had assigment be '=' anyway.
+Using a mix of one-character and two-character operators in general is in my
+opinion a bad design choice, but particularly using a one-character operator
+that results in a very easy typo changing the meaning between two fairly
+fundamental operations..
+
+Anyway, enough bitching..  I'd just like to say that the solution I'd most
+prefer would be to replace '=' with some other, two-character operator (like
+':=' or something) and make it an expression.  Problem solved all round.  It
+would make for easier reading, too.
+
+-R
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+
+</PRE>

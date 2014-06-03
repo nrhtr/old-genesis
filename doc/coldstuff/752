@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [752] in "Coldmud discussion meeting"</TITLE>
+<H1>[752] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?752"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="751"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="751"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="751"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="753"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="753"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="761"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: tCD and ColdX mailing lists</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jul 30 14:38:59 1995
+)</H3>
+<PRE>
+From: "Maddog's Studio" &lt;maddog@best.com&gt;
+To: coldstuff@MIT.EDU
+Date: Sun, 30 Jul 1995 11:38:25 -0700 (PDT)
+In-Reply-To: &lt;9507301655.AA00637@riverheights.declab.usu.edu&gt; from "869683 Gillespie Brandon James" at Jul 30, 95 10:55:36 am
+
+869683 Gillespie Brandon James wrote:
+&gt; 
+&gt; 
+	[...]
+&gt; I am currently in the process of adding a higher level of file control to
+&gt; the system.  Which of the following would you rather see:
+&gt; 
+&gt; read_file("filename", DBREF)
+&gt; 
+&gt; Where it opens file and reads blocks from it, sending them to DBREF until
+&gt; the file is at it's end.
+&gt; 
+&gt; Or:
+&gt; 
+&gt; open_file("filename", DBREF)
+&gt;   (opens the file, read's nothing)
+&gt; read_file()
+&gt;   (read's a block of the file associated with this object, returns it in
+&gt;    buffer form)
+&gt; close_file("filename", DBREF)
+&gt; 
+
+Definitely the form:
+	open
+	read/write
+	close  
+	stat or exists/eof
+
+Frank
+
+-- 
+________________________________________________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+</PRE>

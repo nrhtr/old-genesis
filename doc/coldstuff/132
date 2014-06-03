@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [132] in "Coldmud discussion meeting"</TITLE>
+<H1>[132] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?132"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="131"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="133"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Putting off 1.0</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec 24 04:32:18 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Fri, 24 Dec 93 04:26:37 -0500
+To: coldstuff@MIT.EDU
+
+
+I've thought about things a bit, and I've decided that I'm not going
+to release a 1.0 too soon.
+
+The next release will be 0.10.  I'll make it as soon as I have my
+current modifications stable and some conversion scripts written.
+
+There are several reasons for my decision: I don't think I want
+coldmud to take over the world in its current state, I want more time
+to do experimentation with core database designs and alternative
+applications, and there are a couple of things I want to revamp.  (For
+instance, because dbrefs are now numeric, there is more reason for me
+to want to make the debugging output easily modified by C-- code, so
+that it can display tracebacks with object names instead of with
+numbers.)  I'd also like to release a 1.0-like core with the 1.0
+server, and Cold World just isn't there yet.
+
+Also, I've made a lot of changes, and doubt I could adequately test
+them in just a couple of weeks.
+
+I've finished implementing the numeric dbrefs and string-&gt;dbref
+translation layer, but haven't tested it yet.
+
+--GBH
+
+</PRE>

@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [144] in "Coldmud discussion meeting"</TITLE>
+<H1>[144] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?144"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="143"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="145"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Problem starting server</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar  2 17:23:12 1994
+)</H3>
+<PRE>
+Date: Wed,  2 Mar 1994 17:14:35 -0500 (EST)
+From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+To: coldstuff@MIT.EDU
+
+On: 
+Linux  0.99.14a #2 Wed Dec 8 17:12:16 1993 i386
+coldmud compiles, no problem.  When I start the server with
+coldmud ../world-0.6 
+having created the textdump in that directory, there is
+no result.  The MUD does not start up, nor does it give any error
+message (or any message at all).  I allow it to sit for a while, and
+there is no response still.  It accepts signals, I can kill it using
+^C.  Anyone have any ideas?
+wbfst1@pitt.edu | PGP 2.3A user - Ask for my public key | William Fisher
+</PRE>

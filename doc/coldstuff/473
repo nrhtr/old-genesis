@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [473] in "Coldmud discussion meeting"</TITLE>
+<H1>[473] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?473"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="472"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="474"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>A FAQ or some basic help?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct 24 03:17:28 1994
+)</H3>
+<PRE>
+Date: Sun, 23 Oct 1994 23:49:17 -0700
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+
+Can someone point me to a FAQ or provide me some basic help with
+the world-0.6 enviroment?  The programmign language itself seems
+straight forward enough, btu I'm having trouble figuring otu how to do 
+basic things in the run-time environment like getting help, creating an 
+object, etc...
+
+Thanks
+
+Jeff Kesselman
+
+</PRE>

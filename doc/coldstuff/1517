@@ -1,0 +1,99 @@
+<HEAD><TITLE>discuss@charon: [1517] in "Coldmud discussion meeting"</TITLE>
+<H1>[1517] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1517"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1515"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1516"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1518"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1518"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec  7 18:16:14 1999
+)</H3>
+<PRE>
+From: "Steven J. Owens" &lt;puff@netcom.com&gt;
+To: coldstuff@cold.org
+Date: Tue, 7 Dec 1999 15:02:15 -0800 (PST)
+In-Reply-To: &lt;199912021947.LAA08295@taller.eng.sun.com&gt; from "Jeff Kesselman" at Dec 2, 99 11:47:12 am
+Reply-To: coldstuff@cold.org
+
+I wrote:
+&gt; &gt;     I think the majority of the geek world recognize that the
+&gt; &gt;majority of the "advancements" beyond text are just bloat and feature
+&gt; &gt;creep.  Now if you wanted to maintain the docs in FrameMaker format
+
+Jeff Kesselman writes:
+&gt; This is a pointless religous debate I fear.
+
+     Then why are you debating it? :-)
+
+&gt; My simple answer is go look at sales figures. 
+
+     Which will tell you almost nothing about the advantages of the
+tool itself, other than that it's widely known, widely used, and
+likely to be around in at least some form for the foreseeable future.
+
+&gt; &lt;religous flame bait on, Im afraid&gt;
+&gt; P.S.  Framemaker is the stadnard here where I work, Sun, for
+&gt; layout. Most of the technical writers I've asked though say that
+&gt; while it's layout is superb, its text processing is inadaquate.
+&gt; Most of them compsoe test in Vi or Emacs and import...
+&gt; &lt;/religous flame bait&gt;
+
+     The original reference to FrameMaker was simply that if you want
+to propose any sort of WYSIWYG editor format, FrameMaker (and
+InterLeaf) is one of the few that would actually provide any
+significant advantages.  Having written 6 database manuals in (not to
+mention being involved in the production of another dozen or so
+manuals) in FrameMaker I feel slightly qualified to comment on the
+process of producing technical documents.  Personally, I prefer to
+work in emacs for heavy text processing, but FrameMaker or its like is
+quite handy in producing a printed document.  I'd probably use it for
+the post-production process.
+
+     FrameMaker's original developers felt much the same way about
+emacs, I suspect; the Unix flavors of FrameMaker had the default emacs
+control key mappings for cursor manipulation.  Given my 'druthers,
+it'd be some combination of the two (maybe some merging of Xemacs and
+FrameMaker :-).  The chief advantages Frame has is some decent level
+of format and layout control, at one point an almost object-oriented
+level of formatting control over pararaphs by style (and it was
+heading even further in this direction last time I looked), a pretty
+good indexing system, and some very handy structural conveniences for
+large documents.
+
+     Frame excelled at very large technical documents, which was where
+it gained the most acceptance.  If I were somehow put in the
+decision-making role for such a process, that's probably the way I'd
+go; use some fairly straightforward text markup format to define the
+raw text, probably a format built in XML, from that generate HTML for
+web reference use, texinfo and/or unix Man files for people who want
+them, and generate MIF and import into FrameMaker for book production.
+
+     As to the question of what format the document development should
+be done in, well, that goes back to my original suggestion:
+
+     "What's wrong with HTML?  Or how about adding something like
+JavaDoc to the Cold stuff?  One possibility I'd suggest is, if people
+really want to use Word, why not have a special set of styles meant to
+be used in generating HTML output (not that I'd trust Word's output to
+HTML, having spent some painful hours working with such output in the
+past).  Or find some relatively painless XML format that can be easily
+translated into infotext, Word, and HTML as needed."
+
+     People should use what they like using, particularly in a
+volunteer project, but that's no reason for the project itself to
+adopt a proprietary standard for maintaining the information and
+cooperating among writers.  Compose in Word all you want, but don't
+expect stuff to be use and distributed if it takes advantage of
+proprietary word features that don't export well.  Heck, maybe a
+wikiwikiweb is what people should use :-).
+
+Steven J. Owens
+puff@guild.net
+puff@netcom.com
+</PRE>

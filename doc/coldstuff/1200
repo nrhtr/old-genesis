@@ -1,0 +1,75 @@
+<HEAD><TITLE>discuss@charon: [1200] in "Coldmud discussion meeting"</TITLE>
+<H1>[1200] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1200"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1196"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1197"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1199"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1201"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1202"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1206"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] cold stuff ;)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan  1 14:49:52 1997
+)</H3>
+<PRE>
+Date: Wed, 1 Jan 1997 12:43:30 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Jeff Kesselman &lt;jeffk@ten.net&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;3.0.32.19961229163936.006f6970@mail.tenetwork.com&gt;
+
+&gt; 1) Did textdump ever get fixed?  Do we have a dumpsplit that works on the
+&gt;    new format?
+
+What was wrong with the textdump?
+
+There is an intelligent splitter that works with the new format (not only 
+does it split objects, it sorts variables and methods alphabetically for
+good use with unix diff), it will be included in the BETA and other cores
+with a system for upgrading a database.
+
+&gt; 2) Is it true that user() has no useful or meaningful default before you
+&gt;    issue a set_user()??  Wouldn't it make sense for the default value
+&gt;    of user() to be the object that is at the top of the current call stack?
+
+Not really.  It all depends upon what user() is for.  It is simply a means
+of identifying a 'key' controller object within the call stack, with a
+standard interface (i.e. 'tell').  Having it default to an arbitrary
+object could potentially break many things assuming that it always returns
+a standard class of object (defined within the database).  Having it
+return #-1 (as it does now) before it is set allows you to know whether or
+not its the 'standard' class of object.  If its a big concern, just call
+set_user() in $connection.parse().  Frankly user() breaks encapsulation,
+is unnecessary, and you won't find it being used anywhere in the core  8)
+
+&gt; 3) Efficiency question.  If I define a list and then reference it inside of
+&gt;    multiple other lists is only 1 copy of the list created? What if I pass
+&gt;    such a  reference to a different object? Does it still reference the
+&gt;    original list (this would make sense and be good behavior...)
+&gt; 
+
+Only one copy exists at all times, until the list is changed.  For
+example:
+
+    list = [1, [2, [3, [4, [5]]]]];
+    sublist = list[2][2][2];
+
+At this point 'sublist' is simply a 'pointer' to the list-in-list which
+is:
+
+    [4, [5]]
+
+No data has been duplicated at this time.  If we call the method 'foo'
+with the argument 'sublist' the list is simply referenced once more, still
+no data has been duplicated.  However, if 'foo' alters the sublist, either
+by adding elements, changing the element's value or some similar function,
+a new list is created with each element, as is appropriate (keep in mind
+even the new list will still only have references for the data, as is
+appropriate). 
+
+-Brandon Gillespie
+
+</PRE>

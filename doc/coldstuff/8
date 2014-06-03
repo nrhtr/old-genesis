@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [8] in "Coldmud discussion meeting"</TITLE>
+<H1>[8] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?8"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="7"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="9"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="9"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="9"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>0.7.1 server release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 14:12:52 1993
+)</H3>
+<PRE>
+Date: Mon, 15 Nov 1993 10:05:17 -0600
+From: Steven Owens &lt;uso01@mailhost.unidata.com&gt;
+To: ghudson@MIT.EDU
+Cc: coldstuff@MIT.EDU
+In-Reply-To: ghudson@MIT.EDU's message of Fri, 12 Nov 93 23:47:42 EST &lt;9311130447.AA13363@deathtongue.MIT.EDU&gt;
+
+
+Question;  a friend wants to set up a BBS running a MUD-style game based
+on Republican Rome (i.e. with senators and such).  I'm kinda trying to
+push him towards ColdMUD ('cause I think it's cool).  So, 
+
+1) will ColdMUD run on an Intel box running Linux (and if so, what
+would you recommend as a minimum/medium configuration to support, oh,
+6 players for development, or 64 players for eventual public use?)
+
+2) what are the usage restrictions on ColdMUD?  He's thinking in terms
+of running a pay-access BBS with a well-developed game (apparently he's
+seen it work elsewhere with somewhat idiotic games, so...).  
+
+Steven J. Owens
+uso01@unidata.com
+</PRE>

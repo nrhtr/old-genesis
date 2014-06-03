@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [351] in "Coldmud discussion meeting"</TITLE>
+<H1>[351] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?351"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="350"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="352"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="352"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="352"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>A thought</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jun 18 16:06:12 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Sat, 18 Jun 1994 14:01:58 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+This hit me last night.  Why hardcode which objects can call a builtin?  Rather
+than doing that set it up so every builtin can be bound to an object.  Then
+upon startup the first method bound is the one which binds the others, from
+there all the "system" methods are bound to $sys (or whatever, perhaps
+connection ones would be bound to a different one).  This would be much more
+flexible and would allow for tight creation of in-db thunks (i.e. have a
+$object.to_dbref() which would be a thunk for get_name() etc).  Anyhow.
+</PRE>

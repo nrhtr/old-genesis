@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [408] in "Coldmud discussion meeting"</TITLE>
+<H1>[408] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?408"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="407"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="407"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="407"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="409"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: request for info</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Sep 14 19:03:46 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Wed, 14 Sep 1994 16:59:47 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Several people are developing it, although I don't know of a single 'official'
+source anymore.  There is going to be a coldmudII which uses the same db format
+(at least he says it will stay the same), but which is in C++ and is basically
+written from scratch again (Colin/SamIAm is doing this one).  Jordan is nearly
+finished with adding fork()/ etc.  Other than that there really isn't anything
+left to develop.  The coldmud driver is a beautiful thing and is clean.
+</PRE>

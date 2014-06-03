@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [453] in "Coldmud discussion meeting"</TITLE>
+<H1>[453] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?453"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="442"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="452"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="452"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="454"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment, while (etc)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep 24 16:27:52 1994
+)</H3>
+<PRE>
+Date: Sat, 24 Sep 1994 16:22:47 -0400
+From: Quinn Avery &lt;quinn@Access.Mountain.Net&gt;
+To: ghudson@MIT.EDU, stewarta@netcom.com
+Cc: BRANDON@cc.usu.edu, coldstuff@MIT.EDU
+
+:| Okay, I'm done for now.  A final note: "with handler" is there for
+:| readability.  You can reclaim one of the keywords if you like, but
+:| I think it will make the catch construct less readable for new
+:| programmers (although "handler" alone is pretty reasonable).
+
+I think 'catch {} with {}' is a lot more readable than
+        'catch {} handler {}'.
+
+My vote for the former.
+
+To whomever's listening/hacking...
+
+-Q
+</PRE>

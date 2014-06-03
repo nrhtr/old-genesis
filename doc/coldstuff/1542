@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [1542] in "Coldmud discussion meeting"</TITLE>
+<H1>[1542] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1542"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1541"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1541"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1541"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1543"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Locking</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan 20 22:34:13 2000
+)</H3>
+<PRE>
+From: rozzin@geekspace.com (Joshua Rosen)
+Date: Thu, 20 Jan 2000 22:16:44 Eastern Standard Time
+To: coldstuff@cold.org
+In-Reply-To: &lt;Pine.LNX.4.04.10001201138520.25038-100000@redwood.tagl.com&gt;
+Reply-To: coldstuff@cold.org
+
+&gt;How does one lock objects in ColdCore?
+
+Lock? Like preventing someone from picking them up, or like file-locking?
+I believe that there's a :lock setting on objects, for the former, and the trust system.
+
+object-locking like file-locking is interesting....
+
+
+</PRE>

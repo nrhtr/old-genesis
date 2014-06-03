@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [185] in "Coldmud discussion meeting"</TITLE>
+<H1>[185] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?185"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="184"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="186"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>types</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 29 16:41:28 1994
+)</H3>
+<PRE>
+Date: Tue, 29 Mar 1994 14:28:30 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+We were just thinking odd thoughts the other day, and I suddenly thought it
+would be nice if you could "link" an object with a data type, and then be able
+to use that data type as you would a frob.  For example, say I like $list to
+all 'list data types, I could do:
+
+   vlist = [$obj, $obj, $obj];
+   vlist = vlist.map('name)
+
+which would be the same as currently typing:
+
+   vlist = $list.map(vlist, 'name);
+
+Anyhow, what made me think of this was something Jordan (Chaos) said a long
+time ago, and just the odd thoughts of the evening.  Right now it would take
+about ---&gt; &lt;--- this much core modification to adjust, as 99% of the utility
+object methods already require the data type to be modified as the first
+element.
+
+On another note, is Greg waking from the dead?  Are we going to be expecting a
+newer version of ColdMUD? (current is 0.10.1)...?
+
+-Brandon (the Lynx)
+</PRE>

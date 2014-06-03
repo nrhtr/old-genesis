@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1017] in "Coldmud discussion meeting"</TITLE>
+<H1>[1017] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1017"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1016"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1018"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1018"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1018"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Decompiler bug.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jun 11 20:25:16 1996
+)</H3>
+<PRE>
+Date: Tue, 11 Jun 1996 17:07:56 -0700
+From: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@cold.org
+
+if (foo)
+    ;
+
+
+Decompiles to
+
+if (foo)
+
+
+Note the missing semi-colon. no no no, bad bad bad.
+
+JK
+-- 
+*******************************************************************
+Jeff Kesselman                   *       TEN = National Play
+Senior Game Integration Engineer * "If it ain't at least national,
+Total Entertainment Network      *   Then it ain't the internet!"
+*******************************************************************
+</PRE>

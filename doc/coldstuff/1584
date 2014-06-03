@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [1584] in "Coldmud discussion meeting"</TITLE>
+<H1>[1584] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1584"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1583"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1585"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>XidusCore</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 30 01:41:06 2000
+)</H3>
+<PRE>
+Date: Mon, 29 May 2000 22:35:48 -0700 (PDT)
+From: Jeremy Weatherford &lt;xidus@xidus.net&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+
+Hello,
+
+I'm currently working on building a new ColdC core from the ground up.
+It isn't based on anything in particular, really, except for the sum of my
+experiences with text-based games.  I'm still pretty early in development,
+but I'm starting to get some usable code.  If someone else is working on
+or interested in designing their own core, they might be able to pick up
+some tips from what I already have.
+
+It's not really usable enough right now to even warrant a release, but the
+source is available for anyone interested in looking.
+
+I currently have:
+Reasonably well-done network code, a flexible command parser, commands
+for editing and poking code, and concept of users, places, and things.
+
+Major things I don't have include:
+Permissions and ownership (ack!), moving, manipulating things,
+communicating.
+
+Doesn't sound like much, considering that it's already over 2000 lines of
+ColdC.  &lt;g&gt;  Still, it might help somebody out.  The parser and the
+network code could be especially useful.  I'll do a first release when I
+get to a point where people can actually create environments and play with
+it.  For now, just contact me if you're interested in staring at the
+textdump  (even if it does compile for you, there's no documentation
+yet.  ;)
+
+Oh... and if anybody can think of a better name for it than XidusCore,
+please let me know.  I've already thought of AlbaCore, that's out.  ;)
+
+Happy hacking,
+Jeremy Weatherford
+xidus@xidus.net
+http://xidus.net
+
+</PRE>

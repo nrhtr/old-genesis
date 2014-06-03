@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [1403] in "Coldmud discussion meeting"</TITLE>
+<H1>[1403] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1403"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1400"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1402"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1402"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1404"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1404"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1404"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] A couple of coldcore mail list questions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan 12 17:53:48 1998
+)</H3>
+<PRE>
+From: maddog@best.com
+In-Reply-To: &lt;Pine.BSF.3.96.980112132544.18217A-100000@roguetrader.com&gt; from Brandon Gillespie at "Jan 12, 98 01:30:33 pm"
+To: coldstuff@cold.org
+Date: Mon, 12 Jan 1998 14:46:11 -0800 (PST)
+
+Brandon Gillespie wrote:
+&gt; On Sun, 11 Jan 1998, Frank Crowell wrote:
+&gt; &gt; 1. How do I create a new mail list on Coldcore.  I tried @new and @spawn
+&gt; &gt; on $mail_list, but that wasn't the right approach.
+&gt; 
+&gt; Hmm, @spawn or @new should both work.  Infact, it just did work:
+&gt; 
+&gt; % @spawn $mail_list
+
+oh oh.  I get:
+	the mail_list ($mail_list) is not a fertile object.
+	No capable parents.
+
+I know that you guys talked about this fertile stuff but I said "heck...
+i'll never have to know this."  Is this a thing that is turned on/off like
+the core so that you can't spawn at the shallow end of the pool unless 
+you are fertile?
+
+
+
+As for the SMTP mail relay stuff, my eyes got crossed when I looked at it.
+I think it involves me doing something that Mudservices would not like for
+me to do.
+
+frank
+
+
+-- 
+________________________________________________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+</PRE>

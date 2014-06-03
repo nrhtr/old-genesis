@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [364] in "Coldmud discussion meeting"</TITLE>
+<H1>[364] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?364"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="361"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="362"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="363"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="365"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="368"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="368"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: changes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun 30 18:59:27 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Thu, 30 Jun 1994 16:43:59 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt;&gt;  conn_assign()           =&gt; assign_connection()
+&lt; Can this be reassign_connection?
+
+That sounds good.
+
+&lt;&gt;  filename 'textdump'     =&gt; 'text_dump' (to fit with text_dump())
+&lt; Can we change text_dump() to textdump() instead?
+
+Well, I thought of that, but most function names have underscores for spaces,
+AND 'binarydump()' (which would also be changed for consistancy) doesn't feel
+very good...
+
+We could call it 'coldmud.dump' or something (or whatever arg 0 is + .dump).
+
+&lt; Sounds good. I didn't realize you had taken over development of the ColdMUD
+&lt; 'driver'.
+
+Never said I was taking over the development of ColdMUD, I just feel these
+changes are very needed, and since they are trivial to make I am.  If people
+wish to use the Cold Dark core I can give them a patch, actually I will
+probably just have a CDC version of the latest source (whatever that is), which
+is compatable in this format.
+
+&lt; Perhaps you and Colin should take new names for your versions, so
+&lt; as to avoid confusion. 
+
+I thought Colin was net.dead
+
+&lt; What else are you changing if anything?
+
+Oh, I took out dictionaries, and symbols, and hardcoded the parser in the
+driver.
+
+ /\    Brandon Gillespie    &lt;a href="http://www.usu.edu/~brandon/"&gt;me&lt;/a&gt;  /\
+ \/ "Luke, at that speed do you think you'll be able to pull out in time?" \/
+</PRE>

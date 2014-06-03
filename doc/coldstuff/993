@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [993] in "Coldmud discussion meeting"</TITLE>
+<H1>[993] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?993"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="992"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="994"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] ice.cold.org is up (Cyrix 6x86 p150+)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May  8 23:02:18 1996
+)</H3>
+<PRE>
+Date: Wed, 8 May 1996 20:42:17 -0600
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Yup, I just gave ice.cold.org a brain transplant, it is now running on a
+Cyrix 6x86 p150+ chip (120mhz) on a triton PCI/ISA board--we are running
+on 16MB non-parity ram right now (I'm unsure as to potential problems).
+There are still a touch of slowdowns (noticeable only to me :) because
+our root filesystem is an OLD IDE HD.  This lies in our SCSI controller
+which doesn't allow booting to a SCSI device (it is also a 16bit ISA
+card).  If anybody has a PCI F&amp;W SCSI controller they feel up to donating,
+I can swap drives for a F&amp;W SCSI-2 conner 1GB drive ;)
+
+TCD and all of the regular services are online again.
+
+-Brandon Gillespie
+</PRE>

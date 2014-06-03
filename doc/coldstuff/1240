@@ -1,0 +1,69 @@
+<HEAD><TITLE>discuss@charon: [1240] in "Coldmud discussion meeting"</TITLE>
+<H1>[1240] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1240"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1235"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1239"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1239"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1241"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1241"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1241"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] public/private/protected object variables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar  2 16:33:35 1997
+)</H3>
+<PRE>
+Date: Sun, 02 Mar 1997 13:28:33 -0800
+To: Brandon Gillespie &lt;brandon@cold.org&gt;, Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+From: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+Cc: coldstuff@cold.org
+
+At 12:28 PM 3/1/97 -0700, Brandon Gillespie wrote:
+&gt;On Sat, 1 Mar 1997, Jeff Kesselman wrote:
+&gt;&gt; Um, 
+&gt;&gt; My comment is you convinced me quite awhile back that absolute
+&gt;&gt; incapsulation is a good thing.
+&gt;&gt; I've never found the real need to break it, there was always a reasonable
+&gt;&gt; encapsulated alternative... the ONLy time i thought itw as trouble was that
+&gt;&gt; members couldn't be accessed easily for modification external debugging
+&gt;&gt; tools... whiel that still MIGHT be an issue, I certainly foudn on
+&gt;&gt; retrospect perfectly resonable ways to do what I was trying to do with
+&gt;&gt; MUDEDIT.
+&gt;&gt; 
+&gt;&gt; I guess I'ld have to say I think its a bad ideas. I think its dilutes the
+&gt;&gt; strengths of COldC-- oen of which is that it breaks your sloppy C++ habits
+&gt;&gt; and FORCES yo uto learn how to write really good object orinted code.
+&gt;&gt; 
+&gt;&gt; Opinionated as always,
+&gt;
+&gt;But this isn't breaking the encapsulation--it is simply changing the
+&gt;default value when a specific instance is not defined.  The variable still
+&gt;can only be assigned-to/referenced by the defining object.  For a better
+&gt;explanation I'll give the example given to me:
+&gt;
+&gt;$thing has:
+&gt;   ,weight
+&gt;   ,mass
+&gt;   ,integrity
+&gt;
+&gt;derived is a $knife, which changes weight, mass and integrity for a
+&gt;generic sword, and adds a 'sharpness'.
+&gt;
+&gt;If you want a specific instance of a knife you have to basically reset all
+&gt;of the $thing values to be the same as $knife--when it'd be easier just to
+&gt;make it a public variable (i.e. the 'default' value is that of the first
+&gt;instance in the ancestor tree)--and only change what you care about.
+
+Ah, i misunderstood, sorry. I'm very busy and doign things on teh fly here...
+
+I do thin kthough that public makes people think of public as in C++ and
+JAVA, as I did, and therefor is the wrong term.
+
+"inherited" or "initialized" might be a better term. (I liek the latter
+best as beign the clearest.)
+
+JK
+
+</PRE>

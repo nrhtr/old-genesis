@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [367] in "Coldmud discussion meeting"</TITLE>
+<H1>[367] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?367"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="366"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="368"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>more changes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jul  1 02:58:32 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Fri, 01 Jul 1994 00:55:26 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Just stumbled across a few more I would like to bounce off people:
+
+  set_name()   =&gt; add_dbref()
+  del_name()   =&gt; del_dbref()
+  get_name()   =&gt; get_dbref()
+
+I would like to have set_ go to add_ because you can have more than 1 dbref to
+an object, so "setting" it is somewhat inaccurate.
+
+(BTW, the reason I am doing this is not out of "preference" but because it
+makes the server much more clear).
+
+Oh, I am also working on rewriting the manual with these changes, and to make
+it high end hypertext, which is why I'm suddenly bringing them up :b  (it isn't
+finished yet, dont ask).
+
+ /\    Brandon Gillespie    &lt;a href="http://www.usu.edu/~brandon/"&gt;me&lt;/a&gt;  /\
+ \/ "Luke, at that speed do you think you'll be able to pull out in time?" \/
+</PRE>

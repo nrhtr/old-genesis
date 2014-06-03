@@ -1,0 +1,64 @@
+<HEAD><TITLE>discuss@charon: [1237] in "Coldmud discussion meeting"</TITLE>
+<H1>[1237] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1237"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1235"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1236"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1236"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1238"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1238"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1241"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] public/private/protected object variables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar  1 13:34:06 1997
+)</H3>
+<PRE>
+Date: Sat, 01 Mar 1997 10:34:10 -0800
+To: Brandon Gillespie &lt;brandon@cold.org&gt;, coldstuff@cold.org
+From: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+
+Um, 
+My comment is you convinced me quite awhile back that absolute
+incapsulation is a good thing.
+I've never found the real need to break it, there was always a reasonable
+encapsulated alternative... the ONLy time i thought itw as trouble was that
+members couldn't be accessed easily for modification external debugging
+tools... whiel that still MIGHT be an issue, I certainly foudn on
+retrospect perfectly resonable ways to do what I was trying to do with
+MUDEDIT.
+
+I guess I'ld have to say I think its a bad ideas. I think its dilutes the
+strengths of COldC-- oen of which is that it breaks your sloppy C++ habits
+and FORCES yo uto learn how to write really good object orinted code.
+
+Opinionated as always,
+
+JK
+
+At 09:09 PM 2/28/97 -0700, Brandon Gillespie wrote:
+&gt;Back when I added public/private/protected methods I considered diong the
+&gt;same with variables.  Once again I'm considering it--simply because the
+&gt;need for such a beast is more and more becoming a need for some people. 
+&gt;What I'm thinking of implementing is three types of object variables.  We
+&gt;would still keep encapsulation in that only the definer can access
+&gt;variables and instances it defines.  What we would be expanding on is the
+&gt;default value for these instances (i.e. what is inherited and how). 
+&gt;Basically: 
+&gt;
+&gt;        private     -- act as they do now--if no instance is defined
+&gt;                       simply return zero.  This would be the default
+&gt;        protected   -- if there is no instance, use the _definers_
+&gt;                       instance (and only the definers)
+&gt;        public      -- get the first instance in the ancestor tree--using
+&gt;                       the same search requirements as for methods.  We
+&gt;                       would likely want a cache like with methods..or not.
+&gt;
+&gt;Comments?
+&gt;
+&gt;-Brandon Gillespie
+&gt;
+&gt;
+
+</PRE>

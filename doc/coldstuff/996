@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [996] in "Coldmud discussion meeting"</TITLE>
+<H1>[996] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?996"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="995"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="995"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="995"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="997"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="997"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1004"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Memory</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 15 10:27:22 1996
+)</H3>
+<PRE>
+Date: Wed, 15 May 1996 14:56:12 +0200
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+
+
+Ok, I got tired from tracking (even with nifty Sun memory checker...)
+This snippet with faithfully reproduce memory problem:
+
+;;var i,l; l=[]; for i in [1 .. 1000] l=[@l, ctime()]; for i in [1 .. l.length()] l=l.replace(i," ");
+
+Allocated blocks include stuff that came from ctime() and remnants of
+the original list l. My suspect is l.replace() call (because taking the
+stuff out of this program makes it stop leaking).
+
+I have also found that the leak in $programmer._decompile() is caused
+essentially by this (code is similar to the example above:
+
+  code = obj.decompile(method);
+  if (nums) {
+      code = code.numbered_text();
+  } else {
+      for line in [1 .. code.length()]
+          code = code.replace(line, "  " + code[line]);
+  }
+
+Calling obj.decompile in a loop won't cause any trouble. Lynx, ideas?
+
+	Jenner
+</PRE>

@@ -1,0 +1,94 @@
+<HEAD><TITLE>discuss@charon: [1474] in "Coldmud discussion meeting"</TITLE>
+<H1>[1474] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1474"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1473"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1475"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1475"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1484"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>system monitoring</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 21:05:18 1999
+)</H3>
+<PRE>
+From: "Charles Lance Woodson" &lt;AE-Wauric@aephirsden.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Tue, 16 Nov 1999 13:09:47 -0800
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0125_01BF3033.DBA5BA40
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Lately I've been adding and removing a lot of monitoring messaging to =
+coldcore systems (CML compiler, setting system) at Aeternity so that I =
+could easily see how they work.  The thought occured to me that a =
+monitoring system might be helpful to others coming behind me that would =
+likely wind up doing the same thing.  Before I go any further, let me =
+ask if there is currently any monitoring system in place that I simply =
+haven't discovered?
+
+If the answer to that is no, does anyone have suggestions as to what the =
+best concept for a monitoring system would be?  I was thinking of using =
+@set to allow users to hook themselves into an event for the specific =
+system.  The system itself would then need to be modified to send the =
+appropriate messaging to users hooked to the event.  Would such a =
+monitoring system be a major performance impactor?  If this isn't =
+acceptable, what about simply sending .announce() calls from different =
+systems to a monitoring $place?
+
+Lance
+
+------=_NextPart_000_0125_01BF3033.DBA5BA40
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META content=3Dtext/html;charset=3Diso-8859-1 =
+http-equiv=3DContent-Type&gt;
+&lt;META content=3D"MSHTML 5.00.2314.1000" name=3DGENERATOR&gt;
+&lt;STYLE&gt;&lt;/STYLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY bgColor=3D#ffffff&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;Lately I've been adding and removing&amp;nbsp;a lot=20
+of&amp;nbsp;monitoring messaging to&amp;nbsp;coldcore systems&amp;nbsp;(CML =
+compiler,=20
+setting system) at Aeternity so that I could easily see how they =
+work.&amp;nbsp; The=20
+thought occured to me that a monitoring system might be helpful&amp;nbsp;to =
+others=20
+coming behind me that would likely wind up doing the same=20
+thing.&amp;nbsp;&amp;nbsp;Before I go any further, let me ask if there =
+is&amp;nbsp;currently=20
+any monitoring system in place that I simply haven't =
+discovered?&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;If the answer to that is no,&amp;nbsp;does anyone have =
+suggestions=20
+as to what the best concept for a monitoring system would be?&amp;nbsp; I =
+was=20
+thinking of using @set to allow users to hook themselves into an event =
+for the=20
+specific system.&amp;nbsp;&amp;nbsp;The system itself would then need to be =
+modified to=20
+send the appropriate messaging to users hooked to the event.&amp;nbsp; Would =
+such a=20
+monitoring system be a major performance impactor?&amp;nbsp; If this isn't=20
+acceptable,&amp;nbsp;what about simply sending .announce() calls from =
+different=20
+systems to a monitoring $place?&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;Lance&lt;/FONT&gt;&lt;/DIV&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+
+------=_NextPart_000_0125_01BF3033.DBA5BA40--
+
+</PRE>

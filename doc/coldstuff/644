@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [644] in "Coldmud discussion meeting"</TITLE>
+<H1>[644] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?644"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="643"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="645"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>lost objects</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan 21 12:12:42 1995
+)</H3>
+<PRE>
+From: crag@serial.io.com (Crag@JHM)
+To: coldstuff@MIT.EDU
+Date: Sat, 21 Jan 1995 10:43:05 -0600 (CST)
+
+I didn't finish reading the message this is a reply to because I know what it
+ is. In the textdump (and maybe binary) reading code object's dirty bit isn't
+ set so that the cache never writes out more than it can hold on startup.
+
+The best fix is to change object_new to set the dirty bit. This also fixes
+ the following:
+
+@program $sys.test_create_bug
+var o_list, i, n;
+
+for i in [1..1000]
+  o_list = [create()];
+
+for i in (o_list) {
+  if (!valid(i)) {
+    o_list = listdelete(o_list, i);
+    n = n + 1;
+  } else {
+    destroy(i);
+  }
+}
+  
+return n;
+.
+
+n should be 0 on a working system but is in the hundereds on a 0.12.0 system.
+
+The offending code is in object.c I believe.
+
+My oppologies for not mentioning or posting a fix for this when I knew about it
+ and the fix (last November I think).
+
+Crag / Robert
+</PRE>

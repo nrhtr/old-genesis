@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [646] in "Coldmud discussion meeting"</TITLE>
+<H1>[646] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?646"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="645"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="647"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>lost objects, the saga continues</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan 24 07:22:55 1995
+)</H3>
+<PRE>
+From: azuki@di.uminho.pt (Rui Mendes)
+To: coldstuff@MIT.EDU
+Date: Tue, 24 Jan 1995 13:05:11 +0100 (MET)
+
+Following Crag's advice, i modified object_new to set the dirty bit. I haven't
+tested his program yet to see if it works differently but i can garantee that
+it doesn't solve my problem. Furthermore, i found some interesting results
+about textdump which follow, the following results happen every time after a
+reboot. These results are from a Solaris machine(SunOS mes03 5.3 Generic_Patch
+sun4m sparc)
+
+Size of the textdump before shutdown
+490780 Jan 23 15:00 textdump
+First textdump after shutdown
+230646 Jan 23 15:35 textdump
+Following textdumps.
+389601 Jan 23 15:37 textdump
+493183 Jan 23 15:38 textdump
+493183 Jan 23 15:39 textdump
+
+All the textdumps after the last one depicted here have the same size. This
+happened every time i tried and even after i made the changes to object.c on
+the function object_new. What puzzles me is that it does not happen on
+DG/UX... At least under the same circomstances... So I would not think it is
+an algorithm error... At least it would be a machine dependent one...
+-- 
+ -- Rui Mendes
+</PRE>

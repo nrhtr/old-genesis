@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1449] in "Coldmud discussion meeting"</TITLE>
+<H1>[1449] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1449"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1448"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1450"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1450"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1450"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Genesis bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Aug  2 03:44:21 1999
+)</H3>
+<PRE>
+From: Levi Pearson &lt;levi@roguetrader.com&gt;
+To: coldstuff@cold.org
+Date: Mon, 2 Aug 1999 01:15:00 -0600 (MDT)
+Reply-To: coldstuff@cold.org
+
+  The Camlann server, running genesis 1.1p4, has suffered a couple of nasty
+bugs.  First, invalid objects showed up in some children() listings.  One of
+these was a child of $login_interface, I believe.  There were a couple of
+others, but there was a crash before I could track down where they were.
+
+  The second problem showed itself when I tried to restore the recent backups.
+For backups up to a couple of months old, coldcc -d would panic and dump core,
+complaining about an invalid data type.  Seems to be some sort of minor db
+corruption, but the corruption existed in backup dbs up to 2 months old and it
+never caused a crash in that time.
+
+			--Levi
+
+</PRE>

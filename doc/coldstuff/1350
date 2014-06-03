@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1350] in "Coldmud discussion meeting"</TITLE>
+<H1>[1350] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1350"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1347"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1348"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1349"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1351"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1353"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1354"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] FIX: $english_lib:indef_article(), ColdCore 3.0a9.02</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 29 01:35:08 1997
+)</H3>
+<PRE>
+To: "Luther, Clay" &lt;clay@selsius.com&gt;
+cc: "ColdStuff Mailing List (E-mail)" &lt;coldstuff@cold.org&gt;
+In-reply-to: Your message of "Thu, 28 Aug 1997 22:25:03 CDT."
+             &lt;D17232971415D11196C700600819851547E1@raphaelo.paradise.selsius.com&gt; 
+Date: Thu, 28 Aug 1997 22:27:31 -0700
+From: Brad Roberts &lt;braddr@puremagic.com&gt;
+
+&gt; @program $english_lib.vowel_exception() +access=pub
+&gt;   arg word;
+&gt;   var prefix, word1;
+&gt;   
+&gt;   word1 = split(word, "\s+")[1];
+
+I'd use: word1 = word.word(1);
+
+&gt;   return match_regexp(word1, vowel_exceptions) ? 1 : 0;
+&gt;   
+&gt;   // $#Edited: 28 Aug 97 22:19 $user_cle
+&gt;   // $#Edited: 28 Aug 97 22:21 $user_cle
+&gt; 
+
+
+</PRE>

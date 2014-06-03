@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [833] in "Coldmud discussion meeting"</TITLE>
+<H1>[833] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?833"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="832"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="832"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="832"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="834"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="834"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="835"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: connections</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Oct 17 21:40:26 1995
+)</H3>
+<PRE>
+Date: Tue, 17 Oct 1995 18:14:10 -0700 (PDT)
+From: weber@tungsten.seattle.geoworks.com (Eric Weber)
+In-reply-to: &lt;9510172126.AA04556@avon.declab.usu.edu&gt;
+To: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+Cc: coldstuff@pippin.ece.usu.edu
+
+
+Gillespie Brandon James writes:
+ &gt; I did consider that, but the question has to be asked: why? 
+
+The "why" is that it is much easier to get fine grain control with
+in-db policies then in-server policies.  For example, if I want player
+objects to only have one connection at a time, but allow unlimited
+connections to a web object, I could do so by putting the appropriate
+things in the respective methods.  If the server flat prohibits
+multiple connections, I lose.  Obviously, I could work around this by
+creating child objects for each connection, and in fact that may be a
+better design anyway, but on the other hand I may have a really cool
+way to handle multiple data streams from a single object.
+
+To take a different approach, I argue that your dilemna over whether to
+disallow the second connection or force the first connection out is a
+perfect example of why this should be an in-DB issue.  Whatever
+decision you make, there will be some situations where it isn't the
+most appropriate model.
+
+To paraphrase the X philosophy, the server should provide mechanisms,
+and leave policy to the database.  Just as parsing and security is
+handled by the DB, so should regulation of connections.
+
+-- Eric
+</PRE>

@@ -1,0 +1,69 @@
+<HEAD><TITLE>discuss@charon: [437] in "Coldmud discussion meeting"</TITLE>
+<H1>[437] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?437"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="432"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="436"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="436"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="438"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: code formatting in-db</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 19:20:52 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: deforest@netcom.com (Robert de Forest)
+Date: Thu, 22 Sep 1994 15:44:08 -0700 (PDT)
+Cc: coldstuff@netcom.com
+In-Reply-To: &lt;199409221807.LAA25521@netcom14.netcom.com&gt; from "Robert de Forest" at Sep 22, 94 11:05:11 am
+
+&gt; @program me.example
+&gt;  arg x, y, z;
+&gt;  
+&gt;  // FORMATTED: info starts at 5
+&gt;  .tell(x, y, z);
+&gt;  // FMT_INFO: line_break, line 4, col 10
+&gt;  // FMT_INFO: indent, line 5, spaces 6
+&gt;  ...
+&gt;  // END_FMT
+&gt; .
+
+Ok, I stand corrected, but ICK! :)
+
+Actually, what I suggested back when this came up was two things.  a) for
+parsing, a newline should be treated like any other whitespace.  I still
+(strongly) think think this should be true in any case (except for comment
+termination, of course).  b) when compiling, a
+newline is stored as a "newline" opcode in the compiled code.  This opcode
+would have no function during execution but to increment the line counter (for
+traceback reports), and would decompile into a newline in output code.
+
+The only drawback to this would be that each line would take one more tick when
+executing, but given that it's almost a NOOP, and ticks aren't as precious in
+ColdMUD as they are in MOO, this isn't as big a deal as it might be, I think.
+This would also avoid a problem which the in-DB method still has, which is
+reporting line numbers correctly in tracebacks.  With a "linecounter-increment"
+opcode, this would be guaranteed to be accurate.
+
+(the other thing, of course, is that an opcode takes up a helluva lot less
+space than lots of long comment strings would, reducing DB size considerably if
+this type of thing was used for lots of methods)
+
+I'm actually somewaht undecided about whether indenting should be controllable,
+however..  If we go too far in this direction we'll have everybody programming
+with a different style and no two people's code will look at all the same,
+which I've always hated about C in particular (it's really nice to be able to
+look at anybody's code and know it's going to be in a format you can understand
+immediately and work with).
+
+-R (waiting for another "defence against fascism" post from Quinn about all
+this now :)
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+
+</PRE>

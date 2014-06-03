@@ -1,0 +1,95 @@
+<HEAD><TITLE>discuss@charon: [425] in "Coldmud discussion meeting"</TITLE>
+<H1>[425] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?425"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="424"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="426"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="426"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="429"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>implementing 'atomic' designation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Sep 21 21:19:52 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: coldstuff@MIT.EDU
+Date: Wed, 21 Sep 1994 18:08:53 -0700 (PDT)
+
+Well, as people have probably already surmised by now I'm getting back into the
+ColdMUD arena with a vengeance :).  I've got a few more server mods I'd like to
+see and will probably be looking into unless people have real problems with
+them..
+
+First, it seems to me that now that we have the ability to pause and
+suspend, somebody should also implement the ability to designate code blocks as
+being atomic pretty soon to go with it, before we end up with a lot of code
+that won't adapt well to that way of doing things when it finally gets
+implemented (and I do think it should be)..
+
+I'm not really sure how Greg intended the atomic designation to work from a
+linguistic standpoint (Greg, you out there?  got any suggestions?).  I know he
+reserved some keywords for it.  My inclination would be to do it something
+like:
+
+  atomic statement;
+
+and
+
+  atomic {
+    statements
+  }
+
+(so that 'atomic' is syntactically and procedurally equivalent to an
+'if (1)', just with the additional effect that the associated statement is
+executed atomically)..  The other question is how suspending operations should
+act when they're attempted in an atomic execution state..  suspend() I suppose
+would have to throw an error in any case.  pause() should presumably do
+likewise (the alternative being to simply continue on without pausing, but this
+would probably be bad).
+
+I think I'll look into what's required to do this next unless someone else is
+already working on it.  Any comments about my proposed syntax/results?
+
+Also, there are still a couple of operators I'd like to see in the language in
+some form or other (though I am somewhat negotiable on these points).  Would
+people have objections to creating an assignment-expression operator which
+is distinct from simple assignment (which isn't an expression), for use in
+things like while loops? (If not, what should it be?  ':=' I suppose is a
+possibility but I suppose Pascal-types might end up using that in place of the
+'=' operator all the time, thus eliminating the protective aspects of normal
+assignment..  hmm..).  The only real reason I want such a thing is for while
+loops, but I really can't think of any other way to deal with them cleanly..
+
+Although.. I suppose an alternative might be to introduce a ',' (comma)
+operator, like in C ('foo, bar, baz' executes the foo statement, the bar
+statement and the baz statement and returns the value of the last (baz)
+statement as the value of the entire expression)..  That would allow things
+like 'while (x = foo(), x) { ... }', etc.
+
+The other thing that I think would be nice would be an operator (for now I'll
+call it '??', tho I'm not really sure about what it should actually look like)
+such that:
+
+  foo = bar ?? baz;
+
+would be equivalent to:
+
+  x = bar;
+  foo = (type(x) != 'error) ? x | baz;
+
+(i.e. return the value of bar unless it's an error value, in which case return
+baz instead.  This makes it work similarly to ||, but testing error condition
+rather than truth value.  Thus a lot of common 'catch any' conditions could be
+written a lot more cleanly as things like 'foo = (| bar |) ?? baz;', etc.)
+
+Anyway, comments/suggestions anyone?
+
+-R
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+</PRE>

@@ -1,0 +1,61 @@
+<HEAD><TITLE>discuss@charon: [567] in "Coldmud discussion meeting"</TITLE>
+<H1>[567] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?567"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="565"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="566"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="566"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="568"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="568"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Assignment Operator.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  8 19:47:20 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Wed, 9 Nov 1994 05:40:50 -0500 (EST)
+From: colinm@colinm.ozemail.com.au (Colin McCormack)
+Reply-To: colinm@colinm.ozemail.com.au
+
+I've thought about this, and have a serious compromise suggestion:
+
+Make ':=' a synonym for '='.
+
+Then we can measure the relative productivity of people who use
+':=' over those who use '=' and finally stick a cork in whining
+of the form: `9/10 clueless programmers want '.
+I have no objection (as I've stressed time and again) to people
+voting with their feet (or even typing with them.)
+
+[Satire mode on, from this point.]
+
+We could also make '=:' a synonym for both, then the keyboard-challenged
+(or differently coordinated) could be protected from their own dyslexia.
+
+In fact, I think there's a strong argument for an entirely new programmer
+class, which accepts a much more general syntax as programmatic input:
+valid programs should have the same domain as String currently has.
+Unfortunately, the functionality of the language might have to be 
+constrained, a little.
+
+I look forward to the day when eval_cmd is as follows:
+
+@program $wannabe.eval_cmd
+  arg expr;
+
+  .tell("Yes, " + .name() + ", I think that \"" + expr + "\" is right!");
+.
+
+In the long run, we could incorporate stylistic tips, in what I like to
+call a but-clause, which might be implemented as a search for naked `='
+and consequent output:  .tell("But perhaps you should use `:=' instead
+of `=' for increased clarity.")
+
+I honestly believe this facility would solve many of the problems.
+
+Colin.
+
+</PRE>

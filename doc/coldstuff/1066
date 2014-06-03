@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1066] in "Coldmud discussion meeting"</TITLE>
+<H1>[1066] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1066"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1065"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1065"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1065"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1067"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Genesis Win32</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug 13 13:57:57 1996
+)</H3>
+<PRE>
+Date: Tue, 13 Aug 1996 11:35:47 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Robert Spier &lt;rspier@yoda.lmc.org&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;2.2.32.19960813181235.006aec8c@199.95.251.200&gt;
+
+&gt; Does anyone have a compiled Genesis version for Win32?
+&gt; 
+&gt; I noticed it in the Makefile, but don't have DJPP or GCC for my home box..
+
+I started a port to compile it in Visual C++, I have not yet gotten back 
+to it.  However, with the work I did it _may_ compile in the gnu stuff 
+for Win32 (just grab the whole package, shells and all at 
+www.windows95.com?).  However, you will first want to login to a unix 
+box, untar the distribution, run 'configure' for the unix box, cd src and 
+type 'make win32'.  Tar up the resulting files and move them to your 
+win32 box.  You _MUST_ edit src/include/config.h for the win32 box.  
+Other than that it _should_ be close to compiling.
+
+-Brandon Gillespie
+</PRE>

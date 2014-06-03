@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [753] in "Coldmud discussion meeting"</TITLE>
+<H1>[753] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?753"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="751"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="752"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="752"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="754"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="754"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="761"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: tCD and ColdX mailing lists</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jul 30 14:49:47 1995
+)</H3>
+<PRE>
+Date: Sun, 30 Jul 1995 12:49:06 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@paradise.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+&lt; Definitely the form:
+&lt;         open
+&lt;         read/write
+&lt;         close  
+&lt;         stat or exists/eof
+
+If this is the case, would you like to see connection io go the same route,
+where you have to ask for input on a connection?
+
+I dont know if I would like this or not, perhaps have both mechanisms going..
+(defined when you open the connection as intrusive/non-intrusive)
+
+I would like to make both work the same, because if done right there really
+shouldn't be a difference to the db...  (of course, intrusive files would
+just mean that every iteration of the main loop it would read a block in
+from the file)
+
+-Brandon
+</PRE>

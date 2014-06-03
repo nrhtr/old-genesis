@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1083] in "Coldmud discussion meeting"</TITLE>
+<H1>[1083] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1083"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1079"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1082"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1082"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1084"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1084"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1085"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Porting Woes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 28 12:36:18 1996
+)</H3>
+<PRE>
+Date: Wed, 28 Aug 1996 08:54:20 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;Pine.LNX.3.91.960827212747.5758C-100000@duracef.shout.net&gt;
+
+On Tue, 27 Aug 1996, Jeff Kesselman wrote:
+
+&gt; Well, Ive been playign with the windows port.
+&gt; 
+&gt; First problem is that gcc under Win95 expects 8.3 filenames because its
+&gt; basicly a DOS interface port of gcc (runs in a DSO box).
+&gt; 
+&gt; This means, with our current file names, we will NEVER compile
+&gt; under gcc.
+&gt; 
+&gt; Suggestions?  I coudl change the names but upgrading is gonna be a
+&gt; pain. It woudl be better is we went to 8.3 for all cold source....
+
+Uhrm, my original compile compiled everything with gcc in bash up to 
+net.c, where, it bombed on some network stuff I've since finished.  I 
+never did go back for a second attempt.  We never had any problems with 
+filename lengths.. (perhaps bash was doing something?)
+
+-Brandon
+</PRE>

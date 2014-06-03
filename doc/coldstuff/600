@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [600] in "Coldmud discussion meeting"</TITLE>
+<H1>[600] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?600"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="599"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="601"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="602"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="602"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>clear_parameter()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov 27 01:44:21 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Sat, 26 Nov 1994 22:42:41 -0800 (PST)
+
+My reason aginst: I don't see a need, the cost is the work of adding it plus
+ the possibility of adding it in a way which causes more bugs or something.
+
+I do NOT see this as a hole. It is something that is easily fixed in-db IF you
+ even care at all. I don't see it as a problem in the first place.
+
+If I saw it as a problem I would have written the in-db solution by now.
+
+Crag/Robert, not fixing it if it ain't broke.
+
+P.S. If you want this change so bad, make it and post the patch.
+</PRE>

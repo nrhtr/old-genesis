@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [347] in "Coldmud discussion meeting"</TITLE>
+<H1>[347] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?347"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="343"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="346"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="346"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="348"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="348"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="349"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: floating point</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jun  4 00:12:00 1994
+)</H3>
+<PRE>
+From: merlin@kernighan.cba.csuohio.edu (Randy Beiter)
+To: deforest@netcom.com (Robert de Forest)
+Date: Sat, 4 Jun 1994 00:10:40 -0400 (EDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199406031941.MAA04488@netcom.com&gt; from "Robert de Forest" at Jun 3, 94 12:41:58 pm
+
+&gt;  to be a nicer solution from a server development perspective. Besides,
+&gt;  I doubt very much that ColdMUD would be fast enough to be useful as a
+&gt;  simulation language. I think you'd be better off writing your simulation
+&gt;  in C or C++ and using someone's libraries.
+
+are you refering to coldmud's speed in particular, or do you include
+servers like moo, and etc in the statement that it isn't fast enough? i'm
+just curious if (and why, if so) you feel coldmud's speed to be inferior
+to say, moo.
+
+-merl
+
+
+</PRE>

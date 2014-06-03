@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [1007] in "Coldmud discussion meeting"</TITLE>
+<H1>[1007] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1007"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1006"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1006"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1006"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1008"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1008"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1009"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Re: Crashes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun  5 03:33:11 1996
+)</H3>
+<PRE>
+From: root@thelbane.brisnet.org.au (Dancer)
+To: silovic@srce.hr (Miroslav Silovic)
+Date: Wed, 5 Jun 1996 17:17:30 +1000 (AEST)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;199606042337.BAA21300@regoc.srce.hr&gt; from "Miroslav Silovic" at Jun 5, 96 01:37:40 am
+
+Since patching the server to p6, I've been getting fairly frequent
+crashes.
+I've got minimal postmortem info, but it seems that strdup() is being
+passed a NULL pointer fairly often. Anyone else getting this?
+
+
+&gt; 
+&gt; 
+&gt; I traced a bit through the program. I discovered the following:
+&gt; 
+&gt; First, my telnet sends ^C in character mode instead of the line mode, so
+&gt; ^C sequence it interpreted immediately.
+&gt; 
+&gt; Secondly, connection_read got only garbage from the connection (the
+&gt; sequence it actually read was 6, 255, 254, 255, 253, 6). This could be a
+&gt; telnet bug.
+&gt; 
+&gt; Thirdly, this is the only situation when core gets a line that is not
+&gt; terminated by CR/LF. I'm not sure this has been tested in any way.
+&gt; 
+&gt; Fourth, `[65,10,3].to_strings() =&gt; ["a",`[3]]
+&gt; (can we handle buffers in these lists? Especially if it terminates by a
+&gt; buffer?)
+&gt; 
+&gt; And lastly, when I kill my telnet, I get neatly disconnected, and my
+&gt; connection object destroyed. So I don't think that is the problem.
+&gt; 
+&gt; 	Miro
+&gt; 
+&gt; 
+
+</PRE>

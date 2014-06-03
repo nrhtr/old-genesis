@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [74] in "Coldmud discussion meeting"</TITLE>
+<H1>[74] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?74"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="73"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="73"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="73"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="75"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Porting, specifically to OS/2</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov 28 22:17:34 1993
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: deforest@netcom.com (Robert de Forest)
+Date: Sun, 28 Nov 93 19:10:51 PST
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199311282244.OAA12663@mail.netcom.com&gt;; from "Robert de Forest" at Nov 28, 93 2:44 pm
+
+Well, I dunno if anybody's done it, but porting it to OS/2 doesn't sound that
+insane.. I don't presently have the resources or the time to try it, but if
+someone does do it I'd be interested in looking at the results.
+
+What I'd suggest is picking up a copy of EMX or GCC/2 off of ftp-os2.cdrom.com
+(both are ports of the Gnu C compiler to OS/2.  EMX is designed primarily for
+porting things from unix, too (and is a pretty nice OS/2 compiler in its own
+right)), and starting from there..  any other unix development tools you might
+need are probably on ftp-os2, too.  shouldn't be that hard, it seems to me.
+
+-Richelieu
+-- 
+</PRE>

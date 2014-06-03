@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [1033] in "Coldmud discussion meeting"</TITLE>
+<H1>[1033] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1033"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1032"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1032"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1032"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1034"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1034"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1036"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] behaviour of localtime()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul 23 12:57:55 1996
+)</H3>
+<PRE>
+Date: Tue, 23 Jul 1996 11:19:52 -0500 (CDT)
+From: Brad Roberts &lt;braddr@puremagic.com&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.960723091352.19109A-100000@tombstone.sunrem.com&gt;
+
+
+&gt; Right now localtime works like:
+&gt; 
+&gt;     1. INTEGER time (same as returned by the function time()) 
+&gt;     2. INTEGER seconds (0-59) 
+&gt;     3. INTEGER minutes (0-59) 
+&gt;     4. INTEGER hours (0-23)) 
+
+I'd leave these time related ones alone..shifting these all up one 
+changes the meaning of the value and would require subtracting to print 
+out correctly, which is what you're trying to avoid having to do in the 
+first place..  The others I agree with.
+
+&gt;     5. INTEGER day of month (1-31) 
+&gt;     6. INTEGER month in year (0-11) 
+&gt;     7. INTEGER year 
+&gt;     8. INTEGER week day (0-6) 
+&gt;     9. INTEGER year day (0-365) 
+&gt;    10. INTEGER is daylight savings in effect? 
+&gt;    11. STRING time zone name 
+&gt; 
+&gt; Which is basically a raw dump of the C function localtime().  Because 
+&gt; Cold scales arrays starting at one rather than zero, I think I will change 
+&gt; it to add one to elements 2 - 9 (excluding the year and day of the month), 
+&gt; instead giving you:
+&gt; 
+&gt;     1. INTEGER time (same as returned by the function time())
+&gt;     2. INTEGER seconds (1-60)
+&gt;     3. INTEGER minutes (1-60)
+&gt;     4. INTEGER hours (1-24)
+&gt;     5. INTEGER day of month (1-32)
+&gt;     6. INTEGER month in year (1-12)
+&gt;     7. INTEGER year
+&gt;     8. INTEGER week day (1-7, Sunday=1)
+&gt;     9. INTEGER year day (1-366)
+&gt;    10. INTEGER is daylight savings in effect?
+&gt;    11. STRING time zone name
+&gt; 
+&gt; The reason for this is any likely use of localtime() in ColdC will 
+&gt; inevitably require you to add one to the value, so why not do it in 
+&gt; native code rather than interpreted code?
+&gt; 
+&gt; -Brandon Gillespie
+&gt; 
+</PRE>

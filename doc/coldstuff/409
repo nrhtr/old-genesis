@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [409] in "Coldmud discussion meeting"</TITLE>
+<H1>[409] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?409"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="408"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="410"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>coldmud dbs?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 15 10:52:27 1994
+)</H3>
+<PRE>
+From: vaps1wd@prism.gatech.edu (david d.)
+To: coldstuff@MIT.EDU
+Date: Thu, 15 Sep 1994 10:37:43 -0400 (EDT)
+
+I am curious to know if anyone has an operating coldmud db that 
+is open for business?  If so, I'd like to know the address so I
+could take a look at what has been done with it.
+
+Also, what is the best way to get started writing a coldmud db?
+I understand that this would probably be starting with writing
+a "textdump" that the server could read in, but I don't know the
+exact format for a textdump, so if anyone has any docs for this, 
+please point me in the right direction.
+
+Thanks much,
+-- david.
+
+</PRE>

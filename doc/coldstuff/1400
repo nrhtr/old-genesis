@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1400] in "Coldmud discussion meeting"</TITLE>
+<H1>[1400] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1400"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1399"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1401"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1401"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1404"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] A couple of coldcore mail list questions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 11 16:13:36 1998
+)</H3>
+<PRE>
+Date: Sun, 11 Jan 1998 13:14:25 -0900
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: coldstuff@cold.org
+
+1. How do I create a new mail list on Coldcore.  I tried @new and @spawn
+on $mail_list, but that wasn't the right approach.
+
+2. Is there a way to have mail to and from the cold server so that I
+could do stuff like frankc@maddog.com.  I see the $smtp object but I
+don't know how to use it.
+
+frank
+
+--
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+
+
+
+</PRE>

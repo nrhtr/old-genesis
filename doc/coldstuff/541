@@ -1,0 +1,64 @@
+<HEAD><TITLE>discuss@charon: [541] in "Coldmud discussion meeting"</TITLE>
+<H1>[541] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?541"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="540"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="540"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="542"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="542"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 13:26:42 1994
+)</H3>
+<PRE>
+From: frankc@netcom.com (Frank Crowell)
+To: coldstuff@MIT.EDU
+Date: Sun, 6 Nov 1994 10:26:08 -0800 (PST)
+In-Reply-To: &lt;199411042101.AA00504@crl4.crl.com&gt; from "Alex Stewart" at Nov 4, 94 01:01:50 pm
+
+&gt; 
+&gt; Up for Discussion
+&gt; -----------------
+&gt; Do-while syntax
+&gt;   This is my earlier suggestion of adding an optional "do" component to the
+&gt;   existing "while" syntax, such that the syntax becomes:
+&gt;     [do &lt;statement&gt;] while (&lt;expr&gt;) &lt;statement&gt;
+&gt;   As far as I can tell, we never came to a real consensus as to whether this
+&gt;   would be a good thing for me to add or not, so I'm listing it here..
+&gt;   Basically, this would allow for test-at-end loops, and test-in-middle for
+&gt;   that matter, along the following lines:
+&gt;     do
+&gt;       x = x + 1;             // Do our processing first,
+&gt;     while (x &lt; 3);           // and then test at the end of the loop
+&gt; 
+&gt;     do {
+&gt;       .call_this_method();   // do some prerequisite stuff
+&gt;       x = object.foo();
+&gt;     } while (x) {            // if !x, break out of the loop,
+&gt;       y = y + x;             // otherwise do something with it
+&gt;       .tell("yay!");
+&gt;     }                        // and loop back up to the "do" point
+&gt; 
+&gt;   etc.. while still allowing the previous syntax of:
+&gt;     while (foo) {
+&gt;       .do_something_with(foo);
+&gt;     }
+&gt; 
+&gt;   etc.
+&gt; 
+
+Yes. The form:
+	do { } while () { }
+is actually a more complete form of:
+	do { } while();
+and
+	while ( ) { }
+		
+-- 
+[Frank Crowell  			 frankc@netcom.COM]
+[Home page	ftp://ftp.netcom.com/pub/frankc/pages.html]
+</PRE>

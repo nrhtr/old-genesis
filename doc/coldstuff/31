@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [31] in "Coldmud discussion meeting"</TITLE>
+<H1>[31] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?31"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="19"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="28"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="30"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="32"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="33"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="48"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: clear parameters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 17:38:21 1993
+)</H3>
+<PRE>
+Date: Tue, 16 Nov 1993 17:10:12 -0500
+From: Quinn Avery &lt;quinn@DUS.Mountain.Net&gt;
+To: deforest@netcom.com, ghudson@MIT.EDU
+Cc: coldstuff@MIT.EDU
+
+&gt;In other words, you want a method on one object to change variable
+&gt;values on another object (it's children).
+ 
+Not exactly.  I think he just wanted unchanged values to reflect the
+ -current- value of their parent, and not the original.  I don't know
+ if you're familiar with MOO clear-properties, and excuse me for
+ seeming condescending if you're not, but it's kinda like a 'clear'
+ property is just a hole.  When you want to access its value, you just
+ keep falling down levels of inheritance until you find something that
+ is NOT a hole (ie: the parent which defines the property, or some
+ sub-parent which has changed it).
+ 
+Clear props are quite useful on MOO.  Manytimes you want to change the
+ default values of a parent's property, without bothering children
+ which have already customised it.  So--you just set the parent and
+ all the clear kids use that new value.
+ 
+I think it was more a memory issue on MOO, since these 'holes' take up
+ no space, but it's a neat feature of the language as well.
+ 
+-quinn
+</PRE>

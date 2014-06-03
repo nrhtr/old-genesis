@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [693] in "Coldmud discussion meeting"</TITLE>
+<H1>[693] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?693"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="691"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="691"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="692"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="694"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="701"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="703"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: continuing the debates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 14:53:17 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Fri, 10 Mar 95 12:51:40 -0700
+
+&lt; I'm just nit picking and stuff. For now add_method will take two args. The
+&lt; name and structure. (add_method('foo, #[['flags, []]...]))
+
+That is probably the best.
+
+&lt; I will have default values for all elements of the dictionary, too. #[] will
+&lt; be a valid program. :)
+
+Actually, it should never assume what is being handed it is a valid program,
+have it check anyway (ugh, this could get scary...)
+
+&lt; On the other hand, when I'm done with method_to_coldc and coldc_to_method
+
+Actually, I like "compile_coldc" and "decompile_coldc", not as chopy to
+type...
+
+BTW, with this, somebody (who is totally insane, mind you) could write a
+"compile_moo" and a "decompile_moo", to get MOO-ish output, or for whatever
+system you want...
+
+-Brandon
+</PRE>

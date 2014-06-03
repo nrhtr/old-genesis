@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1307] in "Coldmud discussion meeting"</TITLE>
+<H1>[1307] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1307"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1306"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1306"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1306"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1308"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Win32 support</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jun 28 20:11:18 1997
+)</H3>
+<PRE>
+Date: Sat, 28 Jun 1997 18:07:25 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: "Michael W. Ireland" &lt;havic@int-usa.net&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;22382337501980@int-usa.net&gt;
+
+On Sat, 28 Jun 1997, Michael W. Ireland wrote:
+&gt; I am intrested in the Genesis and other cold based products do you have an
+&gt; estimated time for Win 32 support for Win NT / Windows 95
+
+Its already available.. If you have a borland compiler you can compile the
+latest version yourself, or there is a precompiled version of Genesis-DEV
+patch 26 (currently at p31).  When I get the right VisualC++ CD I'll make
+a newer binary--I just have the wrong one (its the 16bit one, ugh).  One
+of the other admins at my work has the right CD.
+
+-Brandon
+
+</PRE>

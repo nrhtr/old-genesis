@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [1401] in "Coldmud discussion meeting"</TITLE>
+<H1>[1401] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1401"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1400"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1400"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1400"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1402"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1402"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1404"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] A couple of coldcore mail list questions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan 12 15:36:12 1998
+)</H3>
+<PRE>
+Date: Mon, 12 Jan 1998 13:30:33 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;34B94441.FAA9A78A@maddog.com&gt;
+
+On Sun, 11 Jan 1998, Frank Crowell wrote:
+&gt; 1. How do I create a new mail list on Coldcore.  I tried @new and @spawn
+&gt; on $mail_list, but that wasn't the right approach.
+
+Hmm, @spawn or @new should both work.  Infact, it just did work:
+
+% @spawn $mail_list
+Spawned new object mail_list_9 ($mail_list_9) from the mail_list ($mail_list).
+% @rename $mail_list_9 *mailtest
+Renamed "mail_list_9" to "*mailtest".
+% @send *mailtest -edit
+-- Enter text for mail message, "." when done or "@abort" to abort --
+Test
+</PRE>

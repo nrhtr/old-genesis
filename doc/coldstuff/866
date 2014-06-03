@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [866] in "Coldmud discussion meeting"</TITLE>
+<H1>[866] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?866"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="865"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="865"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="865"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="867"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Vanishing objects bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan  2 11:27:20 1996
+)</H3>
+<PRE>
+Date: Tue, 2 Jan 1996 09:09:06 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;199601020743.IAA15971@regoc.srce.hr&gt;
+
+On Tue, 2 Jan 1996, Miroslav Silovic wrote:
+&gt; I noticed very insidious bug. Occasionally, an object name vanishes from
+&gt; the global lookup table. The object still exists and is valid, but
+&gt; attempts to get it by $reference fail (it happened with $backdoor
+&gt; on pippin site). An object can be retrieved if you know its parents
+&gt; (use descendants() and toint() to find its numerical reference, and
+&gt; then @rename it to reset its $name. Ignore the traceback).
+
+Actually, $backdoor on pippin is GONE.  There is code which will delete 
+the backdoor when a connection shuts down, but a: it assumes you are 
+using a descendant of $backdoor, not $backdoor itself; b: it SHOULD have 
+safeguards to keep it from blasting $backdoor accidentally (shrug).
+
+Either way, it does not matter, as I'm working on a newer db on cold.org.
+
+-Brandon
+</PRE>

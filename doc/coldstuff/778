@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [778] in "Coldmud discussion meeting"</TITLE>
+<H1>[778] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?778"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="764"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="775"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="777"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="779"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="786"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="786"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: fork() vs send()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Aug 20 20:51:47 1995
+)</H3>
+<PRE>
+From: bellegj@python.cs.orst.edu
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Sun, 20 Aug 95 13:39:03 PDT."
+             &lt;9508201939.AA03381@lightning&gt; 
+Date: Sun, 20 Aug 95 17:48:45 PDT
+
+
+&gt; Hmm.. I'm not sure I see the need for it.  The function wouldn't do
+&gt; anything new, and a general-purpose word like "send" just doesn't hint
+&gt; at looping either.
+
+It's not supposed to say "loop".  It says "send this message to these objects".
+Using a for loop says "send this message to these objects, in this order".  
+
+Let's take a specific example. $place.announce. It's purpose is send a .tell 
+to 
+a bunch of objects.  Currently it does this with a for loop.  This is wrong, it
+imposes and ordering on the calls that should not be there. (Although without
+tasks, it's the best we can do.)  Morover, once tasks (or something similiar) 
+is
+added, this method and all similiar ones will need to be changed.  By creating
+a send we are able to change just the implementation of send whenever a new
+facility becomes available.  
+
+At the moment send would have to be implemented by a for loop.  But once tasks
+become available we can change it and everything using send will be start using
+tasks.
+
+I'm not particularly attached to the name send. Maybe split would be better.
+
+-- Jeff Bellegarde (bellegj@mail.cs.orst.edu)
+
+
+</PRE>

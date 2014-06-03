@@ -1,0 +1,61 @@
+<HEAD><TITLE>discuss@charon: [1183] in "Coldmud discussion meeting"</TITLE>
+<H1>[1183] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1183"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1181"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1182"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1182"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1184"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1184"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1184"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] patches</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec 17 09:30:54 1996
+)</H3>
+<PRE>
+Date: Tue, 17 Dec 1996 09:21:13 -0500 (EST)
+From: Fabien Ninoles &lt;ninf01@castor.GEL.USherb.CA&gt;
+To: Cold Stuff Mailing List &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;Pine.NEB.3.95.961216163012.709A-100000@glacier.cold.org&gt;
+
+-----BEGIN PGP SIGNED MESSAGE-----
+
+On Mon, 16 Dec 1996, Brandon Gillespie wrote:
+
+&gt; On Sun, 15 Dec 1996, Zachary DeAquila wrote:
+&gt; &gt; There sure are an awful lot of patches and bugfixes coming out for what
+&gt; &gt; is supposed to be a 'stable' system.
+&gt; 
+&gt; All of the 'bugfix' patches are actually in regard to the same 'bug' (that
+&gt; sometimes strings aren't properly NULL terminated when passed to
+&gt; standard-C functions), the fix is just fragmented across several patches 8)
+&gt; Everything else is last minute features.
+&gt; 
+&gt; -Brandon
+&gt; 
+There's a place to find all the last patches without browsing all the 
+mail archive? I just want to be sure to don't miss anything.
+Thanks!
+
+- ---------------------------------------------------------------
+ "I loathe people who keep dogs. They are cowards who 
+ haven't got the guts to bite people themselves." 
+                                       -August Strindberg 
+- ---------------------------------------------------------------
+Fabien Ninoles aka le Veneur        || Running Debian-Linux
+Ninf01@gel.usherb.ca                || Lover of MOO, mountains, 
+http://www-edu.gel.usherb.ca/ninf01 || poetry and Freedom.
+- ---------------------------------------------------------------
+
+-----BEGIN PGP SIGNATURE-----
+Version: 2.6.2
+
+iQCVAwUBMrasUVX6fc7jcjhFAQFGVwP/T9TQccGOsY7yq+9AjIgZME1RNQg9DHh2
+tTsLPu1etNtzNcjkEArGyU3irKouR02bR9CoZIFHPD6xrSORmpwbsujNLqMq9d+e
+UlWjE7ogdGOeE03Qd5NS3sAsRzj/L0c+r1xtxF3ybHq0kQO5lJxYW13OKmsE9SU8
+U/6n3biLtw0=
+=Q7/H
+-----END PGP SIGNATURE-----
+</PRE>

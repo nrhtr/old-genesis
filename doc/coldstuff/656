@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [656] in "Coldmud discussion meeting"</TITLE>
+<H1>[656] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?656"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="655"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="657"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>found tosym bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar  1 06:53:59 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: coldstuff@MIT.EDU
+Date: Wed, 1 Mar 1995 04:57:00 -0600 (CST)
+
+Brandon reported a bug some months ago involving lowercase and tosym.
+
+I have found the cause but not the solution.
+
+op_tosym does an ident_get(string_chars(str)).
+string_chars returns a pointer to the start of the string data.
+This string may not be null-termintaed, causing ident_get to be confused.
+
+I do not know how to solve this efficiently. I would apreciate input on this.
+
+Crag / Robert de Forest
+</PRE>

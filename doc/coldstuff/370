@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [370] in "Coldmud discussion meeting"</TITLE>
+<H1>[370] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?370"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="369"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="371"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="371"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="374"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Changes (0.10-4)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jul 10 23:26:04 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Sun, 10 Jul 1994 21:21:04 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Ok, I am getting around to making the changes I threatened earlier,
+here is what I can remember (I didn't save them in a file I can find,
+unfortunately):
+
+set_name()    =&gt; set_objname()
+del_name()    =&gt; del_objname()
+get_name()    =&gt; get_objnum()
+connect()     =&gt; open_connection()
+disconnect()  =&gt; close_connection()
+bind()        =&gt; bind_port()
+unbind()      =&gt; unbind_port()
+assign_conn() =&gt; reassign_connection()
+run_script()  =&gt; system_execute()
+textdump name will be arg[0] + ".dump"  (or a better prefix if it is suggested
+                                         soon enough)
+
+Skimming through opcodes.c I'm wondering about a few more:
+
+set_heartbeat_freq() =&gt; set_heartbeat()     (this is completely aesthetic)
+db_top =&gt; max_objnum()                      (ditto)
+has_ancestor() =&gt; remove  (we can just do 'if obj in (.ancestors())', although
+                           it isn't as fast).
+dict_add_elem()
+dict_del_elem() =&gt; remove (since they are disappearing anyway)
+
+I cannot remember anything else immediately.  I may also hunt down 0.11 and
+hack in the traceback()/error_*() change.
+
+-Brandon-
+</PRE>

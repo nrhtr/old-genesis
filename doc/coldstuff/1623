@@ -1,0 +1,78 @@
+<HEAD><TITLE>discuss@charon: [1623] in "Coldmud discussion meeting"</TITLE>
+<H1>[1623] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1623"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1622"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1622"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1622"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1624"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Frobs in the VR</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Sep 10 19:43:11 2000
+)</H3>
+<PRE>
+Date: Sun, 10 Sep 2000 17:31:11 -0600
+From: Brandon Gillespie &lt;brandon@ice.cold.org&gt;
+To: coldstuff@cold.org
+Message-ID: &lt;20000910173111.A99139@ice.cold.org&gt;
+Mime-Version: 1.0
+Content-Type: multipart/signed; boundary=wac7ysb48OaltWcw; micalg=pgp-md5;
+	protocol="application/pgp-signature"
+In-Reply-To: &lt;000901c01b50$254338f0$a2e453d1@ultrax&gt;; from Wolfe/Grim/Andy on Sun, Sep 10, 2000 at 12:54:18PM -0500
+Reply-To: coldstuff@cold.org
+
+
+--wac7ysb48OaltWcw
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+Frobs as things was an experiment that lived its life and from the
+result of it I can say with much assurety that you do not want to do
+it.  It is just too painfull without much gain.  While there are still
+relics of the expirement around (wearable frobs), you dont want to use
+them.  Objects in cold are plenty lightweight.
+
+-Brandon
+
+On Sun, Sep 10, 2000 at 12:54:18PM -0500, Wolfe/Grim/Andy wrote:
+&gt; Hey All,
+&gt;     I'm wanting to code some DIKU MUD-like qualities into the core such as
+&gt; equipment, creatures, and combat. I have the feeling that I can save all
+&gt; sorts of trouble and space on my core if I use frobs to create instances =
+of
+&gt; a "template" in the VR. A good example of what I'm babbling about is the
+&gt; wearable frob.
+&gt;     While I pseudo-understand how the wearable frob works, I don't grasp =
+how
+&gt; to programmatically handle frobs in the VR... doing things like
+&gt; accessing/manipulating object variables, listing current frobs in the VR,=
+ or
+&gt; targeting them for manipulation/destruction. Can anyone give me some
+&gt; pointers or examples on doing this? Major domo on all the support so far,
+&gt; folks. You know who you are.
+&gt;=20
+&gt; Peace and and all that rot...
+&gt; - Paidran/Grim/Drew
+&gt;=20
+&gt;=20
+&gt;=20
+&gt;=20
+
+--wac7ysb48OaltWcw
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: 06L986iCqfNmMS+P1o8Db2meguHATxFC
+
+iQA/AwUBObwZvkv5XoQiMgn6EQJz9gCgx+FJyKPUGWdMQvZ1B8SInzN3R1cAnRVr
+gWZ/di/u0E+2tKKt5dTFPsID
+=0RPZ
+-----END PGP SIGNATURE-----
+
+--wac7ysb48OaltWcw--
+</PRE>

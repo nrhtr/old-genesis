@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1594] in "Coldmud discussion meeting"</TITLE>
+<H1>[1594] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1594"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1593"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1595"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1596"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1596"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Error message returned to console when @backup is called</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jun 25 16:12:26 2000
+)</H3>
+<PRE>
+From: "Peter Bombard" &lt;pbombard@altavista.net&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Sun, 25 Jun 2000 16:06:56 -0400
+Reply-To: coldstuff@cold.org
+
+I've done a pretty standard install on Caldera Openlinux 2.3
+
+Whenever I issue the @backup command I see the following on the console:
+
+mv: binary.bak: No such file or directory
+tar: Cannot add file binary-25Jun100: No such file or directory
+tar: Error exit delayed from previous errors
+/bin/cp: binary-25Jun100.tar.gz: No such file or directory
+/bin/cp: binary-25Jun100.tar.gz: No such file or directory
+/bin/cp: binary-25Jun100.tar.gz: No such file or directory
+/bin/cp: binary-25Jun100.tar.gz: No such file or directory
+
+-pete (PBombard@altavista.net) 
+</PRE>

@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [776] in "Coldmud discussion meeting"</TITLE>
+<H1>[776] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?776"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="775"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="777"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="777"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="781"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Stupid Question Time</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Aug 20 17:32:50 1995
+)</H3>
+<PRE>
+Date: Sun, 20 Aug 1995 15:29:24 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+&lt; Reassign_connection though,a ccording to the docs, will ONLY work if 
+&lt; called from sys.
+
+If you are using later versions of ColdX, this is untrue, as system bindings
+no longer exist (instead you dynamically bind functions to whichever object
+you want, upon startup).
+
+However, reassign_connection() will still work even through a thunk on 
+$sys, because it uses a globally set value for the current connection, and
+it changes that.  For instance, in the ColdWeb server $daemon binds the
+port, and set's it's .connect() to:
+
+method connect
+    arg host, socket;
+    var d;
+
+    d = create([$sys.starting_parent()]);
+    d.initialize();
+    reassign_connection(d);
+    d.set_active();
+    d.set_host(host);
+ .
+
+I could probably speed it up a little by creating a new object after
+reassigning the last one.  But, this is irreguardless, as the above
+would work just as well with $sys.reassign_connection()...
+
+(er, add (d) to that).
+
+-Brandon
+</PRE>

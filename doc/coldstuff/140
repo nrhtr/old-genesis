@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [140] in "Coldmud discussion meeting"</TITLE>
+<H1>[140] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?140"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="139"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="141"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ticks</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 26 14:05:49 1994
+)</H3>
+<PRE>
+Date: Wed, 26 Jan 1994 11:59:00 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Well, I love it Greg.  All we need now is a way to count and track ticks,
+suspend(), and its the coolest MUD available :) (also throw fork() in there,
+but it can wait a little longer...)
+
+-Brandon (Lynx@theColdDark)
+
+(BTW Greg, we've managed to get a regularly functioning command/methods which
+runs out of ticks :) Swing by and do `@display me:*')
+</PRE>

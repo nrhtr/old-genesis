@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [846] in "Coldmud discussion meeting"</TITLE>
+<H1>[846] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?846"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="845"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="847"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="847"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="849"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Compile and Decompile</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 30 18:34:54 1995
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@tombstone.sunrem.com
+Date: Thu, 30 Nov 1995 15:19:59 +0000
+
+Just a  short note.  I had a brainstorm last night and have started 
+something that I think alot of folk will find really cool and useful 
+for multi-developer cores (its a combination core-debugger and source 
+code control system that runs from inside of my core and talks to a 
+java based GUI) .  I wanted to make sure of something, 
+though.  
+
+Brandon in his last notes says something about removing the 
+ColdCC functionality from genesis.  I just wanted to make sure that 
+the object manipulation funtions, including compile and decompile, 
+would remain.  I need them for my project and it woudl in general be 
+very difficult to implement most classic forms of Muds without them.
+
+Jeff K.
+</PRE>

@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [35] in "Coldmud discussion meeting"</TITLE>
+<H1>[35] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?35"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="19"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="33"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="34"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="36"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="36"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="48"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: clear parameters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 18:04:32 1993
+)</H3>
+<PRE>
+To: Quinn Avery &lt;quinn@DUS.Mountain.Net&gt;
+Cc: deforest@netcom.com, ghudson@MIT.EDU, coldstuff@MIT.EDU
+In-Reply-To: Your message of Tue, 16 Nov 93 17:10:12 -0500.
+             &lt;199311162210.AA22958@DUS.Mountain.Net&gt; 
+Date: Tue, 16 Nov 93 17:56:05 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+I'm familiar with clear properties on MOO, yes.
+
+&gt;&gt; In other words, you want a method on one object to change variable
+&gt;&gt; values on another object (it's children).
+
+&gt; Not exactly.  I think he just wanted unchanged values to reflect the
+&gt; -current- value of their parent, and not the original.
+
+This is equivalent to changing a variable value (that is, the value
+you get when you evaluate a variable) on a child by setting a variable
+on a parent.  This is fine in MOO, a system with no encapsulation, but
+not okay in an encapsulated system.
+
+Among other things, this means that "x = x;" is a statement with some
+effect, a counterintuitive notion.
+
+If you want to specify a default for a parameter that you can set on
+the parent, simply change the accessor method:
+
+	return foo || definer().foo();
+
+or, if foo might be set but false:
+
+	return (foo == 'clear) ? definer().foo() | foo;
+
+--GBH
+
+</PRE>

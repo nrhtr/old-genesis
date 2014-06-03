@@ -1,0 +1,166 @@
+<HEAD><TITLE>discuss@charon: [690] in "Coldmud discussion meeting"</TITLE>
+<H1>[690] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?690"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="689"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="689"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="691"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="692"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 12:47:58 1995
+)</H3>
+<PRE>
+Date: Fri, 10 Mar 95 11:40 CST
+To: Alex Stewart &lt;riche@crl.com&gt;
+From: abakun@ripco.com (ThwartedEfforts)
+Cc: coldstuff@MIT.EDU
+
+&gt;"Important Chuck":
+&gt;&gt; So what do the developers think of index/subrange as lvalue?
+&gt;
+&gt;While I recognize that this syntax can be neat looking and kinda nice sometimes
+&gt;I would much rather see some form of rangeset() builtin instead, for
+&gt;consistency and conceptual purity reasons..
+
+I haven't even made it to first base with rangeset(), I didn't even know it
+was playing... what does it do anyway?
+
+&gt;The problem with subrange-as-lvalue is that it isn't really.  It is sometimes
+&gt;but it isn't other times and expressions work as mutable sometimes and
+&gt;immutable other times and it's just not very clean.  For an example of what I
+&gt;mean, take a look at the following:
+&gt;
+&gt;  foo = [1, 2, 3];
+&gt;  foo[2] = 4;
+&gt;   ^     ^--(modifies value of foo, because foo[2] points to part of foo)
+&gt;   `--(foo[2] is a pointer to part of foo)
+&gt;  return foo;
+&gt;
+&gt;  (expected value: [1, 4, 3])
+&gt;  =&gt; [1, 4, 3]
+&gt;
+&gt;..so far so good..
+&gt;
+&gt;  foo = [1, 2, 3];
+&gt;  bar = foo[2];
+&gt;      ^   ^--(foo[2] is a pointer to part of foo)
+&gt;      `--(ergo bar is set to a pointer to part of foo)
+&gt;  bar = 4;
+&gt;      ^--(modifies foo, because bar = foo[2] = pointer to part of foo)
+&gt;  return foo;
+&gt;
+&gt;  (expected value: [1, 4, 3])
+
+*I* would never expect that value, since pointers are not normally implied.
+
+&gt;  =&gt; [1, 2, 3]
+&gt;
+&gt;..oops!
+&gt;
+&gt;If the results of expressions are going to be lvalues, they should be lvalues
+&gt;_consistently_, and not just when it's convenient (note also that there are
+&gt;significant security problems inherent in consistent lvalue-states, too).
+&gt;
+&gt;With rangeset(), etc, this problem doesn't arise because expressions are always
+&gt;immutable rvalues and you're assigning them as a whole to the variables.
+
+Yes, but if you keep rvalues as expressions that return what they point to
+and lvalues as expressions that point to that is to be modified, then:
+
+foo = [1,2,3];
+bar = foo[2];
+ ^      ^---  expression that returns 2
+ `--- the location as to where to stick the result of the rvalue expression
+bar = 4;
+ ^    ^-- we all know that this is an expression that returns 4
+ `-- where to stick the rvalue
+return [foo, bar]
+=&gt; [[1,2,3], 4]
+
+but since variables are just things that point to somewhere, then all
+rvalues are expressions that return what they point/eval to, and all lvalues
+are pointers to a location to stick the rvalue
+
+foo = [1,2,3];
+bar = [4,5,6];
+foo[1] = bar[2] = 7;
+  ^        ^      ^-- returns 7
+  |        `-- both an rvalue and lvalue,
+  |            put 7 in second position of bar, and return what's in
+  |            the second position of bar (in that order)
+  `-- just an lvalue, and points where to stick the expression,
+      in this case, in the first position of foo
+return [foo, bar];
+=&gt; [[7,2,3],[4,7,6]]
+
+Of course, third line above was evaled from right to left, of course.
+If you wanted lvalue as pointer to some other location, I suggest you
+incorporate some sort of syntax like (yugh!) pointers (which just
+compilcates it even more):
+
+foo = [1,2,3];
+bar = addressof(foo[2]);
+*bar = 4;
+return [foo];
+=&gt; [1,4,3]
+
+(heh, I prefer Pascal's ^ character as meaning deref'ing a pointer, but I
+don't want to start another religious debate :) )
+
+Anyway, if you start making everything mutable, both the rvalue and lvalue,
+and all variables are pointers that point to some other place, and YOU know
+what a hard time people have with pointers in C, and if everything is a
+pointer, er, I'd rather not think about it.
+
+So, in conclusion, I don't think that, from your example, that lvalues have
+an inconsistant mutability.  Need to remember that a certain expression can
+be both an lvalue and an rvalue, and when to know which is which. lvalues
+point to where to stick the rvalue, and rvalues return what they point to.
+
+Is there any programming language (that is, like, usable) that does what
+Alex describes without the need for specificly saying that a variable is a
+pointer?
+
+&gt;Brandon:
+&gt;&gt; VMS's DCL (Digital Command Language, aka VMS shell) uses ':==' to set symbols
+&gt;
+&gt;Actually, technically, DCL uses :== for assigning global symbols (variables).
+&gt;It uses := for assigning local symbols..
+&gt;
+&gt;Then again, it uses .EQ. to test equality, too :)
+&gt;
+&gt;Heh.. I'd almost entirely forgotten about DCL..
+&gt;
+&gt;Thwarted:
+&gt;&gt; Yuck, if anything, do NOT use DCL as a base or to get ideas for anything. :P
+&gt;
+&gt;Heh.. also true enough :) (tho I still enjoy programming in it every so often..
+&gt;provides a nice diversion from those straightforward, predictable languages
+&gt;people use so much nowadays..)
+
+Am I to assume that you consider DCL to be 'unpredictable'? heh, it's that
+damn "literal strings aren't inclosed in quotes" and "you need to put your
+variable in quotes if you want it's value" that's so, um, weird.
+
+foo = bar
+baz = 'bar'
+
+and in DCL, using "normal" programming language literal syntax, foo = "bar"
+and baz = whatever bar was equal to.  That is just anti-estabishment :P  Has
+to do with substitution or something, but since DCL in interpreted, then I
+think I might be able to excuse it.  Thinking about DCL give me hives... and
+I know people who swear by it. (informational purposes only, I take no
+responiblity as to who the hell came up with DCL)
+  ______                              __
+    /   /                 _/_      / /  `  /)  /)       _/_
+ --/   /_  , , , __.  __  /  _  __/ /--   //  //  __,_  /  _
+(_/   / /_(_(_/_(_/|_/ (_&lt;__&lt;/_(_/ (___, //__//__(_) (_&lt;__/_)_
+http://www.interaccess.com/users/abakun /&gt;  /&gt;
+                                       &lt;/  &lt;/
+
+</PRE>

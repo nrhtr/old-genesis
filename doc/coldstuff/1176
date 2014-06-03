@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [1176] in "Coldmud discussion meeting"</TITLE>
+<H1>[1176] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1176"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1175"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1177"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Crashbug detected</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec 12 05:49:45 1996
+)</H3>
+<PRE>
+Date: Thu, 12 Dec 1996 11:38:13 +0100 (MET)
+From: Miroslav Silovic &lt;Miroslav.Silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+Seems that my debug code works fine. This method crashes the driver
+reliably:
+
+@program $user_miro.call_trace() +access=public
+  var s, l, i, d, t, j;
+  
+  l = tmp;
+  s = "";
+  d = [];
+  t = 0;
+  for i in (l) {
+      if (type(i) == 'integer) {
+          if (s)
+              s = s.subrange(3);
+          d += [strfmt("%6l%lreturn", i - t, s)];
+      } else {
+          if (!t)
+              t = i[1];
+          j = i.length() == 5 ? strfmt("%6l%l%l&lt;%l&gt;.%l(%l)", i[1] - t, s, i[2],
+   i[3], i[4], (toliteral(i[5]).match_pattern("[*]"))[1]) :
+   strfmt("%6l%l&lt;%l&gt;.%l", i[1] - t, s, i[2], i[3], i[4]);
+          d += [j.chop(79)];
+          s += "  ";
+      }
+  }
+  .tell(d);
+
+
+Here, tmp is a large list of short lists and integers. No idea where
+(it bombed in malloc or realloc, probably meaning allocator corruption).
+Is this null-termination problem reiterated?
+It appears that this is the only thing that crashed the debugger. Damn.
+
+
+	Miro
+
+</PRE>

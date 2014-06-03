@@ -1,0 +1,135 @@
+<HEAD><TITLE>discuss@charon: [801] in "Coldmud discussion meeting"</TITLE>
+<H1>[801] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?801"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="800"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="800"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="800"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="802"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="804"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="804"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Multithreaded ColdC...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Sep 10 16:03:37 1995
+)</H3>
+<PRE>
+Date: Sun, 10 Sep 1995 15:58:30 -0400 (EDT)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9509100226.AA02088@smithfield.declab.usu.edu&gt;
+
+
+
+On Sat, 9 Sep 1995, 869683 Gillespie Brandon James wrote:
+
+&gt; -----------------------------------------------------------------------
+&gt; ** Multithreaded ColdC **
+&gt; 
+&gt; Modifies: pause()
+&gt; Changes:  *task* operators to *thread* operators (task_id() -&gt; thread_id())
+
+This seems gratuitously incompatible.
+
+&gt; Adds:     sync () {}, atomic {}, fork() and synchronized/atomic methods.
+&gt; 
+&gt; * Overview
+&gt; 
+&gt; A frame is the execution state of a ColdC method.  The current frame is
+&gt; only relative to the current method, beginning execution within a new
+&gt; frame uses a new frame context.  ColdC ticks are contained within each
+&gt; frame, rather than in a global context.  A thread is a stack of methods
+&gt; executing in relation to each other.
+
+What if an atomic method called itself until about to run out of ticks, 
+then returned, and did this to the maximum allowable recursion depth?  
+This would be bad.  Sure there's a finite limit on how long this could 
+occupy the machine, but it would probably be long enough to be infinite 
+for all practical purposes.  Say the maximum is enough ticks for 100 
+method calls per method (kinda low) and the max recursion depth is 10.  
+That means 10^20 (100,000,000,000,000,000,000) method calls could be made 
+in a row without letting any other task in.  Furthermore this increases 
+exponentially with allowable recursion depth.
+
+I never liked method-relative ticks much.
+
+&gt; * Outline
+&gt; 
+&gt; Preemptive multi-threading will be based upon either CPU ticks or ColdC
+&gt; ticks (have not decided which).  CPU ticks give the advantage of also
+&gt; taking native functions into consideration, but cause tasks to be
+&gt; preempted faster on a loaded machine.
+
+Well, that depends if your underlying system can give you CPU ticks for 
+your task only rather than for the whole machine.
+
+Are you doing your threading within the server code?  If so, I suggest 
+not doing a context switch from a signal handler--this is messy and 
+requires nonportable things like register dumps if you ever plan on 
+adding GC.
+
+&gt; When a certain threshold has been reached, the task will be suspended
+&gt; and added to a list of preempted tasks, to continue execution at a later
+&gt; time.  Being preempted also refreshes the current frame's ticks.
+
+Hm.  Will there be any provision for thread priorities?
+
+&gt; * Synchronizing
+&gt; 
+[*munch* --- so far so good]
+&gt; 
+&gt; If a synchronize call is made, and the thread is unable to synchronize
+&gt; with the object, it may be blocked (if it is not atomic).  Blocked threads
+&gt; are suspended, and added to a list for that object.  When the
+&gt; current thread synchronizing to the object releases it's hold, the first
+&gt; thread in the blocked list is executed.  If a thread is blocked, and is
+&gt; atomic, the error ~blocked is thrown.
+
+All right, so, how do you deal with a thread that synchronizes, say, on 
+$sys, or your player database, and spins until the whole system goes *foop*?
+
+And how do you deal with deadlock?
+
+&gt; * Atomic code blocks
+&gt; 
+
+Is there any good use for this, or is it just a quick compatibility fix?
+
+&gt; * Function pause()
+&gt; 
+[snip]
+&gt; 
+&gt; * Function fork() 
+&gt; 
+&gt; fork() splits a thread.  When called it splits the thread into two exact
+&gt; frames.  The function fork() has a logical expression value of 0 to the
+&gt; child process, and the value is the forked thread id for the parent
+&gt; thread.
+
+Which thread gets to stay synced on the objects the parent thread is 
+synchronized on?  Can you wait for a child task to finish, and get some 
+sorta results from it?  Can you fork from atomic code?  What happens if 
+you wait for a child in atomic code?
+
+&gt; An optional delay argument may be supplied to fork, defaulting to 0.
+&gt; The delay specifies how long to wait before beginning execution of the
+&gt; child thread.
+&gt; 
+&gt; Notes: possibly have a MAX_FORK for each thread; possibly have a method
+&gt; flag of 'fork', where if that method is called it starts its own
+&gt; execution thread, rather than becoming a part of the current thread.
+&gt; The logical expression value of a forked method is it's thread_id.
+
+I like this idea.
+
+
+Further considerations:
+
+  What's with all these integer task_id()s?  Why not make a task a 
+first-class object?
+
+--
+James "wants to be able to spork() a task" Deikun
+</PRE>

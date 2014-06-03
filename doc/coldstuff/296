@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [296] in "Coldmud discussion meeting"</TITLE>
+<H1>[296] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?296"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="286"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="295"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="297"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="302"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun May 22 02:05:37 1994
+)</H3>
+<PRE>
+Date: Sun, 22 May 1994 01:59:28 -0400 (EDT)
+From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+To: coldstuff@MIT.EDU
+Cc: 
+In-Reply-To: &lt;01HCJF3PC64IBWC3GQ@cc.usu.edu&gt;
+
+OK, I have returned to comment on this subject:
+
+Default ports are keen.  However, if someone wants to change that, they
+should be able to.  Of course, this brings up the problem of how to
+tell WHAT ports person_x is using.  For instance, I hate the idea of
+using 5550..that's such a boring port number.  For Phoenix, I would use
+something like 1717 or maybe some other derivation there-on.  (For the
+reasoning, you should remember that the culture of the theme places
+quite a bit of respect in the number 17).  Of course, this implies
+I would not want to connect to other MUDs, so it may not be important,
+And I could run the other services (finger, etc) on the standard ports.
+
+Tough to say.
+
+
+</PRE>

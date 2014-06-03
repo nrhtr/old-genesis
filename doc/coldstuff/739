@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [739] in "Coldmud discussion meeting"</TITLE>
+<H1>[739] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?739"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="734"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="734"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="738"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="740"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: #define SUNOS</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 13 12:55:34 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Fri, 12 May 95 23:57:42 EDT."
+             &lt;199505130357.XAA29334@Access.Mountain.Net&gt; 
+Date: Sat, 13 May 95 10:54:03 -0600
+
+&lt; What's the point of all those #IFDEF SUNOS lines?  I #DEFINE SUNOS
+&lt;  in config.h and everything still bombs.
+
+What version of SunOS are you using?
+
+&lt; I'm struggling with 0.12-1c.
+&lt; 
+&lt; Oh, btw: IS ANYONE READING THIS??
+
+Sometimes.  BTW, there is a coldx list too (although as of late its activity
+has been as great as on this list).  It is coldx@tiny.mcs.usu.edu
+
+-Brandon
+</PRE>

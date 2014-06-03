@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1459] in "Coldmud discussion meeting"</TITLE>
+<H1>[1459] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1459"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1458"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1460"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1461"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1464"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Genesis on Linux</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  9 15:12:35 1999
+)</H3>
+<PRE>
+Date: Tue, 09 Nov 1999 12:47:48 -0700
+From: Seth Law &lt;seth@sunrem.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+I was just wondering about any special hints to running/compiling
+Genesis on Redhat.  If anyone has done it, any help would be
+appreciated.  To be more specific, I have gdbm installed, but still keep
+getting ndbm messages.
+
+thanks,
+
+
+Seth
+
+seth@sunrem.com
+
+</PRE>

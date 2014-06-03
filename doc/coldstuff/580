@@ -1,0 +1,61 @@
+<HEAD><TITLE>discuss@charon: [580] in "Coldmud discussion meeting"</TITLE>
+<H1>[580] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?580"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="579"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="581"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="583"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="583"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>use of test value in a while loop</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 11 20:15:10 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Fri, 11 Nov 1994 17:14:27 -0800 (PST)
+
+There has been a raging debate on this list on the following uglyness:
+
+@program thing.example
+ var test_val;
+
+ test_val = .test();
+ while (test_val) {
+   .use_of_test_val(test_val);
+   test_val = .test();
+ }
+.
+
+A wise programmer just gave me a clue. He said the above could be re-written
+ in the following way:
+
+@program thing.loop_code
+ arg test_val;
+ 
+ test_val &amp;&amp; .use_of_test_val(test_val);
+ return test_val;
+.
+
+@program thing.example
+ while (.loop_code(.test()));
+.
+
+It costs a method call and gives you an abstraction and simplification. With
+ .loop_code marked private/local/"search for method on definer() only", would
+ not be too expenseive.
+
+I hearby revoke any vote I made in favor of a new loop stucture, and vote
+ strongly against do {} while {} or any of the other propsals.
+
+I no longer accept the 'let the programmer decide' argument for design because
+ Cold is a social language in that it begs for group work. That being the case,
+ its design should be such that bad code design is not possible or very hard
+ to use.
+
+Crag / Robert
+</PRE>

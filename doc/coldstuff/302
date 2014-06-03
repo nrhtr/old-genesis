@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [302] in "Coldmud discussion meeting"</TITLE>
+<H1>[302] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?302"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="296"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="301"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="303"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 23 14:15:47 1994
+)</H3>
+<PRE>
+Date: Mon, 23 May 1994 10:28:36 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;0hrjH068XZ8y0=c88w@pitt.edu&gt; (message from William B Fisher on Sun, 22 May 1994 01:59:28 -0400 (EDT))
+
+
+   Date: Sun, 22 May 1994 01:59:28 -0400 (EDT)
+   From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+   Cc: 
+   References: &lt;01HCJF3PC64IBWC3GQ@cc.usu.edu&gt;
+
+   OK, I have returned to comment on this subject:
+
+   Default ports are keen.  However, if someone wants to change that, they
+   should be able to.  Of course, this brings up the problem of how to
+   tell WHAT ports person_x is using.  For instance, I hate the idea of
+   using 5550..that's such a boring port number.  For Phoenix, I would use
+   something like 1717 or maybe some other derivation there-on.  (For the
+   reasoning, you should remember that the culture of the theme places
+   quite a bit of respect in the number 17).  Of course, this implies
+   I would not want to connect to other MUDs, so it may not be important,
+   And I could run the other services (finger, etc) on the standard ports.
+
+   Tough to say.
+
+
+Well, I dont think anything that has been suggested so far is intended
+to be hard-coded, merely the suggested defaults, which will come with
+the core. (correct me if I'm wrong guys). With the portswapper thing,
+or a single multi-use port, you would still be able to use all of the
+services on whichever ports, theoretically, using the standard ports
+would be more convinient, as it could remove some code from inter-mud
+processes. You could also theoretically have your services on the
+standard ports, and put telnet on 1717, since thats what your going to
+advertise anyway. :)
+
+	Ray / Ash
+
+</PRE>

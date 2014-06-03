@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [1315] in "Coldmud discussion meeting"</TITLE>
+<H1>[1315] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1315"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1310"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1314"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1314"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1316"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Best Client</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jul 16 12:10:12 1997
+)</H3>
+<PRE>
+From: Andrew Wilson &lt;a.wilson@elsevier.co.uk&gt;
+To: ken@i-2.com (Ken)
+Date: Wed, 16 Jul 1997 17:05:56 +0100 (BST)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.LNX.3.95.970716102143.21938B-100000@chico.i-2.com&gt; from "Ken" at Jul 16, 97 10:22:53 am
+
+Ken:
+&gt; On Tue, 15 Jul 1997 clay@incite.com wrote:
+&gt; 
+&gt; &gt; What clients do people like the best to use with the ColdCore?
+&gt; 
+&gt; I normally use tf, but have used Xemacs and Tkmoo (I would use tkmoo more,
+&gt; but it's somewhat of a pain to get working through the firewall.)
+
+I've got a plugin for tkMOO-light that allows you to get out through a
+firewall.  It really opens a connection to the local telnet gateway and
+then issues a seccond 'connect mooname port' to get you out to the
+MOO.
+
+The code is specific to the gatway used at MITRE, but you could hack it
+to make it more specific to your own gateway.  The code is largely
+untested but you're welcome to take a look.  copy the file to
+~.tkMOO-lite/plugins/gateway.tcl and restart your client (works for
+0.2.62 and above).
+
+    http://www.cm.cf.ac.uk/User/Andrew.Wilson/tkMOO-light/plugins/gateway.tcl
+
+&gt; -Ken
+
+Cheers,
+Ay.
+</PRE>

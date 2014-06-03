@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1275] in "Coldmud discussion meeting"</TITLE>
+<H1>[1275] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1275"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1274"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1276"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] moving gizmos</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Apr  7 21:49:19 1997
+)</H3>
+<PRE>
+From: "Maddog's Studio" &lt;maddog@best.com&gt;
+To: coldstuff@cold.org
+Date: Mon, 7 Apr 1997 18:34:05 -0700 (PDT)
+
+
+Hi,
+
+Now that I have my Cold world running (blackrabbit.mudservices.com 1138)
+it's really depressing without people or moving gizmos.  So naturally
+I'm wondering where I can find gizmos that I can adapt for my environment.
+Some moving gizmos include elavators, shuttles, escalators and things
+like that.  I also wonder if anyone has some mobile NPCs that they would
+be willing to share.  Essentially I'm looking for a 'contribute' section--
+I'm willing to provide the ftp space if that will help.
+
+Also does anyone have a nice short tutorial on how to build $robot things?
+Finally, I'm back to the same question as before, how to do event-type
+things.  For example, in a hack-and-slash mud there is a heartbeat
+and some event loop that deals with fighting, healing, recovering from poisons,
+etc, etc.  As a minimum I would like a Cold world that can be as "alive"
+as at least a Diku MUD or better yet, Neil's Ogham mud.
+
+Anyone else interested in moving gizmos?
+
+Frank
+</PRE>

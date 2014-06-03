@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [298] in "Coldmud discussion meeting"</TITLE>
+<H1>[298] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?298"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="297"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="297"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="297"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="299"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="303"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="303"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: coldmud hanging</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun May 22 14:05:25 1994
+)</H3>
+<PRE>
+Date: Sun, 22 May 1994 12:00:03 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt; every version i've tried does the same damn thing, no matter what
+&lt; machine it's running on:
+&lt; 
+&lt; i remove the binary directory from the world, and restart.  and it
+&lt; just hangs forever.  doing a process listing, i notice that it's
+&lt; idled, waiting for input, which i can only assume means it THINKS it's
+&lt; finished.  looking at the newly created binary directory shows all the
+&lt; files completely empty, except binary/clean, which is always nine
+&lt; whopping bytes long, never any more.
+&lt; 
+&lt; no log of anything, no errors, no nothing.
+
+What version of the driver are you using, what world are you using, and what OS
+are you on? (oh, and what do you type to run it?)
+
+</PRE>

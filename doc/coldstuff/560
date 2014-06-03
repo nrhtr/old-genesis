@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [560] in "Coldmud discussion meeting"</TITLE>
+<H1>[560] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?560"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="558"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="558"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="559"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="561"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Bug Report: List bug (?) rearing its ugly head (still?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  8 00:12:35 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Mon, 07 Nov 94 22:10:21 -0700
+
+I do not know if this is related, but the same error just occured several
+times in a row.  Each time it was trying to do a textdump, and would
+crash at the same method.  The method is:
+
+--------------
+    var s;
+
+    settings = dict_del(settings, #6889);
+--------------
+
+The last line in the dump was just the 'method _name' define.  I'm thinking
+that the #number may be the culprit (I cannot think of any other methods
+which specifically define #numbers rather than $refs).
+
+-Brandon Gillespie (Lynx)-
+</PRE>

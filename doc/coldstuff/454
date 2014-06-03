@@ -1,0 +1,69 @@
+<HEAD><TITLE>discuss@charon: [454] in "Coldmud discussion meeting"</TITLE>
+<H1>[454] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?454"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="453"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="455"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="456"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="460"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Odd ODD bug.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep 24 18:14:12 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Sat, 24 Sep 1994 16:09:50 -0600 (MDT)
+To: STEWARTA@NETCOM.COM
+Cc: coldstuff@MIT.EDU
+X-Vms-To: STEWARTA@NETCOM.COM
+
+I'm using the 0.12 source passed to me from Richelieu via Crag.
+
+Method:
+
+@program $brandon.foo
+ arg foo;
+
+ foo = tostr(foo);
+ .tell(toliteral(foo));
+ foo = lowercase(foo);
+ .tell(toliteral(foo));
+ foo = tosym(foo);
+ .tell(toliteral(foo));
+.
+
+;.foo('foo);
+"foo"
+"foo"
+'"fooo\""
+=&gt; Brandon ($brandon)
+
+(?)
+
+;.foo('WTF);
+"WTF"
+"wtf"
+'"wtfF\""
+=&gt; Brandon ($brandon)
+
+(?!?!??)
+
+;.foo('this_is_fkd);
+"this_is_fkd"
+"this_is_fkd"
+'"this_is_fkdd\""
+=&gt; Brandon ($brandon)
+
+....well, you get the gist of what I'm trying to say.  Somewhere along the way
+(presumably with tosym) something is getting munched.  Have any changes been
+made to anything which is used with tosym() in the 0.12 source?  This works
+fine in the 0.10-3 source (I'm converting over and noticed it when it tries to
+set a dbref--it goes through the same process as above and all dbrefs end up
+getting munched).
+
+_Brandon-
+</PRE>

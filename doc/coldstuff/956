@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [956] in "Coldmud discussion meeting"</TITLE>
+<H1>[956] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?956"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="955"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="957"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="957"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="960"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Right DB, still problems.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 26 15:03:59 1996
+)</H3>
+<PRE>
+Date: Tue, 26 Mar 1996 14:33:28 -0500
+From: Bill DeVos &lt;watcher@winc.com&gt;
+To: coldstuff@cold.org
+
+Well, the 3.0 db compiles smoothly but at the connect prompt there is
+only one option... quit, I've checked the textdump and it appears that
+that is all that is in the db.  I guess we'll be needing a 3.01 db. 8^)
+-- 
+             Watcher
+
+	watcher@winc.com
+	http://www.winc.com/~watcher/
+
+---  Look Ma! No sig!
+</PRE>

@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [259] in "Coldmud discussion meeting"</TITLE>
+<H1>[259] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?259"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="258"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="260"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>about ports and whatnot</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 18 21:03:21 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Wed, 18 May 1994 18:00:46 -0700 (PDT)
+
+I like the idea of agreeing on common ports, and I also like the idea
+ of conserving ports to avoid collisions. I think the best thing of all
+ would be a protocall involving a (dare I say it?) meta-port which one
+ would connect to for information on what other ports are available.
+
+The idea of mimmicing the internet standards by adding 6600 to the standard
+ ports makes sense in a pnemonic way, and even has an asthetic appeal to it,
+ but I don't think we should limit ourselves for these reasons alone. Or any
+ for that matter.
+
+Incase my meta-port idea isn't clear, it would work something like this: You
+ dial up port 6666 and get N lines consisting of [service, port, extra-info].
+ The details of the syntax could be worked out latter, but the idea is that
+ you supply an array of port-&gt;service information, with extra-info consisting
+ of whatever was relevent to that service.
+
+For example:
+
+/world genesis.resudox.net 6666
+--- (unknown 1) ---
+['player_connect, 6667, #[['protocol, 'raw_telnet], ['status, 'up]]
+['rwho, 6668, #[['protocol, 'ColdRWHO_v0.1a], ['status, 'up]]
+['dist_db_connect_request, 6669, #[['protocol, 'ColdDIST_v0.0c], ['status, 'down]]
+
+... etc
+% Connection closed
+--- No World ---
+
+Simulated example (genesis is not excepting logins by users atm).
+
+The fact that the above is expressed as lines of toliteral()ed lists is just
+ a coincedence, and not necessary, 'tho it makes sense to me. Of course, the
+ extra info might not include 'status, and would almost certainly include
+ something else.
+
+Well enough of that discussion.
+
+I need to go buy a phone that works. More spam later.
+
+Crag / Robert de Forest
+</PRE>

@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [145] in "Coldmud discussion meeting"</TITLE>
+<H1>[145] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?145"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="144"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="146"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>that problem..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar  4 02:31:03 1994
+)</H3>
+<PRE>
+Date: Fri,  4 Mar 1994 02:26:31 -0500 (EST)
+From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+To: coldstuff@MIT.EDU
+Cc: 
+
+Well, I got it to work, somehow.  I suspect something was wrong with the
+binary dump, because I deleted the old binary dump, re-compiled the core
+using the 'put in log() commands everywhere until you figure out where
+the problem is' and it worked.  So, no need to worry about it.
+
+
+</PRE>

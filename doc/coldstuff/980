@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [980] in "Coldmud discussion meeting"</TITLE>
+<H1>[980] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?980"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="974"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="978"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="979"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="981"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] controlling object of a task (user()/controller()/etc)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Apr 24 21:35:46 1996
+)</H3>
+<PRE>
+Date: Wed, 24 Apr 1996 18:09:08 -0700 (PDT)
+From: No one of any consequence &lt;seanl@beef.bovine.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199604241654.JAA03057@netcom6.netcom.com&gt;
+
+Actually, I think my favorites so far, in order of precedence, are:
+
+caller()
+issuer()
+client()
+
+All the same length, how convenient.
+
+--Sean
+
+</PRE>

@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1258] in "Coldmud discussion meeting"</TITLE>
+<H1>[1258] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1258"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1257"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1259"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] ColdCore 3.0 alpha 7 and Genesis 1.0p26</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar 22 16:33:57 1997
+)</H3>
+<PRE>
+Date: Sat, 22 Mar 1997 14:26:31 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+ColdCore 3.0 alpha 7 is available.  99% of the major core changes are
+complete.  Settings and messages from any older core will not translate
+correctly.
+
+Genesis 1.0p26 is also available, changes:
+
+      * Fixed crypt() and match_crypted() for 64bit OS's (Brandon)
+      * minor bug in fromliteral() fixed, in regard to handled frobs (Miro)
+      * changed how searching is handled, to reduce collisions and not
+        overflow.  Also changed it so an object is dirty if obj-&gt;dirty
+        OR obj-&gt;search == cur_search. (Brandon)
+
+Enjoy
+
+-Brandon Gillespie
+
+</PRE>

@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [491] in "Coldmud discussion meeting"</TITLE>
+<H1>[491] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?491"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="490"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="492"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Cores?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct 31 01:49:32 1994
+)</H3>
+<PRE>
+Date: Sun, 30 Oct 1994 22:43:25 -0800
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+
+Thanks to everyone who answered my buffer question.  I've been workign on
+a curses-based windowing client and associated screen and window objects 
+at run-time, but I'm having a heck of a time figuring out the core
+world-0.6.  It clearly HAS an organization and logic, but I keep
+stumbling over it (as an example, right now I'm trying to figure out
+how to get the window object to send a buffer to the user...)
+
+Is there a more complete and/or better documented world core out there?
+I know someone mentioen one a while ago.  Documentation is particularly 
+important as trying to figure out the object inheritance structure from a 
+flat file is murder.
+
+Oh, I almost forgot, my application is a FRp envrionment based on the 
+Fantasy Hero system, if that slants it toward which core would be most 
+useful.
+
+Thanks
+
+Jeff kesselman
+
+</PRE>

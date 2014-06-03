@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [1609] in "Coldmud discussion meeting"</TITLE>
+<H1>[1609] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1609"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1608"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1610"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Frobbed method calls</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jul 15 18:49:56 2000
+)</H3>
+<PRE>
+Date: Sat, 15 Jul 2000 15:41:53 -0700 (PDT)
+From: Jeremy Weatherford &lt;xidus@xidus.net&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+
+Hello,
+
+Is there any reason why the representation of the frob is passed to
+methods not having the frob flag, during a frobbed method call?  IE, $root
+has a method ancestors(), which takes no args.  $frob is a child of $root,
+and we'll say that var thingy = &lt;$frob, #[['rep, 'whatever]]&gt;.  Why should
+'thingy.ancestors()' pass '#[['rep, 'whatever]]' to the method ancestors()
+on $root, since $root.ancestors() doesn't have the 'frob' method flag?
+Calling 'thingy.ancestors()' should be the same as '$frob.ancestors()',
+right?
+
+Obviously, if there was a $frob.frobnitz() method having the 'frob' method
+flag, then 'thingy.frobnitz()' should pass the representation as the first
+argument (the one usually called 'this' in frob methods)
+
+The change proposed, thus, is:
+
+  Frobbed method calls (where the target is a frob) would be changed to
+  not pass the representation as the first argument unless the method
+  has the 'frob' flag.
+
+What would this break?  I'll poke around in my copy of the hardcode and
+see if I can figure out how to do this.  Is this just a really, really bad
+idea, for some reason I haven't thought about yet?
+
+Thanks,
+Jeremy Weatherford
+xidus@xidus.net
+http://xidus.net
+
+</PRE>

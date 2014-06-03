@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [1000] in "Coldmud discussion meeting"</TITLE>
+<H1>[1000] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1000"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="999"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="999"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="999"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1001"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1001"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1001"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] string matching functions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 15 18:18:32 1996
+)</H3>
+<PRE>
+Date: Wed, 15 May 1996 15:46:22 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Miroslav Silovic &lt;silovic@srce.hr&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199605152136.XAA02018@regoc.srce.hr&gt;
+
+&gt; That said, yes, I'd like to see str.match_regexp ("blah"), but could you
+&gt; wait with this till the core is done, and then both change the driver and
+&gt; port the core just before the final release, so that we can develop them
+&gt; synchronously?
+
+yup, just dont let me forget; thats the whole reason I didn't do it 
+before 1.0: I forgot :b
+
+-Brandon
+</PRE>

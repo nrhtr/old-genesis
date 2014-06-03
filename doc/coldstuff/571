@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [571] in "Coldmud discussion meeting"</TITLE>
+<H1>[571] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?571"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="565"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="570"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="570"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="572"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="572"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Assignment Operator.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  8 21:16:07 1994
+)</H3>
+<PRE>
+From: rayn@crossaccess.com
+Date: Tue, 8 Nov 1994 18:04:36 -0800
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;m0r5BNL-000LOBC@colinm.ozemail.com.au&gt;
+
+
+
+Well, actually the main problem with allowing both = and := is that it
+doesnt actually solve the clueless newbies error fo doing x = 5 when
+they mean x == 5. Not that I think := does. As I said, I think its a
+problem with not remembering ==, not with misusing =. (or at least it
+has been in my experience.)
+
+Colin:
+
+&gt; In my opinion, the act of changing the server to accomodate specific
+&gt; learning difficulties (like an inability to comprehend `=') is
+&gt; dirty.  It's a notational convention, and I believe the assertion
+&gt; that there are people out there who can simultaneously have real
+&gt; difficulty with '=', and still produce worthwhile code is false.
+
+a tad harsh, but such is life. 
+
+If (when) assignment in expression becomes an issue again, I'd give
+this whole problem more weight, as the only time I've ever seen x = 1
+cause trouble is when its in an if in C code, and its not readily
+apparent that its an error. Even then, its a matter of experience. One
+must make these mistakes, and later laugh about it. (Gee, the server
+crashed cus i set reallyimportantparameter = 0, instead of testing its
+value! -- Gee you shouldnt be setting parameters like that, its bad OO ;)
+
+I do see your point, though, Brandon. =: is obviously different from
+==, I just dont really thing it will help as much as you seem to, or
+enough to be worth the change. (especially as I'm one of those
+fortunates who skipped pasqal and have no habits of using ':=' )
+
+
+Mmm, lets switch to APL!
+*cackle*
+
+
+	Ray
+</PRE>

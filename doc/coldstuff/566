@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [566] in "Coldmud discussion meeting"</TITLE>
+<H1>[566] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?566"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="565"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="565"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="565"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="567"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="567"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Assignment Operator.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  8 19:28:41 1994
+)</H3>
+<PRE>
+From: rayn@crossaccess.com
+Date: Tue, 8 Nov 1994 16:15:07 -0800
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;9411082344.AA01595@avon.declab.usu.edu&gt; (brandon@avon.declab.usu.edu)
+
+
+On changing = to =:
+
+a valid reason for not changing it: you have to rewrite all existing code.
+trivial but annoying. 
+
+even more trivial: its an extra character ;)
+
+
+I don't see arguments about difficulty of grasping the concept of
+assignment vs test of equality as particularly reasonable. That would
+be like changing english "no" to something else just because japanese
+"no" means something different. explain the concept of assignment,
+explain the concept of test for equality, then explain the sybols for
+these operations.
+
+Not that I really care that much, I think the whole = vs =: thing is
+quite nitpicky and trivial. (And people rarely care what I think ;)
+
+
+	Ray
+
+</PRE>

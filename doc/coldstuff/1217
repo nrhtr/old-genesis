@@ -1,0 +1,118 @@
+<HEAD><TITLE>discuss@charon: [1217] in "Coldmud discussion meeting"</TITLE>
+<H1>[1217] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1217"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1216"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1216"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1216"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1218"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1218"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1218"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] WIN32s</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 26 15:05:27 1997
+)</H3>
+<PRE>
+Date: Sun, 26 Jan 1997 13:59:01 -0600 (CST)
+From: Stephen Smoogen &lt;smooge@shout.net&gt;
+To: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199701261919.LAA15114@dfw-ix5.ix.netcom.com&gt;
+
+
+On the gdbm port you may have problems due to it having been ported with
+16 bit access in mind versus 32 bit access.I ran into something similar 4
+years ago... and it took forever to track down. I would not be sure that
+the 2 binary databse outputs will be identical. I am not sure that 2
+Unixes (Say BSD and Linux) would output the same binary databses on the
+same machine.
+
+Stephen
+
+
+On Sun, 26 Jan 1997, Jon A. Lambert wrote:
+
+&gt; I attempted to get p22 running on Win95 using the BorlandC 5.01 compiler
+&gt; and a DOS port of GDBM.  The Coldcc program appears to work and the 
+&gt; Genesis driver actually loads the data base and begins to start execution.
+&gt; However I am encountering errors in method sizes read from the database
+&gt; in the emalloc routine.  I compared the binary output of Linux and Win95
+&gt; generation of the MinimalCore4.0 and there appear to be differences due
+&gt; to uninitialized memory(?).  I know very little Unix and much less about
+&gt; Cold design.  Here's my driver log just to show you how far I've gotten
+&gt; with it.  I suspect that once I get an exact match on the DB with Linux's
+&gt; DB most all my problems will be solved.  Any information on the
+&gt; format of the binary would be very helpful.  Note that I am not using CYGWIN
+&gt; 17.1 because it crashes quite frequently for me.     
+&gt; Is there anyone interested in helping with this? 
+&gt; 
+&gt; 	Jon Lambert
+&gt; 
+&gt; Binary database fragmentation: 74.85%
+&gt; Calling $sys.startup([])...
+&gt; &lt;==&gt; 4 GET_OBJ_VAR [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 4 ZERO [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 4 FOR_LIST [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 5 CATCH [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 6 START_ARGS [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 6 STRING [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 6 GET_LOCAL [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 6 START_ARGS [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 6 CALL_METHOD [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 4 CRITICAL [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 4 START_ARGS [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 4 objname [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 4 CRITICAL_END [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 4 SET_LOCAL [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 4 POP [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 5 GET_LOCAL [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 5 IF [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 7 GET_LOCAL [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 7 IF [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 8 STRING [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 8 START_ARGS [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 8 GET_LOCAL [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 8 tostr [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 8 + [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 8 RETURN_EXPR [26 Jan 97 14:10] $root.objname
+&gt; &lt;==&gt; 6 + [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 6 STRING [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 6 + [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 6 dblog [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 6 POP [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 7 PROPAGATE [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 7 GET_LOCAL [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 7 START_ARGS [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 7 GET_LOCAL [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 7 SPLICE [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 7 CALL_METHOD [26 Jan 97 14:10] $sys.startup
+&gt; &lt;==&gt; 4 CATCH [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 OBJNAME [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 START_ARGS [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 START_ARGS [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 GET_LOCAL [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 STRING [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 join [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 START_ARGS [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 START_ARGS [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 STRING [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 ONE [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 LIST [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 LIST [26 Jan 97 14:10] $daemon.startup
+&gt; &lt;==&gt; 5 CALL_METHOD [26 Jan 97 14:10] $daemon.startup
+&gt; [26 Jan 97 14:11] PANIC: emalloc(FFFFFFFC) failed.
+&gt; [26 Jan 97 14:11] doing binary dump...Done
+&gt; 
+&gt; 
+&gt; 
+&gt; 
+&gt; Some are born to sweet delight, some are born to endless night
+&gt; 
+
+------------------------------------------------------------------------------
+Stephen John Smoogen 	
+Recovering Sysadmin (well ok... I still sysadmin... I cant stop)..
+
+</PRE>

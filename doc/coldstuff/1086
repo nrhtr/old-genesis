@@ -1,0 +1,27 @@
+<HEAD><TITLE>discuss@charon: [1086] in "Coldmud discussion meeting"</TITLE>
+<H1>[1086] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1086"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1085"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1087"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Floating-point exception bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Sep  8 19:18:07 1996
+)</H3>
+<PRE>
+Date: Sun, 8 Sep 1996 15:56:46 -0700
+From: Brian Buchanan &lt;brian@wasteland.calbbs.com&gt;
+To: coldstuff@cold.org
+
+
+Recently, I encountered a problem where certain floating point operations would throw ~fpe for no good reason (if they were called again immediately, they worked).  I think I've traced this to caught_fpe being set true from a previous SIGFPE unrelated to the current FP operation.  In the macros MATH_HOOK_FPE_2 and MATH_HOOK_FPE, I added "caught_fpe = 0; \" right before "r = _math_  (( ..." and this seems to have cleared it up.  There may be other places where this should be done, though.
+
+---
+   Brian Buchanan    sysop@calbbs.com    brian@wasteland.calbbs.com
+</PRE>

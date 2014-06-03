@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [350] in "Coldmud discussion meeting"</TITLE>
+<H1>[350] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?350"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="349"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="351"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>suspend() and other stuff</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jun 12 18:21:38 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Sun, 12 Jun 1994 15:14:51 -0700 (PDT)
+
+I recently heard of the change coming to MOO suspend some time in the next
+ release or two. It will allow an indefinite suspend, and a resume() will
+ restart the task. I was also speaking with someone writting another
+ language and discussed 'continuations' a kind of frozen task.
+
+It occurred to me that these ideas, if applied to cold well, could make
+ in-db task management better than anything I've used. If a method can copy
+ the current task, you automatically have the ability to fork. If you can
+ tell a task queue object to run this copy later and then kill the current
+ task you have suspend().
+
+Here's the really cool part: If all of this revolves around a task object
+ class, you could have traceback info available, you could do funky debugging,
+ etc.
+
+I'm sending these thoughts to this list for a number of reasons. First, to
+ record them as considered. Second to suggest them to subscribed server
+ hackers. Third, so I will get a copy and can archive it, and if I end up
+ doing my own server hacking I'll have it arround to remind me.
+
+Anybody have any thoughts about this?
+
+Crag / Robert de Forest
+
+P. S. Yes, I know almost none of it's my idea. I just want it.
+</PRE>

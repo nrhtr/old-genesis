@@ -1,0 +1,61 @@
+<HEAD><TITLE>discuss@charon: [712] in "Coldmud discussion meeting"</TITLE>
+<H1>[712] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?712"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="711"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="713"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="714"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="714"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>consider the lilies</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 14 19:49:39 1995
+)</H3>
+<PRE>
+From: paul@solar.sky.net
+To: crag@serial.io.com
+Date: Tue, 14 Mar 1995 18:45:20 -0600 (CST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;m0roetf-000KcEC@serial&gt; from "Robert de Forest" at Mar 14, 95 04:16:59 pm
+
+Spake Crag:
+&gt;  will be releasing my change to his ColdX server. Based on these grounds I
+&gt;  think arguments based on 'C-- should be like C' are moot...or something. I
+&gt;  don't think we should restrict ourselves this way.
+&gt; 
+&gt; A language 'Joule' I read about (which has no implementation yet, as far as
+[etc]
+&gt; The point is, there is no assignment operator at all in this new language. Of
+
+As you just proved, Joule is designed completely different than ColdC.
+Think of it like a pile of jello (can I say that on tv?). If you squish
+around the bottom part too much, it'll all come crashing down and you'll
+have to rebuild from all the globules which probably have dirt from the
+floor on them; or you could buy another pack and think it over.
+
+I don't object to changing small things, really. Nor do I object to starting
+over with a new jello mix (as it were). I do object to trying to make
+changes in the foundation and try to pretend it's the same thing, because
+that could get messy. (at least, I THINK that's the point. you know,
+some analogies just get out of control.)
+
+&gt; All this rambling is to add weight to my assertion that '&lt;-' is the best
+&gt;  best operator to use for assignment in the ColdX server. Its meaning agrees
+&gt;  fairly well with its visual structure. It does not in any way appear to be
+&gt;  a comparison. It suggests modification (through motion).
+
+I don't see any reason to change from '='. There may be confusion with
+'=='. By the same token, there may be confusion between '&lt;-' and '-' or '&lt;'.
+I think the least confusion would be in remaining consistent.
+
+&gt;"It's too different" - ColdX itself is very different. To keep '=' or change to
+
+
+Well, if you want it to be different, that's another story.
+
+Paul,
+who's hoping his editor didn't insert text the way it placed the cursor
+</PRE>

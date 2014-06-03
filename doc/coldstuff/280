@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [280] in "Coldmud discussion meeting"</TITLE>
+<H1>[280] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?280"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="279"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="279"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="281"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="283"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 09:51:23 1994
+)</H3>
+<PRE>
+Date: Thu, 19 May 1994 10:47:18 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+
+
+Well, this is just me being paranoid, but a portmapper type thing is a
+hackers dream come true... the less randome people know about the
+system the more secure it is. And last nite at the colddark meeting it
+was mentioned that anyone who were able to spoof connections and such
+to a cold were probably not worth stopping, well in most cases
+yeah. Its my intention though to run a server on a site that has
+security issues, and when your talking about a server that can run
+shell scripts (and who's permissions do scripts run under?) your
+getting into some really nifty security issues, hence my paranoia.
+
+another thing about portmappers. The general sun style portmapper for
+rpc is a problem with secrutiy because it can be tricked into giving
+trusted access, if your not careful as to how its set up. This
+probably isnt as big an issue in this case.
+
+Sorry, I'm just paranoid lately,
+
+	Ray/Ash
+
+
+</PRE>

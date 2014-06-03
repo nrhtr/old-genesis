@@ -1,0 +1,72 @@
+<HEAD><TITLE>discuss@charon: [1053] in "Coldmud discussion meeting"</TITLE>
+<H1>[1053] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1053"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1052"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1052"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1052"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1054"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Coldcc - Eyow!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul 29 11:42:46 1996
+)</H3>
+<PRE>
+Date: Mon, 29 Jul 1996 09:23:30 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Dancer &lt;dancer@brisnet.org.au&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;31FCC439.45F4E8C6@brisnet.org.au&gt;
+
+On Tue, 30 Jul 1996, Dancer wrote:
+&gt; Brandon suggested changing the 'new' keyword, for 'old' in the dump. I
+&gt; hadn't thought of that, and felt like a bit of a twerp for _not_
+&gt; thinking of it.
+
+Ack, no!  I said get rid of 'new', dont use 'old'.  'new' deletes and 
+creates a new object, old just deletes and leaves it be.
+
+Hehe.
+
+&gt; In short:
+&gt; 	* 'old $objname' automatically deleted $objname, before proceeding. I
+&gt; felt this was not what was intended.
+
+Yes, it was..  the following behavior is legit:
+
+new object $foo: $root;    // deletes existing $foo, creates new $foo,
+                           // must always have parents list defined.
+old object $foo;           // simply deletes $foo
+object $foo;               // set '$foo' as the current object.
+                           // if used with a parents list, will try to
+                           // create $foo as a new object if it does not
+                           // exist.
+
+&gt; 	* Objects would get instantiated (eg: $mail_message_148), and then a
+&gt; little while later, coldcc could not retrieve the object by number. This
+&gt; I haven't looked into. I punted, and forced it to create a new object. I
+&gt; wanted a running database more than a fix just then. (see my goto,
+&gt; above).
+
+Hrm, which specifyer were you using?  new/old/none?
+
+&gt; 	* In data/object.c, object_has_ancestor() can get called with an objnum
+&gt; of -1. This is not good. This tends to happen because the 'old'
+&gt; declaration deleted the object, instants before we try to do this. You
+&gt; can figure this patch out for yourself. Interestingly, I _think_ this
+&gt; routine is still called with the bad object number from time to time on
+&gt; partial compiles _anyway_. This hints at another bug, that I didn't go
+&gt; looking for. (as if the previous thing didn't. Hah.)
+&gt; 
+&gt; No patches, sorry. I'll email a copy of the hacked textdb.c to Brandon
+&gt; for him to have a look at. The rest of you wait. It's not a pretty
+&gt; sight, what I've done to this code. Things like this shouldn't be
+&gt; inflicted on poor innocent software.
+
+8)
+
+-Brandon
+</PRE>

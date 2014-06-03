@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1550] in "Coldmud discussion meeting"</TITLE>
+<H1>[1550] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1550"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1549"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1551"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1553"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1553"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Genesis with old cores</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Feb 16 13:03:32 2000
+)</H3>
+<PRE>
+Date: Wed, 16 Feb 2000 18:44:42 +0100 (CET)
+From: Joerg Weber &lt;joerg@fs.is.uni-sb.de&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+Hello everyone,
+
+I've a quite old but very modificated core lying around and would want to
+run it with the latest Genesis. Now I remember that Bruce did change 
+$dictionary.union()
+and that new cores have to be adjusted. Can someone drop me a hint how I'd
+either a) ajust my core quickly or b) how to patch the latest genesis to
+use the old $dictionary.union()?
+Thanks,
+	Broesel
+
+
+</PRE>

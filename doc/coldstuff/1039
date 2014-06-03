@@ -1,0 +1,67 @@
+<HEAD><TITLE>discuss@charon: [1039] in "Coldmud discussion meeting"</TITLE>
+<H1>[1039] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1039"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1037"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1038"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1038"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1040"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1040"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1046"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] encryption, DES, MD5, SHA-1(?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jul 24 11:52:14 1996
+)</H3>
+<PRE>
+Date: Wed, 24 Jul 1996 10:18:16 -0500 (CDT)
+From: Stephen Smoogen &lt;smooge@duracef.shout.net&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.960723171111.21255A-100000@tombstone.sunrem.com&gt;
+
+On Tue, 23 Jul 1996, Brandon Gillespie wrote:
+
+&gt; I would prefer to ship a specific crypt with the driver, so it is always 
+&gt; the same.  However, there are legal concerns--unfortunately I am not 
+&gt; aware of what they are specifically.
+
+The legal concerns are such that is probably best that you make the crypt
+a seperate module that has to explicitely be gotten. You then have a group
+of people outside of the states also write a module with whatever
+encryption matters (without looking at your source code) and supplying it
+with their version. 
+
+
+&gt; 
+&gt; I doubt we can ship DES (like it would matter).
+&gt; 
+
+Sadly I dont think so UNLESS you you like use the version from 
+Australia.. what happens then is that you are using their libraries at 
+compile time and it is up to the users of the Cold to have gotten it.
+
+&gt; Can we ship MD5 internationally without reprecussions?
+&gt; 
+
+Hmmm I see that GNU ships md5sum in their textutils package... so 
+possibly. 
+
+&gt; What is SHA-1?  Can we ship it internationally etc?
+&gt; 
+&gt; What does MOO use for string_hash()?  Is it as good as MD5 or others?
+&gt; 
+&gt; Source?
+&gt; 
+&gt; I can shag md5 from the FreeBSD distribution, if I can get some factual 
+&gt; information about shipping with it..
+
+
+
+------------------------------------------------------------------------------
+Stephen John Smoogen 	
+Recovering Sysadmin (well ok... I still sysadmin... I cant stop)..
+217-351-8093
+
+</PRE>

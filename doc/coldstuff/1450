@@ -1,0 +1,74 @@
+<HEAD><TITLE>discuss@charon: [1450] in "Coldmud discussion meeting"</TITLE>
+<H1>[1450] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1450"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1449"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1449"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1449"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1451"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Genesis bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Aug  2 11:57:32 1999
+)</H3>
+<PRE>
+Date: Mon, 2 Aug 1999 09:40:31 -0600
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199908020715.BAA22546@roguetrader.com&gt;; from Levi Pearson on Mon, Aug 02, 1999 at 01:15:00AM -0600
+Reply-To: coldstuff@cold.org
+
+
+--G4iJoqBmSsgzjUCe
+Content-Type: text/plain; charset=us-ascii
+
+On Mon, Aug 02, 1999 at 01:15:00AM -0600, Levi Pearson wrote:
+&gt;   The Camlann server, running genesis 1.1p4, has suffered a couple of nasty
+&gt; bugs.  First, invalid objects showed up in some children() listings.  One of
+&gt; these was a child of $login_interface, I believe.  There were a couple of
+&gt; others, but there was a crash before I could track down where they were.
+
+Which OS?
+
+&gt;   The second problem showed itself when I tried to restore the recent backups.
+&gt; For backups up to a couple of months old, coldcc -d would panic and dump core,
+&gt; complaining about an invalid data type.  Seems to be some sort of minor db
+&gt; corruption, but the corruption existed in backup dbs up to 2 months old and it
+&gt; never caused a crash in that time.
+
+I have a new backup script that stores textdb's by default.  It is
+much much improved over the old one--it has the option of storing
+textdb or binarydb, and of compressiong with any number of compression
+tools (bzip2, gzip, compress), or not compressing at all.  Like the
+old one, it is implemented in perl.  I have only tested it in FreeBSD.
+You can grab it at:
+
+    ftp://ftp.cold.org/cold/contrib/backup2.gz
+
+Feel free to use it and let me know how things go.  I have been using
+it with tCD for a few weeks now, with textdb storing and bzip2
+compression.  The only thing that should be noted is if you get a
+corrupted DB, it will no longer store the backup, so having a script
+that watches the genesis logfile for failed decompiles is strongly
+recommended (infact I may change the script to email when it has
+problems of this type).
+
+-Brandon
+
+--G4iJoqBmSsgzjUCe
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: fL4hPLFI8Va5myXhLqYjzmpNvFNvtnrm
+
+iQA/AwUBN6W77kv5XoQiMgn6EQJdIACePA7BOyntps9XtlOnG0r3IZaK9tEAmgNk
+UifwsqgCTk0jzT7epufj4SZO
+=l1ij
+-----END PGP SIGNATURE-----
+
+--G4iJoqBmSsgzjUCe--
+</PRE>

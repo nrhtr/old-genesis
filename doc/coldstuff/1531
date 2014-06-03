@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1531] in "Coldmud discussion meeting"</TITLE>
+<H1>[1531] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1531"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1530"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1532"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>annoying behavior</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec 18 18:24:46 1999
+)</H3>
+<PRE>
+From: bruce@puremagic.com
+To: coldstuff@cold.org
+Date: Sat, 18 Dec 1999 15:07:48 -0800 (PST)
+Reply-To: coldstuff@cold.org
+
+Hello.
+
+This behavior is somewhat annoying:
+
+;"".index("blah")  
+! =&gt; Origin is beyond the range of the string.
+!    Thrown by stridx
+!    ~range: $string.index() line 3
+!    ~methoderr: $user_bruce.tmp_eval_945558415() line 5
+!    ~methoderr: $user_bruce&lt;$programmer&gt;.evaluate() line 25
+[ seconds: 0.000082; operations: 3 ]
+
+I understand why it happens, but it requires special-casing code that
+shouldn't be required.
+
+ - Bruce
+
+</PRE>

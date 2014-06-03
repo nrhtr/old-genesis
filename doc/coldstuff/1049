@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [1049] in "Coldmud discussion meeting"</TITLE>
+<H1>[1049] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1049"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1048"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1050"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] .write("foo", 'non_terminated) and a certain client...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jul 27 15:04:29 1996
+)</H3>
+<PRE>
+From: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+To: coldstuff@cold.org
+Date: Sat, 27 Jul 1996 18:50:56 +0100 (BST)
+
+There are some methods in ColdCore-3.0-ALPHA2 which could cause
+problems for clients which operate in 'line mode'.  .write("something",
+'non_terminated) has the effect of flushing a string to the connection
+without terminating it with a CR.  tkMOO-light (yawn) is currently
+geared up to cope with 'gets' reads, that is, it expects information
+to appear in lines terminated with CR.
+
+Issuing the @shutdown command causes a prompt:
+
+    Do you really want to? [yes]:
+
+or some similar string which only appears *after* the bemused user
+has typed [return] to free up what appears to be a hanged connection.
+
+So, this isn't a bug report, just a note that -light gets screwed
+by the current core.  I may find time to explore turning my well
+formed gets's into really hairy read's, possibly before hell cools
+a little.
+
+Oh well.
+
+Ay.
+</PRE>

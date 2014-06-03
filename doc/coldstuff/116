@@ -1,0 +1,67 @@
+<HEAD><TITLE>discuss@charon: [116] in "Coldmud discussion meeting"</TITLE>
+<H1>[116] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?116"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="115"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="117"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: New Coldmud ...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 13 14:49:07 1993
+)</H3>
+<PRE>
+Date: Mon, 13 Dec 1993 12:25:57 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; ./coldmud world &gt; log &amp;     did not stop the messages from coming
+&gt; to my own terminal.  any ideas?
+
+do:
+
+  ./coldmud ./world &gt;&gt;&amp; logfile &amp;
+
+&gt; Created new room $room3.
+&gt; ERROR: $exit.spawn called with three arguments, requires one.
+&gt; Thrown by interpreter opcode MESSAGE.
+&gt; ~numargs in $nowhere.make_exit (defined on $room), line 8
+&gt; ~methoderr in $programmer1.dig_to_cmd (defined on $builder), line 10
+&gt; ~methoderr in $programmer1.parse_command (defined on $user), line 10
+&gt; ~methoderr in $programmer1.parse_command (defined on $programmer), line 12
+
+hee, this is because greg changed the way .init worked in world 4.0 from 3.0,
+but he forgot to change it on exits.  Just change the init to be:
+
+pass();
+if (!inited) {
+  &lt;what it sets&gt;
+  inited = 1;
+}
+
+then:
+
+;$exits.add_parameter('inited);
+
+and it should work.
+
+&gt; Also, the world-0.4 is pretty sparse, anyone got a decent DB built
+&gt; that I can scarf up? I'm not in the mood to start from almost scratch
+&gt; unless I have to.
+
+Chaos will be releasing his core soon, and i'll be merging it into the Cold
+Dark.  Other than that i'm not sure if anybody is working on anything...
+
+&gt; I'm willing to create a manual for coding (since I'll be learning it at the
+&gt; same time, should be a good beginner's intro by the time I get done.) so
+&gt; I'm looking for as much solid stuff to build a good core as I can get.
+
+Did you see Greg's Manual?
+
+-Brandon
+</PRE>

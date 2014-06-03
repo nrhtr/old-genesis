@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1408] in "Coldmud discussion meeting"</TITLE>
+<H1>[1408] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1408"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1407"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1409"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1409"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1409"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] [BUG] can't log in...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar  1 12:10:39 1998
+)</H3>
+<PRE>
+From: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+To: coldstuff@cold.org
+Date: Sun, 1 Mar 1998 16:50:02 +0000 (GMT)
+Reply-to: Andrew.Wilson@cs.cf.ac.uk
+
+Hi,
+
+typing 'connect foo bar' gives me:
+
+! =&gt; Object variable modules not found.
+!    Error ~methoderr caused by GET_OBJ_VAR
+!    ~varnf: $command_cache.match_shortcut() ($user_networker) line 4
+!    ~methoderr: $command_parser.parse() line 8
+!    ~methoderr: $user.parse_line() ($user_networker) line 12
+
+There's no way to login to tCD.
+
+Ay.
+</PRE>

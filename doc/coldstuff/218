@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [218] in "Coldmud discussion meeting"</TITLE>
+<H1>[218] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?218"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="216"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="217"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="217"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="219"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: consistency in match_template</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Apr 28 20:50:46 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: eostrom@pepperoncini.gac.edu (Erik Ostrom)
+Date: Thu, 28 Apr 1994 17:45:55 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9404282120.AA08120@gac.edu&gt; from "Erik Ostrom" at Apr 28, 94 04:20:01 pm
+
+&gt; Imagine if, each time you wanted to do something, you had to stop and
+&gt; remember which 4-tuple of quoting semantics the command you're
+&gt; thinking of uses.  Staggering.
+
+No, no, no, no, no.  I have never had someone miss my point so completely (and
+trust me, Lynx does a lot of it).  I had thought it would be fairly obvious
+from everything else I said that this is exactly what I was NOT proposing.
+There are two issues here.  One is how user commands should be handled and the
+other is how match_template should work.  they are related but they are not the
+same.
+
+The command parser would only use one specific set of options for matching all
+command templates, but which options are used would be up to the people writing
+the DB, not hardcoded into the routine.  In short, make the server as flexible
+as possible and leave the actual uses of it up to the people designing the
+individual systems.
+
+-Riche
+
+
+</PRE>

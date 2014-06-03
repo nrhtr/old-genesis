@@ -1,0 +1,66 @@
+<HEAD><TITLE>discuss@charon: [743] in "Coldmud discussion meeting"</TITLE>
+<H1>[743] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?743"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="742"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="742"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="742"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="744"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="744"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="746"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: idea for custom error handling</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 24 17:09:56 1995
+)</H3>
+<PRE>
+Date: Wed, 24 May 95 14:01:10 -0700
+From: jsp@betz.biostr.washington.edu (Jeff Prothero)
+To: coldstuff@MIT.EDU
+
+
+Robert de Forest:
+
+| I had this idea a while ago but I don't remember posting it.
+| 
+| I'd like to add 'global catching' of a sort where the first action
+| taken by the server when an error is thrown is to suspend the task and
+| call $sys.handle_error(error, error_str, error_arg, task_id). If the
+| task is resumed the expression that threw the error would instead
+| return the value the task was resumed with. A new function
+| 'complete_throw' (help me think of a better name) would be added to
+| cause the usual action to happen.
+| 
+| The point of all this is to allow a function to be debugged as it's
+| running.  .handle_error could choose to leave the task suspended and
+| tell the programmer about the suspended task, etc.
+
+I'm just finishing wrapping up implementation of the
+CommonLisp condition handling system for Muq:  I'm
+reasonably impressed by it and think you might want
+to take a look at it if you're not familiar with it.
+I think you'll find that it provides the above and a
+lot more, distilled from much experience with similar
+debugging problems under a variety of Lisp systems
+(zetalisp, maclisp, interlisp...).  At the least, it
+might provide a nomenclature and reference model.
+
+ http://www.cs.washington.edu/research/projects/ai/www/cltl/clm/node1.html
+
+is one URL for CommonLisp the Language 2nd Ed: This
+describes the condition system in possibly the most
+gratuitously opaque bit of technical writing I've
+seen in my life.
+
+    ftp://parcftp.xerox.com:/pub/cl/
+
+contains the draft ANSI CommonLisp standard (since
+adopted, if I'm not mistaken);  I have a possibly
+more convenient version of this posted as
+
+    http://betz.biostr.washington.edu/cl/cl.html
+
+ Cynbe
+
+</PRE>

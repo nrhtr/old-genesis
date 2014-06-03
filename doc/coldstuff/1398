@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [1398] in "Coldmud discussion meeting"</TITLE>
+<H1>[1398] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1398"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1397"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1399"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Improved MOO=&gt;ColdC converter</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  8 17:10:23 1997
+)</H3>
+<PRE>
+Date: Mon, 8 Dec 1997 15:05:59 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+
+In another fit of boredom I just hacked in quite a few improvements to the
+moo2coldc perl script which converts a MOO object @dump.  Its pretty smart
+now--but still does not get everything.  Go ahead and take it around the
+block.  @dump a MOO object to a file, run this on the .moo file and it'll
+do two things: print conversion messages to stdout, and write to a .cdc
+file.  Edit the .cdc file--do or pay attention to anything the conversion
+messages mentioned, and also search through the file for any 'CONVERSION
+NOTE' comment and follow its warnings/instructions as appropriate.
+
+Just for reference, I took a mild MOO object (about 10 verbs) converted it
+and without any diddling pasted the .cdc file direct into a coldCore and
+it compiled without complaint.  Note: just because it compiles does not
+mean it'll run--there will still be a bit of work involved.
+
+You can get the new and improved script from:
+
+       ftp://ftp.cold.org/cold/contrib/scripts/moo2coldc.gz
+
+It requires perl5.
+
+-Brandon
+
+</PRE>

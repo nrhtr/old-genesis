@@ -1,0 +1,133 @@
+<HEAD><TITLE>discuss@charon: [130] in "Coldmud discussion meeting"</TITLE>
+<H1>[130] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?130"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="129"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="131"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Naming objects, and a verb cache</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec 23 01:27:45 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Thu, 23 Dec 93 01:23:17 EST
+To: coldstuff@MIT.EDU
+
+
+I've been thinking about renaming dbrefs recently.  Some of you have
+been asking if it's possible to rename dbrefs, and I've been saying,
+"No, no more than you can change object numbers in MOO."
+
+But that's because I've been implementing dbrefs in Coldmud in more or
+less the same way object numbers are implemented in MOO; there's no
+layer of indirection between #3263 and an object in MOO, and likewise
+no layer of indirection between $admin1 and an object in Coldmud that
+would allow me to transparently change object dbrefs without breaking
+things.
+
+The issue is, of course, what happens to code and data references to
+the objects.  If you want all those to break, then you can simply copy
+the object and destroy the old one, and you're set.  In certain cases,
+this may be what you want; for instance, code references to $string
+are probably concerned with the functionality of $string and not a
+particular object.
+
+At any rate, the upshot is: I could, with a bit of work, provide the
+functionality of changing object dbrefs so that all code and data
+references get updated.  Or so that data references get updated but
+code references stay the same.  This would let you do things like make
+your dbref into your name, even if you changed names (unless you
+changed your name to, say, "user", in which case you'd have to
+compromise somehow, but that's a detail), and nothing would break.
+You wouldn't have to change entries in room's contents lists, or
+$sys's user lists, or whatnot.
+
+But I'm not sure if I should:
+
+* Object dbrefs fill the role of pointers in C: they act a lot like
+pointers to data structures.  That they have a printable, parseable
+representation is more or less an accident, inherited from MOO, that's
+hard to get away from without changing the way everyone thinks.
+
+If I start using object dbrefs as names for the objects, and not just
+mildly descriptive pointers, then am I trying to fill two distinct
+roles with one construct?  Can I easily distinguish between a
+reference that's intended as a name reference ($string) and a
+reference that's intended as a pointer reference ($programmer22 in a
+contents listing)?
+
+* Object dbrefs are a flat namespace.  Even if the pointer nature of
+dbrefs doesn't make them a bad thing to use as names, the flat aspect
+of the namespace may be.  On the other hand, I haven't seen any really
+good ideas for a replacement for a flat namespace, or an idea of who
+should control it.  MOO has a dynamic, flat namespace (the variables
+on #0), controlled purely by the admins, and you wind up with people
+referring to objects by number a lot, which is clearly pessimal.  (I
+really can't believe that people actually debated and adopted object
+number recycling instead of trying to fix the problem.)
+
+(The VR naming scheme--you know, .match_environment()--is quite
+powerful for the problem it addresses, but it's completely worthless
+for programming and somewhat inadequate for building.)
+
+When I started writing fume (was going to be Muck-like, with a C-like
+instead of Forth-like language, but then I saw Coolmud and decided I
+liked the mud-written-in-the-language approach better), I had the idea
+of a two-tiered namespace, a global one controlled by the admins and
+then a separate one for each player.
+
+But individual namespaces are inconvenient; I'd like for all users to
+have the same view of the world, and at the same time for users to
+have some control over that view.
+
+I think my conclusions from this line of thought are:
+
+	* Dbrefs make bad names for objects, although they make good
+pointers and reasonable "annotated pointers".  Trying to make them
+into names is a bad solution.  Making them symbolic in the first place
+was questionable.
+
+	* There should be a separate construct for naming objects,
+probably with parser support to make it fast and more palatable for
+programmers.
+
+	* Making a dynamic naming scheme for objects is easy; deciding
+how it should be structured and controlled is hard.
+
+I will think about this some more, perhaps settle on something like a
+hierarchy so that the db can allow users to control parts of the
+namespace.  I'd be interested in hearing what other people think about
+this.
+
+I haven't even addressed the issue of reverse-resolution (that is,
+turning a dbref into a name that will evaluate--in the short term, at
+least--back into the dbref).  The reverse-resolution problem is what
+tipped me towards symbolic dbrefs in the first place.
+
+Naturally, this won't go into 1.0, which is coming out in eight days.
+
+Okay, the verb cache: I think that, with sufficiently clever use of
+dictionaries, I can make a central verb cache that will only need to
+be rebuilt when a user enters a line that's not a command or exit name
+in a new room (that is, a room recently entered by the user which
+previously had no other users in it).  This is a pretty good solution,
+since it doesn't involve rebuilding the cache often when users are in
+exploration mode (assuming they don't misspell or mis-guess exit names
+a lot), in programming mode, or in chatting mode.
+
+Also, since verb cache management will be central, it should be a lot
+cleaner than the current strewn-all-over-the-database approach.  Still
+not terribly OO (as would be, say, asking each object in the
+environment whether it can handle a line, and having each object check
+all its ancestors, etc.), but in this case flexibility will take a
+back seat to efficiency.
+
+--GBH
+
+</PRE>

@@ -1,0 +1,145 @@
+<HEAD><TITLE>discuss@charon: [1047] in "Coldmud discussion meeting"</TITLE>
+<H1>[1047] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1047"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1046"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1048"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Floats patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jul 25 00:45:53 1996
+)</H3>
+<PRE>
+Date: Thu, 25 Jul 1996 06:22:23 +0200 (MET DST)
+From: Miroslav Silovic &lt;silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+
+There was a bug in reading floats (1e+09 would unparse to 1e, leaving
++09 dangling, because of the buggy end of string test).
+I also fixed bug in writing floats. Now 17.0 unparses as 17., not 17
+(so that the type remains float).
+
+diff -C 10 -r Genesis-1.0p9/src/textdb.c Genesis-1.0p9-new/src/textdb.c
+*** Genesis-1.0p9/src/textdb.c	Sat Jul 13 03:55:00 1996
+--- Genesis-1.0p9-new/src/textdb.c	Thu Jul 25 06:00:00 1996
+***************
+*** 1253,1290 ****
+  }
+  
+  /* defined here, rather than in data.c, because it would be lint for genesis */
+  char * data_from_literal(cData *d, char *s) {
+  
+      while (isspace(*s))
+  	s++;
+  
+      d-&gt;type = -1;
+  
+!     if (isdigit(*s) || (*s == '-' &amp;&amp; isdigit(s[1]))) {
+          char *t = s;
+  
+  	d-&gt;type = INTEGER;
+  	d-&gt;u.val = atol(s);
+  	while (isdigit(*++s));
+          if (*s=='.' || *s=='e') {
+   	    d-&gt;type = FLOAT;
+   	    d-&gt;u.fval = atof(t);
+   	    s++;
+!             while (isdigit(*s) || *s == '.' || *s == 'e' || *s == '-') s++;
+   	}
+  	return s;
+      } else if (*s == '"') {
+  	d-&gt;type = STRING;
+  	d-&gt;u.str = string_parse(&amp;s);
+  	return s;
+!     } else if (*s == '#' &amp;&amp; (isdigit(s[1]) || s[1] == '-')) {
+  	d-&gt;type = OBJNUM;
+  	d-&gt;u.objnum = atol(++s);
+  	while (isdigit(*++s));
+  	return s;
+      } else if (*s == '$') {
+          idref_t    id;
+          Ident      name;
+  	cObjnum   objnum;
+  
+          s += get_idref(s, &amp;id, ISOBJ);
+--- 1253,1290 ----
+  }
+  
+  /* defined here, rather than in data.c, because it would be lint for genesis */
+  char * data_from_literal(cData *d, char *s) {
+  
+      while (isspace(*s))
+  	s++;
+  
+      d-&gt;type = -1;
+  
+!     if (isdigit(*s) || (*s == '+' &amp;&amp; isdigit(s[1])) || (*s == '-' &amp;&amp; isdigit(s[1]))) {
+          char *t = s;
+  
+  	d-&gt;type = INTEGER;
+  	d-&gt;u.val = atol(s);
+  	while (isdigit(*++s));
+          if (*s=='.' || *s=='e') {
+   	    d-&gt;type = FLOAT;
+   	    d-&gt;u.fval = atof(t);
+   	    s++;
+!             while (isdigit(*s) || *s == '.' || *s == 'e' || *s == '-' || *s == '+') s++;
+   	}
+  	return s;
+      } else if (*s == '"') {
+  	d-&gt;type = STRING;
+  	d-&gt;u.str = string_parse(&amp;s);
+  	return s;
+!     } else if (*s == '#' &amp;&amp; (isdigit(s[1]) || s[1] == '-' || s[1]=='+')) {
+  	d-&gt;type = OBJNUM;
+  	d-&gt;u.objnum = atol(++s);
+  	while (isdigit(*++s));
+  	return s;
+      } else if (*s == '$') {
+          idref_t    id;
+          Ident      name;
+  	cObjnum   objnum;
+  
+          s += get_idref(s, &amp;id, ISOBJ);
+Only in Genesis-1.0p9-new/src: textdb.o
+Only in Genesis-1.0p9-new/src: token.o
+diff -C 10 -r Genesis-1.0p9/src/util.c Genesis-1.0p9-new/src/util.c
+*** Genesis-1.0p9/src/util.c	Sat Jul 13 03:55:42 1996
+--- Genesis-1.0p9-new/src/util.c	Thu Jul 25 06:06:08 1996
+***************
+*** 99,119 ****
+--- 99,125 ----
+  	*p-- = '-';
+      return p + 1;
+  #else
+      *nbuf++ = (char) 0;
+      sprintf(nbuf, "%ld", (long) num);
+      return nbuf;
+  #endif
+  }
+  
+  char * float_to_ascii(float num, Number_buf nbuf) {
++     int i;
+      sprintf (nbuf, "%g", num);
++     for (i=0; nbuf[i]; i++)
++ 	if (nbuf[i]=='.' || nbuf[i]=='e')
++            return nbuf;
++     nbuf[i]='.';
++     nbuf[i+1]='\0';
+      return nbuf;
+  }
+  
+  /* Compare two strings, ignoring case. */
+  Int strccmp(char *s1, char *s2) {
+      while (*s1 &amp;&amp; LCASE(*s1) == LCASE(*s2))
+  	s1++, s2++;
+      return LCASE(*s1) - LCASE(*s2);
+  }
+  
+</PRE>

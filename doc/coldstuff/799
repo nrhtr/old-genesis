@@ -1,0 +1,59 @@
+<HEAD><TITLE>discuss@charon: [799] in "Coldmud discussion meeting"</TITLE>
+<H1>[799] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?799"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="798"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="798"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="798"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="800"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Consider: native methods question</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep  9 15:27:04 1995
+)</H3>
+<PRE>
+Date: Sat, 9 Sep 1995 15:23:51 -0400 (EDT)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: 869683 Gillespie Brandon James &lt;brandon@clarkston.declab.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9509080842.AA09428@clarkston.declab.usu.edu&gt;
+
+
+
+On Fri, 8 Sep 1995, 869683 Gillespie Brandon James wrote:
+
+&gt; Native methods are simply functions bound on an object in the same means
+&gt; as a method, and which do not exist in the opcode table.
+&gt; 
+&gt; I'm considering two implementations:
+&gt; 
+&gt;   #1: Add them to the methods list, hooking into the native code rather than
+&gt;       the pcode.  The disadvantage of this lies in it can be awkward.
+
+Awkward?  How?
+
+&gt;   #2: adding a new operator which is a native method operator, for now let
+&gt;       us pretend this is '&amp;', so to call a native method you would execute
+&gt;       (from the object which has them hashed) it with:
+&gt; 
+&gt;           &amp;function(..).
+&gt; 
+&gt;       This would give you more configurability, in that you could more
+&gt;       easilly create wrappers.  For instance, consider the string functions,
+&gt;       if you wanted to add 'fill', you would:
+
+[deletia]
+
+Why would this be more configurable?  You could achieve the same thing by 
+binding a private method to the native code and wrapping that.  In 
+addition, you wouldn't need to add a whole other hashtable, and it would 
+be much more transparent to move the implementation of a method back and 
+forth between native and p-code.
+
+--
+James "going native" Deikun
+
+</PRE>

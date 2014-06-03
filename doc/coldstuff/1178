@@ -1,0 +1,90 @@
+<HEAD><TITLE>discuss@charon: [1178] in "Coldmud discussion meeting"</TITLE>
+<H1>[1178] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1178"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1177"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1179"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] YAP</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec 13 11:14:09 1996
+)</H3>
+<PRE>
+Date: Fri, 13 Dec 1996 17:05:34 +0100 (MET)
+From: Miroslav Silovic &lt;Miroslav.Silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+Here's Yet Another Patch. :) THe problem is wrong logic in both string_prep
+and list_prep. Certain combinations of subrange() and + crashed the
+server. I managed to tickle this with routine that unparsed my
+debugger output. BTW, consider debugger fully operational, as well.
+
+---------------------------------------------------------------------
+
+diff -C 5 -r Genesis-1.0p19/src/data/list.c Genesis-1.0p19-new/src/data/list.c
+*** Genesis-1.0p19/src/data/list.c	Fri Dec 13 17:02:00 1996
+--- Genesis-1.0p19-new/src/data/list.c	Fri Dec 13 17:02:00 1996
+***************
+*** 43,55 ****
+               resize,
+               size;
+  
+      /* Figure out if we need to resize the list or move its contents.  Moving
+       * contents takes precedence. */
+!     resize = (len - start) * 4 &lt; list-&gt;size;
+!     resize = resize &amp;&amp; list-&gt;size &gt; STARTING_SIZE;
+!     resize = resize || (list-&gt;size &lt; len);
+  
+      /* Move the list contents into a new list. */
+      if ((list-&gt;refs &gt; 1) || (resize &amp;&amp; start &gt; 0)) {
+          cnew = list_new(len);
+          cnew-&gt;len = len;
+--- 43,53 ----
+               resize,
+               size;
+  
+      /* Figure out if we need to resize the list or move its contents.  Moving
+       * contents takes precedence. */
+!     resize = list-&gt;size &lt; len + start;
+  
+      /* Move the list contents into a new list. */
+      if ((list-&gt;refs &gt; 1) || (resize &amp;&amp; start &gt; 0)) {
+          cnew = list_new(len);
+          cnew-&gt;len = len;
+diff -C 5 -r Genesis-1.0p19/src/data/string.c Genesis-1.0p19-new/src/data/string.c
+*** Genesis-1.0p19/src/data/string.c	Fri Dec 13 17:02:00 1996
+--- Genesis-1.0p19-new/src/data/string.c	Fri Dec 13 17:02:00 1996
+***************
+*** 280,292 ****
+      cStr *cnew;
+      Int need_to_move, need_to_resize, size;
+  
+      /* Figure out if we need to resize the string or move its contents.  Moving
+       * contents takes precedence. */
+!     need_to_resize = (len - start) * 4 &lt; str-&gt;size;
+!     need_to_resize = need_to_resize &amp;&amp; str-&gt;size &gt; STARTING_SIZE;
+!     need_to_resize = need_to_resize || (str-&gt;size &lt;= len);
+      need_to_move = (str-&gt;refs &gt; 1) || (need_to_resize &amp;&amp; start &gt; 0);
+  
+      if (need_to_move) {
+          /* Move the string's contents into a new string. */
+          cnew = string_new(len);
+--- 280,291 ----
+      cStr *cnew;
+      Int need_to_move, need_to_resize, size;
+  
+      /* Figure out if we need to resize the string or move its contents.  Moving
+       * contents takes precedence. */
+!  
+!     need_to_resize = str-&gt;size &lt;= len + start;
+      need_to_move = (str-&gt;refs &gt; 1) || (need_to_resize &amp;&amp; start &gt; 0);
+  
+      if (need_to_move) {
+          /* Move the string's contents into a new string. */
+          cnew = string_new(len);
+</PRE>

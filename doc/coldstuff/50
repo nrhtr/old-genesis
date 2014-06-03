@@ -1,0 +1,86 @@
+<HEAD><TITLE>discuss@charon: [50] in "Coldmud discussion meeting"</TITLE>
+<H1>[50] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?50"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="49"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="51"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="55"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="58"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>rehash: heirarchy</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 18 19:25:04 1993
+)</H3>
+<PRE>
+Date: Thu, 18 Nov 1993 17:18:41 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+Ok, I'm rehashing this _once_ more.  I would like to get a cohesive
+understanding of what people would like all core's to be like, so I can
+re-structure the Cold Dark to this setup.
+
+Now:
+
+                              $root
+                  $user_db----' | `-----$sys
+
+Ok, root is very basic, we all understand what that is, it should have little
+or nothing on it, unless it is completely neccessary.  As for $user_db, I'm
+figuring i'll change $person to $user and have $player_db be $user_db, unless
+nobody likes it.                |
+                            $has_help
+                               /|\  `--$utilities
+
+How is the help system going to be done? did anybody ever figure this out?  I'm
+thinking of putting $has_help where it is for now, as most help schemes would
+work quite well with it there.
+
+           .------------------' | `------------------.
+   $command_handling            |                $frob_class
+          |  \           $verb_handling               |
+  $connection \                 |                $lock_class
+
+Here is where i'm getting lost on some topics.  $command_ is still around,
+looks like it will be for good (so it should work fine where it is).  Verbs are
+currently nebulous as everybody has different theories on how they could work,
+until this is decided should we just have $verb_handling where it is?  $frob&amp;
+$lock i'm totally in the dark with, so i'll throw them where Greg sez. 
+$connection works great.
+               \           $described
+                \               |
+                |           $physical
+                |              / \-----$exit
+                |         .---'   `---.
+                |   $container       $located
+                |----.  / \  `-----.   / \
+                |   $room  `----+--|--' $thing
+                                    `---. |
+                                       $box
+I beleive there was no problems with this, no?
+
+                |`--------------|   
+      $command_repository-----$user 
+                                |
+                           $character-----$guest
+                            /      \
+                     $builder    $automaton
+                         / 
+                  $programmer
+
+ok, from here $command_repository is just that, it helps to keep code-systems
+from all being on $user.  $user was $person.  $character was $player, i'll
+probably move most methods etc to $user.  $character may also be $person...?
+
+The rest is self explanatory...
+
+Also, I dont recall: what happened to $event_handling and $receiver?
+
+-Lynx/Brandon/Me.
+
+(tCD is up btw)
+</PRE>

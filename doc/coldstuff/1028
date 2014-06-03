@@ -1,0 +1,175 @@
+<HEAD><TITLE>discuss@charon: [1028] in "Coldmud discussion meeting"</TITLE>
+<H1>[1028] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1028"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1027"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1029"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Database compression patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jul 12 04:38:09 1996
+)</H3>
+<PRE>
+Date: Fri, 12 Jul 1996 10:10:18 +0200 (MET DST)
+From: Miroslav Silovic &lt;silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+
+The following patch contains the new binary db compression routine.
+With this, binary of the core went from 1130 kb to 560 kb (approx).
+It boots, and a trick list of longs dumped and reloaded correctly, so
+I must assume that the routine works. :) (I'm being careful with my
+phrasing because the old one was buggy and it took long to notice the
+problem. My code is at least simple enough that you can check it by
+looking at it).
+
+	Miro
+
+-----------------------------------------------------------------------
+
+
+diff -C 8 -r Genesis-1.0p7/src/dbpack.c Genesis-1.0p7-new/src/dbpack.c
+*** Genesis-1.0p7/src/dbpack.c	Mon Jul  1 03:02:22 1996
+--- Genesis-1.0p7-new/src/dbpack.c	Fri Jul 12 09:53:53 1996
+***************
+*** 16,34 ****
+--- 16,54 ----
+  #include "defs.h"
+  
+  #include &lt;string.h&gt;
+  #include "dbpack.h"
+  #include "cdc_types.h"
+  #include "data.h"
+  #include "memory.h"
+  
++ #define COMPRESS 1
++ 
+  /* Write a four-byte number to fp in a consistent byte-order. */
+  void write_long(long n, FILE *fp)
+  {
++ #ifdef COMPRESS
++ 
++   int sign, i, h, buf[17]; /* for 256-bit future architecture */
++ 
++   sign = n&lt;0 ? 1 : 0;
++   n = abs(n);
++   h = 1;
++   buf[0] = n&amp;15;
++   n &gt;&gt;= 4;
++   while (n) {
++     buf[h++] = n &amp; 255;
++     n &gt;&gt;= 8;
++   }
++   buf[0] += (h &lt;&lt; 5) + (sign &lt;&lt; 4);
++   for (i=0; i&lt;h; i++)
++     putc(buf[i], fp);
++ 
++ #else
+  #ifdef ORDER_BYTES
+      /* Since first byte is special, special-case 0 as well. */
+      if (!n) {
+  	putc(96, fp);
+  	return;
+      }
+  
+      /* First byte depends on sign. */
+***************
+*** 39,59 ****
+--- 59,97 ----
+  	putc(32 + (n % 64), fp);
+  	n /= 64;
+      }
+  
+      putc(96, fp);
+  #else
+      fwrite(&amp;n, sizeof(long), 1, fp);
+  #endif
++ #endif
+  }
+  
+  /* Read a four-byte number in a consistent byte-order. */
+  long read_long(FILE *fp)
+  {
++ #ifdef COMPRESS
++ 
++   int sign, i, h, n, k;
++ 
++   h = (unsigned)getc(fp) &amp; 255;
++   sign = h &amp; 16;
++   n = h &amp; 15;
++   k = 4;
++   h = h &gt;&gt; 5;
++   for (i=0; i&lt;h-1; i++) {
++     n += ((unsigned)getc(fp) &amp; 255) &lt;&lt; k;
++     k += 8;
++   }
++   if (sign) n=-n;
++   return n;
++ 
++ #else
+  #ifdef ORDER_BYTES
+      int c;
+      long n, place;
+  
+      /* Check for initial terminator, meaning 0. */
+      c = getc(fp);
+      if (c == 96)
+  	return 0;
+***************
+*** 71,104 ****
+--- 109,157 ----
+      }
+  #else
+      long    l;
+    
+      fread(&amp;l, sizeof(long), 1, fp);
+  
+      return l;
+  #endif
++ #endif
+  }
+  
+  int size_long(long n)
+  {
++ #ifdef COMPRESS
++ 
++   int h;
++ 
++   n = abs(n);
++   h = 1;
++   n &gt;&gt;= 4;
++   while (n) {
++     h++;
++     n &gt;&gt;= 8;
++   }
++   return h;
++ #else
+  #ifdef ORDER_BYTES
+      int count = 2;
+  
+      if (!n)
+  	return 1;
+      n /= 32;
+      while (n) {
+  	n /= 64;
+  	count++;
+      }
+      return count;
+  #else
+      return sizeof(n);
+  #endif
++ #endif
+  }
+  
+  
+  INTERNAL void write_ident(long id, FILE *fp)
+  {
+      char *s;
+      int len;
+  
+</PRE>

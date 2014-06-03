@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [614] in "Coldmud discussion meeting"</TITLE>
+<H1>[614] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?614"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="612"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="612"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="613"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="615"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: How do i rebuiold CDC-1.1?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec  6 11:31:17 1994
+)</H3>
+<PRE>
+From: brandon@millville.declab.usu.edu
+To: jeffpk@netcom.com (Jeff Kesselman)
+Cc: coldstuff@MIT.EDU
+Date: Tue, 06 Dec 94 09:26:44 -0700
+
+&lt;&gt; What OS are you on, what do you type to build the textdump, and what is the
+&lt;&gt; error message you receive?
+&lt;
+&lt; Linux, dumpbuild, one message that said it couldn't find the names file 
+&lt; and another sayign it couldnt find index.coldc.
+
+There is a custom 'makeworld' script you should be using, just type
+'makeworld' in the directory.
+
+-Brandon (Lynx)-
+</PRE>

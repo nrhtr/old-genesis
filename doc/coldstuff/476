@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [476] in "Coldmud discussion meeting"</TITLE>
+<H1>[476] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?476"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="474"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="475"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="475"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="477"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Status</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Oct 28 06:50:44 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: zachary@pentagon.io.com (Zachary)
+Date: Fri, 28 Oct 1994 03:48:57 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199410261925.OAA01136@pentagon.io.com&gt; from "Zachary" at Oct 26, 94 02:25:45 pm
+
+&gt; exactly what *is* the status of all the cold sites? How many are there?
+
+I dunno.. tCD isn't (officially) up at the moment but will be as soon as I get
+moving DU to its new site and getting a secondary developental MOO up out of
+the way. (yeah, yeah, I know I've been saying that for a while now.. it's
+getting there slowly, tho)
+
+&gt; is there any unified effort to make a reasonable core?
+
+As brandon mentioned, he's finishing up a basic core.. once tCD gets back up
+again most of the effort there will go toward developing better cores as well,
+I suspect.  Part of the reason I'm trying to bring DU and tCD together somewhat
+is to work on paving the way for future expansion of DU into a ColdMUD base,
+which will require a good core first.  I'm hoping I can get some of the people
+from DU to get interested in ColdMUD too.
+
+&gt; What is the status of the various hacked version of the server?  What's
+&gt; the latest on the suspend()/fork() issue?  How thoroughly tested are 
+&gt; those?
+
+Well, as best I can tell nobody's really working on the server at the moment..
+I've been thinking of offering to take on the mantle of official server
+maintainer since nobody seems to currently have it..  If someone else has a
+problem with this let me know, otherwise I suppose people might as well start
+sending their problems/bitches to me.  I'm gonna try to start working on some
+of this stuff within the next week or so anyway, and I'm gonna go looking back
+through this list to see what kind of stuff needs to be worked on server-wise.
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

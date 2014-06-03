@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [991] in "Coldmud discussion meeting"</TITLE>
+<H1>[991] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?991"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="990"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="990"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="990"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="992"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="992"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="992"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Possible optimization idea..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May  4 01:28:08 1996
+)</H3>
+<PRE>
+From: coder@ibm.net
+Date: Sat, 04 May 96 10:07:42 +0000
+To: brandon@tombstone.sunrem.com, coldstuff@cold.org
+Reply-To: coder@ibm.net
+
+"Brandon Gillespie" &lt;brandon@tombstone.sunrem.com&gt;writes:
+
+&gt; I have noticed that there is a very common construct in ColdC, and I am 
+&gt; considering adding an optimization for this construct.  Basically, you 
+&gt; will often see a variable initialized to a base data type, then x 
+&gt; elements are added to the variable and the result is returned.  The 
+&gt; problem here is you can end up having quite a few reallocs leading to 
+&gt; fragmentation and other problems, if the increments are small enough and 
+&gt; the end result is very large.  
+
+It strikes me that time could be more profitably spent on having Cold do its 
+own heap management.  Its not difficult to do, the performance gain is system 
+wide, and it fairly decently addresses this concern as well.
+
+J C Lawrence
+----------(*)                              Internet: coder@ibm.net
+...Honourary Member of Clan McFud -- Teamer's Avenging Monolith...
+</PRE>

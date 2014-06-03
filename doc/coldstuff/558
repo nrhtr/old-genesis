@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [558] in "Coldmud discussion meeting"</TITLE>
+<H1>[558] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?558"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="557"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="559"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="560"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="560"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Bug Report: List bug (?) rearing its ugly head (still?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov  7 23:21:05 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Mon, 07 Nov 94 21:19:44 -0700
+
+I can reproduce the problem 1 out of 5 times.  From the logs:
+
+Mon Nov  7 21:13:57 1994: PANIC: Invalid expression opcode.
+
+What I was doing is a grep of every method on every object in the core,
+matching a pattern.  It usually runs O.K., but if I try to do other things
+at the same time (i.e. several @greps or other intensive things such as
+descending an object heirarchy) it crashes.
+
+-Brandon Gillespie (Lynx)-
+</PRE>

@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [200] in "Coldmud discussion meeting"</TITLE>
+<H1>[200] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?200"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="199"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="201"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>irrelevant request</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Apr  2 22:10:32 1994
+)</H3>
+<PRE>
+Date: Sat, 02 Apr 1994 20:05:14 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+You cannot do:
+
+  --
+  [['list, 'list]] = @[['list, 'list]];
+  --
+
+of course with variables, such as:
+
+  --
+  args = [['list, 'list]];
+
+  if (type(args[1]) == 'list)
+    args = @args;
+  --
+
+Anyhow, how does MOO handle odd situations with this, for if you do things
+like:
+
+  --
+  args = [['list, 'list], 'foo];
+
+  args = @args;
+  --
+
+?
+
+thoughts
+
+-brandon
+</PRE>

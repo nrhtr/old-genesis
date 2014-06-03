@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1324] in "Coldmud discussion meeting"</TITLE>
+<H1>[1324] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1324"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1323"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1323"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1323"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1325"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] I need advice</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 14 23:55:28 1997
+)</H3>
+<PRE>
+Date: Thu, 14 Aug 1997 21:52:26 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: CTR &lt;ctr@circi.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;33F3BA96.5452A1D3@circi.com&gt;
+
+On Thu, 14 Aug 1997, CTR wrote:
+&gt; Okay.. here's the deal.. I have VERY limited programming knowledge, but
+&gt; want to become fluent in coldc so that I can edit teh db and make magic.
+
+mmm... do you mean add a magic RPG system?   Or are we talking actual
+metaphysical paranormal control?  Because, well, I hate to break it to
+you, but as featured as we try to make ColdC we havn't YET figured out how
+to get it to do THAT ;)
+
+&gt; Where do I start?
+
+Login to the Cold Dark, get a programmer character (as an admin) and start
+diddling around--make a few toys, etc..
+
+&gt; Does anyone have a specific book reccomendation?
+
+paper-published, no.. otherwise, the ColdC Programmer's manual is good for
+reference--but may be confusing for a straight read through (mebbe skim
+it, then go back and read it).  Its available online at:
+
+      http://ice.cold.org/bin/help?node=coldc
+
+-Brandon Gillespie
+
+</PRE>

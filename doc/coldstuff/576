@@ -1,0 +1,77 @@
+<HEAD><TITLE>discuss@charon: [576] in "Coldmud discussion meeting"</TITLE>
+<H1>[576] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?576"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="565"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="572"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="575"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="577"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="577"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Assignment Operator.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 10 19:19:03 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: jcdst10+@pitt.edu (James C Deikun)
+Date: Thu, 10 Nov 1994 16:13:35 -0800 (PST)
+Cc: rayn@crossaccess.com, coldstuff@MIT.EDU
+In-Reply-To: &lt;Pine.3.89.9411091518.A2325-0100000@unixs2.cis.pitt.edu&gt; from "James C Deikun" at Nov 9, 94 04:00:22 pm
+
+[something that was asked a while back that as far as I know was never
+answered..]
+
+&gt; I do not have a full understanding of what exactly a tick is however.
+&gt; Would someone clairify this for me?
+
+1 tick basically corresponds to one cycle through the internal opcode
+interpreter in the server (i.e. execution of one opcode of compiled ColdC).
+Since different operations perform different tasks of varying complexity, and
+since actually doing the tasks involved can be faster or slower depending on
+the machine, ticks therefore say very little about how much processing effort
+or time is really used.  All it really says is how far through the execution of
+the method things have progressed.
+
+Now, as for the issue at hand..
+
+Actually, I only proposed := when we were discussing assignment-expressions in
+the first place.  If we don't have assignment expressions, I really don't see
+that it matters much one way or the other, and don't really see why we should
+bother changing it anyway..
+
+&gt; Yes.  The is the only reason I personally support := is that I support
+&gt; assignment as an expression.  However, I'd much rather have .= or '= for
+&gt; assignment--much MUCH easier on the pinkies.
+
+Ugh.  I don't like '.='.. for one thing, part of the reason I liked := as
+an alternative was that colon isn't currently used for anything else in the
+language anyway.  '.=' is not only different from anything anyone's ever seen
+(at least most people recognize := from pascal and so can guess at what it
+means), but it's also somewhat potentially confusing, as both '.' and '=' mean
+things already and '.' is a significantly different type of operation than the
+process '.=' would have anything to do with..  As far as easier typing, if we
+go with your suggestion below, you wouldn't have to use it much unless you
+wanted to anyway ('=' is easier to type than even '.=' anyway)..
+
+&gt; What I'd like to see is:
+&gt; 
+&gt;   =  as an assignment statement, as it is now.
+&gt;   .= as an assignment expression.
+&gt;   == as a comparison expression.
+
+This idea is also one I proposed some time ago in the assignment-expresion
+debate (using := instead of .=, of course).. as I remember nobody really said
+much about it.  By this time, I'm rather of the position that if any changes
+are made they should be along these lines or we should just leave everything
+the way it is..  [note that this is essentially the same thing that Colin was
+proposing, with the addition of non-confusable assignment-expressions as part
+of the change]
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

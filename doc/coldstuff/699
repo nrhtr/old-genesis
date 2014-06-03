@@ -1,0 +1,67 @@
+<HEAD><TITLE>discuss@charon: [699] in "Coldmud discussion meeting"</TITLE>
+<H1>[699] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?699"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="697"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="698"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="700"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="700"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 23:58:11 1995
+)</H3>
+<PRE>
+Date: Fri, 10 Mar 1995 20:54:29 -0800
+To: coldstuff@MIT.EDU
+From: jeffpk@netcom.com (Jeff Kesselman)
+
+&gt;&lt; Personally, I'd prefer :=..  It's already used in at least one language for
+&gt;&lt; this purpose
+&gt;
+&gt;VMS's DCL (Digital Command Language, aka VMS shell) uses ':==' to set symbols
+&gt;(i.e. make an assignment, of sorts).
+
+LL(2) at least. Ugh. My Pascal/C soul rebels at the notion. :)
+
+&gt;
+&gt;&lt; I don't particularly like &lt;- mainly because it doesn't have an = in it (as I
+&gt;&lt; mentioned above), and because it doesn't much look like an expression either
+&gt;&lt; (it looks like a statement.. tho I suppose any assignment will conceptually
+&gt;&lt; seem more like a statement, even if it isn't, but at least '='-based things
+&gt;&lt; have a history of expressionism(?) to back them up..)
+
+
+I actually kin dof like it, but the VERY forst machine i programmed used &lt;-
+(a single key) for assignment.  I actually think it looks GOOD as an
+expression as long as we are using the right to left assignment protocol
+that C use.  Example:
+
+a&lt;-b&lt;-(c&lt;-0)+5;
+
+Anyway, it works for me.
+
+
+&gt;&gt;From all of the arguments put forward, I think we could say it is a tossup
+&gt;between '&lt;-' and ':='.  The pros/cons I can think of are (feel free to add/
+&gt;change this list):
+
+I'm still a HEAVY proponent for =, for the following reasons:
+        A) The language is called ColdC.  That implies that where possible and
+           reasonable it is C like. C++ doesnt change syntactic things that
+           already exist in C, it just adds new ones where it adds new
+           concepts.
+        B) C is the ONLY other language I am aware of where assignment is an
+           expression.
+        C) C is the only really standard development language and these days
+           is the first one any seriosu programmer is taught.
+
+I am POSITIVE the readers of my book will appreciate C similarities. I KNOW
+thats part of what sold my editor on the idea.
+
+
+
+</PRE>

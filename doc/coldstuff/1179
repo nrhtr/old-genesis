@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [1179] in "Coldmud discussion meeting"</TITLE>
+<H1>[1179] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1179"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1178"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1180"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] YAP to string_prep</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Dec 15 20:08:32 1996
+)</H3>
+<PRE>
+Date: Sun, 15 Dec 1996 16:59:18 -0800 (PST)
+From: Brian Buchanan &lt;brian@wasteland.calbbs.com&gt;
+To: coldstuff@cold.org
+
+
+Courtesy of Miro, here is another patch to string_prep which fixes the 
+dict hashing problem noticed with .capitalize() and friends.
+
+*** string.c.old	Sun Dec 15 16:20:50 1996
+--- string.c	Sun Dec 15 16:38:04 1996
+***************
+*** 289,294 ****
+--- 289,295 ----
+          /* Move the string's contents into a new string. */
+          cnew = string_new(len);
+          MEMCPY(cnew-&gt;s, str-&gt;s + start, (len &gt; str-&gt;len) ? str-&gt;len : len);
++ 	cnew-&gt;s[len]=0;
+          cnew-&gt;len = len;
+          string_discard(str);
+          return cnew;
+***************
+*** 303,308 ****
+--- 304,310 ----
+          size = len + 1;
+  #endif
+          str = (cStr *)erealloc(str, sizeof(cStr)+(size * sizeof(char)));
++ 	str-&gt;s[start+len]=0;
+          str-&gt;size = size;
+          return str;
+      } else {
+
+
+-------------
+
+Brian
+
+</PRE>

@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [1576] in "Coldmud discussion meeting"</TITLE>
+<H1>[1576] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1576"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1573"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1575"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1575"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1577"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1577"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Editing code from in-game</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May  1 18:29:34 2000
+)</H3>
+<PRE>
+From: "Steven J. Owens" &lt;puff@netcom.com&gt;
+To: coldstuff@cold.org
+Date: Mon, 1 May 2000 15:21:38 -0700 (PDT)
+In-Reply-To: &lt;Pine.LNX.4.10.10005011328280.12492-100000@bork.weath&gt; from "Jeremy Weatherford" at May 01, 2000 01:32:38 PM
+Reply-To: coldstuff@cold.org
+
+Jeremy Weatherford writes:
+&gt; How do people usually set up editing when they're doing a lot of
+&gt; programming?  In Genesis, or other MOOs, doesn't matter.  I'm just looking
+&gt; for good concepts.  I'm ready to start implementing editing in my core.
+
+     MCP, or MOO Client Protocl, which Bruce alluded to is what most
+serious MOO coders use - essentially it's a set of tags that tell the
+browser to to filter output from the user's view of the session and
+send it to a separate buffer for editing.  I believe it was first
+developed for use with emacs mud.el, but as Bruce mentioned, tkMOO
+supports it.  I'm sure you can find a web page somewhere about it.
+There are a couple links to MOO clients that support MCP here:
+
+http://dmoz.org/Games/Internet/MUDs/MOOs/MOO_Clients/
+
+     Unfortunately, I'm about to leave work so Ican't do any more
+legwork on this.  Hm, here's a general page on it, along with pointers
+to the spec, the MCP-dev mailnig list, etc.
+
+     http://www.moo.mud.org/mcp/
+
+Steven J. Owens
+puff@netcom.com
+</PRE>

@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [1257] in "Coldmud discussion meeting"</TITLE>
+<H1>[1257] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1257"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1256"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1258"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Static ColdC Manual</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 17 11:45:21 1997
+)</H3>
+<PRE>
+Date: Mon, 17 Mar 1997 09:35:24 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: coldstuff@cold.org
+
+I just ran a static plaintext dump of the manual from the ctext source in
+the ColdCore.  This uses the plaintext formatter, which basically wraps
+the text and doesn't use [] link references.  If somebody wanted to create
+a $texi_format we could then print postscript versions as well.  For now
+the static plaintext version is at:
+
+    ftp://ftp.cold.org/cold/ColdC-Manual.17-Mar-97.txt.gz
+
+-Brandon Gillespie
+
+</PRE>

@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [429] in "Coldmud discussion meeting"</TITLE>
+<H1>[429] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?429"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="425"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="428"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="428"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="430"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: implementing 'atomic' designation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 10:39:04 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Thu, 22 Sep 1994 08:31:47 -0600 (MDT)
+To: COLDSTUFF@MIT.EDU
+X-Vms-To: COLDSTUFF@MIT.EDU
+
+&lt; The assignment as an expression question has come up MANY times. When I first
+&lt;  became aquainted with assignment as a statement I thought it was a bad idea,
+&lt;  but after getting parse errors on if (a=b) more than a dozen times, I have
+&lt;  decided I like things the way they are.
+
+If you don't like assignments as expressions, don't use them.  Because they
+would exist doesn't mean you HAVE to use them.  As Quinn said, we shouldn't be
+telling people how to program.  Assignments as expressions is NOT that big of a
+deal.  How about this:  Come up with every single argument you can think of
+AGAINST them, and I (and others) will come up with every one for them--we'll
+see how things end up.  If anything we could make assignments like in pascal,
+which would lessen confusion immensely (namely 'a := foo').
+
+&lt; it totally goes against cold design philosophy. Right now, Cold has the
+&lt; advantage of being very simple, making as few assumptions as possible, and
+&lt; being consistent everywhere.
+
+except for it makes the assumption of forcing your style--don't be hypocrytical
+:)
+
+&lt; I am against this, because I think it's something that should be handled in-db.
+&lt; The Cold philosophy as I understand it demands a lean server, and cruft like
+&lt; this is totally unnecessary.
+
+Then why did you even bring it up?
+
+BTW, this whole thing with cold theory is very nebulous, AND it is defined by
+those who are developing the driver.  Quit ripping on Richelieu for proposing
+ideas.  If he feels like doing it, AND calling it ColdMUD--BFD.
+</PRE>

@@ -1,0 +1,91 @@
+<HEAD><TITLE>discuss@charon: [136] in "Coldmud discussion meeting"</TITLE>
+<H1>[136] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?136"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="135"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="137"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Coldmud 0.10, Cold World 0.6 release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan  3 23:10:11 1994
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Mon, 3 Jan 94 23:06:46 EST
+To: coldstuff@MIT.EDU
+
+
+I've released Coldmud 0.10 and Cold World 0.6 on ftp.ccs.neu.edu in
+pub/mud/servers/coldmud.  I've also released updated documentation.
+The postscript manual is now only in double-sided format, although it
+should print fine single-sided.
+
+The changes in these releases are numerous; here's the 0.10 release
+changes notes:
+
+(See test/TRACKING for bug-tracking information.)
+
+0.10 (1/3/94)
+	Bug fixes:
+		(0.9-1) Error messages for some admin functions
+		(0.9-2) Error checking in op_index() was wrong.
+		(0.9-3) explode() didn't work on multi-character
+			token separators.
+		(0.9-4) Checking for changing root's parents in
+			op_chparents() was wrong.
+		(0.9-5) explode() now checks for 0-length separators.
+		(0.9-6) tostr() on dictionaries was slightly broken.
+		(0.9-7) echo() returned 0 instead of 1.
+		(0.9-8) dict_del() was corrupting dictionaries.
+		(0.9-9) Deleting an object didn't mark the db as
+			dirty, although it modifies the db, so that
+			you could have a "clean" database with missing
+			objects.
+		(0.9-10) data() was leaking object reference counts.
+		(0.9-11) Frob keys in dictionaries could be lost.
+		(0.9-12) class() was leaking dbref reference counts.
+		(0.9-13) op_message() error used a discarded
+			 identifier.
+		(0.9-14) delete() was failing on sublists of lists.
+		(0.9-15) While creating a dictionary, checking for
+			 duplicates was faulty and could produce an
+			 inconsistent hash table.
+	Regular expression matching is now case-insensitive by
+		default.  An optional third argument can be specified
+		to make it case-sensitive.
+	Whitespace is now stripped at the end of text-dump lines, so
+		trailing tabs and spaces are irrelevant.  (This was
+		biting a number of people.)  Also, unprintables are
+		stripped from text dump lines.
+	explode() now takes an optional third argument indicating that
+		it should include blank tokens if there is a sequence
+		of two or more token separators or if there is a token
+		separator at the beginning or end of the string.
+	Added error_str().
+	Fixed some compatibility problems with compilation, and made
+		it more palatable to compile under BSD 4.3.
+	Started using SO_REUSEADDR to help with binding to the port
+	random() is now 1-based.
+	Added buffer type.  The 'parse' message now comes with a buffer,
+		instead of with a line.  echo() takes a buffer instead
+		of a string.
+	Text dumps now write to "textdump.new" and rename onto
+		"textdump", to avoid problems with machines crashing
+		during text dumps.
+	Now performing sanity checking to catch object reference count
+		leaks.
+	Dbrefs are now numeric; $foobar is a "name" which evaluates to a
+		dbref.  The text dump format has a 'name' command to set
+		names, and there's also set_name(), del_name(), and
+		get_name().  The functions toint() and todbref() have new
+		behavior.
+	Added db_top().  It will go away in 0.11 or 0.12, though, so it's
+		not documented.
+	Added dict_add_elem() and dict_del_elem().
+
+</PRE>

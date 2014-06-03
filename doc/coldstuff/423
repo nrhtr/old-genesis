@@ -1,0 +1,28 @@
+<HEAD><TITLE>discuss@charon: [423] in "Coldmud discussion meeting"</TITLE>
+<H1>[423] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?423"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="422"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="424"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="424"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="424"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>fork()/suspend(0)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Sep 21 01:50:26 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Tue, 20 Sep 1994 22:42:59 -0700 (PDT)
+
+0.12's pause() resumes whenver all input has been handled, not at the next
+ heartbeat.
+
+I still see no need for creation of new tasks. At least, I don't see a reason
+ why waiting for the next heartbeat is a problem. If it can be explained to me
+ why one second is too long to wait then Riche's solution seems amicable.
+</PRE>

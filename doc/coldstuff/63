@@ -1,0 +1,151 @@
+<HEAD><TITLE>discuss@charon: [63] in "Coldmud discussion meeting"</TITLE>
+<H1>[63] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?63"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="62"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="62"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="62"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="64"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: clear params</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 20 20:28:04 1993
+)</H3>
+<PRE>
+To: deforest@netcom.com (Robert de Forest)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Sat, 20 Nov 93 16:19:45 -0800.
+             &lt;199311210019.QAA21393@mail.netcom.com&gt; 
+Date: Sat, 20 Nov 93 20:20:14 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; Heh, I thought Greg gave a pretty decent reason not to have clear
+&gt; parameters.  They would allow the parents to affect the children in
+&gt; ways the parents don't have control over. He also pointed out how
+&gt; simple it is to implement defaults without them.
+
+&gt; Therefore, I ask...Do we really wnat them?
+
+What I actually want is a way of solving the much more general problem
+of inherited data.
+
+Clear properties in MOO allow you to inherit data in a very specific
+way: descendents can override default values on their ancestors.
+
+It's not terribly difficult to implement this in-db on a case-by-case
+basis.  If Coldmud didn't have multiple inheritance, you'd just have
+an ancestor that does:
+
+	return &lt;foo is defined&gt; ? foo | parent().foo();
+
+Where &lt;foo is defined&gt; will depend on the values that foo can
+reasonably expect to have.  (This is kludgy, yes.)  But Coldmud does
+have multiple inheritance.  If you only want to check the particular
+ancestor that contains the parameter in question (e.g.  if the default
+for fail_msg is always going to be on $exit, and not some intermediate
+ancestor), you do:
+
+	return &lt;foo is defined&gt; ? foo | definer().foo();
+
+In order to general data inheritance in this case, you'd have to
+provide two accessors, a .local_foo() which returns the value of foo
+on the current object, and a .foo() which scans the ancestors.  This
+is fine if you have to do it once, but rather painful if you have to
+do it for each parameter.
+
+Okay, so it's painful, and requires a kludge of having some data value
+that marks 'undefined' (or a separate variable which determines
+whether you've defined the value of that variable, or some other
+unpleasant construct).  Why won't I do clear parameters, then?  Well,
+apart from the encapsulation argument, there are two reasons:
+
+(1) It doesn't solve the problem in general.  Often, my inheritance
+relationship is something more complicated than just overriding.  For
+instance, look at .all_commands() on $command_handling in Cold World;
+you'll see the same pattern that you'd be using to implement clear
+parameters, except that you're adding lists together instead of
+overriding the values.  The problem gets even harder if you decide
+that you can't afford to be adding those lists together, but instead
+want to consider the inheritance relations when you're searching for a
+command.
+
+(2) It's actually not very hard to implement MOO semantics using a
+single ancestor, without much added expense.  Consider the following
+object inserted between root and the rest of the hierarchy:
+
+	parent root
+	object inherited_data
+
+	var inherited_data data #[]
+
+	method set_inherited_variable_value
+	    arg name, value;
+
+	    if (!.is_owned_by(sender())
+		throw(~perm, "Sender not an owner");
+	    data = dict_add(data, name, value);
+	.
+
+	method get_inherited_variable_value_local
+	    arg name;
+
+	    if (caller() != definer())
+		throw(~perm, "Invalid call to protected method");
+	    return (&gt; data[name] &lt;);
+	.
+
+	method get_inherited_variable_value
+	    arg name;
+	    var anc;
+
+	    for anc in ancestors() {
+		catch ~keynf {
+		    return anc.get_inherited_variable_value_local(name);
+		}
+	    }
+
+	    throw(~paramnf, "Variable " + toliteral(name) + " not found.");
+	.
+
+I've used rather long method names, and didn't deal with
+initialization, but there you have your clear properties, implemented
+just once, if I haven't made any mistakes.
+
+Of course, as implemented above, you've destroyed both axes of
+encapsulation, since such inherited parameters are readable by anyone
+and writable by owners.  This might be okay for some kinds of data.
+You can quickly regain the current-object axis by adding a check for
+sender() == this() in get_inherited_variable_value, and you can get
+back the per-ancestor axis (if you want it) by keeping track of the
+caller in the data values.
+
+I'm thinking of implementing such an object in Cold World, with some
+added embellishments to handle, say, adding lists together (a la
+all_commands()), or maybe calling a method on each ancestor value
+until an exception is thrown signifying that a search is done.  I hope
+people wouldn't lean on it too hard, though, since it's really only
+appropriate for things like fail messages, commands, and flags.
+
+In fact, I think it's reasonable to distinguish between highly dynamic
+variables such as locations and contents lists, and less dynamic data
+such as fail messages and command definitions that might more
+accurately be called "settings."  Variables in the latter category
+generally only change when the object owner explicitly asks for them
+to be changed.  It may be that encapsulation is more important for the
+more dynamic category of variables.
+
+I also find it interesting that it's so easy to implement complicated
+variable semantics in-db with a little bit of thought.  Hopefully, it
+will be easier to take advantage of this than it would be for me to
+implement things like clear parameters and object variable type
+assertions in-db.
+
+Okay, back to thinking about regexps and matching.
+
+--GBH
+
+</PRE>

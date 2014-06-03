@@ -1,0 +1,84 @@
+<HEAD><TITLE>discuss@charon: [875] in "Coldmud discussion meeting"</TITLE>
+<H1>[875] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?875"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="871"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="874"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="874"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="876"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ColdCore</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jan  5 21:42:25 1996
+)</H3>
+<PRE>
+Date: Fri, 05 Jan 1996 21:27:28 +0500
+To: coldstuff@tombstone.sunrem.com
+From: mwilson@vt.edu (Mike "Zaphod" Wilson)
+
+&gt;     They will, indeed, be a CPU killer.  I implemented one of the
+&gt;first 3D systems in MOO (a startrek-ish combat simulator on LambadMOO
+
+I did 3-d space in MOO as well.... I think the first system in which
+the entire MOO was based on that system.  Final Frontiers I (TrekMOO,
+whatever ya want to call it).  However, but getting a little creative
+with data structures for relating distances between objects, you
+can squash some of that lag.
+&gt;
+&gt;     The big problem you're going to run into is line-of-sight
+&gt;calculation scaling up as you start to get, oh, a few dozen objects
+&gt;moving around.  Add another order of magnitude and you're going to
+&gt;bring the server to it's knees.  The best thing for this, really, is
+&gt;to have some special built-ins for mathematical functions, maybe even
+&gt;some special built-ins for 3D stuff.
+
+Well, theoretically, a few dozen objects is all I should *ever* have to 
+calculate line of sight for.  The first trick would obviously be to
+eliminate all objects that are not 1) within range of my 'sight distance)' 
+and 2) not withing the range of my peripheral vision.  These calcs are
+much simpler than line of sight.  This should leave you with less than a few 
+dozen objects that are 'visible' at any one time.
+
+&gt;     One of the more recent redesign efforts I started involved some
+&gt;fancy scheduling and geometrical code.  The idea was to get something
+&gt;a bit closer to a real, newtonian-motion 3D system.  Each object has
+&gt;vectors.  From these vectors you can calculate whether or not they'll
+&gt;ever collide with other objects, and when and where that will happen.
+&gt;You can also factor in a radius so your calculation tells you when,
+&gt;oh, object Alpha will get within range X of object Beta - and when
+&gt;it'll get out of range.  
+
+While this may well be a way of doing space related items (if I do ever
+re-code a space system, I'm gonna look into this method), it's not going
+to work for the generic practices of a core-db.  The relational aspects
+of this DB need to extend to players, common objects, etc.  These things
+will either not be moving much, or not moving at constant velocities, etc.
+they will be abnormal in their movements and unpredictable.  Therefore,
+I think its gonna be better to have a 'snapshot' approach of what the
+universe looks like at any given moment, as opposed to the 'beginning'
+picture followed by a schedule of events.
+
+
+&gt;     Good luck :-) If you want a 3-D coordinate system, personally I
+&gt;think you'd be better off building some sort of basic 3-D system in C
+&gt;and plugging it into Cold.
+
+The whole point of this is to do it in DB so it's customizable at any time
+for whatever purposes are necessary.  Certainly, if this system goes
+to the point of being graphical driven, then things will have to be
+taken into the server for that.  However, I think all in all, if the
+system is well thought out, and efficently coded, a reasonably well
+endowed site should handle this system, even in db.
+
+Hell, if I can get 3-D space code to run on a MOO on a 486-66 w/ 24M
+with minimal lag, and only a handful of server mods (spherical coordinate
+conversions) then this should be childs play :)
+-Mike
+mwilson@glock.com                                             mwilson@vt.edu
+    It's difficult to kiss a woman one moment, and kill her the next.
+   If Bill Clinton is the answer, it must be one very stupid question.
+
+</PRE>

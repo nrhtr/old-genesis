@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [589] in "Coldmud discussion meeting"</TITLE>
+<H1>[589] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?589"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="588"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="590"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>non-object method calls</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 17 19:21:22 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Thu, 17 Nov 1994 16:11:12 -0800 (PST)
+
+Brandon reminded me to send documentation on the new behavior of the method
+ call operator, ".".
+
+For a piece of data x with a type other than 'dbref or 'frob,
+
+x.y(z...);
+
+Is syntactically equivalent to
+
+get_name(type(x)).y(x, z...);
+
+That is,
+
+1.foo() =&gt; $integer.foo(1);
+"foo".add("bar") =&gt; $string.add("foo","bar");
+#[['george, ['thelma]]].add_elem('george, 'ethyl) =&gt;
+ $dictionary.add_elem(#[['geourge, ['thelma]]], 'george, 'ethyl);
+
+etc.
+
+Crag / Robert
+</PRE>

@@ -1,0 +1,73 @@
+<HEAD><TITLE>discuss@charon: [1624] in "Coldmud discussion meeting"</TITLE>
+<H1>[1624] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1624"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1623"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1625"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Cold efficiency</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Sep 19 12:53:43 2000
+)</H3>
+<PRE>
+Message-ID: &lt;39C7912F.29ABCE27@canada.com&gt;
+Date: Tue, 19 Sep 2000 12:15:43 -0400
+From: Moses Moore &lt;mozai@canada.com&gt;
+MIME-Version: 1.0
+To: mpovoski@earthlink.net, coldstuff@cold.org
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Reply-To: coldstuff@cold.org
+
+&gt;also, are there any resources for MOO vs. Cold re functionality and/or
+&gt;efficiency?  Im talking server here, with a minimal db, rather than the
+&gt;standard cores out there.
+&gt;
+&gt;also, are there any benchmarks, or can anyone speak from experience,
+&gt;about Cold scalability in terms of connections, processor speed, code,
+&gt;data, etc?
+&gt;
+&gt;Im trying to figure out how many active connections can be managed
+&gt;efficiently (e.g. without server lag) given a fairly large 'driver' ( i
+&gt;think it is called ) on a Cold implementation running with a given
+&gt;amount of CPU and RAM.
+
+I've been curious about this too, enough to borrow time on a friend's
+Sun server (with 2 Gig of memory and it's underused) and try running
+some tests with sending 100's of processes from one machine at the
+Genesis server.
+
+The only thing I've noticed related to efficiency is the configuation
+setting during compile when it asks about the object cache width and
+depth.  I set it to 997 objects wide by 8 deep (default is 31x10 at an
+estimated 4Meg of memory), just for fun.  I'm assuming the object cache
+is what might really bog down the server, since I/O is usually the
+slowest part of any program (that, and O(n^2) loops when O(n logn) will
+do).  Assuming a dozen base objects (root, system, generic container,
+generic thingy, generic room, generic player, etc), and users/furnature
+spread out to 2 per room, that's 328 users before the server starts
+swapping out objects.  I'll run a test with a perl script that will
+simulate 1000 users, and get a footprint of the server's memory.  I
+figured something that would sign in to a clean ColdCore snap, create a
+player, create a room and a thingy, teleport to the room and continually
+pick up and put down the thingy while looking around and talking (for a
+maxium reasonable object use) and record the number of iterations inside
+of 2 minutes.  Any suggestions?
+
+Hrm, 4*1024/(31*10) = 13.2kb per object, or therabouts (assuming no
+overhead for the server itself).  13.2kb * (997*8) = 102Megabytes or
+so.  Not bad, considering I know a commericial graphical MUD that uses
+900 Megabytes of memory and pukes when 1000 users connect.  Ultima
+Online and Everquest are annoyingly vauge about how many users a single
+server can support ("thousands", but is that simultaneous or
+aggregate?).  Quake III caps out at 32, but that's probably for
+logicstics rather than performance (I mean, imagine a highschool
+gymnasium with 32 people, rocket launchers and hand grenades).
+
+I'll report more info as I find out more.
+</PRE>

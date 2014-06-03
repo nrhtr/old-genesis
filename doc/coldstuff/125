@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [125] in "Coldmud discussion meeting"</TITLE>
+<H1>[125] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?125"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="124"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="126"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="126"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="126"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>init questions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec 15 15:06:37 1993
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Wed, 15 Dec 1993 11:58:30 -0800
+From: Gregory Blake &lt;gblake@mis.nu.edu&gt;
+
+I'm confused about something... I was just looking at how init
+worked and i had a few questions. &lt;this is on colddark btw&gt;.
+
+How does init work exactly when called... it does a
+(&gt; pass() &lt;); first... and if i look at $root.init
+at the end of that it sets inited to 1.  So, after it finishes
+the pass isn't it still set to 1? because the line after that
+is if (!inited).   I feel really stupid and that i MUST be missing
+something here.
+
+snooze
+
+
+</PRE>

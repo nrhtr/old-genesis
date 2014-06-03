@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [256] in "Coldmud discussion meeting"</TITLE>
+<H1>[256] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?256"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="255"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="255"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="255"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="257"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="257"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="257"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ports...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 18 16:40:44 1994
+)</H3>
+<PRE>
+Date: Wed, 18 May 1994 16:33:32 -0400 (EDT)
+From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;9405182009.AA23720@q.crossaccess.com&gt;
+
+How about this, as a suggestion (code idea, but no code included)
+
+Assuming we are not promiscuous (i.e. everyone can connect their 
+server), we have a list of servers and their inter-server ports.
+
+for instance:
+
+colddark chimaera.declab.usu.edu 6699
+phoenix hobbes.slip.net.pitt.edu 6611 
+GregCold greg.hudson.mit.edu 6688
+
+(note, those addresses probably don't work)
+
+and then when I need to, I send a connection to that port if I need to
+connect.  If there is no port listed, then we use the default (say, 6677)
+wbfst1@pitt.edu | PGP 2.3A user - Ask for my public key | William Fisher
+</PRE>

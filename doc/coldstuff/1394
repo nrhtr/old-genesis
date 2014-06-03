@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [1394] in "Coldmud discussion meeting"</TITLE>
+<H1>[1394] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1394"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1392"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1393"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1393"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1395"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1395"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1395"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Help with genesis make</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  8 10:46:46 1997
+)</H3>
+<PRE>
+Date: Mon, 8 Dec 1997 08:41:59 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: Dancer &lt;dancer@brisnet.org.au&gt;
+cc: rpessin@digital-storm.com, coldstuff@cold.org
+In-Reply-To: &lt;348C1232.A9331548@brisnet.org.au&gt;
+
+On Tue, 9 Dec 1997, Dancer wrote:
+&gt; Fee Fie Fo Fum. I smell the lack of a dbm library.
+&gt; 
+&gt; Did you run 'configure' btw? I'm curious.
+&gt; 
+&gt; If, in fact, you don't have a dbm library (look in /lib, /usr/lib, and
+&gt; /usr/local/lib for *dbm*) then run out and fetch gdbm from your local GNU
+&gt; software archive. Build and install it. Then make sure the Makefile includes
+&gt; -lgdbm.
+&gt; 
+&gt; I'm fairly sure the configure script is supposed to take care of checking
+&gt; this, but I could be wrong.
+
+It does check for gdbm, but since every system varies in its dbm
+implementation (at the time) I couldn't think of a simple way to determine
+if there was a dbm implementation available.  I can think of one now, so
+perhaps later versions will check that..
+
+-Brandon
+
+</PRE>

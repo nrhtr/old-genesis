@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [863] in "Coldmud discussion meeting"</TITLE>
+<H1>[863] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?863"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="862"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="864"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Help.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Dec 31 23:08:13 1995
+)</H3>
+<PRE>
+Date: Mon, 1 Jan 1996 00:56:36 -0500
+From: Robert Lumley &lt;rlumley@telmaron.com&gt;
+To: coldstuff@tombstone.sunrem.com
+
+I want to run the coldcore-2.1 db but can't seem tlo get any of the ColdX cores to compile on my machine, can anyone help?
+
+I am running Slackware 2.3/linux-1.2.8 
+
+    THe coldmud-0.10 compiles fine as does the new genesis driver, but the coldcore won't work with either of those.  I have spent two days now compileing drivers and trying to match up dbs, I would appreciate any help.
+
+Thanks.
+
+RLUMLEY
+</PRE>

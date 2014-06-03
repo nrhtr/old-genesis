@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [160] in "Coldmud discussion meeting"</TITLE>
+<H1>[160] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?160"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="159"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="161"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="161"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="161"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>accessors for vars</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar 24 01:48:04 1994
+)</H3>
+<PRE>
+Date: Wed, 23 Mar 1994 15:56:31 -0800
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+
+In C-- in general, and in the colddark db, haw does accessing
+an objects variables work? There are usually functions that
+return the variable if called, but rarely is there a function
+to set it. well, ok maybe rarely is an understatement, but in
+this case, where the variable is protected by encapsulation, 
+i cant resort to the MOOcode equivalent of ;$obj.prop = val
+(or can i?)
+as a corralary/aside, it seems that each param should have an
+accessor for it which, if called with no args returns the value
+of the associated variable (which is the current case usually i believe), and if called with args, sets the variable (perms depending of course) and if it cant for some reason returns an
+error
+Just some ramblings as i endevor to comprehend this stuff.
+Ash 
+Ray Nawara Jr (rayn@crossaccess.com, dreck@netcom.com, rnawara@tusol.cs.trinity.edu)
+
+</PRE>

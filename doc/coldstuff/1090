@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1090] in "Coldmud discussion meeting"</TITLE>
+<H1>[1090] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1090"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1089"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1091"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Core security</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep 21 13:56:39 1996
+)</H3>
+<PRE>
+Date: Sat, 21 Sep 1996 09:30:36 -0700 (PDT)
+From: Brian Buchanan &lt;brian@wasteland.calbbs.com&gt;
+To: coldstuff@cold.org
+
+
+This was originally set to *core on The Cold Dark.  Please excuse any 
+weird wrapping of lines by pine.
+
+As more and more people begin to use the alpha cores, I think it's time to
+start thinking about securing the core so that months down the line when some moRon(tm) admin gives nontrusted people programmer access they don't screw everything over and cause ColdCore(or Cold in general, since a lot of people don't have the slightest 
+clue what the difference between driver and database is) to become known as notoriously insecure.
+
+We also need to decide on what level of security the core will have, a few examples being:
+
+* LambdaCore level:  Programmer status can be given out to newbies without too many worries.  Programmers can't spoof text to other users without having a way of getting caught, can't trap people in rooms, can't use undetected listening devices, can't loc
+k objects in rooms that are immune to @eject, etc etc.  Could be refered to as "nontrusted programming". Good for something that was modeled after the typical "social MOO".
+
+* JHCore level:  Programmer status should not be given out to people who aren't trusted.  Malicious programmers can pull more crap on users than under the LambdaCore model, but programmers have greater freedom in determining how the environment works.  Co
+uld be referred to as "trusted programming".  Good for R&amp;D or RPG MUDs.
+
+Currently, I'd say the core's security is rated about 3, with the JHCore model rated about 5, and Lambdacore about 8.  Drop that rating to 1 if it becomes general knowledge how to secure an admin bit with a single eval(This of course being in terms of fre
+edom of programmers to do stuff they shouldn't be doing.  I don't think I've seen anything yet that allows nontrusted people to gain programmer status, other than conning a gullible admin ;) )
+There are probably others which deserve attention, but these are the main 2 I've had experience with.  In any case, we need to secure the core at least to the point where programmers can't bash on objects they shouldn't be messing with, and I'll volunteer
+ to do this even.
+Comments?  Questions?  Arguments for leaving the core insecure?
+
+Brian "paranoid is my middle name" Buchanan
+
+</PRE>

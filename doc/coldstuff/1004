@@ -1,0 +1,74 @@
+<HEAD><TITLE>discuss@charon: [1004] in "Coldmud discussion meeting"</TITLE>
+<H1>[1004] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1004"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="995"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="997"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1003"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1005"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Memory</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 22 14:26:21 1996
+)</H3>
+<PRE>
+Date: Wed, 22 May 1996 11:41:54 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Miroslav Silovic &lt;silovic@srce.hr&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199605151256.OAA21540@regoc.srce.hr&gt;
+
+Ok, running with the changes I've made I brought up tCD on my own 
+workstation.  I then hacked up a quick eval which infinitely looped 
+through the descendants list pulling '.data()' on each object then 
+sleeping.  Figuring this wasnt enough I decided to '@grep foo $root +d'
+20 times (sumultaneously).  I canceled the eval, took a profile stamp of 
+it, and then did the @greps.  The following stamps are before, during, 
+immediately after the last one completed and then five minutes after.
+
+29644 brandon    2    0  3588K 3780K sleep   1:02  3.93%  3.93% genesis
+29644 brandon  103    0  3704K 3660K run     5:48 84.72% 84.72% genesis
+29644 brandon    2    0  3704K 3752K sleep   6:45 10.87% 10.87% genesis
+29644 brandon   36    0  3704K 3644K run     6:55 10.72% 10.72% genesis
+
+Figuring to push it even more I hacked the method:
+
+---
+  arg obj, methods;
+  var meth, line, code;
+  
+  for meth in (methods) {
+      refresh();
+      code = obj.decompile(meth);
+      for line in [1 .. code.length()]
+          code = code.replace(line, "  " + code[line]);
+  }
+---
+
+And evaluated:
+
+;var x, list; list = $root.descendants(); for x in (list) { refresh(); 
+.rrg(x, x.methods()); }
+
+Before and after (actually a few minutes after, as I've been writing this 
+message :)
+
+29644 brandon   36    0  3704K 3644K run     6:55 10.72% 10.72% genesis
+29644 brandon    2    0  3704K 3648K sleep   7:24  0.04%  0.04% genesis
+
+Overall, I feel I may have fixed the problem (of course, I may have also 
+broken a few natives or caused leaks elsewhere, I'd like it if you could 
+look over the native method files--there aren't too many).
+
+Now, my other concern would be getting the cache to release object 
+holders after a while, so that phk_malloc() can give memory back to the 
+OS...  Perhaps we can use the 'inactivity' var on the obj holder for 
+inactive objects as well, when they are fully inactive we free the item?  
+Comments?  My reason for wanting this is that phk_malloc() will give 
+memory back to the OS when it has an entire page that is free.
+
+-Brandon
+</PRE>

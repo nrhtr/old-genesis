@@ -1,0 +1,70 @@
+<HEAD><TITLE>discuss@charon: [1365] in "Coldmud discussion meeting"</TITLE>
+<H1>[1365] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1365"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1363"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1364"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1364"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1366"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] location, located, and thing_frob</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov  7 13:22:19 1997
+)</H3>
+<PRE>
+From: ubmitche@mcs.drexel.edu (Bruce Mitchener)
+To: ashes@ucla.edu (BRANDON JOSEPH RICKMAN)
+Date: Fri, 7 Nov 1997 13:06:39 -0500 (EST)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.3.89.9711062155.A54294-0100000@tau2.ben2.ucla.edu&gt; from "BRANDON JOSEPH RICKMAN" at Nov 6, 97 10:01:02 pm
+
+&gt; Some things I've noticed poking through the code for $located &amp;c in my 
+&gt; ColdCore 3.0a9.02 db:
+&gt; 
+&gt; $location.add_to_contents() - seems to be an outdated method, does this 
+&gt; get called by anything?
+
+It looks outdated to me.  It doesn't appear to be called anywhere.
+
+&gt; $located.realm() - Gives: "Object variable realm not found", probably not 
+&gt; a useful method anyway.
+
+I fixed this a while back on the Cold Dark (drop by!).
+
+public method $located.realm() {
+    return .location().realm();
+};
+
+&gt; $located.uninit_guest_guest() - looks suspicious to me, maybe it's legit.
+
+Hmm, I don't see that method over on the Cold Dark, so no clue.
+
+&gt; $located,obvious - used by .set_obvious(), but ignored by .is_obvious_to()
+
+As far as I know, the whole concept of what is visible and what is 
+obvious and lighting conditions is something that is sort of being worked 
+on and further developed.  This probably relates to that unfinished state.
+
+&gt; This is a very funny piece of code:
+&gt; @program $located.environment() +access=pub
+&gt;   return [this()] + location.environment().setremove(this());
+&gt; 
+
+Two guesses:  something might want this() to be at the front of the 
+list?  or perhaps it can't be assured that this() will be in the list 
+returned by location.environment() although I can't think of any good 
+reason why that should happen.
+
+ - Bruce
+
+-- 
+Bruce Mitchener, Jr.
+ubmitche@mcs.drexel.edu
+
+Vote Monarchist!  (licensed from Black Unicorn &lt;unicorn@schloss.li&gt;)
+Ego sum rex romanus, et super grammatica.
+
+</PRE>

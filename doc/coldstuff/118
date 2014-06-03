@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [118] in "Coldmud discussion meeting"</TITLE>
+<H1>[118] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?118"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="117"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="117"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="117"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="119"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="119"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="124"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: getting it to work..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 13 16:35:32 1993
+)</H3>
+<PRE>
+To: seth@alchemy.TN.Cornell.EDU (Seth Cohn)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199312132114.AA08006@alchemy.TN.Cornell.EDU&gt; 
+Date: Mon, 13 Dec 1993 13:24:32 -0800
+From: Gregory Blake &lt;gblake@mis.nu.edu&gt;
+
+
+On Mon, 13 Dec 1993 16:14:44 -0500  Seth Cohn wrote:
+
+
+&gt;Well, anyone who wants to contribute to a single 'definative more then the
+&gt;basics core' please let me know.  Bare core is good, but like Lambdacore,
+&gt;most systems want at least the basics built already.
+
+I am also working on a core that is in a slightly different style then
+the one that other people are working on... If you want to team up
+and compare notes drop me a line.  I'm looking to create a core that
+is more accessable to the TinyMUD family people out there, because
+that's one way to attract them.
+
+&gt;
+&gt;
+&gt;&gt;&gt; I'm willing to create a manual for coding (since I'll be learning it at the
+&gt;&gt;&gt; same time, should be a good beginner's intro by the time I get done.) so
+&gt;&gt;&gt; I'm looking for as much solid stuff to build a good core as I can get.
+&gt;&gt;Did you see Greg's Manual?
+&gt;
+&gt;You talking about coldmud.info or the postscript stuff?  I haven't looked
+&gt;at the ps stuff yet.
+
+Take a look at it... the ps stuff is fairly good, though could use more
+examples.
+
+&gt;
+&gt;Seth
+&gt;
+
+snooze
+</PRE>

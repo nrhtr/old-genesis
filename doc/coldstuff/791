@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [791] in "Coldmud discussion meeting"</TITLE>
+<H1>[791] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?791"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="790"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="792"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Ohyeah, ColdX 0.1-6</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 31 04:42:35 1995
+)</H3>
+<PRE>
+Date: Thu, 31 Aug 1995 02:41:20 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+For those who are interested, I have an alpha ColdX 0.1-6 which includes
+public/private/protected/root/driver methods, as well as expanded flags
+including disallow_overrides, synchronized, locked and native 
+(synchronized and native will come into play later).  Furthermore, it
+changed the "\\" escape feature to not eat backslash escapes unless they
+were followed by another backslash or a double-quote character.
+
+It also fixes a nasty bug found by Miroslav, where it would duplicate
+a method upon compilation (needed) but never free the old copy (which
+would make starting from a textdump take up a lot of memory).
+
+It is running at the Cold Dark, for interested parties, just connect
+via:
+
+    telnet://ice.cold.org:1138/
+
+Other URLs:
+
+    http://ice.cold.org:1180/
+    http://cold.org:8080/
+
+-Brandon
+</PRE>

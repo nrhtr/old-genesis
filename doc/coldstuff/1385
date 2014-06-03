@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [1385] in "Coldmud discussion meeting"</TITLE>
+<H1>[1385] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1385"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1384"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1384"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1384"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1386"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] GDBM for windows</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 25 23:45:23 1997
+)</H3>
+<PRE>
+Reply-To: "Robert Bradley" &lt;bradleyr@mscomm.com&gt;
+From: "Robert Bradley" &lt;bradleyr@mscomm.com&gt;
+To: "Brandon Gillespie" &lt;brandon@roguetrader.com&gt;, &lt;coldstuff@cold.org&gt;
+Date: Tue, 25 Nov 1997 20:32:56 -0800
+
+I'll definatly keep an eye out for it.
+
+Rob
+
+-----Original Message-----
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org &lt;coldstuff@cold.org&gt;
+Date: Monday, November 24, 1997 10:22 PM
+Subject: [COLD] GDBM for windows
+
+
+&gt;Does anybody have a GDBM implementation/port for windows that compiles
+&gt;under Borland C++?  I was about to compile win32 binaries for 1.1-stable
+&gt;and I found the gdbm zip file I have (and the one online) is corrupt.
+&gt;
+&gt;Any help would be appreciated.
+&gt;
+&gt;-Brandon
+&gt;
+&gt;
+
+</PRE>

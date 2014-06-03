@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [260] in "Coldmud discussion meeting"</TITLE>
+<H1>[260] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?260"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="258"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="259"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="261"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="262"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 07:10:10 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: BRANDON@cc.usu.edu (the Lyncx)
+Date: Thu, 19 May 1994 03:21:10 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+Reply-To: coldstuff@MIT.EDU
+In-Reply-To: &lt;01HCHR6VFIKYBWBLTB@cc.usu.edu&gt; from "the Lyncx" at May 18, 94 05:37:45 pm
+
+&gt; The idea of connecting thorugh the same port for _everything_ is bad in my
+&gt; opinion.
+
+Any particular reason why, or just this feeling you have?  The only reason
+other internet services generally require connecting to different ports is due
+primarily to the fact that there's no other way to conveniently merge the
+disparate protocol specifications in use by different types of operations.
+However, since we're building all of this all at once, it is minimally harder,
+and much better in my opinion, to build them all into one meta-protocol on one
+port, particularly given that the operations we'd be linking are all related
+and would generally require similar types of accesses anyway.
+
+&gt; We can use more ports, why not use them?
+
+Geez, Lynx.  I said exactly why not.  You multiply the chances of port number
+conflicts many times over and are just asking for headaches when there's really
+no reason to.
+
+Crag's proposal is also a possibility, tho it seems like more work and would
+require two connects to get a service in some cases instead of one, and I'm
+still not sure what reason there is for using multiple ports at all..
+
+-Riche
+
+
+</PRE>

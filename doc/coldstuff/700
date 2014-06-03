@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [700] in "Coldmud discussion meeting"</TITLE>
+<H1>[700] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?700"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="699"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="699"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="701"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="705"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 23:58:33 1995
+)</H3>
+<PRE>
+Date: Fri, 10 Mar 1995 20:54:57 -0800
+To: coldstuff@MIT.EDU
+From: jeffpk@netcom.com (Jeff Kesselman)
+
+
+&gt;-&gt; A solution I haven't seen tried is to use '=' for &gt;both&lt;
+&gt;   assignment and comparison, and to keep the contexts in
+&gt;   which they are allowed mutually exclusive.  This
+&gt;   wouldn't be impractical, I don't think, although Cfolk
+&gt;   might dislike the restriction.  I doubt novice hackers
+&gt;   would.
+
+The only problem with this is its confusing for competent C programmers who
+often write code like this:
+
+if (!fptr=fopen(...))
+
+This, ofcoruse, executes the body if andonly if fopen() returns NULL.
+
+I would advise STRONGLY people consider the following rules of
+compatability to keep ColdC useable and acceptable to the largest number of
+people:
+
+1) Where a functionality is identical to C, use C syntax.
+
+2) Where a functionality is DIFFERENT from C, use different syntax to flag it.
+
+3) NEVER EVER introduce syntax that can look like valid C syntax but do
+something different.
+
+Speaking of which, the switch() statement already breaks (3).  It acts more
+liek a pascal/Modula2 CASE statetment.  This IMo shoudl be fixed or the
+synatx should be chanegd to reflect that (change t Pascal syntax woudl be
+my suggestion.)
+
+JK
+
+
+</PRE>

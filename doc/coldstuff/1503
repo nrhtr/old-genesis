@@ -1,0 +1,80 @@
+<HEAD><TITLE>discuss@charon: [1503] in "Coldmud discussion meeting"</TITLE>
+<H1>[1503] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1503"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1502"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1502"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1504"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1504"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec  1 13:33:35 1999
+)</H3>
+<PRE>
+Date: Wed, 1 Dec 1999 11:13:54 -0700
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199911292207.OAA09859@taller.eng.sun.com&gt;; from Jeff Kesselman on Mon, Nov 29, 1999 at 02:07:40PM -0800
+Reply-To: coldstuff@cold.org
+
+
+--l76fUT7nc3MelDdI
+Content-Type: text/plain; charset=us-ascii
+
+On Mon, Nov 29, 1999 at 02:07:40PM -0800, Jeff Kesselman wrote:
+&gt; Word is porbably the single most used word processor onm the desktop (good
+&gt; or bad, it is true.) So I think word is a good form,ato starty from.  We
+&gt; shoudl do PDF though as well as straight text.
+
+I do not have the ability to read ''word'' documents, without
+converting them first.  Thus, it impacts me :)
+
+As for starting from--we already have that in its current incarnation
+(cml/ctext).
+
+And, IMHO, we should not keep it in a bloated WYSIWYG binary format,
+but rather in a clean and concise standard translatable format, such
+as any from the list Miro suggested (infact the manual was originally
+in texinfo format, but I converted it to cml/ctext so as to maintain a
+single source for changes, so there was no disparity).
+
+Right now the manual is in Ctext/CML.  It should not be much work to write
+a ctext formatter to output a document in one of these formats--it
+just hasn't been done yet.  I did spend a brief time to make the
+$flat_format, which dumps everthing out as plain text.  However,
+making it a little smarter should not be much work.  Having it build
+an index as it goes should also not be much work--just keep a dictionary of
+all links.  Building a TOC is also easy.
+
+With this in mind, my personal preferences would be:
+
+   1) Somebody write an output formatter such as $texinfo_format,
+      and we continue to maintain the reference manual in cml/ctext
+   2) Somebody convert it to a static acceptably open standard
+      format (see Miro's message for a good list of potential
+      candidates), and we remove the manual from ColdCore (keeping
+      the two copies up to date is not likely).
+
+Of course keeping it in a word format is also an option, just not on my
+list ;)
+
+-Brandon Gillespie
+
+--l76fUT7nc3MelDdI
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: VvehiREveEWDDuGbzlK0PnawlhuV0dmx
+
+iQA/AwUBOEVlYUv5XoQiMgn6EQI3TwCgvYfRzfytJQnFYji+oO7qova//hAAnA6Z
+vKielL/WrqPEeOyJ605kJbAg
+=aDK/
+-----END PGP SIGNATURE-----
+
+--l76fUT7nc3MelDdI--
+</PRE>

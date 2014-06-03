@@ -1,0 +1,104 @@
+<HEAD><TITLE>discuss@charon: [1159] in "Coldmud discussion meeting"</TITLE>
+<H1>[1159] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1159"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1158"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1160"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1160"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1164"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Intermud3 (was Re: [COLD] Is there ...)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 18:12:34 1996
+)</H3>
+<PRE>
+Date: Mon, 02 Dec 1996 16:01:28 -0800
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: coldstuff@cold.org
+
+Brandon Gillespie wrote:
+
+&gt; 
+&gt; I (used) to be on the intermud list and one thing that struck me as
+&gt; annoying was their insistence on re-creating existing protocols that are
+&gt; perfectly capable (just drop them on a different port or on a sub-protocol
+&gt; like VEIL).  For example:
+&gt; 
+
+I believe that the I3 was developed in response to the interMOO news
+postings and
+the teasing that the LPC world didn't have anything like that.  By the
+time
+you suggested VEIL, some version of Intermud was already in place. And
+you
+know how hard it is to change things once there is some momentum. 
+Besides
+LP people don't talk to MOO/Cold people do they?
+
+I think there is one approach that is interesting, and that is to use a
+gateway server.  
+This means only the gateway has to know I3.  I would much rather sit in
+my Cold world and
+deal with LP-related stuff through channels.  Beats having several
+Windows open like I have now
+and violating the laws of time and space by being at more than one place
+at the same time.  
+
+&gt; &gt; Intermud3 has the following features:
+&gt; &gt;       -mudlist to show what muds are up, type, address, databases
+&gt; &gt;       -remote tell with emotes
+&gt; 
+&gt; There is no existing protocol which would handle this well.
+
+But it currently works for I3-- except who, that one really sucks.
+
+I can solve problems by subscribing to channels and talking to groups
+on other muds or tell them individually.  Naturally most of this
+stuff is for Admins. I started using these channels when I was on the
+old
+TMI, then at TMI-2.  
+
+&gt; 
+&gt; Whats wrong with the current 'finger' protocol on port 79?
+
+The difference is that everything is going through your I3 port, so that 
+finger actually pulls your mud info, not your Unix info.  
+
+
+&gt; 
+&gt; &gt;       -intermud mail (based on the mud name not the address)
+&gt; 
+&gt; One word: SMTP
+
+I haven't tried it from a mud from either Cold or Moo. 
+Does this go from mud-to -mud or mud-to-OS?
+
+&gt; 
+&gt; &gt;       -ftp/telnet
+&gt; 
+&gt; uhh
+&gt; 
+Is your comment based on the fact that it's standard for Cold, or
+ why would anyone want it?  I use telnet a lot to connect to other 
+muds so that I can get access to information that I don't have on 
+my server.  Also some conversations is better in virtual presence 
+instead of channels so its a quick popover to the other mud.
+
+The ftp is useful considering the way that MudOS sees things. 
+The root of a mud ftp is
+	{yourlib-loc}/lib/ftp
+This allows people to move code around without needing system access. 
+Otherwise I would have to give a wizard an account on my system and 
+let her ftp to my machine and so on.  Then the files have to be moved 
+to the library area.
+
+I believe the LP world is trying to go the same was as Cold-- to put 
+a lot of the services in the mud itself without having to go out to 
+the Unix/NT/whatever environments.
+
+
+Frank
+</PRE>

@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [211] in "Coldmud discussion meeting"</TITLE>
+<H1>[211] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?211"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="210"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="212"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="212"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="215"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>match_template() needs help with consistancy</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Apr 28 00:12:22 1994
+)</H3>
+<PRE>
+Date: Wed, 27 Apr 1994 21:17:18 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Ayup.  Basically, in reference to parsing quotes you can currently do:
+
+match_template("f * d *", "f zz d foo")        =&gt; ["f", "zz", "d", "foo"]
+match_template("f * d *", "f \"zz\" d foo")    =&gt; ["f", "zz", "d", "foo"]
+match_template("f * d *", "f \"zz\" cc d foo") =&gt; 0
+match_template("f * d *", "f zz d \"fo\"o")    =&gt; ["f", "zz", "d", "\"fo\"o"]
+
+Example 1 is a normal parse, hurah
+Example 2 is a normal parse, it stripped the quotes, hurah.
+Example 3 is a bad thing.
+Example 4 is a bad thing.
+
+As I feel it should work (for consistancy reasons):
+
+match_template("f * d *", "f zz d foo")        =&gt; ["f", "zz", "d", "foo"]
+match_template("f * d *", "f \"zz\" d foo")    =&gt; ["f", "zz", "d", "foo"]
+match_template("f * d *", "f \"zz\" cc d foo") =&gt; ["f", "zz", "cc", "d", "foo"]
+match_template("f * d *", "f zz d \"fo\"o")    =&gt; ["f", "zz", "d", "fo", "o"]
+
+From here in-database methods can handle problems if it does not match
+correctly.  It should also handle escaped quotes, so you can pass them
+normally.
+
+-Brandon
+
+(WOAH, I was just toying around with match template a few more times and
+received some VERY odd results (i'm sure its something local to the database,
+but this is funny anyhow):
+
+;match_template("f * d *", "f \"zz d foo");
+=&gt; ["f", "zz d foo", "d", "tell not found."]
+(????)
+;match_template("f * d *", "f \"zz d foo");
+=&gt; ["f", "zz d foo", "d", "foo\", \"d\", \"tell not found.\"]"]
+(!?!?!?!?)
+;match_template("f * d *", "f \"zz d foo");
+=&gt; 0
+(...?)
+;match_template("f * d *", "f \"zz d foo");
+=&gt; 0
+(etc)
+
+Anyhsm, dont even try to figure it out, must be something I set conflicting
+with the eval).
+
+</PRE>

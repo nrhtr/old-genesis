@@ -1,0 +1,59 @@
+<HEAD><TITLE>discuss@charon: [512] in "Coldmud discussion meeting"</TITLE>
+<H1>[512] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?512"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="511"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="513"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>security</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov  2 12:43:25 1994
+)</H3>
+<PRE>
+From: brandon@riverheights.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Wed, 02 Nov 94 10:40:18 -0700
+
+
+I've been reading through the Department of Defense's Orange Book (specifies
+how to define a secure system, and what makes a system secure), and I think
+a few additions to the driver would help.  For now the only one I am
+definitely sure about is an extra method flag along the same lines as
+disallow_overrides.  This flag can be called anything (such as "read_only;").
+It's purpose is to specify that it can never be re-compiled while the
+driver is running.  I.e. it is read in when the driver initializes but
+from that point on the method will never be rewritten.  What prompted me to
+think of this was a section from the Orange Book:
+
+------------------------------------------------------------------------------
+          Requirement 6 - CONTINUOUS PROTECTION - The trusted mechanisms that
+enforce these basic requirements must be continuously protected against
+tampering and/or unauthorized changes.  No computer system can be considered
+truly secure if the basic hardware and software mechanisms that enforce the
+security policy are themselves subject to unauthorized modification or
+subversion.  The continuous protection requirement has direct implications
+throughout the computer system's life-cycle.
+------------------------------------------------------------------------------
+
+I would specifically point to the line 3 starting at 'No computer system...'.
+
+Although I know any world in the coldmud driver will probably never rank
+high by the Orange Book's standards (just because of the fact that it isn't
+a full system (hardware/software/etc)), this addition will help a lot as far
+as security goes.  Instances where I would add 'read_only;' would be on
+$root.eval(), $root.compile() and $sys.compile() (especially $sys.compile(),
+as in The Cold Dark it logs every time it is executed.  If somebody can write
+over such a critical method, it is much less secure.
+
+I am sure i will come up with more things, but this is enough for now :)
+
+(although I have always liked the idea of the 'private;' flag that Jordan
+added for a short period of time (perhaps 'local;' would be a better name?)).
+
+-Brandon (Lynx)
+</PRE>

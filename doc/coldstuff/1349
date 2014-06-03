@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1349] in "Coldmud discussion meeting"</TITLE>
+<H1>[1349] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1349"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1348"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1350"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Messages</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 29 01:21:50 1997
+)</H3>
+<PRE>
+From: "Luther, Clay" &lt;clay@selsius.com&gt;
+To: "ColdStuff Mailing List (E-mail)" &lt;coldstuff@cold.org&gt;
+Date: Fri, 29 Aug 1997 00:14:35 -0500
+
+Grappling with messages today...
+
+Can I do pronoun replacements, and if so, what are they?
+
+ie,
+
+	@set foo:foomsg = [actor] foobars [possessive_pronoun] [this].
+
+producing something like "Clay foobars his foo."
+
+I've been able to track down [this], [actor], [withlock], and [lock],
+but that's about it.
+
+Thanks.
+
+---
+Clay Luther
+clay@selsius.com
+
+
+</PRE>

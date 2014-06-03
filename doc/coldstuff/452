@@ -1,0 +1,124 @@
+<HEAD><TITLE>discuss@charon: [452] in "Coldmud discussion meeting"</TITLE>
+<H1>[452] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?452"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="442"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="451"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="451"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="453"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="453"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="453"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment, while (etc)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep 24 15:45:17 1994
+)</H3>
+<PRE>
+To: stewarta@netcom.com (Alex Stewart)
+Cc: BRANDON@cc.usu.edu, coldstuff@MIT.EDU
+In-Reply-To: Your message of "Sat, 24 Sep 1994 00:13:32 PDT."
+             &lt;199409240713.AAA07790@netcom12.netcom.com&gt; 
+Date: Sat, 24 Sep 1994 11:21:57 -0400
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+I'd just like to throw a few more ideas into the mix:
+
+&gt; However, the argument that you should use a while (1) ... if (...)
+&gt; break; ...  is in my opinion one of the stupidest things anybody
+&gt; could deliberately design into a language.
+
+I agree that it's not the best construct for the task at hand.
+Perhaps the problem here is that while() isn't really appropriate for
+the job.  Consider the meaning of:
+
+	while ((a := .test()) &gt;= 0)
+		.do_something(a);
+
+This reads as, "while [go off and set the value of a to .test()] a
+isn't negative, do something with a".  This is a rather disjointed
+sentence; there are ways of reading this that make grammatical sense
+(e.g. "while the value of .test(), which I'll call a, is nonegative,
+do something with a"), but they don't come directly from reading the
+code (when := is your generic assignment operator) and gloss over the
+side-effect, which is exactly how you see people writing C expressions
+a lot.
+
+I proposed "while (1) { a := .test(); if (a &lt; 0) break;
+.do_something(a); }", which reads as "forever, set a to test, then
+stop if a is less than zero, then do something with a", but most
+people don't seem to like that.
+
+If while() isn't the appropriate construct, let's try C's for() (which
+I realize doesn't exist in Coldmud):
+
+	for (a = .test(); a &gt;= 0; a = .test())
+		.do_something(a);
+
+This reads, "start with a equal to .test().  At the end of each loop
+iteration, set a equal to .test(), and loop until a is nonnegative,
+doing something with a."  This makes much more sense, but you've
+duplicated code in the first and third clauses of the for, and
+therefore you wind up with a longer and more complicated descriptive
+sentence which you would like.
+
+So perhaps the answer is to define a third loop construct (really,
+that'd not so many; we don't even have do-while yet) which is
+basically a for loop with the intialization and iteration actions
+equal.  We would like the descriptive sentence for this loop to be,
+"At the beginning of each loop iteration, set a equal to .test(), and
+loop until a is nonnegative, doing something with a."  Consider:
+
+	where (a = .test(); a &gt;= 0)
+		.do_something(a);
+
+The name "where" is the best I could come up with on short notice, and
+of course any name for a new looping construct is going to sound a bit
+funny ("for (a;b;c)" is not particularly intuitive; while (a)" is
+easily made intuitive mainly because it's so simple).  This construct
+takes care of all of the situations for which people want assignment
+expressions in while loops.  I argue that a when loop is more
+intuitive than a while loop with a side-effect in the condition.
+
+There is onlu one other situation I can think of where assignments in
+expressions makes code significantly more compact:
+
+	if ((a := .test1()) &gt;= 0)
+		.do_something1(a);
+	else if ((a := .test2()) &gt;= 0)
+		.do_something2(a);
+	else
+		.do_something3();
+
+These are really a series of parallel constructions (fallbacks, if you
+will), but in the most general case, you are forced to rewrite your
+code as a series of nested compound statements inside if-else
+statements (often, you can use return statements to get around this).
+Again, this is a situation where assignment expressions lead to
+compact code, but a rather disjoint English description of the code.
+
+If we think of where() as a while() with a preparatory statement
+clause, then we might try to apply the same solution here, but this
+requires making up yet another name and complicating your control flow
+constructs again.  Assignment expressions are another solution (with
+associated defects), and ignoring the problem is also acceptable
+(really, I don't use assignment expressions in C, and these things
+don't bother me too much).
+
+However, let me throw out just one more crazy idea: leave looping
+alone for now and extend the expression syntax:
+
+	(where IDENT := expr) expr
+
+For example:
+
+	while ((where a := .test()) a &gt;= 0)
+		.do_something(a);
+
+Okay, I'm done for now.  A final note: "with handler" is there for
+readability.  You can reclaim one of the keywords if you like, but I
+think it will make the catch construct less readable for new
+programmers (although "handler" alone is pretty reasonable).
+
+</PRE>

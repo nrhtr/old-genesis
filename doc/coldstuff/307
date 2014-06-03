@@ -1,0 +1,61 @@
+<HEAD><TITLE>discuss@charon: [307] in "Coldmud discussion meeting"</TITLE>
+<H1>[307] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?307"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="306"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="306"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="306"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="308"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="308"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="322"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: logging, fact and fiction</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 23 22:03:29 1994
+)</H3>
+<PRE>
+Date: Mon, 23 May 1994 18:51:12 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;199405240118.SAA21937@netcom.com&gt; (deforest@netcom.com)
+
+
+The reason turning off log scares me more than object creation is
+because the log can be you ONLY warning that you've ben hacked. As in
+the example I gave, where said nefarious hacker hacks an admin
+account, turns off the log, makes another admin, and turns back on the
+log. But as I've said, muds aren't the usual domain for hacking this
+subtle. I'm jsut being paranoid. If log couldnt be turned off bt
+admin, i could have a security program outside the server watching the
+log for new admins, and if it got one, it would kill the
+server. etc. I think your seriouly underestimating the importance of a
+log in anti-hacking methods. But then again, I'm seriouly exaggerating
+the danger of hackers on ColdMUD, so i guess were even :)
+
+Can't an admin eval as $sys?
+
+&gt; I also hopes this explains why I wasn't worried about moving time
+&gt; in-db. If someone gets far enough along to screw up $sys.log then
+&gt; having log() only log strings will not make a bit of difference.
+
+Only if they are not suble, and you are not careful :) sure they can
+wipe out your db, and then youll reinstall from backup, and probably
+look in where? the log file! to see how they hacked in. What, though,
+if they dont wipe out your db. what if they do as i described above,
+and get write access to sys via legitamate means? what if said hacker
+is in the same lab as an admin, who leaves the terminal for a moment?
+they wouldnt even need a password then, just enough time and knowledge
+to turn off the log and make a new admin, and turn the log back on. 
+
+But as I've said, this is mostly an issue dredged from my inner
+paranoia's, and if you let me, i will argue forever.
+
+Thanks to Crag for the explanation, and thanks to Lynx for the time
+mod, and thanks to eveyone else to just because :)
+
+
+	Ray / Ash
+
+
+</PRE>

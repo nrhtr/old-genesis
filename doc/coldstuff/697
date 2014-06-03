@@ -1,0 +1,134 @@
+<HEAD><TITLE>discuss@charon: [697] in "Coldmud discussion meeting"</TITLE>
+<H1>[697] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?697"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="696"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="696"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="698"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="699"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 23:57:56 1995
+)</H3>
+<PRE>
+Date: Fri, 10 Mar 1995 20:54:07 -0800
+To: coldstuff@MIT.EDU
+From: jeffpk@netcom.com (Jeff Kesselman)
+
+WARNING: Alex and I have been having a violent discussion about the
+assignment operator and he value of adherance to standards.  I didn't
+realize it wasn't going to the list so you are comign in in the middle.
+Alot of the less emotional and positive thing have already been said.
+Sorry.
+
+JK
+
+&gt;&gt; &gt; it?  (hint: it should NOT be '=')
+&gt;&gt;
+&gt;&gt; Why not?  Your talking about giving at property unique to C (assignment
+&gt;&gt; returning a value) and THEN changing it so it doesnt LOOK like C?  It
+&gt;&gt; doesn't make alot of sense to me.
+&gt;
+&gt;Sigh.. I was kinda hoping you'd actually bother to read the messages on the
+&gt;list leading up to all this, but I guess I'm gonna have to explain it all
+&gt;AGAIN..
+&gt;
+&gt;The decision to make an assignment-expression operator in C as '=' was one of
+&gt;the most innately stupid and boneheaded moves that Kernighan and Ritchie ever
+&gt;made.  It causes countless problems, not only comprehension problems but simple
+&gt;typos, which can do a remarkable amount of damage (and have been known, on
+&gt;occasion, to completely undermine security and even wipe out vital portions of
+&gt;the database in MOO, which uses this scheme also).
+
+Guess what? I agree wuth you about K&amp;R. It does NOT change the fatc that
+K&amp;R DID make this decision and that it is now a standard in the ONLY
+standardized programming language in the indusrty, the one that 99% of new
+computr scientists learn first, and the ONLY one to have the kind of
+operation you are suggesting (an assignment expression rather then an
+assignment opration.)
+
+I kinda hoped YOU would have read that in my last pst.
+
+&gt;Are you actually suggesting that this is in some way a good thing?
+
+Good is irrelevent.  Standradization and ease of learnign is the issue. See
+above. In a language named &lt;foo&gt;C, being like C is a good thing, yes.
+
+
+&gt;
+&gt;&gt; Its not a question of "because theya re there."  It a very practical
+&gt;&gt; consideration. C, good or bad, has become a defacto standard.
+&gt;
+&gt;Umm, excuse me, but if you'd look at what you're saying you might notice that
+&gt;the term "de facto standard" means _PRECISELY_ "because it's there".  sheesh.
+
+Not because they ae there. Because IT is there. Stop picking on words and
+read the sentance ::sheesh::
+
+&gt;
+&gt;As I said, stupidity shouldn't be blindly copied in the name of so-called
+&gt;"standards",
+
+I disagree.  Standards are NEVER optimal, becaus ethey are by definition
+compromises. Standard are however a hgood thing for comprehension, or don't
+you agree with that?
+
+&gt; C doesn't have
+&gt;dynamic typing, or an inherent OO database-model basis, several important
+&gt;constructs (such as 'for' and '?:') are different anyway (and should be), as
+&gt;well as many other important changes.
+
+As I said in my original post (which you ignored) ColdC IS different from C
+WHERE THOSE DIFFERENCES REFLECT INHEARENT DIFFERENCES IN THE ACTION BEING
+PERFROMED.  The varient syntax of "for" makes sense because "for" is a set
+operator, not an ordinal one liek in C.  Your sugegstion does NOT make
+sense because the operations are identicle.
+
+&gt;Your whining about "but it's not like C"
+&gt;is really one of the most insignificant aspects of this whole issue I can think
+&gt;of.  It was NEVER exactly like C, and it's not supposed to be!  Changing this
+&gt;one operator won't suddenly make people go "oh, I could handle all the other
+&gt;changes, but I just can't learn this language if assignment isn't '='"..
+&gt;sheesh.
+
+Youa re taking this MUCH too personally and obviously were scared by an
+assignment operator at a young age.
+
+Actually your mention of the fact that you never learned to avoid this C
+pitfall in your earlier post explains a great deal.  MOST competant C
+programmers make this mistake twice and never again.  I consider your
+"whining about how it was a bad K&amp;R decision" the msot irrelevent thing in
+ths dicussion.  One mans logic is another mans whining irrelevancy.  You'ld
+do well to grow up and learn that if you EVER plan to do ANY programmign in
+a competant group environment.
+(In case you're wondreing I've been programming professionally, both singly
+and in groups, for about 10 years now.)
+
+&gt;
+&gt;&gt; What you have is a standard.  The three pedals on the floor of my car are
+&gt;&gt; probobly far from optimal, but you woudl have ALOT of trouble selling a
+&gt;&gt; car that didn't conform to that, and a dispropotionately high number of
+&gt;&gt; accidents involving people who didn't know you had switched the pedals
+&gt;&gt; around.
+&gt;
+&gt;Yes, but the your three pedals on the floor aren't arranged in a way that
+&gt;causes hundreds of drivers to go careening off cliffs every year.
+&gt;
+&gt;-R
+&gt;
+&gt;PS:  Are you aware that all these messages aren't being sent to the list?  This
+&gt;appears to be the second time you've responded to something I've said on a list
+&gt;(the first time was on MOO-Cows a little while back) and haven't CC'd to the
+&gt;list..
+
+Nope, I am not, thank you.   I will repost this, though peopel will be
+confused by the sudden thread and joinging in the middle. I wish you had
+said so soone. I hATE mailing lists.  Conferences make MUCH more sense...
+
+
+
+</PRE>

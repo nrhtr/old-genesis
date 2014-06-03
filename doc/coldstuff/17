@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [17] in "Coldmud discussion meeting"</TITLE>
+<H1>[17] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?17"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="13"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="16"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="16"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="18"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>RE: $connection and $sys.startup()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 22:32:27 1993
+)</H3>
+<PRE>
+Date: Mon, 15 Nov 1993 20:26:30 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@MIT.EDU"
+
+Just re-created the problem with your method (from the logfile):
+
+COLDSTART DATABASE: ./tcd/*  on  Monday, November 15, 08:22:29 PM
+Mon Nov 15 20:22:30 1993: &gt; STARTUP: ERROR: Domain (1) is not a list or
+dictionary.
+Mon Nov 15 20:22:30 1993: &gt; STARTUP: Thrown by interpreter opcode FOR_LIST.
+Mon Nov 15 20:22:30 1993: &gt; STARTUP: ~type in $sys.startup (defined on $sys),
+line 10
+
+-------------
+anyhow all I did was change   destroy(obj) to obj.destroy()
+
+-Brandon
+</PRE>

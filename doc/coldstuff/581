@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [581] in "Coldmud discussion meeting"</TITLE>
+<H1>[581] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?581"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="580"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="582"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>dumpsplit 2 bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 11 22:07:56 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Fri, 11 Nov 94 20:06:33 -0700
+
+This could actually be a holdover from dumpsplit 1, but since I know virtually
+nothing about perl I'm unable to track it down.  Basically about every ~5-10
+objects is completely duplicated in it's file (i.e. all the param defines
+and method defines, if they exist).  And occasionally it just completely
+doesn't include a whole object (found this one out the hard way--the object
+had no methods and was probably missing some params, I didn't bother to check).
+
+-Brandon
+</PRE>

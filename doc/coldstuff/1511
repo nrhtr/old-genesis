@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1511] in "Coldmud discussion meeting"</TITLE>
+<H1>[1511] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1511"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1510"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1510"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1512"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1512"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec  2 18:30:59 1999
+)</H3>
+<PRE>
+From: "Bruce Mitchener, Jr." &lt;bruce@puremagic.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Thu, 2 Dec 1999 15:20:22 -0800
+Reply-To: coldstuff@cold.org
+
+Joshua Rosen wrote:
+&gt; My religious preference:
+&gt; Put textual documents in SGML (or XML, if you want to be
+&gt; trendy), and define a system for transforming them into HTML
+&gt; and TeX or whatever other formats you really need to have them
+&gt; in (plaintext included).
+
+
+Thanks for describing Docbook: http://www.docbook.org/ :)
+
+ - Bruce
+
+
+</PRE>

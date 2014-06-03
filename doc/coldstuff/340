@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [340] in "Coldmud discussion meeting"</TITLE>
+<H1>[340] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?340"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="339"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="341"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>No subject found in mail header</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun  2 21:17:43 1994
+)</H3>
+<PRE>
+From: pkautz@ac1.rmwc.edu
+Date: Thu, 2 Jun 94 21:10:21 EDT
+Apparently-To: &lt;coldstuff@mit.edu&gt;
+
+From pkautz Thu Jun  2 21:42:38 1994
+From: Paul Kautz &lt;pkautz@ac1.rmwc.edu&gt;
+X-Mailer: SCO System V Mail (version 3.2)
+To: coldstuff@mit.edu
+Subject: read()
+Date: Thu, 2 Jun 94 21:42:38 EDT
+Message-ID:  &lt;9406022142.aa08440@ac1.rmwc.edu&gt;
+
+What is the status of the builtin read() function in cold?
+shkoo tells me that support for suspending tasks is coming
+up in the next major release, perhaps that is what is needed?
+Actually, I'm clueless.
+
+- Paul/af
+</PRE>

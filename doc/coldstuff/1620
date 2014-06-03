@@ -1,0 +1,66 @@
+<HEAD><TITLE>discuss@charon: [1620] in "Coldmud discussion meeting"</TITLE>
+<H1>[1620] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1620"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1619"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1621"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>strange behavior</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep  1 18:40:38 2000
+)</H3>
+<PRE>
+From: "Mr Snuddles" &lt;mrsnuddles@atyzyk.com&gt;
+To: "coldstuff@cold.org" &lt;coldstuff@cold.org&gt;
+Date: Fri, 01 Sep 2000 15:21:43 -0700
+Reply-To: coldstuff@cold.org
+
+Hey Y'all -- anybody home?
+
+Brought up a reasonably clean-slate system using the
+stable Genesis and ColdCores I just downloaded yesterday,
+got into the system, let it sit a bit as I went away to
+watch my wife in surgery, and when I returned, saw the
+following:
+
+mv: binary.bak: No such file or directory
+tar: binary-1Sep100: Cannot stat: No such file or directory
+tar: Error exit delayed from previous errors
+/bin/cp: binary-1Sep100.tar.gz: No such file or directory
+/bin/cp: binary-1Sep100.tar.gz: No such file or directory
+/bin/cp: binary-1Sep100.tar.gz: No such file or directory
+/bin/cp: binary-1Sep100.tar.gz: No such file or directory
+
+I'm sure I'm missing something obvious, but now, for example,
+as I wander through the tutorial, I've tried doing "look at
+the graffiti" and I am being told
+
+Database is not readable by sender.
+
+During the attempt to build the active database I saw, at the
+end of the build, the following:
+
+. . . . 
+[a great deal omitted above]
+Database compiled to "binary"
+Closing binary database...
+[1 Sep 2000 13:05] MALLOC WARNING: free(): freeing wrong page.
+
+The server came up and all, and I could connect to it, but
+I feared Malloc might have been a problem.  I tried building
+both with and without the PHK malloc option.  This same MALLOC
+WARNING came up either way.
+
+Any suggestions?
+
+Cheers,
+
+Jay
+
+
+</PRE>

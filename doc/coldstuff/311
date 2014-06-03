@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [311] in "Coldmud discussion meeting"</TITLE>
+<H1>[311] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?311"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="310"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="312"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="323"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="324"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ColdMUDs</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 23 23:46:33 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Mon, 23 May 1994 20:40:51 -0700 (PDT)
+
+FrozenApples has moved back to Donal. $sys.new_user_class() =&gt; $user. I have
+ no intention of hosting conversational ColdMUDers. The previous db was lost,
+ and I am re-implementing my changes. I hadn't realized how much I had done
+ until it was all lost.
+
+C'est la vie.
+
+I'm glad to hear there is another ColdMUD, specifically DarkMUD, which I had
+ forgotten about.
+
+Crag
+</PRE>

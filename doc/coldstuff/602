@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [602] in "Coldmud discussion meeting"</TITLE>
+<H1>[602] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?602"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="600"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="600"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="601"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="603"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re:  clear_parameter()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov 27 15:52:59 1994
+)</H3>
+<PRE>
+Date: Sun, 27 Nov 1994 13:50:23 -0700
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU, deforest@netcom.com
+
+&lt; My reason aginst: I don't see a need, the cost is the work of adding it plus
+&lt; the possibility of adding it in a way which causes more bugs or something.
+
+I was under the impression you had actually done some work with a database.
+At least from my experience I know it is a royal bitch when doing major object
+overhauling/moving around, because you inevitably end up creating new parents
+with different parameters, destroying the old and leaving dead parameters
+throughout the entire database which can only be removed if you manually
+edit a textdump.  I consider this a hole, and I highly doubt you can come
+up with a satisfactory db implementation.  For instance, assuming an object
+heirarchy similar to the Cold Dark's (in relation to $user), $user has a
+parent of $random_information, which defines the parameters ,information and
+,random.  $random_information stays around for a while, but you decide that
+it is useless, there is approximately ~100 descendants of $user, if you
+destroy $random_information then there are 100 descendants which have a
+parameter by the name of ,information which probably even has a value, but
+which is completely dead wasted space because _NOTHING_ can access it or
+remove it other than offline.
+
+&lt; P.S. If you want this change so bad, make it and post the patch.
+
+Through Richelieu's urgings I have been trying to work as a group, however
+I am more and more thinking that most people here do not wish to work as a
+group.  Simply making a change which half the involved people would not like
+is NOT working as a group, is this such a hard concept to grasp??
+
+-Brandon
+
+(BTW, the db implementation I heard you talking about before was to clone
+each effected object to remove the parameters, although this would work it
+would definitely be a major bitch when you get ~100 descendants, or even
+</PRE>

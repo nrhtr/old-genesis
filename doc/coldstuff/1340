@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1340] in "Coldmud discussion meeting"</TITLE>
+<H1>[1340] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1340"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1330"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1339"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1339"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1341"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1341"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1341"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>RE: [COLD] Exit announcements (anomaly?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 22 00:45:26 1997
+)</H3>
+<PRE>
+From: "Luther, Clay" &lt;clay@selsius.com&gt;
+To: "'coldstuff@cold.org'" &lt;coldstuff@cold.org&gt;
+Date: Thu, 21 Aug 1997 23:25:45 -0500
+
+Well, I figured out what my problem was.  I hadn't been building $exits,
+but $exit_frobs (!?!).  Fixed it there, too, and now it works.
+
+These frobs...they'll kill me...
+
+Clay
+
+&gt; -----Original Message-----
+&gt; From:	Luther, Clay [SMTP:clay@selsius.com]
+&gt; Sent:	Thursday, August 21, 1997 11:14 PM
+&gt; To:	'Brandon Gillespie'; Chris Williams
+&gt; Cc:	Luther, Clay; 'coldstuff@cold.org'
+&gt; Subject:	RE: [COLD] Exit announcements (anomaly?)
+&gt; 
+&gt; &gt; 
+&gt; &gt; [Clay Luther]  
+&gt; &gt; Does it?  I attempted to apply this fix to $exit.invoke(), but, even
+&gt; &gt; though I can list the changes, it appears that the exits I've
+&gt; created
+&gt; &gt; aren't calling $exit.invoke() at all.
+</PRE>

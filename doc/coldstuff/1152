@@ -1,0 +1,87 @@
+<HEAD><TITLE>discuss@charon: [1152] in "Coldmud discussion meeting"</TITLE>
+<H1>[1152] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1152"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1150"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1151"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1151"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1153"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] tCD logins hosed...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 30 20:44:43 1996
+)</H3>
+<PRE>
+Date: Sat, 30 Nov 1996 20:36:15 -0500 (EST)
+From: Fabien Ninoles &lt;ninf01@gel.usherb.ca&gt;
+To: Dale Mayberry &lt;pdale@mat.net&gt;
+Cc: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;, coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.95.961130173949.27876A-100000@mars.mat.net&gt;
+
+-----BEGIN PGP SIGNED MESSAGE-----
+
+On Sat, 30 Nov 1996, Dale Mayberry wrote:
+
+&gt; On Sat, 30 Nov 1996, Andrew Wilson wrote:
+&gt; 
+&gt; &gt; So, logins to TcD are hosed for me, and have been for about 6 hours.
+&gt; &gt; Anyone awake over there?
+&gt; 
+&gt;   I did a ";as $login_interface;.rehash_cache()". That seems to fix the
+&gt; login problem.
+&gt; 
+&gt;   The 'local_cache' on $login_interface was misnamed 'local'. I have not
+&gt; tracked down what caused this problem and will leave that work to others.
+&gt; 
+&gt; -----------------------------------------------------------------------------
+&gt; Brian Dale Mayberry, Jr.			pdale@mat.net
+&gt; 
+&gt; 
+I got a similar problem with a player on my db. I change the objname of
+an $admin (His name was a little bit too long) but the conversion aren't
+made ok. Some object, like $admin, refer to it by it's old long name
+instead by it's new shorter command. The commands was beginning to be
+weird and I have to @destroy the player... Indead, I was steel with a
+dbref who pointed on inexisting objnum.... I have to dump the backup,
+correct the situation by hand (easy it was, just erase the ghost -- yes I
+have a file with the good #objnum but only a dbref and a reference to the
+parent $admin -- and changing the name line under the player declaration.
+
+Hopes this can help although I think it "simply" a db corruption. :-/
+
+Also, they're a little easy to fix bugs on $note.add_text(). De db doesn't
+like to add 0 with ["a new string"] for a new note. Just check this
+condition around line 12 in function set_text. I'm just begin to play with
+cold but, frankly, it was extraordinary! Just missing the documentation...
+
+Good Works Guys!
+
+
+
+- ---------------------------------------------------------------
+ "Computers in the future may weigh no more than 1.5 tons."
+                                 -- Popular Mechanics, 1949
+ 
+ measure with micrometer, mark with chalk, cut with axe, 
+  then hope like hell...
+- ---------------------------------------------------------------
+Fabien Ninoles aka Baffouille       || Running Debian-Linux
+Ninf01@gel.usherb.ca                || Lover of MOO, mountains, 
+http://www-edu.gel.usherb.ca/ninf01 || poetry and Freedom.
+- ---------------------------------------------------------------
+
+-----BEGIN PGP SIGNATURE-----
+Version: 2.6.3i
+Charset: noconv
+
+iQCVAwUBMqDhB1X6fc7jcjhFAQFxpgP+K7KdxgL2Mn8aps1RceYfHXwnSl6eYwax
+GrqVUR0stulkJPvu57qoe9kIGydaQtRZ/0+VIqtZOy6v5p2c5/183s7gLzCBY7RU
+vqRLJVQnd9S6ERN2cFaVXUqzCchcccmKyT9f2qbLoAr/UmhXLqlxscXceEHZ8S6G
+VPFLUaox/SQ=
+=TU/D
+-----END PGP SIGNATURE-----
+
+</PRE>

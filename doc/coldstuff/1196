@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1196] in "Coldmud discussion meeting"</TITLE>
+<H1>[1196] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1196"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1195"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1197"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1197"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1206"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] cold stuff ;)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Dec 29 19:40:31 1996
+)</H3>
+<PRE>
+Date: Sun, 29 Dec 1996 16:39:36 -0800
+To: coldstuff@cold.org
+From: Jeff Kesselman &lt;jeffk@ten.net&gt;
+
+A few cold questions:
+
+1) Did textdump ever get fixed?  Do we have a dumpsplit that works on the
+   new format?
+
+2) Is it true that user() has no useful or meaningful default before you
+   issue a set_user()??  Wouldn't it make sense for the default value
+   of user() to be the object that is at the top of the current call stack?
+
+3) Efficiency question.  If I define a list and then reference it inside of
+   multiple other lists is only 1 copy of the list created? What if I pass
+   such a  reference to a different object? Does it still reference the
+original
+   list (this would make sense and be good behavior...)
+
+Jeff K.
+</PRE>

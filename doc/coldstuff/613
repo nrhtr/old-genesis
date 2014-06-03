@@ -1,0 +1,91 @@
+<HEAD><TITLE>discuss@charon: [613] in "Coldmud discussion meeting"</TITLE>
+<H1>[613] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?613"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="612"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="614"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>a fix and a speedup</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  5 13:07:39 1994
+)</H3>
+<PRE>
+From: crag@serial.io.com (Crag@JHM)
+To: coldstuff@MIT.EDU
+Date: Mon, 5 Dec 1994 12:08:12 -0600 (CST)
+
+Colin and I were playing with the server last night and finally narrowed down
+ a disappearing object bug to the point of squashing it. It can be easily
+ reproduced in the old server with the following:
+
+as $sys eval var o; for o in [1..1000] create([$root]);
+;;var o; for o in [db_top() - 1000..db_top()-1] if (!valid(o)) .tell(tostr(o));
+
+THe first 500 or so objects will be invalid.
+
+Here's the fix:
+
+*** src/object.c	Wed Sep  7 21:26:30 1994
+--- object.c	Sun Dec  4 21:08:33 1994
+***************
+*** 119,124 ****
+--- 119,125 ----
+      cnew-&gt;num_idents = 0;
+  
+      cnew-&gt;search = 0;
++     cnew-&gt;dirty = 1;
+  
+      /* Add this object to the children list of parents. */
+      object_update_parents(cnew, list_add);
+
+object_new() wasn't marking objects as dirty when it created them. I suspect
+ this may fix the 'disappearing object' problem experienced wen starting from
+ textdumps with lots of objects in them.
+
+While testing the caching code, Colin noticed that $sys and $root were being
+ pushed around a lot when it can be assumed that they will need to be active
+ all the time. He suggested that their refcounts be incremented so that they
+ are always active, thereby turning all cache_retreives and cache_discards of
+ those objects into refcount adjustments, rather than taking them off the
+ active chain.
+
+Before Jordan's changes this would have caused a server panic because the
+ server used to require that there be no active objects at the end of a task.
+ Jordan removed this requirement when he added tasking. This may have been
+ a mistake. I don't know what happens when too many objects are active. Oh
+ well.
+
+Anyway, the following patch will prevent #0 and #1 from being inactive. It will
+ also (I believe) never put them back on disk. If you make a change to them you
+ will have to do a textdump or binary_dump to save the change.
+
+
+*** src/main.c	Wed Sep  7 21:26:29 1994
+--- main.c	Sun Dec  4 22:24:18 1994
+***************
+*** 136,141 ****
+--- 136,146 ----
+  	}
+      }
+  
++     /* hm */
++     cache_retrieve(SYSTEM_DBREF);
++     cache_retrieve(ROOT_DBREF);
++     
++ 
+      /* Send a startup message to the system object. */
+      arg.type = LIST;
+      arg.u.list = args;
+
+Consider yourself warned. The first patch is a fix, the second may be a new
+ bug. :)
+
+Crag / Robert de Forest
+
+
+</PRE>

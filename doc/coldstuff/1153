@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1153] in "Coldmud discussion meeting"</TITLE>
+<H1>[1153] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1153"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1152"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1154"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1154"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1163"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Is there a shortcut to @def?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 05:34:46 1996
+)</H3>
+<PRE>
+Date: Mon, 02 Dec 1996 03:22:00 -0800
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+[for Alpha4 Core]
+
+I'm looking for a shortcut to @def.
+
+I tried to use the example in the Admin's Guide, but I think
+I'm missing something: 
+	;as $motd; server_name = "My New Server Name"
+
+The way it worked for me was this way:
+	@def $motd as $motd eval server_name = "My New Server Name";
+
+If I didn't have @def available, how would I set any variable?
+
+Frank
+
+-- 
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+`
+</PRE>

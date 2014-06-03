@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [156] in "Coldmud discussion meeting"</TITLE>
+<H1>[156] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?156"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="153"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="154"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="155"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="157"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: hrm, and mod by zero</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 22 14:21:35 1994
+)</H3>
+<PRE>
+Date: Tue, 22 Mar 1994 12:17:23 -0600 (MDT)
+From: Lynxian Theologies &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; I've also found the source of the random(0) error, but am not sure of the
+&gt; behaviour desired if someone DOES do a random(0)... 0? error? 1? other?
+
+ ~fukdrand   ;)
+
+-Brandon
+</PRE>

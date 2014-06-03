@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [876] in "Coldmud discussion meeting"</TITLE>
+<H1>[876] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?876"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="875"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="877"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="877"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="877"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>spiffy change for Genesis 0.3</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jan  5 21:49:14 1996
+)</H3>
+<PRE>
+Date: Fri, 5 Jan 1996 19:36:20 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+
+A simple yet 'elegant' (boggle) solution to a problem which has bugged me 
+since MOO and into Cold presented itself to me today.  This problem is 
+that it gets to be a ROYAL pain to play with strings.  For example (ColdC 
+in Genesis 0.2-10):
+
+    return "Object (" + obj.objname() + ") does not want to add " + 
+           $data.unparse(int) + " to " + $data.unparse(list);
+
+I have hacked the addition operator to do conversions when attempting to 
+add to strings.  Simply put, the above (in Genesis 0.3-1) becomes:
+
+    return "Object (" + obj + ") does not want to add " + int + " to " + list;
+
+In combination with Genesis 0.3 being able know what your $name is, the 
+above string may look something like:
+
+    "Object ($foo) does not want to add 1 to [1, 2, 3]";
+
+tCD running at 'cold.org' on port 1138 is running the latest version of 
+genesis.  Go ahead and login and try to break things (assuming you have a 
+prog bit).  It is running under a debugger, so I can get all of the nasty 
+information if any 'bad' things happen.
+
+ENJOY!
+
+-Brandon
+</PRE>

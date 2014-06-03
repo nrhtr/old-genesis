@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1221] in "Coldmud discussion meeting"</TITLE>
+<H1>[1221] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1221"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1220"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1222"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1222"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1222"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Missing header: ndbm.h</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan 27 15:10:05 1997
+)</H3>
+<PRE>
+Date: Mon, 27 Jan 1997 15:04:18 -0500
+From: Matthew Raymond Willis &lt;mwillis@riscman.com&gt;
+Reply-To: mwillis@riscman.com
+To: coldstuff@cold.org
+
+Brandon,
+
+	Hi, I downloaded the Genesis_1.0p22 server recently and attempted to
+compile it under a Linux system running the 2.0 kernel.  I received the
+following error during compilation:
+
+	gcc -g -O -Iinclude -Imodules -c lookup.c
+
+lookup.c: 12: ndbm.h: no such file or directory
+make[1]:  *** [lookup.o] Error 1
+
+	The header is referenced in 'lookup.c' however I can find it nowhere. 
+I also downloaded Genesis_1.0p21 and Genesis_1.0p09, but could not find
+that particular header in those sets either.
+	Could you please help me out a little bit and either email the file to
+me or point to a location where I can find it (unless of course that
+really isn't the problem.)  I have read a lot of good stuff about your
+server and I am very interested in trying it out.  Not to bribe your
+help or anything (ok - maybe I am bribing you) but if I like the server
+and find it applicable I'll gladly donate to the cause.
+
+Thanks for your help,
+
+Matt
+
+mwillis@riscman.com
+
+PS:  I have a friend, named Steve Zdawczynski, from Tampa that moved to
+Logan about a year ago.  Know him?
+</PRE>

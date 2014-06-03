@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [523] in "Coldmud discussion meeting"</TITLE>
+<H1>[523] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?523"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="521"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="522"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="524"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="524"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 00:39:50 1994
+)</H3>
+<PRE>
+Date: Sat, 5 Nov 1994 00:38:18 -0500 (EST)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: Alex Stewart &lt;riche@crl.com&gt;
+Cc: brandon@riverheights.declab.usu.edu, coldstuff@MIT.EDU
+In-Reply-To: &lt;199411042336.AA09830@crl4.crl.com&gt;
+
+
+
+On Fri, 4 Nov 1994, Alex Stewart wrote:
+
+&gt; Howabout exec/?
+
+I like /ebin best, there are precedents for it as a Unix bin directory
+name (such as /sbin, which is used in (at least) Linux) but it wouldn't
+be common and invite security problems.
+
+&gt; Yeah, I forgot about these two when making up my list.. both of these should be
+&gt; in the "discussion" section.
+
+I agree with both of these, but I also think := should be an expression.
+'Vertical code organization' just doesn't exist anyhow while there are 
+such things as .set_foo() methods.
+
+I'd also like to see facilities for attaching connections and pipes to
+frobs.  Making a whole new real object for things as dynamic as
+connections and pipes could get real old real fast in the case where
+there isn't much state to store.  Or maybe objects should just get
+much cheaper and be garbage-collected, as Colin has sometimes remarked.
+
+--
+James Deikun (James@JHM, James &amp; Splat@BlueMOOn)
+</PRE>

@@ -1,0 +1,138 @@
+<HEAD><TITLE>discuss@charon: [1465] in "Coldmud discussion meeting"</TITLE>
+<H1>[1465] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1465"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1464"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1466"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1466"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1466"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>diff for some things</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 10 13:37:45 1999
+)</H3>
+<PRE>
+Date: Wed, 10 Nov 1999 13:05:22 -0500
+From: Nobody &lt;psyclone42@geocities.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+--------------C03E6C6BF29D74828660013C
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+um, bruce said i should send this here, so yell at him if i shouldn't..
+(q.v. http://web.cold.org/development.html)
+
+it's a patch for a bug i found, when the heartbeat was turned off
+genesis would eat my cpu cycles for breakfast, running through main_loop
+like there was no tomorrow (i profiled it) -- so i poked around in the
+source and added an else to the if (heartbeat_freq != -1) there, and
+fixed it.
+
+also included are some patches for compile warnings i get.
+
+being that i have yet to become one with diff, i might have done
+something stupid in making the patch. deal.
+--------------C03E6C6BF29D74828660013C
+Content-Type: text/plain; charset=us-ascii;
+ name="driver.diff"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline;
+ filename="driver.diff"
+
+diff -uwr Genesis-1.1.7-STABLE/src/binarydb.c driver-src/src/binarydb.c
+--- Genesis-1.1.7-STABLE/src/binarydb.c	Thu Jul 15 00:33:48 1999
++++ driver-src/src/binarydb.c	Tue Nov  2 09:42:50 1999
+@@ -403,14 +403,16 @@
+ 	    if (bitmap[b &gt;&gt; 3] &amp; (1 &lt;&lt; (b &amp; 7)))
+ 		break;
+ 	    b++;
+-	    if (b &gt;= bitmap_blocks)
++	    if (b &gt;= bitmap_blocks) {
+ 		/* time to wrap around if we still haven't */
+ 		if (!over_the_top) {
+ 		    b=0;
+ 		    over_the_top=1;
+ 		    break;
+-		} else
++		} else {
+ 		    grow_bitmap(b + DB_BITBLOCK);
++               }
++            }
+ 	}
+ 
+ 	if (count == blocks_needed) {
+diff -uwr Genesis-1.1.7-STABLE/src/file.c driver-src/src/file.c
+--- Genesis-1.1.7-STABLE/src/file.c	Tue Jul 13 17:13:51 1999
++++ driver-src/src/file.c	Tue Nov  2 09:45:46 1999
+@@ -283,10 +283,11 @@
+     for (x=1; x &lt; 5; x++)
+         d[x].type = INTEGER;
+ 
+-    if (sizeof(sbuf-&gt;st_mode) == sizeof(long))
+-        sprintf(buf, "%lo", sbuf-&gt;st_mode);
+-    else
++    if (sizeof(sbuf-&gt;st_mode) == sizeof(long)) {
++        sprintf(buf, "%lo", (long unsigned int)(sbuf-&gt;st_mode));
++    } else {
+         sprintf(buf, "%o", sbuf-&gt;st_mode);
++    }
+     d[0].type = STRING;
+     d[0].u.str = string_from_chars(buf, strlen(buf));
+     d[1].u.val = (Int) sbuf-&gt;st_size;
+diff -uwr Genesis-1.1.7-STABLE/src/genesis.c driver-src/src/genesis.c
+--- Genesis-1.1.7-STABLE/src/genesis.c	Thu Jul 15 00:33:48 1999
++++ driver-src/src/genesis.c	Wed Nov 10 12:20:39 1999
+@@ -210,6 +210,7 @@
+     args = list_new(0);
+ 
+     /* parse arguments */
++    opt = *argv;
+     while (argc) {
+         opt = *argv;
+         if (*opt == '-') {
+@@ -549,6 +550,12 @@
+             GETTIME();
+             seconds = (preempted ? 0 :
+                        ((SECS &gt;= next) ? 0 : next - SECS));
++        } else {
++            /* why 2? why not.. leaving it zero makes genesis
++             *   eat my cpu cycles for breakfast w/o a
++             *   heartbeat..
++             */
++            seconds = preempted ? 0 : 2;
+         }
+ 
+         /* push our dump along, diddle with the wait if we need to */
+diff -uwr Genesis-1.1.7-STABLE/src/include/util.h driver-src/src/include/util.h
+--- Genesis-1.1.7-STABLE/src/include/util.h	Thu Jul 15 00:33:53 1999
++++ driver-src/src/include/util.h	Wed Nov 10 12:23:53 1999
+@@ -49,6 +49,7 @@
+ FILE     * open_scratch_file(char *name, char *type);
+ void       close_scratch_file(FILE *fp);
+ void       init_scratch_file(void);
++void       uninit_scratch_file(void);
+ Int        parse_strcpy(char * s1, char * s2, Int len);
+ Int        is_valid_id(char * str, Int len);
+ Int        getarg(char * n,
+diff -uwr Genesis-1.1.7-STABLE/src/token.c driver-src/src/token.c
+--- Genesis-1.1.7-STABLE/src/token.c	Tue Jul 13 14:51:01 1999
++++ driver-src/src/token.c	Wed Nov 10 12:27:38 1999
+@@ -16,7 +16,7 @@
+ INTERNAL char *identifier_token(char *s, Int len, Int *token_len);
+ 
+ static cList *code;
+-static cur_line, cur_pos;
++static Int cur_line, cur_pos;
+ 
+ /* Words with same first letters must be together. */
+ static struct {
+
+--------------C03E6C6BF29D74828660013C--
+
+</PRE>

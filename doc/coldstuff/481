@@ -1,0 +1,71 @@
+<HEAD><TITLE>discuss@charon: [481] in "Coldmud discussion meeting"</TITLE>
+<H1>[481] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?481"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="477"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="480"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="480"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="482"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="482"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="483"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: server dev status</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Oct 29 00:19:33 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: riche@crl.com (Alex Stewart)
+Date: Fri, 28 Oct 1994 21:08:05 -0700 (PDT)
+Cc: deforest@netcom.com, brandon@avon.declab.usu.edu, coldstuff@MIT.EDU,
+        jbb@homer.ncm.com
+In-Reply-To: &lt;199410290232.AA21375@crl5.crl.com&gt; from "Alex Stewart" at Oct 28, 94 07:32:19 pm
+
+&gt; 
+&gt; &gt; He is on the net sometimes, and not on this list and I have to forward
+&gt; &gt;  stuff I think he cares about to him. (jbb@homer.ncm.com)
+&gt; &gt; 
+&gt; &gt; It is being debugged by him. It works. It does not have the bugs you
+&gt; &gt;  (Brandon) reported. The version you have was older and _alpha_.
+&gt; 
+&gt; So why the hell isn't he on this list and where the hell is this alleged new
+&gt; version?  I'm getting rather fed up with this "I'm working on it but you
+&gt; can't look at it and you can't talk to me" attitude, as I suspect most of the
+&gt; other people around here are too.
+&gt; 
+&gt; I appreciate the work that Jordan did to come out with the version of 0.12 that
+&gt; we have at the moment and I would very much like to see what he's got now, and
+&gt; since he's been the semi-official server maintainer and people said he was
+&gt; working on it I've been waiting on him before tackling this stuff myself, but
+&gt; I've about run out of wait and I think the least one or the other of you could
+&gt; do is keep us up to date on all of this.
+&gt; 
+&gt; -R (annoyed)
+&gt; -------------------------------------------------------------------------------
+&gt;      Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+&gt;               ftp://ftp.crl.com/users/ro/riche/html/riche.html
+&gt; 
+
+As my mother says, "You catch more bees with honey than vinegar."
+
+I choose to answer as best I can simply because I want to promote coolness on
+ the list.
+
+He isn't on this list because he wasn't added when he asked to be. The alleved
+ new version is at homer.ncm.com, but not released because it's not done. If
+ he released it unfinished y'all 'd write nasty bug reports and he'd have to
+ say you asked for it. We're all getting tired of waiting, but we also have
+ lives that should keep us busy while we wait.
+
+I wonder if this letter's tone is one of the reasons Greg bowed out? Just a
+ thought.
+
+Since when has a programmer ever met a deadline? Why would you ask for a date?
+ No one is getting paid for any of this (yet) and if they are they should be
+ nicer still.
+
+I wonder why my mom thought I wanted to catch bees?
+
+Crag / Robert
+</PRE>

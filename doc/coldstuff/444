@@ -1,0 +1,67 @@
+<HEAD><TITLE>discuss@charon: [444] in "Coldmud discussion meeting"</TITLE>
+<H1>[444] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?444"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="430"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="434"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="443"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="445"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: "fixing" while loops</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep 23 14:40:40 1994
+)</H3>
+<PRE>
+To: stewarta@netcom.com (Alex Stewart)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Thu, 22 Sep 94 15:27:58 PDT."
+             &lt;199409222227.PAA03507@netcom8.netcom.com&gt; 
+Date: 	Fri, 23 Sep 1994 11:35:11 PDT
+From: Erik Ostrom &lt;ostrom@parc.xerox.com&gt;
+
+&gt; while {statements} (testexpr) statement(s)
+
+I think this would be bad for readability.
+
+The cool thing about a while loop is that its meaning (usually) just jumps out 
+at you:  For as long as this condition holds, do this other stuff.
+
+Under this proposed syntax, you have  a word "while" which has a nice obvious 
+meaning, and then you have a bunch of other stuff with no indication of what 
+it's for (but it's not the test condition), and then something in parentheses, 
+and then some more stuff in braces.
+
+I think using "break" in mid-loop, as in Greg's example, makes clearer what's 
+being tested and what the consequence of its result is.  The "while (1)" part 
+looks a little silly, but I guess that's the price you pay for not wanting to 
+clutter your language with keywords.
+
+If you did end up doing something like this statements-test-statement 
+construct, I'd recommend using a name other than "while", and keywords to 
+indicate what's going on--maybe something like
+
+  do {
+    a = .test();
+  } while (a) {
+    .do_something();
+  }
+
+Okay, that's kind of broken, since we already expect "while" to be something 
+different, and you may expect something from "do" as well.  I also think part 
+of the problem with this is that you want all the pieces of the loop to be 
+grouped together visually, and this looks too much like two or three separate 
+things.
+
+Anyway.  Just random reaction.
+
+--Erik
+
+PS. Oh, BTW, if you're looking for an assignment expression that people 
+_really_ won't confuse with "==", you could use "&lt;&lt;".  It connotes transfer of 
+RHS into LHS, and it doesn't look like equality at all.  Of course, C 
+programmers will think it means bit shifting, sigh.
+
+</PRE>

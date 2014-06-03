@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1112] in "Coldmud discussion meeting"</TITLE>
+<H1>[1112] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1112"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1111"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1113"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1114"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1115"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] My @who doesn't work with a4</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  3 03:04:18 1996
+)</H3>
+<PRE>
+Date: Sun, 03 Nov 1996 00:50:50 -0800
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+I am trouble getting @who to work in Cold Core Alpha 4; Alpha 3 works
+okay (same Genesis version).
+
+Here is the error message:
+@who
+! =&gt; $help_driver....realm_name not found.
+!    Error ~methoderr caused by CALL_METHOD
+!    ~methodnf: $place.realm_name() ($the_pit) line 8
+!    ~methoderr: $located.realm_name() ($user_maddog) line 3
+!    ~methoderr: $list.mmap() line 5
+!    ~methoderr: $code_lib.generate_listing() line 30
+!    ~methoderr: $user.who_cmd() ($user_maddog) line 27
+!    ~methoderr: $user.parse_line() ($user_maddog) line 17
+
+Am I suppose to set something before @who works?
+
+Thanks
+
+Frank
+-- 
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+`
+</PRE>

@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [836] in "Coldmud discussion meeting"</TITLE>
+<H1>[836] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?836"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="835"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="837"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>backdoor close SEGV bug fixed</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct 22 17:57:11 1995
+)</H3>
+<PRE>
+Date: Sun, 22 Oct 1995 15:47:41 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+
+The problem was actually not the backdoor's fault, but the fact that the
+disconnect method on $backdoor was set as protected, and when the driver
+tried to test the perms, it bombed on the fact that cur_frame was NULL
+(and it was checking for cur_frame-&gt;xxx etc).
+
+0.2-7 has fixed this.
+
+For now, just @mmod +driver $backdoor.disconnect
+
+-Brandon
+</PRE>

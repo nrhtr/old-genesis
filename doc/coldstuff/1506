@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [1506] in "Coldmud discussion meeting"</TITLE>
+<H1>[1506] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1506"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1505"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1507"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>borland-c/time/win32 evilness</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec  2 10:32:44 1999
+)</H3>
+<PRE>
+Date: Thu, 02 Dec 1999 10:15:22 -0500
+From: Nobody &lt;psyclone42@geocities.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+well, a few weeks ago i was messing around and happened to execute
+;ctime(-1) on a 1.1.6-STABLE-i386-unknown-win32 genesis, and much to my
+surprise, the site died. much time passes, along with pestering those
+who know more about that particular build. a few minutes ago, i noticed
+in src/modules/cdc_misc.c:
+
+#ifdef __BORLANDC__
+    if (argc == 2) {
+        if (INT2 &lt; 18000) {
+            THROW((type_id,
+         "Borland's time util is broken, and requires time values above
+18000"))
+        }
+        tt = (time_t) INT2;
+    } else {
+
+and thought, aha, my problem is solved. so, lacking access to a win32
+compiler, i made this little proto-patch, and am wondering if it works
+at all. so, please, people who can compile it, tell me if this works and
+test ctime() and localtime() with small numbers to make sure they crash
+and that this workaround is needed. thanks..
+</PRE>

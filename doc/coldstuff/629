@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [629] in "Coldmud discussion meeting"</TITLE>
+<H1>[629] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?629"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="628"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="628"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="628"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="630"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="630"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="635"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: floating point</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan 16 10:55:06 1995
+)</H3>
+<PRE>
+To: paul@solar.sky.net
+Cc: coldstuff@MIT.EDU, zachary@pentagon.io.com
+In-Reply-To: Your message of "Sun, 15 Jan 1995 15:56:54 CST."
+             &lt;9501152157.AA16146@MIT.EDU&gt; 
+Date: Mon, 16 Jan 1995 09:52:07 -0600
+From: Zachary  &lt;zachary@pentagon.io.com&gt;
+
+
+&gt;Subject: floating point
+&gt;To: coldstuff@MIT.EDU
+&gt;Date: Sun, 15 Jan 1995 15:56:54 -0600 (CST)
+&gt;
+&gt;It'd be nice if cold supported floating point, even if only as a compile-time
+&gt;option. As I understand, it has this capability, but it is unimplemented.
+
+Yes that would be nice... waitaminnit.. if it's unimplemented, how can it be considered a
+'capability' ?
+
+&gt;It would be nice if we had someone who would take charge and make all the
+&gt;changes we all agree upon. Someone who everyone agreed upon, who was
+&gt;wel familiar with coldmud and C, and who had the time and energy. Any
+&gt;volunteers?
+
+Heh.  the two main problems seem to be 1) getting everyone to agree on what changes to be
+made and 2) getting someone to maintain and coordinate the entire effort.
+
+What do people think of some sort of option config file for cold?  This would be a way
+to enable/disable 'features' that are 'nonstandard'.  Features like floating point, 
+suspend/resume, etc..  Setting these up in your config file would, perhaps, add some
+particular symbols to $sys or something so objects can check to see if these features are 
+present - nice cores could even have some sort of library object that will do in-db 
+emulation (if possible) of the requested function if it's not present... 
+
+YMMV.
+
+
+  --Zachary
+</PRE>

@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1279] in "Coldmud discussion meeting"</TITLE>
+<H1>[1279] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1279"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1278"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1278"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1278"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1280"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] How to restore my database</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Apr 20 00:50:25 1997
+)</H3>
+<PRE>
+Date: Sat, 19 Apr 1997 21:50:31 -0700
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: coldstuff@cold.org
+
+Maddog's Studio wrote:
+&gt; 
+&gt; The Unix server where I run Black Rabbit Cold is doing something
+&gt; wierd and the sysadmin will probably need to rebooted so I'm trying
+&gt; to be proactive this time and anticipate that I will have
+&gt; a problem when I try to run genesis again with my database.
+
+Not a problem.  I don't know why I ran into a problem last time.
+Maybe I didn't have things set up right or I fumbled.  But
+this time the restore was nice and easy and I don't seem to have
+lost anything.
+
+Frank
+</PRE>

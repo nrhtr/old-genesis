@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1621] in "Coldmud discussion meeting"</TITLE>
+<H1>[1621] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1621"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1620"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1622"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1625"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1625"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Type Real variable precision</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep  2 15:32:52 2000
+)</H3>
+<PRE>
+Date: Sat, 2 Sep 2000 14:16:00 -0500 (CDT)
+From: Verhoogen Olivier &lt;simkin@zork.plover.net&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+Heya :)
+
+I'm currently doing a bit of coding in coldC and as I work with distances
+I came to remark that Genesis defaults to a very low-precision floating
+point type for real numbers.
+
+I already asked about this on tCD and Bruce suggested I sent here to ask
+wether someone still had access to a patch that must have once existed for
+this.
+Still, while I haven't peeked at the code, I can't imagine it'd be too
+difficult to modify it to use doubles rather than floats... (I hope... :)
+
+Thanks,
+-- Sim.
+
+</PRE>

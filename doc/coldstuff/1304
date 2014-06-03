@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1304] in "Coldmud discussion meeting"</TITLE>
+<H1>[1304] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1304"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1303"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1303"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1303"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1305"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] My connections are hanging</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jun 13 11:50:17 1997
+)</H3>
+<PRE>
+Date: Fri, 13 Jun 1997 08:28:18 -0700
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: coldstuff@cold.org
+
+Frank Crowell wrote:
+
+Sorry, about my previous email.  There is no problem that involves the
+Cold server.  Doesn't involved mudservices either.  It is a "staying
+alive" issue, but it comes from Remedy and its router.  I should have
+investigated this in greater detail before posting, but I thought it was
+something that mudservices had done to correct its severe crashes that
+also started to make cold misbehave.  The Remedy problem was masked
+because my other mud connection was active enough to keep the connection
+from dying.
+
+
+
+Frank
+</PRE>

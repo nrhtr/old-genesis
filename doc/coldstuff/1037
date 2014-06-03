@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1037] in "Coldmud discussion meeting"</TITLE>
+<H1>[1037] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1037"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1036"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1038"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1038"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1046"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] encryption, DES, MD5, SHA-1(?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul 23 19:41:36 1996
+)</H3>
+<PRE>
+Date: Tue, 23 Jul 1996 17:13:15 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+I would prefer to ship a specific crypt with the driver, so it is always 
+the same.  However, there are legal concerns--unfortunately I am not 
+aware of what they are specifically.
+
+I doubt we can ship DES (like it would matter).
+
+Can we ship MD5 internationally without reprecussions?
+
+What is SHA-1?  Can we ship it internationally etc?
+
+What does MOO use for string_hash()?  Is it as good as MD5 or others?
+
+Source?
+
+I can shag md5 from the FreeBSD distribution, if I can get some factual 
+information about shipping with it..
+
+-Brandon Gillespie
+</PRE>

@@ -1,0 +1,79 @@
+<HEAD><TITLE>discuss@charon: [792] in "Coldmud discussion meeting"</TITLE>
+<H1>[792] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?792"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="790"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="790"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="791"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="793"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="793"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="797"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: exception handling...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 31 18:07:12 1995
+)</H3>
+<PRE>
+Date: Thu, 31 Aug 1995 17:53:09 -0400 (EDT)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9508310725.AA04032@smithfield.declab.usu.edu&gt;
+
+
+
+On Thu, 31 Aug 1995, 869683 Gillespie Brandon James wrote:
+
+&gt; I'm mulling over the reconstruction of exception handling (catch) to be
+&gt; slightly different.  The best way to explain this is with an example:
+&gt; 
+&gt; for obj in (list) {
+&gt;     catch {
+&gt;         obj.query_test();
+&gt;     } handle ~locked {
+&gt;         sender().print("Object is locked.");
+&gt;     } handle others {
+&gt;         sender().print("Error: " + toliteral(error) + " encountered!");
+&gt;     } otherwise {
+&gt;         sender().print("Test is sucessful for: " + obj.name());
+&gt;         valid = valid + [obj];
+&gt;     }
+&gt; }
+
+This isn't an exception handler, it's a switch statement.
+
+&gt; Basically, each handle ~error line is for whichever error, where the
+&gt; handle others is for all others.  If it does not exist, the error
+&gt; is propogated normally.
+
+If you get an unexpected error, why not print a traceback or something, 
+anyway?  It'd be better to spend effort on making a non-cryptic format 
+for them for nonprogrammers.
+
+If you think it's needed for cleanups, you could be onto something 
+though.  However, is this the best way to implement it?  'finally' is a 
+very clean and simple thing, for all its disadvantages (like not 
+inherently knowing if the code inside worked).
+
+&gt; The otherwise clause we are still hung up on, but Jeff Bellegarde and
+&gt; I feel it is better than:
+&gt; 
+&gt; for obj in (list) {
+&gt;     catch {
+&gt;         obj.query_test();
+&gt;         sender().print("Test is sucessful for: " + obj.name());
+&gt;         valid = valid + [obj];
+&gt;     } handle ~locked {
+&gt;         sender().print("Object is locked.");
+&gt;     } handle others {
+&gt;         sender().print("Error: " + toliteral(error) + " encountered!");
+&gt;     }
+&gt; }
+
+Better only as a switch statement.  If you want a switch statement, why 
+not use one?
+
+--
+James "brainwashed convert of LISP folks" Deikun
+</PRE>

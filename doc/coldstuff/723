@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [723] in "Coldmud discussion meeting"</TITLE>
+<H1>[723] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?723"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="718"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="720"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="722"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="724"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: binary operators</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 20 14:23:29 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldx@tiny.mcs.usu.edu
+Cc: coldstuff@MIT.EDU
+Date: Mon, 20 Mar 95 12:21:36 -0700
+
+Since this is really a ColdX issue, I've only cc'd coldstuff, lets followup
+on coldx@tiny.mcs.usu.edu ...
+
+&lt; Maybe a better solution is a general structured type mechanism that
+&lt; includes sub-byte addressing.  A packet construction system, if you will.
+&lt;
+&lt; Does anyone have any good sugegstions for thsi (I think brandon was
+&lt; playingiwth packets awhile back...)
+
+I was playing around with the idea, still am, but I need to read up on
+networking before I can go any further.  The last idea I had was to have
+pre-defined (at driver compile time) packets that you would use via
+a 'send_packet()' function, such as the packet:
+
+struct update_pkt {
+    int x;
+    int y;
+    time_t time;
+};
+
+would be set in the driver as 'update (packet_info structure), then sent
+with:
+
+  send_packet('update, [10, 234, 795727079])
+
+And have a $network.receive_packet which would be called for each packet
+received.  This is all just idle meanderings, btw.
+
+-Brandon
+</PRE>

@@ -1,0 +1,92 @@
+<HEAD><TITLE>discuss@charon: [657] in "Coldmud discussion meeting"</TITLE>
+<H1>[657] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?657"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="656"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="658"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="658"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="658"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ColdX-0.1 driver release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar  1 20:50:43 1995
+)</H3>
+<PRE>
+From: brandon@smithfield.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Wed, 01 Mar 95 18:48:58 -0700
+
+In leiu of me needing something to pull me away from some of my other projects,
+I have packaged up my changes to ColdMUD in the ColdX 0.1 driver.  ColdX is
+a derivitive work, different in name so as to lessen confusion between existing
+ColdMUD driver development (wherever it may be...) and my own development.
+Changes from Jordan's 0.12-0 driver include:
+
+ColdX 0.1
+    0.12-3
+        * added signal handler
+        * changed main loop structure, previously:
+            1. flush_defunct connections/records
+            2. handle all input and output events:
+                1. [io]wait for something to happen
+                2. handle connection input and output
+                3. handle new and pending connections
+            3. handle heartbeat
+            4. run paused tasks
+          now:
+            1. flush_defunct connections/records
+            2. [io]wait for something to happen
+            3. handle connection input
+            4. handle new and pending connections
+            5. handle heartbeat
+            6. handle connection output
+            7. run paused tasks
+        * changed a few function names:
+            todbref()            =&gt; toobj()
+            get_name()           =&gt; get_objnum()
+            disconnect()         =&gt; close_connection()
+            conn_assign()        =&gt; reassign_connection()
+            run_script()         =&gt; execute()
+            bind()               =&gt; bind_port()
+            unbind()             =&gt; unbind_port()
+            connect()            =&gt; open_connection()
+            set_heartbeat_freq() =&gt; set_heartbeat()
+            set_name()           =&gt; add_dbref()
+            del_name()           =&gt; del_dbref()
+            db_top()             =&gt; next_objnum()
+        * added functions:
+            status()   -- system status (`man rusage` for more info)
+            load()     -- system load, define CHECK_LOAD in config.h
+                          to use.  Note: this is not a good implementation.
+            mtime()    -- microseconds (`man gettimeofday` for more info)
+        * fixed strsub() bug (strsub("", "", ""))
+        * Random code cleanup and rewrites
+        * rewrote configure, made it better/more comprehensive
+    0.12-1[b-c]: fixed some problems with configure and the
+        server testing script. (Brandon)
+    0.12-1 4-Nov-94: Brandon Gillespie / Alex Stewart
+        Updated Documentation, created a baseline configure
+        script, added bin/ and it's relative scripts,
+        cleaned up file heirarchy.  Added write_err(),
+        which goes to stderr (same as write_log before),
+        write_log() goes to stdout and is (currently)
+        only called in op_log().  Alex Stewart fixed
+        compile warnings.  Major additions of this patch
+        level include the file tree and the configure
+        script system.
+
+NOTE: Because of the function changes, no database will work with the driver,
+out of the box.  I will be releasing a stripped version of the current CDC
+core sometime soon.  Just note that this is a pre release version of CDC,
+and a few things are not completed...(such as ctext and options need a few
+tweaks, and commands are still in their half advanced state).
+
+Enjoy, and feel free to swing by the Cold Dark (recumbent.declab.usu.edu:1138)
+
+ /\    Brandon Gillespie   (http://www.declab.usu.edu:8080/~brandon/)      /\
+ ||   "They who dream by day are cognizant of many things which escape     ||
+ \/           those who dream only by night."  - Edgar Allan Poe           \/
+</PRE>

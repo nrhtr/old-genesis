@@ -1,0 +1,76 @@
+<HEAD><TITLE>discuss@charon: [240] in "Coldmud discussion meeting"</TITLE>
+<H1>[240] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?240"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="236"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="239"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="239"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="241"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Finding out the call stack in ColdMUD</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 17 14:26:09 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: jpl3@access.digex.net (John P. Landahl III)
+Date: Tue, 17 May 1994 11:16:25 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;Pine.3.89.9405170009.A5091-0100000@access2.digex.net&gt; from "John P. Landahl III" at May 17, 94 00:19:03 am
+
+&gt; &gt; &lt;&gt; I want something like MOO's 'callers()' or 'player' in ColdMUD.  Is
+&gt; &gt; &lt;&gt; this possible?  sender() only gives you the info from one level
+&gt; &gt; &lt;&gt; back.  I need to know who or what is ultimately responsible for
+&gt; &gt; &lt;&gt; calling the current method.  I'm trying to write a parser that can
+
+When I starte dout I made the very same request, but I've now come pretty much
+to agree with Greg on this issue.  Moreover, as I've worked more with ColdMUD
+and these types of issues I've come to find that such hacks to the server
+design are not really necessary if things are approached from a somewhat
+different point of view.  For security issues, it is possible, for example, to
+allow trusted methods to call a "pass-thru" method on the user which in turn
+calls another method as if it were that user calling it, thus all security
+checking can be based on the value of sender() and the assumption that only
+trusted (equivalent to wiz-owned in MOO) methods would have the ability to
+disguise themselves in this manner.  For call-back issues (such as calling the
+user's .match_environment) it is actually more flexible and better design to
+pass the user's object along as an arg to the function (as Greg suggested),
+rather than depending on some global 'player' variable.
+
+&gt; &gt; SamIAm's suggestion would be to have a connection(), which returns your
+&gt; &gt; connection object, and to let you find user from there...
+
+It seems to me that this is roughly equivalent to MOO's 'player' variable, and
+really a bad idea, given the general encapsulation designs the ColdMUD server
+has been built around (see below).
+
+&gt; That would probably be fine for what I want to do, but I don't see why being 
+&gt; able to get the call stack is "poor design".  Someone whack me with a 
+&gt; kyosaku and enlighten me.
+
+It is poor design because it technically breaks encapsulation.  In accessing
+information beyond its own object, that wasn't passed to it as arguments, a
+method is basically overstepping its bounds.  One of the fundamental principles
+of the full data encapsulation that the ColdMUD server is based on is that all
+data handling stays on its own side of the method call, and that the only way
+data goes in or out is as args to the method or a return value from the method.
+With a callers() stack, you're poking another hole to the outside world.  One
+that the calling method has no control over, and peeking at private info of
+other objects, to boot.
+
+Moreover, in using the information obtained from a callers() stack, your method
+is making assumptions about, and basing decisions on, the way other objects
+function amongst themselves, independent of your object, which is really none
+of its business in a properly encapsulated environment.
+
+The bad design basis for a callers() stack is also borne out simply by the
+fact that it adds complexity to the base-level interaction model of the system
+without introducing additional functionality (everything you can do with
+callers() can actually be done in other ways under ColdMUD (argument
+passing, and call redirection, for example)).
+
+-Riche
+</PRE>

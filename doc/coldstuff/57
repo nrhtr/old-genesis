@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [57] in "Coldmud discussion meeting"</TITLE>
+<H1>[57] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?57"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="56"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="58"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="59"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="59"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Defining frobs...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 19 19:40:27 1993
+)</H3>
+<PRE>
+Date: Sat, 20 Nov 1993 00:28:23 GMT
+From: snooze &lt;gregb@amber.ecst.CSUChico.EDU&gt;
+To: coldstuff@MIT.EDU
+
+Is there something wrong with this line: 
+var exit lock &lt;$lock_class, #[['type, 'true]]&gt;
+
+That's the line that I have in exit.c--... 
+and when i try to start up the mud... that's what it says...
+oops... i mean the mud won't start... it just hangs... isn't
+that the right format for frobs?
+
+snooze
+</PRE>

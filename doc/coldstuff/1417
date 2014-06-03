@@ -1,0 +1,64 @@
+<HEAD><TITLE>discuss@charon: [1417] in "Coldmud discussion meeting"</TITLE>
+<H1>[1417] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1417"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1415"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1416"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1416"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1418"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Heretical Question</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr 17 20:41:18 1998
+)</H3>
+<PRE>
+Date: Fri, 17 Apr 1998 18:36:10 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;3.0.32.19980417112225.00c483e0@mail.tenetwork.com&gt;
+
+On Fri, 17 Apr 1998 jeffk@tenetwork.com wrote:
+
+&gt; I've been re-evaluating my Kelvin design as I get deeper and deeper into
+&gt; my current cold based project.  I've come up with a rather heretical
+&gt; question...
+&gt; 
+&gt; How important IS run-time receivability of the "class" structure (yes I
+&gt; know Cold is classless but that's the easiest way to phrase what Im asking.)
+&gt; 
+&gt; I know many people are used to on-line editing of their object defs, but
+&gt; when push comes to shove, for a production environment what are the real
+&gt; advantages?
+&gt; 
+&gt; Does it add significantly to the expressive power of the language or
+&gt; maintainability of applications in real-world use? How so?
+&gt; 
+&gt; I'm asking because this feature has all sorts of implications that result
+&gt; in late binding and visualizations.  Without it, one could really write
+&gt; such a  system right on top of the JAVA VM rather then on a second layer of
+&gt; VM ontop of that.
+&gt; 
+&gt; Pls consider your answers carefully.
+
+Regardless of what Microsoft tries to inflict on the world, servers are
+moving to the point where staying up a LONG time is a big issue.  Although
+the world may be set back by the push of NT into the region, it too will
+some day (hopefully) reach the level of stability people simply expect
+with unix.
+
+With this in mind, having a server 'daemon' stay up is going to more and
+more becomes a big issue.  Server design is considerably different from
+client design.  In a client run-time mutability is irrelevant (because you
+ARE starting/stopping it up every single time you run it) in a server it
+is a whole different bear.  When you design a server that expects to
+handle hundreds of users, from around the world--you can guarantee there
+is NOT going to be any idle time--and having a RTM system is going to be a
+very desirable feature.  As people start to realize this I suspect that
+more and more in the future server langauges will start to reflect it.
+
+-Brandon Gillespie
+
+</PRE>

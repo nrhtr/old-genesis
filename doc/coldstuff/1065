@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [1065] in "Coldmud discussion meeting"</TITLE>
+<H1>[1065] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1065"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1064"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1066"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1066"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1066"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis Win32</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug 13 13:44:28 1996
+)</H3>
+<PRE>
+Date: Tue, 13 Aug 1996 13:12:35 -0500
+To: coldstuff@cold.org
+From: Robert Spier &lt;rspier@yoda.lmc.org&gt;
+
+
+Does anyone have a compiled Genesis version for Win32?
+
+I noticed it in the Makefile, but don't have DJPP or GCC for my home box..
+
+-Robert
+---
+[            Robert Spier              ]
+[ rspier@lmc.org / rspier@cloud9.net   ]
+
+
+</PRE>

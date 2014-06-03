@@ -1,0 +1,120 @@
+<HEAD><TITLE>discuss@charon: [804] in "Coldmud discussion meeting"</TITLE>
+<H1>[804] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?804"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="800"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="801"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="803"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="805"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Multithreaded ColdC...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Sep 11 16:15:32 1995
+)</H3>
+<PRE>
+Date: Mon, 11 Sep 95 12:48:49 PDT
+From: weber@tungsten.seattle.geoworks.com (Eric Weber)
+To: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9509100226.AA02088@smithfield.declab.usu.edu&gt;
+
+
+I haven't paid a lot of attention to Cold for a long time, but I do
+work with threads and synchronization a lot in other environments.  I
+hope, therefore, that my comments are not completely useless :)
+
+Gillespie Brandon James writes:
+ &gt; Or, the block control 'sync' can be used,
+ &gt; which accepts a list of objects and contains a block of code to execute
+ &gt; while synchronized to the object(s), such as:
+ &gt; 
+ &gt; sync (this()) {
+ &gt;     while (times) {
+ &gt;         .call_synced_method();
+ &gt;         times = times - 1;
+ &gt;     }
+ &gt; }
+
+What kind of deadlock control do you have planned?  It's trivial to
+ensure that two threads which each do a single sync cannot deadlock,
+but if multiple instances of sync are used in the same thread deadlock
+is possible.  Do you want the server to automaticly detect deadlock
+conditions and throw an error, at some performance cost?
+
+ &gt; 
+ &gt; When a thread is synchronized with an object, it has full read/write
+ &gt; ability to any object variables it can access.  
+
+Does this imply that an unsynchronized thread does not have full
+read/write ability?
+
+ &gt; Furthermore, the synchronization is cooperative througout the thread.
+ &gt; If a synchronized frame calls a method which must be synchronized, it is
+ &gt; not blocked.
+
+I wonder if it is ever going to be useful to have a non-cooperative
+lock that generates an error if locked multiple times by the same
+thread.  I use both types of locks at work, I'll have to think about
+whether they apply in the cold environment.
+
+ &gt; If a synchronize call is made, and the thread is unable to synchronize
+ &gt; with the object, it may be blocked (if it is not atomic).  Blocked threads
+ &gt; are suspended, and added to a list for that object.  
+
+What if you're synchronizing multiple objects, some of which are
+locked and some of which are not?  I presume you want to sort the
+objects by a global ordering and lock them in order.
+
+ &gt; When the
+ &gt; current thread synchronizing to the object releases it's hold, the first
+ &gt; thread in the blocked list is executed.  If a thread is blocked, and is
+ &gt; atomic, the error ~blocked is thrown.
+
+What happens if the object is destroyed?
+
+ &gt; 
+ &gt; * Atomic code blocks
+ &gt; 
+ &gt; If a frame is preempted blocked or suspended while it is set as atomic,
+ &gt; the error ~preempted, ~blocked or ~suspended is thrown.  The atomic
+ &gt; state propogated through subsequent frames in the thread, so that if a
+ &gt; frame becomes atomic, while it is atomic any frames further down the
+ &gt; thread from it become atomic.
+
+I haven't been keeping up with Cold development, but I assume it's
+fairly easy to ignore errors, if you count ~preempted as an error.
+
+ &gt; * Function pause()
+ &gt; 
+ &gt; pause() gives the ability to cooperatively multh-thread.  It will have
+ &gt; an optional flag which can be passed (1 or 0), if it is true (1) then
+ &gt; pause() will act nicely, if it is false (default, 0) it will not act
+ &gt; nicely.
+ &gt; 
+ &gt; When pause() is called it will instantly preempt the thread, unless it
+ &gt; is within an atomic block.  If it is within an atomic block and is a
+ &gt; nice pause, the thread will continue to run until it either runs out of
+ &gt; frame ticks or it reaches the end of the atomic block.  If it runs out
+ &gt; of ticks, the usual error is thrown (~ticks).  If it reaches the end of
+ &gt; the atomic block it instantly preempts.
+
+What happens when a non-nice pause is called inside an atomic block?
+
+ &gt; Notes: possibly have a MAX_FORK for each thread; 
+
+What exact quantity would this limit?  The number of times a thread
+can call fork()?  The number of direct children?   The size of the
+subtree?  The depth of the subtree?
+
+Other thoughts:
+
+Do you plan any kind of message passing system?  Right now it appears
+that the only kind of inter-thread communications possible is through
+shared memory (i.e. object instance data).
+
+-- Eric
+
+</PRE>

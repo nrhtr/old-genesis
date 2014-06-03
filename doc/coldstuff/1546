@@ -1,0 +1,76 @@
+<HEAD><TITLE>discuss@charon: [1546] in "Coldmud discussion meeting"</TITLE>
+<H1>[1546] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1546"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1543"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1544"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1545"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1547"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1547"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1548"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: 1.1.8 Win32 genesis binaries</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 23 02:40:39 2000
+)</H3>
+<PRE>
+From: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Sun, 23 Jan 2000 02:35:10 -0500
+Reply-To: coldstuff@cold.org
+
+&gt;Psyclone wrote:
+&gt;&gt;
+&gt;&gt;mtime() always returns 0. Also a library issue -- Win32 apparently
+&gt;&gt;doesn't have a function to return microseconds.
+&gt;
+&gt;
+&gt;Hmm.. I'll have a look around.
+&gt;
+
+Sorry I don't have the current source handy, but ...    
+
+Not sure where you need it but this will pull out current millisecs (~=microsecs?).
+
+  timeb z;
+  ftime(&amp;z);    // needs  #include &lt;sys\timeb.h&gt;
+  cout &lt;&lt; z.millitm;
+
+Of course if you are just fetching ticks to seed some random function
+  long x = clock();   is faster...
+
+Or if you are trying to measure time intervals to the millisec:
+
+   long start = clock();
+   somefunction();
+   long end = clock();
+   cout &lt;&lt; (end - start) / CLK_TCK &lt;&lt; endl;
+
+&gt;&gt;ctime() and friends throw when given numbers &lt; 18000. Borland (what I
+&gt;&gt;used to compile genesis) has a broken time utility which causes genesis
+&gt;&gt;to crash when these functions are given low numbers.
+&gt;&gt;
+
+This check will resolve the problem without having to throw an error and
+should work in whatever timezone you set up in.  
+
+Somewhere after this :
+ tval = (num_args) ? args[0].u.val : time(NULL);
+
+Insert the following:
+#ifdef _BORLANDC_
+  if (tval &lt; _timezome) tval = _timezone;
+#endif
+
+Before calling:
+ctime(tval);
+
+
+--
+--*     Jon A. Lambert - TychoMUD Email: jlsysinc@nospam.ix.netcom.com     *--
+--*     Mud Server Developer's Page &lt;http://jlsysinc.home.netcom.com&gt;      *--
+--* "No Free man shall ever be debarred the use of arms." Thomas Jefferson *--
+
+
+</PRE>

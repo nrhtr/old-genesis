@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [391] in "Coldmud discussion meeting"</TITLE>
+<H1>[391] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?391"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="386"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="390"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="390"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="392"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="392"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="392"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Out of curiosity</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 24 04:30:34 1994
+)</H3>
+<PRE>
+Date: Wed, 24 Aug 1994 18:25:11 +1000
+From: Simon RABOCZI &lt;raboczi@se3raboczi.slip.cc.uq.oz.au&gt;
+To: Robert de Forest &lt;deforest@netcom.com&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199408232256.PAA21539@netcom3.netcom.com&gt;
+
+ColdMUD 0.10.3 builds on FreeBSD 1.1.5.1 once all the #include &lt;stdlib.h&gt;
+references have been removed.
+_________________________________________________________________________
+ ,-_|\  Simon Raboczi (raboczi@se3raboczi.slip.cc.uq.oz.au)
+/     * 34 Bayliss St, Toowong, Brisbane Australia 4066 
+\_.--_/ "Erminetics Foundation -- Can we help?"
+     v
+
+
+
+</PRE>

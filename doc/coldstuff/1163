@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1163] in "Coldmud discussion meeting"</TITLE>
+<H1>[1163] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1163"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1153"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1157"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1162"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1164"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Is there a shortcut to @def?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 20:25:09 1996
+)</H3>
+<PRE>
+From: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+Date: Mon, 2 Dec 1996 23:21:19 +0000 (GMT)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;32A337DC.20E432C3@maddog.com&gt; from "Frank Crowell" at Dec 2, 96 12:11:08 pm
+
+Frank:
+&gt; Thanks.  That's at least one reason to get Alpha 5,  Btw, I've just
+&gt; started
+&gt; looking at the whole database-- there's a lot of code.  Good job
+&gt; to the whole crew!
+&gt; 
+&gt; I'm looking at how to easy or hard it would be to implement intermud3 
+&gt; 	http://www.imaginary.com
+&gt; for intermud communication (the '97 buzzword huh? Connect now with 
+&gt; your Sega to the to the Intermud! SEGA!!!). Anyway, if I can actually
+&gt; get to the coding part, I hope to get the intermud3 hooked up so
+&gt; that I can join other muds in the same network (mostly LP and a couple
+&gt; Diku muds).
+
+[feature list, snip...]
+
+Ahem.  I'm a little piqued, to be honest, that the intermud
+communitaction protocol even exists.  Mainly cuz it sucks.  But
+then I would say that wouldn't I.  MOO-net did all this 3 years
+ago (whine, gripe, moan...) and a lot more besides.
+
+You can take it from me though that everything proposed for i-3 is
+possible, and teaching cold all about it will be trivial.
+
+The subtext, that LPC developers, Cold developers and MOO developers
+don't talk to each other and that as a result everyone is running
+around chasing their tails redesigning crap that other people
+discarded years ago, does not make good reading.
+
+And since 'tis the season, Bah humbug!
+
+Ay.
+</PRE>

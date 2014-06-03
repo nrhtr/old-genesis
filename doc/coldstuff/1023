@@ -1,0 +1,24 @@
+<HEAD><TITLE>discuss@charon: [1023] in "Coldmud discussion meeting"</TITLE>
+<H1>[1023] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1023"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1022"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1024"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Progress report..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul  2 19:35:28 1996
+)</H3>
+<PRE>
+Date: Tue, 2 Jul 1996 17:15:24 -0600
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+the critical expression bug reported to genesis-bugs has (hopefully) been
+squashed.  Jenner has found the source for the binary db bloat.  More soon..
+</PRE>

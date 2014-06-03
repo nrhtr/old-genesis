@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1290] in "Coldmud discussion meeting"</TITLE>
+<H1>[1290] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1290"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1289"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1291"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Feature or Bug?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May  5 22:33:22 1997
+)</H3>
+<PRE>
+Date: Mon, 5 May 1997 20:32:26 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: coldstuff@cold.org
+
+Ok, a feature/bug has arisen as a problem due to being overlooked.  When I
+did forked methods I didn't have the code reset the call depth--at the
+time I thought about it and figured it was a good thing, but... is it?
+Pretending the calldepth is 10, if a method at calldepth 8 calls a forked
+method the forked method only has a calldepth of 2 overall, which can be
+VERY confusing in tracebacks and is also not necessarily what people would
+expect...
+
+Should this be how forked methods behave, or should they get a fresh
+calldepth?  or perhaps a special 'reduced but still big' forked
+calldepth..
+
+-Brandon
+
+</PRE>

@@ -1,0 +1,103 @@
+<HEAD><TITLE>discuss@charon: [1599] in "Coldmud discussion meeting"</TITLE>
+<H1>[1599] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1599"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1598"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1600"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1601"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1601"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Back up problem solved</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jul  2 19:39:45 2000
+)</H3>
+<PRE>
+From: "Peter Bombard" &lt;pbombard@altavista.net&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Sun, 2 Jul 2000 19:30:30 -0400
+In-Reply-To: &lt;000001bfe229$41edc020$0200a8c0@nycap.rr.comDEST&gt;
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0001_01BFE45B.FCE3AF00
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+
+All I needed to do was to edit the backup script and find the place where it
+set the path.
+
+  #!/usr/bin/perl
+  #
+  # Created by Brandon Gillespie
+  # Additional work by Vang (Dale Mayberry)
+  #
+  ## This creates a FIFO list of backups based off your configuration,
+  ## it can do regular, weekly and monthly backups, with the intervals
+  ## and depth of the FIFO list defined by you.
+  #
+  # INSTALL:
+  #
+  # determine your world directory (i.e. the directory where 'binary'
+  # exists).  Change the following variable to the full path to your
+  # world directory:
+
+  $base = "../";
+
+When I followed those instructions, backups worked fine.
+-pete (PBombard@altavista.net)
+
+
+------=_NextPart_000_0001_01BFE45B.FCE3AF00
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Diso-8859-1"&gt;
+
+
+&lt;META content=3D"MSHTML 5.00.3018.900" name=3DGENERATOR&gt;&lt;/HEAD&gt;
+&lt;BODY bgColor=3D#ffffff&gt;
+&lt;DIV&gt;&lt;FONT color=3D#0000ff face=3DArial size=3D2&gt;&lt;SPAN =
+class=3D100172923-02072000&gt;All I=20
+needed to do was to edit the backup script and find the place where it =
+set the=20
+path.&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#0000ff face=3DArial size=3D2&gt;&lt;SPAN=20
+class=3D100172923-02072000&gt;&lt;/SPAN&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT face=3DArial=20
+size=3D2&gt;&amp;nbsp;&amp;nbsp;#!/usr/bin/perl&lt;BR&gt;&amp;nbsp;&amp;nbsp;#&lt;BR&gt;&amp;nbsp;&amp;nbsp;# =
+Created by=20
+Brandon Gillespie&lt;BR&gt;&amp;nbsp;&amp;nbsp;# Additional work by Vang (Dale=20
+Mayberry)&lt;BR&gt;&amp;nbsp;&amp;nbsp;#&lt;BR&gt;&amp;nbsp;&amp;nbsp;## This creates a FIFO list of =
+backups=20
+based off your configuration,&lt;BR&gt;&amp;nbsp;&amp;nbsp;## it can do regular, =
+weekly and=20
+monthly backups, with the intervals&lt;BR&gt;&amp;nbsp;&amp;nbsp;## and depth of the =
+FIFO list=20
+defined by you.&lt;BR&gt;&amp;nbsp;&amp;nbsp;#&lt;BR&gt;&amp;nbsp;&amp;nbsp;#=20
+INSTALL:&lt;BR&gt;&amp;nbsp;&amp;nbsp;#&lt;BR&gt;&amp;nbsp;&amp;nbsp;# determine your world =
+directory (i.e.=20
+the directory where 'binary'&lt;BR&gt;&amp;nbsp;&amp;nbsp;# exists).&amp;nbsp; Change the=20
+following variable to the full path to your&lt;BR&gt;&amp;nbsp;&amp;nbsp;# world=20
+directory:&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#0000ff face=3DArial size=3D2&gt;&amp;nbsp;&amp;nbsp;$base =3D=20
+"../";&lt;BR&gt;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#0000ff face=3DArial size=3D2&gt;&lt;SPAN =
+class=3D100172923-02072000&gt;When I=20
+followed those instructions, backups worked fine.&lt;/SPAN&gt;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;P&gt;-pete (&lt;A =
+href=3D"mailto:PBombard@altavista.net"&gt;PBombard@altavista.net&lt;/A&gt;)=20
+&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+
+------=_NextPart_000_0001_01BFE45B.FCE3AF00--
+
+</PRE>

@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [1595] in "Coldmud discussion meeting"</TITLE>
+<H1>[1595] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1595"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1593"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1593"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1594"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1596"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Question about command aliases</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jun 25 16:45:27 2000
+)</H3>
+<PRE>
+Date: Sun, 25 Jun 2000 16:44:01 -0400
+From: Joshua Rosen &lt;rozzin@geekspace.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+Donna Young wrote:
+&gt; 
+&gt; When I look at @commands $user it lists the command shortcuts at the end of
+&gt; the list of commands.  How were these shortcuts created?  When I try looking
+&gt; at @ca $user to see any command aliases, it doesn't show the shortcuts as
+&gt; command aliases.  I'm just wondering what set of commands I need to know to
+&gt; add, change or remove the command shortcuts on $user.
+
+@add-shortcut or @a-s
+</PRE>

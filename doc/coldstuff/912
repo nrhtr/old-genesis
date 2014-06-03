@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [912] in "Coldmud discussion meeting"</TITLE>
+<H1>[912] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?912"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="910"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="911"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="911"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="913"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="914"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="914"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] ColdCore 3.0 TODO</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 28 01:54:51 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@tombstone.sunrem.com
+Date: Sat, 27 Jan 1996 22:39:47 +0000
+Reply-To: coldstuff@tombstone.sunrem.com
+
+&gt; Date:          Sat, 27 Jan 1996 16:12:21 -0700 (MST)
+&gt; From:          Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+&gt; To:            coldstuff@tombstone.sunrem.com
+&gt; Subject:       [COLD] ColdCore 3.0 TODO
+&gt; Reply-to:      coldstuff@cold.org
+
+&gt; I would apprecate comments/additions and/or volunteer help in any 
+of the 
+&gt; areas :)
+&gt; 
+
+Documentation of the objects woudl be nice.  At least a "purpose" 
+statement per object would be real useful.
+
+A question by the way.  I can';t figure $list out.  it SEEMS like all 
+[ ] list objects end up as $list objects.  How does this magic 
+happen?  What am I missing?
+
+JK
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+Clinton Gingrich Atomic Biological Bomb NSA -- Hi John!
+(A message for my friend in the NSA)
+*******************************************************
+</PRE>

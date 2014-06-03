@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [617] in "Coldmud discussion meeting"</TITLE>
+<H1>[617] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?617"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="615"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="616"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="616"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="618"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="618"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="618"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: speed ping</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 12 16:07:34 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Mon, 12 Dec 94 14:02:54 -0700
+
+&lt; What about foo * in *? I don't think what Brandon described will work for
+&lt; wildcards.
+
+What I was asking is what would be faster, using match template or tossing
+it into a dictionary.  It will work, as the templates I would be using in
+the dictionary would only be 1 word long.  (PLEASE stop trying to assume you
+know what I'm talking about).
+</PRE>

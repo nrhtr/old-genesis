@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [5] in "Coldmud discussion meeting"</TITLE>
+<H1>[5] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?5"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="4"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="4"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="4"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="6"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="6"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="6"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: comments on help</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 13:01:37 1993
+)</H3>
+<PRE>
+To: snooze &lt;gregb@amber.ecst.CSUChico.EDU&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Mon, 15 Nov 93 17:33:05 +0000.
+             &lt;199311151733.RAA09971@amber.ecst.csuchico.edu&gt; 
+Date: Mon, 15 Nov 93 12:48:07 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+In general, storing things outside the db is a bad idea, since it
+becomes impossible to modify them without having access to the
+machine.
+
+In the system I proposed, the central help db would store the help
+that the Coolmud core stores off-line.
+
+--GBH
+
+</PRE>

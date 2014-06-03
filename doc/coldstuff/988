@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [988] in "Coldmud discussion meeting"</TITLE>
+<H1>[988] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?988"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="987"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="989"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] MUDEDIT FIX FIXED!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Apr 27 20:40:05 1996
+)</H3>
+<PRE>
+Date: Sat, 27 Apr 1996 17:12:34 -0700
+From: "Jeffrey P. Kesselman" &lt;jeffk@tenetwork.com&gt;
+Reply-To: jeffk@tenetwork.com
+To: coldstuff@cold.org
+
+Okay,
+She seems all better now.
+WARNING: Atlas, at least on Win95, appears to have implemented class caching on 
+disk BUT it has no way yet to tell that a class has updated.  I may have to start 
+appending a version numebr to the class name and changing the link every time I 
+update (a pain).
+
+Anyway, be sure you flush your caches befoer trying the latest mudedit.
+
+once again, the url is
+  http://www.ten.net/~jeffk/mudedit
+
+If you are using the nifty Netscape mail, you can just click on the above!
+
+
+Jeff K.
+</PRE>

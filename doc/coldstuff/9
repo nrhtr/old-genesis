@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [9] in "Coldmud discussion meeting"</TITLE>
+<H1>[9] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?9"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="8"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="8"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="8"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="10"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: 0.7.1 server release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 14:33:17 1993
+)</H3>
+<PRE>
+To: Steven Owens &lt;uso01@mailhost.unidata.com&gt;
+Cc: ghudson@MIT.EDU, coldstuff@MIT.EDU
+In-Reply-To: Your message of Mon, 15 Nov 93 10:05:17 -0600.
+             &lt;199311151605.AA23942@mailhost.unidata.com&gt; 
+Date: Mon, 15 Nov 93 14:24:20 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; 1) will ColdMUD run on an Intel box running Linux (and if so, what
+&gt; would you recommend as a minimum/medium configuration to support,
+&gt; oh, 6 players for development, or 64 players for eventual public
+&gt; use?)
+
+Yes, Linux is one of my testing platforms.  I really don't know how
+well Coldmud scales at this point, since there aren't any running that
+even fill up the object cache to the point where it swaps objects to
+disk.  I'd say that for development, you could expect Coldmud to take
+up one to two megabytes of RAM; for production use with 64 players,
+maybe six to seven megabytes, but this is complete speculation.
+
+(If there are severe scaling problems with Coldmud, then I intend to
+work on them, of course.)
+
+&gt; 2) what are the usage restrictions on ColdMUD?  He's thinking in
+&gt; terms of running a pay-access BBS with a well-developed game
+&gt; (apparently he's seen it work elsewhere with somewhat idiotic games,
+&gt; so...).
+
+There aren't any restrictions on using Coldmud commercially; it's in
+the public domain.
+
+--GBH
+
+</PRE>

@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [1089] in "Coldmud discussion meeting"</TITLE>
+<H1>[1089] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1089"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1087"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1087"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1088"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1090"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Re: [ColdCore] Pruning the Object Heirarchy</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep 21 12:48:26 1996
+)</H3>
+<PRE>
+Date: Sat, 21 Sep 1996 10:40:46 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Miroslav Silovic &lt;silovic@srce.hr&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199609182355.BAA28467@regoc.srce.hr&gt;
+
+&gt; &gt; $help_index_driver        -- urg, what to do?  need to change driver help
+&gt; &gt; $help_node_driver_...     -- ^^^^ (Miro?)
+&gt; 
+&gt; @edit &lt;helpnode&gt; to edit it. You can change node's index by calling
+&gt; node.[add|del]_index (or something, check the methods on $help_node.
+
+We had a discussion a little while back as to where the authoritative 
+source is for the driver docs.  The reason I dont like using what we have 
+in db right now is because it didnt all convert correctly.  Because I 
+dont know what to treat as the source I havnt updated any of the docs 
+since about patch 8.  What I think I'm going to do is take the stuff on 
+the web, strip the HTML and just do my own formatting that a perl script 
+can frob to HTML or CML.  comments/concerns?
+
+&gt; &gt; $tree                     --\ Jeff Artifacts, what do to with $tree, nix?
+&gt; &gt; $tree_4                   --/ still used?  $help_node_* used to use it..
+&gt; 
+&gt; @grep for these, I didn't like this code. :) Nothing seems to use it now.
+
+I didnt like the idea of $tree's either, seemed redudnant.  They are nixed.
+
+&gt; &gt; $heart/$scheduler         -- review, I would like to make $scheduler native
+&gt; 
+&gt; $scheduler is outdated and buggy. My suggestion is to use dictionary instead
+&gt; of heap for event table.
+
+I thought somebody rewrote $scheduler already?  As for its future, we 
+should just make a $scheduler native module.
+
+&gt; &gt; $read_parser              -- rename/move in heirarchy, its not an official
+&gt; &gt;                              'parser', it parses from the connection not the
+&gt; &gt;                              user's parser stack
+&gt; 
+&gt; I'd move this to $login_connection ?
+
+No, I think it can be used on many connection types.. (ponder)
+
+Other than that, I'm going to start @dump'ing some stuff for a contrib 
+archive, It'll likely be non-functional but can be used for reference.
+
+-Brandon
+</PRE>

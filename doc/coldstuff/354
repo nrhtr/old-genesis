@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [354] in "Coldmud discussion meeting"</TITLE>
+<H1>[354] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?354"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="353"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="353"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="353"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="355"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="355"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="355"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>re: text_dump()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun 22 02:20:21 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Tue, 21 Jun 1994 23:15:54 -0700 (PDT)
+
+I have not doen the research on this, and Greg can correct me if I'm wrong
+ but isn't this simply a matter of when IO is handled in the server?
+
+Main order of things hapenening:
+Wait for IO or heartbeat
+  if IO happens, turn it into a method call
+  exectue the method
+    any 'echo()' statements put stuff in the apropriate outbound buffer
+    text_dump() calls just 'happen' right away
+  when the method returns or a traceback uses up the stack...
+  send out the stuff in the net buffers
+loop all over again
+  (Same deal with a heartbeat event)
+
+As I said, I did not just now go look at the code, but if I were writing the
+ server, I would do it this way. It is not a great mystery to me, and it
+ doesn't bother me. Just use your scheduler to make the announcement go out
+ one tick before the text_dump() call.
+
+Crag,
+wondering why this is still a question when everyone has a copy of the code.
+
+P.S. Sorry I haven't changed my .sig yet...
+
+-- 
+"Mr. Tater, I think I have a punishment for you that is fair, just, and
+ clever. Or maybe just fairly clever."
+
+    -- King Yakko of Anvilania.
+</PRE>

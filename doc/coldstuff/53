@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [53] in "Coldmud discussion meeting"</TITLE>
+<H1>[53] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?53"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="52"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="54"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>$user/$player etc</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 18 20:00:59 1993
+)</H3>
+<PRE>
+Date: Thu, 18 Nov 1993 17:55:47 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+First off, the Cold Dark _is_ up now (sorry)
+
+I just munged the heirarchy a little, flipping $person and $player.  I globally
+changed $player to $user (_everything_ which referenced $player, or player is
+now changed to $user or user).  I created $player under $person.  $person will
+have all 'physical' attributes on it, $player will have RPG stuff on it.  here
+is how it is right now:
+
+Descendants of User:
+User  &lt;$user&gt; (MI)
+  Person  &lt;$person&gt;
+    *Player  &lt;$player&gt;
+      *Builder  &lt;$builder&gt;
+        *Hacker  &lt;$programmer&gt;
+
+anyhow
+
+-Lynx/Brandon/Me.
+</PRE>

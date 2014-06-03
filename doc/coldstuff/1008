@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [1008] in "Coldmud discussion meeting"</TITLE>
+<H1>[1008] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1008"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1006"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1007"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1007"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1009"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1009"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1009"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Re: Crashes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun  5 12:35:01 1996
+)</H3>
+<PRE>
+Date: Wed, 5 Jun 1996 10:15:18 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Dancer &lt;root@thelbane.brisnet.org.au&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;m0uRCqW-0000ESC@thelbane.brisnet.org.au&gt;
+
+On Wed, 5 Jun 1996, Dancer wrote:
+&gt; Since patching the server to p6, I've been getting fairly frequent
+&gt; crashes. I've got minimal postmortem info, but it seems that strdup() 
+&gt; is being passed a NULL pointer fairly often. Anyone else getting this?
+
+p7 fixes the problem, if you grab the .patch it is a simple fix.  
+Basically I called a function with '0' in $string.capitalize() instead of 
+args[0].u.str :)
+
+-Brandon Gillespie
+</PRE>

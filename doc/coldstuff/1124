@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1124] in "Coldmud discussion meeting"</TITLE>
+<H1>[1124] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1124"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1123"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1125"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1125"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1130"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] How to compile?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov  6 00:47:51 1996
+)</H3>
+<PRE>
+Date: Tue, 5 Nov 1996 22:20:35 -0700
+To: coldstuff@cold.org
+From: gestalt@sedona.net (Gestalt)
+
+I seem to be unable to get Genesis to compile on my system. During 'make',
+it spits out a couple warnings, either terminating in a quota full error or
+fatal error no. 1 (as I recall)... I have attempted to compile several
+versions.
+
+If anyone has any idea how, I would like to get a ColdCore up to dink
+around with.
+My system is setup as follows:
+
+SunSPARC workstation (with 16 megs real ram and at least 64 swap)
+SunOS Release 4.1.4_DBE1.4
+
+I have attempted it both with a 10 meg quota and none. Neither way works.
+
+If this is un unkown problem then I will send the output from configure and
+make... I didn't want to flood the list with big huge files if it wasn't
+necessary.
+
+PS: I'm very poor at unix :(
+
+And you run and you run to catch up with the sun but it's sinking
+Racing around to come up behind you again.
+The sun is the same in a relative way but you're older,
+Shorter of breath and one day closer to death.
+
+
+</PRE>

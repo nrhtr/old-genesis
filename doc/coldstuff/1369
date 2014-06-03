@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1369] in "Coldmud discussion meeting"</TITLE>
+<H1>[1369] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1369"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1368"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1370"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1370"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1370"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Broken exits in html format</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 14 00:43:28 1997
+)</H3>
+<PRE>
+Date: Thu, 13 Nov 1997 22:44:03 -0900
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+Now I have a "exit" question dealilng with how exits are seen with a
+browser
+(through http://xxx:1180/bin/describe).  In an unmodified a9.02 database
+the exit
+names show up like this: "&gt;T2.  Here is what the html source file looks
+like for the same section:
+
+Visible Exits: &lt;a href="/bin/describe?target=&lt;$exit_frob, #[['prose,
+[]], ['manager, $user_maddog], ['name, ['prop, "Test", "Test"]],
+['source, $the_pit], ['dest, $place_2]]&gt;"&gt;Test&lt;/a&gt; and &lt;a
+href="/bin/describe?target=&lt;$exit_frob, #[['prose, []], ['manager,
+$user_maddog], ['name, ['prop, "T2", "T2"]], ['source, $the_pit],
+['dest, $place_3]]&gt;"&gt;T2&lt;/a&gt;&lt;br&gt;
+&lt;hr size=1 noshade&gt;&lt;a href="/"&gt;the Cold Dark&lt;/a&gt;&lt;/body&gt;
+
+Notice the $exit_frob after target.
+
+Here are what the exits look like at cold.org:
+
+Visible Exits: &lt;a href="/bin/describe?target=$place_334"&gt;the opening&lt;/a&gt;
+
+
+ What fix do i need for this?
+
+thanks,
+
+frank
+
+--
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+
+
+</PRE>

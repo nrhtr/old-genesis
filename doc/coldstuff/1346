@@ -1,0 +1,117 @@
+<HEAD><TITLE>discuss@charon: [1346] in "Coldmud discussion meeting"</TITLE>
+<H1>[1346] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1346"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1345"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1345"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1345"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1347"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Details in $places ($detail_frobs)?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Aug 25 18:18:05 1997
+)</H3>
+<PRE>
+Date: Mon, 25 Aug 1997 16:15:47 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: "Luther, Clay" &lt;clay@selsius.com&gt;
+cc: "ColdStuff Mailing List (E-mail)" &lt;coldstuff@cold.org&gt;,
+        "'mud@dante.selsius.com'" &lt;mud@dante.selsius.com&gt;
+In-Reply-To: &lt;97D99B08E012D111A0CE00805F70754FB85C@RAPHAEL&gt;
+
+On Mon, 25 Aug 1997, Luther, Clay wrote:
+&gt; In my old MOO(s), I would extend $rooms (and $things) so that they could
+&gt; include themselves in the description of a room.  These "details" added
+&gt; much to the depth of the MOO, since a player could look at, even fiddle
+&gt; with, something described in the room.
+
+Some of this already exists, other aspects will be coming, as we add more
+functionality to CML.
+
+Currently, to create a detail you simply use the CML format tag {detail},
+ala:
+
+     There is a {detail name=table:The table is oaken.} against the wall.
+
+Would look like:
+
+     There is a table against the wall.
+
+(with 'table' being marked as appropriate, for your content-type).  Typing
+'look table' would return:
+
+     The table is oaken.
+
+As for including objects in the room, this will occur with an [embed]
+generator (which is not currently implemented).  Essentially, you should
+be able to embed anything from the object's contents, and by embeding it,
+you also have the option of not having it showup in the standard contents
+list.
+
+Furthermore, the standard template of:
+
+    The room
+    The desc
+    &lt;users&gt; are here.
+    You see &lt;objects&gt; here.
+
+Will become softcoded, all a part of the description.  For instance, the
+default place description CML would be:
+
+    {subj:[title]}
+    {br}You see nothing special.
+    {br}[english:[users]] are here.
+    {br}You see [english:[non-users]] here.
+
+(yes, I am just pulling the specific syntax out of the air--but it will be
+similar to what I am showing). 
+
+Also, you can currently integrate day/night and weather into a room.  For
+instance, consider the description for the Courtyard, in the Cold Dark:
+
+    ---------------------------------------------------------------------
+    [switch value=[daynight]:  
+      [case:day]
+        Heavy stone walls overgrown with moss and ivy surround the
+        courtyard. To the north and southeast are large castle gates open 
+        to traffic Through the southern gate you can hear the bustle of a
+        crowd gathered in the [weather] day. An inviting entrance is to
+        the east, where marble columns surround two metal-bound oaken
+        doors. On the western wall is a single door, nestled amoung the ivy.
+      [case:night]
+        The silence of this [weather] night is interrupted by\ 
+        [switch value=[precipitation]:  
+          [case:rain]
+            the light tapping of raindrops beating steadily on the ground.
+          [case:shower]
+            the light roar of the rain.
+          [default]
+            an occasional servant.]
+        \ Heavy stone walls overgrown with moss and ivy surround the
+        courtyard. To the north and southeast are lighted castle gates,
+        open to traffic.  An inviting entrance is to the east, where
+        illuminated marble columns surround two metal-bound oaken doors.
+        On the western wall a small light illuminates a single door,
+        nestled amoung the ivy. ]
+    [switch value=[precipitation]:  
+      [case:rain]
+        Rain lightly dances on the water of a running fountain in the
+        center of the courtyard
+      [case:shower]
+        In the center of the courtyard is a fountain
+      [default]
+        A faint babble comes from a fountain in the center of the
+        courtyard]
+    \ with small islands of shrubbery and sculptures. Next to the fountain
+    is a large sign.
+    ---------------------------------------------------------------------
+
+We are still working on getting the unparser to be a little cleaner, but
+this gives you an idea of the direction we are heading..
+
+-Brandon Gillespie
+
+</PRE>

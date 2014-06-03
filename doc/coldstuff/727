@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [727] in "Coldmud discussion meeting"</TITLE>
+<H1>[727] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?727"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="726"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="728"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="728"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="728"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>comments</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar 25 16:31:06 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: coldstuff@MIT.EDU
+Date: Sat, 25 Mar 1995 15:16:17 -0600 (CST)
+
+Add /* */. It doesn't break anything to add it, and it is consistant with
+ traditional C.
+
+It is also extremely easy to add to the language. Only question is how to
+ unparse. Should all comments be unparsed as /* or // or whatever they
+ were to begin with?
+
+I vote for it to be an option of unparseing all as one or the other.
+
+(I would be totally opposed to removing // as a line break terminated comment.)
+
+Crag
+</PRE>

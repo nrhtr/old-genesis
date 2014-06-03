@@ -1,0 +1,134 @@
+<HEAD><TITLE>discuss@charon: [800] in "Coldmud discussion meeting"</TITLE>
+<H1>[800] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?800"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="799"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="801"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="801"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="804"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Multithreaded ColdC...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep  9 22:26:56 1995
+)</H3>
+<PRE>
+Date: Sat, 9 Sep 1995 20:26:09 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+I have been sketching up some notes on how I will implement
+multh-threading in ColdC.  The following are some of these notes, as I
+would appreciate evaluation and comments, if one can come up with them.
+
+-Brandon Gillespie-
+
+-----------------------------------------------------------------------
+** Multithreaded ColdC **
+
+Modifies: pause()
+Changes:  *task* operators to *thread* operators (task_id() -&gt; thread_id())
+Adds:     sync () {}, atomic {}, fork() and synchronized/atomic methods.
+
+* Overview
+
+A frame is the execution state of a ColdC method.  The current frame is
+only relative to the current method, beginning execution within a new
+frame uses a new frame context.  ColdC ticks are contained within each
+frame, rather than in a global context.  A thread is a stack of methods
+executing in relation to each other.
+
+* Outline
+
+Preemptive multi-threading will be based upon either CPU ticks or ColdC
+ticks (have not decided which).  CPU ticks give the advantage of also
+taking native functions into consideration, but cause tasks to be
+preempted faster on a loaded machine.
+
+When a certain threshold has been reached, the task will be suspended
+and added to a list of preempted tasks, to continue execution at a later
+time.  Being preempted also refreshes the current frame's ticks.
+
+* Synchronizing
+
+Synchronization is the act of a thread gaining absolute control of an
+object.  Only one thread can be synchronized with an object at any given
+time.  There are two ways of synchronizing with an object.  First, one
+can implicitly synchronize the method with an object by adding the
+synchronized method flag.  Or, the block control 'sync' can be used,
+which accepts a list of objects and contains a block of code to execute
+while synchronized to the object(s), such as:
+
+sync (this()) {
+    while (times) {
+        .call_synced_method();
+        times = times - 1;
+    }
+}
+
+When a thread is synchronized with an object, it has full read/write
+ability to any object variables it can access.  Synchronized threads
+can be preempted, just like unsynchronized threads (preemptiveness is
+defined by the atomic state).
+
+Furthermore, the synchronization is cooperative througout the thread.
+If a synchronized frame calls a method which must be synchronized, it is
+not blocked.
+
+If a synchronize call is made, and the thread is unable to synchronize
+with the object, it may be blocked (if it is not atomic).  Blocked threads
+are suspended, and added to a list for that object.  When the
+current thread synchronizing to the object releases it's hold, the first
+thread in the blocked list is executed.  If a thread is blocked, and is
+atomic, the error ~blocked is thrown.
+
+* Atomic code blocks
+
+If a frame is preempted blocked or suspended while it is set as atomic,
+the error ~preempted, ~blocked or ~suspended is thrown.  The atomic
+state propogated through subsequent frames in the thread, so that if a
+frame becomes atomic, while it is atomic any frames further down the
+thread from it become atomic.
+
+Frames become atomic by either setting the atomic method flag, or by
+using the block statement 'atomic' in ColdC code.  Examples:
+
+atomic .do_this();
+
+atomic {
+    .do_this();
+    .do_that();
+}
+
+* Function pause()
+
+pause() gives the ability to cooperatively multh-thread.  It will have
+an optional flag which can be passed (1 or 0), if it is true (1) then
+pause() will act nicely, if it is false (default, 0) it will not act
+nicely.
+
+When pause() is called it will instantly preempt the thread, unless it
+is within an atomic block.  If it is within an atomic block and is a
+nice pause, the thread will continue to run until it either runs out of
+frame ticks or it reaches the end of the atomic block.  If it runs out
+of ticks, the usual error is thrown (~ticks).  If it reaches the end of
+the atomic block it instantly preempts.
+
+* Function fork() 
+
+fork() splits a thread.  When called it splits the thread into two exact
+frames.  The function fork() has a logical expression value of 0 to the
+child process, and the value is the forked thread id for the parent
+thread.
+
+An optional delay argument may be supplied to fork, defaulting to 0.
+The delay specifies how long to wait before beginning execution of the
+child thread.
+
+Notes: possibly have a MAX_FORK for each thread; possibly have a method
+flag of 'fork', where if that method is called it starts its own
+execution thread, rather than becoming a part of the current thread.
+The logical expression value of a forked method is it's thread_id.
+</PRE>

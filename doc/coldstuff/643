@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [643] in "Coldmud discussion meeting"</TITLE>
+<H1>[643] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?643"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="642"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="644"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Problems with SunOS and Solaris</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan 21 10:53:15 1995
+)</H3>
+<PRE>
+From: azuki@di.uminho.pt (Rui Mendes)
+To: coldstuff@MIT.EDU
+Date: Sat, 21 Jan 1995 16:51:30 +0100 (MET)
+
+I sent a mail about this problem a few days ago but it seems that it didn't
+get through because of a complication on sendmail here. If however you get
+this mail twice i apologise.
+I have been testing this server on SunOS and Solaris and on both systems i got
+several anoying problems. The problems I have are related with dumping the
+database, in doing so, the database loses a certain number of objects. I have
+been trying to figure out it such a thing happens. I browsed throught the code
+and it seems that it might happen perhaps on the function cache_sync on the
+file cache.c or because of the dbm library, because the driver uses it to
+store the database.
+However, my browsing through the code was very superficial. And the fact that
+i spoke to Brandon and he had no problem with Ultrix and I seem to have no
+problem in Data General(at least so far, the database saving problem does not
+happen everytime, just now and again) leads me to think that it might be
+something system dependent.
+I read the README.src which comes with the driver, there is nowhere to be
+found a makefile specific to solaris or SunOS even if the file mentions it.
+All the mentions to SunOS seemed to be hardcoded if one added the define SunOS
+at compile time. So, in principle, it is not because of my fault when
+installing the driver that i am having such problems. on the following lines i
+will add the uname of both the SunOS and Solaris machine where i tested the
+code.
+
+SunOS:   SunOS s700 4.1A.1 4.1.1 sun4
+Solaris: SunOS mes08 5.3 Generic_Patch sun4m sparc
+
+Sometimes, after some of the objects were lost and i tried to restart the
+server, i got a 'select: forever wait' error. But that might be because of
+some of the objects i lost.
+Does anyone else using such machine experience such problems? Is there a way
+to correct them? Or do I have to hack the server core to try to find it?
+Feedback would be appreciated.
+
+P.S.: Now i remember that i used the same binary on both the SunOS and the
+Solaris machine. The binary was compile on the SunOS machine. So i compiled it
+now on the solaris machine and I am going to make another test there to see if
+I have the same errors. In any case, the errors ocurred in SunOS using the
+right binary.
+-- 
+ -- Rui Mendes
+</PRE>

@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [587] in "Coldmud discussion meeting"</TITLE>
+<H1>[587] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?587"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="586"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="588"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="588"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="605"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>New functions on the version 0.12 of the server</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 17 17:00:57 1994
+)</H3>
+<PRE>
+From: azuki@ci.uminho.pt
+Date: Thu, 17 Nov 1994 22:47:12 +0100
+To: coldstuff@MIT.EDU
+
+Can someone tell me what are the new functions available on the version 12
+of the server do please?
+I have been inspecting the C code to try to find some guidelines and i
+found the following functions which aren't documented:
+
+suspend()
+resume()
+pause()
+tick()
+ticks_left()
+size()
+set_name()
+del_name()
+hostname()
+ip()
+db_top()
+tasks()
+callers()
+
+some of these functions are self explanatory, others are not so evident and
+i would appreciate if someone could give a small explanation of what these
+functions do, as i will surely be developing things on this server, i would
+like to be able to use it to its best.
+Thanks in advance.
+
+-Rui Mendes.
+</PRE>

@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [882] in "Coldmud discussion meeting"</TITLE>
+<H1>[882] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?882"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="881"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="881"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="881"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="883"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: code</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan  8 12:15:39 1996
+)</H3>
+<PRE>
+Date: Mon, 8 Jan 1996 09:48:39 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Mike Zaphod Wilson &lt;mwilson@vt.edu&gt;
+cc: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;199601080452.XAA29283@sable.cc.vt.edu&gt;
+
+&gt; &gt;arg l , [dummy];
+&gt; &gt;var x,y,temp;
+&gt; &gt;
+&gt; &gt;if (type(l) != 'list){
+&gt; &gt;   throw (~type, "Must be list of strings");}
+&gt; &gt;for x in (substitutions)
+&gt; &gt;    if (.find_method(x[2]))
+&gt; &gt;        for y in [1 .. l.length()]  {
+&gt; &gt;             temp = tosym(x[2]);
+&gt; &gt;             temp =  (| .(temp)() |);
+&gt; &gt;             l[y] = $string.replace(l[y],x[1],temp) ;
+----------------^^^^
+&gt; &gt;}
+&gt; &gt;return l;
+
+To keep code readable, ColdC does _not_ allow assignments to subranges, 
+so that line would have to read:
+
+                l = l.replace(y, l[y].replace(x[1], temp));
+
+(of course, this may not be any more readable, ;)
+
+-Brandon
+</PRE>

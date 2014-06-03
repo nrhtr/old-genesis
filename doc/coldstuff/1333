@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1333] in "Coldmud discussion meeting"</TITLE>
+<H1>[1333] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1333"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1330"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1332"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1332"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1334"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1334"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1341"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Exit announcements (anomaly?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 21 19:33:21 1997
+)</H3>
+<PRE>
+Date: Thu, 21 Aug 1997 17:30:55 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: "Luther, Clay" &lt;clay@selsius.com&gt;
+cc: "'coldstuff@cold.org'" &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;97D99B08E012D111A0CE00805F70754FB845@RAPHAEL&gt;
+
+On Thu, 21 Aug 1997, Luther, Clay wrote:
+&gt; While building in the new core, I noticed that exit announcements occur
+&gt; at an odd time (IMHO).
+&gt; 
+&gt; For instance, if I am standing in a room and take the north exit, I will
+&gt; see:
+&gt; 
+&gt; 	New Room Name
+&gt; 	New Room Description.
+&gt; 	You take the north exit.
+&gt; 
+&gt; Isn't more logical (from a VR point of view) to see:
+&gt; 
+&gt; 	You take the north exit.
+&gt; 	New Room Name
+&gt; 	New Room Description.
+
+Oops.. thanks for the report--this bug cropped up when we converted
+to using configurable messages.. (and its taken this long to be noticed :)
+
+-Brandon
+
+</PRE>

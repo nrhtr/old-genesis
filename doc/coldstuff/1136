@@ -1,0 +1,219 @@
+<HEAD><TITLE>discuss@charon: [1136] in "Coldmud discussion meeting"</TITLE>
+<H1>[1136] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1136"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1135"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1137"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] anticipate_assignment</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov 24 02:03:22 1996
+)</H3>
+<PRE>
+Date: Sun, 24 Nov 1996 07:54:24 +0100 (MET)
+From: Miroslav.Silovic@public.srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+
+This patch defines anticipate_assignment function. This function looks
+upward (into the calling frame) and checks if the method call is made
+from the expression:
+
+	foo = obj.method(...)
+
+or
+
+	foo = (| obj.method(...) |)
+
+If so, variable foo is zeroed. The best time to call this is after doing
+the error checking that might cause the method to throw. It allows
+using advanced data structures without copying, and it mimicks the
+internal driver mechanism with the same purpose.
+
+-----------------------------------------------------------------------
+
+Only in Genesis-1.0p19-new/src: .pure
+Only in Genesis-1.0p19/src: coldcc
+Common subdirectories: Genesis-1.0p19/src/data and Genesis-1.0p19-new/src/data
+diff -C 5 -r Genesis-1.0p19/src/execute.c Genesis-1.0p19-new/src/execute.c
+*** Genesis-1.0p19/src/execute.c	Sun Nov 24 07:47:38 1996
+--- Genesis-1.0p19-new/src/execute.c	Sun Nov 24 07:47:38 1996
+***************
+*** 854,877 ****
+  */
+  void anticipate_assignment(void) {
+      Int opcode, ind;
+      Long id;
+      cData *dp, d;
+  
+!     opcode = cur_frame-&gt;opcodes[cur_frame-&gt;pc];
+      switch (opcode) {
+        case SET_LOCAL:
+          /* Zero out local variable value. */
+          dp = &amp;stack[cur_frame-&gt;var_start +
+!                     cur_frame-&gt;opcodes[cur_frame-&gt;pc + 1]];
+          data_discard(dp);
+          dp-&gt;type = INTEGER;
+          dp-&gt;u.val = 0;
+          break;
+        case SET_OBJ_VAR:
+          /* Zero out the object variable, if it exists. */
+!         ind = cur_frame-&gt;opcodes[cur_frame-&gt;pc + 1];
+          id = object_get_ident(cur_frame-&gt;method-&gt;object, ind);
+          d.type = INTEGER;
+          d.u.val = 0;
+          object_assign_var(cur_frame-&gt;object, cur_frame-&gt;method-&gt;object,
+                            id, &amp;d);
+--- 854,881 ----
+  */
+  void anticipate_assignment(void) {
+      Int opcode, ind;
+      Long id;
+      cData *dp, d;
++     Int pc=cur_frame-&gt;pc;
+  
+!     // skip error handling
+!     while ((opcode = cur_frame-&gt;opcodes[pc]) == CRITICAL_END)
+! 	pc++;
+! 
+      switch (opcode) {
+        case SET_LOCAL:
+          /* Zero out local variable value. */
+          dp = &amp;stack[cur_frame-&gt;var_start +
+!                     cur_frame-&gt;opcodes[pc + 1]];
+          data_discard(dp);
+          dp-&gt;type = INTEGER;
+          dp-&gt;u.val = 0;
+          break;
+        case SET_OBJ_VAR:
+          /* Zero out the object variable, if it exists. */
+!         ind = cur_frame-&gt;opcodes[pc + 1];
+          id = object_get_ident(cur_frame-&gt;method-&gt;object, ind);
+          d.type = INTEGER;
+          d.u.val = 0;
+          object_assign_var(cur_frame-&gt;object, cur_frame-&gt;method-&gt;object,
+                            id, &amp;d);
+Only in Genesis-1.0p19/src: genesis
+diff -C 5 -r Genesis-1.0p19/src/grammar.y Genesis-1.0p19-new/src/grammar.y
+*** Genesis-1.0p19/src/grammar.y	Sun Nov 24 07:47:38 1996
+--- Genesis-1.0p19-new/src/grammar.y	Sun Nov 24 07:47:38 1996
+***************
+*** 143,152 ****
+--- 143,153 ----
+  %token F_NEXT_OBJNUM F_TICK F_HOSTNAME F_IP F_RESUME F_SUSPEND
+  %token F_TASKS F_TASK_INFO F_CANCEL F_PAUSE F_REFRESH F_STACK F_STATUS
+  %token F_BIND_FUNCTION F_UNBIND_FUNCTION F_ATOMIC
+  %token F_METHOD_INFO F_ENCODE F_DECODE F_SIN F_EXP F_LOG F_COS
+  %token F_TAN F_SQRT F_ASIN F_ACOS F_ATAN F_POW F_ATAN2 F_CONFIG
++ %token F_FLUSH
+  
+  /* Reserved for future use. */
+  /*%token FORK*/
+  
+  /*
+Common subdirectories: Genesis-1.0p19/src/include and Genesis-1.0p19-new/src/include
+Common subdirectories: Genesis-1.0p19/src/modules and Genesis-1.0p19-new/src/modules
+diff -C 5 -r Genesis-1.0p19/src/opcodes.c Genesis-1.0p19-new/src/opcodes.c
+*** Genesis-1.0p19/src/opcodes.c	Sun Nov 24 07:47:38 1996
+--- Genesis-1.0p19-new/src/opcodes.c	Sun Nov 24 07:47:38 1996
+***************
+*** 219,228 ****
+--- 219,229 ----
+      { F_FWRITE,         "fwrite",               func_fwrite },
+      { F_FILE,           "file",                 func_file },
+      { F_FFLUSH,         "fflush",               func_fflush },
+  
+      /* Miscellaneous functions */
++     { F_FLUSH,  "anticipate_assignment",     func_anticipate_assignment},
+      { F_LOCALTIME,        "localtime",       func_localtime },
+      { F_TIME,             "time",            func_time },
+      { F_MTIME,            "mtime",           func_mtime },
+      { F_CTIME,            "ctime",           func_ctime },
+      { F_BIND_FUNCTION,    "bind_function",   func_bind_function },
+Common subdirectories: Genesis-1.0p19/src/ops and Genesis-1.0p19-new/src/ops
+Only in Genesis-1.0p19-new/src/data: .pure
+diff -C 5 -r Genesis-1.0p19/src/include/functions.h Genesis-1.0p19-new/src/include/functions.h
+*** Genesis-1.0p19/src/include/functions.h	Sun Nov 24 07:47:38 1996
+--- Genesis-1.0p19-new/src/include/functions.h	Sun Nov 24 07:47:38 1996
+***************
+*** 5,14 ****
+--- 5,15 ----
+  #ifndef cdc_functions_h
+  #define cdc_functions_h
+  
+  #include "macros.h"
+  
++ COLDC_FUNC(anticipate_assignment);
+  COLDC_FUNC(buflen);
+  COLDC_FUNC(bufgraft);
+  COLDC_FUNC(buf_replace);
+  COLDC_FUNC(subbuf);
+  COLDC_FUNC(buf_to_str);
+Only in Genesis-1.0p19-new/src/modules: .pure
+Only in Genesis-1.0p19-new/src/ops: .pure
+diff -C 5 -r Genesis-1.0p19/src/ops/misc.c Genesis-1.0p19-new/src/ops/misc.c
+*** Genesis-1.0p19/src/ops/misc.c	Sun Nov 24 07:47:38 1996
+--- Genesis-1.0p19-new/src/ops/misc.c	Sun Nov 24 07:47:38 1996
+***************
+*** 11,20 ****
+--- 11,65 ----
+  #include "operators.h"
+  #include "execute.h"
+  #include "util.h"
+  #include "opcodes.h"
+  
++ void func_anticipate_assignment(void) {
++     Int opcode, ind;
++     Long id;
++     cData *dp, d;
++     Frame *caller_frame = cur_frame-&gt;caller_frame;
++     Int pc;
++ 
++     if (!func_init_0())
++ 	return;
++     if (!caller_frame) {
++ 	push_int(1);
++ 	return;
++     }
++ 
++     pc=caller_frame-&gt;pc;
++ 
++     /* Most of this is from anticipate_assignment() */
++     
++     // skip error handling
++     while ((opcode = caller_frame-&gt;opcodes[pc]) == CRITICAL_END)
++ 	pc++;
++ 
++     switch (opcode) {
++       case SET_LOCAL:
++         /* Zero out local variable value. */
++         dp = &amp;stack[caller_frame-&gt;var_start +
++                     caller_frame-&gt;opcodes[pc + 1]];
++         data_discard(dp);
++         dp-&gt;type = INTEGER;
++         dp-&gt;u.val = 0;
++         break;
++       case SET_OBJ_VAR:
++         /* Zero out the object variable, if it exists. */
++         ind = caller_frame-&gt;opcodes[pc + 1];
++         id = object_get_ident(caller_frame-&gt;method-&gt;object, ind);
++         d.type = INTEGER;
++         d.u.val = 0;
++         object_assign_var(caller_frame-&gt;object, caller_frame-&gt;method-&gt;object,
++                           id, &amp;d);
++         break;
++     }
++     push_int(1);
++     return;
++ }
++ 
+  void func_time(void) {
+      /* Take no arguments. */
+      if (!func_init_0())
+  	return;
+  
+</PRE>

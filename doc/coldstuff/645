@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [645] in "Coldmud discussion meeting"</TITLE>
+<H1>[645] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?645"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="644"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="646"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: load()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan 21 14:17:46 1995
+)</H3>
+<PRE>
+From: brandon@smithfield.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Sat, 21 Jan 95 12:15:42 -0700
+
+I'm crossposting this to coldstuff, since it sortof has interest to that list
+as well...
+-----------------------------------------------------------------------
+Hmm, well, its installed, but be warned, it does have a _lot_ of overhead (and
+it stall's the server while receiving the load).  For instance, a few checks
+on load:
+
+------------------------------
+;$sys.load();
+=&gt; "1.04, 0.58, 0.02"
+[ ticks: 8 seconds: 6 (1 per) milliseconds: 6202 ]
+;$sys.load();
+=&gt; "0.96, 0.57, 0.02"
+[ ticks: 8 seconds: 1 (8 per) milliseconds: 1539 ]
+;$sys.load();
+=&gt; "0.88, 0.56, 0.01"
+[ ticks: 8 seconds: 0 milliseconds: 422 ]
+;$sys.load();
+=&gt; "0.81, 0.55, 0.01"
+[ ticks: 8 seconds: 1 (8 per) milliseconds: 1543 ]
+;$sys.load();
+=&gt; "0.75, 0.54, 0.00"
+[ ticks: 8 seconds: 1 (8 per) milliseconds: 1519 ]
+;$sys.load();
+=&gt; "0.28, 0.43, 0.00"
+[ ticks: 8 seconds: 1 (8 per) milliseconds: 1699 ]
+------------------------------
+
+Anyway, as you can see it isn't exactly a fast thing (oh, and milliseconds are
+not exactly milliseconds, I cannot figure out what increment of a second they
+are.  The reason I chose the name millisecond is because the structure element
+is millitm (aurgh, this is frustrating--no documentation)).
+
+-Brandon (Lynx)-
+</PRE>

@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [360] in "Coldmud discussion meeting"</TITLE>
+<H1>[360] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?360"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="359"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="359"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="359"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="361"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: help code</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jun 25 01:06:31 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Fri, 24 Jun 1994 23:03:08 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt; 	This may be a basic question, BUT: in the Coldmud distribution as
+&lt; currently constituted, there are C-- files for a help system that is not
+&lt; loaded into the textdump file by the make-world script.  Is this help
+&lt; system in condition to be loaded?  I get an error when I tried patching
+&lt; the make-world script to load the help files along with everything else.
+
+No, it is not.
+
+I was about to say you could just come dump it from the cold dark, but I
+remembered we have changed too much to be compliant with world6 core (Security
+and core object structure are all different).
+</PRE>

@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [501] in "Coldmud discussion meeting"</TITLE>
+<H1>[501] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?501"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="500"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="502"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>object names vs. dbrefs inna dump</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 17:30:58 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Tue, 1 Nov 1994 14:23:12 -0800 (PST)
+
+I'm in favor of using object name expressions instead when possible but the
+ current nameing mechanism permits more than one name per object, or even none.
+ the format of the textdump is not a big concern to me right now, mostly
+ because I have friends who are perl experts and can do anything do the
+ textdump far easier than they or I can change the server.
+
+If you can find a way to do both or leave it up to the db/user, I'm all for it.
+
+Crag / Robert
+</PRE>

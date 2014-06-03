@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [877] in "Coldmud discussion meeting"</TITLE>
+<H1>[877] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?877"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="876"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="876"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="876"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="878"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: spiffy change for Genesis 0.3</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jan  5 22:06:42 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+Date: Fri, 5 Jan 1996 18:39:53 +0000
+CC: coldstuff@tombstone.sunrem.com
+
+
+&gt; 
+&gt;     return "Object (" + obj + ") does not want to add " + int + " to " + list;
+&gt; 
+
+In a related vein....
+
+Diogenes has an "introduction" system where what name you know 
+another object by depends on whether you have been introduced.  I 
+implemented it translating  #&lt;number&gt; in a string to 
+.resolve_name(toobj(number));
+
+Thus the string 
+#23: Hi!
+
+Shows as
+
+pretty girl: Hi!
+
+to people not introduced to sandra (pretty girl is her short 
+description string) and
+
+Sandra: Hi!
+
+to people who have been introduced.  
+
+The same mechanism handles nicknames, false names, etc...
+
+JK
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+Clinton Gingrich Atomic Biological Bomb NSA -- Hi John!
+(A message for my friend in the NSA)
+*******************************************************
+</PRE>

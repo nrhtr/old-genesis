@@ -1,0 +1,88 @@
+<HEAD><TITLE>discuss@charon: [607] in "Coldmud discussion meeting"</TITLE>
+<H1>[607] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?607"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="606"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="608"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="608"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="609"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Odd behavior (related to suspend()/resume() ?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec  2 11:59:33 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Cc: tcd@tiny.mcs.usu.edu
+Date: Fri, 02 Dec 94 09:57:14 -0700
+
+
+I recently upgraded .read() in the Cold Dark to use suspend() and resume().
+Immediately thereafter odd behavior began.  The reason for this post
+is I have no idea what could be happening.  The problem _could_ be in my
+db, but it could also be with what suspend() actually effects.  I have only
+noticed the problem when pasting a series of methods (i.e. each one begins
+with a suspend() and ends with a resume()).  The problem will crop up on
+about the 3rd/4rth + methods.  What it does is simply skip the first ~1-5
+lines of the method, 'sending' them to the parser after the .read() method
+was resumed.  However Jeff has noticed it one just one method, when using
+/paste (/quote) in vt.  For instance, the sequencing:
+
+line:     @program ...
+parsing:  .read() is called, suspending task while next lines are read
+line:     arg ...
+parsing:  (never seen)
+line:     ...
+parsing:  (never seen)
+line:     code
+parsing:  added to list of read lines
+line:     code
+parsing:  added to list of read lines
+  [...]
+line:     .
+parsing:  .read() completes, resuming the task()
+parsing:  arg ... (appears here)
+parsing:  ...  (appears here)
+
+As an example, I inserted a debug into parse_line on $user.  The first bit
+represents whether or not the input parser is in the user's parser stack:
+
+-----------------
+Method @pasted in:
+
+@program .xxx
+  arg xxx;
+  
+  if ($xxx != this())
+      throw(~perm, "xxx");
+  sender().tell("xxx random lines");
+  sender().tell("xxx second random line");
+  sender().tell("xxx random statement");
+.
+
+-----------------
+Debug output:
+
+ debug: 0 @program .xxx
+-- Enter text for $brandon.xxx --
+ debug: 1   
+ debug: 1   if ($xxx != this())
+ debug: 1       throw(~perm, "xxx");
+ debug: 1   sender().tell("xxx random lines");
+ debug: 1   sender().tell("xxx second random line");
+ debug: 1   sender().tell("xxx random statement");
+ debug: 1 .
+Method compiled.
+ debug: 0   arg xxx;
+I don't understand "  arg xxx;".
+
+-----------------
+Anybody have an idea what could be going on?  The number of lines it holds
+off on parsing is nearly random.
+
+-Brandon (Lynx@the Cold Dark (telnet://recumbent.declab.usu.edu:1138))-
+</PRE>

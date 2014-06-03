@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [422] in "Coldmud discussion meeting"</TITLE>
+<H1>[422] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?422"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="419"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="420"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="421"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="423"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: server stuff</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Sep 21 01:40:07 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: deforest@netcom.com (Robert de Forest)
+Date: Tue, 20 Sep 1994 22:32:58 -0700 (PDT)
+Cc: stewarta@netcom.com, coldstuff@MIT.EDU
+In-Reply-To: &lt;199409202320.QAA11440@netcom6.netcom.com&gt; from "Robert de Forest" at Sep 20, 94 04:20:15 pm
+
+&gt; So uh.. yeah..I have objections. What problem are you gonna fix?
+
+The same problem that I've been complaining about ever since the first forays
+into scheduling tasks and such were attempted at tCD and that still hasn't been
+dealt with as part of the pause/resume additions.  There is no way to
+suspend/pause a task in such a way that it can be resumed immediately (the
+equivalent of suspend(0) in MOO).  The closest you can get is up to a 1-second
+delay between the pausing and resuming of the task because of the limitations
+of using the heartbeat timer to restart things.  This can slow things down a
+big lot if they're set up to pause at regular intervals to keep the rest of the
+system running decently while they do large operations (like @grepping the
+database).
+
+The other problem (which is more significant now that tasks can be paused) is
+that there's no way to generate new tasks (the equivalent of fork(0)) without
+getting new input or waiting for the next heartbeat to come along.
+
+I'm testing the changes I've made to the server now to deal with this.  I
+simply added a request_callback system builtin that causes the server to call
+$sys.callback at the next reasonable opportunity (generating a new task in the
+process).  $sys can thereby generate new tasks (queued to start immediately)
+and then call whatever it needs to when it gets the callback to either resume a
+paused task or fork off a new operation..
+
+-R
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+</PRE>

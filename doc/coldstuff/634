@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [634] in "Coldmud discussion meeting"</TITLE>
+<H1>[634] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?634"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="633"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="633"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="633"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="635"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="636"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="642"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: is the request line open?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan 16 19:37:02 1995
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: frankc@netcom.com (Frank Crowell)
+Date: Mon, 16 Jan 1995 16:34:42 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199501162230.OAA07221@netcom.netcom.com&gt; from "Frank Crowell" at Jan 16, 95 02:30:47 pm
+
+&gt; Just in case the request line is open and before I forget
+&gt; again, what about including SUFFIX,PREFIX?
+&gt; 
+&gt; Should these two commands be in the server or in the
+&gt; database(s)?  Or are they already in the server and
+&gt; I didn't look carefully enough.
+
+Good suggestion..  In my opinion this would be best handled, actually, by just
+binding pause() and suspend() to $sys.  Then programs would have to call a
+specific in-DB method to pause the task, and that method could do whatever it
+wanted in terms of prefix and suffix handling, or anything else people want to
+do..
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+                "In cyberspace, no one can hear you stream"
+</PRE>

@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1027] in "Coldmud discussion meeting"</TITLE>
+<H1>[1027] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1027"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1026"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1026"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1026"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1028"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] pre-compiled binaries available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jul 11 19:02:47 1996
+)</H3>
+<PRE>
+Date: Thu, 11 Jul 1996 16:40:47 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;Pine.LNX.3.91.960711163738.4258A-100000@duracef.shout.net&gt;
+
+[snip]
+&gt; any idea when the coldcore may be released for the engine? I 
+&gt; am wanting to start converting a MOO over to it.
+
+(Sorry for forwarding to a public list, I figured others would want to know).
+
+We are actually considering making a volatile release of the core, with 
+the idea that you do _not_ change any of the core objects, but you can 
+feel free to expand upon the core.  This way upgrading to the new core 
+will be as simple as:
+
+    coldcc -p -t coldcore.db
+
+ColdCC is getting a few more features, notably one which will mark 
+objects that may contain local variables (such as $sys), so that it will 
+go interactive on what to do (letting you make the decision).
+
+If nobody has a problem with this, I suspect we can see a core within a week.
+
+-Brandon Gillespie
+</PRE>

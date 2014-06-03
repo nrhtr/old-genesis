@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [371] in "Coldmud discussion meeting"</TITLE>
+<H1>[371] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?371"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="370"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="370"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="370"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="372"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="372"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="374"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Changes (0.10-4)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul 11 00:21:36 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: BRANDON@cc.usu.edu
+Date: Sun, 10 Jul 1994 21:16:42 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;01HEK09N914MCU5PG2@cc.usu.edu&gt; from "BRANDON@cc.usu.edu" at Jul 10, 94 09:21:04 pm
+
+&gt; set_name()    =&gt; set_objname()
+&gt; del_name()    =&gt; del_objname()
+&gt; get_name()    =&gt; get_objnum()
+
+Umm, I thought those were going to become set_dbref(), etc..  and why is
+get_name becoming get_objnum when all the others use "objname"?  Or is get_name
+really a different function than I'm assuming here and not related to the
+others?
+
+&gt; set_heartbeat_freq() =&gt; set_heartbeat()     (this is completely aesthetic)
+
+Cant' say I care much about this..  since it's never really seen, tho, why
+bother?  (no reason to potentially break things you don't have to..)
+
+&gt; db_top =&gt; max_objnum()                      (ditto)
+
+likewise, really.. but I guess this does make a little more sense (db_top could
+be more specific, I suppose)..
+
+&gt; has_ancestor() =&gt; remove  (we can just do 'if obj in (.ancestors())', although
+&gt;                            it isn't as fast).
+
+Ack.  no.  leave it in.  that's the kind of thing that bogs down MOO with laggy
+stuff unnecessarily (compiling a list then executing several more opcodes and
+searching through the whole list is much more laggy than just checking ancestry
+directly and I don't see any reason why it _should_ be removed, so don't.)
+
+&gt; dict_add_elem()
+&gt; dict_del_elem() =&gt; remove (since they are disappearing anyway)
+
+Fine by me.. never was really sure why these were builtins..
+
+Oh, BTW, anybody up for creating some better buffer-mungeing builtins?
+Presumably along the lines of some of the list builtins/constructs..
+
+-alex
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+</PRE>

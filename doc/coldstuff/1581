@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1581] in "Coldmud discussion meeting"</TITLE>
+<H1>[1581] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1581"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1580"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1582"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1582"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1588"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>A couple simple questions (hopefully)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 26 18:19:06 2000
+)</H3>
+<PRE>
+From: "Andy Croft" &lt;grimslayde@lonewolfe.net&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Fri, 26 May 2000 17:03:40 -0500
+Reply-To: coldstuff@cold.org
+
+Hey all,
+	I'm getting a handle on the Cold environment and I'm LOVING it. But despite
+my self-assumed leap in proficiency, I beseech thee, gurus of Cold, for your
+knowledge. My first question should be a simple one for you veterans:
+
+Can Cold handle the creation and deletion of objects on a grand scale?
+
+	To clarify, I'll have a $thing I've whipped up created every time a group
+of players enter combat that acts as a "referee". At the end of combat, the
+referee object is destroyed. Now, after a year of 10 to twenty players
+duking it out will Cold be able to handle it? Bear in mind I'm still new to
+a powerful OOP environment like Cold. Please save the diesel fuel and
+matches, I'm painfully aware of my incompetence with Cold. &lt;GRIN&gt;
+
+	My second question deals with the dictionary data type. I understand how to
+use functions to reference, index, add, and delete items from a dictionary.
+My second (stupid) question is this:
+
+Can the value of a dictionary item be edited?
+
+	To clarify, I'll have a series of "skill" objects that a player's character
+will reference in a dictionary variable to reflect what the character knows.
+The key would be the skill name and the value would be the skill level. Can
+I edit that value like I would in a list data type?
+
+Thanks for your time and patience, major props to all those who have helped
+me out so far!
+- Paidran
+
+</PRE>

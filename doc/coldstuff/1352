@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1352] in "Coldmud discussion meeting"</TITLE>
+<H1>[1352] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1352"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1351"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1353"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Generalizing $note's description</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 29 02:07:02 1997
+)</H3>
+<PRE>
+From: "Luther, Clay" &lt;clay@selsius.com&gt;
+To: "ColdStuff Mailing List (E-mail)" &lt;coldstuff@cold.org&gt;
+Date: Fri, 29 Aug 1997 00:57:14 -0500
+
+The $note.description is hard-coded with the word "note" (as in, There
+is writing on the note). Unfortunately, a $note is not always a "note"
+(it could be, for example, a scroll, a leaflet, whatever...
+
+Ideally, I would add a message to $note and evaluate it, but I haven't
+got a clue here.  So I repaired it with a little choice use of english:
+
+| @program $note.description() +access=pub
+|  arg flags;
+|  
+|  if (dict_contains(flags, 'nonote))
+|      return (&gt; pass(flags) &lt;);
+|  return (&gt; pass(flags) &lt;) + [$ctext_frob.new_with(["You see some
+writing on it which you may be |able to ",
+$cml_lib.format_invoke_tag(tostr(this()), "read", "read"), "..."])];
+|  
+| .
+
+I would gladly rewrite and post this using the message interface if
+someone could give me a quick tutorial.
+
+---
+Clay Luther
+clay@selsius.com
+
+
+</PRE>

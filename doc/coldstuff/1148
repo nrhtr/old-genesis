@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1148] in "Coldmud discussion meeting"</TITLE>
+<H1>[1148] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1148"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1141"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1147"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1147"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1149"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1149"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1149"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] scatter/optional assignments - request for discussion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 29 19:34:59 1996
+)</H3>
+<PRE>
+Date: Fri, 29 Nov 1996 17:30:30 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+cc: Miroslav.Silovic@public.srce.hr, coldstuff@cold.org
+In-Reply-To: &lt;199611292357.XAA00906@aaaaaaaa.demon.co.uk&gt;
+
+&gt; Sure.  I don't care about the syntax and ?= is better than unless,
+&gt; and I want' suggesting that a different syntax be used.  I wanted
+&gt; to know if the 'if' test implicit in ?= was on the existing value
+&gt; of the variable or if it was a test for wether or not a value had
+&gt; been assigned to the variable.
+&gt; 
+&gt; It may be the case that it really doesn't matter which property of
+&gt; a variable you test (its value, or its settedness).  In which case
+&gt; fine.
+
+Ahhh--it is a boolean test on the value of the data, as even 'unset'
+variables are technically set to zero--there is no system in the driver
+for determining unset vs set (everything begins as '0').
+
+So:
+
+  foo = "";
+
+  foo ?= "bar";
+
+Would result in foo being assigned "bar".
+
+</PRE>

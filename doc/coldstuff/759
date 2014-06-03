@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [759] in "Coldmud discussion meeting"</TITLE>
+<H1>[759] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?759"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="758"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="758"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="758"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="760"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: heh (Re: tCD and ColdX mailing lists)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jul 30 19:18:18 1995
+)</H3>
+<PRE>
+Date: Sun, 30 Jul 1995 19:13:57 -0400 (EDT)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: 869683 Gillespie Brandon James &lt;brandon@paradise.declab.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9507302133.AA01166@paradise.declab.usu.edu&gt;
+
+
+
+On Sun, 30 Jul 1995, 869683 Gillespie Brandon James wrote:
+
+&gt; Actually, we could just not allow intrusive file openings like with
+&gt; connections, but let connections go both ways (trying to open an intrusive
+&gt; file would throw an error).
+
+Might work.
+
+&gt; &lt; Hm.  The answer is: neither.  Files are more complex than net 
+&gt; &lt; connections, you'd want to be able to seek around in them and the like.  
+&gt; 
+&gt; But do you really?  I can see file read/write being used somewhat, but
+&gt; file seeking and other higher level ops just wouldn't.  Cold is a higher
+&gt; level language.  I feel that type of control is beyond it's intended
+&gt; scope...
+
+I do really.  Yes, Cold is high-level, but any language that deals 
+directly with files AT ALL will want to do seeking.  Imagine dealing with 
+big Acrobat files without seeks ...
+
+Files without seeking are like ... like tape drives or something.  Ew.
+
+--
+James "seek and ye shall EOF" Deikun
+</PRE>

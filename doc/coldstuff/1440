@@ -1,0 +1,66 @@
+<HEAD><TITLE>discuss@charon: [1440] in "Coldmud discussion meeting"</TITLE>
+<H1>[1440] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1440"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1439"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1439"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1439"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1441"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: First pass (ugly) script for MOO -&gt; Cold</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 20 02:01:13 1998
+)</H3>
+<PRE>
+From: "Steven J. Owens" &lt;puff@netcom.com&gt;
+To: jonathan@nrgup.com (Jonathan Bradshaw)
+Date: Thu, 19 Nov 1998 22:55:57 -0800 (PST)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;19981119200346.A21383@NrgUp.Com&gt; from "Jonathan Bradshaw" at Nov 19, 98 08:03:46 pm
+
+Jonathan Bradshaw writes:
+
+&gt; I am trying to move from a MOO to Cold. The biggest hurdle is moving all the
+&gt; objects such as users, rooms, exits and $things to Cold. Unfortunately I know
+&gt; about as much about COLD and ColdCore as I did about LambdaMOO when I first
+&gt; started (about zilch).
+&gt; 
+&gt; I decided I didn't want to do this one object at a time considering the large
+&gt; number I had so I hacked up some scripts to help. They are UGLY. Anyone who
+&gt; knows Cold will probably cringe when they see what I did but it works for &gt;
+&gt; 90% of the objects and I can live with fixing up the rest.
+&gt; 
+&gt; I give you the scripts I used to do with as you wish. I'd love for someone
+&gt; with either better MOO or COLD knowledge to refine them. In Tinyfugue I start
+&gt; a log, run the program and then use /quote to send them to the Cold system.
+
+     Several years ago I had a project called MMCP - Moo-to-Moo-CoPy.
+It assumed some other object took care of networking issues, and
+essentially would reduce an object to a list-of-lists structure, pass
+that to another object to transmit to the destination MOO, then
+instantiate it there.  Much cleaner and easier than @dump.
+
+     I got it functioning but I never managed to add the layers of
+security and reliability that I wanted to - for example doing some
+sort of CRC on the packet on either end to make sure it came through
+allright, handling multiple-object suites and tokenizing object #s,
+checking for security risks and resetting perms until the object has
+been audited by somebody, etc.  I also wanted to rewrite the whole
+thing to make it more modular, accessible and understandable, so it
+could be more than just a one-purpose utility, so the components
+could be reused.  At that point in my life I was going through a lot
+of job stress and the MMCP, like other things, fell by the wayside.
+
+     If anybody wants to adopt the code, I've still got copies of it
+around on various MOOs.  Somebody who knows the Cold end of things
+could maybe build the other half and make a bitchin' MOO-to-Cold
+porting utility.
+
+Steven J. Owens
+puff@netcom.com
+
+
+</PRE>

@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [1045] in "Coldmud discussion meeting"</TITLE>
+<H1>[1045] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1045"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1042"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1044"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1044"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1046"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] An alternative to common crypt() handling.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jul 24 18:42:55 1996
+)</H3>
+<PRE>
+Date: Wed, 24 Jul 1996 15:13:47 -0700
+From: "Jeffrey P. Kesselman" &lt;jeffk@tenetwork.com&gt;
+Reply-To: jeffk@tenetwork.com
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;, coldstuff@cold.org
+
+Brandon Gillespie wrote:
+&gt; 
+&gt; On Wed, 24 Jul 1996, Brad Roberts wrote:
+&gt; &gt; All well and good.. but how does this fix the cross platform
+&gt; &gt; transportability  of the still encrypted passwords?
+&gt; 
+&gt; It doesnt, I just came up with this while thinking about crypt() in
+
+I thought it did, actually.
+
+If the MUD driver (Genesis) itself knows that a peice of data is 
+"encrypted" and hides it from anyone with out the proper password, we do 
+you even NEED an encryption mechanism?  If the data is unattainable, its 
+form is irrelevent.
+
+JK
+</PRE>

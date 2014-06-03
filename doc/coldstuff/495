@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [495] in "Coldmud discussion meeting"</TITLE>
+<H1>[495] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?495"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="494"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="496"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="496"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="505"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>driver database dumping</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct 31 18:42:53 1994
+)</H3>
+<PRE>
+From: brandon@petersboro.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Mon, 31 Oct 94 16:36:05 -0700
+
+
+The more I think about it, the more I believe that the driver should
+dump object's with their dbref rather than objnum, _if one is assigned_.
+
+This would do a few things:
+
+    a: would make going back to a base level 'core' much easier.
+    b: would give an easy means to reset object number counters in an
+       existing db (TCD's is up to ~8000, nothing high, but still high
+       nonetheless, considering there are ~200 actual objects).
+
+I could think up more reasons, but my head hurts.  What is the general
+consensus upon this?
+
+-Brandon
+
+(you would still be able to get the objnum from the 'name dbref objnum'
+line, so if you wanted to reset you would go and renumber those lines only).
+</PRE>

@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [857] in "Coldmud discussion meeting"</TITLE>
+<H1>[857] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?857"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="856"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="858"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Method decompiler bug in 0.2-10</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec 15 11:12:22 1995
+)</H3>
+<PRE>
+Date: Fri, 15 Dec 1995 16:20:49 +0100
+From: silovic@phy.hr (Miroslav Silovic)
+To: coldstuff@tombstone.sunrem.com
+
+
+Sorry if you got this twice, I really hope my prev letter was killed.
+OK, there's a problem with decompiling chained indices. Here's an
+example:
+
+&gt;@program .foo
+-- Programming $miro.foo() --
+&gt;var x,y;
+&gt;x=(y=x[1][1])[1];
+&gt;.
+Method $miro.foo() compiled
+&gt;@list .foo
+@program $miro.foo +public
+  var x, y;
+  
+  x = y = x[1][1][1];
+  
+  // $#Edited: 15 Dec 95 16:18 Miro ($miro)
+
+
+The parentheses about y=x[1][1] are removed; this code doesn't do the same
+thing.
+</PRE>

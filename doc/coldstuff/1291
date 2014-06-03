@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [1291] in "Coldmud discussion meeting"</TITLE>
+<H1>[1291] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1291"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1290"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1292"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] calldepth.. bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May  5 22:34:13 1997
+)</H3>
+<PRE>
+Date: Mon, 5 May 1997 20:31:27 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+Actually, its not forked methods..  The bug lies in the implementation of
+pause() (which forked methods essentially do).  When a method is paused()
+the frame_depth isn't included in the pause, and the next method to be
+executed (or resumed, which is where the problem arises) takes on whatever
+the call depth from the previous task was... Basically... (getting
+technical here for my own sake, so I don't forget) vm_current() needs to
+record frame_depth and restore_vm needs to restore it..
+
+-Brandon Gillespie
+
+</PRE>

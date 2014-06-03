@@ -1,0 +1,194 @@
+<HEAD><TITLE>discuss@charon: [539] in "Coldmud discussion meeting"</TITLE>
+<H1>[539] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?539"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="536"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="538"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="540"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="540"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 00:54:30 1994
+)</H3>
+<PRE>
+Date: Sun, 6 Nov 1994 00:53:03 -0500 (EST)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+Reply-To: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: Alex Stewart &lt;riche@crl.com&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199411052222.AA06825@crl4.crl.com&gt;
+
+
+
+On Sat, 5 Nov 1994, Alex Stewart wrote:
+
+&gt; Well from the DB end, all it involves is calling (for example) $sys.pause()
+&gt; instead of using the builtin pause(), and having $sys.pause request_callback(),
+&gt; save the task_id, and suspend().  Then have $sys.callback check for pending
+&gt; task_ids to be resumed (of which the aforementioned task_id would be one) and
+&gt; resume() them.
+
+Hm.  Seems like it would work fine.  Essentially it seems to involve moving
+task scheduling into the DB, other than for input tasks.  It doesn't even
+seem to be complicated enough that it'd spam the server.  If there turns
+out to be one or two things you can do with it that you can't do otherwise,
+that could possibly be good for anything to anyone, I'll be all for it.
+
+&gt; I'm not talking about terminology.  That's trivial.  I'm talking about method
+&gt; naming, consistent call syntaxes, generic I/O builtins, etc, etc.  For
+&gt; starters, come up with a good way to make process-pipe I/O and network
+&gt; conneciton I/O work through the same object interface while keeping all the
+&gt; useful aspects of the two (such as having two standard receive paths (stdout
+&gt; and stderr) for a conneciton to another unix process) and keeping the interface
+&gt; consistent (such as making the args to .connection_opened consistent across all
+&gt; types of connections).
+
+You have to start with terminology.  Method naming seemed fine as it was.
+The way to redo the args seemed somewhat obvious to me.  Basically, just
+pass in the connection info to connection_opened etc, pass a port and
+address to your 'open an outbound connection' method, pass a port and
+object to bind(), and so on.
+
+Actually correct piping to *nix processes is one of the harder things
+you can do this way.  *nix doesn't USE one connection, it uses three
+half-connections.  I'd say either figure out a way of using half-
+connections, or combine stdin and stdout into one connection, and
+make stderr separate (which is what you've suggested).
+
+&gt; These are both examples of why I'm now thinking that this isn't such a great
+&gt; goal, because it would be much more flexible and easier to work with to make
+&gt; the interface between the server and the DB specific to the type of connection,
+&gt; and simply leave it up to the DB to genericize things if it wants to in
+&gt; whatever way is most appropriate to the tasks it wants to accomplish, instead
+&gt; of forcing a particular set of compromises on it.  I.e. if you want $connection
+&gt; to work for both files and net connections, then make $connection have both
+&gt; .connection_* methods and .pipe_* methods, and let it do its own
+&gt; amalgomation/compromising into the common interface it presents to other
+&gt; objects in the DB (which is the only way the other objects should be accessing
+&gt; these things anyway, so they won't be able to tell the difference).
+
+Well, this is one way to do it; I'm not entirely certain this makes things
+more flexible, though.  A unified interface would make it easier to add
+new things of this sort to the server, since you could just use the same
+old interface.
+
+&gt; Well, as I said, it's definitely a step backwards.  Once again, you're
+&gt; proposing to require something that's currently optional, with no obvious
+&gt; advantage to doing so (unless you consider limiting flexibility an advantage..
+&gt; I don't)
+
+The advantage to doing so is I think most people would want their task to
+know about the error rather than relying on the connection object to
+report an error.  This would require somewhat complex intertask
+communication code in the most common case.  On the other hand, using,
+say, fork:
+
+fork(0) {
+  catch ~timeout, ~connection_refused {
+    connect(args);
+  } handler {
+    connection_object.connection_failed(failed_args);
+  }
+}
+
+would do essentially the same thing as your idea would do, so the
+emulation is mutual.
+
+Probably the best idea, though, would be to use an arg to tell whether
+to wait or not.  Or, better yet, create a new statement:
+
+  nowait &lt;statement&gt;
+
+which would execute a statement, and if the task is paused/suspended
+would fork the remainder off and continue with the original task.
+nowait would return nothing of consequence.
+
+This could conceivably be useful for a lot of other things, would
+eliminate the minute pause which is all that distinguishes the
+above example of emulation from the real thing, and in general is
+an example of sacrificing something useful and flexible for two
+things, one useful, and one useful and flexible, that together can
+accomplish more and in more style than the original idea.
+
+&gt; I wouldn't call the difference between a "&gt;&amp;" and a "2&gt;" a significantly
+&gt; different command line.  Anyway, if your interface to the MOO is so different
+
+It's significant enough to require a different restart script.  If you
+switch back and forth between public and private running of your MOO
+(for example, you're developing a core alone with slow net through SLIP,
+but you occasionally want help/reviews/testing), it could get somewhat
+annoying.  This wouldn't be a problem, only I don't really see what
+would separate 'errors' from the server log anyway, and therefore fail
+to see the point of this use of stdout.
+
+&gt; Only if you're stupid enough to put it on things that need to be maintained
+&gt; regularly.
+
+You have somewhat of a point here, but there is the case of a newly-
+discovered security hole that everyone and eir mother can take
+advantage of until the archwiz can get back from vacation to change
+the relevant security-critical verb.
+
+&gt; &gt; it would destroy the model of the DB as a more-or-less self-contained system,
+&gt; 
+&gt; How exactly do you come to this conclusion?  I don't see how this makes the DB
+&gt; any less self-contained than it was before.  It simply restricts the published
+&gt; interface, as it were (do private/local methods make an object less
+&gt; self-contained?).
+
+Objects are still allowed to change the private methods defined on them
+from their own methods.  The DB would not be able to change certain
+verbs from within the itself.
+
+&gt; &gt; and it could easily be implemented in-DB with protection for compile() and
+&gt; &gt; the like.
+&gt; 
+&gt; Easily, but not as securely, as has been stated several times.
+
+Just as securely, as I have stated several times.  Am I going to have to
+spam the list with more example code?
+
+&gt; What really gets me when reading all your arguments against this thing more
+&gt; than anything else is that I really can't understand why you're so strongly
+&gt; opposed to something that is completely optional and adds flexibilty to the
+&gt; system, solely, as best I can tell, on the grounds that you wouldn't use it.
+&gt; SO DON'T USE IT.  sheesh.
+
+I oppose it on the grounds that it encourages the wrong way of looking at
+security.  I wouldn't use it, but its use in making cores might make their
+security or usability suffer, and good cores are hard enough to make with
+the best of tools.
+
+&gt; Actually, reading over this whole message, it seems that most of your arguments
+&gt; on a lot of things are that people shouldn't be allowed to do things any
+&gt; differently than you want to do them, so there shouldn't be any server support
+&gt; for anything that you wouldn't use.  This is just a thoroughly stupid attitude,
+&gt; in my opinion.
+
+Seems to me a perfect example of the Netscape Fallacy.
+
+What I'm opposed to are systems that make weird and obscure things easy
+and useful and desirable things difficult and complex without adequate
+returns via making desirable things that were very hard or even
+impossible before easier.  And yes this is based on subjective criteria.
+True objectivity is acheivable only by objects, which I am not one of.
+I try to take into account to the best of my ability things that other
+people want to do.  If you think there's something useful about
+something I'm opposing that I've failed to notice, please do explain it
+to me.  I am capable of listening.  It helps if the thing is of some
+_practical_ use, though, rather than some theoretical entity like
+'asynchronicity', which I agree is a nice thing for an OS, but might
+not necessarily be the best thing for the more restricted field of
+application of a VES.
+
+Greg states very eloquently the same type of attitude when he recently 
+opposed scheme-style call/cc, if you'll remember.  "C-- was intended to 
+be practical.  Let's not go off the theoretical deep end here."
+
+--
+James Deikun (James@JHM, James &amp; Splat@BlueMOOn)
+</PRE>

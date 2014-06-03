@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [1073] in "Coldmud discussion meeting"</TITLE>
+<H1>[1073] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1073"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1054"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1072"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1072"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1074"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Binding to Multiple IP Addresses</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 21 16:43:53 1996
+)</H3>
+<PRE>
+Date: Wed, 21 Aug 1996 14:29:59 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Paul Ezra Kautz &lt;pek@ralph.rmwc.edu&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;m0ulO1S-000AC9C@ile-de-canne.rmwc.edu&gt;
+
+&gt; &gt; Now, the arguments are:
+&gt; &gt; 
+&gt; &gt;     arg client_host, server_host, socket;
+&gt; [etc]
+&gt; &gt; (the socket is rather irrelevant, and should actually be removed)
+&gt; 
+&gt; I don't think so.  The client port is necessary for ident.
+
+Yeah, I wasnt considering ident; the socket is staying.
+</PRE>

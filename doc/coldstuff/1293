@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [1293] in "Coldmud discussion meeting"</TITLE>
+<H1>[1293] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1293"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1292"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1294"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1294"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1294"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] How to become $player</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May  8 23:55:13 1997
+)</H3>
+<PRE>
+Date: Thu, 08 May 1997 20:55:27 -0700
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+Last night I was playing around with $player and $storyteller.
+I didn't know the right way for a user to become $play so
+I used @chparent and then I was able to @sheet and see the
+stats.  I then used a $admin char to set one of the 
+the attributes, checked it with the $player char and everything
+seemed fine.
+
+..ok here's the short version...
+at some point i realized that the $player couldn't see the room
+or do look or even @who.  I also tried with the $storyteller.
+I even destroyed the test char and tried again.  When I
+@chparent to $user, everything was fine again.
+
+First I thought $player was working fine until after I changed
+the stat.  I could have been wrong because I could never
+get the $player to work right again, even on another server.
+
+What do I need to do to make $player work right?  Same
+would be true for $storyteller.  I realize that these objects
+may not be complete, but since they inherent $user they should
+be okay to play with.  Am I wrong?
+
+Frank
+</PRE>

@@ -1,0 +1,129 @@
+<HEAD><TITLE>discuss@charon: [621] in "Coldmud discussion meeting"</TITLE>
+<H1>[621] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?621"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="620"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="622"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="622"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="623"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Timer object</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec 17 23:02:08 1994
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+Date: Sat, 17 Dec 1994 20:01:26 -0800 (PST)
+
+
+ I've written a first pass at a simpel timer object.  The idea was a 
+ minimal suite of functionality to allow 'system independance' of functions
+ that need a timed call back.  
+ 
+ Its small and should be pretty self-explanatory.  It supports two kinds 
+ of call backs, a one-shot (called an alarm) and a periodic (called a clock.)
+ 
+ How close the timing is to the timign asked for is a function of the 
+ period of the heartbeat.  You need to put a call to $timer.pulse() in the 
+ system heartbeat function.
+
+ Its quite possible that there are more efficient ways to do what I
+ am doing, particularly in the resetting of a clock callback.  If someone
+ can suggest better code, Ild be more then happy to use it.
+
+ All comments are welcome.
+
+ Jeff Kesselman
+ ---------------------------------------------------------------------
+ // OBJECT: timer
+ // PURPOSE:  Provides 2 kinds of time based callbacks.
+ //		alarms: an alarm provides a single call back in n seconds
+ //              clocks: a clock provides a repeating call back every n seconds
+ // AUTHOR:  Jeffrey P. Kesselman
+ 
+ 
+ parent $utilities
+ object $timer
+ 
+ var $root child_index 0
+ var $root owners [$timer]
+ var $root fertile 0
+ var $root inited 1
+ var $root owned [$timer]
+ var $root manager $timer
+ var $root writable [$timer]
+ var $root readable ['parameters, 'methods, 'code]
+ var $root dbref 'timer
+ var $timer timerCBs [] // [ [time,obj,function,args,reset_value,id]]
+ 
+ 
+ method init_timer
+ .
+ 
+ method pulse
+ 	var cb,newlist, curr_time, temp;
+ 
+ 	curr_time = time();	
+ 	newlist = timerCBs;
+ 	for cb in (timerCBs){
+ 	  if ( curr_time &gt; cb[1]){
+ 		cb[2].(cb[3])(@cb[4]);
+ 	        temp = cb;
+ 		newlist = setremove(newlist,cb);
+ 		if (temp[5] != 0){
+ 		   newlist = [@newlist,[temp[5]+curr_time,temp[2],temp[3],
+ 			      temp[4],temp[5],temp[6]]];
+ 		}
+ 	  } 
+ 	}
+         timerCBs = newlist;
+ .
+ 
+ method add_alarm
+ 	arg obj, func, args, seconds,id;	
+ 
+ 	if (type(seconds) != 'integer)
+ 	   throw(~type, "Passed seconds not an integer");
+ 	if (type(args) != 'list)
+ 	   throw(~type, "Passed args not a list");
+ 	if (type(obj) != 'dbref)
+ 	   throw(~type, "Passed object not a dbref.");
+ 	if (type(func) != 'symbol)
+ 	   throw(~type, "Passed functio not a symbol.");
+ 	timerCBs = [@timerCBs,[time()+seconds,obj,func,args,0,id]]; 
+ .
+ 
+ method add_clock
+ 	arg obj, func, args, seconds, id;	
+ 
+ 	if (type(seconds) != 'integer)
+ 	   throw(~type, "Passed seconds not an integer");
+ 	if (type(args) != 'list)
+ 	   throw(~type, "Passed args not a list");
+ 	if (type(obj) != 'dbref)
+ 	   throw(~type, "Passed object not a dbref.");
+ 	if (type(func) != 'symbol){
+ 	   (&gt; $user_catseye.tell("func type = "+tostr(type(func))) &lt;);
+ 	   throw(~type, "Passed function not a symbol.");
+         }
+ 	timerCBs = [@timerCBs,[time()+seconds,obj,func,args,seconds,id]]; 
+ .
+ 
+ method remove
+ 	arg id;
+ 	var temp;
+ 
+ 	for temp in (timerCBs)
+ 		if (temp[6] == id) {
+ 		   timerCBs = setremove(timerCBs,temp);
+ 		   return(1);
+ 		}
+ 	return(0);
+ .
+ 
+
+</PRE>

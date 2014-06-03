@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [1615] in "Coldmud discussion meeting"</TITLE>
+<H1>[1615] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1615"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1614"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1616"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1616"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1617"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Comprehensive fix list?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 18 22:48:56 2000
+)</H3>
+<PRE>
+Date: Fri, 18 Aug 2000 19:40:12 -0700
+From: "Kris Anderson" &lt;ohshutup@zdnetonebox.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+
+
+-- 
+Kris Anderson
+ohshutup@zdnetonebox.com - email
+(408) 514-2611 ext. 1178 - voicemail/fax
+
+With all the little db fixes in code is there a comprehensive list of
+changes that should be made to the databases that we are using?
+
+I'm using the following -
+Driver: Genesis 1.1.7-STABLE
+Core: ColdCore 3.0.1999-08-28
+
+I'm asking because I set text/ansi in context and some of the stuff ends
+up looking like this -
+
+
+        \A1;4mFormatters\A0m             About CML Formatters
+        \A1;4mGenerators\A0m             About CML Generators
+        \A1;4mCustomizing\A0m            Customizing Ctext
+
+And I think having to read every single message in the mailer is just
+a bit much.
+
+
+___________________________________________________________________
+To get your own FREE ZDNet Onebox - FREE voicemail, email, and fax,
+all in one place - sign up today at http://www.zdnetonebox.com
+
+</PRE>

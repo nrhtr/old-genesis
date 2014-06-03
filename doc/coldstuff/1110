@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [1110] in "Coldmud discussion meeting"</TITLE>
+<H1>[1110] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1110"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1109"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1111"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] ColdCore alpha 4 available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Oct 26 17:22:35 1996
+)</H3>
+<PRE>
+Date: Sat, 26 Oct 1996 15:07:52 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: coldstuff@cold.org
+
+Us this with Genesis 1.0 patch 16.  This includes the standard cleanup as
+well as a few bugs with ctext that cropped up in alpha 3--specifically in
+regard to building.
+
+Available at:
+
+    ftp://ftp.cold.org/cold/dbs/ColdCore-3.0a4.tar.gz
+
+-Brandon Gillespie
+
+</PRE>

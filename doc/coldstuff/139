@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [139] in "Coldmud discussion meeting"</TITLE>
+<H1>[139] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?139"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="138"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="140"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>connections</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan 24 13:44:42 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Mon, 24 Jan 1994 10:36:51 -0800
+From: Gregory Blake &lt;gblake@mis.nu.edu&gt;
+
+
+Hmm... how is coldMUD handling multiple connections right now.
+
+I had the idea at one point of keeping the connection object
+around and having it pass everything to the player object &lt;just
+so that you could keep track of where people are connected in
+from&gt;.
+
+Or do people think it might be better to just let someone only
+log in once at a time...
+
+&lt;looking for comments&gt;
+
+snooze
+ps. greg, can you change the email address for me on this list to
+gblake@mis.nu.edu if it isn't already
+
+
+--
+==============================================================================
+Gregory Blake                       |Snooze@TinyMUSH,TooMUSH, SpaceMadness,
+Network Admin - National University |LambdaMOO, Fantasia, CaveMUCK, DragonMUD
+work: (619)563-2595                 |Email - gblake@mis.nu.edu
+home: (619)528-4531                 |
+==============================================================================
+home addr: 4785 Utah Street, San Diego, CA  92116
+==============================================================================
+</PRE>

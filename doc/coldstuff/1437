@@ -1,0 +1,79 @@
+<HEAD><TITLE>discuss@charon: [1437] in "Coldmud discussion meeting"</TITLE>
+<H1>[1437] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1437"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1432"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1436"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1436"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1438"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1438"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1438"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ColdCore Roadmap</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 11 05:07:31 1998
+)</H3>
+<PRE>
+Date: Wed, 11 Nov 1998 03:00:54 -0700
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;m0zdScP-000VYaC@mail.brick.net&gt;; from Chuck Shepherd on Tue, Nov 10, 1998 at 11:15:01PM -0600
+
+
+--Nq2Wo0NMKNjxTN9z
+Content-Type: text/plain; charset=us-ascii
+
+Thanks for all of the great comments people, it helps.
+
+On Tue, Nov 10, 1998 at 11:15:01PM -0600, Chuck Shepherd wrote:
+&gt; The only way to do this was to set core writeable.
+
+Actually, I should clarify this, because I've received a lot of flack
+about that setting :)
+
+Basically, I did not add it because I expected people to run with a
+non writable core, but because I wanted administrators to conciously
+realize the results of their actions--so that later when they try an
+upgrade and it will conflict with changes, then they are not
+surprised.
+
+&gt; One idea might be to have Core "packages".
+
+I've considered this off and on for a long time (almost since day
+one), and recently it's moved up a few notches on my importance list.
+The primary issue with modules I have is I'm not sure how to define
+them.  That is, you have several different issues in how to specify
+what falls within a single module, and these can vary in what modules
+exist.  For instance, is the primary criteria subsystem?  Or perhaps
+functionality?  Or even simply features?  Consider networking, if its
+just subsystems, then the module is probably $network and its
+children... but if its functionality, you should probably include
+every object which uses the network API... but that is unrealistic...
+features is probably the most realistic, but also the most work (as
+you have more packages).
+
+But the core reason they havn't been implemented yet is because most
+systems are rather inter-dependant.  If a change is made to the parser
+it may break commands--so while you could just upgrade the parser
+module, all commands would then be broken--would you have to go out
+and grab all of the varied command modules as well?  Then you'd also
+have all of your custom commands too...  Are the benefits of all the
+work to create this worth the pay-off?
+
+-Brandon
+
+--Nq2Wo0NMKNjxTN9z
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: Hzkobt0CvclamSoIIH7BQU2BvcJnm6zV
+
+iQA/AwUBNklgVUv5XoQiMgn6EQKOowCfX20jg3modOtV33IpPLKhujBJW04AoLq7
+yGOgPie2mFfkhjwfjpuF/LZr
+=2dPE
+-----END PGP SIGNATURE-----
+
+--Nq2Wo0NMKNjxTN9z--
+</PRE>

@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [847] in "Coldmud discussion meeting"</TITLE>
+<H1>[847] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?847"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="846"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="846"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="846"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="848"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="848"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="849"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Compile and Decompile</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 30 20:11:43 1995
+)</H3>
+<PRE>
+Date: Thu, 30 Nov 1995 17:33:39 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;199511302320.PAA11945@asparagus.tenetwork.com&gt;
+
+On Thu, 30 Nov 1995, Jeff Kesselman wrote:
+&gt; Brandon in his last notes says something about removing the 
+&gt; ColdCC functionality from genesis.  I just wanted to make sure that 
+&gt; the object manipulation funtions, including compile and decompile, 
+&gt; would remain.  I need them for my project and it woudl in general be 
+&gt; very difficult to implement most classic forms of Muds without them.
+
+There is no compile_object() or decompile_object() function available in 
+ColdC _now_, so I would not be removing that.  I already have removed the 
+ability to automatically compile from a textdb to a binarydb from the 
+interpreter to an external program.  This removes a bit of cruft from the 
+interpreter and also gives the ability to expand quite a bit on what is 
+acceptable in the textdb format (such as preprocessing and broken lines,
+read notes-format in the latest release).
+
+However, as to your question, the reason I havn't considered it a problem 
+is because you have the ability to fully decompile a binary db, in-db.  
+Infact, ColdCore includes some routines for decompiling the db (none for 
+compiling though).
+
+When file operations are fully functional, I will hack up a db object 
+which will compile by object with most of the functionality of coldcc 
+(it'll understand all).
+
+-Brandon Gillespie-
+</PRE>

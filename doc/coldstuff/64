@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [64] in "Coldmud discussion meeting"</TITLE>
+<H1>[64] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?64"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="63"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="65"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>0.8.1 release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov 21 02:10:35 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Sun, 21 Nov 1993 02:05:28 -0500
+To: coldstuff@MIT.EDU
+
+
+I've released Coldmud 0.8.1 to ftp.ccs.neu.ed, in
+pub/mud/drivers/coldmud, as coldmud-0.8.1.tar.gz.  The documentation
+has not changed.
+
+The frob-reading bug is fixed, along with several problems with
+administrative functions leaking stack frames and thus not working
+inside loops.  Please tell me about any problems you have with this
+release.
+
+Currently scheduled for 0.9:
+
+	* Hostname passed to 'connect' method
+	* Possibly some modification to how connect() works to allow
+	  for task recognition.  (I have to add task IDs at some point
+	  anyway, may as well do it before 1.0.)
+	* match_regexp()
+
+Although I'm not terribly satisfied with regexps for pattern-matching
+(as Quinn pointed out, it's missing certain things like "any left
+subsequence of a seequence of characters", so matching abbreviations
+is hard), regexps are popular and well-known, so I think I will go
+with them rather than complicate the match_pattern() template syntax
+more.
+
+--GBH
+
+</PRE>

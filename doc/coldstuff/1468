@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1468] in "Coldmud discussion meeting"</TITLE>
+<H1>[1468] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1468"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1467"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1467"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1467"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1469"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: driver.log not y2k-compliant</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 10 15:56:26 1999
+)</H3>
+<PRE>
+From: "Bruce Mitchener, Jr." &lt;bruce@puremagic.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Wed, 10 Nov 1999 12:37:20 -0800
+Reply-To: coldstuff@cold.org
+
+&gt;i overheard somebody on tCD (Bruce?) say how y2k was on the agenda for
+&gt;some meeting today, and thought of the driver.log..
+
+
+(this was a meeting for me at work)
+
+&gt;an excerpt from my (tiny) core's driver.log:
+&gt;[10 Nov 99 13:03] Caught signal 15: TERM
+&gt;
+&gt;yes, i shut it down with kill, but still, two digit years?
+&gt;
+&gt;i'd make a patch for this, but i'm not sure what to make it do..
+&gt;personally i'd like ctime() format, but there are other perfectly good,
+&gt;valid formats..
+
+
+Not changing formats .. the easy fix is to make some changes to timestamp()
+in util.c:
+
+319     sprintf(s, "%d %3s %4d %d:%.2d",
+320             tms-&gt;tm_mday,
+321             months[tms-&gt;tm_mon],
+322             tms-&gt;tm_year + 1900,
+323             tms-&gt;tm_hour,
+324             tms-&gt;tm_min);
+
+That replacement for lines 319 through 324 would fix the problem.  The only
+user of timestamp() in the source is the stuff in log.c (which would make it
+a nice candidate for moving out of util.c and into log.c).
+
+ - Bruce
+
+
+</PRE>

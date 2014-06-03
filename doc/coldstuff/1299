@@ -1,0 +1,59 @@
+<HEAD><TITLE>discuss@charon: [1299] in "Coldmud discussion meeting"</TITLE>
+<H1>[1299] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1299"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1298"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1298"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1298"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1300"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1300"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1301"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] prefix/suffix for Cold</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun  4 03:25:10 1997
+)</H3>
+<PRE>
+From: Andrew Wilson &lt;a.wilson@elsevier.co.uk&gt;
+To: frankc@maddog.com (Frank Crowell)
+Date: Wed, 4 Jun 1997 08:21:51 +0100 (BST)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;33950D8D.2A69113A@maddog.com&gt; from "Frank Crowell" at Jun 3, 97 11:39:09 pm
+
+XMCP is available for COLD and like MCP is a simple out of band
+protocol with proven abilities.
+
+More on:
+
+    http://www.cm.cf.ac.uk/User/Andrew.Wilson/tkMOO-light/newstuff.html
+
+Cheers,
+Ay.
+
+Andrew.Wilson@cm.cs.ac.uk          http://www.cs.cf.ac.uk/User/Andrew.Wilson/
+
+Frank Crowell:
+&gt; 
+&gt; I finally decided to start playing around with my external bots again. 
+&gt; The C language version is a chopped up version of Mauldin's Colins and I
+&gt; had to noop all the prefix/suffix stuff so that the bot could operate on
+&gt; the Cold world.  The purpose of the prefix/suffix stuff is to say "I'm
+&gt; done" when certain time-consuming commands are done.
+&gt; 
+&gt; I can play around without the prefix/suffix feature, but I don't think I
+&gt; can get full use of the bots without the feature.  I believe that
+&gt; Brandon sometime ago mentioned that I could use VEIL to do the same
+&gt; thing.
+&gt; 
+&gt; Is there an easy way to add the prefix/suffix or to at least fake it?
+&gt; 
+&gt; 
+&gt; Frank
+&gt; 
+&gt; 
+&gt; --
+&gt; _______________________________________
+&gt; maddog's studio http://www.maddog.com/
+&gt; Frank Crowell frankc@maddog.com
+</PRE>

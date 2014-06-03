@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [586] in "Coldmud discussion meeting"</TITLE>
+<H1>[586] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?586"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="585"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="587"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Addition to match_template()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 16 19:42:40 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Wed, 16 Nov 94 17:39:48 -0700
+
+This just hit me, dunno how easy it would be to implement (or if it would be
+worth it), but it would be rather nice to have a [] ability in a template
+for match_template(), which would basically say "this can exist, but it does
+not have to, and if it doesn't, put it in (which is the hard part)", such as:
+
+    "@descend?ants [from] * [to|down?to] *"
+
+Where matches could be:
+
+    "@descend $object $object"
+    =&gt; ["@descend", "from", "$object", "to", "$object"]
+
+    "@descendants from $object $object"
+    =&gt; ["@descendants", "from", "$object", "to", "$object"]
+
+    "@descendants from $object downto $object"
+    =&gt; ["@descendants", "from", "$object", "downto", "$object"]
+
+Comments?  Implementation ideas?  The inserting of default values was because
+otherwise it could cause problems with defining the method... (or perhaps, an
+even better addition would be to have match_template return args where it only
+splits apart the sections that were matched:
+
+    match_template("c on * to *", "c on x to y")
+    =&gt; ["c on", "x", "to", "y"]
+
+Actually, I would like to see this last even without the above...(splitting the
+command is nice, but rarely useful, if you want the first word just explode
+it...)
+
+-Brandon (Lynx)-
+</PRE>

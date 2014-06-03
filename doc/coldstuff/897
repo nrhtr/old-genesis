@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [897] in "Coldmud discussion meeting"</TITLE>
+<H1>[897] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?897"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="896"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="898"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="898"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="898"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] textdb parser...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 17 11:28:37 1996
+)</H3>
+<PRE>
+Date: Wed, 17 Jan 1996 09:14:20 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+Reply-To: coldstuff@tombstone.sunrem.com
+
+
+I did rewrite the parser from scratch, but ONLY as a temporary quick 
+'hack' until we can get a 'real' parser in yacc.  As my experience with 
+yacc is restricted I opted for the quicker less forgiving path of doing 
+it by hand.
+
+To address your various concerns:
+
+   * multiple lines were _not_ allowed in variable declarations before, if
+     they existed, the value on another line was simply discarded (i.e. it
+     wouldn't say anything).
+   * multiple lines ARE allowed, you simply need to escape them with a
+     backslash.  At the time this seemed like a perfectly logical idea.
+     However, I've since realized it isn't, as then an inconsistency exists
+     compared to variables.
+   * 0.3 isn't meant as a stable release, it is still a beta.  Stick with
+     0.2-x if you want stability.
+   * I'm willing to take parsers from generous programmers :)
+
+-Brandon
+
+(BTW, the &lt;space&gt;// is a bug, and should not happen, same with the x=x)
+</PRE>

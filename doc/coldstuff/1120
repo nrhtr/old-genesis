@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [1120] in "Coldmud discussion meeting"</TITLE>
+<H1>[1120] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1120"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1119"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1119"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1119"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1121"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1122"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1122"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Genesis 1.0p16 released</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  5 01:09:36 1996
+)</H3>
+<PRE>
+From: Jay Carlson &lt;nop@nop.com&gt;
+To: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+cc: coldstuff@cold.org
+In-reply-to: Your message of "Mon, 04 Nov 96 21:14:54 MST."
+             &lt;Pine.NEB.3.95.961104211325.13628A-100000@glacier.cold.org&gt; 
+Date: Tue, 05 Nov 96 00:52:28 -0500
+
+&gt;      * ("string" * INTEGER) returns string repeated INTEGER times (Miro)
+
+eval "bye! thanks for visiting virtual memory!" * 2147483647
+
+Jay Carlson
+nop@nop.com    nop@ccs.neu.edu    nop@kagoona.mitre.org
+
+Flat text is just *never* what you want.   ---stephen p spackman
+</PRE>

@@ -1,0 +1,73 @@
+<HEAD><TITLE>discuss@charon: [349] in "Coldmud discussion meeting"</TITLE>
+<H1>[349] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?349"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="343"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="348"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="348"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="350"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: floating point</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jun  4 04:23:46 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Sat, 4 Jun 1994 01:16:41 -0700 (PDT)
+Reply-To: coldstuf@MIT.EDU
+In-Reply-To: &lt;9406040410.AA03299@kernighan.cba.csuohio.edu&gt; from "Randy Beiter" at Jun 4, 94 00:10:40 am
+
+&gt; 
+&gt; &gt;  to be a nicer solution from a server development perspective. Besides,
+&gt; &gt;  I doubt very much that ColdMUD would be fast enough to be useful as a
+&gt; &gt;  simulation language. I think you'd be better off writing your simulation
+&gt; &gt;  in C or C++ and using someone's libraries.
+&gt; 
+&gt; are you refering to coldmud's speed in particular, or do you include
+&gt; servers like moo, and etc in the statement that it isn't fast enough? i'm
+&gt; just curious if (and why, if so) you feel coldmud's speed to be inferior
+&gt; to say, moo.
+&gt; 
+&gt; -merl
+&gt; 
+&gt; 
+&gt; 
+
+I was thinking of 'interpreted' languages, actually. It would be better to
+ write a computation-intensive simulation in a compiled language since the
+ calculations probably won't be changing much. You could write a simulation
+ in BASIC and run it on a cray, but why not compile the BASIC and get a 10x
+ increase in speed? Likewise, you could write a space simulator in ColdMUD,
+ but why not write a space simulation server in C or C++ and use ColdMUD
+ for the interface? (Meaning, have the ColdMUD server connect to a special-
+ purpose server running on another port and only communnicating with the
+ Cold server.)
+
+Since I'm up late and this sounds weird I'll re-state what I think. You could
+ do heavy math in ColdMUD but you'd be wasting cycles. See Greg's post.
+
+As for th actual speed of ColdMUD, it seems to be faster according to some.
+ This makes sense, considering some key differences. One important difference
+ is the use of symbols which are stored as numbers. This makes method calls
+ far faster, since instead of looking for a string in a list of method names,
+ the server is looking for a number. 
+
+Also, ColdMUD is disk-based, as you know, which means disk activity should be
+ optimized. (If it weren't disk-based, the OS would have to decide what goes
+ in real memory and what is swapped out to disk. Since the Cold server is
+ aware of things the OS is not, it should be able to make better decisions
+ about what should be where.)
+
+Crag,
+up way to late as usual.
+
+-- 
+"Mr. Tater, I think I have a punishment for you that is fair, just, and
+ clever. Or maybe just fairly clever."
+
+    -- King Yakko of Anvilania.
+</PRE>

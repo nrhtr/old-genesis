@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [1059] in "Coldmud discussion meeting"</TITLE>
+<H1>[1059] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1059"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1058"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1060"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1060"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1064"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Standard way of converting "a.b.c.d" to 'struct in_addr'</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Aug 10 11:09:20 1996
+)</H3>
+<PRE>
+Date: Sat, 10 Aug 1996 08:59:02 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Right now the driver uses inet_ntoa(), which I _thought_ was standard 
+(all of the systems' man pages I checked had it, and preferred it over 
+other functions).  However, Solaris does not have it.  I've been idly 
+working on an alternative, but I do not have enough reference to come up 
+with a solution.  I primarily need more details on what exactly 
+inet_makeaddr() expects, and how to get "a.b.c.d" to the form it expects..
+
+(sigh)
+
+Any help would be appreciated :)
+
+(I think I will just code up a drop in inet_ntoa() for solaris, once I 
+figure out the best way to do it).
+
+-Brandon Gillespie
+</PRE>

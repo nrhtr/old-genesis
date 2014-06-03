@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1296] in "Coldmud discussion meeting"</TITLE>
+<H1>[1296] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1296"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1295"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1297"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Address Masking on list archives</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 28 19:19:05 1997
+)</H3>
+<PRE>
+Date: Wed, 28 May 1997 17:12:12 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@ice.cold.org&gt;
+To: coldstuff@cold.org
+
+I just hacked up the list archive gateway (www.cold.org/info/lists) so it
+will mask any email addresses.  This is to reduce the likelyhood of
+The address showing up in search engines and thus being a target for
+Junk E-Mail.  Those who have expressed trepidation about showing up on
+archives because of this reason can be a little less concerned.  If you
+need the real address which has been masked, you can email me at
+brandon@cold.org and I can try to get it for you.
+
+Also.. there have been a few people who have their own archiving software
+for these lists.  I would prefer this didn't happen because I don't know
+if this archiving software will mask addresses or not.  If you need a
+digest of older posts, I can provide them (I have them back to when
+ColdMUD started).
+
+-Brandon Gillespie
+
+</PRE>

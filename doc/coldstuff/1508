@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [1508] in "Coldmud discussion meeting"</TITLE>
+<H1>[1508] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1508"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1504"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1507"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1509"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1509"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec  2 13:28:47 1999
+)</H3>
+<PRE>
+From: "Steven J. Owens" &lt;puff@netcom.com&gt;
+To: coldstuff@cold.org
+Date: Thu, 2 Dec 1999 10:05:52 -0800 (PST)
+In-Reply-To: &lt;199912011921.LAA20148@taller.eng.sun.com&gt; from "Jeff Kesselman" at Dec 1, 99 11:21:48 am
+Reply-To: coldstuff@cold.org
+
+Jeff Kesselman writes:
+
+&gt; &gt;Of course keeping it in a word format is also an option, just not on my
+&gt; &gt;list ;)
+&gt; 
+&gt; I THINK this falls into "if your gonna sue volunteers ya gotta let
+&gt; em use the tools they're comofrtable with".
+
+     I agree with your first premise (above) but not with your conclusion.
+
+&gt; The vast majority of the non-geek world 9and i thin keven the good
+&gt; majoprity of the geek world) have moved beyond text editor and lay
+&gt; out macros And don't really want to return.
+
+     I think the majority of the geek world recognize that the
+majority of the "advancements" beyond text are just bloat and feature
+creep.  Now if you wanted to maintain the docs in FrameMaker format
+(one of the two premier technical doc publishing tools, the other
+being InterLeaf), I could see some advantages to that, but Word just
+frankly sucks.  Word's main two advantages are that almost everybody
+has it and almost everybody is at least familiar with it.  Not exactly
+stellar features, IMHO. Most people'd probably be just as happy with
+any decent WYSIWYG editor that can read their legacy data files.
+
+&gt; Best solution would be to find a reasonable intermiediary from that
+&gt; word can write and that can be translated automaticly to what you
+&gt; want, Brandon.  (As a side note, you CAN read PDF, if you can run
+&gt; Java. There is a JAVA PDF viewer available form Adobe.)
+
+     What's wrong with HTML?  Or how about adding something like
+JavaDoc to the Cold stuff?  One possibility I'd suggest is, if people
+really want to use Word, why not have a special set of styles meant to
+be used in generating HTML output (not that I'd trust Word's output to
+HTML, having spent some painful hours working with such output in the
+past).  Or find some relatively painless XML format that can be easily
+translated into infotext, Word, and HTML as needed.
+
+&gt; Word writes a LOT of formats. One I knwo f thats suppsoed top be
+&gt; resonably portable is RTF...
+
+     You'd think, huh?  RTF is vigorously undocumented.
+
+Steven J. Owens
+puff@netcom.com
+</PRE>

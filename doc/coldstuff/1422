@@ -1,0 +1,76 @@
+<HEAD><TITLE>discuss@charon: [1422] in "Coldmud discussion meeting"</TITLE>
+<H1>[1422] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1422"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1421"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1423"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Mail List rebuilds</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 10 08:26:05 1998
+)</H3>
+<PRE>
+Date: Thu, 10 Sep 1998 05:43:22 -0600
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org, resubscribe@cold.org
+
+Due to a hard drive failure on ice (the central server for the Cold
+Project)--which happened during a window where no backups had occurred
+for a while, the mailing lists were lost.  I have rebuilt the lists from
+logfiles, but they are likely to be incomplete.  Therefore we need to
+rebuild the lists--the best way we can determine to do this is simply
+ask everybody to re-subscribe to the lists they wish to be on.  This
+may not get everybody, but if you know somebody who was on one of the
+old lists feel free to forward this notice to them.
+
+We have also taken this opportunity to rearrange the lists a little,
+the new lists (all @cold.org) are:
+
+  coldstuff          General discussion for Cold topics
+  cold-announce      Public announcements by anybody for Cold related
+                     things (server openings, code releases, etc)
+  genesis            General discussion for the ColdC driver/interpreter
+                     Genesis.  Bug reports, questions and development
+                     discussion will occur on this list.
+  genesis-announce   Announcements for the ColdC driver/interpreter Genesis
+  genesis-p          Genesis patch submission list, feel free to send
+                     any patches here.
+  coldcore           General ColdCore discussion, also *coldcore on the
+                     Cold Dark.
+  coldcore-announce  Announcements for ColdCore, usually release and
+                     errata information.
+
+You can find out if you are on a list using the 'which' command, which
+has the following syntax (varying from the normal):
+
+   You can look for other addresses, or parts of an address, by specifying 
+   an address pattern to search for.  Majordomo will search for the name 
+   based upon if there is an at-sign in the pattern, and where.  This is
+   best explained with examples: 
+
+        which jqpublic
+        which jqpublic@
+        which pub@my-isp.com 
+
+   The first two examples are exactly equivalent, and will search for an   
+   exact match of any user 'jqpublic' at ANY host.  The last example will
+   search for the string 'pub' as a part of any username at the domain
+   'my-isp.com' or any of its subdomains (such as 'mail.my-isp.com').
+
+From the log entry rebuilds I have recreated coldstuff, the same addresses
+were subscribed to cold-announce, and users on genesis were instead added
+to genesis-announce, and the same with the old coldcore list.  I appologise
+profusely for the inconvenience this may cause.  You can subscribe to these
+lists by sending a message to majordomo@cold.org, with a body of:
+
+    subscribe &lt;list&gt;
+
+Where &lt;list&gt; is the mailing list to which you wish to subscribe.  You can
+include multiple subscribe lines in the same message.
+
+</PRE>

@@ -1,0 +1,91 @@
+<HEAD><TITLE>discuss@charon: [1281] in "Coldmud discussion meeting"</TITLE>
+<H1>[1281] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1281"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1280"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1282"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] [patch] method_bytecode</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Apr 21 09:53:18 1997
+)</H3>
+<PRE>
+Date: Mon, 21 Apr 1997 15:48:11 +0200 (MET DST)
+From: Miroslav Silovic &lt;silovic@mare.zesoi.fer.hr&gt;
+To: coldstuff@cold.org
+
+
+This fixes all method_bytecode problems known to me.
+
+--- orig/Genesis-1.0p27/src/ops/object.c	Thu Apr 10 22:06:33 1997
++++ Genesis-1.0p27/src/ops/object.c	Mon Apr 21 15:45:51 1997
+@@ -896,7 +896,8 @@
+     push_int(cur_frame-&gt;object-&gt;objnum);
+ }
+ 
+-INTERNAL cList * add_op_arg(cList * out, Int type, Long op, Obj * obj) {
++INTERNAL cList * add_op_arg(cList * out, Int type, Long op, Obj * obj,
++			    Method * method) {
+     cData d;
+ 
+     switch (type) {
+@@ -913,10 +914,35 @@
+             d.u.error = object_get_ident(obj, op);
+             break;
+         case IDENT:
+-        case VAR:
+             d.type = SYMBOL;
+             d.u.symbol = object_get_ident(obj, op);
+             break;
++        case VAR: {
++	    Long id;
++
++	    d.type = SYMBOL;
++	    
++	    if (op &lt; method-&gt;num_args) {
++		op = method-&gt;num_args - op - 1;
++		id = object_get_ident(obj, method-&gt;argnames[op]);
++		d.u.symbol = id;
++		break;
++	    }
++	    op -= method-&gt;num_args;
++	    
++	    if (method-&gt;rest != -1) {
++		if (op == 0) {
++		    id = object_get_ident(obj, method-&gt;rest);
++		    d.u.symbol = id;
++		    break;
++		}
++		op--;
++	    }
++	    
++	    id = object_get_ident(obj, method-&gt;varnames[op]);
++	    d.u.symbol = id;
++	    break;
++	    }
+         case STRING:
+             d.type = STRING;
+             d.u.str = object_get_string(obj, op);
+@@ -971,12 +997,14 @@
+         x++;
+ 
+         if (info-&gt;arg1) {
+-            list = add_op_arg(list, info-&gt;arg1, ops[x], method-&gt;object);
++            list = add_op_arg(list, info-&gt;arg1, ops[x], method-&gt;object,
++			      method);
+             x++;
+         }
+ 
+         if (info-&gt;arg2) {
+-            list = add_op_arg(list, info-&gt;arg1, ops[x], method-&gt;object);
++            list = add_op_arg(list, info-&gt;arg1, ops[x], method-&gt;object,
++			      method);
+             x++;
+         }
+     }
+</PRE>

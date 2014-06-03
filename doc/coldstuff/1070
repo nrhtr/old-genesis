@@ -1,0 +1,143 @@
+<HEAD><TITLE>discuss@charon: [1070] in "Coldmud discussion meeting"</TITLE>
+<H1>[1070] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1070"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1069"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1071"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Final patch (that's take 2)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Aug 19 21:02:28 1996
+)</H3>
+<PRE>
+Date: Tue, 20 Aug 1996 02:24:35 +0200 (MET DST)
+From: Miroslav Silovic &lt;silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+
+I fixed allocated_blocks here, and tested again (rather heavy-duty
+test, so I tend to take this version of binarydb.c as reliable). The
+fragmentation remained under 40% (about 1/3 of the blocks were free
+when it stabilized, which means that the Scott's group should remain
+under 18MB after the initial growth). This is about as good as
+standard [gn]dbm does. It should perform better in certain cases (like
+when most of the objects don't get changed too often, or when there
+are not too much size variations). I tested what I think is the worst
+case.
+
+-----------------------------------------------------------------
+
+*** binarydb.c	Sat Jul 13 21:32:17 1996
+--- ../../../Genesis-1.0p10/src/binarydb.c	Tue Aug 20 02:18:30 1996
+***************
+*** 325,334 ****
+  
+      if (fseek(dump_db_file,  BLOCK_OFFSET (start), SEEK_SET))
+          panic("fseek(\"%s\") in copy: %s", dump_db_file, strerror(errno));
+!     for (i=0; i&lt;blocks; i+=16) {
+  	fread (buf, 1, BLOCK_SIZE, database_file);
+  	fwrite (buf, 1, BLOCK_SIZE, dump_db_file);
+! 	dump_bitmap[i &gt;&gt; 3] &amp;= ~(1 &lt;&lt; (i&amp;7));
+      }
+  }
+  
+--- 325,334 ----
+  
+      if (fseek(dump_db_file,  BLOCK_OFFSET (start), SEEK_SET))
+          panic("fseek(\"%s\") in copy: %s", dump_db_file, strerror(errno));
+!     for (i=0; i&lt;blocks; i++) {
+  	fread (buf, 1, BLOCK_SIZE, database_file);
+  	fwrite (buf, 1, BLOCK_SIZE, dump_db_file);
+! 	dump_bitmap[(start+i) &gt;&gt; 3] &amp;= ~(1 &lt;&lt; ((start+i)&amp;7));
+      }
+  }
+  
+***************
+*** 453,458 ****
+--- 453,459 ----
+  
+  	if (count == blocks_needed) {
+  	    /* Mark these blocks taken and return the starting block. */
++ 	    allocated_blocks+=count;
+  	    for (b = starting_block; b &lt; starting_block + count; b++)
+  		bitmap[b &gt;&gt; 3] |= (1 &lt;&lt; (b &amp; 7));
+  	    last_free = b;
+***************
+*** 480,500 ****
+      return 1;
+  }
+  
+  Int db_put(Obj *obj, Long objnum)
+  {
+      off_t old_offset, new_offset;
+!     Int old_size, new_size = size_object(obj);
+  
+      db_is_dirty();
+- 
+      if (lookup_retrieve_objnum(objnum, &amp;old_offset, &amp;old_size)) {
+! 	if (NEEDED(new_size, BLOCK_SIZE) &gt; NEEDED(old_size, BLOCK_SIZE)) {
+! 	    db_unmark(LOGICAL_BLOCK(old_offset), old_size);
+! 	    new_offset = BLOCK_OFFSET(db_alloc(new_size));
+! 	} else {
+  	    if (dump_db_file)
+! 		dump_copy (LOGICAL_BLOCK(old_offset),
+! 			   NEEDED(old_size, BLOCK_SIZE));
+  	    new_offset = old_offset;
+  	}
+      } else {
+--- 481,529 ----
+      return 1;
+  }
+  
++ Int check_free_blocks(Int blocks_needed, Int b)
++ {
++     Int count;
++     
++     if (b &gt;= bitmap_blocks)
++ 	return 0;
++     for (count = 0; count &lt; blocks_needed; count++) {
++ 	if (bitmap[b &gt;&gt; 3] &amp; (1 &lt;&lt; (b &amp; 7)))
++ 	    break;
++ 	b++;
++ 	if (b &gt;= bitmap_blocks)
++ 	    break;
++     }
++     return count == blocks_needed;
++ }
++ 
+  Int db_put(Obj *obj, Long objnum)
+  {
+      off_t old_offset, new_offset;
+!     Int old_size, new_size = size_object(obj), tmp1, tmp2;
+  
+      db_is_dirty();
+      if (lookup_retrieve_objnum(objnum, &amp;old_offset, &amp;old_size)) {
+! 	if ((tmp1=NEEDED(new_size, BLOCK_SIZE)) &gt; (tmp2=NEEDED(old_size, BLOCK_SIZE))) {
+! 	    /* check for the possible realloc */
+! 	    if (check_free_blocks(tmp1 - tmp2, LOGICAL_BLOCK(old_offset)+tmp2)) {
+! 		/* no, we don't have to move, just overwrite */
+! 		if (dump_db_file)
+! 		    dump_copy (LOGICAL_BLOCK(old_offset), tmp1);
+! 		db_mark(LOGICAL_BLOCK(old_offset) + tmp2,
+! 			BLOCK_SIZE * (tmp1 - tmp2));
+! 		new_offset = old_offset;
+! 	    } else {
+! 		db_unmark(LOGICAL_BLOCK(old_offset), old_size);
+! 		new_offset = BLOCK_OFFSET(db_alloc(new_size));
+! 	    }
+!         } else {
+  	    if (dump_db_file)
+! 		dump_copy (LOGICAL_BLOCK(old_offset), tmp2);
+! 	    if (tmp1 &lt; tmp2) {
+! 		db_unmark(LOGICAL_BLOCK(old_offset) + tmp1,
+! 			  BLOCK_SIZE * (tmp2 - tmp1));
+! 	    }
+  	    new_offset = old_offset;
+  	}
+      } else {
+</PRE>

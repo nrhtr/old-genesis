@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [38] in "Coldmud discussion meeting"</TITLE>
+<H1>[38] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?38"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="19"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="37"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="37"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="39"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="40"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="48"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: clear parameters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 19:16:40 1993
+)</H3>
+<PRE>
+To: dougo@pure.com (Doug Orleans)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Tue, 16 Nov 93 16:03:19 -0800.
+             &lt;199311170003.AA17964@pure&gt; 
+Date: Tue, 16 Nov 93 19:07:23 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; I dunno how Cold does it; from the remarks Greg has made it I'm
+&gt; guessing that properties (data members, slots, whatever you want to
+&gt; call them) aren't inherited at all except at creation time, which
+&gt; means that it's like MOO before it had clear properties.  I
+&gt; guess you can simulate clear properties with methods that lookup the
+&gt; parent tree manually if the property is equal to a certain
+&gt; out-of-band value (e.g.  'clear), but it seems like it would be
+&gt; nicer if there were some in-server way of doing this.
+
+Variable values are not inherited in Coldmud, period.  All object
+variables have a default value of 0.
+
+I do not think it would be "nicer" to have a more baroque variable
+lookup system, notwithstanding people's reliance on it in MOO.  As I
+pointed out, such a variable lookup system damages encapsulation, and
+can be done trivially in-db.
+
+--GBH
+
+</PRE>

@@ -1,0 +1,110 @@
+<HEAD><TITLE>discuss@charon: [1577] in "Coldmud discussion meeting"</TITLE>
+<H1>[1577] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1577"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1573"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1576"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1576"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1578"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Editing code from in-game</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May  2 00:22:06 2000
+)</H3>
+<PRE>
+Date: Mon, 01 May 2000 23:14:27 -0500
+From: Allen Noe &lt;psyclone42@geocities.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+--------------38DCB8DA0EAEB565370068CC
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Jeremy Weatherford wrote:
+&gt; I've heard of various TF macros and Emacs modes, but I'm not sure how to
+&gt; set these up.
+
+Here's a TF module for general editing.
+
+In your .tfrc, put /load localedit.tf or whereever you put it. Then the
+server sends:
+
+#$# edit name: foo upload: @program me.foo
+return 0;
+.
+
+and tf receives this and loads it in pico or whatever and then sends
+back:
+
+@program me.foo
+return 0;
+.
+
+/redo allows you to re-edit and re-send the last thing you edited.
+
+It's not the most elegant thing in the world, but it's what I use, and I
+happen to like it.
+--------------38DCB8DA0EAEB565370068CC
+Content-Type: text/plain; charset=us-ascii;
+ name="localedit.tf"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline;
+ filename="localedit.tf"
+
+;;; Localedit script
+;
+; Originally from Kipp, mods by Psyclone
+;
+; Server sends: #$# edit name: &lt;name&gt; upload: &lt;cmd&gt;
+;
+; Script takes input until a ".", loads an editor on it, then
+;   sends &lt;cmd&gt; and the edited input with an extra "." for
+;   good luck. &lt;name&gt; is ignored. wraplog should be off..
+
+; set this to an absolute path.  /sys does not do tilde completion
+/set loced_basedir /home/bovine/tf
+/set loced_doc /home/bovine/tf/tf_edit.doc
+
+; set this to your favorite editor
+/def pico=/sh pico -w %1
+
+; init..
+/set shipping 0
+
+; trigger to finish local editing
+; this should really be defined _within_ the start macro but, ugh.
+
+/def -mregexp -t"^\\.$" do_localedit = \
+        /if /test %{shipping} %;\
+           /then /set shipping 0 %;\
+           /log -w off %;\
+           /pico %loced_doc %;\
+           /sys echo . &gt;&gt; %{loced_doc} %;\
+           /send %{upload} %;\
+           /quote -dsend -S !"tail +2 %{loced_doc}" %;\
+        /endif
+
+; if you want backups, move the document somewhere instead of deleting it
+
+/def -mregexp -t"^#\\$# edit name: (.*) upload: (.*)$" localedit_trigger = \
+        /set upload %P2%;\
+        /set shipping 1%;\
+        /sh rm %{loced_doc}%;\
+        /log -w %loced_doc
+
+; command to let you edit the file and resend it, to (e.g.) fix bugs
+
+/def redo = \
+        /pico %{loced_doc}%;\
+        /send %{upload}%;\
+        /sys echo . &gt;&gt; %{loced_doc} %;\
+        /quote -dsend -S !"tail +2 %{loced_doc}"
+
+--------------38DCB8DA0EAEB565370068CC--
+
+</PRE>

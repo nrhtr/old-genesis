@@ -1,0 +1,70 @@
+<HEAD><TITLE>discuss@charon: [1436] in "Coldmud discussion meeting"</TITLE>
+<H1>[1436] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1436"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1432"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1432"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1435"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1437"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1437"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1438"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ColdCore Roadmap</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 10 23:08:51 1998
+)</H3>
+<PRE>
+From: cshepher@brick.net (Chuck Shepherd)
+To: coldstuff@cold.org
+Date: Tue, 10 Nov 1998 23:15:01 -0600 (CST)
+
+Some of my experiences with development with ColdCore so far (I use
+ColdCore 3.0a9.02 as the base, with some fixes from newer versions).
+
+With the old version of the Core, a non-writable Core didn't allow
+me to make the changes I needed.  For example, one of the things I
+did was change the behavior of @finger to include roleplay oriented
+settings.  The only way to do this was to set core writeable.
+
+I then made other changes-- to the channel code,
+plain/text method, and the @send command, to give examples-- as
+well as added local user-objects where I put commands (i.e.,
+$local_user and $staff).  This is how people (mostly) make changes
+with LambdaCore on MOO-- they start with a base Core, and modify
+it from that point.
+
+Another approach (that ColdCore uses) is that the Core should
+be left alone, and not modified.  This makes upgrades easier,
+but also tends to point us in the direction of a "stock"-type
+Core.  Most Cold developers I know like tinkering,
+so few of us probably have an original-style core.
+
+One idea might be to have Core "packages".  ie, one base package
+with the networking code, one for each daemon,  one for the parser,
+etc.  These could even have dependency requirements.  I don't see
+any reason for Dreamwheels, for example, to have separate networking
+code than the main ColdCore.  Right now I can do some of this by using
+@dump on the objects, and transferring them over by hand.  This is
+time consuming, though, and doesn't always work.
+
+To give an example of how this could be useful:  One of the additions
+I want to make is to write puppets.  This is dependent upon the parsing
+code, which was rewritten after 3.0a9.  It would be nice to upgrade to
+the new command parser, so I could use what someone else wrote (okay,
+I can dream :) or can make it easier for others to use any puppet
+code developed on Dreamwheels.  The command cache upgrade is
+something I've put off for some time already... it doesn't sound
+simple.  And I have enough modified code to make it easy
+to port everything over to a newer version of ColdCore.
+
+I would be interested in hearing from what problems others face--
+especially if we can increase the code sharing in the Cold community.
+It's hard to know what issues others in my  situation face (writing a
+roleplay oriented, mush/moo-type world).
+
+-- Chuck
+
+--
+Chuck Shepherd cshepher@brick.net
+</PRE>

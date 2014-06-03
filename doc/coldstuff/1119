@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1119] in "Coldmud discussion meeting"</TITLE>
+<H1>[1119] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1119"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1118"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1120"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1120"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1122"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis 1.0p16 released</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov  4 23:37:13 1996
+)</H3>
+<PRE>
+Date: Mon, 4 Nov 1996 21:14:54 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: coldstuff@cold.org
+
+Includes a bug fixes, as well as a tenative UDP networking layer,
+$list.sort() and some features.  The CHANGES file:
+
+1.0-17 [04-Nov-96] Miroslav Silovic, Brian Buchanan
+      * Included a few scripts in 'bin' again (Brandon)
+      * Fixed unkillable object bug caused by reprogramming methods (Brian)
+      * Fixed method_info() to find local methods only (Brian)
+      * Fixed add_method() goofing flags and access for methods
+        overriding nonoverridable methods (Brian)
+      * Changed call_method() to treat method calls from within frob-access
+        methods to this() as if they were calls to frob methods (Brian)
+      * Fixed find_method() and find_next_method() to find frob methods
+        overriding nonoverridable methods (Brian)
+      * Fixed unkillable object bug caused by passing to ROOT or DRIVER
+        access methods (Brian)
+      * The backup won't hang with heavy-duty task running (Miro)
+      * (1).method() decompiles with parentheses around 1 (this happens
+        only if argument is an integer, which is valid behaviour) (Miro)
+      * Crash on attempt to decompile objnum has been fixed (Miro)
+      * $list.sort added (Miro)
+      * $dictionary.union fixed to insert keys in consistant order (Miro)
+      * UDP networking added (hooked into the existing functions) (Miro)
+      * ("string" * INTEGER) returns string repeated INTEGER times (Miro)
+
+</PRE>

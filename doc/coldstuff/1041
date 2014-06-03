@@ -1,0 +1,87 @@
+<HEAD><TITLE>discuss@charon: [1041] in "Coldmud discussion meeting"</TITLE>
+<H1>[1041] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1041"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1037"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1040"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1040"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1042"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1046"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1046"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] encryption, DES, MD5, SHA-1(?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jul 24 13:23:36 1996
+)</H3>
+<PRE>
+To: Stephen Smoogen &lt;smooge@duracef.shout.net&gt;
+cc: coldstuff@cold.org
+In-reply-to: Your message of "Wed, 24 Jul 1996 10:26:48 CDT."
+             &lt;Pine.LNX.3.91.960724102103.1541C-100000@duracef.shout.net&gt; 
+Date: Wed, 24 Jul 1996 12:43:51 EDT
+From: Greg Hudson &lt;ghudson@mit.edu&gt;
+
+&gt; With this in mind you might want to have it that people have to pick
+&gt; up the SSH-LEAY distreibtuion from Australia (I dont have the URL
+&gt; handy but can supply it later.) And have the ColdX user drop it in
+&gt; and compile with it.
+
+This does not necessarily get you off.  Some notes about the ITAR:
+
+	* Don't accept legal advice from someone who isn't a lawyer
+	  without corroboration.
+
+	* I'm not a lawyer.
+
+	* The goal of the ITAR was to prevent you from exporting
+	  cryptographic tools which could be easily used by foreign
+	  governments to protect the secrecy of their communications.
+
+	  The state department is not interested in preventing the
+	  export of tools which allow you to protect the integrity of
+	  communications (i.e. authentication systems), although if
+	  you're exporting source code you may lose anyway (if the
+	  source code contains easily separable cryptographic
+	  procedures).
+
+	* I believe that people have gotten CJs on hashing algorithms
+	  before (getting a CJ, or Commodities Jurisdiction, is how
+	  you resolve questions over whether something is restricted
+	  by the ITAR.  You ask the Department of State to allow you
+	  to export the product under the very much relaxed rules of
+	  the Department of Commerce, which is how you normally export
+	  things).
+
+	  I believe there is a way to transform a hashing algorithm
+	  into a cryptosystem (see _Applied Cryptography_ by
+	  Schneier), but that may not count as "easily."
+
+	* CJs have been denied in the past on products which contained
+	  no cryptographic algorithms, but had hooks for a
+	  cryptosystem such that when you dropped in a cryptosystem
+	  from outside the US, you got a tool which could protect
+	  secrecy of communications.  That's not quite what's been
+	  proposed here (since Coldmud wouldn't be ensuring secrecy of
+	  communications), but it's close enough to worry.  (However,
+	  if you have hooks for a compression system, and replace the
+	  compression system with a cryptosystem outside the US, you
+	  appear to be scott-free.)
+
+	* The ITAR is under attack both in the court system (in two
+	  First Amendment challenges which are getting very different
+	  results) and in Congress.  I've heard multiple rumors that
+	  the NSA has dropped its objections to repealing the ITAR
+	  (for complicated reasons involving the military wanting to
+	  buy off-the-shelf hardware), so most of the objections are
+	  coming from the FBI, which wants to enforce key escrow for
+	  domestic cryptography.  Since the ITAR has no direct impact
+	  on domestic cryptography, one would expect that the FBI
+	  wouldn't have a leg to stand on here.
+
+	  So it's possible that you can just wait out the ITAR.
+
+Your best bet is probably to ship with MD5.  Your likelihood of being
+prosecuted under any circumstances is very low, in my estimation, but
+I'm not a lawyer.
+</PRE>

@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [1328] in "Coldmud discussion meeting"</TITLE>
+<H1>[1328] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1328"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1325"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1325"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1327"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1329"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1329"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1329"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>RE: [COLD] New ColdCore and Core Upgrader available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 21 16:56:16 1997
+)</H3>
+<PRE>
+From: "Luther, Clay" &lt;clay@selsius.com&gt;
+To: "'coldstuff@cold.org'" &lt;coldstuff@cold.org&gt;
+Date: Thu, 21 Aug 1997 15:42:21 -0500
+
+I downloaded the new core and set it up, but I am getting a (sort of
+annoying) message everytime I log on.
+
+It's the "this message will continue to appear for $admins until someone
+answers all the questions" message.
+
+Unfortuantely, I *have* answered all the questions (at least it's
+stopped asking me).  Now, why doesn't it go away?
+
+Later.
+
+Clay
+
+&gt; -----Original Message-----
+&gt; From:	Brandon Gillespie [SMTP:brandon@roguetrader.com]
+&gt; Sent:	Tuesday, August 19, 1997 1:24 PM
+&gt; To:	coldstuff@cold.org
+&gt; Subject:	[COLD] New ColdCore and Core Upgrader available
+&gt; 
+&gt; Ok, a new coldcore is available, along with a Core Upgrader.  If you
+&gt; have
+&gt; ColdCore 3.0a7 or ColdCore 3.0a8 you can upgrade to the newest core
+&gt; (ColdCore 3.0a9.02).  Just grab the appropriate upgradedb tarball from
+&gt; the
+&gt; ColdCore ftp site:
+&gt; 
+&gt;        ftp://ftp.cold.org/cold/dbs/ColdCore/
+&gt; 
+&gt; Or, you can grab a fresh a9.02 db and run with it instead.  From this
+&gt; point on, we hope to have an upgrader with each core release--this
+&gt; upgrade
+&gt; should upgrade your database with farily few problems, assuming you do
+&gt; not
+&gt; change core objects.
+&gt; 
+&gt; -Brandon Gillespie
+</PRE>

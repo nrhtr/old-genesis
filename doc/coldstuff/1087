@@ -1,0 +1,196 @@
+<HEAD><TITLE>discuss@charon: [1087] in "Coldmud discussion meeting"</TITLE>
+<H1>[1087] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1087"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1086"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1088"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1089"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1089"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Re: [ColdCore] Pruning the Object Heirarchy</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Sep 18 20:31:01 1996
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+In-Reply-To: &lt;199609162122.PAA07984@glacier.cold.org&gt; from Brandon Gillespie at "Sep 16, 96 03:22:45 pm"
+To: brandon@glacier.cold.org (Brandon Gillespie)
+Date: Thu, 19 Sep 1996 01:55:30 +0200 (MET DST)
+Cc: coldstuff@cold.org
+
+&gt; $dictionary_slate         -- still around for reference, somebody record
+&gt;                              if they want to keep, does NOT work--out of date
+
+This looks like Webster's dict interface. It'd be VERY nice to have, provided
+someone updates it. Not the core object, but we could put it in core_contrib.
+
+&gt; $probe                    -- Jeff artifact, anybody want to examine?
+
+Something like puppet object. Not really useful.
+
+&gt; $mushtoy                  -- Dancer artifact .. ?
+
+Not for the core.
+
+&gt; $ball                     -- Levi artifact
+
+&gt; $help_index_driver        -- urg, what to do?  need to change driver help
+&gt; $help_node_driver_...     -- ^^^^ (Miro?)
+
+@edit &lt;helpnode&gt; to edit it. You can change node's index by calling
+node.[add|del]_index (or something, check the methods on $help_node.
+
+&gt; $base_realm               -- Miro?
+&gt; $levis_realm              -- Levi?
+
+Both are Levi's.
+
+&gt; $user_data2               -- Anybody?  We need to convert $user_data to @set,
+&gt;                              I think $user_data2 was an attempt.  Voluteers?
+&gt; $jeffs_ui                 -- Jeff artifact, keep anything?
+&gt; $actions_ui               -- Jeff artifact, keep anything?
+
+Keep $actions, we'll need it (it seemed to almost work, the last I checked)
+No idea what others are.
+
+&gt; $tree_ui                  --\
+&gt; $tree                     --\ Jeff Artifacts, what do to with $tree, nix?
+&gt; $tree_4                   --/ still used?  $help_node_* used to use it..
+
+@grep for these, I didn't like this code. :) Nothing seems to use it now.
+
+&gt; $help_tree                --/
+
+It doesn't seem used ATM.
+
+&gt; $programmer_interface     -- uhh
+&gt; $help_interface_new       -- uhh
+&gt; $set_ui                   -- ehrm, how does this work with '@set' on $user?
+&gt; $social_interface         -- anybody?  Beuler?
+
+&gt; $editable                 -- \
+&gt; $editors                  -- \
+&gt; $generic_editor           -- \ Miro, can you list all objects that are involved
+&gt; $code_editor              -- / in your editor system, we can nix the derelicts
+&gt; $note_editor              -- /
+&gt; $editor                   -- /
+&gt; $help                     -- void object?  Does this fit in with help anywhere?
+
+$editor_reference, $editor_session, $editor_parser and $editable should be
+kept.
+
+&gt; $settings2                -- ?
+&gt; $callback                 -- ?
+&gt; $message_frob             -- ?
+
+
+$message_frob is used in message system, right? Dunno other two.
+
+&gt; $climate_taobh_thiar      -- we also need a Creation climate, as Taobh Thiar
+&gt;                              Isn't core, and wont exist in a core.
+
+$climate is the parent (and uses $climate_frob).
+
+&gt; $itext                    -- Somebody look at this.. keep/integrate or nix?
+
+It seems useful - something like generic book (but we need to spawn a cross
+between this and $thing). It can also be used for generic BBs (for people
+who like the 'lookable' mailing lists).
+
+&gt; $hook_notes               -- do we still need?  Who is doing hooks?
+&gt; $event_handler            -- Who is doing hooks? convert this with hooks? nix?
+&gt; $event_frob               -- ^^^^
+&gt; $movement_event           -- /
+
+Peat Young dickered a bit with these. More work is needed.
+
+
+&gt; $log                      -- I dont know if I like this idea or not.
+&gt; $has_reactions            -- I have notes for specs for this somewhere
+&gt; $core                     -- what to do?  We shouldn't parent or list
+&gt;                              all core objects anymore, just nix this obj?
+
+&gt; $time_root{$time...}      -- need to cleanup this library
+
+Actually rewrite is better idea. We need names for time units to be stored
+somewhere, so that $time_&lt;world&gt; can have different names.
+
+&gt; $system_object            -- used to be around for parenting 'system' objects
+&gt;                              too, likely can be nixed--I'll grep.
+
+&gt; $world/$control           -- used to focus/control the entire VR and specific
+&gt;                              worlds within the VR--have not been written.
+&gt;                              Sorta like '$sys' objects for each world.
+
+Thanks for info, I'll need it for weather ticker. Perhaps I'll move the
+information what was on $climate to these.
+
+&gt; $ccp                      -- wtf?
+
+Nothing on this object.
+
+&gt; $heart/$scheduler         -- review, I would like to make $scheduler native
+
+$scheduler is outdated and buggy. My suggestion is to use dictionary instead
+of heap for event table.
+
+&gt; $read_parser              -- rename/move in heirarchy, its not an official
+&gt;                              'parser', it parses from the connection not the
+&gt;                              user's parser stack
+
+I'd move this to $login_connection ?
+
+&gt; 
+&gt; Then lots of Ctext Stuff:
+&gt; 
+&gt; $ctext2_frob
+&gt; $cml2
+&gt; $cml2_evaluator
+&gt; $cml2_format
+&gt; $cml2_format2
+&gt; $cml2_telnet_format2
+&gt; $cml2_telnet_format
+&gt; $old_cml2_html_format
+&gt; $cml2_html_format
+&gt; $cml2_base_eval
+&gt; $workshop_eval
+&gt; $cml2_uncompiler
+&gt; $cml2_form
+&gt; $cml2_compiler
+&gt; $cml_compiler
+&gt; $cml_uncompiler
+&gt; 
+&gt; convert to:
+&gt; 
+&gt; $j_compiler
+&gt; $j_evaluator
+&gt; $j_bs_eval
+&gt; $j_formatter
+&gt; $j_telnet_format
+&gt; $j_html_format
+&gt; $j_uncompiler
+
+You forgot all the ctext frobs all over the db. We definitely need a grep
+that'd work on variables, not just on methods.
+
+&gt; 
+&gt; How do (the following) evaluators fit into your ctext Miro?
+&gt; 
+&gt; $root_evaluator
+&gt; $uncompile_evaluator
+&gt; $formatting_uncompiler
+&gt; $compile_evaluator
+&gt; $help_evaluator
+&gt; $format_evaluator
+&gt; $html_formatter
+&gt; $base_evaluator
+&gt; $place_evaluator
+&gt; $prep_evaluator
+
+This seem to be relics. Leave them for now, I'd like to steal the code.
+Not that there seems to be any.
+
+</PRE>

@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [1170] in "Coldmud discussion meeting"</TITLE>
+<H1>[1170] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1170"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1169"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1169"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1169"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1171"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1172"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1173"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] win32 port?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec  4 01:05:49 1996
+)</H3>
+<PRE>
+Date: Tue, 3 Dec 1996 21:52:00 -0800 (PST)
+From: snooze &lt;gblake@nunic.nu.edu&gt;
+To: "Blanchard, Micheal" &lt;spryte@foxberry.net&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;19961204052323070.AAA158@SAMHAIN.foxberry.com&gt;
+
+On Wed, 4 Dec 1996, Blanchard, Micheal wrote:
+
+&gt; i have windowsnt here and am looking for a fairly easy to configure mud
+&gt; server, and was wondering if cold was being ported to win32?
+&gt; 
+
+I don't know about cold, but NetCI runs under win32.  I believe it is
+ftpable from ftp.math.okstate.edu.  But I'm not sure where exactly it is
+there (stuff is pretty well organized though).
+
+ &gt; 
+
+P          Gregory Blake (aka snooze@deepseas,The Pause,TooMUSH,etc)      P
+L                      Peace * Love * Unity * Respect                     L
+U                          email: snooze@crl.com                          U
+R                     "Who are you? What do you want?"                    R 
+
+</PRE>

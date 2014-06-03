@@ -1,0 +1,59 @@
+<HEAD><TITLE>discuss@charon: [345] in "Coldmud discussion meeting"</TITLE>
+<H1>[345] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?345"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="343"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="344"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="344"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="346"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="346"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="349"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: floating point</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jun  3 19:11:28 1994
+)</H3>
+<PRE>
+To: rti@mcs.com (Crispin Bivans)
+Cc: deforest@netcom.com (Robert de Forest), coldstuff@MIT.EDU
+In-Reply-To: Your message of Fri, 03 Jun 94 17:35:38 -0500.
+             &lt;m0q9hpy-000BcdC@mercury.mcs.com&gt; 
+Date: Fri, 03 Jun 94 19:04:20 EDT
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; Question: Is the C-- code 'compiled' or interpreted during 'runtime'?
+
+The source is converted into a series of opcodes, interpreted by a
+short loop that does nothing except check the tick count, dereference
+the opcode table, and call the opcode handler.  (It should become
+unnecessary to check the tick count with a good design.)
+
+A feature of this kind of interpretation is that low-level operations
+tend to be dominated by interpretation overhead, while high-level
+operations tend to be dominated by the work they accomplish.  For
+instance, "a + b" involves two local variable lookups and an addition,
+probably between 50 and 100 machine instructions, as opposed to one to
+three machine instructions in C code.  On the other hand, a string
+table lookup is probably only 10% slower in Coldmud.
+
+Also, message dispatch is particularly slow in Coldmud relative to
+function calls in C.  This and other factors tend to discourage
+procedural abstraction.  To mitigate this, Coldmud should probably
+include private functions which aren't part of an object's exported
+interface.  It should be easy to arrange the implementation so that
+calling such functions is quick (dereferencing a table and creating a
+call frame, maybe 50-100 machine instructions, as opposed to tens of
+thousands for a message dispatch).
+
+Unfortunately, simulations tend to involve a lot of arithmetic
+operations, and you want the ability to dynamically update the
+algorithms which involve heavy computation, so building them into the
+server doesn't help much.  The solution is a good, widely-ported
+run-time machine code generation package; I'm afraid that none exists
+right now.
+
+--GBH
+
+</PRE>

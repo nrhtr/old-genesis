@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [1254] in "Coldmud discussion meeting"</TITLE>
+<H1>[1254] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1254"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1253"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1255"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] p25 patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 11 05:55:29 1997
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+Date: Tue, 11 Mar 1997 11:51:30 +0100 (MET)
+Cc: silovic@srce.hr (Miroslav Silovic), brandon@cold.org
+
+Okay, I'm gulty. fromliteral was broken for the handled frobs.
+Here's the patch (thanks for the bugreport, Kipp!)
+
+*** src/data/data.c     Tue Mar 11 11:49:02 1997
+--- data.c      Tue Mar 11 11:49:02 1997
+***************
+*** 660,667 ****
+                s++;
+                while (isspace(*s))
+                    s++;
+!               s = data_from_literal(&amp;chandler, s + 1);
+!               if (chandler.type != IDENT) {
+                    data_discard(&amp;crep);
+                    d-&gt;type = -1;
+                    if (chandler.type != -1)
+--- 660,667 ----
+                s++;
+                while (isspace(*s))
+                    s++;
+!               s = data_from_literal(&amp;chandler, s);
+!               if (chandler.type != SYMBOL) {
+                    data_discard(&amp;crep);
+                    d-&gt;type = -1;
+                    if (chandler.type != -1)
+
+
+
+</PRE>

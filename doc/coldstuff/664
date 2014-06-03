@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [664] in "Coldmud discussion meeting"</TITLE>
+<H1>[664] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?664"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="663"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="665"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="665"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="665"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Let's re-open the assignments as expressions debate</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar  7 09:03:20 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: coldstuff@MIT.EDU
+Date: Tue, 7 Mar 1995 07:55:30 -0600 (CST)
+
+Some time ago the question of whether there should be an assignment expression
+ or not was raised and never quite answered to anyone's satisfaction. I wish to
+ reopen the debate having modified a version of the server to make x=y an
+ expression.
+
+Greg's postion is that assignment expressions lead to bad style which should
+ not be permitted if the language is to be readable and gain acceptance.
+
+Quinn's argument is that the programmer should be given the freedom to choose
+ how ugly or unreadable his code is.
+
+I decided to try it out because it makes certain familar code structures
+ much simpler, particularly:
+
+if (test1=.test1()) {
+  .use(test1);
+} else if (test2=.test2()) {
+  .use(test2);
+} else {
+}
+
+as well as
+
+while (test = .test())
+  .use(test);
+
+Is anyone still interested in Cold? Will ColdX take over Cold's role in the
+ world? Is anyone more interested in the old Cold now that it may gain this
+ patch? Will Brandon add this to ColdX? Will Colin put this in his server?
+ Does anyone care about Cold at all anymore?
+
+Crag
+</PRE>

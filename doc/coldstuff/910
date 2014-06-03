@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [910] in "Coldmud discussion meeting"</TITLE>
+<H1>[910] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?910"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="909"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="911"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="911"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="914"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] ColdCore 3.0 TODO</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan 27 18:42:16 1996
+)</H3>
+<PRE>
+Date: Sat, 27 Jan 1996 16:12:21 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+Reply-To: coldstuff@tombstone.sunrem.com
+
+I would apprecate comments/additions and/or volunteer help in any of the 
+areas :)
+
+---------
+CML/Ctext
+    * overview/finalize Ctext parsers
+    * document parsers
+    * spec CML
+    * finalize CML compilers
+    * optionalize CML in commands (have a text or CML mode, text actually
+      'converts' to CML and then compiles to Ctext)
+    * integrate CML
+    * create Ctext generator libraries
+    * create CML editing routines
+Realms/Places
+    * define the purpose of realms
+    * complete realms
+    * integrate realms
+Editors
+    * ..?
+Mailers
+    * ..?
+Command Rewrite (all, from scratch)
+    * rehash all commands, verify their need for existance, upgrade
+      existing codes/commands to newer systems
+Document
+    * ColdCore documents will first be written in flatfiles, in html.
+    * Once CML/Ctext is finalized they will be converted.
+---------
+</PRE>

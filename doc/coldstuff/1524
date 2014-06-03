@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [1524] in "Coldmud discussion meeting"</TITLE>
+<H1>[1524] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1524"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1520"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1523"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1523"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1525"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: hmmm</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec  7 19:58:51 1999
+)</H3>
+<PRE>
+Date: Tue, 7 Dec 1999 16:48:58 -0800 (PST)
+From: Jeff Kesselman &lt;Jeffrey.Kesselman@eng.sun.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+
+Bad idea unelss you provide an ability to view the whole list and insert at 
+specific points in the list.
+
+Parentl order is significant in ColdC.
+
+In general it soudns more annoying and complex then just fetchign the whole 
+list, using stadnard list ops to modfy, and setting it back.
+
+My 2 cents.
+
+
+&gt;
+&gt;well, i noticed the generally losing state of coldcore's $root.chparents
+&gt;and .change_parents. i'm about to make it so that you can only add or
+&gt;subtract one parent at a time.. that should simplify the issue, at least
+&gt;a little.
+
+Jeff Kesselman
+Member of Technical Staff IV
+JDK Performance/RAS Team
+SUN Microsystems
+
+Thought to meditate on:
+
+No two objects in nature are equal, any two apples are in fact quite different 
+from any other two apples in the world.
+
+Thus can Math really be said to be True in an absolute concrete sense, 
+or is it merely an internally consistent abstraction?
+
+</PRE>

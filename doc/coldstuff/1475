@@ -1,0 +1,77 @@
+<HEAD><TITLE>discuss@charon: [1475] in "Coldmud discussion meeting"</TITLE>
+<H1>[1475] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1475"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1474"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1474"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1474"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1476"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1484"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1484"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: system monitoring</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 13:51:45 1999
+)</H3>
+<PRE>
+From: "Bruce Mitchener, Jr." &lt;bruce@puremagic.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Wed, 17 Nov 1999 10:33:57 -0800
+Reply-To: coldstuff@cold.org
+
+On Tuesday, November 16, 1999, Charles Lance Woodson wrote:
+&gt; Lately I've been adding and removing a lot of monitoring
+&gt; messaging to coldcore systems (CML compiler, setting system)
+&gt; at Aeternity so that I could easily see how they work.  The
+&gt; thought occured to me that a monitoring system might be
+&gt; helpful to others coming behind me that would likely wind up
+&gt; doing the same thing.  Before I go any further, let me ask if
+&gt; there is currently any monitoring system in place that I simply
+&gt; haven't discovered?
+
+
+Well, I'd encourage you to document your findings myself and provide that
+for the people following in your footsteps.  No real documentation of many
+of the main systems in ColdCore seems to exist.   Even if you just summarize
+findings in a quick post to the mailing list, someone else could either read
+it in the archives of the list or take it upon themselves to write more
+docs.
+
+&gt; If the answer to that is no, does anyone have suggestions as to
+&gt; what the best concept for a monitoring system would be?  I was
+&gt; thinking of using @set to allow users to hook themselves into
+&gt; an event for the specific system.  The system itself would then
+&gt; need to be modified to send the appropriate messaging to users
+&gt; hooked to the event.  Would such a monitoring system be a major
+&gt; performance impactor?  If this isn't acceptable, what about
+&gt; simply sending .announce() calls from different systems to a
+&gt; monitoring $place?
+
+
+This doesn't really differ much from a good logging system.  ColdCore also
+lacks a good logging system. :)
+
+There are a couple of approaches to take here.
+
+1) Modify the channel system and use it.  Some things that might be useful
+in a modification would be the idea of priorities:  Informational, Warning,
+Critical Error, Fatal Error.  Ken on the Cold Dark tells me that syslogd is
+like this.  The logging systems from some large software projects have
+structures resembling that to some degree.  However, this doesn't buy you
+logging, analysis, or many other useful things, only the ability for a
+person to get spammed with a lot of data.
+
+2) Given time, desire and motivation, I'd probably do something slightly
+different.  Java and some of the commercial application servers out there in
+the real world have really nice event-driven logging systems.  Firing off
+events, having listeners (some of whom might log to files, some might send
+email to a paging system, others might broadcast to a channel), and so on
+can be a very powerful and extensible system.  It is probably overkill for
+what you want it for now, but if you're building a large application in
+Cold, I think you'd benefit from this type of model greatly.
+
+ - Bruce
+
+
+</PRE>

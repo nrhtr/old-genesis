@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [892] in "Coldmud discussion meeting"</TITLE>
+<H1>[892] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?892"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="891"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="891"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="891"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="893"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="893"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="893"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Operator overloading</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 10 16:07:55 1996
+)</H3>
+<PRE>
+Date: Wed, 10 Jan 1996 13:46:28 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;199601101300.OAA09048@regoc.srce.hr&gt;
+Reply-To: coldstuff@tombstone.sunrem.com
+
+&gt; I don't have the new source on me, but in 2-10, there's 
+[snip]
+&gt; for addition. So, cthrow could be replaced with the method call on the
+&gt; first argument (I don't feel like rummaging through the source to find
+&gt; the exact recipe. :) ) Brandon, can this be done?
+
+well, that would be a way to 'override' the plus operator, but what about 
+all of the others?
+
+_PERHAPS_ we could do something where when:
+
+     data1 operator data2
+
+would fail, it attempts to do type(data1).op_[add|minus|etc-preknown-word]
+(unless data1 is a frob, then call frob.op_...)
+
+and calls that instead.  For instance, this would allow for _simple_ 
+overloading, example:
+
+    public method $list.op_add {
+        arg d1, d2;
+
+        return d1 + [d2];
+    };
+
+So that:
+
+    ;[1, 2, 3] + 1;
+
+Would return as:
+
+    =&gt; [1, 2, 3, 4];
+
+However, I'm unsure as to the overall benefits, in general you would be 
+creating more work for the driver (since it is not designed for operator
+overloading), with the only benefit being more readable (yet abstracted)
+code... 
+
+-Brandon
+</PRE>

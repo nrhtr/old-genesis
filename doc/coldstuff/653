@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [653] in "Coldmud discussion meeting"</TITLE>
+<H1>[653] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?653"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="651"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="652"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="652"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="654"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="655"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="655"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>coldmud</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Feb 26 21:45:35 1995
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Sun, 26 Feb 1995 21:43:08 -0500 (EST)
+From: "Jeffrey E Sheppard" &lt;jsheppar@osf1.gmu.edu&gt;
+
+we are trying to set up coldmud and are having some
+difficulties.  We cant create a world either, although
+coldmud compiled and seems to be running correctly, we
+can't connect to it.  The name of the world we are tring
+to create is somehting Glacier (The brain does not work
+as well as it use to) Nevertheless, if there is any help
+for me, it is all appreciated.
+				Thanks in advance,
+					Jeff Sheppard
+
+</PRE>

@@ -1,0 +1,103 @@
+<HEAD><TITLE>discuss@charon: [1142] in "Coldmud discussion meeting"</TITLE>
+<H1>[1142] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1142"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1141"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1141"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1141"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1143"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1143"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1149"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] scatter/optional assignments - request for discussion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 29 09:56:01 1996
+)</H3>
+<PRE>
+Date: Fri, 29 Nov 1996 09:50:36 -0500 (EST)
+From: Fabien Ninoles &lt;ninf01@gel.usherb.ca&gt;
+To: Miroslav Silovic &lt;Miroslav.Silovic@public.srce.hr&gt;
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;199611291401.PAA11414@jagor.srce.hr&gt;
+
+-----BEGIN PGP SIGNED MESSAGE-----
+
+On Fri, 29 Nov 1996, Miroslav Silovic wrote:
+
+&gt; This patch implements two new features:
+&gt; 
+&gt; Optional assignment expression:
+&gt; 
+&gt; 	foo ?= bar;
+&gt; 
+&gt; is equivalent to
+&gt; 
+&gt; 	if (!foo) foo=bar;
+&gt; 
+&gt; Scatter assignment is easiest to explain with a few examples:
+&gt; 
+&gt; 	[foo, bar] = [1,2]
+&gt; 	=&gt; foo=1, bar=2
+&gt; 
+&gt; 	[foo, bar ?= 10] = [1]
+&gt; 	=&gt; foo=1, bar=10
+&gt; 
+&gt; 	[foo, bar, @baz] = [1,2,3,4,5]
+&gt; 	=&gt; foo=1, bar=2, baz=[3,4,5]
+&gt; 
+&gt; 	[[foo, bar], @rest] = [[1,2],[3,4],[5,6]]
+&gt; 	=&gt; foo=1, bar=2, rest=[[3,4],[5,6]]
+&gt; 
+&gt; -----------
+
+Very cool, very useful... can be used as optional arguments...
+
+&gt; 
+&gt; The question I have (Brandon and I talked about it) is: when to release
+&gt; this patch? The possibilities:
+&gt; 
+&gt; 	1) in the next patchlevel
+&gt; 	2) wait till the core is out
+&gt; 	3) rename the current driver to 1.1 and then add it to 1.1p1
+&gt; 	4) release in the next patchlevel but keep quiet about it
+&gt; 	   (consider it 'undocumented feature' till 1.1)
+&gt; 
+&gt; Personally, I'm in favor of 4). I don't like 2), because this is *VERY*
+&gt; useful, and I don't like 3) because I think it's a good idea to have
+&gt; the Beta core out synchronously with 1.1 driver.
+&gt; 
+&gt; 
+&gt; Oppinions?
+&gt; 
+&gt; 	Miro
+&gt; 
+&gt; PS. Enjoy the patch. :)
+&gt; 
+
+Just a question, are they a lot of other undocumented features in the
+current driver? 
+
+Thanks
+
+- ---------------------------------------------------------------
+ "Our policy is, when in doubt, do the right thing."   
+                                          -- Roy L Ash
+- ---------------------------------------------------------------
+Fabien Ninoles aka Baffouille       || Running Debian-Linux
+Ninf01@gel.usherb.ca                || Lover of MOO, mountains, 
+http://www-edu.gel.usherb.ca/ninf01 || poetry and Freedom.
+- ---------------------------------------------------------------
+
+-----BEGIN PGP SIGNATURE-----
+Version: 2.6.3i
+Charset: noconv
+
+iQCVAwUBMp74KlX6fc7jcjhFAQHJFwP+Nyu+/G2T3oR3fFiS+6lDTq7kJG0qsdVF
+nGA/y385m5Q7t2qEyvgQBSF9jQr9BxCq4wAR5UhFSLIrfh7vPVEdLAZymaQ+sB9e
+53snho/Djaw431JRsAUvxqCDLu6KmR3jvrGx2WxcNveuhyhVYSFqLkPvM6hvsrPn
+aApkt2QNBsY=
+=rCzH
+-----END PGP SIGNATURE-----
+
+</PRE>

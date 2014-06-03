@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [1051] in "Coldmud discussion meeting"</TITLE>
+<H1>[1051] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1051"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1048"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1050"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1050"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1052"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] ~non_terminated...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jul 27 18:15:40 1996
+)</H3>
+<PRE>
+From: Jay Carlson &lt;nop@nop.com&gt;
+To: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+cc: coldstuff@cold.org
+In-reply-to: Your message of "Sat, 27 Jul 96 18:55:23 BST."
+             &lt;199607271755.SAA02649@aaaaaaaa.demon.co.uk&gt; 
+Date: Sat, 27 Jul 96 18:02:10 -0400
+
+&gt; Oh, and another thing...
+
+&gt; The ~non_terminated behaviour is there to make output to telnet
+&gt; clients look neat:
+&gt;
+&gt;    Please enter yes or no [yes]: no
+&gt;    
+&gt;    ^ server output.............. ^ user input
+&gt;
+&gt; Which is kind of pointless if you're not using telnet, but are
+&gt; instead using a 'split screen' client which separates input from
+&gt; output.
+
+Right, which brings up issues of exactly what your target audience is.
+Most of the MOO high-tech people, for example, use clients that assume
+that the server speaks newline separated records.  In fact, at least
+two clients I know of will lock up hard if they get partial lines in
+violation of this protocol.
+
+You guys really need to negotiate for this kind of thing.
+
+&gt; Mmm.
+
+mmm, underdocumented assumptions.
+
+Jay Carlson
+nop@nop.com    nop@ccs.neu.edu    nop@kagoona.mitre.org
+
+Flat text is just *never* what you want.   ---stephen p spackman
+</PRE>

@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [838] in "Coldmud discussion meeting"</TITLE>
+<H1>[838] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?838"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="837"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="839"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>tcd &amp; etc</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct 29 15:12:51 1995
+)</H3>
+<PRE>
+Date: Sun, 29 Oct 1995 13:07:42 -0700
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+In lieu of optimization I have changed how the .namef method functions.
+
+Before it was rather configurable, taking optional methods/arguments on
+the fly.  However, this was not very optimal, and since I could not find
+a single place in the entire db which actually took advantage of this
+(everywhere simply uses one of the 'symbol shortcuts which expands to
+something in the normal format, like .namef(['name], "(", ['activity], ")");
+Because of this .namef() simply takes one flag, which specifies what
+type of formatted name to give, handled by a switch.  The flag is required
+and therefore caused some problems (which are mostly fixed now).  This
+is much faster, trimming off ~200+ ticks for each call (not much, unless
+you consider something such as a who listing with ~100 people on it).
+
+The functionality of .namef _IS_ still available however, in obj.build_name().
+This method simply accepts a variable number of lists or strings, with
+the strings being concatenated onto the result, and lists being assumed
+to be a method + arguments, which is expected to return a string.
+
+The reason for mailing to this list is because of its impact on ColdCore.
+
+I noticed there were some who attempted to connect to tCD through the night,
+it is functional again, as my conversion in the above caused some problems
+which I have fixed.
+
+-Brandon Gillespie-
+</PRE>

@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [1525] in "Coldmud discussion meeting"</TITLE>
+<H1>[1525] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1525"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1519"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1524"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1526"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1526"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec  7 20:19:33 1999
+)</H3>
+<PRE>
+Date: Tue, 7 Dec 1999 18:07:48 -0700
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199912072326.PAA01437@taller.eng.sun.com&gt;; from Jeff Kesselman on Tue, Dec 07, 1999 at 03:26:20PM -0800
+Reply-To: coldstuff@cold.org
+
+
+--6TrnltStXW4iwmi0
+Content-Type: text/plain; charset=us-ascii
+
+Actually, the main issue for me is two disparit sources.  We have a
+version of the manual in a dynamic text format (Ctext) in the coldcore
+database.  It is useful to use for reference.  If we stop using this
+as the definitive source for the manual (as it has been in the past)
+then we should probably completely remove it from ColdCore, so it
+doesn't get out of date.  So the question is really:
+
+    1) who would mind if the manual was _removed_ from coldcore
+
+On a side node--what was changed in the manual?  From what I can
+pickup:
+
+    1) Mostly formatting stuff
+    2) A TOC
+    3) An index
+
+Has content changed?  I would love to accept the changed content back
+into ColdCore.  As for the formatting things, what sortof formatting
+things is it?  Bold/italics etc can also be put into ColdCore.  And as
+I mentioned earlier, the formatter could be made to generate a TOC and
+index...
+
+-Brandon
+
+--6TrnltStXW4iwmi0
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: HUeigzrQYwguqH49ng53L8yOB4yAne1X
+
+iQA/AwUBOE2vY0v5XoQiMgn6EQKuigCfccgfAoF942lRkZ5hSDURxjbIR10AoP8q
+SfRXTxSXROi7VIDmDG71j2LS
+=rM9c
+-----END PGP SIGNATURE-----
+
+--6TrnltStXW4iwmi0--
+</PRE>

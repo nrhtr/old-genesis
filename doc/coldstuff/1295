@@ -1,0 +1,75 @@
+<HEAD><TITLE>discuss@charon: [1295] in "Coldmud discussion meeting"</TITLE>
+<H1>[1295] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1295"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1294"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1296"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] ALPHA/STABLE releases, Mailing List Changes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 19 13:29:13 1997
+)</H3>
+<PRE>
+Date: Mon, 19 May 1997 11:17:20 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+I have taken the opportunity with the upcoming Genesis-STABLE release to
+do a little reorganizing and finalizing how we 'do' things.  Basically,
+there will be two branches to development now: STABLE and ALPHA.  These
+are taken from how FreeBSD does things.  Essentially, the STABLE release
+will come from the ALPHA release.  The STABLE release will never have
+features added.  If there are any patches, it is only to fix critical
+problems.  Any development and featurization will occur on the ALPHA
+release.
+
+To reflect these changes, and also finalize patch submission since it
+wasn't too clear before, I have also updated the mailing lists:
+
+genesis         Discussion in relation to the Genesis STABLE Release,
+                bug reports and fixes for the STABLE release are reported
+                to this list. 
+genesis-p       STABLE Patch submission address, all patches for the
+                STABLE release should be sent to this address (anybody
+                can submit a patch). 
+genesis-dev     Development list for Genesis ALPHA releases. Development
+                notes, Patches and Bug-Reports go to this list. 
+genesis-dev-p   Genesis ALPHA Patch submission address, all formal patches
+                for the ALPHA release should be sent to this address
+                (periodically informal patches may float across the
+                ALPHA Development list). 
+coldcore        Discussion in relation to the ColdCore STABLE Release, bug
+                reports and fixes for the STABLE release are reported to
+                this list. 
+coldcore-dev    Development list for ColdCore ALPHA releases. Development
+                notes, Patches and Bug-Reports go to this list. 
+
+Any patches for Genesis should be sent to the appropriate -p lists. 
+Coldcore is a different beast all-together, and maintains its own change
+submission mechansism on the Cold Dark.  Any patches sent anywhere else
+are irrelevant.  Periodically my RL gets very busy (such as recently, with
+the anticipated 'first-born' soon and the new house I just bought), so at
+times the ONLY PLACE I will be monitoring is -p.. anything else will be
+ignored.
+
+Also, ANYBODY can submit patches.  Just explain what they are, and why.
+If they have been discussed with some of the core Development members and
+agree'd upon its ok.  If not, swing by and chat with us first--often times
+we may already have a foundation and plans for many features.
+
+This week we are performing a final shakedown of the driver, with purify
+and all other warnings and alerts.  Pending no extreme problems we should
+see a Genesis 1.1-STABLE release, and development will begin on Genesis
+2.0 (ALPHA)
+
+Also for note, it looks like we may have a slick scheme for true
+multi-threading without impacting the language too much.  more later..
+
+-Brandon Gillespie
+
+</PRE>

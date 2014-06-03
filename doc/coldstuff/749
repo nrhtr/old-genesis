@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [749] in "Coldmud discussion meeting"</TITLE>
+<H1>[749] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?749"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="747"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="748"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="748"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="750"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="750"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="750"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: error_arg,error_str</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 25 11:52:49 1995
+)</H3>
+<PRE>
+Date: Thu, 25 May 1995 11:52:36 -0400
+From: Quinn &lt;quinn@Access.Mountain.Net&gt;
+To: brandon@avon.declab.usu.edu, coldstuff@MIT.EDU
+
+:| It is a little more clunky, but error_[arg|str]() would just be
+:| redundant, now that traceback() returns intelligent output.
+
+Yes, and I'd agree--if error() had been removed.  But error() is
+ still there, even though it's the same as traceback()[1][1]. So
+ why get rid of the others?
+
+(It is the same as traceback()[1][1], isn't it?)
+
+-Quinn
+
+</PRE>

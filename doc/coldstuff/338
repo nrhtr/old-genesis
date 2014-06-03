@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [338] in "Coldmud discussion meeting"</TITLE>
+<H1>[338] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?338"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="327"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="337"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="337"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="339"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: run_script() (odd random thoughts after lots of hour of sleep loss)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun May 29 16:26:46 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Sun, 29 May 1994 14:13:17 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; Can you write a script from cold? or does it (as i hope) need to be
+&gt; written outside and then installed in the scripts directory (which
+&gt; should be the only directory you can run a script from)
+&gt;
+&gt; Is your series of scripts what allows writing to the file system, or
+&gt; is it the server? (I could probably write a script that when invoked,
+&gt; connected to the mud as a player, listened to everything said, and
+&gt; wrote it to a file, or whatever you want, so I dont see why your
+&gt; limited to one line, bit I dont fully understand how scripts work with
+&gt; Cold.)
+
+All run script does is run execv() with whatever you feed it, and it checks to
+make sure you are running it from the scripts directory.
+</PRE>

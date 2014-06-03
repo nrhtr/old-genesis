@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [1233] in "Coldmud discussion meeting"</TITLE>
+<H1>[1233] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1233"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1232"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1234"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] 'configure' bug in 1.0p24 on linux systems</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Feb 12 00:57:02 1997
+)</H3>
+<PRE>
+Date: Tue, 11 Feb 1997 22:46:17 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+The new system guessing scripts I grabbed from autoconf changed their
+format, but only for linux systems.  This will cause the CPU to report as
+'i386-pc' which will cause problems.  If you are on a linux system, you
+can solve this problem by trimming '-pc' off any occurance of it.  I will
+have it fixed in p25, and in any newer downloads of p24 (its a minor
+problem, and not worth a full release imho).
+
+-Brandon
+
+</PRE>

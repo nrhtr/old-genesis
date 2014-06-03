@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [668] in "Coldmud discussion meeting"</TITLE>
+<H1>[668] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?668"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="667"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="667"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="669"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="669"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar  7 16:33:06 1995
+)</H3>
+<PRE>
+From: bellegj@monitor.cs.orst.edu
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Tue, 07 Mar 95 14:46:48 PST."
+             &lt;m0rm69a-000KcEC@serial&gt; 
+Date: Tue, 07 Mar 95 13:24:59 PST
+
+&gt; I'd like to propose '-&gt;' be the assignment operator. It visually represents
+&gt;  what happens to the variable being assigned the new value. It has no chance
+&gt;  of being pronounced, 'equals'. It looks cool...
+&gt; 
+&gt; @program $root.init_root
+&gt;  if (caller() != $root)
+&gt;    throw(~perm, "Caller is not $root.");
+&gt;  child_index -&gt; 0;
+&gt;  owners -&gt; setadd([this()], sender());
+&gt;  fertile -&gt; 0;
+
+My biggest problem with this is that the -&gt; implies implies flow from 
+information from left to right.  If I was to read
+ foo -&gt; bar;
+My first reaction would say that bar takes the value of foo instead of foo 
+takes the value of bar.  
+
+My own take on the assignment-as-expression issue is that while it would be 
+nice I don't think it's woth complicating the language to get.
+
+
+
+
+</PRE>

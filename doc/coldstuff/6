@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [6] in "Coldmud discussion meeting"</TITLE>
+<H1>[6] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?6"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="4"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="5"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="5"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="7"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: comments on help</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 13:27:27 1993
+)</H3>
+<PRE>
+Date: Mon, 15 Nov 1993 18:07:19 GMT
+From: snooze &lt;gregb@amber.ecst.CSUChico.EDU&gt;
+To: ghudson@MIT.EDU, gregb@amber.ecst.CSUChico.EDU
+Cc: coldstuff@MIT.EDU
+
+wouldn't this depend? I mean... once the mud gets started up the
+basic help files for things like look and stuff like that are
+going to be fairly unchanging... &lt;though i guess it wouldn't matter
+really... but if you read a property off an object does it load the
+whole object to do this? your help object could get pretty huge in
+that case...&gt; &lt;if you are keeping a detailed help&gt;...
+
+snooze
+</PRE>

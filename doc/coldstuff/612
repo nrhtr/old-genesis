@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [612] in "Coldmud discussion meeting"</TITLE>
+<H1>[612] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?612"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="611"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="613"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="614"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="614"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>How do i rebuiold CDC-1.1?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  5 03:05:21 1994
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+Date: Mon, 5 Dec 1994 00:01:37 -0800 (PST)
+
+How do I rebuild CDC-1.1?
+
+It appears to be missing the necessary names file.
+
+Thanks
+
+Jeff Kesselman
+
+</PRE>

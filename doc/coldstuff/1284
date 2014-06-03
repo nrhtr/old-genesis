@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1284] in "Coldmud discussion meeting"</TITLE>
+<H1>[1284] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1284"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1283"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1285"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1285"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1285"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] win95 support</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Apr 28 23:09:46 1997
+)</H3>
+<PRE>
+Date: Mon, 28 Apr 1997 22:58:18 -0400
+From: Jess Regal &lt;regal@netline.net&gt;
+To: coldstuff@cold.org
+
+Lemme get this straight..There is no "official" ColdC for Windows95.
+What then, are the files i found in
+ftp.cold.org/cold/drivers/Win32-Genesis-1.0p26.zip?
+ I've looked through the mailing list archives, and i think the
+questions been asked, and is always answered with a "Yes, but not
+really" kinda answer. If there is, how do i start the driver? i do have
+a database. 
+
+any help would be appreciated :)
+
+ Jess Regal(Haut)
+
+      "Do you walk in the light, but see nothing?"
+</PRE>

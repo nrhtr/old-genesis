@@ -1,0 +1,67 @@
+<HEAD><TITLE>discuss@charon: [424] in "Coldmud discussion meeting"</TITLE>
+<H1>[424] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?424"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="423"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="423"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="423"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="425"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: fork()/suspend(0)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Sep 21 02:56:23 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: deforest@netcom.com (Robert de Forest)
+Date: Tue, 20 Sep 1994 23:49:51 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199409210542.WAA00434@netcom17.netcom.com&gt; from "Robert de Forest" at Sep 20, 94 10:42:59 pm
+
+&gt; 0.12's pause() resumes whenver all input has been handled, not at the next
+&gt;  heartbeat.
+
+oops.. I hadn't looked closely enough at the code (I didn't realize there was a
+different builtin for pausing in this manner than for suspend/resume.  I had
+basically assumed that a pause was handled by suspending the task and then
+resume()ing it when its time came up as part of the heartbeat handler (thus
+allowing pausing for a specified number of seconds, but not allowing a 0-second
+pause).  I just saw all the other pausing stuff in there a few minutes
+ago.. sigh).  Actually, now that I look at things, doing things way I just said
+with the callback mod seems more flexible anyway (and removes a bit of code and
+complexity from the server too)..  perhaps it would be better to replace
+pause() with the callback system and enhance the server while simplifying its
+internals a bit?
+
+&gt; I still see no need for creation of new tasks. At least, I don't see a reason
+&gt;  why waiting for the next heartbeat is a problem. If it can be explained to me
+&gt;  why one second is too long to wait then Riche's solution seems amicable.
+
+Well, I can remember one situation (the lemming) where it would have been nice
+to be able to do this, and I suspect I could come up with other scenarios if I
+thought about it (and more importantly that they will probably come up on their
+own as people use ColdMUD for more and varied things.  Things like this never
+do sweep under the rug very well in my experience), but then again, it's a
+simple change that adds functionality without restricting anything or really
+bulking up the server..
+
+Is Jordan around/on the list at the moment?  If so, Jordan, what do you think
+about my callback system vs pause(), as mentioned above?
+
+As it is, I rather like my callback system, but if nobody wants it I can let it
+go..
+
+-R
+
+PS:  Just found a bug in the pause() code, BTW.. if the heartbeat is turned
+off, paused tasks won't resume either (until some IO takes place).
+
+Might want to move the 'seconds = (paused ? 0 : seconds);' outside the if/else
+block in main.c..
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+</PRE>

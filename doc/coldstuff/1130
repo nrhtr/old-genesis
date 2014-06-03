@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1130] in "Coldmud discussion meeting"</TITLE>
+<H1>[1130] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1130"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1124"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1129"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1129"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1131"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] How to compile?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov  7 12:16:36 1996
+)</H3>
+<PRE>
+Date: Thu, 07 Nov 1996 09:57:07 -0800
+To: gestalt@sedona.net (Gestalt), silovic@srce.hr, coldstuff@cold.org
+From: abn@plaza.ds.adp.com (Aaron Neerenberg)
+
+&gt;&gt; I've seen this happening on outdated architectures. Your system and gcc
+&gt;&gt; are okay, it's your yacc that sucks. Get and compile bison (it's available
+&gt;&gt; in any GNU archive).
+
+        FYI, one of the GNU archives w/ halfway decent response time is 
+
+        ftp://prep.ai.mit.edu/pub/gnu
+*****************************************************
+Aaron Neerenberg        6750 SW Scholls Ferry Rd, #21
+ADP                     Beaverton, OR, 97008
+Parts 
+(503) 402-3994          (503)-246-4627
+*****************************************************         
+
+</PRE>

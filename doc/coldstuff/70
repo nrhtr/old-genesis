@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [70] in "Coldmud discussion meeting"</TITLE>
+<H1>[70] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?70"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="68"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="69"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="69"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="71"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Minor note about regexp matching</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 26 09:33:55 1993
+)</H3>
+<PRE>
+To: Quinn Avery &lt;quinn@DUS.Mountain.Net&gt;
+Cc: coldstuff@MIT.EDU, ghudson@MIT.EDU
+In-Reply-To: Your message of Fri, 26 Nov 93 09:09:41 -0500.
+             &lt;199311261409.AA18274@DUS.Mountain.Net&gt; 
+Date: Fri, 26 Nov 93 09:28:25 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; Could you possibly include the original string matched against the
+&gt; regexp pattern as the final element of the return value?  Sometimes
+&gt; one would want to simply pass the match result and extract fields
+&gt; from its indices, instead of passing both the result and the string
+&gt; originally matched against it.
+
+I have a hard time believing that you can't do
+
+	[@match_regexp(r, s), s];
+
+The whole idea of having a language is so that the built-in primitives
+don't have to do everything for you in exactly the way that you want.
+
+&gt; Maybe a companion substitute() as in MOO?
+
+I'll look at it, and think about it.
+
+--GBH
+
+</PRE>

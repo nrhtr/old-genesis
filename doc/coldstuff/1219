@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [1219] in "Coldmud discussion meeting"</TITLE>
+<H1>[1219] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1219"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1218"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1220"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1220"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1224"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Win32 Port</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 26 23:49:17 1997
+)</H3>
+<PRE>
+From: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Sun, 26 Jan 1997 23:47:16 -0500
+
+Thanks for the info on NDM.  I was able to verify the index.pag keys and
+data were correct although implementation differs.  The objects file was
+corrupted by the fopen() in Init_New_Database() in the binarydb.c module.
+It specfied w+ for the mode instead of wb+.  I found a number of other places
+where opens are not explicitly declared O_BINARY.
+My Linux 'objects' file is identical to the win 'objects' file with the
+exception of unused(?) or filler bytes.  These appear to be zeroed out
+in Linux and garbage in Win.  Could this be a source of later problems
+for me?  
+In any event, it stays up and running until I attempt a connection. ;-)
+A little more debugging and I may have something here.   
+
+	Jon Lambert
+ 
+
+
+
+Some are born to sweet delight, some are born to endless night
+
+</PRE>

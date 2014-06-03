@@ -1,0 +1,214 @@
+<HEAD><TITLE>discuss@charon: [1393] in "Coldmud discussion meeting"</TITLE>
+<H1>[1393] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1393"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1392"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1392"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1392"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1394"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1394"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1395"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Help with genesis make</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  8 10:40:50 1997
+)</H3>
+<PRE>
+Date: Tue, 09 Dec 1997 01:28:50 +1000
+From: Dancer &lt;dancer@brisnet.org.au&gt;
+To: rpessin@digital-storm.com, coldstuff@cold.org
+
+Fee Fie Fo Fum. I smell the lack of a dbm library.
+
+Did you run 'configure' btw? I'm curious.
+
+If, in fact, you don't have a dbm library (look in /lib, /usr/lib, and
+/usr/local/lib for *dbm*) then run out and fetch gdbm from your local GNU
+software archive. Build and install it. Then make sure the Makefile includes
+-lgdbm.
+
+I'm fairly sure the configure script is supposed to take care of checking
+this, but I could be wrong.
+
+D
+
+
+Rogers Pessin wrote:
+
+&gt;   Well, if anyone can help me on this I'd greatly apreciate it.  I am
+&gt; trying to make the genesis driver for the very first time and am
+&gt; running into some problems.  I've downloaded the latest stable version
+&gt; of Genesis (1.1p1-STABLE), uncompressed &amp; untared it per the web page
+&gt; directions, changed into the created directory and typed "make", all
+&gt; exactly as the web directions tell you to.
+&gt;
+&gt;   Unfortunately, something seems to be going wrong, specifically, it
+&gt; is coming back with errors about undefined references.  I'm running
+&gt; Red Hat Linux 5.0 (Linux kernel 2.0.32).  Am I missing some necessary
+&gt; file, did I miss doing something, or what exactly?
+&gt;
+&gt;   I'm including below a paste showing the make results.  I really
+&gt; don't know enough about compiling stuff under gcc to know what are the
+&gt; important parts to include, so sorry for anything extraneous.  the
+&gt; undefined references part is at the very bottom.
+&gt;
+&gt; Thanks very much for any help,
+&gt; Rogers Pessin
+&gt; rpessin@digital-storm.com
+&gt;
+&gt; [begin past]
+&gt;
+&gt; make[1]: Entering directory `/home/rpessin/Genesis-1.1p1-STABLE/src'
+&gt; bison -y -d grammar.y
+&gt; mv -f y.tab.c grammar.c
+&gt; gcc -g -O -Iinclude -Imodules   -c grammar.c -o grammar.o
+&gt; mv -f y.tab.h include/parse.h
+&gt; data objects...
+&gt; make[2]: Entering directory
+&gt; `/home/rpessin/Genesis-1.1p1-STABLE/src/data'
+&gt; gcc -g -O -I../include   -c data.c -o data.o
+&gt; gcc -g -O -I../include   -c buffer.c -o buffer.o
+&gt; gcc -g -O -I../include   -c dict.c -o dict.o
+&gt; gcc -g -O -I../include   -c ident.c -o ident.o
+&gt; gcc -g -O -I../include   -c list.c -o list.o
+&gt; gcc -g -O -I../include   -c object.c -o object.o
+&gt; gcc -g -O -I../include   -c string.c -o string.o
+&gt; gcc -g -O -I../include   -c handled_frob.c -o handled_frob.o
+&gt; gcc -g -O -I../include   -c quickhash.c -o quickhash.o
+&gt; make[2]: Leaving directory `/home/rpessin/Genesis-1.1p1-STABLE/src/data'
+&gt; module objects...
+&gt; make[2]: Entering directory
+&gt; `/home/rpessin/Genesis-1.1p1-STABLE/src/modules'
+&gt; gcc -g -O -I../include   -c cdc.c -o cdc.o
+&gt; gcc -g -O -I../include   -c cdc_buffer.c -o cdc_buffer.o
+&gt; gcc -g -O -I../include   -c cdc_dict.c -o cdc_dict.o
+&gt; gcc -g -O -I../include   -c cdc_list.c -o cdc_list.o
+&gt; gcc -g -O -I../include   -c cdc_misc.c -o cdc_misc.o
+&gt;
+&gt; gcc -g -O -I../include   -c cdc_string.c -o cdc_string.o
+&gt; gcc -g -O -I../include   -c cdc_integer.c -o cdc_integer.o
+&gt; gcc -g -O -I../include   -c veil.c -o veil.o
+&gt; gcc -g -O -I../include   -c web.c -o web.o
+&gt; gcc -g -O -I../include   -c ext_math.c -o ext_math.o
+&gt; make[2]: Leaving directory
+&gt; `/home/rpessin/Genesis-1.1p1-STABLE/src/modules'
+&gt; operator and function objects...
+&gt; make[2]: Entering directory `/home/rpessin/Genesis-1.1p1-STABLE/src/ops'
+&gt; gcc -g -O -I../include   -c operators.c -o operators.o
+&gt; gcc -g -O -I../include   -c buffer.c -o buffer.o
+&gt; gcc -g -O -I../include   -c error.c -o error.o
+&gt; gcc -g -O -I../include   -c list.c -o list.o
+&gt; gcc -g -O -I../include   -c object.c -o object.o
+&gt; gcc -g -O -I../include   -c dict.c -o dict.o
+&gt; gcc -g -O -I../include   -c string.c -o string.o
+&gt; gcc -g -O -I../include   -c data.c -o data.o
+&gt; gcc -g -O -I../include   -c sys.c -o sys.o
+&gt; gcc -g -O -I../include   -c misc.c -o misc.o
+&gt; gcc -g -O -I../include   -c task.c -o task.o
+&gt; gcc -g -O -I../include   -c file.c -o file.o
+&gt; gcc -g -O -I../include   -c network.c -o network.o
+&gt; gcc -g -O -I../include   -c math.c -o math.o
+&gt; make[2]: Leaving directory `/home/rpessin/Genesis-1.1p1-STABLE/src/ops'
+&gt; gcc -g -O -Iinclude -Imodules   -c coldcc.c -o coldcc.o
+&gt; gcc -g -O -Iinclude -Imodules   -c textdb.c -o textdb.o
+&gt; gcc -g -O -Iinclude -Imodules   -c cache.c -o cache.o
+&gt; gcc -g -O -Iinclude -Imodules   -c binarydb.c -o binarydb.o
+&gt; gcc -g -O -Iinclude -Imodules   -c dbpack.c -o dbpack.o
+&gt; gcc -g -O -Iinclude -Imodules   -c decode.c -o decode.o
+&gt; gcc -g -O -Iinclude -Imodules   -c lookup.c -o lookup.o
+&gt; gcc -g -O -Iinclude -Imodules   -c io.c -o io.o
+&gt; gcc -g -O -Iinclude -Imodules   -c log.c -o log.o
+&gt; gcc -g -O -Iinclude -Imodules   -c net.c -o net.o
+&gt; gcc -g -O -Iinclude -Imodules   -c file.c -o file.o
+&gt; gcc -g -O -Iinclude -Imodules   -c strutil.c -o strutil.o
+&gt; gcc -g -O -Iinclude -Imodules   -c memory.c -o memory.o
+&gt; gcc -g -O -Iinclude -Imodules   -c sig.c -o sig.o
+&gt; gcc -g -O -Iinclude -Imodules   -c util.c -o util.o
+&gt; gcc -g -O -Iinclude -Imodules   -c regexp.c -o regexp.o
+&gt; gcc -g -O -Iinclude -Imodules   -c defs.c -o defs.o
+&gt; defs.c: In function `init_defs':
+&gt; defs.c:44: warning: passing arg 1 of `string_from_chars' discards
+&gt; `const' from pointer target type
+&gt; gcc -g -O -Iinclude -Imodules   -c dns.c -o dns.o
+&gt; gcc -g -O -Iinclude -Imodules   -c codegen.c -o codegen.o
+&gt; gcc -g -O -Iinclude -Imodules   -c execute.c -o execute.o
+&gt; gcc -g -O -Iinclude -Imodules   -c opcodes.c -o opcodes.o
+&gt; gcc -g -O -Iinclude -Imodules   -c token.c -o token.o
+&gt; gcc -g -O -Iinclude -Imodules   -c native.c -o native.o
+&gt; gcc -g -O -Iinclude -Imodules   -c shs.c -o shs.o
+&gt; gcc -g -O -Iinclude -Imodules   -c crypt.c -o crypt.o
+&gt; gcc -g -O -Iinclude -Imodules -Lmodules grammar.o coldcc.o textdb.o
+&gt; data/data.o data/buffer.o data/dict.o data/ident.o data/list.o
+&gt; data/object.o data/string.o data/handled_frob.o data/quickhash.o
+&gt; cache.o binarydb.o dbpack.o decode.o lookup.o io.o log.o net.o file.o
+&gt; strutil.o memory.o sig.o util.o regexp.o defs.o dns.o codegen.o
+&gt; execute.o opcodes.o token.o native.o ops/operators.o ops/buffer.o
+&gt; ops/error.o ops/list.o ops/object.o ops/dict.o ops/string.o ops/data.o
+&gt; ops/sys.o ops/misc.o ops/task.o ops/file.o ops/network.o ops/math.o
+&gt; modules/cdc.o modules/cdc_buffer.o modules/cdc_dict.o
+&gt; modules/cdc_list.o modules/cdc_misc.o modules/cdc_string.o
+&gt; modules/cdc_integer.o modules/veil.o modules/web.o modules/ext_math.o
+&gt; shs.o crypt.o -lm -lnsl -o coldcc
+&gt; lookup.o: In function `lookup_open':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:56: undefined
+&gt; reference to `dbm_open'
+&gt; lookup.o: In function `lookup_close':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:66: undefined
+&gt; reference to `dbm_close'
+&gt; lookup.o: In function `lookup_sync':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:76: undefined
+&gt; reference to `dbm_close'
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:77: undefined
+&gt; reference to `dbm_open'
+&gt; lookup.o: In function `lookup_retrieve_objnum':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:89: undefined
+&gt; reference to `dbm_fetch'
+&gt; lookup.o: In function `lookup_store_objnum':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:104: undefined
+&gt; reference to `dbm_store'
+&gt; lookup.o: In function `lookup_remove_objnum':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:119: undefined
+&gt; reference to `dbm_delete'
+&gt; lookup.o: In function `lookup_first_objnum':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:130: undefined
+&gt; reference to `dbm_firstkey'
+&gt; lookup.o: In function `lookup_next_objnum':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:142: undefined
+&gt; reference to `dbm_nextkey'
+&gt; lookup.o: In function `lookup_remove_name':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:226: undefined
+&gt; reference to `dbm_delete'
+&gt; lookup.o: In function `lookup_first_name':
+&gt;
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:236: undefined
+&gt; reference to `dbm_firstkey'
+&gt; lookup.o: In function `lookup_next_name':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:248: undefined
+&gt; reference to `dbm_nextkey'
+&gt; lookup.o: In function `store_name':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:345: undefined
+&gt; reference to `dbm_store'
+&gt; lookup.o: In function `get_name':
+&gt; /home/rpessin/Genesis-1.1p1-STABLE/src/lookup.c:359: undefined
+&gt; reference to `dbm_fetch'
+&gt; make[1]: *** [coldcc] Error 1
+&gt; rm grammar.c
+&gt; make[1]: Leaving directory `/home/rpessin/Genesis-1.1p1-STABLE/src'
+&gt; make: *** [all] Error 2
+&gt;
+&gt; [end paste]
+&gt; _________________________________________________________
+&gt; DO YOU YAHOO!?
+&gt; Get your free @yahoo.com address at http://mail.yahoo.com
+
+
+
+--
+Note to evil sorcerers and mad scientists: don't ever, ever summon powerful
+demons or rip holes in the fabric of space and time. It's never a good idea.
+
+ICQ UIN: 3225440
+
+
+</PRE>

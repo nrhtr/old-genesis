@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [736] in "Coldmud discussion meeting"</TITLE>
+<H1>[736] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?736"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="735"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="735"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="735"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="737"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: SUNOS compile error</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 13 02:21:26 1995
+)</H3>
+<PRE>
+Date: Fri, 12 May 95 22:21:28 -0800
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: quinn@Access.Mountain.Net (Quinn)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199505130421.AAA29492@Access.Mountain.Net&gt; from "Quinn" at May 13 95 12:21 am
+
+&gt; :| Sat May 13 00:15:52 1995: select:  forever wait
+&gt; 
+&gt; Please help me.
+
+This is usually caused by the startup code for the database not binding to 
+an initial port, which is usually caused by a corrupted DB or similar 
+problem.. My immediate suggestion would be to check your DB..
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+                         http://www.crl.com/~riche
+           "For the world is hollow, and I have touched the sky."
+</PRE>

@@ -1,0 +1,119 @@
+<HEAD><TITLE>discuss@charon: [427] in "Coldmud discussion meeting"</TITLE>
+<H1>[427] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?427"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="425"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="426"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="426"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="428"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="428"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="429"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: implementing 'atomic' designation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 02:17:08 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: deforest@netcom.com (Robert de Forest)
+Date: Wed, 21 Sep 1994 23:10:00 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199409220511.WAA20090@netcom6.netcom.com&gt; from "Robert de Forest" at Sep 21, 94 10:11:25 pm
+
+&gt; Could you define and elaborate on the meaning of atomic execution? I believe it
+&gt;  is uninterupted, or single-threaded, but I want to make sure. Please also
+&gt;  breifly touch on the utility of this mode. (Hope I don't look stupid now :)
+
+Ok, good point.  This is basically how I was using the term too.  Basically the
+point would be to give a method some way of ensuring that things wouldn't be
+changed out from under it while it was executing the specified block of code
+(which under the current implementation means that any code that's running in
+an 'atomic' state cannot suspend or pause).
+
+&gt; I think Greg was gonna make atomicity a property of methods, like
+&gt;  disallow_overides,
+
+That's another way of doing things that I hadn't really considered much..  I
+rather like the flexibility that a simple statement would provide, and it also
+puts the deciding in the hands of the calling routine instead of the called one
+(otherwise you'd have to make atomic-thunk routines if you wanted a non-atomic
+method to call another non-atomic method but do it atomically).  I'm not sure
+how much work either technique would entail, tho.
+
+&gt;  I like making it module-level better, if it is what I think it is.
+
+module-level?
+
+&gt; The assignment as an expression question has come up MANY times. When I first
+&gt;  became aquainted with assignment as a statement I thought it was a bad idea,
+&gt;  but after getting parse errors on if (a=b) more than a dozen times, I have
+&gt;  decided I like things the way they are.
+
+I know it's come up a lot, but I was actually attempting to bring up an aspect
+of it that hasn't been brought up at all to my knowledge and which you didn't
+really address at all.
+
+I'm not suggesting changing the way assignement works.  I was only suggesting
+adding a second form of assignment to the language that basically allowed a
+programmer to say "I know what I'm doing, dammit, lemme do it.".
+
+I understand how you feel about some of this and that's actually why even these
+suggestions don't sit entirely well with me either, but when it comes down to
+it, I just do not like the status quo at all for one big reason:  while loops.
+I want to find a solution to that problem because I think that having to
+duplicate code and divorce fundamentally identical operations into multiple
+sections of a method's code just to get a simple operation to work decently is
+just bad, and I haven't heard any other suggestions about how to deal with it.
+
+&gt; I had had thoughts along these lines, but even more extreme, in that the
+&gt;  operator would choose the second value if the first expression had actually
+&gt;  THROWN the error. That is, (? toerr('foo) ?? 0 ?) =&gt; ~foo, but
+&gt;                             (? $root.chparents(0) ?? 0 ?) =&gt; 0 (since chparents
+&gt;  would throw ~type).
+
+This was my original idea too, but I changed it somewhat because simply testing
+the type allowed it to be used (in my opinion) more usefully in that it could
+be used with (| |) or without depending on what level of thing one wanted to
+catch with it.
+
+&gt; Again, I think these ideas need to be considered more closely after stateing
+&gt;  what we want in a more general sense. Do we want to trust the programmers to
+&gt;  write "nice" code or do we want to protect them from their =/== mistakes? Do
+&gt;  we want to make it possible to write almost totally cryptic code? Etc.
+
+Actually, I like having assignment not be an expression too and most of the
+results of that fact in how code ends up.  All I want is some way to fix the
+while command and I'll be happy.  sigh.  In general, I'm quite happy with the
+general design goals the way they are, tho.
+
+&gt; While we're thinking about these things, I'd like to bring up an idea Brandon
+&gt;  had a while back. It was to provide formatting operators to allow coders to
+&gt;  pretty up their code by dividing long lines and such. An example would be...
+[snip]
+&gt; I am against this, because I think it's something that should be handled in-db.
+
+I would be too if I could see how it _could_ be done in-DB.  elaboration
+please?  I think that the ability to do this with one's code would be quite
+useful in some situations, but I simply don't see any way to do it without
+building it into the server..
+
+&gt;  The Cold philosophy as I understand it demands a lean server, and cruft like
+&gt;  this is totally unnecessary.
+
+The cold philosophy as I see it is basically that the server should contain no
+code that could be done in-DB unless there's a significant advantage to doing
+it in-server (such as doing regexp matching in-server for speed) (note that
+this is also why I like the idea of callbacks better than pause(), because
+pause() can be done in-DB using callbacks, but callbacks can't be done in-DB
+using pause().  Anyway, enough harping on that..).  In the case of the code
+formatting, I don't see any way to do it in-DB, so doing it in-server is
+justified if that functionality is really wanted by a reasonable number of
+people.  If, however, someone can come up with a feasable way to do it in-DB,
+then that's how it should be done.
+
+-R
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+</PRE>

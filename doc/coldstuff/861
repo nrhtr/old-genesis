@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [861] in "Coldmud discussion meeting"</TITLE>
+<H1>[861] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?861"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="860"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="860"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="860"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="862"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: CDC</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec 27 16:38:27 1995
+)</H3>
+<PRE>
+Date: Wed, 27 Dec 1995 14:24:06 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Robert Lumley &lt;rlumley@telmaron.com&gt;
+cc: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;199512272249.RAA28364@telmaron.com&gt;
+
+&gt;     Hello my name is Robert Lumley, I am the site admin at telmaron.com. 
+&gt; I have often been interested by cold mud and have tried to find a good
+&gt; source for the material, well i found it now but i can't ftp stuff.  I
+&gt; tried to get the CDC-1.2.tar.gz and keep getting permission denied. Am i
+&gt; doing something wrong. thanks..
+
+The CDC core is outdated, I keep it on the archive for backwards 
+reference, but it is not readable as I don't want people grabbing the 
+older stuff on accident.  The latest version is ColdCore.
+
+However, we are moving through a transition with ColdCore and Genesis 
+(the db format is changing), so its mainly incompatable at the moment...
+
+-Brandon Gillespie-
+</PRE>

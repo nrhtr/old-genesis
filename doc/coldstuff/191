@@ -1,0 +1,71 @@
+<HEAD><TITLE>discuss@charon: [191] in "Coldmud discussion meeting"</TITLE>
+<H1>[191] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?191"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="190"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="192"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>builtin names</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar 31 20:19:51 1994
+)</H3>
+<PRE>
+Date: Thu, 31 Mar 1994 18:03:18 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+As many can attest, I get really hung up on naming things, I like to get names
+set from the beginning, so they "work" with each other (and do not conflict),
+etc.  Because of this i'd like to request a few builtin's change names slightly
+(not a big deal, but heck, it makes more sense this way (I hope)--if it was a
+really big deal I could just change them myself, but i'd like release
+changes...).
+
+Bear with me 8)  I may also put a few Core parameter/obj name changes:
+
+  Current                      Adjusted
+
+Object names (dbrefs/vr/etc):
+  get_name()             =&gt;    get_obj_name()
+  assign_name()          =&gt;    assign_obj_name()
+  deassign_name()        =&gt;    deassign_obj_name()
+  ,name                  =&gt;    obj_name
+     (this makes much more sense, in relation to ,vr_name)
+  $sys.assign_name()     =&gt;    $sys.assign_obj_name()
+  $sys.deassign_name()   =&gt;    $sys.deassign_obj_name()
+
+Connection stuff (the names/methods called get really confusing right now):
+
+  This is the major stuff i'd like to change.  There are several ways we could
+approach it, but right now the builtin 'connect()' opens an outbound
+connection, yet the server CALLS a method named 'connect' on an incoming
+connection object (whatever its bound to).  Basically, the following names are
+just near guesses, but they are aligned with the inbound/outbound idea...
+
+  conn_assign()          =&gt;    conn_assign()   (this one doesnt need to change,
+                                                as it works either way...?)
+  connect()              =&gt;    out_connect()
+
+The server has a few method names which must exist (on a connection, in/out):
+
+  .parse()               =&gt;    .inbound_buffer()  (?, buffer_in()? hsm)
+  .connect()             =&gt;    .connected()      (it goes both ways, but
+                                                  is only called once)
+  .disconnect()          =&gt;    .disconnected()   (same as above)
+
+  From here I can hack up a good $network object (parsing ALL outbound network
+connections through it, rather than $sys).  The main irritation is .connect()
+where you would expect .connect() to call the builtin connect() (if only 1
+change were made, i'd request it be changing .connect() to .connected()).
+
+I know I have other stuff, in relation to buffers (Crag hacked up a
+$utilities/$buffer object, sorta fun).
+
+-Brandon (Lynx)
+</PRE>

@@ -1,0 +1,90 @@
+<HEAD><TITLE>discuss@charon: [938] in "Coldmud discussion meeting"</TITLE>
+<H1>[938] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?938"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="935"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="936"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="937"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="939"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Re: MUD system -&gt; MUD system conversion...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar 16 12:40:46 1996
+)</H3>
+<PRE>
+Date: Sat, 16 Mar 1996 10:27:15 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org, moo-cows@parc.xerox.com
+In-Reply-To: &lt;9603151803.AA14450@spam.maths.adelaide.edu.au&gt;
+
+On Sat, 16 Mar 1996, Gregory D Lewis wrote:
+&gt; &gt; Most MOO's, MUSH's, etc have a generic object system which is relatively
+&gt; &gt; similar (i.e. they all have rooms, or some such similar concept for a
+&gt; &gt; location).  The following idea is to create 'templates' which objects
+&gt; &gt; from any system can be dumped to, and which any other system can read back
+&gt; &gt; into their own db format.  The intention is to create a generic high-level
+&gt; &gt; specification for Virtual Environment System topology, so that the topology
+&gt; &gt; can easilly convert from driver to driver.
+&gt; 
+&gt; It seems to me to be fairly restrictive to only include members of the 
+&gt; Tiny* family or derivatives thereof.  The Genesis driver reminds me much more
+&gt; of the lpmud drivers than say raw tinymud, or even MUSH.  I may be taking a 
+&gt; naive view I guess since I haven't messed with the internals.  But certainly 
+&gt; someone has already used one of the lpmud drivers to do a MOO simulation :)
+
+You are right, it can go further.
+
+&gt; &gt; To reexamine; the purpose of this system is to create a standard set of
+&gt; &gt; templates which can be used to abstractly represent the topology of most
+&gt; &gt; systems (MOO, MUSH, TinyMUSH, etc).  With this abstraction one could easilly
+&gt; &gt; convert from one system to another.  The level of detail/depth that is created
+&gt; &gt; would be restricted.  However, this system would enable one to convert
+&gt; &gt; the grunt portion of a system's topology easilly.
+&gt; &gt; 
+&gt; &gt; Along with templates there is also a generic set of 'data' types
+&gt; &gt; (dropping back to C for syntax conventions):
+&gt; &gt; 
+&gt; &gt;     INT (integer)                       125
+&gt; &gt;     STR (string, lists of characters)   "string"
+&gt; &gt;     LIST                                {item, item, item}
+&gt; &gt;     REF                                 $object
+&gt; 
+&gt; All these data types convert to LPC easily.  The possible exception being the
+&gt; REF one, but that could easily become the name of an LPC file.
+&gt; 
+&gt; &gt; The following are examples of template definitions:
+&gt; [list deleted for brevity]
+&gt; 
+&gt; Again, these could all easily be translated into lpc rather than into db 
+&gt; objects from this high level format.  The only slight difference was that
+&gt; most Tiny* muds treat an exit as a separate objects, while most LP muds treat
+&gt; exits as part of a room.  This isn't a big hurdle though, and certainly one
+&gt; could write a Genesis core that treated exits as part of rooms or an LP mudlib
+&gt; that treated exits as separate objects.  And certainly the listed format for
+&gt; exits could easily be translated into LPC.
+
+Well, look at this middle language as an abstraction, you are specifying 
+the topology, so you look at an exit as a seperate unique item.  In the 
+example the exit was more of a 'link' going both ways, which is really 
+not a very functional solution in any VR system I know of.
+
+&gt; Anyway, I don't think you should overlook the possibility of cross fertilisation
+&gt; between mud types that have traditionally not been close.  Certainly I've
+&gt; had it on my mind to write a package for the Intermud-3 protocol currently
+&gt; being used by LP's and some Aber's in ColdC.  I also wonder if ColdC could
+&gt; benefit from some LP concepts like the LPC-&gt;C conversions some drivers now
+&gt; do to speed up core or mudlib code (a ColdC-&gt;C conversion could convert some
+&gt; of the central db "library objects" into modules for compilation into the
+&gt; driver possibly).
+
+I know this is off topic for the MOO list, but Cold does have what you 
+are referring to (my copy that is), known as 'native' methods.
+
+&gt; Oh well, my two gold coins, or two pennies worth, depending on what brand I'm
+&gt; on :).
+
+-Brandon Gillespie-
+</PRE>

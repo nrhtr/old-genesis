@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [930] in "Coldmud discussion meeting"</TITLE>
+<H1>[930] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?930"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="929"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="931"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="931"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="933"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis/Cold 0.4 is available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar 10 06:23:26 1996
+)</H3>
+<PRE>
+Date: Sun, 10 Mar 1996 03:42:47 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Genesis 0.4 is the step right before 0.1; all of the bugs we
+know of have been FOUND AND SQUASHED.  This even includes the
+infamous objects-lost-during-textdumping!
+
+Interested souls can use Genesis 0.4 as a pre Genesis 1.0.  There
+will be no more syntax changes after this point; native methods
+will be added in cooperation and supplementation with existing functions,
+they will not replace any.
+
+If anybody needs any help upgrading their database contact me.
+
+And in other news; after the 1.0 version is released I will be working on 
+getting a win32 version available to the masses; most of the work 
+involved will simply be converting file handling functions accordingly.  
+Basically; you will be able to run it in windows 95.
+
+More information can be found at the web site:
+
+    http://www.cold.org/
+
+You can grab the source at:
+
+    ftp://ftp.cold.org/cold/drivers/Genesis-0.4-0.tar.gz
+
+Enjoy!
+
+    -Brandon Gillespie-
+</PRE>

@@ -1,0 +1,75 @@
+<HEAD><TITLE>discuss@charon: [1435] in "Coldmud discussion meeting"</TITLE>
+<H1>[1435] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1435"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1434"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1436"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ColdCore snap upgrades</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov  6 05:21:02 1998
+)</H3>
+<PRE>
+Date: Fri, 6 Nov 1998 03:15:24 -0700
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+
+
+--azLHFNyN32YCQGCU
+Content-Type: text/plain; charset=us-ascii
+
+The new scheme for upgrading is available.  It is in beta mode, but
+only because its new--not because its instable.  It bears no relation
+to the previous version, and should be much easier to use.  From the
+README file:
+
+--------------------------------------------------------------------
+Run the command 'upgrade'.  This is a Perl5 program.  It expects perl5
+to be located in:
+
+    /usr/bin/perl
+
+If it is not, you will need to edit it and change the first line to
+reflect where your version of perl is.  You might be able to find your
+version of perl with the command 'which perl'.  Use 'perl -v' to get
+the version number.
+
+If you want to see what will be done, before actually applying the
+changes, use the argument '-list' for upgrade.  If you want to see the
+intimate details of what will be done, also include '-full'.  The
+output from '-full' should be completely capable of being fed to
+coldcc as a textdump, so you can redirect that output to a file and
+make changes to it as you deem appropriate.
+
+Once the upgrade is completed, the binary directory you specified
+should be current.  I suggest making a textdump of it, then starting
+genesis from the binary, connecting, and verifying functionality.
+--------------------------------------------------------------------
+
+It should be pretty simple.  You can get it at:
+
+    http://www.cold.org/cold/dbs/ColdCore/upgradedb-3.0.1998-10-20.tar.gz
+
+Let me know how it goes.
+
+-Brandon
+
+--azLHFNyN32YCQGCU
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: fX6kdzF1cd0BeOJ27zUXnMcVSb/0+9tE
+
+iQA/AwUBNkLMO0v5XoQiMgn6EQLOJwCdH6iuvj8JFhgPTdjzBk+XtmL6GhIAoMeR
+RHpU6o85sqU4FDPlja3c6L5b
+=V8h0
+-----END PGP SIGNATURE-----
+
+--azLHFNyN32YCQGCU--
+</PRE>

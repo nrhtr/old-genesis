@@ -1,0 +1,28 @@
+<HEAD><TITLE>discuss@charon: [1036] in "Coldmud discussion meeting"</TITLE>
+<H1>[1036] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1036"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1032"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1035"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1035"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1037"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] behaviour of localtime()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul 23 17:23:36 1996
+)</H3>
+<PRE>
+Date: Tue, 23 Jul 1996 14:04:43 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199607231614.RAA01653@aaaaaaaa.demon.co.uk&gt;
+
+&gt; What is this, April 1st?  Under this proposal I'll be forced to
+&gt; subtract one from seconds and minutes to get the right answer?
+
+Sorry, spaced on my behalf, I think I'll just go with Brad's suggestion.
+</PRE>

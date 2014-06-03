@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [232] in "Coldmud discussion meeting"</TITLE>
+<H1>[232] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?232"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="231"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="233"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="233"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="233"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>network "stuff"</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 12 18:24:29 1994
+)</H3>
+<PRE>
+Date: Thu, 12 May 1994 15:17:17 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Something with coldmud that I've been meaning to speak about, but always
+forget, is networking.  Two things:
+
+bind() does not seem to work with more than 1 port.  I was under the impression
+  that it was supposed to, is it?  If so then there is a bug/problem
+  somewhere...
+
+IP Addresses (as strings of all things).  Right now that is the only way you
+  can receiving or send a network address.  I would personally like to see it
+  giving and handling names rather than the IP.  I dont know what is involved
+  unfortunately.
+
+-Brandon/Lyncx-
+
+Oh, on the stridx function, Richelieu reminded me about the "in" ability (duh),
+so the only usage of stridx would be for reverse indexing, which is very
+helpful for wrapping a string (which would still be nice).  The question now
+would be for such a builtin would we want to support normal indexing as well,
+to be uniform, or just make a reverse index? (and Riche requested a name other
+than that relating to a zit cream :)  Would we just want 'rindex?'  or
+'strindex' to handle forward/backwards indexing?
+
+Oh, and I still wanna "clear_parameter($defining_obj, $inherited_obj, 'param)"
+</PRE>

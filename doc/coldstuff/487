@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [487] in "Coldmud discussion meeting"</TITLE>
+<H1>[487] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?487"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="484"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="485"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="486"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="488"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>RE: Creating buffers.. HELP!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct 30 14:50:00 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Sun, 30 Oct 94 12:46:46 -0700
+
+
+&lt;&gt; I'm trying to send a specific byte string.  Why does this generate a
+&lt;&gt; syntax error???
+&lt;&gt; 
+&lt;&gt; echo(%[0,x,y,width,height]);
+&lt;
+&lt; Probably because, last I looked, the notation for a buffer was `[], not %[]
+
+Actually it is the documentation's fault.  In the ColdMUD manual it lists
+a buffer as %[], not `[].  I figure at some point buffers were %[] and when
+Greg changed them he forgot to update the manual (shrug).
+
+-Brandon
+</PRE>

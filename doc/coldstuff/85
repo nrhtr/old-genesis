@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [85] in "Coldmud discussion meeting"</TITLE>
+<H1>[85] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?85"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="84"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="86"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>agent and follower protocol</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 29 21:17:09 1993
+)</H3>
+<PRE>
+Date: Mon, 29 Nov 1993 19:13:22 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Ok, could you perhaps explain how this works Greg?  it is new with the 4.0
+world, and it has successfully broken several of the Cold Dark method 
+structures so much so that i've just commented out the checks they do 
+until I can figure out how it is supposed to work...
+
+-Brandon
+</PRE>

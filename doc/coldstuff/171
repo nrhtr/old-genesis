@@ -1,0 +1,89 @@
+<HEAD><TITLE>discuss@charon: [171] in "Coldmud discussion meeting"</TITLE>
+<H1>[171] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?171"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="170"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="172"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>encapsulation and stuff</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 25 19:55:09 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: coldstuff@MIT.EDU
+Date: Fri, 25 Mar 1994 16:53:29 -0800 (PST)
+
+&gt; Well, i was actually suggesting a core modification, as opposed to a server
+&gt; modification, sorry if you dont want to talk about core issues here...
+
+oh, that's fine, it just wasn't obvious you were talking about an in-DB
+implementation.  However, I'm not sure why that naming/operation convention is
+much better or worse than the convention we have already (methods that return
+variables typically have the name of the variable, and methods that set them
+are named "set_" plus the name of the variable)..  It actually seems to me it'd
+be better to keep setting and getting operations in separate methods, since
+they really are separate things.  Having different method names for getting and
+setting also reduces potential confusion, and allows for better automatic
+argument checking..
+
+&gt; Also, I thought one of the points of encapsulation was to abstract
+&gt; the assignment of variables, so that instead of doing x = 1 you do x(1)
+
+This is really what Greg means about database-OO versus language-OO..  What
+you're describing here is what OO language constructs are all about, which, for
+the most part, Coldmud doesn't have, because it's based primarily on C, rather
+than an object-oriented language.
+
+&gt; I seem to be missing the point of encapsulation, I thought it was to provide
+&gt; a control as to how the data was accessed, not limit the access of the data
+&gt; to the object.
+
+No, this is exactly the point of encapsulation, and this is why automatic
+access to an object's parameters is not a good thing, because it doesn't allow
+the object to control whether they should be publicly accessible or not, or how
+they should be accessed.  Basically, in languages such as C++, public and
+protected class members are really a hack, sacrificing encapsulation for speed.
+Since Coldmud attempts to create a much more pure form of object-orientation,
+and speed isn't as much of an issue in it as in application development, all of
+its parameters are "private", allowing for maximum flexibility in controlling
+how they're accessed.
+
+Now, relating to the language-OO vs. DB-OO issue is something that I've been
+thinking about asking Greg to implement for a while in Coldmud, and since he
+appears to be back in the land of the living (at least more than he was),  I'll
+ask now..
+
+Much as I hate the concept of operator overloading, a simple form of it could
+be immensely useful in Coldmud and lead to a more OO-based language, as well.
+What I'd like to see is simply a set of built-in method names that the system
+would try to call if one tried to use various assignment ('=') or comparison
+('==', '&lt;', etc) operators on a frob value.  This, among other things, would
+allow frobs to be used as user-defined data types a lot more efficiently and
+robustly.
+
+There is one problem with this, since the frobs wouldn't normally be accessed
+explicitly in code (they'd usually be in variables of some sort), the
+operator-overriding wouldn't really be on the frobs themselves, but would have
+to function on any variable that had a particular frob as its value.  Since C--
+is a typeless language, if this were just implemented by itself, one might get
+situations where a variable worked as normal until it got set to the value of a
+certain frob that overrode the assignment operator, and from then on, worked
+differently (there being no way to change it to have a non-frob value).  This
+is obviously not a good thing (although it poses interesting issues in the way
+of data-viruses and the separation of data and code).  I'm not sure how this
+should be dealt with, but it seems like it shouldn't be that great a problem to
+fix, especially considering the potential benefits.
+
+Sigh.. that probably made no sense..  Lemme know if I should try to explain it
+all again..  basically I'd just like to turn frobs into more of a
+programmer-defined datatype by allowing operator overriding on them.
+
+-Riche
+
+</PRE>

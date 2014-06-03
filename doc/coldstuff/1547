@@ -1,0 +1,84 @@
+<HEAD><TITLE>discuss@charon: [1547] in "Coldmud discussion meeting"</TITLE>
+<H1>[1547] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1547"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1543"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1546"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1546"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1548"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1548"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1548"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: 1.1.8 Win32 genesis binaries</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 23 13:04:52 2000
+)</H3>
+<PRE>
+Date: Sun, 23 Jan 2000 12:42:33 -0500
+From: Psyclone &lt;psyclone42@geocities.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+"Jon A. Lambert" wrote:
+&gt; 
+&gt; &gt;Psyclone wrote:
+&gt; &gt;&gt;
+&gt; &gt;&gt;mtime() always returns 0. Also a library issue -- Win32 apparently
+&gt; &gt;&gt;doesn't have a function to return microseconds.
+&gt; &gt;
+&gt; &gt;Hmm.. I'll have a look around.
+&gt; &gt;
+&gt; 
+&gt; Sorry I don't have the current source handy, but ...
+&gt; 
+&gt; Not sure where you need it but this will pull out current millisecs (~=microsecs?).
+Milliseconds (msec) are 1/1000ths of a second, Microseconds (usec --
+actually the greek letter mu instead of u) are 1/1000000ths of a second.
+mtime() is used in-core to time evals:
+
+&lt;source&gt;
+void func_mtime(void) {
+#ifdef HAVE_GETTIMEOFDAY
+    struct timeval tp;
+#endif
+    
+    if (!func_init_0())
+        return;
+
+#ifdef HAVE_GETTIMEOFDAY
+    /* usec is microseconds */
+    gettimeofday(&amp;tp, NULL);
+
+    push_int((cNum) tp.tv_usec);
+#else 
+    push_int(-1);
+#endif
+}
+&lt;/source&gt;
+
+(Oops, it always returns -1) Anyway, I guess I can have it return
+milliseconds * 1000. Something's better than nothing..
+
+&gt; &gt;&gt;ctime() and friends throw when given numbers &lt; 18000. Borland (what I
+&gt; &gt;&gt;used to compile genesis) has a broken time utility which causes genesis
+&gt; &gt;&gt;to crash when these functions are given low numbers.
+&gt; &gt;&gt;
+&gt; 
+&gt; This check will resolve the problem without having to throw an error and
+&gt; should work in whatever timezone you set up in.
+&gt; 
+&gt; Somewhere after this :
+&gt;  tval = (num_args) ? args[0].u.val : time(NULL);
+&gt; 
+&gt; Insert the following:
+&gt; #ifdef _BORLANDC_
+&gt;   if (tval &lt; _timezome) tval = _timezone;
+&gt; #endif
+&gt; 
+&gt; Before calling:
+&gt; ctime(tval);
+&gt; 
+Isn't it a bit misleading, though, to have ctime(0) return the same as
+(say) ctime(18000)?
+</PRE>

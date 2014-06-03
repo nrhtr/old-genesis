@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [945] in "Coldmud discussion meeting"</TITLE>
+<H1>[945] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?945"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="944"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="944"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="944"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="946"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="950"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="952"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] ColdC 1.0 Manual completed</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar 24 22:26:34 1996
+)</H3>
+<PRE>
+Date: Sun, 24 Mar 1996 20:16:43 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.960324201111.11448A-100000@tombstone.sunrem.com&gt;
+
+BTW, it does include sections on using files and network connections.
+
+It does its best to NOT include anything about actually using the driver, 
+that is covered at:
+
+    http://www.cold.org/Genesis/
+
+-Brandon
+</PRE>

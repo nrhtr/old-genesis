@@ -1,0 +1,59 @@
+<HEAD><TITLE>discuss@charon: [1588] in "Coldmud discussion meeting"</TITLE>
+<H1>[1588] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1588"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1581"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1587"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1587"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1589"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: A couple simple questions (hopefully)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 30 16:04:36 2000
+)</H3>
+<PRE>
+Date: Tue, 30 May 2000 13:50:55 -0600
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;4.3.0.20000530122925.00def750@taller.eng.sun.com&gt;; from Jeff Kesselman on Tue, May 30, 2000 at 12:29:54PM -0700
+Reply-To: coldstuff@cold.org
+
+
+--qjNfmADvan18RZcF
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, May 30, 2000 at 12:29:54PM -0700, Jeff Kesselman wrote:
+&gt; At 03:37 PM 5/30/00 -0300, you wrote:
+&gt; &gt;On Tue, 30 May 2000, Brandon Gillespie wrote:
+&gt; &gt; &gt; Because objects are inherently persistent in ColdC, they also have a
+&gt; &gt; &gt; unique identifier.  This means you can theoretically run out of
+&gt; &gt; &gt; identifiers since it is a signed 32bit number.
+&gt;=20
+&gt; Um. I ASSUMED destroyed IDs are eventually reclaimed.
+&gt;=20
+&gt; is this not true? Does the DB NEVER compact?
+
+Not during run-time, but you can compact it by going through a process
+of decompiling to a textdump with the -# option (to not print
+objnums) then recompiling back to a binarydb.
+
+-Brandon
+
+--qjNfmADvan18RZcF
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: zvea1w6nfY+uj1bbiMPMhoNHlgLbHMHK
+
+iQA/AwUBOTQbnkv5XoQiMgn6EQImKgCgkU2RWRUWH3VwoX5KXMDufz2DsGQAniTx
+7AHLbSv3J1ayf5EQZpulcIu/
+=AwwK
+-----END PGP SIGNATURE-----
+
+--qjNfmADvan18RZcF--
+</PRE>

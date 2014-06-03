@@ -1,0 +1,194 @@
+<HEAD><TITLE>discuss@charon: [899] in "Coldmud discussion meeting"</TITLE>
+<H1>[899] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?899"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="898"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="900"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="900"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="903"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] New Admin Guide (first draft)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan 18 01:28:39 1996
+)</H3>
+<PRE>
+Date: Thu, 18 Jan 1996 01:14:15 -0500 (EST)
+From: "Charles Shepherd" &lt;cshepher@cs.indiana.edu&gt;
+To: coldstuff@tombstone.sunrem.com
+Reply-To: coldstuff@tombstone.sunrem.com
+
+[Note: This is a rough draft of a 'New Admin Guide'. Please
+send comments/questions/topic we want to be included in this.
+I'm hoping for it to serve the same function eventually
+as the 'New Archwiz FAQ' for MOO.
+
+   -- Chuck
+
+I. Starting Up a New ColdCore Datbase.
+
+Initial Login,
+-------------
+
+After you start up the server, telnet to port 1138 to 
+that machine. The following splash screen will then
+be displayed if the server is running:
+
+
+                                 + ColdCore +
+
+                          Virtual Environment Server
+
+
+          "Make it idiot proof and someone will make a better idiot."
+
+
+                        Administrators: nothing
+                         Currently Connected users: 0
+                              Core: ColdCore 2.0
+                          Driver: ColdX Genesis 0.2-8
+
+                    ** Use 'H?elp' for a list of commands **
+
+The quotation and database version may differ from what is
+shown here. At this point, create yourself a user with
+the create command, given with the syntax:
+
+    create &lt;name&gt; &lt;password&gt; &lt;email@host&gt;
+
+where:
+
+   name is the name you wish to have on this world.
+   password is the password you assign to the user, and
+   email@host is an email address for the character.
+
+After you connect, you will be placed into the pit.
+
+*** IMPORTANT ***
+At this time, all new users will be Admins with full access to 
+the database. Since being an Admin is equivalent in powers to 
+having a 'root' permissions for the database, or being a wizard 
+on a MU*, one of the first things you will want to do is to change 
+the default user class to something more benign.
+
+ 
+Setting the User Class
+---
+
+When ColdCore is first started up, the default user class is 
+'$admin', or someone that has full access to the server. Since 
+you probably don't want everyone on your ColdX server to be a 
+administrator for security reasons, it's a good idea to change the
+default user class to something less powerful than $admin for
+anyone who will not be an administrator.
+
+If you want new starting characters to be programmers by default,
+issue the following commands as an Administrator:
+
+@mojo on
+;$sys.set_starting('new_user_class,$programmer)
+@mojo off
+
+Other acceptable user classes are $user and $builder. These
+can replace the '$programmer' to make the default user class
+either $user or $builder.
+
+About @mojo
+----------
+
+The @mojo command gives an Administrator the ability to make
+changes to objects which he or she normally cannot access. This is 
+needed for changing some system wide attributes, such as the new_user_class
+specified above. To turn mojo on, type:
+
+   @mojo on
+   
+When you are done using the super-Admin powers, make sure to
+turn that ability off. This can be done with the command:
+
+  @mojo off
+  
+
+Making someone an Admin
+---
+
+Now that you've made sure that everyone is a $programmer,
+$builder, or $user instead of an $admin, you might decide
+that a $user should be a $builder, $programmer, or $admin,
+or vice versa. If you have @mojo on, the @adjust user command
+can make someone an Admin. Using:
+
+@adjust user &lt;name&gt; to admin  
+
+User &lt;name&gt; will become an Admin. Similarly, 
+
+@adjust user &lt;name&gt; to programmer
+
+will make someone a programmer. The @adjust command also works for
+changing guests into permanent users of the system.
+
+Changing the Title &amp; Name of the server:
+---
+
+How do you change the name and title of the database?
+The default name of the server is "ColdCore 2.0" under
+the parameter server_name. This can be set with the command
+(setting @mojo if required):
+
+@as $motd eval server_name = "My New Server Name"
+
+The default Server Title, "Virtual Environment Server", is 
+changed by:
+
+@as $motd eval server_title = "My New Title"
+
+---
+
+Changing the symbol that references an object
+--
+
+When you reference an object name by it's symbol (such
+as $user, $edit, etc, sometimes it might be useful
+to change the symbol used to reference the object. This 
+can be accomplished with:
+
+@as $old_obj_name eval .set_objname('new_obj_name);
+
+  $old_obj_name is the old (current) symbol used for the name
+
+  new_obj_name is the symbol that you want to change to. It
+  will be referenced as $new_obj_name
+
+Changing the port number of the server.
+---
+
+If you want your default number to be something different than
+1138. do the following:
+
+@mojo on
+@as $login_daemon eval .set_default_port(NEW PORT NUMBER);
+@mojo off
+
+The next time the server is restarted the port number will
+be NEW_PORT_NUMBER.
+
+You can get the current port number by running the command:
+
+; $login_daemon.current_port();
+==&gt; 1138  (or whatever the current port number is).
+
+You can also use .set_default_port() to set the 
+port number for other daemons, such as
+the $http_daemon.
+
+Using the Backdoor
+-----------------
+
+&lt;discover this later&gt;
+
+
+
+
+</PRE>

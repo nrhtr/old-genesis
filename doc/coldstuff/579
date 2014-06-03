@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [579] in "Coldmud discussion meeting"</TITLE>
+<H1>[579] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?579"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="578"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="580"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>More for the Buglist</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 11 15:47:26 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Fri, 11 Nov 94 13:41:54 -0700
+
+From tCD's Bugs/Features/Things:
+
+* ;"E" in "aeiou" =&gt; 0, ;"E" in "AEIOU" =&gt; 0, ;"e" in "aeiou" =&gt; 2,
+  ;"E" in "AEIOUaeiou" =&gt; 0  (etc)
+* ;;var n; n = tostr('test); n = lowercase(n); n = tosym(n); return n;
+  =&gt; '"garbage foo xxx"  (do this eval multiple times)
+* get_name() throws argstr (trivial, but (shrug)):
+     - Can't find object name foo.
+  change to:
+     - Cannot find object name foo.
+* when beginning a parameter with '-1' (either with the parameter's value
+  being -1, or -1 beginning a list on a parameter value), the driver will
+  bomb when it tries to reload it from a textdump.
+
+As far as the second bug, from what I can tell the problem only occurs when
+you do:  tostr(symbol); munge str with *builtin; tosym(str);
+where the only builtins I can make it occur with are lowercase() and
+uppercase().
+</PRE>

@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [187] in "Coldmud discussion meeting"</TITLE>
+<H1>[187] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?187"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="186"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="186"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="186"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="188"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="188"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="207"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: confusion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar 31 07:10:57 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: rayn@wookie.crossaccess.com (Ray Nawara jr.)
+Date: Thu, 31 Mar 1994 03:19:20 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9403282339.AA18740@wookie.crossaccess.com&gt; from "Ray Nawara jr." at Mar 28, 94 03:39:15 pm
+
+paramater references, a quick discussion:
+
+(dunno if this will answer Ray's queries, but it gives me a chance to
+ chat about stuff)
+
+Direct access to parameters is limited to methods defined on the same
+ object as the the one that defines the parameter. It is done either
+ by directly accessing the parameter, like a local variable, or by using
+ the set_var() or get_var() builtins.
+
+The World 6 core defines methods to view parameters for convienience's
+ sake, and for actual use at times, but it is not neccessary. It is rare to
+ have a method defined to set a var, as the value of the parameters is usually
+ maintaned by several methods. This is especially evident where list parameters
+ have add_*/del_* methods to modify them.
+
+It was metioned that methods could be generated automatically to set/get
+ newly defined parameters. This would indeed be very easy to do, but would
+ not gain much, as the maintaining the validity of said parameter would be
+ harder, and you'd add a lot to the size of the database having a two methods
+ for every parameter.
+
+Besides, in the World6 core, admins can modify parameters with definer * this 
+ * eval. This takes care of the problem of fixing broken parameters. Besides
+ that, the server builting data() allows handy access to parameter values for
+ debugging type purposes.
+
+In summary, objects have access to the parameters they define, and control
+ their meanings/values. Non-standard access can be gained through data() and
+ temporary methods ($root.eval()).
+
+While I'm posting to coldstuff, I just caught wind of release 11 and would
+ like to know what's in it, etc. Also, Greg, what can we as adoring fans do
+ to encourage/support development?
+
+Crag / deforest@netcom.com
+</PRE>

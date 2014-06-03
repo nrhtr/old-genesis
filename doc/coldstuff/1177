@@ -1,0 +1,469 @@
+<HEAD><TITLE>discuss@charon: [1177] in "Coldmud discussion meeting"</TITLE>
+<H1>[1177] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1177"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1176"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1178"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Debugger patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec 12 05:57:12 1996
+)</H3>
+<PRE>
+Date: Thu, 12 Dec 1996 11:49:09 +0100 (MET)
+From: Miroslav Silovic &lt;Miroslav.Silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+
+Okay, since it appears that the cause for the crash is elsewhere,
+here is the debugger patch. I'm too tired to find out the real source
+of the crash (I'm almost sure it's not here). There are 2 changes in
+this patch:
+
+
+	1) debug_callers(argument)   - with 0, it turns off the debugging,
+		with 1, it logs the calls, with 2 it logs the calls
+		with parameters.
+	   call_trace()		     - returns the log gathered with
+				       debug_callers
+
+	2) minor memory leak fixed. frame_info now has one more
+		ident_discard (I HAVE NOT TESTED THIS. PLEASE
+		REVIEW THIS FIX!) :)
+
+--------------------------------------------------------------------
+
+
+Common subdirectories: Genesis-1.0p19/bin and Genesis-1.0p19-new/bin
+Common subdirectories: Genesis-1.0p19/doc and Genesis-1.0p19-new/doc
+Common subdirectories: Genesis-1.0p19/etc and Genesis-1.0p19-new/etc
+Common subdirectories: Genesis-1.0p19/src and Genesis-1.0p19-new/src
+Only in Genesis-1.0p19-new/src: TAGS
+Common subdirectories: Genesis-1.0p19/src/data and Genesis-1.0p19-new/src/data
+diff -C 5 -r Genesis-1.0p19/src/execute.c Genesis-1.0p19-new/src/execute.c
+*** Genesis-1.0p19/src/execute.c	Fri Nov 29 11:07:35 1996
+--- Genesis-1.0p19-new/src/execute.c	Thu Dec 12 09:06:38 1996
+***************
+*** 38,47 ****
+--- 38,50 ----
+  Long call_environ=1;
+  Long tick;
+  
+  #define DEBUG_VM DISABLED
+  #define DEBUG_EXECUTE DISABLED
++ /* This one is lightweight */
++ #define DRIVER_DEBUG 1
++ cData debug;
+  
+  VMState *suspended = NULL, *preempted = NULL, *vmstore = NULL;
+  VMStack *stack_store = NULL, *holder_cache = NULL; 
+  
+  /*
+***************
+*** 117,126 ****
+--- 120,132 ----
+      vm-&gt;limit_datasize = limit_datasize;
+      vm-&gt;limit_fork = limit_fork;
+      vm-&gt;limit_recursion = limit_recursion;
+      vm-&gt;limit_objswap = limit_objswap;
+      vm-&gt;limit_calldepth = limit_calldepth;
++ #ifdef DRIVER_DEBUG
++     data_dup(&amp;vm-&gt;debug, &amp;debug);
++ #endif
+  
+      return vm;
+  }
+  
+  /*
+***************
+*** 138,147 ****
+--- 144,159 ----
+      limit_datasize = vm-&gt;limit_datasize;
+      limit_fork = vm-&gt;limit_fork;
+      limit_recursion = vm-&gt;limit_recursion;
+      limit_objswap = vm-&gt;limit_objswap;
+      limit_calldepth = vm-&gt;limit_calldepth;
++ #ifdef DRIVER_DEBUG
++     data_discard(&amp;debug);
++     debug = vm-&gt;debug;
++     vm-&gt;debug.type = INTEGER;
++     vm-&gt;debug.u.val = 0;
++ #endif
+  #if DEBUG_VM
+      write_err("restore_vm: tid %d opcode %s",
+                vm-&gt;task_id, op_table[cur_frame-&gt;opcodes[cur_frame-&gt;pc]].name);
+  #endif
+  }
+***************
+*** 208,217 ****
+--- 220,230 ----
+      d.u.val = frame-&gt;ticks;
+      list = list_add(list, &amp;d);
+      d.type = SYMBOL;
+      d.u.symbol = ident_dup(frame-&gt;method-&gt;name);
+      list = list_add(list, &amp;d);
++     ident_discard(frame-&gt;method-&gt;name); /* list_add dupped it */
+  
+      return list;
+  }
+  
+  cList * task_info(Long tid) {
+***************
+*** 525,534 ****
+--- 538,550 ----
+      limit_datasize = 0;
+      limit_fork = 0;
+      limit_recursion = 128;
+      limit_objswap = 0;
+      limit_calldepth = 128;
++ #ifdef DRIVER_DEBUG
++     clear_debug();
++ #endif
+  }
+  
+  /*
+  // ---------------------------------------------------------------
+  //
+***************
+*** 539,556 ****
+  */
+  void task(cObjnum objnum, Long name, Int num_args, ...) {
+      va_list arg;
+  
+      /* Don't execute if a shutdown() has occured. */
+      if (!running) {
+          va_end(arg);
+          return;
+      }
+  
+      /* Set global variables. */
+      frame_depth = 0;
+! 
+      va_start(arg, num_args);
+      check_stack(num_args);
+      while (num_args--)
+          data_dup(&amp;stack[stack_pos++], va_arg(arg, cData *));
+      va_end(arg);
+--- 555,573 ----
+  */
+  void task(cObjnum objnum, Long name, Int num_args, ...) {
+      va_list arg;
+  
+      /* Don't execute if a shutdown() has occured. */
++ 
+      if (!running) {
+          va_end(arg);
+          return;
+      }
+  
+      /* Set global variables. */
+      frame_depth = 0;
+!     clear_debug();
+      va_start(arg, num_args);
+      check_stack(num_args);
+      while (num_args--)
+          data_dup(&amp;stack[stack_pos++], va_arg(arg, cData *));
+      va_end(arg);
+***************
+*** 579,588 ****
+--- 596,606 ----
+  //
+  // Execute a task by evaluating a method on an object.
+  //
+  */
+  void task_method(Obj *obj, Method *method) {
++     clear_debug();
+      frame_start(obj, method, NOT_AN_IDENT, NOT_AN_IDENT, NOT_AN_IDENT, 0, 0, FROB_NO);
+  
+      execute();
+  
+      if (stack_pos != 0) {
+***************
+*** 685,694 ****
+--- 703,762 ----
+      stack_pos += method-&gt;num_vars;
+  
+      frame-&gt;caller_frame = cur_frame;
+      cur_frame = frame;
+  
++ #ifdef DRIVER_DEBUG
++     if (debug.u.val &gt; 0) {
++ 	Int parms;
++ 	cList *list;
++ 	cData d;
++ 
++ 
++ 	parms = (debug.u.val == 2 ||
++ 		 (debug.u.val &gt;= 4 &amp;&amp;
++ 		  list_length(list_elem(debug.u.list,0)-&gt;u.list) == 5));
++ 
++ 	if (debug.type != LIST) {
++ 	    debug.type = LIST;
++ 	    debug.u.list = list_new(256);
++ 	}
++ 
++ 	list = list_new(4);
++ 	d.type=INTEGER;
++ 	d.u.val = tick;
++ 	list = list_add(list, &amp;d);
++ 	d.type = OBJNUM;
++ 	d.u.objnum = frame-&gt;object-&gt;objnum;
++ 	list = list_add(list, &amp;d);
++ 	d.type = OBJNUM;
++ 	d.u.objnum = method-&gt;object-&gt;objnum;
++ 	list = list_add(list, &amp;d);
++ 	d.type = SYMBOL;
++ 	d.u.symbol = ident_dup(method-&gt;name);
++ 	list = list_add(list, &amp;d);
++ 	ident_discard(method-&gt;name);
++ 
++ 	if (parms) {
++ 	    cList *l;
++ 	    Int i;
++ 
++ 	    l = list_new(1);
++ 	    for (i = arg_start; i &lt; stack_pos - method-&gt;num_vars; i++)
++ 		l = list_add(l, &amp;stack[i]);
++ 	    d.type = LIST;
++ 	    d.u.list = l;
++ 	    list = list_add(list, &amp;d);
++ 	    list_discard(l);
++ 	}
++ 	d.type = LIST;
++ 	d.u.list = list;
++ 	debug.u.list = list_add(debug.u.list, &amp;d);
++ 	list_discard(list);
++     }
++ #endif
++ 
+      return CALL_OK;
+  }
+  
+  /*
+  // ---------------------------------------------------------------
+***************
+*** 695,704 ****
+--- 763,787 ----
+  */
+  void frame_return(void) {
+      Int i;
+      Frame *caller_frame = cur_frame-&gt;caller_frame;
+  
++ #ifdef DRIVER_DEBUG
++     if (debug.u.val &gt; 0) {
++ 	cData d;
++ 
++ 	if (debug.type == LIST) {
++ 	    /* We skip the case when there hasn't been any calls yet,
++ 	       That's to prefent the other routine from getting confused */
++ 	    d.type = INTEGER;
++ 	    d.u.val = tick;
++ 	    debug.u.list = list_add (debug.u.list, &amp;d);
++ 	}
++     }    
++ 
++ #endif
++ 
+      /* Free old data on stack. */
+      for (i = cur_frame-&gt;stack_start; i &lt; stack_pos; i++)
+          data_discard(&amp;stack[i]);
+      stack_pos = cur_frame-&gt;stack_start;
+  
+***************
+*** 1650,1655 ****
+--- 1733,1771 ----
+      d-&gt;u.val = line_number(cur_frame-&gt;method, cur_frame-&gt;pc);
+  }
+  
+  void bind_opcode(Int opcode, cObjnum objnum) {
+      op_table[opcode].binding = objnum;
++ }
++ 
++ /* ------------------------------------------------------ */
++ 
++ void init_debug()
++ {
++     debug.type = INTEGER;
++     debug.u.val = 0;
++ }
++ 
++ void clear_debug()
++ {
++     data_discard(&amp;debug);
++     init_debug();
++ }
++ 
++ void start_debug()
++ {
++     data_discard(&amp;debug);
++     debug.type = INTEGER;
++     debug.u.val=1;
++ }
++ 
++ void start_full_debug()
++ {
++     data_discard(&amp;debug);
++     debug.type = INTEGER;
++     debug.u.val=2;
++ }
++ 
++ void get_debug (cData *d)
++ {
++     data_dup (d, &amp;debug);
+  }
+diff -C 5 -r Genesis-1.0p19/src/genesis.c Genesis-1.0p19-new/src/genesis.c
+*** Genesis-1.0p19/src/genesis.c	Fri Nov 29 11:07:35 1996
+--- Genesis-1.0p19-new/src/genesis.c	Thu Dec 12 08:31:57 1996
+***************
+*** 200,209 ****
+--- 200,210 ----
+          argv++;
+          argc--;
+      }
+  
+      /* Initialize internal tables and variables. */
++     init_debug();
+      init_codegen();
+      init_ident();
+      init_op_table();
+      init_sig();
+      init_execute();
+diff -C 5 -r Genesis-1.0p19/src/grammar.y Genesis-1.0p19-new/src/grammar.y
+*** Genesis-1.0p19/src/grammar.y	Fri Nov 29 12:03:53 1996
+--- Genesis-1.0p19-new/src/grammar.y	Thu Dec 12 08:31:57 1996
+***************
+*** 112,121 ****
+--- 112,122 ----
+  %token CRITICAL CRITICAL_END PROPAGATE PROPAGATE_END JUMP
+  %token OPTIONAL_END SCATTER_START SCATTER_END
+  
+  %token OP_MAP_RANGE OP_MAPHASH_RANGE OP_FILTER_RANGE OP_FIND_RANGE 
+  
++ %token F_DEBUG_CALLERS F_CALL_TRACE
+  %token F_TYPE F_CLASS F_TOINT F_TOFLOAT F_TOSTR F_TOLITERAL
+  %token F_TOOBJNUM F_TOSYM F_TOERR F_VALID F_STRFMT F_STRLEN
+  %token F_SUBSTR F_EXPLODE F_STRSED F_STRSUB F_PAD F_MATCH_BEGIN
+  %token F_MATCH_TEMPLATE F_STRGRAFT F_LISTGRAFT F_BUFGRAFT
+  %token F_MATCH_PATTERN F_MATCH_REGEXP F_REGEXP F_SPLIT F_CRYPT F_UPPERCASE
+Common subdirectories: Genesis-1.0p19/src/include and Genesis-1.0p19-new/src/include
+Common subdirectories: Genesis-1.0p19/src/modules and Genesis-1.0p19-new/src/modules
+diff -C 5 -r Genesis-1.0p19/src/opcodes.c Genesis-1.0p19-new/src/opcodes.c
+*** Genesis-1.0p19/src/opcodes.c	Fri Nov 29 12:03:52 1996
+--- Genesis-1.0p19-new/src/opcodes.c	Thu Dec 12 08:31:57 1996
+***************
+*** 118,127 ****
+--- 118,131 ----
+      FDEF(F_SET_VAR,    "set_var",   set_var)
+      FDEF(F_GET_VAR,    "get_var",   get_var)
+      FDEF(F_CLEAR_VAR,  "clear_var", clear_var)
+      FDEF(F_VARIABLES,  "variables", variables)
+  
++     /* debugger */
++     FDEF(F_DEBUG_CALLERS, "debug_callers", debug_callers)
++     FDEF(F_CALL_TRACE,    "call_trace",    call_trace)
++ 
+      /* Object method functions */
+      FDEF(F_LIST_METHOD,       "list_method",       list_method)
+      FDEF(F_ADD_METHOD,        "add_method",        add_method)
+      FDEF(F_DEL_METHOD,        "del_method",        del_method)
+      FDEF(F_METHOD_BYTECODE,   "method_bytecode",   method_bytecode)
+Common subdirectories: Genesis-1.0p19/src/ops and Genesis-1.0p19-new/src/ops
+Only in Genesis-1.0p19/src: y.tab.h
+diff -C 5 -r Genesis-1.0p19/src/include/execute.h Genesis-1.0p19-new/src/include/execute.h
+*** Genesis-1.0p19/src/include/execute.h	Fri Nov 29 11:07:35 1996
+--- Genesis-1.0p19-new/src/include/execute.h	Thu Dec 12 08:31:56 1996
+***************
+*** 36,45 ****
+--- 36,46 ----
+              * arg_starts,
+                arg_pos,
+                arg_size;
+      Int       task_id;
+      Int       preempted;
++     cData     debug;
+      Int       limit_datasize;
+      Int       limit_fork;
+      Int       limit_calldepth;
+      Int       limit_recursion;
+      Int       limit_objswap;
+***************
+*** 212,221 ****
+--- 213,228 ----
+  cList * task_list(void);
+  cList * task_stack(void);
+  void run_paused_tasks(void);
+  void bind_opcode(Int opcode, cObjnum objnum);
+  
++ void init_debug();
++ void clear_debug();
++ void start_debug();
++ void start_full_debug();
++ void get_debug (cData *d);
++ 
+  #ifdef PROFILE_EXECUTE
+  void dump_execute_profile(void);
+  #endif
+  
+  #define INVALID_BINDING \
+diff -C 5 -r Genesis-1.0p19/src/include/functions.h Genesis-1.0p19-new/src/include/functions.h
+*** Genesis-1.0p19/src/include/functions.h	Fri Nov 29 11:07:35 1996
+--- Genesis-1.0p19-new/src/include/functions.h	Thu Dec 12 08:31:56 1996
+***************
+*** 71,80 ****
+--- 71,82 ----
+  COLDC_FUNC(localtime);
+  COLDC_FUNC(mtime);
+  COLDC_FUNC(ctime);
+  COLDC_FUNC(bind_function);
+  COLDC_FUNC(unbind_function);
++ COLDC_FUNC(debug_callers);
++ COLDC_FUNC(call_trace);
+  COLDC_FUNC(reassign_connection);
+  COLDC_FUNC(bind_port);
+  COLDC_FUNC(unbind_port);
+  COLDC_FUNC(open_connection);
+  COLDC_FUNC(close_connection);
+diff -C 5 -r Genesis-1.0p19/src/ops/misc.c Genesis-1.0p19-new/src/ops/misc.c
+*** Genesis-1.0p19/src/ops/misc.c	Fri Nov 29 11:07:35 1996
+--- Genesis-1.0p19-new/src/ops/misc.c	Thu Dec 12 08:31:57 1996
+***************
+*** 148,152 ****
+--- 148,179 ----
+      op_table[opcode].binding = INV_OBJNUM;
+  
+      pop(1);
+      push_int(1);
+  }
++ 
++ void func_debug_callers(void)
++ {
++     cData *args;
++ 
++     if (!func_init_1(&amp;args, INTEGER))
++ 	return;
++ 
++     if (args[0].u.val == 0) {
++ 	clear_debug();
++     }
++     else if (args[0].u.val == 2) {
++ 	start_full_debug();
++     }
++     else {
++ 	start_debug();
++     }
++ }
++ 
++ void func_call_trace(void)
++ {
++     if (!func_init_0())
++ 	return;
++ 
++     check_stack(1);
++     get_debug(&amp;stack[stack_pos++]);
++ }
+</PRE>

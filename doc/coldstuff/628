@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [628] in "Coldmud discussion meeting"</TITLE>
+<H1>[628] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?628"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="627"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="629"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="629"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="635"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>floating point</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 15 16:58:59 1995
+)</H3>
+<PRE>
+From: paul@solar.sky.net
+To: coldstuff@MIT.EDU
+Date: Sun, 15 Jan 1995 15:56:54 -0600 (CST)
+
+It'd be nice if cold supported floating point, even if only as a compile-time
+option. As I understand, it has this capability, but it is unimplemented.
+It would be nice if we had someone who would take charge and make all the
+changes we all agree upon. Someone who everyone agreed upon, who was
+wel familiar with coldmud and C, and who had the time and energy. Any
+volunteers?
+
+Paul
+
+</PRE>

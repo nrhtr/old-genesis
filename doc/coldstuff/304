@@ -1,0 +1,70 @@
+<HEAD><TITLE>discuss@charon: [304] in "Coldmud discussion meeting"</TITLE>
+<H1>[304] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?304"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="303"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="305"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: log and times</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 23 16:41:16 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Mon, 23 May 1994 14:34:24 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt; Take this for example:
+&lt;
+&lt; hacker logs on, hacker breaks into sys, hacker turns off logging,
+&lt; hacker makes an admin character. well, your doing a scan of the logs,
+&lt; catch the hack into sys, and patch it. you still have an admin that is
+&lt; a hacker running around, and may not see it for a while, especially if
+&lt; he hides some things to avoid detection.
+
+OK, lets go over that example (as its basically what I was thinking).  But
+first, let me explain what makes a person an admin.  There is a parameter on
+$sys which is a list of objects called 'admins'.  If you are in this list, your
+an admin.  Now, assuming somebody gets write access to $sys, they then change
+$sys.log so it no longer logs times (?) or just so it no longer logs.  Heck,
+why even bother with log?  I dont know.  They can just run 'as $sys eval admins
+= admins + [me];' and be done with it.  ColdMUD does everything in-db, which
+means in general finding loopholes for hackers is easier, but if a hacker does
+get access to something they become damn powerful.  I suppose that we could
+hack $sys.eval, and every sys method, so that any time anything is _written_ to
+$sys (other than things like setting a new connection object, which will be
+leaving sys soon anyhow) it is logged, then you could get the last log of
+somebody adding themselves to the admin list (if its through eval).  The only
+way I can see a hacker getting write access to $sys is through a munged method
+on $sys that happens to write to the critical parameter, and this would be the
+fault of somebody writing to $sys.  Since $sys is the only object you really
+have to look at for mega security it is easy to watch _every_ change to it with
+a critical eye and to make sure that the methods it has are tight as a ...
+(colorful wyoming phrase involving sheep).  Everywhere else if you gain
+security it is just write access to a single object.  By keeping everything
+encapsulated _most_ things are relatively local (i.e. they can gain access to
+one "system" of objects).  I'm not saying the core it secure, infact I know
+that right now you can probably drive a mac truck through a number of security
+holes, but in relation to log(), having the server tack time onto each string
+is not going to make _ANY_ difference at all.
+
+&lt; Granted this is kinda
+&lt; extreme, cus most hackers wont bother to be so sublte on a mud, but it
+&lt; is plausable. I dont think logging should be changable at run-time in
+&lt; ANY instance, except to hand-add a new log message. Of course, it wont
+&lt; kill me because its the way it is, Im just not happy with it.
+
+!!!!!!!!!
+
+Take that
+
+!!
+
+and that (is he dead yet?)
+</PRE>

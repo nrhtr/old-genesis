@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [328] in "Coldmud discussion meeting"</TITLE>
+<H1>[328] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?328"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="327"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="329"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>run_script() error with args?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 25 08:06:43 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Wed, 25 May 1994 06:04:20 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Run script seems to work ok, unless I send arguments.  Here is how I'm calling
+it:
+
+run_script("backup.sh", ["/path/argument", "/usu/bin/gzip"])
+
+it is tossing a "failed to EXEC "scripts/backups.sh", bad address."
+
+It works fine if I leave out the args.
+
+This brings something else to mind.  What is the "root" directory in it's
+environment?  Does it run backups.sh from scripts (so I would do somethign
+along the lines of 'mv ../textdump' or does it do it from where it dumps the
+textdump?
+</PRE>

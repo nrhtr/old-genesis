@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [305] in "Coldmud discussion meeting"</TITLE>
+<H1>[305] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?305"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="304"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="306"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>security</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 23 20:21:57 1994
+)</H3>
+<PRE>
+Date: Mon, 23 May 1994 14:39:53 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+
+&lt;staggering from severe wounds, Ash struggles onward&gt;
+
+ Well, I already gave you that times wasnt too crucial, my major
+objection in the last post was that you can turn off logging in DB.  I
+dont rember the level of detail of the logs (i thoguth it was pretty
+high, but mebe that cam be set, and i hust ran it at a high level by
+default) But what i think it the important thing for a logging method
+is that it (the log) cant be changed from the database. Even given the
+stopping of logging in db (which makes me vaguely queasy) at this
+stage you'd theoretically see everything up to the point where $sys
+was hacked, and I had underestimated the importance of $sys, so at
+this stage if $sys has been hacked, the db is untrustworthy, and
+should be checked severely. On the other hand, someone could hack a
+current admin account, and then stop logging, and then add a new
+admin, then start logging again. (wow i should start writing fiction,
+im getting good at these fantastical hacking episodes, eh?)
+
+cant anyone who can eval as an admin modify $sys? that moves it back
+to hacking any admin code that'll allow something to be eval'd instead
+of having to hack the presumable well safeguarded $sys. I'm probably
+wrong, but then again i dont mind being wrong, because thats how i
+learn something ;)
+
+But is still dont like log changes in-db, other than an added line.
+
+	Ray/Ash
+
+
+</PRE>

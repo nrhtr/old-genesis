@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [1123] in "Coldmud discussion meeting"</TITLE>
+<H1>[1123] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1123"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1121"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1121"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1122"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1124"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Bugfix patch for p17</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  5 12:38:16 1996
+)</H3>
+<PRE>
+Date: Tue, 5 Nov 1996 10:21:07 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Brian Buchanan &lt;brian@wasteland.calbbs.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.961104213104.4253A-100000@wasteland.calbbs.com&gt;
+
+On Mon, 4 Nov 1996, Brian Buchanan wrote:
+&gt; Looks like Brandon was in a bit of a hurry preparing p17.  I found two 
+&gt; errors in the source relating to my bugfixes for this release.  One isn't 
+&gt; of much worry unless you're programming with frob methods.  The other 
+&gt; will almost certainly crash the driver if you use find_method() anywhere.
+
+Sorry, patch18 includes these changes (and is available).
+
+-Brandon
+
+</PRE>

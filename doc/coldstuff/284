@@ -1,0 +1,70 @@
+<HEAD><TITLE>discuss@charon: [284] in "Coldmud discussion meeting"</TITLE>
+<H1>[284] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?284"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="283"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="283"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="285"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="285"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 12:06:42 1994
+)</H3>
+<PRE>
+To: rayn@q.crossaccess.com (Ray Nawara jr.)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Thu, 19 May 1994 10:47:18 PDT."
+             &lt;9405191747.AA21816@q.crossaccess.com&gt; 
+Date: Fri, 20 May 1994 12:00:35 -0400
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+Ray Nawara jr. writes:
+
+&gt; Well, this is just me being paranoid, but a portmapper type thing is
+&gt; a hackers dream come true... the less randome people know about the
+&gt; system the more secure it is.
+
+Security through obscurity is no security at all.  It's quite easy to
+write a program to connect to all ports on a system, at any rate.
+
+Shell scripts run by the server run with the permissions of the uid
+the server runs as.  If you leave the directory 'scripts' blank, it
+will be impossible to run scripts from the server (although if I were
+a concerned administrator, I'd probably disable the function in the
+source code).
+
+&gt; And last nite at the colddark meeting it was mentioned that anyone
+&gt; who were able to spoof connections and such to a cold were probably
+&gt; not worth stopping
+
+Forge IP addresses?  Difficult to do with TCP connections beyond the
+first few packets, unless it's from a site that's down.
+
+&gt; another thing about portmappers. The general sun style portmapper
+&gt; for rpc is a problem with secrutiy because it can be tricked...
+
+This is completely irrelevant; what you've said is about a particular
+implementation of a service with the name "portmapper" whose
+functionality has very little to do with what Lynx is proposing.
+
+&gt; as far as i can see, nothing real big uses anything about 2766,
+&gt; except in the 6xxx range, which includes X, and IRC. some MBone
+&gt; multicast stuff uses things in the 4000's, as well as 3456-7 and
+&gt; 9876, but I don't think these things are common, and seem to be only
+&gt; used at those specific sites. perhaps to be considered though.
+
+There are various established services scattered in that range, and
+people are fond of picking random four-digit numbers for experimental
+services.  AFS uses 700x, although it's not an issue since it uses UDP
+rather than TCP.  You are best off using one or two ports and a
+multiplexing protocol, except where it's desirable to use an existing
+protocol such as SMTP.
+
+--GBH
+
+</PRE>

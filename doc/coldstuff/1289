@@ -1,0 +1,73 @@
+<HEAD><TITLE>discuss@charon: [1289] in "Coldmud discussion meeting"</TITLE>
+<H1>[1289] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1289"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1286"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1288"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1288"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1290"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1297"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1297"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] minimal db</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May  5 21:17:45 1997
+)</H3>
+<PRE>
+From: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+To: "COLD" &lt;coldstuff@cold.org&gt;
+Date: Mon, 5 May 1997 21:09:28 -0400
+
+&gt; From: Brandon Gillespie &lt;brandon@cold.org&gt;
+&gt; Subject: Re: [COLD] minimal db
+&gt; &gt;
+&gt; &gt; Hmm, try 'copy /b source + source + source textdump'
+&gt; &gt; 
+&gt; &gt; Also, make sure you don't have an extra plus between source and textdump
+&gt; 
+&gt; Make absolutely _sure_ you copy the source files in the correct order. 
+&gt; There should be an INDEX file which gives the correct order. 
+
+Yep that too :-)
+
+&gt; 
+&gt; However, this would not be the cause of your 'textdump ends in a method'
+&gt; error.  That is likely something to do with DOS.
+
+DOS? surely you jest ;-)
+I'm pretty certain you are right.  Coldcc was choking on '/r' when I did the 1st
+patch.  Any use of a Dos/Win95 editor (most of them)  will tack the '/r' back 
+with the '/n' characters.  
+In hindsight, I could have done a better job here.  
+The header defaults for gets() &amp; puts() on most Win95 compilers assume  the 
+'/r' character with '/n', while Unix assumes only '/n'.
+The cold compiler uses getc() and does process '/n' but does not handle  '/r'.  
+Other uses of text files use gets() and puts().  Since the text files share 
+common open routines, I just opened all files as binary.  Unix doesn't care, 
+but it makes life with Win95 external editors a tad difficult.    
+
+So to conclude an already overlong explanation:
+
+If you are using a Dos/Win95 editor make sure you grok
+the '/r' characters before compiling your textdumps or cdc
+files.   
+
+&gt; 
+&gt; BTW, are you sure Minimal DB is what you want?  Its MINIMAL, no VR, no
+&gt; login, _nothing_.  It just includes a skeleton system/perms/network set of
+&gt; code.
+&gt; 
+
+Speaking only for myself.   It is a rather daunting task to comprehend it.
+The server and language are well documented.  But the core which
+is probably even more sophisticated, needs some sort of  'big picture'
+documentation.  
+
+I'd be willing to help out in this area.  I'm not sure how or where to start
+since I am missing several years of experience behind it. :-)
+
+JL
+
+
+</PRE>

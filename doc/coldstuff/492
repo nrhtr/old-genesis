@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [492] in "Coldmud discussion meeting"</TITLE>
+<H1>[492] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?492"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="491"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="493"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Cores II :)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct 31 02:20:46 1994
+)</H3>
+<PRE>
+Date: Sun, 30 Oct 1994 23:12:48 -0800
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+
+It ocurred to me after I sent my last message I should have asked one 
+other question:
+
+I'm a perfectly compatent programmer, though I'm new to coldmud and c--.
+(I have done a good deal of c++.)
+Given the specific nature of my application, would it make more sense, 
+rather then trying to lean and modify a core, if i just started from scratch?
+
+I'm really looking for the most efficient way to get to my goal.
+
+Thanks
+
+Jeff Kesselman
+</PRE>

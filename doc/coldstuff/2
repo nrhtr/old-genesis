@@ -1,0 +1,84 @@
+<HEAD><TITLE>discuss@charon: [2] in "Coldmud discussion meeting"</TITLE>
+<H1>[2] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?2"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="3"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Heirarchy</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 11:58:28 1993
+)</H3>
+<PRE>
+To: Lynx &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Mon, 15 Nov 93 00:20:04 -0600.
+             &lt;01H5BP2MUMG2ANH1JW@cc.usu.edu&gt; 
+Date: Mon, 15 Nov 93 11:45:14 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+First, as of this message, all mail to this list is being archived.
+The archive isn't available outside of MIT at the moment; I'll work on
+that later.  At any rate, I consider all mail sent to this list to be
+public.
+
+Okay, some comments on the hierarchy:
+
+I'm currently naming $verb_handling and $command_handling as $verbs
+and $commands.  I'm not sure this is best; perhaps $has_verbs and
+$command_handling would be better.  (I don't think that verb handling
+can really be done on a single ancestor of objects with verbs while
+maintaining the same efficiency as the Cold World system--what I'm
+moving towards now is a single object that keeps track of verb caches
+on all currently active objects in the database, and makes building
+verb caches unnecessary.)
+
+Some people thought that $physical was non-intuitive as an ancestor of
+things like exits, which are part of the vr, but not tangible objects.
+So I'm callling it $vr instead.  (The idea being that you could blow
+away $vr and all of its kids and end up with most of the programming
+parts of the system intact.)
+
+I didn't include $help_containing in the hierarchy I proposed, because
+I decided I didn't know anything about help systems.  After some
+conversation and thought about this, I think the appropriate system
+should be some variation on the following:
+
+	* $has_help goes back in the hierarchy in the same form as it
+	was before.
+
+	* There is some object (call it $help_db for now) which
+	maintains a list of global help topics (for instance, help on
+	"administration" would probably go here).
+
+	* When you ask for help on a word, you search for help on
+	$help_db, and then on every object in the environment.  You
+	can can also ask for help on a word on a particular object, or
+	for a list of help topics contained on a given object.
+
+	* When you just types 'help', you get a listing from $help_db.
+
+	* When you ask for help on &lt;obj&gt;.&lt;methodname&gt;, you get help
+	from comments extracted from the method listing.  (Thus, help
+	on methods also shows up when you look at the method
+	directly, and you can write your method documentation in the
+	same place as you write the method.)
+
+If I understand things correctly, this is an embellished version of
+the LambdaMOO system, which works okay.  One criticism I've heard of
+the MOO system is that, in pratice, help tends to be set up to be a
+complete reference, rather than a good introduction.  Examples are
+difficult to find, and you have to wade through lots of text to learn
+how to use a command which is used one way most of the time.  I'm not
+sure if this follows from the structure of the system, or just how
+people have filled it in.
+
+--GBH
+
+</PRE>

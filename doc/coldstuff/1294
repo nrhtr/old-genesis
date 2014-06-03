@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1294] in "Coldmud discussion meeting"</TITLE>
+<H1>[1294] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1294"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1293"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1293"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1293"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1295"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] How to become $player</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May  9 01:05:38 1997
+)</H3>
+<PRE>
+Date: Thu, 8 May 1997 23:02:09 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+cc: Cold Stuff &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;3372A02F.34F17D05@maddog.com&gt;
+
+&gt; What do I need to do to make $player work right?  Same
+&gt; would be true for $storyteller.  I realize that these objects
+&gt; may not be complete, but since they inherent $user they should
+&gt; be okay to play with.  Am I wrong?
+
+Its my mistake, just do:
+
+    @chmod +command_cache $player $storyteller
+
+Also, a safe place to put things in the heirarchy is to insert $player
+after $user and before $builder, and to put $storyteller after $builder
+and before $admin.
+
+If you want notes on the rule system I was starting to create, contact me.
+Its one I've been developing for about 8 years now.
+
+-Brandon Gillespie
+
+</PRE>

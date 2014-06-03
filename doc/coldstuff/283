@@ -1,0 +1,26 @@
+<HEAD><TITLE>discuss@charon: [283] in "Coldmud discussion meeting"</TITLE>
+<H1>[283] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?283"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="280"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="282"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="284"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="284"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 10:38:27 1994
+)</H3>
+<PRE>
+From: dave@ipac.caltech.edu
+To: coldstuff@MIT.EDU
+Date: Fri, 20 May 94 7:27:52 PDT
+
+Be careful not to use the mbone ports.  You may in a short while (well a year 
+or so) want to use them yourself to do audio likeis being done with Jupiter
+and AstroVR.  Whee!
+					- DVB
+</PRE>

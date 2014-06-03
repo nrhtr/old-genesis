@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [711] in "Coldmud discussion meeting"</TITLE>
+<H1>[711] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?711"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="710"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="710"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="710"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="712"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="713"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="713"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: more blah blah blah</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 14 18:50:37 1995
+)</H3>
+<PRE>
+From: brandon@millville.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Tue, 14 Mar 95 16:40:03 -0700
+
+&lt; I don't intend to release a ColdMUD with an assignment expression. Brandon
+&lt; will be releasing my change to his ColdX server.
+
+Yes, I've been slown down a little, with the quarter ending.  I'll hopefully
+also have dynamic function binding in the next version as well.
+
+&lt; Based on these grounds I
+&lt; think arguments based on 'C-- should be like C' are moot...or something. I
+&lt; don't think we should restrict ourselves this way.
+
+On a side tangent, the language 'C--' has existed since 1989 and is a mix
+of C and PC Assembly.  THIS is why I really don't like calling Cold*'s driver
+language C--, since it isn't. Archie for "C--" if you want to find it...
+
+&lt; The point is, there is no assignment operator at all in this new language. Of
+&lt; course, time will tell whether this is a good thing or not, but let's not do
+&lt; things just because it's familiar. Let's do things because they suit our
+&lt; needs. Does a = 1 mean anythng at all without some context? No. We are
+&lt; deciding the context now and we are debating how we want assignment to look.
+
+Well, Joule is a totally different language concept.  C already is left
+oriented, and ColdC is based on C.  However, because it is based on C doesn't
+(in my opinion) mean we need to worry too much about being like C.  If we
+wanted to be like C, we would be C.
+
+&lt; We should make the decisions based on goals and needs rather than history.
+
+Sounds good to me.
+
+&lt; All this rambling is to add weight to my assertion that '&lt;-' is the best
+&lt; best operator to use for assignment in the ColdX server. Its meaning agrees
+&lt; fairly well with its visual structure. It does not in any way appear to be
+&lt; a comparison. It suggests modification (through motion).
+
+I know that people have already stated what they would like to see as an
+assignment operator.  What I'd like is if interested parties who have an
+opinion in this matter email me with what you would like to see it be
+(either '&lt;-' or ':=' or even '='), and also, if you feel vehement enough,
+what you would definitely NOT like to see, and why.
+
+-Brandon
+</PRE>

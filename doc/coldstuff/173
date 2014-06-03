@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [173] in "Coldmud discussion meeting"</TITLE>
+<H1>[173] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?173"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="172"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="172"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="172"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="174"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="179"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="180"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: core issues</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 25 20:06:44 1994
+)</H3>
+<PRE>
+To: stewarta@netcom.com (Alex Stewart)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Fri, 25 Mar 94 17:00:28 -0800.
+             &lt;199403260100.RAA25182@netcom9.netcom.com&gt; 
+Date: Fri, 25 Mar 94 20:04:49 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+Discussing core issues here is fine, within reason.  By this I mean
+that the issues should not be restricted to those of a single mud.
+
+I've become somewhat disillusioned with frobs as a means of applying
+OO concepts to the language, and I think operator overloading is just
+going to confuse things.  I'm planning to rethink altogether the way
+Coldmud deals with types.
+
+--GBH
+
+</PRE>

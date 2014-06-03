@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1510] in "Coldmud discussion meeting"</TITLE>
+<H1>[1510] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1510"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1509"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1509"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1511"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1511"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec  2 18:14:13 1999
+)</H3>
+<PRE>
+From: rozzin@geekspace.com (Joshua Rosen)
+Date: Thu, 02 Dec 1999 17:34:06 Eastern Standard Time
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+&gt;&gt;     I think the majority of the geek world recognize that the
+&gt;&gt;majority of the "advancements" beyond text are just bloat and feature
+&gt;&gt;creep.  Now if you wanted to maintain the docs in FrameMaker format
+&gt;
+&gt;This is a pointless religous debate I fear. My simple answer is go look at sales 
+&gt;figures.  But its not worth much more debate.
+&gt;
+&gt;Getting back to brandon's problewm. Brandon- -are you on Linux or Solaris? if so 
+&gt;you should try downloading StarOffice fron sun.com.
+&gt;
+&gt;Its free and wil lsolve your immediate problem with being unable to use Word 
+&gt;documents.
+
+...assuming that you're running an `IA32' or SPARC system. Aside from that, launching StarOffice (or Word) just to -view- a text document seems like overkill.
+Word format -does- have some very nice features, but they're not all relevant to to something like this and, in that case, they really are just bloat, but I'm not here to rant about a few wasted bytes, right now.
+
+I'd think that postscript would be a decent distribution format--it's pretty much open, standardised, and, in other words, good. It prints nicely, and easily, too.
+
+TeX prints nicely, too, but... hm.
+
+HTML makes it nicely and easily embedable in any web site.
+
+&gt;&lt;religous flame bait on, Im afraid&gt;
+&gt;P.S.  Framemaker is the stadnard here where I work, Sun, for layout. Most of the 
+&gt;technical writers I've asked though say that while it's layout is superb, its 
+&gt;text processing is inadaquate.  Most of them compsoe test in Vi or Emacs and 
+&gt;import...
+&gt;&lt;/religous flame bait&gt;
+
+My religious preference:
+Put textual documents in SGML (or XML, if you want to be trendy), and define a system for transforming them into HTML and TeX or whatever other formats you really need to have them in (plaintext included).
+
+
+</PRE>

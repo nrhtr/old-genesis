@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [1574] in "Coldmud discussion meeting"</TITLE>
+<H1>[1574] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1574"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1573"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1573"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1573"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1575"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1575"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Editing code from in-game</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May  1 17:04:13 2000
+)</H3>
+<PRE>
+Date: Mon, 01 May 2000 13:55:42 -0700
+From: Bruce &lt;bruce@puremagic.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+Jeremy Weatherford wrote:
+&gt; Anyway, just looking for ideas... let me know how editing is implemented
+&gt; in your game, or how you think it should be implemented.  All the code I
+&gt; write will be freely available, so I don't mind giving it back if you want
+&gt; me to write the code for your idea -- as long as it works for me too.  ;)
+
+You mean there is something other than MCP-based editing with a client
+like TkMOO? (I know there is, but for me, nothing else comes close.)
+
+ - Bruce
+</PRE>

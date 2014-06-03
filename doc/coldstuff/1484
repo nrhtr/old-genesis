@@ -1,0 +1,100 @@
+<HEAD><TITLE>discuss@charon: [1484] in "Coldmud discussion meeting"</TITLE>
+<H1>[1484] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1484"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1474"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1475"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1483"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1485"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: system monitoring</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 20:21:52 1999
+)</H3>
+<PRE>
+From: "Charles Lance Woodson" &lt;AE-Wauric@aephirsden.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Wed, 17 Nov 1999 19:02:28 -0800
+Reply-To: coldstuff@cold.org
+
+Thanks for the reply, Bruce, that helps.  I'm not sure exactly what we'll do
+yet, but that gives us some good options.
+
+I am documenting things as I go through them, but at this point they are
+still simply cluttered notes indecipherable by anyone other than myself.
+When I organize them into something resembling documentation, I'll forward a
+copy to this mailing list.
+
+Lance
+----- Original Message -----
+From: Bruce Mitchener, Jr. &lt;bruce@puremagic.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Sent: Wednesday, November 17, 1999 10:33 AM
+Subject: Re: system monitoring
+
+
+&gt; On Tuesday, November 16, 1999, Charles Lance Woodson wrote:
+&gt; &gt; Lately I've been adding and removing a lot of monitoring
+&gt; &gt; messaging to coldcore systems (CML compiler, setting system)
+&gt; &gt; at Aeternity so that I could easily see how they work.  The
+&gt; &gt; thought occured to me that a monitoring system might be
+&gt; &gt; helpful to others coming behind me that would likely wind up
+&gt; &gt; doing the same thing.  Before I go any further, let me ask if
+&gt; &gt; there is currently any monitoring system in place that I simply
+&gt; &gt; haven't discovered?
+&gt;
+&gt;
+&gt; Well, I'd encourage you to document your findings myself and provide that
+&gt; for the people following in your footsteps.  No real documentation of many
+&gt; of the main systems in ColdCore seems to exist.   Even if you just
+summarize
+&gt; findings in a quick post to the mailing list, someone else could either
+read
+&gt; it in the archives of the list or take it upon themselves to write more
+&gt; docs.
+&gt;
+&gt; &gt; If the answer to that is no, does anyone have suggestions as to
+&gt; &gt; what the best concept for a monitoring system would be?  I was
+&gt; &gt; thinking of using @set to allow users to hook themselves into
+&gt; &gt; an event for the specific system.  The system itself would then
+&gt; &gt; need to be modified to send the appropriate messaging to users
+&gt; &gt; hooked to the event.  Would such a monitoring system be a major
+&gt; &gt; performance impactor?  If this isn't acceptable, what about
+&gt; &gt; simply sending .announce() calls from different systems to a
+&gt; &gt; monitoring $place?
+&gt;
+&gt;
+&gt; This doesn't really differ much from a good logging system.  ColdCore also
+&gt; lacks a good logging system. :)
+&gt;
+&gt; There are a couple of approaches to take here.
+&gt;
+&gt; 1) Modify the channel system and use it.  Some things that might be useful
+&gt; in a modification would be the idea of priorities:  Informational,
+Warning,
+&gt; Critical Error, Fatal Error.  Ken on the Cold Dark tells me that syslogd
+is
+&gt; like this.  The logging systems from some large software projects have
+&gt; structures resembling that to some degree.  However, this doesn't buy you
+&gt; logging, analysis, or many other useful things, only the ability for a
+&gt; person to get spammed with a lot of data.
+&gt;
+&gt; 2) Given time, desire and motivation, I'd probably do something slightly
+&gt; different.  Java and some of the commercial application servers out there
+in
+&gt; the real world have really nice event-driven logging systems.  Firing off
+&gt; events, having listeners (some of whom might log to files, some might send
+&gt; email to a paging system, others might broadcast to a channel), and so on
+&gt; can be a very powerful and extensible system.  It is probably overkill for
+&gt; what you want it for now, but if you're building a large application in
+&gt; Cold, I think you'd benefit from this type of model greatly.
+&gt;
+&gt;  - Bruce
+&gt;
+&gt;
+&gt;
+
+</PRE>

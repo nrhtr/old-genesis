@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [13] in "Coldmud discussion meeting"</TITLE>
+<H1>[13] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?13"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="12"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="14"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="14"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="17"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>$connection and $sys.startup()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 20:09:41 1993
+)</H3>
+<PRE>
+Date: Mon, 15 Nov 1993 18:04:22 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+Earlier Greg said to place:
+
+
+ for obj in ($connection.children())
+   destroy(obj);
+
+well, this wouldnt work, so I changed it to:
+
+ for obj in ($connection.children())
+   obj.destroy();
+
+_dont_ do this, you cannot re-connect.
+
+Luckilly I had a textdump and I changed it to:
+
+   olist = $connection.children();
+   for o in [1..listlen(olist) -1]
+     olist[o].destroy();
+
+this will leave 1 child of $connection, so you can connect.  I dont know if
+this is the best way to do it, but it works :)
+
+-Lynx/Brandon/Me.
+</PRE>

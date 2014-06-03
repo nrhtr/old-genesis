@@ -1,0 +1,61 @@
+<HEAD><TITLE>discuss@charon: [732] in "Coldmud discussion meeting"</TITLE>
+<H1>[732] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?732"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="731"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="733"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Odd bug in driver</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Apr 27 12:04:11 1995
+)</H3>
+<PRE>
+Date: Thu, 27 Apr 1995 09:59:00 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldx@tiny.mcs.usu.edu
+Cc: coldstuff@MIT.EDU
+
+This is definitely an odd one.  At some nebulous time in the past the Cold
+Dark db became corrupted.  I hav not seen any pattern to it yet, but
+basically strings in random locations (such as a string in a method--i.e.
+a syntax message) have become corrupted, or better yet, changed in value
+to a random string, such as:
+
+    btw, I do know about Java.
+
+This statement was given by Jeff, via normal say.  I'm assuming that
+somewhere memory pointers are really getting munged.  Of all the cases
+I do believe each was within a method, rather than parameters, but I am
+not sure about this.  As far as the string which was corrupted, I could
+see no pattern, some of the cases are:
+
+syntax = "btw, I do know about Java.";
+
+Where it used to be:
+
+syntax = "cmd [options]";
+
+Or:
+
+return "btw, I do know about Java.";
+
+where it used to be:
+
+return "";
+
+There were other strings which were corrupted, with values such as
+"sticky.usu.edu" (a usu machine I use often, but which I do not know
+where it grabbed the string from).
+
+Figured I would let people know.
+
+Oh--the only thing different I did do, was start from a binary dump
+rather than a textdump (for the first time on our new machine).
+
+-Brandon
+</PRE>

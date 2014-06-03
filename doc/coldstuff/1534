@@ -1,0 +1,27 @@
+<HEAD><TITLE>discuss@charon: [1534] in "Coldmud discussion meeting"</TITLE>
+<H1>[1534] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1534"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1533"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1535"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>last patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec 21 03:02:53 1999
+)</H3>
+<PRE>
+From: bruce@puremagic.com
+To: coldstuff@cold.org
+Date: Mon, 20 Dec 1999 23:52:56 -0800 (PST)
+Reply-To: coldstuff@cold.org
+
+I didn't bother to try and compile my last patch and it was missing a ')'
+on line 158 of object.c.
+
+ - Bruce
+</PRE>

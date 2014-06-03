@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [141] in "Coldmud discussion meeting"</TITLE>
+<H1>[141] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?141"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="140"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="142"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>job control</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan 29 20:04:12 1994
+)</H3>
+<PRE>
+Date: Sat, 29 Jan 94 16:29:51 PST
+From: bsw!tungsten.seattle.geoworks.com!weber@uunet.UU.NET (Eric Weber)
+To: coldstuff@MIT.EDU
+
+
+After suspend() and fork() are implemented, it would be nice to
+have the ability to block/unblock a thread.  That is, one thread could
+suspend itself until another thread sends it a signal.  This would
+make it easier for multiple threads to cooperate on a task without
+busy-waiting.  Higher level synchronization systems such as semaphores
+could then be built in-DB.
+
+-- Eric
+</PRE>

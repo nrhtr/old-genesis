@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [966] in "Coldmud discussion meeting"</TITLE>
+<H1>[966] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?966"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="965"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="967"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] MUDEDIT 1.0 available for public browsing</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Apr 18 00:22:39 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@cold.org
+Date: Wed, 17 Apr 1996 20:59:13 +0000
+Reply-to: jeffk@tenetwork.com
+X-Confirm-Reading-To: jeffk@tenetwork.com
+
+MUDEDIT is up for public browsing as I now have guest login working.
+use the button labeled "MUDEDIT remote."
+
+I apologize that the code you will be browsing is pre 1.0 ColdX.  
+Conversion is my next task.
+
+As a guest you will not be able to recompile or add/delete methods or 
+parameters, but you will be able to browse the mud objects and see 
+how the  interface works.  (HINT:  It works slickest and fastest 
+under the new Netscape, Atlas release BUT Atlas for Unix appears 
+broken so you can only use the Windows atlas to run Mudedit.  
+Otherwise any properly JAVA compliant browser should work just fine.)
+
+If for any reason login fails, it means the actual mud is down.  Mail 
+me and Ill re-start it (its on a development machien that goes down 
+from time to time.)
+
+The MUDEDIT code is available off the page.  Please feel free to grab 
+a copy for your own use.  The supporting MUD code in my 
+implementation is in the edit_connection object.  edit_connection 
+requires a small amount of specific support that is in my sys and 
+root objects.  Its shoudl be pretty easy to follow...
+
+Jeff Kessleman
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+</PRE>

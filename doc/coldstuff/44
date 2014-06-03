@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [44] in "Coldmud discussion meeting"</TITLE>
+<H1>[44] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?44"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="43"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="43"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="43"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="45"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: regexp...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 05:00:20 1993
+)</H3>
+<PRE>
+To: Lynx &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Wed, 17 Nov 1993 02:31:52 CST."
+Date: Wed, 17 Nov 1993 03:49:34 -0600
+From: Adam Harris &lt;harris@cs.uchicago.edu&gt;
+
+&gt; &gt; I'd like to cast a vote of in-server regexp routines.  
+&gt; 
+&gt; ...cast a vote????  This is Greg's baby, he can make the decisions, no voting
+&gt; involved.  What we have to do is convince Greg :)
+&gt; 
+&gt; (Sorry, with NetrekII that is a peeve of mine--when non-coders decide they 
+&gt; can just randomly vote on something and make you do it).
+
+Uh, what makes you think I'm a non-coder?  Anyhow, point taken, I should
+have rather said, 
+  "I voice my wish that reg-exp coding was done in-server in COLD"
+
+&gt; &gt; Could someone give me a clue on what a "client robot" is?
+&gt; 
+&gt; It is something on another machine which runs a character.
+&gt; 
+&gt; I dont understand how Greg would want all automaton's to be clients though,
+&gt; what about the hundreds of creepies, merchants, npc's, etc?  Are we just 
+&gt; going to reconnoiter our entire campus of computers to run the MUD? :)
+&gt; 
+&gt; -Brandon
+
+Yeah, I got that.  But as you pointed out, it just doesn't seem to make sense
+to relegate automated "text-emitters" to *clients*.  There must be some
+equivocation on what a "robot" is, which is why I'm asking the question.
+(BTW, I've done a lot of work in AI-like NPCs and in modeling animalistic
+behavior, not to mention weather and other "text-emitting", VR-enriching
+type of frivolities.)
+
+.......................................................Adam Harris
+............................................harris@cs.uchicago.edu
+</PRE>

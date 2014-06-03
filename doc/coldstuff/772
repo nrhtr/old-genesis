@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [772] in "Coldmud discussion meeting"</TITLE>
+<H1>[772] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?772"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="771"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="773"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>No subject found in mail header</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Aug 19 21:10:11 1995
+)</H3>
+<PRE>
+From: bellegj@monitor.cs.orst.edu
+To: coldstuff@MIT.EDU
+Date: Sat, 19 Aug 95 18:08:34 PDT
+
+Subject: Re: fork() vs send() 
+In-reply-to: Your message of "Sat, 19 Aug 95 12:19:13 PDT."
+             &lt;9508191819.AA04139@avon.declab.usu.edu&gt; 
+--------
+&gt;   for obj in (object_list) {
+&gt;       obj.(method)(@args);
+&gt;   }
+&gt; 
+&gt; With:
+&gt; 
+&gt;   send(object_list, method, args);
+
+Actually I was thinking 
+   for obj in (object_list) {
+       (| obj.(method)(@args) |);
+   }
+minor difference.
+
+&gt; He did suggest that fork could be hidden behind send, but I dont think he
+&gt; was suggesting it as a complete replacement for fork.
+
+I'm hoping we'll find that a direct fork() isn't needed.
+
+
+-- Jeff Bellegarde (bellegj@mail.cs.orst.edu)
+
+
+</PRE>

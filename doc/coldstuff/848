@@ -1,0 +1,59 @@
+<HEAD><TITLE>discuss@charon: [848] in "Coldmud discussion meeting"</TITLE>
+<H1>[848] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?848"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="846"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="847"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="847"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="849"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="849"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="849"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Compile and Decompile</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 30 20:32:11 1995
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+Date: Thu, 30 Nov 1995 17:19:57 +0000
+CC: coldstuff@tombstone.sunrem.com
+
+&gt; Date:          Thu, 30 Nov 1995 17:33:39 +0000 ()
+&gt; From:          Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+&gt; To:            coldstuff@tombstone.sunrem.com
+&gt; Subject:       Re: Compile and Decompile
+
+&gt; On Thu, 30 Nov 1995, Jeff Kesselman wrote:
+&gt; &gt; Brandon in his last notes says something about removing the 
+&gt; &gt; ColdCC functionality from genesis.  I just wanted to make sure that 
+&gt; &gt; the object manipulation funtions, including compile and decompile, 
+&gt; &gt; would remain.  I need them for my project and it woudl in general be 
+&gt; &gt; very difficult to implement most classic forms of Muds without them.
+&gt; 
+&gt; There is no compile_object() or decompile_object() function available in 
+&gt; ColdC _now_, so I would not be removing that
+
+Not compile object, compile method, which IS at least in Coldmud...
+
+&gt; 
+&gt; However, as to your question, the reason I havn't considered it a problem 
+&gt; is because you have the ability to fully decompile a binary db, in-db.  
+&gt; Infact, ColdCore includes some routines for decompiling the db (none for 
+&gt; compiling though).
+
+The function was called compile()
+
+Don't touch it and I'm happy.
+
+JK
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+Clinton Gingrich Atomic Biological Bomb NSA -- Hi John!
+(A message for my friend in the NSA)
+*******************************************************
+</PRE>

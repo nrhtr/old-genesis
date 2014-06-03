@@ -1,0 +1,96 @@
+<HEAD><TITLE>discuss@charon: [1548] in "Coldmud discussion meeting"</TITLE>
+<H1>[1548] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1548"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1543"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1547"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1547"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1549"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: 1.1.8 Win32 genesis binaries</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 23 18:14:28 2000
+)</H3>
+<PRE>
+From: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Sun, 23 Jan 2000 18:06:41 -0500
+Reply-To: coldstuff@cold.org
+
+Psyclone wrote:
+&gt;"Jon A. Lambert" wrote:
+&gt;&gt; 
+&gt;&gt; Sorry I don't have the current source handy, but ...
+&gt;&gt; 
+&gt;&gt; Not sure where you need it but this will pull out current millisecs (~=microsecs?).
+&gt;Milliseconds (msec) are 1/1000ths of a second, Microseconds (usec --
+&gt;actually the greek letter mu instead of u) are 1/1000000ths of a second.
+&gt;mtime() is used in-core to time evals:
+&gt;
+
+I'm not sure what the specs on gettimeofday() since it's not supported on
+WIN32, but this may be an adequate substitution. 
+
+void gettimeofday(struct timeval* tp)
+{
+  timeb tm;
+  ftime(&amp;tm);
+  tp-&gt;tv_sec  = tm.time;
+  tp-&gt;tv_usec = tm.millitm * 1000;
+}
+
+Yes microseconds are not supported on WIN32.
+
+I had a problem in timestamping transactions on an IBM 3090
+where the granularity of millsecs was not enough to avoid collisions.
+If that is the case then something like the following will help:
+
+void gettimeofday(struct timeval* tp)
+{
+  static int counter;  
+  timeb tm;
+  counter++;
+  ftime(&amp;tm);
+  tp-&gt;tv_sec  = tm.time;
+  tp-&gt;tv_usec = (tm.millitm * 1000) + counter;
+}
+ 
+&gt;(Oops, it always returns -1) Anyway, I guess I can have it return
+&gt;milliseconds * 1000. Something's better than nothing..
+&gt;
+&gt;&gt; This check will resolve the problem without having to throw an error and
+&gt;&gt; should work in whatever timezone you set up in.
+&gt;&gt; 
+&gt;&gt; Somewhere after this :
+&gt;&gt;  tval = (num_args) ? args[0].u.val : time(NULL);
+&gt;&gt; 
+&gt;&gt; Insert the following:
+&gt;&gt; #ifdef _BORLANDC_
+&gt;&gt;   if (tval &lt; _timezome) tval = _timezone;
+&gt;&gt; #endif
+&gt;&gt; 
+&gt;&gt; Before calling:
+&gt;&gt; ctime(tval);
+&gt;&gt; 
+&gt;Isn't it a bit misleading, though, to have ctime(0) return the same as
+&gt;(say) ctime(18000)?
+
+It depends.  If ctime(0) on Unix returns "January 1st, 1970 00:00:00" if
+you reside in the EST timezone, isn't that also misleading?
+Should it not return "December 31st 1969 19:00:00"? 
+What does Unix return for values between 0-18000, assuming you reside
+in EST5EDT land? 
+
+Or you could just:
+if (tval &lt; _timezome) THROW(ERROR);
+
+--
+--*     Jon A. Lambert - TychoMUD Email: jlsysinc@nospam.ix.netcom.com     *--
+--*     Mud Server Developer's Page &lt;http://jlsysinc.home.netcom.com&gt;      *--
+--* "No Free man shall ever be debarred the use of arms." Thomas Jefferson *--
+
+
+</PRE>

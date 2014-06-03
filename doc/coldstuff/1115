@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [1115] in "Coldmud discussion meeting"</TITLE>
+<H1>[1115] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1115"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1112"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1114"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1114"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1116"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] My @who doesn't work with a4</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  3 04:22:50 1996
+)</H3>
+<PRE>
+Date: Sun, 03 Nov 1996 02:13:43 -0800
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: levip@wolfenet.com
+CC: coldstuff@cold.org
+
+Levi Pearson wrote:
+&gt; 
+&gt; &gt;
+&gt; &gt; I am trouble getting @who to work in Cold Core Alpha 4; Alpha 3 works
+&gt; &gt; okay (same Genesis version).
+&gt; &gt;
+&gt; 
+&gt;         The realm frob is messed up, you need to (as an admin) do
+&gt; 
+&gt; @set here:realm=Creation
+&gt; 
+&gt;         That should clear up that particular problem.
+&gt; 
+&gt;                         --Levi
+
+Thanks.
+
+Didn't take =Creation
+But did take = $realm_of_creation
+
+and now @who works fine.
+
+-- 
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+`
+</PRE>

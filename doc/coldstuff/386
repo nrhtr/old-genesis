@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [386] in "Coldmud discussion meeting"</TITLE>
+<H1>[386] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?386"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="385"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="387"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="388"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="392"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Out of curiosity</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug 23 19:11:27 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Tue, 23 Aug 1994 15:56:04 -0700 (PDT)
+
+The most recent post to this list about a problem on an HP/UX 9000 machine
+ brought up a question in my mind, since I had never seen the problem as
+ describe and had made coldmud on various machines.
+
+What machines has ColdMUD been successfully built on? I can attest to
+ SunOS 4.1.3 and Linux 1.0.8, but I was unable to compile under IRIX 4.3.
+ The IRIX problem might have to do with an old gcc (2.5.5 as opposed to 2.5.8)
+ but the error itself looked too strange. Had to do with a temporary file
+ being 0 bytes instead of 96. I have put out feelers looking for help on this,
+ but have not gotten much in the way fo replies.
+
+Anyway, what other machines have people tried and succeeded or failed?
+
+Crag
+</PRE>

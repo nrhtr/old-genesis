@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [737] in "Coldmud discussion meeting"</TITLE>
+<H1>[737] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?737"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="736"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="738"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="738"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="738"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>strings</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 13 05:42:16 1995
+)</H3>
+<PRE>
+Date: Sat, 13 May 1995 05:43:26 -0400
+From: Quinn &lt;quinn@Access.Mountain.Net&gt;
+To: coldstuff@MIT.EDU
+
+
+Lookit this, from 0.12.1-c:
+
+;"B" in "ABC"
+--&gt; 0
+;"b" in "ABC"
+--&gt; 2
+
+;strsub("ABC", "B", "-")
+--&gt; "ABC"
+;strsub("ABC", "b", "-")
+--&gt; "A-C"
+
+Do you guys already know about this, and just accept it?
+
+Or is it fixed in "ColdX"?
+
+-Quinn
+
+</PRE>

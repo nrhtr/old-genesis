@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [1151] in "Coldmud discussion meeting"</TITLE>
+<H1>[1151] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1151"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1150"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1150"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1150"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1152"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1152"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1152"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] tCD logins hosed...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 30 17:53:55 1996
+)</H3>
+<PRE>
+Date: Sat, 30 Nov 1996 17:43:00 -0500 (EST)
+From: Dale Mayberry &lt;dale@mars.mat.net&gt;
+Reply-To: Dale Mayberry &lt;pdale@mat.net&gt;
+To: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199611302022.UAA01133@aaaaaaaa.demon.co.uk&gt;
+
+On Sat, 30 Nov 1996, Andrew Wilson wrote:
+
+&gt; So, logins to TcD are hosed for me, and have been for about 6 hours.
+&gt; Anyone awake over there?
+
+  I did a ";as $login_interface;.rehash_cache()". That seems to fix the
+login problem.
+
+  The 'local_cache' on $login_interface was misnamed 'local'. I have not
+tracked down what caused this problem and will leave that work to others.
+
+-----------------------------------------------------------------------------
+Brian Dale Mayberry, Jr.			pdale@mat.net
+
+</PRE>

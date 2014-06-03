@@ -1,0 +1,136 @@
+<HEAD><TITLE>discuss@charon: [1259] in "Coldmud discussion meeting"</TITLE>
+<H1>[1259] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1259"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1258"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1260"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] PATCH: Bug reported by Kipp</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 24 18:58:52 1997
+)</H3>
+<PRE>
+Date: Tue, 25 Mar 1997 00:47:21 +0100 (MET)
+From: Miroslav Silovic &lt;silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+
+I *love* bugs that can be reproduced by eval. This patch fixes the
+refcounting bombs that happen when current method gets wiped, and then
+the task throws. Things that traceback wanted weren't there.
+
+
+
+*** Genesis-1.0p26/src/execute.c	Tue Mar 25 00:43:09 1997
+--- Genesis-1.0p26-new/src/execute.c	Tue Mar 25 00:43:10 1997
+***************
+*** 1488,1498 ****
+  	va_end(arg);
+      }
+      else
+  	str=NULL;
+  
+!     interp_error(error, str);
+      if (str)
+  	string_discard(str);
+  }
+  
+  void interp_error(Ident error, cStr *explanation)
+--- 1488,1509 ----
+  	va_end(arg);
+      }
+      else
+  	str=NULL;
+  
+!     {
+! 	Method *method = NULL;
+! 
+! 	/* protect the method in the current frame, if there is any - I
+! 	   have no idea what can call cthrow... This will prevent unexpected
+! 	   refcounting bombs during the frame_return sequence */
+! 	if (cur_frame)
+! 	    method = method_dup(cur_frame-&gt;method);
+! 	interp_error(error, str);
+! 	if (method)
+! 	    method_discard(method);
+!     }
+      if (str)
+  	string_discard(str);
+  }
+  
+  void interp_error(Ident error, cStr *explanation)
+***************
+*** 1545,1556 ****
+  
+      /* The second through fifth elements are the current method info. */
+      fill_in_method_info(d);
+  
+      /* Return from the current method, and propagate the error. */
+!     frame_return();
+!     start_error(error, explanation, arg, location);
+      list_discard(location);
+  }
+  
+  INTERNAL void out_of_ticks_error(void)
+  {
+--- 1556,1572 ----
+  
+      /* The second through fifth elements are the current method info. */
+      fill_in_method_info(d);
+  
+      /* Return from the current method, and propagate the error. */
+!     {
+! 	/* protect the current method, so that strings live long enough */
+! 	Method *method = method_dup(cur_frame-&gt;method);
+! 	frame_return();
+! 	start_error(error, explanation, arg, location);
+! 	method_discard(method);
+!     }
+      list_discard(location);
+  }
+  
+  INTERNAL void out_of_ticks_error(void)
+  {
+***************
+*** 1569,1583 ****
+  
+      /* The second through fifth elements are the current method info. */
+      fill_in_method_info(d);
+  
+      /* Don't give the topmost frame a chance to return. */
+!     frame_return();
+  
+!     if (!explanation)
+!         explanation = string_from_chars("Out of ticks", 12);
+!     start_error(methoderr_id, explanation, NULL, location);
+      list_discard(location);
+  }
+  
+  INTERNAL void start_error(Ident error, cStr *explanation, cData *arg,
+                          cList * location)
+--- 1585,1603 ----
+  
+      /* The second through fifth elements are the current method info. */
+      fill_in_method_info(d);
+  
+      /* Don't give the topmost frame a chance to return. */
+!     {
+! 	Method *method = method_dup(cur_frame-&gt;method);
+! 	frame_return();
+  
+! 	if (!explanation)
+! 	    explanation = string_from_chars("Out of ticks", 12);
+! 	start_error(methoderr_id, explanation, NULL, location);
+! 	method_discard(method);
+!     }
+      list_discard(location);
+  }
+  
+  INTERNAL void start_error(Ident error, cStr *explanation, cData *arg,
+                          cList * location)
+</PRE>

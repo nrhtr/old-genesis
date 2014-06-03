@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [786] in "Coldmud discussion meeting"</TITLE>
+<H1>[786] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?786"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="764"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="778"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="785"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="787"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: fork() vs send()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 25 14:26:55 1995
+)</H3>
+<PRE>
+From: Chuck Adams &lt;cadams@weather.Brockport.EDU&gt;
+To: brandon@avon.declab.usu.edu (869683 Gillespie Brandon James)
+Date: Fri, 25 Aug 1995 12:24:03 -0600 (MDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9508202121.AA08082@avon.declab.usu.edu&gt; from "869683 Gillespie Brandon James" at Aug 20, 95 03:21:11 pm
+
+869683 Gillespie Brandon James drew these hieroglyphs:
+&gt; 
+&gt; &lt; There is a difference.  In a delayed fork, the task doesn't exist
+&gt; &lt; until it runs, and in a fork-then-pause, it does.  This does make a
+&gt; &lt; difference.
+&gt; 
+&gt; How do you know this?  I havn't even written it yet.
+&gt; 
+&gt; Besides, whether the task exists or not is irrelevant, it still has to
+&gt; duplicate the current execution frame.  The task itself is just a pointer
+&gt; to that frame.  If I were to implement it with delay, it would exist from
+&gt; the second it was forked in the task list, because it would exists as an
+&gt; execution frame.
+
+ah.  i was going off of MOO.  Then again, delayed forked tasks may
+very well exist before beginning.  I'm really not sure anymore,
+actually.
+
+Can't think of a situation where it's relevant, either -- I thought I
+did, but not anymore.
+
+I used to be uncertain, now I'm not sure.
+
+</PRE>

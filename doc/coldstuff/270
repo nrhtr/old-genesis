@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [270] in "Coldmud discussion meeting"</TITLE>
+<H1>[270] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?270"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="267"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="268"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="269"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="271"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: fork() and log()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 15:42:31 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: BRANDON@cc.usu.edu (the Lyncx)
+Date: Thu, 19 May 1994 12:33:24 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+Reply-To: coldstuff@MIT.EDU
+In-Reply-To: &lt;01HCIW56OZGIBWBV4S@cc.usu.edu&gt; from "the Lyncx" at May 19, 94 01:09:28 pm
+
+&gt; Yes, I did.  It is only two lines, but when we talked about it last eve most
+&gt; people felt the server should tack some type of date on it (shrug).  I would
+
+Just make it a compile-option for the server code and be done with it.
+(personally, I agree that it would be best in-DB, but conditional compiling
+is one of the advantages to C source, so why not use it?)
+
+-Riche
+
+
+</PRE>

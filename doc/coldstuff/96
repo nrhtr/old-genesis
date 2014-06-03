@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [96] in "Coldmud discussion meeting"</TITLE>
+<H1>[96] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?96"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="93"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="94"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="95"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="97"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ASCII Codes etc</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 16:26:09 1993
+)</H3>
+<PRE>
+From: David Engberg &lt;snarflrd@leland.Stanford.EDU&gt;
+To: BRANDON@cc.usu.edu (Lynx)
+Date: Sat, 4 Dec 1993 13:23:29 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;01H62X8D1S7MANXSH4@cc.usu.edu&gt; from "Lynx" at Dec 4, 93 12:01:56 pm
+
+
+&gt; The only pro for using vt codes is that it is a KNOWN standard. Far as I know
+&gt; there really is not a very wide spread standard for anything else...
+
+not all ASCII unprintable bit sequences are vt codes.  moving beyond raw
+text&amp;telnet to smart client/server interaction makes efficient protocols
+desirable.  (where you don't have to ignore &gt;25% of potential data received
+just because of archaic security holes in ancient terminal protocols.)
+for my graphical client, any line beginning with a non-printable character
+is assumed to be something more interesting and is parsed as such.
+hardcoding servers to limit me from using this seems short-sighted, especially
+considering the goal of the project is to increase the potential power of
+designers.
+</PRE>

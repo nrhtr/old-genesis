@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1619] in "Coldmud discussion meeting"</TITLE>
+<H1>[1619] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1619"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1618"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1620"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>active and other stuff</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 24 15:24:53 2000
+)</H3>
+<PRE>
+Date: Thu, 24 Aug 2000 19:13:47 +0000
+From: Mike Povoski &lt;mpovoski@earthlink.net&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+Hello!  Just wondering if this is an active list.  If not, is there an
+active Cold list out there?
+
+also, are there any resources for MOO vs. Cold re functionality and/or
+efficiency?  Im talking server here, with a minimal db, rather than the
+standard cores out there.
+
+also, are there any benchmarks, or can anyone speak from experience,
+about Cold scalability in terms of connections, processor speed, code,
+data, etc?
+
+Im trying to figure out how many active connections can be managed
+efficiently (e.g. without server lag) given a fairly large 'driver' ( i
+think it is called ) on a Cold implementation running with a given
+amount of CPU and RAM.
+
+any thoughts or pointers?
+
+-mike
+mpovoski@earthlink.net
+</PRE>

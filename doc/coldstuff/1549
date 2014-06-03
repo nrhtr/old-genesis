@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1549] in "Coldmud discussion meeting"</TITLE>
+<H1>[1549] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1549"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1548"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1550"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>question about genesis</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Feb 10 19:57:04 2000
+)</H3>
+<PRE>
+Date: Thu, 10 Feb 2000 19:21:32 -0500
+From: Paul &lt;draegur@wserv.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+I am attempting to use both coldcore and genesis as per the instructions
+on your web page.
+When I do the make on genesis it runs for a while then, so I believe,
+completes. However,
+on your webpage, when it comes to coldcore it states that compiling
+genesis will leave behind
+the two files, genesis and coldcc, yet when I try to locate them they
+are no where to be found.
+
+It this because I am using RedHat linux or is there any other helpful
+advice you can give to me?
+
+Thanks,
+
+Paul
+draegur@wserv.com
+
+</PRE>

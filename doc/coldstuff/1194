@@ -1,0 +1,77 @@
+<HEAD><TITLE>discuss@charon: [1194] in "Coldmud discussion meeting"</TITLE>
+<H1>[1194] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1194"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1193"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1195"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Patch</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec 25 00:44:39 1996
+)</H3>
+<PRE>
+Date: Wed, 25 Dec 1996 06:30:18 +0100 (MET)
+From: Miroslav Silovic &lt;Miroslav.Silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+No, I haven't found the db corruption. I suspected we might have a problem
+with fork_method, but I could not substantiate this suspicion any further
+(I'd say it's 50-50, but bear in mind that current ColdCore calls it more
+than any other core). The bug might even vanish with the fix to cancel() -
+is it called often? If it's not, my first bet is still the hardware, till I
+see better candidate, or till someone else's db starts to decay. :)
+
+This fix removes the memory leak associated with task_info. It also
+fixes the bug with cancel() /someone please take a look at this. I *think*
+this is okay, but should there be something else in place of the
+commented code? - it stored the task that called cancel() into the list
+of free tasks, and bombed the driver that way. Enjoy the patches:
+
+
+*** /tmp/x/Genesis-1.0p21/src/execute.c	Sat Dec 21 08:22:52 1996
+--- execute.c	Wed Dec 25 05:53:59 1996
+***************
+*** 264,273 ****
+--- 264,274 ----
+      dl[6].type = INTEGER;
+      dl[6].u.val = vm-&gt;limit_calldepth;
+  
+      /* frames */
+      list = list_add(list, &amp;d);
++     data_discard(&amp;d);
+      d.type = LIST;
+      frame = vm-&gt;cur_frame;
+      while (frame) {
+          d.u.list = frame_info(frame);
+          list = list_add(list, &amp;d);
+***************
+*** 393,403 ****
+      else
+          REMOVE_TASK(suspended, vm)
+      store_stack();
+      ADD_TASK(vmstore, vm);
+      restore_vm(old_vm);
+!     ADD_TASK(vmstore, old_vm);
+  }
+  
+  /*
+  // ---------------------------------------------------------------
+  */
+--- 394,404 ----
+      else
+          REMOVE_TASK(suspended, vm)
+      store_stack();
+      ADD_TASK(vmstore, vm);
+      restore_vm(old_vm);
+! /*    ADD_TASK(vmstore, old_vm); */
+  }
+  
+  /*
+  // ---------------------------------------------------------------
+  */
+</PRE>

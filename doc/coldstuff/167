@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [167] in "Coldmud discussion meeting"</TITLE>
+<H1>[167] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?167"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="166"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="168"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="168"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="178"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Encapsulation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 25 17:29:33 1994
+)</H3>
+<PRE>
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+Date: Fri, 25 Mar 1994 13:16:34 -0800 (PST)
+
+It is true that one object shouldnt directly modify another objects variable, 
+but shouldnt the first object be able to ask the other object to change its
+variable? or rather, can an object change its own variables....           
+     Looking at the colddark core, I didnt see any method to do this, and
+also didnt see a server function to do this. (this is not in any way representative
+of the existence of said functions, as I'm very new to both the server and the DB)
+Should accessors exist which enable the data to be modified or viewed, and can
+be called from other objects? the concept of protected data could be enabled
+by placing a check in the accessor method if the var were to be private or protected, most likely.
+The kind of accessor i was thinking of could be called as 
+on object $bar
+	.foo()    -&gt; 1
+	.foo(0)   -&gt; TRUE   (im not sure on the return for this, as i only mostly
+			     follow the way error handling works. the function
+				should return an error code if there is an error
+				with setting the var, like a permissions error for
+				protected data, or a type error)
+	.foo()    -&gt; 0     (displays the new value of foo)
+
+on object $baz
+	$bar.foo() -&gt; 1
+	$bar.foo() -&gt; ~perm     (object $baz doesnt have permission to modify prop foo)
+
+the method could then be modified to return the appropriate information, such
+as string substitution, etc (i belive this is already in existence) 
+In the db, the parameter creation function could also create these accessors with
+little difficulty, perhaps based on a given template, for the various return 
+conversions.
+
+Is this just totally wrong?
+
+Ash
+
+
+</PRE>

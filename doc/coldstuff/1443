@@ -1,0 +1,64 @@
+<HEAD><TITLE>discuss@charon: [1443] in "Coldmud discussion meeting"</TITLE>
+<H1>[1443] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1443"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1442"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1444"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Upcoming p6 change warning</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan  4 21:39:54 1999
+)</H3>
+<PRE>
+From: "Bruce Mitchener, Jr." &lt;bruce@puremagic.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Mon, 4 Jan 1999 18:35:41 -0800
+
+Good day,
+
+In the 1.1p6 release of Genesis, there is a change to fix a bug that will
+affect most running systems out there today.  The $dictionary.union() native
+was handling its args in reverse order.  This made it operate differently
+from $list.union(), union() (for lists), and dict_union().
+
+Example:
+
+$dictionary.union():
+;#[[1, 2], [3, 4]].union(#[[3, 5], [4, 6]]);
+=&gt; #[[3, 4], [4, 6], [1, 2]]
+[ seconds: 0.000087; operations: 22 ]
+
+dict_union():
+;dict_union(#[[1, 2], [3, 4]], #[[3, 5], [4, 6]]);
+=&gt; #[[1, 2], [3, 5], [4, 6]]
+[ seconds: 0.000068; operations: 22 ]
+
+This is not cause for panic.  The calls to $dictionary.union() in a core
+should be relatively easy to locate and correct.  Note that this must be
+done in concert with the driver upgrade to maintain proper behavior.
+
+Will the ColdCore people be able to put out a snapshot of ColdCore that has
+these things fixed?  Also, for those whose cores diverged over time, it
+might be useful to see a list of the places in ColdCore that had to be
+fixed.
+
+The 1.1p6 release will also contain some bugfixes accidentally left out of
+1.1p5, a fix for the new bufidx() bug in 1.1p5, a lot of work on the Win32
+port, along with some more bugfixes.  If anyone has any problems that they
+have not reported, this would be a great time to report them as we near the
+release of 1.1p6 (about 3-4 weeks from now).
+
+Discussion of Genesis develop will start occuring more on the Genesis list,
+genesis@cold.org.
+
+Thanks!
+
+ - Bruce
+
+
+</PRE>

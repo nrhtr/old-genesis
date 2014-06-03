@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [813] in "Coldmud discussion meeting"</TITLE>
+<H1>[813] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?813"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="812"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="814"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>EEK! Bad object bug in 0.2-1</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Sep 24 16:10:06 1995
+)</H3>
+<PRE>
+Date: Sun, 24 Sep 1995 16:44:06 +0000 (AEST)
+From: root@thelbane.brisnet.org.au (Dancer)
+To: coldstuff@pippin.ece.usu.edu
+
+
+We've got a bug. It's been around for a while, I daresay, but hasn't been
+visible before, as we haven't had cache-flushing before.
+
+This bug exists in driver version 0.2-1.
+
+Somewhere, somehow, the 'dirty' flag is not being set in some case where
+it _should_ be set. This is causing new object data to be lost, and old
+object data to appear in it's place (as only dirty objects get written
+back during cache-flushing).
+
+Temporary fix until the problem is found:
+(a) go to main.c and comment out the call to cache_cleanup(). This will
+cause your memory usage to rise by about 30%.
+
+or,
+
+(b) go to cache cleanup, and tell it to ignore the dirty flag. (line 400)
+
+Old line:
+	if (obj-&gt;dbref != INV_OBJNUM &amp;&amp; obj-&gt;dirty)
+
+New line:
+	if (obj-&gt;dbref != INV_OBJNUM)
+
+
+This will cause a little more disk accessing, but should stop the problem
+until it can be pinned down.
+
+
+</PRE>

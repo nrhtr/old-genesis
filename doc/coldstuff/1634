@@ -1,0 +1,93 @@
+<HEAD><TITLE>discuss@charon: [1634] in "Coldmud discussion meeting"</TITLE>
+<H1>[1634] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1634"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1626"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1627"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1633"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1635"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1635"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1640"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Genesis 1.1.9 - STABLE</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan  9 01:42:13 2001
+)</H3>
+<PRE>
+Message-ID: &lt;3A5AAE4E.75982FBF@cubik.org&gt;
+Date: Mon, 08 Jan 2001 23:23:10 -0700
+From: Bruce &lt;bruce@puremagic.com&gt;
+MIME-Version: 1.0
+To: coldstuff@cold.org
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Reply-To: coldstuff@cold.org
+
+This is a very delayed response, but I need to see a dev release
+made fairly soon to get some large changes into wider testing.
+
+Allen Noe wrote:
+&gt; However I noticed a few things that didn't get in, so I'm
+&gt; (re)posting the diffs I use. Separated into two patches
+&gt; for your convenience, the stable one shouldn't break
+&gt; anything, the -dev one might, but I haven't noticed
+&gt; anything.
+&gt; 
+&gt; They can apply together, against a clean 1.1.9, with a 3
+&gt; line offset in one.
+&gt; 
+&gt; In the stable one:
+&gt; * html_escape needs to encode if there are doublequotes,
+&gt;   otherwise Bruce's added case won't be used. (me)
+&gt; * $http.decode now returns a buffer; workaround for
+&gt;   $http.decode("%1b") and similar returning improper
+&gt;   strings. (me)
+
+I don't think that this can go into a stable release.  It changes
+the interface and would require DB modifications.  Seems
+reasonable for a dev release though.
+
+&gt; * Corrected random(x)'s throw message for x &lt; 1 (me)
+&gt; * Make method_bytecode() act like list_method(), specifically
+&gt;   not returning bytecode for methods on parent objects (me)
+&gt; * Also fix a bug in method_bytecode where it checks the
+&gt;   wrong variable. (me)
+&gt; 
+&gt; In the dev one:
+&gt; * Some method-cache stuff, if you're impatient. (Bruce)
+
+I think this isn't the full version.  At any rate, I have a far
+larger patch with many more optimizations and enhancements that
+Brad and I have been working on that includes this.
+
+&gt; * Have stack(1) not bother returning line number or pc. (me)
+
+This conflicts with an extension that I've made to stack() that
+allows you to specify which task you'd like to get a stack for. 
+While this info is available from task_info(), it isn't in the
+same format as stack() and traceback().  I didn't know about the
+stack trace being in task_info() until I'd already done my work,
+so I'm not clear what I'd like to do here.  To me, it makes sense
+for stack() to present that information, but the duplication
+seems wasteful. (I already had to change the underlying stuff in
+execute.c to let task_stack() work for any given task for some of
+the other work that has been going on.)
+
+&gt; * Have method_bytecode() return jumps so if (1) { return 1; }
+&gt;   return 0; has different bytecode than if (1) { return 1;
+&gt;   return 0; } (me)
+&gt; * Add SYMBOL calling_method(), the same as stack()[2][3] (me)
+
+These 2 look fine for the stable release to me, if they aren't
+buggy.  How long and to what extent have you been using these
+bits of code?
+
+&gt; * Add LIST explode_quoted(STRING), which is a native version
+&gt;   of ColdCore's $string.explode_quoted() (Jeremy Weatherford)
+
+Hmmm. Would be nicer to see this as a native method on $string. 
+I may do that work for you since it is pretty easy if you prefer.
+
+ - Bruce
+</PRE>

@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [728] in "Coldmud discussion meeting"</TITLE>
+<H1>[728] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?728"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="727"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="727"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="727"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="729"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: comments</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar 25 18:20:29 1995
+)</H3>
+<PRE>
+From: bellegj@saurian.cs.orst.edu
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Sat, 25 Mar 95 15:16:17 PST."
+             &lt;m0rsdBx-000KefC@serial&gt; 
+Date: Sat, 25 Mar 95 15:19:38 PST
+
+&gt; Add /* */. It doesn't break anything to add it, and it is consistant with
+&gt;  traditional C.
+&gt; 
+The only consideration is nesting of block quotes.  If I remember correctly, 
+(yeah, right) the C standard does NOT allow nested /**/.
+
+&gt; It is also extremely easy to add to the language. Only question is how to
+&gt;  unparse. Should all comments be unparsed as /* or // or whatever they
+&gt;  were to begin with?
+&gt; 
+Looking at your parse tree spec, it would apear that a 'block_comment 
+statement could be added without conflicting with 'comment.  I think this 
+would be the best option
+
+&gt; I vote for it to be an option of unparseing all as one or the other.
+I could live with this also.
+
+&gt; (I would be totally opposed to removing // as a line break terminated 
+comment.)
+Agreed
+ 
+--Jeff
+-- Jeff Bellegarde (bellegj@mail.cs.orst.edu)
+
+
+</PRE>

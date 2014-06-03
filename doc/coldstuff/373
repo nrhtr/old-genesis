@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [373] in "Coldmud discussion meeting"</TITLE>
+<H1>[373] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?373"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="370"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="372"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="372"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="374"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="374"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="374"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Changes (0.10-4)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul 11 00:42:20 1994
+)</H3>
+<PRE>
+From: image@sage.cc.purdue.edu (Jeff T.P.)
+To: BRANDON@cc.usu.edu
+Date: Sun, 10 Jul 94 23:37:00 EST
+In-Reply-To: &lt;01HEK09N914MCU5PG2@cc.usu.edu&gt;; from "BRANDON@cc.usu.edu" at Jul 10, 94 9:21 pm
+
+Original quote by BRANDON@cc.usu.edu:
+
+&gt; set_heartbeat_freq() =&gt; set_heartbeat()     (this is completely aesthetic)
+&gt; db_top =&gt; max_objnum()                      (ditto)
+
+I support the above.  Two builtins that were misnamed.  I like the 
+above suggestions.
+
+&gt; has_ancestor() =&gt; remove  (we can just do 'if obj in (.ancestors())', although
+&gt;                            it isn't as fast).
+
+What's the speed difference?  If the speed difference is a large one, 
+then by all means leave has_ancestor() in, but it doesn't seem like it 
+should be very large.
+
+&gt; dict_add_elem()
+&gt; dict_del_elem() =&gt; remove (since they are disappearing anyway)
+
+I know I have very important code that uses both of these extensively.  
+I'd like to have them left in personally.  I know it can be done in db, 
+but how quickly?  Speed again is the consideration.  If it can be done in 
+the database without considerable loss of speed, then nevermind. . .
+
+Coming Soon. . . a WWW Page for RyouKold (Concepts and Documentation).
+-- 
+ftp://maddog.evansville.edu/pub/mud/home.html    "All of the rumours
+AKA:tailor@maddog.evansville.edu                 keeping me grounded
+                                                 I never said that they were
+Completely Unfounded." -- Morrissey, Speedway from "Vauxhall and I"
+
+
+</PRE>

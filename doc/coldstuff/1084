@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [1084] in "Coldmud discussion meeting"</TITLE>
+<H1>[1084] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1084"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1079"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1083"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1083"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1085"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1085"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1085"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Porting Woes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 28 16:18:41 1996
+)</H3>
+<PRE>
+Date: Wed, 28 Aug 1996 12:21:25 -0700
+From: Jeff Kesselman &lt;jeffk@ten.net&gt;
+Reply-To: jefk@ten.net
+To: coldstuff@cold.org
+
+Terrence M. Drozdowski wrote:
+&gt; 
+&gt; On Wed, 28 Aug 1996, Brandon Gillespie wrote:
+&gt; 
+&gt; &gt; On Tue, 27 Aug 1996, Jeff Kesselman wrote:
+&gt; &gt;
+&gt; &gt; &gt; Well, Ive been playign with the windows port.
+&gt; &gt; &gt;
+&gt; &gt; &gt; First problem is that gcc under Win95 expects 8.3 filenames because its
+&gt; &gt; &gt; basicly a DOS interface port of gcc (runs in a DSO box).
+&gt; &gt; &gt;
+&gt; &gt; &gt; This means, with our current file names, we will NEVER compile
+&gt; &gt; &gt; under gcc.
+&gt; &gt; &gt;
+&gt; &gt; &gt; Suggestions?  I coudl change the names but upgrading is gonna be a
+&gt; &gt; &gt; pain. It woudl be better is we went to 8.3 for all cold source....
+&gt; &gt;
+&gt; &gt; Uhrm, my original compile compiled everything with gcc in bash up to
+&gt; &gt; net.c, where, it bombed on some network stuff I've since finished.  I
+&gt; &gt; never did go back for a second attempt.  We never had any problems with
+&gt; &gt; filename lengths.. (perhaps bash was doing something?)
+&gt; &gt;
+&gt; &gt; -Brandon
+&gt; &gt;
+&gt; 
+&gt; Perhaps he's not using win32bash...  I'll give it a try on an NT 4.0 box
+&gt; this week and report back here...
+
+Ive been unable to FIND win32bash.
+Can someoen make a suggestion?
+Im workign under Win95 btw not NT.
+In the normal Dos shell, and every shell I've tried, i have the same
+problem.  It seems to be mostly with include file names.
+
+JK
+</PRE>

@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [104] in "Coldmud discussion meeting"</TITLE>
+<H1>[104] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?104"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="103"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="103"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="103"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="105"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: db extraction tools?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  6 23:29:41 1993
+)</H3>
+<PRE>
+Date: Mon, 06 Dec 1993 21:24:45 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; Anyways, I was wondering if anyone has written a textdump extraction tool in
+&gt; perl (or other language) that would allow one to extract one particular object.
+
+I created chop.c, which chops up an entire db into .c-- files.  It should be
+rather easy to have it selectively chop files, if you wish to do so.  I can
+email it if you want.
+
+-Lynx
+</PRE>

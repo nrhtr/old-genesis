@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1085] in "Coldmud discussion meeting"</TITLE>
+<H1>[1085] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1085"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1079"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1084"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1084"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1086"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Porting Woes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 28 17:06:27 1996
+)</H3>
+<PRE>
+Date: Wed, 28 Aug 1996 13:26:26 -0700 (PDT)
+From: "Gregory \"snooze\" Blake" &lt;gblake@mis.nu.edu&gt;
+To: jefk@ten.net
+cc: coldstuff@cold.org
+In-Reply-To: &lt;32249C0F.11C4@ten.net&gt;
+
+On Wed, 28 Aug 1996, Jeff Kesselman wrote:
+
+&gt;
+&gt; Ive been unable to FIND win32bash.
+&gt; Can someoen make a suggestion?
+&gt; Im workign under Win95 btw not NT.
+&gt; In the normal Dos shell, and every shell I've tried, i have the same
+&gt; problem.  It seems to be mostly with include file names.
+
+Try www.cygnus.com, they are working on porting the gnu stuff.
+
+snooze
+
+&gt;
+&gt; JK
+&gt;
+
+------------------------------------PLUR---------------------------------------
+ Gregory Blake  - snooze@DeepSeas,TooMUSH]I[,fantasia,etc -  snooze@mis.nu.edu
+   619-563-2595&lt;w&gt; | 619-528-4531&lt;h&gt; | home: 4783 Utah St, San Diego 92116
+                  "Understanding is a three edged sword."
+
+</PRE>

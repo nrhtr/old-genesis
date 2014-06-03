@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1227] in "Coldmud discussion meeting"</TITLE>
+<H1>[1227] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1227"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1226"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1226"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1226"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1228"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Question on pass()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Feb  1 13:16:22 1997
+)</H3>
+<PRE>
+Date: Sat, 1 Feb 1997 10:06:20 -0800 (PST)
+From: Brian Buchanan &lt;brian@wasteland.calbbs.com&gt;
+To: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199702011445.GAA29125@dfw-ix1.ix.netcom.com&gt;
+
+
+
+On Sat, 1 Feb 1997, Jon A. Lambert wrote:
+
+&gt; If two or more ancestors have methods named the same as a child method
+&gt; which method is called with pass().
+&gt; 
+&gt; For instance:
+&gt; 
+&gt; $user.match_environment() contains
+&gt; 
+&gt; 	match = (&lt; pass(str) &gt;);
+&gt; 
+&gt; Which ancestor method is called
+&gt; 
+
+@trace $user.match_environment
+(Look at the code for .trace_cmd() if you're curious as to how to 
+determine this from program code.  It involves using find_next_method())
+
+Brian
+
+</PRE>

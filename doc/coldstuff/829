@@ -1,0 +1,123 @@
+<HEAD><TITLE>discuss@charon: [829] in "Coldmud discussion meeting"</TITLE>
+<H1>[829] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?829"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="825"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="828"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="828"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="830"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="830"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="830"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: protected and private object variables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct 15 21:15:47 1995
+)</H3>
+<PRE>
+Date: Sun, 15 Oct 1995 21:06:54 -0400 (EDT)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+In-reply-to: &lt;9510152250.AA08315@smithfield.declab.usu.edu&gt;
+To: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+Cc: coldstuff@pippin.ece.usu.edu
+Reply-to: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+
+
+
+On Sun, 15 Oct 1995, 869683 Gillespie Brandon James wrote:
+
+&gt; &lt; They should be 'instance' and 'class' variables, or'child' and 'definer' 
+&gt; &lt; variables if you want to be obnoxiously classless.
+&gt; 
+&gt; The concept is the same, the name is an important detail, but there is
+&gt; no _should_ or _shouldn't_, other than if I'm trying to emulate another
+&gt; language, or what my desires are in creating this functionality.
+
+Hm, maybe 'wrong' was the wrong word.  (Well, an ill-advised one.)
+
+What I was trying and apparently failing to express with the word wrong 
+was "confusing for beginning programmers starting out with ColdC, 
+confusing for programmers familiar with object-oriented languages, 
+and confusing for experienced programmers starting out with OO languages 
+with ColdC."
+
+&gt; I have intentionally shied away from using instance and class for a
+&gt; few reasons, mainly that there ARE NOT instances and classes, and using
+&gt; such names would be horribly misleading.
+
+Well, you have a point.
+
+&gt; With this in mind, I decided 'private' was good, because it essentially
+&gt; functions like the 'private' flag on a method (i.e. only if caller() is
+&gt; definer() can it be executed).  'protected' just sortof fell into place
+&gt; after that.         
+
+I'm not sure in what way this functions like the private flag.  "Private" 
+for a method means it is accessible only from methods defined on its own 
+definer.  All variables fit this definition of "private."  A 'protected" 
+variable I would expect to be accessible from methods defined on children of 
+its definer, as are protected methods.
+
+It seems like the feature you've suggested introduces a difference along 
+a totally different axis, while keeping all variables 'private' as they 
+were before.  This is what I meant by 'wrong', basically--the names of 
+features already in ColdMUD (as well as the English meanings of the terms 
+you've suggested) make your suggested terms for this feature extremely 
+misleading.
+
+&gt; Mind you, I like the suggestions, it was just the sternminded 'you are
+&gt; doing it _wrong_' that I dont like.  Frankly, the way it is finally
+&gt; implemented is the right way (period) even if it isn't like what others
+&gt; do, because its how I've decided to do it, after considering all influences
+&gt; I could.  Hmm, basically: I dont care if thats "how the Jones do it", its
+&gt; all ones and zeros in the end ;)
+
+Well, I'll try to write messages somewhat more like this one and less like 
+the last one in the future.
+
+&gt; I'll brainstorm names here.  First, we have variables which are restricted
+&gt; to the defining object, and cannot be redefined on a descendant.  Then you
+&gt; have the regular variables, which CAN be redefined.  The first name will
+&gt; always be in reference to the !redefinable variables:
+&gt; 
+&gt;     definer (your suggestion)
+&gt;     child (your suggestion)
+&gt; 
+&gt;     private (mine)
+&gt;     protected (mine)
+&gt; 
+
+Already discussed.
+
+&gt;     limited
+&gt;     regular
+
+These terms seem rather vague, and I don't understand how being stored 
+only on the parent object rather than on each descendant is well 
+described by terms such as 'limited'.
+
+&gt; 
+&gt;     restricted
+&gt;     normal
+
+These too.
+
+&gt;     private
+&gt;     normal
+
+These still contain what seems to me a misleading use of 'private'.
+
+      definer
+      descendant
+
+      shared (Eric Weber's suggestion)
+      unshared
+
+      shared
+      individual
+
+--
+James "just for the halibut" Deikun
+the fender of justice * writer of wrongs * keeper of the very important frog
+************* I said, "We need more gate_d_s on the Internet!" *************
+</PRE>

@@ -1,0 +1,146 @@
+<HEAD><TITLE>discuss@charon: [1605] in "Coldmud discussion meeting"</TITLE>
+<H1>[1605] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1605"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1603"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1604"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1604"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1606"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: newbie question about what cold/genesis can do...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul 11 15:36:46 2000
+)</H3>
+<PRE>
+In-Reply-To: &lt;20000710172406.A3156@digiserve.ie&gt;
+From: "Joshua Rosen" &lt;rozzin@jello.geekspace.com&gt;
+To: coldstuff@cold.org
+Cc: dp2@dp2.org
+Date: Tue, 11 Jul 2000 19:20:28 GMT
+Reply-To: coldstuff@cold.org
+
+
+Good paper... it sounds somewhat familiar:)
+
+For the past several months, I've been working on a project closely related
+to what you describe--dp2, the DROPPED POMEGRANATE PROJECT (yes, that -is-
+an acronym).
+
+It started when, in our Cold, a friend of mine started talking about
+`web-browser-based MUDs', and I ,somewhat deliberately, misinterpreted him.
+
+He'd meant `MUDs with web-browser-based UIs', but I'd interpreted it as `a
+MUD that runs inside a web-browser'. Then I thought about having a MUD
+*database* run inside a web-browser (er, client-side), but having the MUD
+server still be a remote server.
+
+My next thought was, `WOW'--rather than writing an e-mail and attaching a
+POV-Ray scene-file that I'd written to it and sending it to someone, I
+could just *hand* them the POV-scene.
+
+The next night, another friend's mind came into sync with mine, and we went
+out to dinner to discuss this. Thus was born project UNIVERSE.
+
+The idea of project UNIVERSE was to have DIETYs that managed databases and
+would connect to GOD servers and present objects to GODs for entrance of
+said objects into the VR/MUD universe. The GODs would allow or deny entrace
+of objects based upon arbitrary rule-sets, and would then govern
+interaction between objects in managed by the DIETYs.
+
+We decided that UNIVERSE was the reason that we existed, as it encompassed
+`every cool project that [we'd] ben tempted to work on over the past few
+years'..., and then we decided that UNIVERSE was not quite the correct
+architecture, and that it was only a very small component of something much
+more generalised and important. Thus was born dp2.
+
+UNIVERSE was too centralised, for one--with dp2, we've moved away from the
+client/server model, to a completely decentralised, peer-based system of
+nodes (we call it the reticulum). We've also moved to a very event-based
+architecture.
+
+This system is perfect for MUDs, and is also very good for numerous other
+sorts of systems (I won't get into those, here).
+
+Currently, we're in the process of implementing various
+components/subprojects of dp2, in several languages:
+
+I'm writing a dp2 module for GUILE/Scheme, and a scheme-based AI
+interaction-bot to hook up to the dp2 reticulum (his name is "fred").
+I'm also updated an extensible e-mail client that I wrote, last year, so
+that it can interact with the dp2 reticulum (it's now a generic
+rfc822-handler with plug-in directory-protocols).
+
+A coconspirator in the project (nick) is working with me on the dp2 Python
+library, and on BARD, a purely distributed VR/MUD system that makes use of
+the dp2 architecture.
+
+We've got a first-generation communication protocol worked out, so,
+hopefully, we'll have the BARD components and fred working together in the
+next few months, and people will be able to connect and really experience
+dp2.
+
+We plan to complete dp2 libraries for several other languages--C (for
+obvious reasons), Pike, possibly TOM, Haskell (when I get a chance to learn
+it)....
+
+Everyone currently involved in dp2 has experience with (at least) MOO,
+Cold, and POO; we considered using MOO, Cold, and POO, and we won't be
+using Cold or MOO in the near future, though we may steal tiny pieces of
+POO's code for use in components of BARD. In the distant future, we'd like
+to develop modules for Cold and MOO (cubik support will come with the TOM
+module;)).
+
+We've got a spot on sourceforge:
+        http://www.sourceforge.net/projects/dp2
+with a CVS repository, which contains all of our current code;
+
+The dp2 home web-site is at:
+        http://www.dp2.org/
+It's got -some- documentation (we're working on this--really;)), and *lot*
+of conversation-logs (these go all the way back to the original
+conversation that inspired UNIVERSE). The web-site became a little mucky,
+today--there are some documents that exist but just aren't reachable--it'll
+all be fixed by tomorrow.
+
+Unfortunately, the project isn't yet self-documenting enough for us to
+really bring in more developers--we'd likely need to spend more time
+educating them on exactly what we want to accomplish and getting them to
+open their minds up wide than we would on actually developing things, so I
+can only really recommend that you sit back and watch for a while--read the
+documentation and the logs, check out the code; if, after doing the
+reading, it `clicks' in your mind (you think, `cool! I know exactly what
+they're talking about!'), then send us some e-mail.
+
+If you just have a question about what we're doing or why we're doing it
+(or what all of the contrived acronyms mean), send us an e-mail;).
+
+Oh, as far as using the code goes: we've just started to do our bickering
+about licensing issues, so the license for the project is undefined--get
+the code, play with it, but please don't put it into any other projects,
+until we have the licenses ironed out :\ (the exception is rzMail, which is
+currently being distributed under the terms of the GPL).
+John P . Looney writes:
+
+&gt;  Excuse the pretentionism, but after playing with the "adventure.sh"
+&gt; script that comes with bash [0], I thought "wouldn't it be cool if you
+&gt; could do more, inside a mud-like environment.
+&gt; 
+&gt;  So, I wrote:
+&gt;     http://www.RedBrick.dcu.ie/~valen/muce.ps
+&gt;  as a kind of a joke. A few friends thought "that would be cool actually".
+&gt; For those too lazy to read it, it's basically saying that "wouldn't it be
+&gt; nice if you could run a mud-like virtual machine on your PC, and import
+&gt; files from your PC (running windows, or unix, or whatever - it shouldn't
+&gt; matter) as objects in a mud-like world. Then, you could clone a load of
+&gt; URL objects, for instance, "go" to a friends "house" - which is a room, on
+&gt; his PC, and do something like "give knapsack.urls to friend" or something.
+&gt; 
+&gt;  Anyway, I was thinking that if we were going to toy with this idea, the
+&gt; Cold system might be a cunning place to start. If any of the developers
+&gt; could have a look at the file, and tell me if I would be better off
+&gt; starting from scratch, of from something like Circle mud, I'd appreciate
+&gt; it.
+</PRE>

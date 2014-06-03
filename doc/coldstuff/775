@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [775] in "Coldmud discussion meeting"</TITLE>
+<H1>[775] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?775"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="764"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="773"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="774"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="776"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="778"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="786"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: fork() vs send()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Aug 20 17:25:03 1995
+)</H3>
+<PRE>
+Date: Sun, 20 Aug 1995 15:21:11 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+&lt; 869683 Gillespie Brandon James drew these hieroglyphs:
+&lt; ^^^^^^
+&lt; Why the number before your name?
+
+Local accounting uses it, although I'm exhempt from it, so its all a waste :)
+
+&lt; Hmm.. I'm not sure I see the need for it.  The function wouldn't do
+&lt; anything new, and a general-purpose word like "send" just doesn't hint
+&lt; at looping either.
+
+It isn't as much a need as an optimization.  It is faster for the driver to
+iterate a list in the above manner, than for you to with pcode.
+
+I dunno though, overall the win may not be worth it.
+
+&lt; There is a difference.  In a delayed fork, the task doesn't exist
+&lt; until it runs, and in a fork-then-pause, it does.  This does make a
+&lt; difference.
+
+How do you know this?  I havn't even written it yet.
+
+Besides, whether the task exists or not is irrelevant, it still has to
+duplicate the current execution frame.  The task itself is just a pointer
+to that frame.  If I were to implement it with delay, it would exist from
+the second it was forked in the task list, because it would exists as an
+execution frame.
+
+-Brandon
+</PRE>

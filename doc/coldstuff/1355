@@ -1,0 +1,118 @@
+<HEAD><TITLE>discuss@charon: [1355] in "Coldmud discussion meeting"</TITLE>
+<H1>[1355] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1355"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1354"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1356"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis p37</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep 19 11:12:03 1997
+)</H3>
+<PRE>
+Date: Fri, 19 Sep 1997 08:56:31 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+
+Genesis 1.0p37 is available.  It integrates many changes from the last
+'stable' release of p30+.  It is, for the most part, stable.  There are
+some odd problems which have been reported about connection hangings--but
+I can't seem to reproduce them, and there is still the task cancelling
+problem (sometimes task '1' shows up in the suspended task list, and
+killing it causes the server to crash). 
+
+Short of these two problems, and one more which I can't reproduce, the
+driver is nearly rock stable.  PLEASE let us know of any problems, we want
+to put out 1.1-STABLE soon, but we want to make sure the known problems
+are cleaned up.
+
+For full information, the CHANGES entries are included at the end of this
+message.  You can get the driver from:
+
+         ftp://ftp.cold.org/pub/cold/src/Genesis-1.0p37-DEV.tar.gz
+         ftp://ftp1.cold.org/pub/cold/src/Genesis-1.0p37-DEV.tar.gz
+
+Enjoy;
+
+   -Brandon
+
+---------------------
+Changes Log, from p30
+
+1.0-37 [18-Sep-97] Brandon
+      * added 'partial or 'full option to $http.encode(), default
+        is 'full, if 'partial is given it will only encode what
+        is required for the path part of an HTTP URL (Brandon)
+      * fixed fflush(): was erroring when it shouldn't be (Brandon)
+      * fixed an ordering problem when .disconnect() was called, after
+        a lot of urging by Jeff Kesselman ;b (Brandon)
+      * fixed a bug in native .ip() -- wasn't referencing right var (Brandon)
+      * added explicit close in errfile and logfile, if needed (Brandon)
+      * coldcc will now whine in some cases where data isn't formatted
+        correctly, with a var definition (Brandon)
+      * depth search of ancestors on $root was returning [] not [$root]
+      * buf_to_str*() was removing '\t' instead of translating it to a space
+1.0-36 [10-Jul-97] Brandon
+      * fixed bug which was saying #0 ($sys) was invalid (Brandon)
+1.0-35 [09-Jul-97] Brandon
+      * fixed a bug in compiling $names in textdumps.
+      * fixed a bug with #-xx becoming #xx again.
+1.0-34 [07-Jul-97] Brandon
+      * removed descendants()--its algorithm is inherently flawed and
+        may misorder objects if a parent loop exists and parents are
+        on different levels (Brandon)
+      * changed textdumping to use a variation on the original scheme
+        with searches, but instead using Hash (Brandon)
+      * adjusted configure a little more, to handle ~user escapes
+        on systems where ~user escapes does not work (Brandon)
+1.0-33 [03-Jul-97] Brandon, Brad
+      * Negative objnums are allowed, and now represent invalid aspects
+        of the respective number (so #-1525 would represent the objnum
+        for an invalid object #1525.  This is used when textdumping) (Brandon)
+      * fixed bug/default which caused all warnings to never appear
+        when using coldcc (the -W option was always on) (Brandon)
+      * pause() while atomic will now act like resume() (Brandon)
+      * coldcc will always run atomically (Brandon)
+      * changed how UCASE/LCASE work for better cacheing (Brandon)
+      * Fixed a problem in configure (Brandon)
+      * niggled here and there from purify warnings (Brandon/Brad)
+1.0-32 [01-Jul-97] Miro, Brandon, others
+      * Crufted up configure to include install information.  Crufted
+        up base makefile, install actually installs now (Brandon)
+      * Cleaned up some ANSI incompatabilities (Brandon)
+      * Added 'dnsserv' which is a seperate server running on port 1153,
+        A cold server can connect to this and have it do DNS lookups.
+        This allows for asynchronous lookups direct from the database
+        using network sockets, instead of hacking a fork/pipe system
+        directly into the driver--for db implementation help, see:
+            http://ice.cold.org/bin/display?target=dns
+        (Brandon)
+      * fixed bug in scatter assignments (Patrick, Miro, Brad)
+      * updated list_union() to use Hash in the top-end situations
+        where more than twelve elements exist overall (Miro)
+1.0-31 [26-Jun-97] Brandon
+      * fixed bug with bufidx().. was using the wrong var and reading
+        out of its memory bounds (Brandon)
+      * fixed float parsing a bit, [1..2] is now functional again,
+        bad floats '2.' now throw ~parse, and ints ending a line
+        will not become a float (Brandon)
+      * searching no longer guarantee's redundancy checks--it only
+        guarantee's it in the cache--if an object is swapped to disk
+        its search counter is reset.  Before now searching was making
+        objects dirty, and causing a lot of unecessary writing.  This
+        will effect anything which uses searching as a means to only
+        check an object once.  (Brandon)
+      * added an internal data type Hash which is a stripped version
+        of the Dict, without keys (Brandon)
+      * rewrote ancestors() because of the searching change (using Hash
+        instead), also added in breadth ordered as well--send a symbol
+        argument of 'depth or 'breadth to specify which order.  Added
+        descendants(), which is always breadth (Brandon).
+      * changed textdump to use descendants() instead of search (Brandon)
+
+</PRE>

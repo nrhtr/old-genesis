@@ -1,0 +1,75 @@
+<HEAD><TITLE>discuss@charon: [808] in "Coldmud discussion meeting"</TITLE>
+<H1>[808] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?808"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="807"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="809"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>strfmt()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep 16 20:54:14 1995
+)</H3>
+<PRE>
+Date: Sat, 16 Sep 1995 18:48:23 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+I'd appreciate it for those who are doing bug testing of ColdX-0.2-0 if they
+would try to find all known problems with strfmt(), and suggest additional
+functionalities.  This is a new function, and I'm sure it could use some work.
+
+Right now its definition is:
+
+// types: d or D       (literal data),
+//        l or L       (string -- left aligned)
+//        r or R       (string -- right)
+//        c or C       (string -- centered)
+//        e or E       (string, breaks with an elipse after pad width)
+//
+// args are integers, plus an optional colon seperator, which specifies
+// the fill character.  If the fill character is any of the special
+// characters, prefix it with a slash.  A period may eventually specify
+// precision, with 'f'.  Capitalized versions of each string will
+// cut the string, when it reaches the end of the specified padding.
+//
+//    "%r", "test"      =&gt; "test"
+//    "%l", "test"      =&gt; "test"
+//    "%c", "test"      =&gt; "test"
+//    "%d", "test"      =&gt; "\"test\""
+//
+//    "%10r", "test"    =&gt; "      test"
+//    "%10l", "test"    =&gt; "test      "
+//    "%10c", "test"    =&gt; "   test   "
+//    "%10:|r", "test"  =&gt; "||||||test"
+//    "%10:|l", "test"  =&gt; "test||||||"
+//    "%10:|c", "test"  =&gt; "|||test|||"
+//
+//    "%5e", "testing"  =&gt; "te..."
+
+I messed up and forgot to put %d in (sorry), but the difference is that
+with %d symbols are 'symbols and strings are "strings", right now symbols
+are 'symbols (because I forgot about them), but they should just be their
+regular string name (ala 'foo is just "foo"), and strings are not quoted,
+so you could effectively create a $string thunk:
+
+public format
+  arg format, [args];
+  
+  return (&gt; strfmt(format, args) &lt;);
+..
+
+And use:
+
+  "Method %s.%s() is invalid".format(obj.objname(), method);
+
+Where objname is a "$string" and method is a 'symbol.
+
+Enjoy
+
+-Brandon
+</PRE>

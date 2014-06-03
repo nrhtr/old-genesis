@@ -1,0 +1,76 @@
+<HEAD><TITLE>discuss@charon: [1598] in "Coldmud discussion meeting"</TITLE>
+<H1>[1598] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1598"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1597"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1597"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1597"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1599"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Old URLs in README and coldcore</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun 29 20:49:33 2000
+)</H3>
+<PRE>
+Date: Thu, 29 Jun 2000 17:43:40 -0700 (PDT)
+From: Jeremy Weatherford &lt;xidus@xidus.net&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;000001bfe229$41edc020$0200a8c0@nycap.rr.comDEST&gt;
+Reply-To: coldstuff@cold.org
+
+
+According to the mailing list archives, ice.cold.org lost most of its
+webpages to a HD failure, and Brandon decided to redo them all.  A few
+people complained about missing pages, but I haven't seen anything done
+about it.
+
+For what it's worth, the default HTML page (the port 1180 thing) has links
+to missing pages on cold.org.
+
+Jeremy Weatherford
+xidus@xidus.net
+http://xidus.net
+
+On Thu, 29 Jun 2000, Peter Bombard wrote:
+
+&gt; I just went through coldcore and both coldcore and genesis' README files and
+&gt; identified the following URLs:
+&gt; 
+&gt; 1. http://www.cold.org/Software/Genesis/
+&gt; 2. http://www.cold.org/Software/ColdCore/newadmin.html
+&gt; 3. http://www.cold.org/~faq/cold.html
+&gt; 4. http://www.cold.org/Intro/
+&gt; 5. http://www.cold.org/sitenames.html
+&gt; 6. http://www.cold.org/support/
+&gt; 7. http://www.cold.org/info/lists.html
+&gt; 8. http://www.cold.org/Genesis/
+&gt; 9. http://www.cold.org/ColdC/
+&gt; 
+&gt; As best as I can tell, the following are the current web page's analogs:
+&gt; 
+&gt; 1. http://web.cold.org/genesis/install.html
+&gt; 2. http://web.cold.org/coldcore/newadmin.html
+&gt; 3. NOT FOUND
+&gt; 4. http://web.cold.org/features.html
+&gt; 5. http://ice.cold.org/cold_servers/list
+&gt; 6. http://web.cold.org/reference.html
+&gt; 7. http://web.cold.org/contact.html
+&gt; 8. http://web.cold.org/genesis/
+&gt; 9. http://ice.cold.org/bin/help?node=coldc
+&gt; 
+&gt; Is there a process for updating and/or correcting those documents?
+&gt; 
+&gt; In addition, on the current webpage for coldcore, there is mention made of
+&gt; "Makeworld"
+&gt; My tar did not include that file, so far as I have been able to tell.
+&gt; 
+&gt; I assume it is logically equivalent to "bin/coldcc -tcoldcore"?
+&gt; -pete (PBombard@altavista.net)
+&gt; 
+&gt; 
+&gt; 
+
+</PRE>

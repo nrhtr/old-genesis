@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [1245] in "Coldmud discussion meeting"</TITLE>
+<H1>[1245] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1245"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1244"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1244"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1244"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1246"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] a couple of html questions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar  5 11:02:58 1997
+)</H3>
+<PRE>
+Date: Wed, 5 Mar 1997 08:57:05 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+cc: Cold Stuff &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;331D1670.585F547C@maddog.com&gt;
+
+On Tue, 4 Mar 1997, Frank Crowell wrote:
+&gt; I seem to have forgotten how to use the html stuff in Cold.
+&gt; For example, I thought that the start.html went in the root
+&gt; directory where the database is.  But I get "not found" error
+&gt; messages when I try to access that file with a browser.
+&gt; 
+&gt; I also don't know what I'm suppose to put in the .../login/
+&gt; file; is that an index.html?
+&gt; 
+&gt; I don't need detailed answers, but just a pointer or two
+&gt; of what I'm suppose to be looking.
+
+Anything that shows up on the web in '/' is actually in the root file
+directory (defauling to 'root') plus html.  For instance, if you didn't
+change any of the defaults it'd be in: root/html/
+
+&gt; I also wonder if there is a editor for editing the 
+&gt; complex html descriptions that are embedded in the Cold
+&gt; database or is the idea to @dump the object and then use
+&gt; a regular text editor.  An example of this is motd.  There
+&gt; is a lot of html stuff and not an obvious way of how I can
+&gt; edit it.
+
+Most of it should be dynamically generated through CML.  For the specific
+MOTD instance I can say just edit $motd.build_html--its all one line
+because of an insane bout of optimization I had once. 
+
+For other instances just ask me..
+
+-Brandon
+
+</PRE>

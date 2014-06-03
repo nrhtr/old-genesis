@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [874] in "Coldmud discussion meeting"</TITLE>
+<H1>[874] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?874"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="871"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="873"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="873"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="875"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="875"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="875"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ColdCore</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan  4 17:04:02 1996
+)</H3>
+<PRE>
+Date: Thu, 4 Jan 1996 22:45:16 +0100
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@tombstone.sunrem.com
+
+
+Actually for anything like large number of objects (say, above 20),
+line-of-sight and similar calculations simply won't work. You need
+to do that in C. I'll have something like that soonish, it won't do
+exactly what you look for but will be a good example of how to
+do C-ColdC connection.
+
+	Miro
+</PRE>

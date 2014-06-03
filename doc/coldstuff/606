@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [606] in "Coldmud discussion meeting"</TITLE>
+<H1>[606] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?606"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="605"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="607"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Segmentation Faults</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 28 10:30:43 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: tcd@tiny.mcs.usu.edu
+Cc: coldstuff@MIT.EDU
+Date: Mon, 28 Nov 94 08:28:53 -0700
+
+&lt; Greetings, I'm new to the list and to Coldmud in general.  I've put up,
+&lt; well, tried to put up, a coldmud 0.12 1c server and run the Cold Dark core
+&lt; 
+&lt; 1.1 and have had very little luck.  I've got the server compiled and it
+&lt; will start up the core.  However, some odd things are happening.  For
+&lt; instance, when you connect as a guest, it gives the server a segmentation
+&lt; fault and kills it.  The @prose command also does the same.  I'm running
+&lt; it on a SunOS 4.1.3 machine, is this the problem?  Is this a common bug? 
+&lt; I had no problems compiling the 0.10 server on a linux system.  Any help
+&lt; that is out there will be greatly appreciated.
+
+Read the file doc/README.src, it has some comments about changes you need to
+make on your type of system.  Also, somebody noted that line 166 of README.src
+should read:
+
+                    list = prepare_to_modify(list, list-&gt;start, list-&gt;len + 1);
+
+Not:
+
+                    list = prepare_to_modify(list, list-&gt;len + 1);
+
+-Brandon
+</PRE>

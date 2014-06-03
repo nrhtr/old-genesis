@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [234] in "Coldmud discussion meeting"</TITLE>
+<H1>[234] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?234"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="233"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="235"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>strindex and word-wrapping</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 13 00:44:02 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: coldstuff@MIT.EDU
+Date: Thu, 12 May 1994 21:40:59 -0700 (PDT)
+
+&gt; Hold on here..you want strindex (I like that best, but let's get on with
+&gt; the point) so you can do word wrapping?  Aren't we getting into the area of
+&gt; client functions?
+
+Yes and no.  Yes, it _should_ be done in clients, but no this is not always the
+case.  It is foolish to demand that everyone have specific equipment to use
+your system when such demands are not strictly necessary, particularly when it
+is often the case that users really cannot meet them.  The important concept
+here is flexibility.  In any case, word-wrapping is not the only potential use
+for a reverse-indexing function (particularly if it also applied to lists).
+
+&gt; I mean, if you start putting everything in the server, you get
+&gt; lambda, and you get 7 second lag and more server JUNK than you will ever
+&gt; use in your entire life.  See Lambda, if you don't believe me.
+
+This is exactly the reason that important functions such as this should be
+internalized in server builtins where they can be done efficiently, instead of
+requiring them to take up huge server processing times just for basic string
+mungeing.  I think you've got your point exactly backwards, really.
+
+-Riche
+</PRE>

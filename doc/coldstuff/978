@@ -1,0 +1,61 @@
+<HEAD><TITLE>discuss@charon: [978] in "Coldmud discussion meeting"</TITLE>
+<H1>[978] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?978"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="974"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="975"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="977"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="979"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="980"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="980"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] controlling object of a task (user()/controller()/etc)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Apr 24 13:40:44 1996
+)</H3>
+<PRE>
+From: puff@netcom.com (Steven J. Owens)
+To: brandon@tombstone.sunrem.com (Brandon Gillespie)
+Date: Wed, 24 Apr 1996 09:54:52 -0700 (PDT)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.960423171421.11050A-100000@tombstone.sunrem.com&gt; from "Brandon Gillespie" at Apr 23, 96 05:22:20 pm
+
+Brandon,
+
+&gt; Frankly I would rather use 'user()' because it is short, it is not always 
+&gt; conceptually correct--which is also a large drawback for me.  The two goals
+&gt; I have with naming it are: ease of use (I really dont like long function 
+&gt; names in high-use positions) and appropriateness.  Since I plan on 
+
+     I sympathize with you;  balancing ease of use and conceptual
+clarity is a tricky task.  But it can be fun!
+
+&gt; Anybody have a thesarus?  :)  Suggestions on the table:
+&gt; 
+&gt;      controller()      -- most appropriate, too bulky and long
+&gt;      server()
+&gt;      con()
+&gt;      user()
+&gt;      requestor()
+&gt;      client()
+
+     Hmmmm... How about:
+
+     stooge()
+     lackey()
+     kingpin()
+     power_behind_the_throne()
+     pawn()
+     yes-man()
+     tool()
+     meat-puppet()
+     minion()
+     sycophant()
+     toady()
+     ...
+     
+
+Puff
+(I'm in a weird mood today).
+</PRE>

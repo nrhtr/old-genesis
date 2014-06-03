@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [832] in "Coldmud discussion meeting"</TITLE>
+<H1>[832] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?832"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="831"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="833"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="833"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="835"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: connections</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Oct 17 17:49:52 1995
+)</H3>
+<PRE>
+Date: Tue, 17 Oct 1995 15:26:18 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+Eric Weber spaketh:
+&lt; Gillespie Brandon James writes:
+&lt; &gt; The main reason is that for cleanliness I only think you should have one
+&lt; &gt; connection per object, it is cleaner this way...
+&lt;
+&lt; Surely this could be done in-DB, thus leaving the door open to
+&lt; the idea of services which can handle multiple connections.
+
+I did consider that, but the question has to be asked: why?  Having two
+means of doing the same would add confusion and complexity to a really
+simple system.  It would require adding more functions to control the
+connections at a higher level.  Objects really do not have much of an
+overhead as it is...
+
+-Brandon
+</PRE>

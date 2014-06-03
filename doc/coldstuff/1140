@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1140] in "Coldmud discussion meeting"</TITLE>
+<H1>[1140] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1140"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1137"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1139"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1139"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1141"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] How easy is it to animate things in ColdX</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 27 17:11:05 1996
+)</H3>
+<PRE>
+Date: Wed, 27 Nov 1996 13:57:36 -0800
+To: Kor &lt;qor@io.com&gt;, coldstuff@cold.org
+From: Jeff Kesselman &lt;jeffk@ten.net&gt;
+
+At 02:32 PM 11/27/96 -0600, Kor wrote:
+&gt;On Wed, 27 Nov 1996, Brandon Gillespie wrote:
+&gt; would
+&gt;there be any expedient to modifying the model such that objects only listen
+&gt;to it when it is important that they do so-- according to the same rules
+&gt;that they would bother to run their own heartbeat.  the only way I can
+&gt;think to do it off the top of my head is to have a list of listening
+&gt;objects, who perhaps even listen only at various intervals.
+
+Thsi is kind of how my itmer works. it keeps a sorted list of obejcts
+according to the next tick on which they need to be called, and on each
+tick reads down the list til the first one that does NOT need to be called...
+
+jk
+</PRE>

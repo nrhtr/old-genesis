@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [987] in "Coldmud discussion meeting"</TITLE>
+<H1>[987] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?987"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="986"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="988"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] More on mail archives and other topics</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Apr 27 20:32:16 1996
+)</H3>
+<PRE>
+Date: Sat, 27 Apr 1996 18:10:35 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+The home page explains a little bit about how it works, however, all of 
+the mailing list has been archived since I took it over, if you want this 
+archive as a single dump it is the year-to-date file for 1996 (even 
+though it goes earlier than 1996).  There is a YTD.txt file in each 
+year's directory (only one at the moment ;), this is the one you want.
+
+Also, if responses seem extremely slow, help is in sight.  The machine 
+driving '(ice|ftp|www).cold.org' (and just cold.org) is a small 486DX2 
+with 8MB ram (running the Cold Dark, amoungst other things) in FreeBSD.  
+Monday new RAM arrives :)
+
+-Brandon Gillespie-
+</PRE>

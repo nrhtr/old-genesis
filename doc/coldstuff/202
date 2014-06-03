@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [202] in "Coldmud discussion meeting"</TITLE>
+<H1>[202] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?202"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="201"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="203"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>names/dbrefs/etc</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Apr  3 07:34:00 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Sun, 3 Apr 1994 04:33:05 -0700 (PDT)
+
+There have been questions about names, dbrefs, and the like. I was under the
+ impression that $root was the dbref for the object who's pointer was #1. Is
+ this not correct? Or was this another version? I know one thing: $foo is
+ now a cosmetic shell to #xxx, since merly evalling $foo may be an error
+ (~namenf), while the 'pointer' is always ok, though not necessarily valid.
+
+I know Greg went through some work to make it so you could change objects'
+ "names". This in fact led to the Segv problem I found the fix for, I believe.
+ It used to be that $foo was like 'foo, but the .type was ID_DBREF instead of
+ ID_SYMBOL or whatever. Now it's associated with a pointer in a table of names
+ and stored as a long. Ah, progress... :)
+
+Anyway, my recolection (unresearched) is that $foo is a dbref, and #0 is a
+ pointer. When $foo is evaled it is turned into a pointer if possible. I guess
+ $foo is shorthand for (get_name('foo)) or something. I would not be
+ complaining about the names of the root parameter which stores the symbol
+ which is used to identify an object, and the server builtins which manipulate
+ the lookup table too much if I were one of those people who complained about
+ not being able to rename objects without re-creating them.
+
+And I'm not.
+
+Crag / Robert de Forest
+
+Gosh, some people aren't satisfied when they get a simple server with no
+ built-in references to players and wizards, multiple-inheritance, speed,
+ security, un-restricted network access (buffers, connect()), ...
+
+What is this world coming to?
+</PRE>

@@ -1,0 +1,211 @@
+<HEAD><TITLE>discuss@charon: [812] in "Coldmud discussion meeting"</TITLE>
+<H1>[812] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?812"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="811"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="813"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Functions/Native Methods conversion...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 21 00:26:15 1995
+)</H3>
+<PRE>
+Date: Wed, 20 Sep 1995 22:18:44 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+The following is a list of functions, and:
+
+    1: what I am considering doing with them by version 1.0-0 of the
+       ColdX driver.
+    2: what they may become, as native methods rather than direct functions
+
+I would ask that those interested please read over this list, now is the
+time to give feedback...  I plan on making virtually no other changes to
+the syntax in regard to this, after 1.0-0 (I probably will ADD, but not
+change).  My basic guidelines were:
+
+  * If it is something requiring state info of a specific frame (like
+    encapsulation restrictions for object variables/info, or just
+    object/method info), it stays a function.
+  * If it accepts or manipulates more than one data type, it stays a
+    function.
+  * If it deals with an in-driver aspect, such as connections or files,
+    it stays as a function.
+  * If it is directly died to a single data type, make it a native method
+
+The above pretty much sorted everything, except for generic informational
+methods, which I put on $sys as a native method.
+
+BTW, I _will_ respond to all of the multithreading comments, I just
+havn't had the time to yet: very busy this side, have lots of things to
+do before school starts. *sigh*
+
+Until later, enjoy...
+
+-Brandon Gillespie-
+
+------------------------------------------------------------------
+
+Key: * =&gt; new
+     + =&gt; changed
+     ? =&gt; undecided, do we want/need it?
+
+--- Functions:
+
+ add_parameter() 
+ del_parameter() 
+ parameters() 
+ set_var() 
+ get_var() 
+ clear_var() 
+
+ compile_to_method() (was compile)
+*compile_to_list()
++method_flags() (return a list of symbols instead)
++set_method_flags() (accept a list of symbols instead)
+ method_state() 
+ set_method_state() 
++method_info() (was method_args(), returns ["args...", lines])
+ methods() 
+ find_method() 
+ find_next_method() 
+ list_method() 
+ del_method() 
+
+ parents() 
+ children() 
+ ancestors() 
+*descendants()
+ has_ancestor() 
++size() (take args: size([data]) as wel as size() (this object()))
+ create() 
+ chparents() 
+ destroy() 
++log() (this will go away, once we add good file writing/reading)
++binary_dump() AXE, backup() works
++text_dump() AXE, use decompilation routines in-db and externally
+ backup() 
+ shutdown()
++execute() do something with pipes/files?
+ set_heartbeat() 
+ data() 
+ add_objname() 
+ del_objname() 
+!get_dbref(sym)
+ get_objname(dbref)
+ cancel() 
+ suspend() 
+ resume() 
+ pause() 
++threads() (tasks())
+ callers() 
++bind_function() uniformly accept symbols
++unbind_function() uniformly accept symbols
+ method() 
+ this() 
+ definer() 
+ sender() 
+ caller() 
++thread_id() (was: task_id())
+ tick() 
+ ticks_left() 
+ type() 
+ class() 
+ toint() 
+ tofloat() 
+ tostr() 
+ toliteral() 
+ todbref() 
+ tosym() 
+ toerr() 
+ valid() 
+ error() 
+ traceback() 
+ throw() 
+ rethrow() 
+
+ reassign_connection()
+ bind_port()
+ unbind_port()
+ open_connection()
+ close_connection()
++cwrite() (was echo(), send to a connection)
+ cwritef() (was echo_file(), send to a connection)
+
+ fstat() (was stat_file(), get stat info on a file)
++fread() (was read_file(), reads from a file)
+*fopen()
+*fclose()
+*fseek()
+*fwrite()
+
+--- Native Methods:
+
+ buffer_len()                  -&gt; $buffer.length()
+ buffer_retrieve()             -&gt; $buffer.retrieve()
+ buffer_append()               -&gt; $buffer.append()
+ buffer_replace()              -&gt; $buffer.replace()
+*?                             -&gt; $buffer.insert()
+*?                             -&gt; $buffer.subrange()
+ buffer_add()                  -&gt; $buffer.add()
+ buffer_truncate()             -&gt; $buffer.truncate()
+ buffer_tail()                 -&gt; $buffer.tail()
+ buffer_to_string()            -&gt; $buffer.to_string()
+ buffer_to_strings()           -&gt; $buffer.to_strings()
+ buffer_from_string()          -&gt; $buffer.from_string()
+ buffer_from_strings()         -&gt; $buffer.from_strings()
+ dict_keys()                   -&gt; $dictionary.keys()
+ dict_add()                    -&gt; $dictionary.add()
+ dict_del()                    -&gt; $dictionary.del()
+ dict_contains()               -&gt; $dictionary.contains()
+ hostname()                    -&gt; $network.hostname()
+ ip()                          -&gt; $network.ip()
+ random()                      -&gt; $integer.random()
+ max()                         -&gt; $integer.max()
+ min()                         -&gt; $integer.min()
+ abs()                         -&gt; $integer.abs()
+ listlen()                     -&gt; $list.length()
+ sublist()                     -&gt; $list.subrange()
+ insert()                      -&gt; $list.insert()
+ replace()                     -&gt; $list.replace()
+ delete()                      -&gt; $list.delete()
+ setadd()                      -&gt; $list.setadd()
+ setremove()                   -&gt; $list.setremove()
+ union()                       -&gt; $list.union()
+ strlen()                      -&gt; $string.length()
+ substr()                      -&gt; $string.subrange()
+ explode()                     -&gt; $string.explode()
+ pad()                         -&gt; $string.pad()
+ match_begin()                 -&gt; $string.match_begin()
+ match_template()              -&gt; $string.match_template()
+ match_pattern()               -&gt; $string.match_pattern()
+ match_regexp()                -&gt; $string.match_regexp()
+*                              -&gt; $string.sub_regexp()
+ strsub()                      -&gt; $string.sub_string()
+ crypt()                       -&gt; $string.crypt()
+ uppercase()                   -&gt; $string.uppercase()
+ lowercase()                   -&gt; $string.lowercase()
+ strcmp()                      -&gt; $string.compare()
+ strfmt()                      -&gt; $string.format()
+ next_dbref()                  -&gt; $sys.next_dbref()
+ load()                        -&gt; $sys.load()
+ status()                      -&gt; $sys.status()
+ version()                     -&gt; $sys.version()
+ time()                        -&gt; $time.time()
+ mtime()                       -&gt; $time.mtime()
+ ctime()                       -&gt; $time.ctime()
+ localtime()                   -&gt; $time.localtime()
+ timestamp()                   -&gt; $time.timestamp()
+ strftime()                    -&gt; $time.format()
+
+ tokenize_cml()                -&gt; $cml2_compiler.tokenize()
+ buf_to_veil_packets()         -&gt; $buffer.to_veil_packets()
+ buf_from_veil_packets()       -&gt; $buffer.from_veil_packets()
+
+</PRE>

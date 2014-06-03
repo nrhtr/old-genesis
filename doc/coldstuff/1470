@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [1470] in "Coldmud discussion meeting"</TITLE>
+<H1>[1470] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1470"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1469"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1471"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>patch to genesis/src/ops/object.c to disable parentless creations</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 11 15:48:43 1999
+)</H3>
+<PRE>
+From: rozzin@geekspace.com (Joshua Rosen)
+Date: Thu, 11 Nov 1999 15:08:46 EST
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+commence unified diff:
+
+--- object.c~   Thu Jul 15 00:33:53 1999
++++ object.c    Thu Nov 11 14:58:29 1999
+@@ -684,6 +684,11 @@
+ 
+     /* Get parents list from second argument. */
+     parents = args[0].u.list;
++    if (!list_length(parents)) {
++        cthrow(perm_id, "You must specify at least one parent.");
++        return;
++    }
++      
+ 
+     /* Verify that all parents are objnums. */
+     for (d = list_first(parents); d; d = list_next(parents, d)) {
+
+
+</PRE>

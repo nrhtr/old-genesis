@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [1638] in "Coldmud discussion meeting"</TITLE>
+<H1>[1638] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1638"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1637"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1637"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1637"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1639"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Patches</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan  9 14:26:23 2001
+)</H3>
+<PRE>
+Message-ID: &lt;3A5B630A.5F6861CD@cubik.org&gt;
+Date: Tue, 09 Jan 2001 12:14:18 -0700
+From: Bruce &lt;bruce@puremagic.com&gt;
+MIME-Version: 1.0
+To: coldstuff@cold.org
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Reply-To: coldstuff@cold.org
+
+Verhoogen Olivier wrote:
+&gt; I allready forwarded this one to Brandon (as did Brian,
+&gt; who coded it) but I should point out there's an updated
+&gt; patch for double precision floating points against Genesis
+&gt; 1.1.9.
+&gt; I won't spam the list with it but if you didn't get ahold
+&gt; of it yet I'll forward it too you aswell.
+
+I have the patch against p5 that you forwarded to the list on
+October 29 or so.  Feel free to forward me a more recent version.
+
+&gt; And I would like to thank Brian for the bother of reworking it ;).
+
+And thanks to Brian for having written it in the first place.
+
+The only other patch that I've picked up is the GD support from
+Brandon for generating images on the fly.  Anything else out
+there?  (I have a bunch of my own patches to integrate in yet and
+still some code to get written as well, so ther is plenty of
+time.)
+
+ - Bruce
+</PRE>

@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1157] in "Coldmud discussion meeting"</TITLE>
+<H1>[1157] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1157"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1153"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1156"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1156"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1158"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1163"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1163"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Is there a shortcut to @def?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 15:53:01 1996
+)</H3>
+<PRE>
+Date: Mon, 2 Dec 1996 13:42:37 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+cc: Cold Stuff &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;32A337DC.20E432C3@maddog.com&gt;
+
+&gt; for intermud communication (the '97 buzzword huh? Connect now with 
+&gt; your Sega to the to the Intermud! SEGA!!!). Anyway, if I can actually
+&gt; get to the coding part, I hope to get the intermud3 hooked up so
+&gt; that I can join other muds in the same network (mostly LP and a couple
+&gt; Diku muds).
+
+I (used) to be on the intermud list and one thing that struck me as
+annoying was their insistence on re-creating existing protocols that are
+perfectly capable (just drop them on a different port or on a sub-protocol
+like VEIL).  For example:
+
+&gt; Intermud3 has the following features:
+&gt; 	-mudlist to show what muds are up, type, address, databases
+&gt; 	-remote tell with emotes
+
+There is no existing protocol which would handle this well.
+
+&gt; 	-remote who
+&gt; 	-finger
+
+Whats wrong with the current 'finger' protocol on port 79?
+
+&gt; 	-intermud mail (based on the mud name not the address)
+
+One word: SMTP
+
+&gt; 	-ftp/telnet
+
+uhh
+
+-Brandon Gillespie
+
+</PRE>

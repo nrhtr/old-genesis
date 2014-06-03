@@ -1,0 +1,99 @@
+<HEAD><TITLE>discuss@charon: [32] in "Coldmud discussion meeting"</TITLE>
+<H1>[32] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?32"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="30"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="30"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="31"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="33"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="42"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="46"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Regular expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 17:44:11 1993
+)</H3>
+<PRE>
+From: joe@unipress.com
+To: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Tue, 16 Nov 93 16:42:42 EST."
+             &lt;9311162142.AA18371@oliver.MIT.EDU&gt; 
+Date: Tue, 16 Nov 93 17:31:55 -0500
+
+
+&gt; First, I already provide two matching primitives, match_pattern() and
+&gt; match_template(), which should handle some of the cases.  (I'm
+&gt; interested in hearing about cases where these aren't useful.)  I don't
+&gt; want to provide a complicated tool which will be used for tasks for
+&gt; which simpler tools are more appropriate.
+
+One of the larger purposes of C-- will be text processing.  Regular
+expressions are incredibly useful for this.  Almost all UNIX text processing
+tools make extensive use of them (not the best endorsement, but you get the
+gist).  Emacs would be worthless without them.  Simpler, less powerful tools
+and constructs just won't do.
+
+Hell, I'd say a full-blown LALR parser and parser-generator wouldn't be too
+strong.
+
+&gt; Second, regular expressions are slow compared to simpler matching
+&gt; primitives.  Precompiling them helps (I would probably implement this
+&gt; internally, with some form of caching, rather than add another data
+&gt; type), but don't solve the problem.
+
+I feel so strongly about the utility of regular expressions that I would say
+they deserve a "compiled pattern" data type of their own, actually. 
+Regardless of implementation, some sort of means to reuse compiled regular
+expressions is crucial.
+
+&gt; Third, regular expressions are complicated.  I can fairly easily link
+&gt; in, say, the gnu regexp library, but this means I have to worry about
+&gt; the GPL, the portability issues associated with gnu code, all the
+&gt; cruft that comes with general reusable code (fairly minimal in this
+&gt; case, granted), etc..
+
+I'm fairly certain we can find a regular expression package that isn't GPL (or
+even LGPL).
+
+&gt; Fourth, regular expressions are unreadable.  You can do wonderful
+&gt; things with them, but they're essentially a write-only language.
+
+Do you mean "humans can't read them", or "programs can't easily decompile
+them"?  Both are somewhat true.  Once one gets the knack of reading regular
+expressions from a little practice (Emacs hacking helps), they aren't so bad. 
+The latter problem is perhaps best solved by storing the original text of the
+regexp along with the compiled version.
+
+I have any number of gripes about regular expression syntax as commonly
+encountered in UNIX systems.  I've even designed a few alternative syntaxes. 
+I've yet to have the time to implement them, however.  The problem with
+alternative syntaxes is that so many folks are used to the bent and strange
+current syntax.  **shrug**  I can deal with the strange syntax in the absence
+of anything better, just so long as I don't have to live without the
+functionality.
+
+You can expect that anyone with the cleverness to understand a language on the
+level of C-- to have the power to figure out how to use regular expressions. 
+Granted, just because somebody has the capability to learn C-- doesn't mean
+they should be forced to learn other complicated things too, but since I
+believe regular expressions are very useful ...
+
+&gt; Fifth, I'm kind of wary of totally in-server robots.  I think that
+&gt; decision mechanisms in robots should generally be done client-side
+&gt; (there are plenty of client tools for this).
+
+In my experience, in-server robots are the way to go.  Client robots just
+can't get at the information as expediently or easily using text-only
+protocols.  Client robots also require the implementation in a different
+language than the system which they are interfacing with, which deters
+otherwise creative users.
+
+&gt; Sixth, regexps are not a backward-incompatible change, so they can be
+&gt; added to a post-1.0 release fairly easily.
+
+Agreed.  They can wait, but not forever!
+
+--joe
+</PRE>

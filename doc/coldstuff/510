@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [510] in "Coldmud discussion meeting"</TITLE>
+<H1>[510] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?510"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="509"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="511"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Updated Manual is available.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 22:15:14 1994
+)</H3>
+<PRE>
+From: brandon@riverheights.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Tue, 01 Nov 94 20:13:58 -0700
+
+
+Ok, I have updated the 0.10 manual.  It is currently up to ~0.11.4 (as I have
+not included any documentation on what Jordan added--primarily because I don't
+know all the details (any help on this matter would be appreciated)).  You
+can get it via http at:
+
+  http://www.declab.usu.edu:8080/ColdMUD/Manual-0.11/
+
+(or look at http://www.declab.usu.edu:8080/ColdMUD/documentation.html for
+a (soon to grow) list of documentation available on ColdMUD and ColdMUD cores).
+
+-Brandon
+</PRE>

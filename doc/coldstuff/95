@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [95] in "Coldmud discussion meeting"</TITLE>
+<H1>[95] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?95"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="94"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="96"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="100"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="100"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ANSI etc</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 16:24:24 1993
+)</H3>
+<PRE>
+Date: Sat, 04 Dec 1993 14:13:58 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt;&gt; The only pro for using vt codes is that it is a KNOWN standard.  Far as I
+&gt;&gt; know there really is not a very wide spread standard for anything else...
+&gt;
+&gt; Such a MUD presentation protocol needs to be designed by somebody who
+&gt; has the time and energy and ability to actually implement it and
+&gt; maintain it and collaborate in discussions about the protocol spec as
+&gt; they arise.  Just specifying a protocol without some concurrent
+&gt; experience in implementing it isn't a good way to do business.  The
+&gt; devil is in the details.
+
+I personally would just begin by making non-hidden equivalents to all the vt
+codes, people know how to use them, etc.  From there you can modify and do
+whatever to customize the standard.  As for the experience bit, this depends
+upon what you would call concurrent experience, i myself have played around
+with vt and control characters quite a bit.  I find them extremely fun to play
+with, in relation to 'ascii-art' check out the newsgroup some time and look at
+the animations to see what i am referring to, but it is a real medium to use,
+and there is a set standard which you CAN use in this medium.
+
+&gt; Note that Greg has not volunteered himself to be the protocol
+&gt; designer; this is wise, given that it's the sort of project that would
+&gt; end up taking a large amount of time. 
+
+Exactly, which is why it makes no sense whatsoever to NOT use an established
+standard which works perfectly fine--IF there is nobody working on creating a
+standard.  So a few clients may wrap a little soon, BFD--turn off graphics
+mode.  My argument lies in that there IS no standard to follow, if there is, or
+will be soon, I would be more than happy to use it and completely forget about
+ANSI codes.  But I dont see one coming up soon, and I enjoy toying with ansi
+codes, so I would like the capability in the server...
+
+-Brandon/DragonLynx
+</PRE>

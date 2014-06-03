@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [438] in "Coldmud discussion meeting"</TITLE>
+<H1>[438] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?438"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="435"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="435"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="437"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="439"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: while {statements} (testexpr) {statements}</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 19:34:53 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: deforest@netcom.com (Robert de Forest)
+Date: Thu, 22 Sep 1994 16:30:19 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199409222247.PAA06101@netcom12.netcom.com&gt; from "Robert de Forest" at Sep 22, 94 03:47:24 pm
+
+&gt; Change the while (expr) statement; statement into
+&gt; while statement; (expr) statement; ?
+
+Yup, you got it exactly (and the example was correct too)..  I'm liking it the
+more I think about it too.  Thus, the solution to the var-assigment-and-test
+problem would just be:
+
+while {
+  var = .test();
+} (var)
+  .do_something_with(var);
+
+And you could do "until" loops by just putting all the code in the first
+section:
+
+while {
+  var = .stuff();
+} (var);
+
+You know, this kinda leads to another question which I've had all along.. can
+anybody give me one single reason why "with handler" couldn't and shouldn't
+just be "with" or "handler"?  Having two reserved words where one would do for
+no apparent reason just really bugs me and catches me up every so often when
+I'd like to use one or the other of them as a variable name..
+
+-R
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+</PRE>

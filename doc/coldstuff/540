@@ -1,0 +1,76 @@
+<HEAD><TITLE>discuss@charon: [540] in "Coldmud discussion meeting"</TITLE>
+<H1>[540] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?540"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="539"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="539"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="541"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="541"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 01:13:31 1994
+)</H3>
+<PRE>
+Date: Sun, 6 Nov 1994 01:08:25 -0500 (EST)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: brandon@avon.declab.usu.edu
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9411052116.AA01172@avon.declab.usu.edu&gt;
+
+
+
+On Sat, 5 Nov 1994 brandon@avon.declab.usu.edu wrote:
+
+&gt; &lt; This basically allows an object to listen to more than one port, 
+&gt; 
+&gt; My main question is why do you want to?  You would be adding another layer
+&gt; of complexity no obvious gain, where the gain in keeping it simple is it
+&gt; IS simple.  So you can only have 1 connection / object.  That isn't a big
+&gt; deal because objects are cheap.
+
+Multiple ports per object would not imply multiple connections per object.
+It would allow using one object to listen to 50 modem ports, 1 TCP port,
+and one port for DECnet access, or for just one TCP port, without
+rewriting it at all and never keeping more than one usused connection
+object waiting for a call at a time.  Objects are cheap, yes, but why
+not save them when it isn't a lot of trouble?
+
+&gt; Would anybody ever actually want to add such a functionality to the server?
+
+Me.
+
+&gt; _how_ would it destroy the model of the DB?  If you look at it as something
+&gt; created and used online I can somewhat see this view, but a db is not only
+&gt; created online.  There is a lot more to a db than just online editing, that
+&gt; is why Greg had enough foresight to add in additional functionality to
+&gt; the db format (such as eval and the ability to comment virtually anywhere
+&gt; you want).  By 'locking' a method what you are saying is 'upon moving
+&gt; into an online state this method should never be changed until the server
+&gt; moves out of said online state'.  What I see as a security mechanism you
+&gt; see as some sort of anti-christ to the underlying theory of ColdMUD. Please
+&gt; EXPLAIN why this is.
+
+I'm not sure how a DB could 'move' into an online state.  'Be put',
+maybe.  The important distinction is that when online the DB is
+acting as an agent, and when offline it's a static document.  I'm
+not sure if this is the real underlying theory of ColdMUD, but the
+philosophy I extrapolated from the features that were in ColdMUD,
+a philosophy I liked, was that it should be possible to do as much
+as reasonable within the running DB, without shutting down the DB
+or hacking the server.  I thought of an easier-to-edit DB textdump
+as more a failsafe mechanism than a piece of philosophy, since the
+more things you can do within the DB the more things you can do to
+make it impossible to do anything at all, and by editing the DB
+you can rescind these changes in an emergency without retreating
+to an old checkpoint and losing all concurrent changes.  It's of
+course perfectly possible Greg had other things in mind; I'm no
+psychic.  This is just the way I've seen things since a couple of
+weeks after I first laid eyes on ColdMUD.
+
+--
+James Deikun (James@JHM, James &amp; Splat@BlueMOOn)
+</PRE>

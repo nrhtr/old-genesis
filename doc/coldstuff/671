@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [671] in "Coldmud discussion meeting"</TITLE>
+<H1>[671] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?671"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="670"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="670"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="672"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="672"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar  8 04:12:29 1995
+)</H3>
+<PRE>
+Date: Wed, 8 Mar 95 11:09:52 IST
+To: coldstuff@MIT.EDU
+From: bmgustav@bioinformatics.weizmann.ac.il (Gustavo Glusman)
+
+I wrote:
+&gt;&gt; := is what is used in Pascal, and it is mistaken by = no less. People fail
+&gt;&gt; to type the : too easily.
+&gt;&gt; In other words, it might not solve the issue.
+&gt;&gt; I think &lt;- is very good, and that its being 'far from normalness' can be an
+&gt;&gt; asset, since the 'normal' methods cause confusion.
+
+Jeff Kesselman answered:
+&gt;Well, I'm going to be the dissenting voice here.  +=, -=, etc. all seemed
+&gt;very rational to me.  The = being an assignment operator ONLY caused me
+&gt;some trouble when i forst moved from Pascal to C, and it was minor
+&gt;trouble at that.  You learn very quickly to be careful abotu this.  The
+&gt;(IMO sad) fact of the matter is that fewer and fewer students are even
+&gt;taught Pascal before C, so I REALLY think diverging away from C syntax
+&gt;just because of some misguided notion that "we can do it better" is a BAD
+&gt;idea.  Currently, the places ColdC differs from C for the most part make
+&gt;logical functional sense. (Such as in the for construct, which is a true
+&gt;set operator rather then a simple ordinal iterator.)
+&gt;
+&gt;The fact of the matter IMO is that divergence
+&gt;away from C, even in an attempt to "make it clearer" will onyl make it
+&gt;harder for people to learn the language.
+&gt;
+&gt;My 2 cents.
+
+
+OK, let me clarify my statement/opinion:
+I think that just '=' as assignment operator is ok. That the programmer
+should learn to pay attention to the difference with '=='.
+What I was saying is that, if the notion is to drop '=' because it may
+cause confusion, then ':=' isn't any better. At that, '&lt;-' may be stronger.
+
+-------------------------------------------------------------
+Gustavo Glusman               Founder/administrator of BioMOO
+-- Gustavo@bioinformatics.weizmann.ac.il
+-- http://bioinformatics.weizmann.ac.il:70/0h/Gustavo/Glusman
+-- BioMOO: telnet bioinformatics.weizmann.ac.il 8888
+           WWW:   http://bioinfo.weizmann.ac.il:8888
+
+
+</PRE>

@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [760] in "Coldmud discussion meeting"</TITLE>
+<H1>[760] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?760"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="751"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="757"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="759"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="761"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="761"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="761"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: tCD and ColdX mailing lists</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jul 30 21:00:06 1995
+)</H3>
+<PRE>
+To: 869683 Gillespie Brandon James &lt;brandon@riverheights.declab.usu.edu&gt;
+Cc: coldstuff@MIT.EDU, nop@k2.ccs.neu.edu
+In-Reply-To: Your message of "Sun, 30 Jul 1995 15:01:04 MDT."
+             &lt;9507302101.AA01381@riverheights.declab.usu.edu&gt; 
+Date: Sun, 30 Jul 1995 20:59:32 -0400
+From: Jay Carlson &lt;nop@ccs.neu.edu&gt;
+
+&gt; I am trying to think of other uses for the driver, than just as a mud.
+
+&gt; One use I did have in mind, and although cold probably isn't the best way
+&gt; to do this it would still be fun, is to write a full fledged httpd with it.
+
+One word: echo_file().
+
+
+Jay Carlson
+nop@io.com    nop@ccs.neu.edu    nop@kagoona.mitre.org
+
+Flat text is just *never* what you want.   ---stephen p spackman
+
+
+</PRE>

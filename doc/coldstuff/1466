@@ -1,0 +1,66 @@
+<HEAD><TITLE>discuss@charon: [1466] in "Coldmud discussion meeting"</TITLE>
+<H1>[1466] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1466"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1465"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1465"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1465"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1467"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: diff for some things</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 10 14:31:38 1999
+)</H3>
+<PRE>
+From: "Bruce Mitchener, Jr." &lt;bruce@puremagic.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Wed, 10 Nov 1999 11:13:29 -0800
+Reply-To: coldstuff@cold.org
+
+&gt;um, bruce said i should send this here, so yell at him if i shouldn't..
+&gt;(q.v. http://web.cold.org/development.html)
+
+
+Open review of this stuff is a good thing.  There aren't many people on the
+patches list and as such, I doubt that much review occurs.
+
+&gt;it's a patch for a bug i found, when the heartbeat was turned off
+&gt;genesis would eat my cpu cycles for breakfast, running through main_loop
+&gt;like there was no tomorrow (i profiled it) -- so i poked around in the
+&gt;source and added an else to the if (heartbeat_freq != -1) there, and
+&gt;fixed it.
+
+
+A few comments here:
+
+1) The disparity between the documented interface ( heartbeat &lt; 1 -&gt; off )
+and the implementation (heartbeat = -1 -&gt; off) is somewhat confusing when
+reading the source.  (This isn't a problem with the patch, just something
+that we came across while discussing this bug on the Cold Dark).
+
+2) Some of these fixes were already in my CVS tree (since January!).  I sent
+the HEAD of that tree over to Brandon when I ceased my development, and he
+put out 1.1.7.  I'm confused by the absence of some my fixes.  These fixes
+were warnings fixes.
+
+3) The number of seconds that is assigned as the default (2 in this case) is
+an important number.  This is what defines how long something will have to
+wait that does a pause() or a refresh() that ends up pausing in the absence
+of any network traffic.  It'd be nice to see this part of the code using a
+real timeval and only pausing for 0.5 seconds or so, but that is a good deal
+more work.
+
+&gt;also included are some patches for compile warnings i get.
+&gt;
+&gt;being that i have yet to become one with diff, i might have done
+&gt;something stupid in making the patch. deal.
+
+Looked fine to me.
+
+ - Bruce
+
+
+</PRE>

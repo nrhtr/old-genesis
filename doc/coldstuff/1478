@@ -1,0 +1,87 @@
+<HEAD><TITLE>discuss@charon: [1478] in "Coldmud discussion meeting"</TITLE>
+<H1>[1478] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1478"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1476"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1477"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1477"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1479"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1480"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1480"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Text Dump Structure</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 17:30:38 1999
+)</H3>
+<PRE>
+Date: Wed, 17 Nov 1999 15:10:21 -0700
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: cold-announce@cold.org
+In-Reply-To: &lt;199911172149.NAA00535@taller.eng.sun.com&gt;; from Jeff Kesselman on Wed, Nov 17, 1999 at 01:49:28PM -0800
+Reply-To: cold-announce@cold.org
+
+
+--xHFwDpU9dbj6ez1V
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+This shouldn't be on cold-announce, lets do additional followups to
+coldstuff@cold.org.
+
+On Wed, Nov 17, 1999 at 01:49:28PM -0800, Jeff Kesselman wrote:
+&gt; Textdump is human readable and IMO very simple to grok. Why dont you
+&gt; just dump and look at the output?
+&gt;=20
+&gt;&gt; I've been going through the ColdC reference material lately and it
+&gt;&gt; appears that the Text Dump Structure information is missing.  I was
+&gt;&gt; wondering if this information is available somewhere?
+
+It should be documented, and I never did.  But Jeff is right, it is
+easy to figure out.  You can dig into the spagetti of textdb.c if you
+want the full gritty details.  Basically you have one 'statement'
+which ends with a semicolon (always).  The statement format is
+abstractly:
+
+    [new|old] &lt;directive&gt; &lt;directive args&gt;;
+
+My long term goals when I redid the textdump parsing was to have
+textdb.c be an interim phase until I wroteup a yacc parser for the
+textdump.  My goals with the rewrite of textdump parsing was to make=20
+it more parseable by external scripts (specifically in dealing with=20
+broken lines--for programs that might choke on a single string 10MB in
+length).  But yacc hasn't been done yet, so you do have some limits=20
+which shouldn't exist.  Basically, you can break a line with a=20
+backslash followed by a newline (but this is the only valid way--it=20
+does not process backslashes in other contexts--such as a method). =20
+You can also break the line with a block in curly braces -- only for
+methods.  As for the format of each directive, just read the textdump.
+for the most part dont expect it to be forgiving about its format.  It
+wasn't intended to be used as an end-user programming format, but=20
+simply as a machine readable and parsable format which can be read and
+tweaked by humans.  The new/old prefix to a directive WILL change its=20
+behaviour--for many directives you have three conditions: new(add),
+old(delete) and neither.  If you are doing a new, it will expect=20
+whatever you are doing to not exist currently.  Doing an old WILL=20
+DELETE IT.  So doing 'old object #124124;' will delete the object. =20
+This is so you can 'patch' databases from coldcc. =20
+
+Basically, follow Jeff's advice--read the textdump.  Also look at the=20
+source, and finally ask me if you need clarification.
+
+-Brandon Gillespie
+
+--xHFwDpU9dbj6ez1V
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: 7kggo3gVcr0ioEvcJT+aq0cK1ZJkR0rE
+
+iQA/AwUBODMny0v5XoQiMgn6EQLo3ACgm8FPrZOA4ktOpGGOakgK6fpAjVkAn2Aw
+dHax6tcC+LBvlW7OpEhfFHkL
+=Jwqn
+-----END PGP SIGNATURE-----
+
+--xHFwDpU9dbj6ez1V--
+</PRE>

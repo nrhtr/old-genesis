@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1582] in "Coldmud discussion meeting"</TITLE>
+<H1>[1582] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1582"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1581"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1581"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1581"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1583"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1583"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1588"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: A couple simple questions (hopefully)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 26 18:36:55 2000
+)</H3>
+<PRE>
+Date: Fri, 26 May 2000 15:24:02 -0700
+From: Bruce &lt;bruce@puremagic.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+Andy Croft wrote:
+
+&gt; Can Cold handle the creation and deletion of objects on a grand scale?
+
+It can handle having millions of objects in the DB.  Such a system
+already exists, using Cold.
+
+&gt;         To clarify, I'll have a $thing I've whipped up created every time a group
+&gt; of players enter combat that acts as a "referee". At the end of combat, the
+&gt; referee object is destroyed. Now, after a year of 10 to twenty players
+&gt; duking it out will Cold be able to handle it? Bear in mind I'm still new to
+&gt; a powerful OOP environment like Cold. Please save the diesel fuel and
+&gt; matches, I'm painfully aware of my incompetence with Cold. &lt;GRIN&gt;
+
+Why not just create them as needed and when done with the match, return
+them to a pool of un-managed referee objects?  That way, if you only
+ever have 10 matches at once, you only really need to create 10 refereee
+objects, rather than an endless cycle of create+destroy.
+
+&gt;         My second question deals with the dictionary data type. I understand how to
+&gt; use functions to reference, index, add, and delete items from a dictionary.
+&gt; My second (stupid) question is this:
+&gt; 
+&gt; Can the value of a dictionary item be edited?
+
+Dictionaries, like list, strings and other datatypes are immutable. 
+This means that you can't directly edit them.
+
+To change the value, you'd have to the same as you did to set it.
+
+dict = dict.add('ehhh, 0);
+
+ - Bruce
+</PRE>

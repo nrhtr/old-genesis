@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [268] in "Coldmud discussion meeting"</TITLE>
+<H1>[268] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?268"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="267"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="267"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="267"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="269"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="270"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="270"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: fork() and log()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 15:20:25 1994
+)</H3>
+<PRE>
+Date: Thu, 19 May 1994 13:09:28 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt; Acutally, I fully endorse the idea of removing the time and &gt; from log()
+&lt; entries and leaving up to $sys.log(). This would also mean you could put
+&lt; $string.from_value(sender()) in the entry or something. This change strikes
+&lt; me as similiar in nature to the change in version 11 to traceback(), where
+&lt; printing the traceback is a task left up to the programmer. Likewise, log()
+&lt; might as well leave it up to the programmer to supply a meaningful/useful
+&lt; log entry.
+&lt;
+&lt; I doubt there's much to the change, prolly one or two lines in log.c. In fact,
+&lt; I was under the impression that Lynx had already made this change in his
+&lt; version of the server.
+
+Yes, I did.  It is only two lines, but when we talked about it last eve most
+people felt the server should tack some type of date on it (shrug).  I would
+just like it smaller so it is easier to read and you can put more on a line.
+
+-Brandon-   (who does read his logfiles)
+</PRE>

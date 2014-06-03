@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [320] in "Coldmud discussion meeting"</TITLE>
+<H1>[320] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?320"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="306"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="319"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="319"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="321"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="322"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="322"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: logging, fact and fiction</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 24 14:57:51 1994
+)</H3>
+<PRE>
+Date: Tue, 24 May 1994 11:41:00 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+
+
+Brandon:
+
+&gt; No, there wouldn't be any hole, since it would sequence like so:
+
+&gt;   $sys.compile() is called with the code for $sys.log
+&gt;     $sys.compile() logs being called and the vital stats (who, what, when, etc)
+&gt;     $sys.compile() compiles the method.
+
+&gt; No recursion...
+
+Well, the hole I was speaking of was the logging hole when someone
+hacked an admin and turned off logging. If you log the use of log, is
+that recursive? (thats what i meant by it being recursive) I can see
+why it wouldnt be, just not familier with how this is set up, so
+wondeing if it is... If you put a log into $sys.log to log its use,
+it'd be the builtin log instead of the $sys.log, i presume. im just
+getting confused with all these logs rolling around.
+
+I'd quote the log song, but i'd probably get hit. ;)
+
+
+</PRE>

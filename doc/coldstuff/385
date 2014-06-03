@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [385] in "Coldmud discussion meeting"</TITLE>
+<H1>[385] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?385"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="384"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="386"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>weird little problem</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Aug  7 23:14:12 1994
+)</H3>
+<PRE>
+From: Randy Beiter &lt;rbeiter@books.com&gt;
+To: coldstuff@MIT.EDU
+Date: Sun, 7 Aug 1994 23:05:30 -0400 (EDT)
+
+i'm having an interesting problem with my latest coldmud venture... i've 
+compiled coldmud on a really nice little hp/ux 9000, and am all happily
+ready to move my nifty little coldmud to it, however i have one problem:
+
+&lt;note, world/binary is empty at this point&gt;
+
+grail.cba.csuohio.edu 266: ls world/binary
+total 0
+
+ok, all happy.  now it should load up a db from world/textdump, right?
+
+grail.cba.csuohio.edu 267: coldmud world
+Sun Aug  7 23:00:09 1994: FAILED TO START: Database index is inconsistent.
+
+whoa! back up! i have no database at this point! or, wait a minute, i guess
+i do:
+
+grail.cba.csuohio.edu 268: ls world/binary
+total 0             0 index.dir      0 index.pag      0 objects
+grail.cba.csuohio.edu 269:
+
+ok, i've tried this w/ my existing db, with an empty world-0.6 and with the
+test directory, all with the same results, "Database index is inconsistent." 
+and a binary dir with 0 file lengths.  any ideas ppls? 
+
+thanks!
+
+</PRE>

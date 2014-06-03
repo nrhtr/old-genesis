@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [134] in "Coldmud discussion meeting"</TITLE>
+<H1>[134] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?134"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="133"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="135"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: mud.el stuff</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan  1 17:08:00 1994
+)</H3>
+<PRE>
+Date: Sat, 01 Jan 1994 15:02:45 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; 		    "@list " themethod " on " theobj "\n"
+
+Just so you know, everybody i've known so far has hacked @list &lt;&gt; on &lt;&gt; to
+@list &lt;obj&gt;.&lt;meth&gt;  Also, the syntax i've decided to stick with for '@display'
+is (ie give me comments):
+
+	@d &lt;obj&gt;.&lt;meth&gt;
+	@d &lt;obj&gt;,&lt;param&gt;
+	@d &lt;obj&gt;:&lt;meth-ancestor&gt;
+	@d &lt;obj&gt;;&lt;param-ancestor&gt;
+
+Basically period is for methods, comma is for params.  Wild cards can be
+accepted any place past the period/comma (nothing defaults to "*").  The two
+ancestors display all methods defined between the ancestor and &lt;obj&gt;--nothing
+defaults to one parent back (still hrm'ing about this last bit).  On TCD all
+but the ancestor stuff works right now.
+
+-DragonLynx
+</PRE>

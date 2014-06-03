@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [1164] in "Coldmud discussion meeting"</TITLE>
+<H1>[1164] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1164"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1159"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1162"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1163"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1165"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Intermud3 (was Re: [COLD] Is there ...)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 20:28:40 1996
+)</H3>
+<PRE>
+Date: Mon, 2 Dec 1996 18:21:58 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Jeff Kesselman &lt;jeffk@ten.net&gt;
+cc: Frank Crowell &lt;frankc@maddog.com&gt;, coldstuff@cold.org
+In-Reply-To: &lt;3.0.32.19961202152357.006c3d64@mail.tenetwork.com&gt;
+
+&gt; In re port conflicts, there are two answers.  I run my mud on a seperate
+&gt; system so it can naturally take over the default ports for all of these.
+&gt; Otherwise,
+&gt; just assign the services to new ports.
+
+Thats what we've been doing so far, everything (other than the 'login'
+port) in cold is 1100 + standard RFC port (look in /etc/services).  We had
+a finger daemon but it disappeared (damn simple to write), and we should
+have a fully functional SMTP daemon soon (yay Brad).  HTTP is, of course,
+shipped with the core and FTP wouldn't be hard--but is there a need?
+
+-Brandon Gillespie
+
+</PRE>

@@ -1,0 +1,26 @@
+<HEAD><TITLE>discuss@charon: [1251] in "Coldmud discussion meeting"</TITLE>
+<H1>[1251] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1251"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1250"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1252"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1252"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1253"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Class Constants/Public Vars</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 10 16:46:43 1997
+)</H3>
+<PRE>
+Date: Mon, 10 Mar 97 16:30:09 -0500
+From: "Jeff T. Polczynski" &lt;jefftp@purdue.edu&gt;
+To: &lt;coldstuff@cold.org&gt;
+
+Brandon,
+
+You mentioned the idea of "public/protected/private" variables a week or 
+two ago. Any plans on implimenting these ideas or is the jury out still?
+</PRE>

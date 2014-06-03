@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [762] in "Coldmud discussion meeting"</TITLE>
+<H1>[762] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?762"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="761"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="763"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>re: file stuff</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug  1 17:23:31 1995
+)</H3>
+<PRE>
+From: "Maddog's Studio" &lt;maddog@best.com&gt;
+To: coldstuff@MIT.EDU
+Date: Tue, 1 Aug 1995 14:18:41 -0700 (PDT)
+
+
+Maddog's Studio wrote:
+&gt; 
+	[...]
+&gt; Definitely the form:
+&gt; 	open
+&gt; 	read/write
+&gt; 	close  
+&gt; 	stat or exists/eof
+&gt; 
+
+I whoops myself.  This is definitely low level.  I know this for a fact
+because I was just playing with embedding Python in C and had to write
+something like this:
+(1)
+
+	fp=fopen("something","r");
+	if (fp !=NULL){
+		(void) run_script(fp,"something"); /* huh???? */
+		err_clear();
+		fclose(fp);
+	}
+
+The higher level wrapper for this should look something like this:
+(2)
+	myrun_script("something");
+
+Ah! much better.  Clearly I like (2) for this type of action.
+And then maybe I don't understand the question at all.
+
+Frank
+
+-- 
+________________________________________________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+</PRE>

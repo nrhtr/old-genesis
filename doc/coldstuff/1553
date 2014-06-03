@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [1553] in "Coldmud discussion meeting"</TITLE>
+<H1>[1553] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1553"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1550"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1550"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1552"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1554"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Genesis with old cores</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Feb 26 16:34:21 2000
+)</H3>
+<PRE>
+Date: Sat, 26 Feb 2000 14:19:41 -0700
+From: Michael Loftis &lt;zop12@mindless.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+It's been so long since we did this change I can't remember what it is.   But
+the easiest way would be to decompile the DB and then use vi or somesuch to
+search for union( occurances and ensure they are up to date with the current
+functionality.
+
+It shouldn't take a whole lot of work.
+
+Joerg Weber wrote:
+
+&gt; Hello everyone,
+&gt;
+&gt; I've a quite old but very modificated core lying around and would want to
+&gt; run it with the latest Genesis. Now I remember that Bruce did change
+&gt; $dictionary.union()
+&gt; and that new cores have to be adjusted. Can someone drop me a hint how I'd
+&gt; either a) ajust my core quickly or b) how to patch the latest genesis to
+&gt; use the old $dictionary.union()?
+&gt; Thanks,
+&gt;         Broesel
+
+--
+Michael Loftis
+zop12@mindless.com   ICQ: 15648280  AIM: DyJailBait
+Funny quip of the moment just happens to be....
+Linux is like a tent:
+no gates, no windows, and an Apache inside!
+
+
+</PRE>

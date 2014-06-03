@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [1126] in "Coldmud discussion meeting"</TITLE>
+<H1>[1126] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1126"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1124"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1125"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1125"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1127"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1127"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1130"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] How to compile?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov  6 11:52:49 1996
+)</H3>
+<PRE>
+Date: Wed, 06 Nov 1996 09:35:03 -0800
+To: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;, Gestalt &lt;gestalt@sedona.net&gt;
+From: abn@plaza.ds.adp.com (Aaron Neerenberg)
+Cc: coldstuff@cold.org
+
+At 09:15 AM 11/6/96 -0700, Brandon Gillespie wrote:
+&gt;On Tue, 5 Nov 1996, Gestalt wrote:
+&gt;&gt; I seem to be unable to get Genesis to compile on my system. During 'make',
+&gt;&gt; it spits out a couple warnings, either terminating in a quota full error or
+&gt;&gt; fatal error no. 1 (as I recall)... I have attempted to compile several
+&gt;&gt; versions.
+&gt;Send the output from Make, and the output from: /bin/uname -a
+&gt;
+&gt;You may be out of luck--the older SunOS has some problems and is not
+&gt;ANSI/POSIX standard, which Genesis assumes your compiler is.  My
+&gt;suggestion would be to hitup the administrator to upgrade to Solaris or to
+&gt;install NetBSD on it, both of which are ANSI and mostly POSIX compliant
+&gt;(enough that it doesnt matter anymore).
+
+        What C compiler are you using?
+*****************************************************
+Aaron Neerenberg        6750 SW Scholls Ferry Rd, #21
+ADP                     Beaverton, OR, 97008
+Parts 
+(503) 402-3994          (503)-246-4627
+*****************************************************         
+
+</PRE>

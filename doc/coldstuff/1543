@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [1543] in "Coldmud discussion meeting"</TITLE>
+<H1>[1543] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1543"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1542"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1544"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1544"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1548"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>1.1.8 Win32 genesis binaries</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan 22 17:01:22 2000
+)</H3>
+<PRE>
+Date: Sat, 22 Jan 2000 16:46:42 -0500
+From: Psyclone &lt;psyclone42@geocities.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+I recently compiled 1.1.8 for Win32. I have applied patches from
+coldstuff (Bruce's method-cache stuff, my random bugfixes, etc) to it.
+
+I am offering the binaries to anybody who wants them.
+
+
+A few things I noticed about Win32 genesis:
+random() cannot return numbers higher than 32767. This is a library
+issue which i forgot to patch. Maybe I'll remember later.
+
+mtime() always returns 0. Also a library issue -- Win32 apparently
+doesn't have a function to return microseconds.
+
+ctime() and friends throw when given numbers &lt; 18000. Borland (what I
+used to compile genesis) has a broken time utility which causes genesis
+to crash when these functions are given low numbers.
+
+The pids are negative. No idea why. Win32 thing I guess.
+
+Some of the text files have CRLF (textdumps) and some have LF (logs).
+Win95 edit seems to grok both.
+
+
+The binaries are located at:
+ftp://typhoon.rh.rit.edu/pub/genesis-1.1.8-win32-bin.zip
+
+That's a pkzip-2.04g compatible zipfile containing genesis.exe and
+coldcc.exe. If you want docs or anything else, get a tarball of source
+or something.
+
+
+I would appreciate it if somebody could put this on ftp.cold.org or
+somewhere, as my ftp server is nowhere near permanent enough to work in
+the long run. (Bandwidth is not much of a problem for me.)
+
+Also, I am not able to test the executables as much as I would like. Any
+and all (valid) bugreports are welcome.
+
+
+Have fun!
+</PRE>

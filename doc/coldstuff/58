@@ -1,0 +1,87 @@
+<HEAD><TITLE>discuss@charon: [58] in "Coldmud discussion meeting"</TITLE>
+<H1>[58] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?58"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="50"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="56"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="57"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="59"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: rehash: heirarchy</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 19 20:29:10 1993
+)</H3>
+<PRE>
+Date: Fri, 19 Nov 1993 18:22:09 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; [snip--comments on $container]
+&gt;
+&gt; Just to expand a little on an earlier comment, since Jay doesn't seem
+&gt; to want to flame about this right now:
+&gt;
+&gt; The relation between me and the hat I am wearing is not the same as
+&gt; the relation between a bottle and the water it contains.  I am a
+&gt; container in that my spleen is inside me, but I don't think that's
+&gt; what most people intend when they make users descendants of
+&gt; containers.
+&gt;
+&gt; It would be nice to be able to consider these relations separately.
+
+I had this same comment, when I first saw this, but I have since changed my
+mind.  Think about it, would you create a totally different class called
+$holder, even though it would be basically a complete mirror of $container?
+They do essentially the same thing...hrm...
+
+&gt;&gt; Also, WHAT are you going on about with the $user thing?  
+&gt;
+&gt; Yes, Lynx, why is $person renamed to $user in your diagram?
+&gt;
+
+:feels picked on
+Lynx feels picked on
+
+&gt; Hm, after a little preliminary thinking, here's my attempt at a
+&gt; user/robot hierarchy (whee, ascii art!):
+&gt;
+&gt; Sigh.  The idea here is to separate "an object which has &lt;rpg,
+&gt; building, programming&gt; commands available" from "an object which
+&gt; handles connections and represents an actual user."  So $character,
+&gt; $builder, and $programmer each are determined solely by their
+&gt; inheritance from $user and a person class.
+&gt; 
+&gt; $person means "an object which executes commands" and basically acts
+&gt; like a person in some sense, whether a robot or a real user.
+
+well, basically it comes down to I was thinking of $person and $user as one
+thing, and everybody else and their dog (even some roaches) were thinking of
+something else.  My concept of $user is basically the same thing as everybody
+else is thinking of $person.  I'll change it to everybody else's perception
+before I get some more rotten tomatoes thrown at me :)
+
+&gt; Not everyone wants RPG functionality, so $rpg_person and $character
+&gt; should be easily detachable; $building_person should inherit from
+&gt; $person or $rpg_person if it exists, and $guest should inherit from
+&gt; $user or $character.
+
+Actually, i've thought about it even more, and with the $command_repository
+there really is no reason for anything other than $person, although adding
+$character or some other such object isnt too bad of an idea, everything else
+can be off $command_repositories (which is essentially there to create
+structure amoung all the uncountable amounts of Methods/commands etc we will
+have.  We can just create a $builder_CR, $divine_CR, and whatever else, $guest
+can simply be a $person without the $builder or divine CR's...
+
+-Lynx/Brandon/Me.
+
+&gt; BTW, stuffing everything into a flat namespaces is really lame.
+
+(Lynx hears a plane soar _miles_ above his head)
+
+Mind if I ask what your referring to here?
+</PRE>

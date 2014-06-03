@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [1412] in "Coldmud discussion meeting"</TITLE>
+<H1>[1412] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1412"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1411"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1413"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1413"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1414"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis 1.1p3-STABLE released</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr  3 01:21:10 1998
+)</H3>
+<PRE>
+Date: Thu, 2 Apr 1998 23:13:57 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+
+It is available, changes list:
+
+      * fixed a few minor memory leaks (Bruce)
+      * fixed a maxint comparison problem (Brad)
+      * reduced unecessary buffer copies when reading data from a
+        connection, as well as redundant mallocs (Brandon)
+      * fixed some problems with cancelling tasks straight from the
+        driver (i.e. with kill -USR1) which caused a crash (Brandon)
+      * fixed a problem with set_method_access()--was not complaining
+        if the method did not exist (Bruce)
+      * added the ability to do `[buf] * INT like on strings (Brad)
+      * fixed a problem with the VEIL module (Brandon)
+      * added the System/OS token as an element to $sys.version() (Brandon)
+      * fixed a problem with cancelling or getting info on the currently
+        executing task (Brandon)
+      * adjusted select() to also check for file descriptors with
+        exceptions--allowing for later cleanup (Brandon)
+
+For those wondering about Brian's BIG_FLOAT patches--I am going to branch
+1.1-DEV from this release and include them.
+
+-Brandon Gillespie
+
+</PRE>

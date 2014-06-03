@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [1469] in "Coldmud discussion meeting"</TITLE>
+<H1>[1469] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1469"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1462"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1462"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1468"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1470"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: bugs::parentless object</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 10 16:18:07 1999
+)</H3>
+<PRE>
+From: "Bruce Mitchener, Jr." &lt;bruce@puremagic.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Wed, 10 Nov 1999 13:02:36 -0800
+Reply-To: coldstuff@cold.org
+
+&gt;with mojo, eval:
+&gt;
+&gt;;as $sys create([])
+&gt;
+&gt;a new, full-bastard object is created. It has no... anything, save its
+object number.
+&gt;This wouldn't be so bad, except that it seems impossible to operate on the
+object; and actions taken toward the object seem to return
+"#xxx.has_ancestor not found."
+&gt;
+&gt;Maybe create() should throw an error when passed an empty parent-list.
+
+
+This is definitely a bug in create() and can be easily verified by looking
+at src/ops/object.c
+
+I'll leave it for Brandon or someone else to do the trivial patch to fix it.
+I've done enough Genesis work for the month. :)
+
+ - Bruce
+
+
+</PRE>

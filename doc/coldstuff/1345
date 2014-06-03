@@ -1,0 +1,71 @@
+<HEAD><TITLE>discuss@charon: [1345] in "Coldmud discussion meeting"</TITLE>
+<H1>[1345] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1345"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1344"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1346"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1346"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1346"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Details in $places ($detail_frobs)?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Aug 25 17:25:01 1997
+)</H3>
+<PRE>
+From: "Luther, Clay" &lt;clay@selsius.com&gt;
+To: "ColdStuff Mailing List (E-mail)" &lt;coldstuff@cold.org&gt;
+Cc: "'mud@dante.selsius.com'" &lt;mud@dante.selsius.com&gt;
+Date: Mon, 25 Aug 1997 16:18:55 -0500
+
+In my old MOO(s), I would extend $rooms (and $things) so that they could
+include themselves in the description of a room.  These "details" added
+much to the depth of the MOO, since a player could look at, even fiddle
+with, something described in the room.  Personally, I dislike the
+mechanical look of many muds with regard to room descriptions, ala
+
+	Sameold Room
+	You're standing in a same-old room.
+	Bob is here.
+	Contents: a sofa, a bed, a mirror
+	Exits: south, north
+
+preferring instead more language-natural descriptions, ala
+
+	Sameold Room
+	You're standing in a same-old room. A large sofa is pushed up
+against a window on the north wall. Bob is resting comfortably on the
+sofa. A large four poster bed dominates the middle of the room. On the
+far wall, a gilded mirror reflects your image. There is a door on the
+north wall and a the bathroom door on the south wall.
+
+These rooms and contents are identical, but the second one appeals to me
+more.
+
+In the GodNet MOO years ago, we had details working at this level.
+Sometimes the details were implemented "lightly" as a list of aliases
+attached to a state description (details could have multiple states -
+for example a lamp detail could be implemented lightly with two states
+(on/off) and appropriate descriptions for the states).  Sometimes
+details were implemented "heavily" as $detail_objects, which $rooms knew
+to include in their descriptions (exits, likewise, were included if a
+particular msg property was set).
+
+It seems that this is a job for Super Frob in Cold Muds (eg,
+$wearable_frobs are details for users).  Unfortunately, being relatively
+new to Cold, I am frob impaired.  I'd appreciate hearing other people's
+ideas on this.
+
+Thanks.
+
+---
+Onegaishimasu.
+
+Clay Luther
+clay@selsius.com
+
+Hello, hello!  This is Monkey Wrench calling Bunny Hutch Headquarters...
+
+</PRE>

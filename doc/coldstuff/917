@@ -1,0 +1,72 @@
+<HEAD><TITLE>discuss@charon: [917] in "Coldmud discussion meeting"</TITLE>
+<H1>[917] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?917"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="916"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="918"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Boggling problem...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Feb  8 01:14:38 1996
+)</H3>
+<PRE>
+Date: Wed, 7 Feb 1996 22:59:20 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+Ok, this problem has risen to the irritation stage, so I'm bouncing it 
+off the list to see if anybody has any ideas...
+
+It is the infamous 'textdump looses objects' bug.  I have tracked down
+"when" it occurs, but not why...
+
+Basically, there is a method for searching objects in the database of 
+marking the 'cur_search' on that object, so you know if you have visited 
+it before.  The text dumping uses this mechanism, with stepping through 
+the db object by object.  Somewhere along the line objects are simply not 
+dumped to file.
+
+However, if you write your own routines in ColdC to dump the db, it 
+does not loose objects.  The key where things are lost is the way the 
+objects are 'listed' (so to speak).  The driver steps through each object 
+in the db.  If the object has been dumped, it moves on.  If the object's 
+parent's havn't been dumped, it dumps them first, and marks them as being 
+dumped.  Then it dumps the object.  The in-db code uses '$root.descendants()'
+(in coldcore's) to get a correct heirarchial list of objects to dump.  
+The code is:
+
+  kids = children();
+  while ((| (c = kids[(i = i + 1)]) |))
+      kids = kids.union(c.children());
+  return kids;
+
+(courtesy of Crag)
+
+Using this code things work fine.  A recent addition has been the 
+function 'descendants()', which can be horribly laggy but is rather 
+helpful for developers (lock this function up).  This function basically 
+used the same algorythm for building the list as that in dumping a db, 
+except for it uses the children's list, instead of the parents list.
+
+For in-db textdumping I changed the call to .descendants to use 
+descendents, and suddenly in-db textdumping is missing objects just as 
+driver textdumping did...
+
+Unfortunately, I can't glean as to why this is occuring...
+
+Any interested individuals may orient themselves towards 'object.c' and 
+the functions 'object_descendants', 'object_descendants_aux' and the text 
+dumping functions (not reading) in textdb.c...
+
+-Brandon Gillespie-
+
+(BTW, file ops are completely finished, less an odd bug in fchmod, which 
+means all function changes I had planed are complete, meaning all that is 
+left for 1.0 genesis is native funcs (snicker)).
+</PRE>

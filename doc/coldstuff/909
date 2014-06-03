@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [909] in "Coldmud discussion meeting"</TITLE>
+<H1>[909] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?909"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="908"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="910"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Realms in CDC</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jan 26 02:30:46 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@tombstone.sunrem.com
+Date: Thu, 25 Jan 1996 23:16:05 +0000
+Reply-To: coldstuff@tombstone.sunrem.com
+
+Hi all,
+A few questions on Realms, which I realise are incomplete.
+
+1) What functionality is currently there?
+2) It looks like realm_of_creation is actually an object.  What does 
+the realm frob really represent? It kind of looks t me like a realm 
+frob is just a reference to a realm object and some args attached to 
+it (that currently seem unused).
+3) Why were frobs used here?  This probably relates to (2)
+4) I have a super-room concept in my RPG design called a "time-zone". 
+ All rooms within a time-zone are locked in step for world-time.  
+Does this sound like something reasonable to implement as additions 
+to a Realm, or is there a better way?
+
+Thanks
+
+JeffK
+
+P.S.  BTW:  Lynx made me into a real CDC user last time, but I didn't 
+set my password.  Could a CDC admin please mail me what my current 
+password is?  Thx.
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+Clinton Gingrich Atomic Biological Bomb NSA -- Hi John!
+(A message for my friend in the NSA)
+*******************************************************
+</PRE>

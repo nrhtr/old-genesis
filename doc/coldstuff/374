@@ -1,0 +1,67 @@
+<HEAD><TITLE>discuss@charon: [374] in "Coldmud discussion meeting"</TITLE>
+<H1>[374] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?374"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="370"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="373"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="373"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="375"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Changes (0.10-4)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul 11 01:08:42 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Sun, 10 Jul 1994 23:03:22 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Richelieu spaketh:
+&lt;&gt; set_name()    =&gt; set_objname()
+&lt;&gt; del_name()    =&gt; del_objname()
+&lt;&gt; get_name()    =&gt; get_objnum()
+&lt;
+&lt; Umm, I thought those were going to become set_dbref(), etc..  and why is
+&lt; get_name becoming get_objnum when all the others use "objname"?  Or is get_name
+&lt; really a different function than I'm assuming here and not related to the
+&lt; others?
+
+Crag suggested objname in place of objnum because it makes even more sense:
+                        
+  Object Number       |    vs    |   Object Number
+  Object Name         |          |   Database Reference
+
+It sounded fine to me...
+
+As for get_objnum, that is what the function does (i.e. it gets the objnum of
+'objname).
+
+Jeff T.P. chiseled:
+&lt;&gt; dict_add_elem()
+&lt;&gt; dict_del_elem() =&gt; remove (since they are disappearing anyway)
+&lt;
+&lt; I know I have very important code that uses both of these extensively.
+&lt; I'd like to have them left in personally.  I know it can be done in db,
+&lt; but how quickly?  Speed again is the consideration.  If it can be done in
+&lt; the database without considerable loss of speed, then nevermind. . .
+
+Well, I have not used the *_elem methods much, because I couldn't see much of a
+difference between dict_add/del, other than a slight more touch of detail for
+what is going on.  However, the more I consider this the more I think it may be
+a good idea to leave it in, because sometimes that higher level of detail is
+wanted and there really ISNT a pressing reason to rip them out (is there
+Greg?).
+
+(BTW, with W3 pages. you can leave them in ftp://www.usu.edu/incoming and just
+ drop me an email message)
+
+(oh, BTW BTW, they are giving me and the other W3 admin an alpha400 (muahaha))
+
+ /\    Brandon Gillespie    &lt;a href="http://www.usu.edu/~brandon/"&gt;me&lt;/a&gt;  /\
+ ()       An Interactive RFC Index:  http://www.usu.edu/~brandon/RFC/      ()
+ \/ "Luke, at that speed do you think you'll be able to pull out in time?" \/
+</PRE>

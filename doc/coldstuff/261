@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [261] in "Coldmud discussion meeting"</TITLE>
+<H1>[261] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?261"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="260"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="262"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>why to use multiple ports at all</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 09:14:21 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Thu, 19 May 1994 06:07:03 -0700 (PDT)
+
+Reason to use my suggestion: lazyness.
+
+If you have a different port for connections, different clients, cross-db
+ io, serives like rwho, etc, it means having a different object recieve the
+ connect for each service which is much easier, programming-wise, than
+ designing and coding a single-port solution. The single port solution
+ would require negotiation and chparenting the connection object and
+ possibly more ugliness than you can shake a stick at!
+
+This is subjective ugliness, but I don't think anyone will dispute it. You
+ still only have to connect once if you know where to go ahead of time, but
+ if all you know is an address and service, my solution would be handy. It
+ would also be really easy to do expansion, port changes, and other such
+ funny business.
+
+To summarize, you could do everything off of one port, but since there is
+ the possibility that people won't, now would be a great time to standardize.
+ A system which leaves everything up in the air and provides the developer
+ with all the options without sacrificing useability appeals to me greatly.
+
+End rant.
+
+Crag / Robert de Forest
+</PRE>

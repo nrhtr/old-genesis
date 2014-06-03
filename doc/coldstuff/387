@@ -1,0 +1,28 @@
+<HEAD><TITLE>discuss@charon: [387] in "Coldmud discussion meeting"</TITLE>
+<H1>[387] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?387"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="386"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="388"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>assignments as expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug 23 19:27:06 1994
+)</H3>
+<PRE>
+Date: Tue, 23 Aug 1994 19:14:00 -0400
+From: Avery Quinn &lt;quinn@Access.Mountain.Net&gt;
+To: coldstuff@MIT.EDU
+
+
+Any chance the new coldmud will treat assignments as expressions with
+ values?  I'm fine with that style restriction in most places, but I
+ really miss it in while() loops.
+
+-Quinn
+</PRE>

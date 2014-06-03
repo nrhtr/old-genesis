@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [494] in "Coldmud discussion meeting"</TITLE>
+<H1>[494] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?494"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="493"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="495"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>chop: coldmud db parsing program</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct 31 12:45:48 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Mon, 31 Oct 94 10:40:50 -0700
+
+I've written up chop primarily because I was bored, but also because I plan
+on eventually extending it to change the 'var objnum name value' to
+'var dbref name value'.  If anybody is bored snag it and see how it works on
+your system.  I was running it on the Cold Dark's db at ~600k and it was
+working great.  I would like to know if it works on any other system...
+
+You can get it from:
+
+    ftp://sticky.usu.edu/pub/brandon/coldmud/chop-0.1.tar.gz
+
+-Brandon
+</PRE>

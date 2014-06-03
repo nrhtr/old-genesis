@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [675] in "Coldmud discussion meeting"</TITLE>
+<H1>[675] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?675"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="673"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="673"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="674"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="676"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: more comments</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar  9 12:03:20 1995
+)</H3>
+<PRE>
+From: The Importance of Being Chuck &lt;cadams@weather.Brockport.EDU&gt;
+To: crag@serial.mit.edu (Robert de Forest)
+Date: Thu, 9 Mar 1995 11:56:59 -0500 (EST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;m0rmQyw-000KcEC@serial&gt; from "Robert de Forest" at Mar 8, 95 01:01:13 pm
+
+Robert de Forest drew these heiroglyphs:
+
+&gt; With all that said I pick &lt;- with no reason other than taste and the fact that
+&gt;  it can't be read as 'equals' (and that it makes for a nice flow thing for
+&gt;  chained assignments).
+
+I'll just bind it to a single key in my term program anyway.  
+'&lt;-' looks cool.
+
+&gt; Private or Local methods: I would like to see a distinct way of calling local
+&gt;  methods to give us the performance boost. Jordan used :foo() in his version
+&gt;  but I don't like that because of MOO. What about foo()? The compiler can
+&gt;  generate a local method call rather than a builtin function call if the
+&gt;  identifier isn't a valid builtin.
+
+how about -&gt;foo()?
+Of course, that makes it confusing with respect to the `&lt;-' operator.
+
+I personally have no problem with `:' and I am a hard-core MOO junkie.
+But if that's too impalatable, how about ..foo()?  I personally would
+find that very difficult to read, and would prefer the dots stacked
+instead of side-by-side.
+
+</PRE>

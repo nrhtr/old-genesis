@@ -1,0 +1,89 @@
+<HEAD><TITLE>discuss@charon: [488] in "Coldmud discussion meeting"</TITLE>
+<H1>[488] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?488"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="487"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="489"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Archives</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct 30 16:37:16 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Sun, 30 Oct 94 14:34:36 -0700
+
+
+Ok, since I hate fragmentation of archives, AND I already have most of the
+files on sticky anyway, I just moved them to the ftp tree.  I also just
+browsed through all the archives listed in the FAQ (and a few others not
+listed) and updated everything.  You can find it all at:
+
+ftp://sticky.usu.edu/pub/brandon/coldmud/
+
+I am also redoing the ColdMUD Web server at (since I've heard nothing of it
+being re-awakened--I am NOT updating the manual though):
+
+http://www.declab.usu.edu:8080/ColdMUD/
+
+From the README at the archive:
+
+------------------------------------------------------------------------
+This is an archive of ColdMUD related material.  The following files
+currently exist (last updated 30-Oct-94):
+
+-rw-r--r--   171473 coldmud-0.10.3.tar.gz
+
+    Stable source from the latest release of Greg Hudson.
+
+-rw-r--r--   109563 coldmud-0.11.3.tar.gz
+
+    Semi-stable 0.11 source (0.12 is better).
+
+-rw-r--r--   111956 coldmud-0.12.0.tar.gz
+
+    Semi-stable *ALPHA* release of the 0.12 server.
+
+-rw-r--r--     8821 coldmud-0.10.doc.QuickRef.gz
+-rw-r--r--    41734 coldmud-0.10.doc.info.gz
+-rw-r--r--    75825 coldmud-0.10.doc.ps.gz
+-rw-r--r--     4657 coldmud-FAQ.gz
+
+    ColdMUD documentation, most of which is based off the 0.10 server.
+
+-rw-r--r--   113070 coldmud-www.tar.gz
+
+    Tar of the _old_ Web tree I once maintained (the new one is different)
+
+-rw-r--r--    27987 glacier-world-0.6.tar.gz
+
+    ColdMUD documentation, most of which is based off the 0.10 server.
+
+-rw-r--r--   113070 coldmud-www.tar.gz
+
+    Tar of the Web tree I once maintained.
+
+-rw-r--r--    27987 glacier-world-0.6.tar.gz
+
+    Greg's world 0.6, from his server which was named Glacier.
+
+-rw-r--r--    45781 textdump.AbsoluteZero.gz
+
+    Absolute Zero textdump.  Absolute Zero was a server before the Cold Dark.
+
+-rw-r--r--    47727 textdump.FA-0.1.gz
+
+    Frozen Apples textdump.
+
+-rw-r--r--     1664 dumpsplit.pl
+-rw-r--r--      700 dumpunsplit.pl
+
+    Two perl scripts by Zachary which split and merge a textdump.
+
+</PRE>

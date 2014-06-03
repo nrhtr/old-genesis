@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [479] in "Coldmud discussion meeting"</TITLE>
+<H1>[479] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?479"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="477"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="478"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="478"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="480"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="480"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="483"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: server dev status</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Oct 28 17:04:14 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: brandon@avon.declab.usu.edu
+Date: Fri, 28 Oct 1994 13:49:24 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9410281516.AA04956@avon.declab.usu.edu&gt; from "brandon@avon.declab.usu.edu" at Oct 28, 94 09:16:16 am
+
+&gt; 
+&gt; 
+&gt; &lt; Jordan Baker has made changes to the server source which provide the
+&gt; &lt; following:
+&gt; 
+&gt; But, where is it/he?
+&gt; 
+&gt; &lt; callers() : Returns a list of [this, definer, method, line] from the call
+&gt; &lt;            call stack. Intended primarily for debugging uses.
+&gt; 
+&gt; I thought this was generally decided to be a bad idea...?
+&gt; 
+&gt; 
+
+He is on the net sometimes, and not on this list and I have to forward
+ stuff I think he cares about to him. (jbb@homer.ncm.com)
+
+It is being debugged by him. It works. It does not have the bugs you
+ (Brandon) reported. The version you have was older and _alpha_.
+
+I begged for callers() because I wanted to use it in an in-db throw which
+ would suspend the eroneous task and notify the debugging programmer about
+ the suspended, broken task. This could be extended into something almost
+ gdb-like. Just don't use the information as part of the design of a finished
+ object.
+
+Crag / Robert
+</PRE>

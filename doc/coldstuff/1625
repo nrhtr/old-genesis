@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [1625] in "Coldmud discussion meeting"</TITLE>
+<H1>[1625] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1625"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1621"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1621"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1624"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1626"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Type Real variable precision</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct  1 16:12:03 2000
+)</H3>
+<PRE>
+Date: Sun, 1 Oct 2000 14:00:40 -0600
+From: Brandon Gillespie &lt;brandon@ice.cold.org&gt;
+To: coldstuff@cold.org
+Message-ID: &lt;20001001140040.A12949@ice.cold.org&gt;
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+In-Reply-To: &lt;Pine.LNX.4.10.10009021410480.2877-100000@zork.plover.net&gt;; from Verhoogen Olivier on Sat, Sep 02, 2000 at 02:16:00PM -0500
+Content-Transfer-Encoding: 8bit
+Reply-To: coldstuff@cold.org
+
+Wow, I realize this is a very belated response, sorry!
+
+The reason for low precision is because cold bytecode is 32bits.
+Double precision is not, and thus requires either all bytecode to be
+32bits for the most simple change, or other additional changes have to
+be made (like splitting the floating value into two chunks).  If you
+are on a 64bit system youcan play with USE_BIG_FLOATS and
+USE_BIG_NUMBERS in src/include/defs.ht.  I dont recall anything about
+the stability of either of these values.
+
+-Brandon
+
+On Sat, Sep 02, 2000 at 02:16:00PM -0500, Verhoogen Olivier wrote:
+&gt; Heya :)
+&gt; 
+&gt; I'm currently doing a bit of coding in coldC and as I work with distances
+&gt; I came to remark that Genesis defaults to a very low-precision floating
+&gt; point type for real numbers.
+&gt; 
+&gt; I already asked about this on tCD and Bruce suggested I sent here to ask
+&gt; wether someone still had access to a patch that must have once existed for
+&gt; this.
+&gt; Still, while I haven't peeked at the code, I can't imagine it'd be too
+&gt; difficult to modify it to use doubles rather than floats... (I hope... :)
+&gt; 
+&gt; Thanks,
+&gt; -- Sim.
+&gt; 
+&gt; 
+</PRE>

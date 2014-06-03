@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [257] in "Coldmud discussion meeting"</TITLE>
+<H1>[257] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?257"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="255"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="256"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="256"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="258"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ports...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 18 17:12:33 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: rayn@q.crossaccess.com (Ray Nawara jr.)
+Date: Wed, 18 May 1994 13:56:46 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9405182009.AA23720@q.crossaccess.com&gt; from "Ray Nawara jr." at May 18, 94 01:09:23 pm
+
+&gt; I think standardized ports for inter ColdMUD stuff is a good idea, but
+&gt; they can be pretty much arbitrary, right? It'd probably be better to
+&gt; keep them in as tight a range as possible instead of scattered in the
+&gt; 66xx range, especially considering the equivalency extends up to above
+&gt; 99, as has been mentioned.
+
+Actually, I see no reason, really, why standardized ColdMUD-ColdMUD
+communications can't be done using only one port number for all types of
+communication (simply identify when you connect what type of
+thing you want to do).  It's really rather foolish to clutter up the namespace
+(portspace?) and make conflicts several times more likely when you don't really
+need to.
+
+As for "listener" ports for hooking into standard IP services like SMTP, there
+is absolutely no reason this needs to be standardized anyway, and people might
+as well just set them up to be whatever works on the machine they're running
+on.  it's a purely local issue anyway.
+
+So in short, pick _one_ port, make sure it's not used for anything obvious, and
+handle service differentiation in a much more civilized manner post-connection.
+(there are these nifty things called protocols...)
+
+-Riche
+</PRE>

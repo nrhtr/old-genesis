@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [615] in "Coldmud discussion meeting"</TITLE>
+<H1>[615] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?615"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="614"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="616"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="616"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="618"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Speed ping</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 12 13:08:30 1994
+)</H3>
+<PRE>
+Date: Mon, 12 Dec 1994 11:06:06 -0700
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+Just a random ping in relation to what would be faster (not in relation
+to ticks).
+
+scenario: we have a list of 500 'templates' (used with match_template()).
+
+Is it faster to step through the list executing match_template() on each
+template until a match is found.  Or, is it faster to expand the list into
+a dictionary (assuming each template has a relative value), where each
+template is expanded to all of it's relative values (i.e. "templ?ate" would
+be "templ" "templa" "templat" and "template", and "on|or" would be "on" and
+"or"), and to then find the match through dictionary["match_against"].
+
+...?
+
+-Brandon
+</PRE>

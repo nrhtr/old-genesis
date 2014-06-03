@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [252] in "Coldmud discussion meeting"</TITLE>
+<H1>[252] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?252"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="251"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="253"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Woah boy: telnet chimaera 6679</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 18 04:04:09 1994
+)</H3>
+<PRE>
+Date: Wed, 18 May 1994 01:58:29 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Ok, I have a 7 hour graveyard shift tonight, and I'm bored.
+
+Anyhow, I have a fingerd working now (nothing really, just 2 lines to a
+.connect method).   Do:
+
+telnet chimaera 6679
+
+I will eventually get it to accept a single line string for a user before it
+disconnects (infact, by the time you read this message it may already do that).
+
+One thing this brought to mind.  I will be sinking into trivalities now, but
+perhaps we should have a basic format for this port that is the same from
+server to server, because I _know_ that people will personalize their @who
+listing.  As far as rwho goes, I dont care: I've always thought it was a bad
+way of doing a metaserver.
+
+So, here is my first (trivial) suggestion for a format:
+
+user:        Time On:   Idle:          Location:         Misc:
+XXXXX        XXXXXXX    XXXXXX         XXXXXX            XXXXXXX
+
+It would be nice to have a simple seperator for each column, rather than a
+variable set of spaces, but feh.  Anyhow, what this would mean is somebody
+would see:
+
+-----------
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+
+Lynx         18:42:10  00:01:00       The Pit         The keeper of the Cheese
+Richelieu    17:50:12  00:12:13       The Pit
+Bob          15:13:12  00:00:00       The Pit         etc
+Connection closed by foreign host.
+-----------
+
+From here people can parse to whatever (blank space is because of the newline
+it needs);
+
+Anyhow (sigh).  AT LEAST ITS ABOUT SERVERS IN GENERAL! 8)
+
+-Brandon/Lyncx-
+</PRE>

@@ -1,0 +1,849 @@
+<HEAD><TITLE>discuss@charon: [1600] in "Coldmud discussion meeting"</TITLE>
+<H1>[1600] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1600"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1599"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1601"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Installation Guide &amp; Some FAQ</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jul  2 19:47:29 2000
+)</H3>
+<PRE>
+From: "Peter Bombard" &lt;pbombard@altavista.net&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Sun, 2 Jul 2000 19:41:55 -0400
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0008_01BFE45D.94F15A80
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+
+Since the original FAQ was lost and I had to ask a bunch of questions to get
+started, I figured I'd write up some of those questions and answers into a
+document.
+
+I'm sure my installation guide suggests some in-elegant things to do, since
+I am not all that familiar with UNIX after having been away from it for
+years and am a beginner in Linux.
+
+If you have any suggestions or corrections, please let me know!
+
+-pete (PBombard@altavista.net)
+
+------=_NextPart_000_0008_01BFE45D.94F15A80
+Content-Type: text/plain;
+	name="ColdFAQ.txt"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: attachment;
+	filename="ColdFAQ.txt"
+
+The Cold FAQ
+
+** INSTALLING GENESIS WITH COLDCORE ON LINUX:
+
+* You'll need the following from the cold FTP:
+	ftp://ftp.cold.org/cold/dbs/ColdCore/ColdCore-STABLE.tar.gz =20
+	ftp://ftp.cold.org/src/stable/Genesis.tar.gz
+
+* First, let's install Genesis:
+
+	Change directory to where ever you want to install Genesis and=20
+	move the tarball there.  Then, extract Genesis:
+
+		gzip -dc Genesis.tar.gz | tar -xf -
+=09
+	This will unzip/tar the file into a directory that looks like
+	"Genesis-1.1.8-STABLE", depending on the version downloaded.
+=09
+	To make less typing and an easier to read directory, I suggest=20
+	renaming the directory created to "Genesis":
+=09
+		mv Genesis-1.1.8-STABLE Genesis
+=09
+	First, make a directory called "cold" (for later use):
+
+		mkdir cold
+=09
+	Second, change directory to Genesis
+=09
+		cd Genesis
+=09
+	Third, run make:
+=09
+		make
+	=09
+	This will result with a bunch of information about the most=20
+	recent changes to Genesis.  It starts out with:
+=09
+		-- Configuration for Genesis 1.1.8-STABLE (the Cold Driver) --
+		- Creating cache ./etc/config.cache
+
+		This is the STABLE release of Genesis.  This means no features will
+		be added to this release--only bug fixes and patches.  There is also
+		a higher level of run-time stability for this release which you will
+		not have with the DEV release (alpha developmental).
+
+		Help can be found through the web site, or on the mailing list
+		(genesis@cold.org).  A few pointer URLs:
+
+		      http://www.cold.org/Software/Genesis/
+	      	http://www.cold.org/info/lists
+
+		RELEASE INFORMATION:
+
+	After any relevant release notes, it will prompt you:
+=09
+		[Return to Continue]=20
+	=09
+	Hit Enter/Return.  It will then proceed to determine your system
+configuration.
+
+=09
+	After some time, it will prompt you with:
+=09
+		###
+		### MALLOC()
+		###=20
+		#
+		# We provide a malloc implementation by Poul-Henning Kamp.  Using this
+		# malloc is suggested, as designs take it into consideration, and =
+because
+		# it is integrated into the functionality of genesis for better error
+		# recovery.  We suggest using this malloc over your system's malloc,
+		# however if you encounter problems you should drop back to your =
+system's
+		# malloc.  The best suggestion is to try both, analyze the memory
+		# imprint and run-time behaviour and decide which to stay with.
+		#
+		##
+		## At the moment, mileage with phk_malloc() may vary, it is
+		## only guaranteed to be useful and functional in FreeBSD and Linux
+		##
+	=09
+		Use phk_malloc()? [no]=20
+	=09
+	If you are running FreeBSD or Linux, type "yes" (without the
+quotes!) and hit enter.
+	If you are running in another environment, type "no" (without the
+quotes!) and hit enter.
+
+=09
+	It then prompts you with:
+=09
+		###
+		### CRYPT()
+		###
+		#=20
+		# The ColdC builtin function crypt() uses SHA-1 encryption based off =
+FreeBSD's
+		# MD5 crypt().  If your OS has its own crypt() (likely DES based), and =
+your
+		# database includes DES encrypted passwords (this used to be the =
+default for
+		# ColdC crypt()), you may want to have match_crypted() use DES =
+encryption
+		# as well as SHA-1 for the DES passwords.  If your database does not =
+have
+		# any DES encrypted passwords, there is no need to include DES =
+encryption.
+		# If your database predates Genesis 1.0p14 it will have DES based =
+passwords.
+		#
+
+		Include your OS crypt() in match_crypted()? [no]=20
+	=09
+	You can just hit enter.
+
+=09
+	It then prompts you with:
+=09
+		###
+		### FILES
+		###
+		#=20
+		# File operations may be restricted.  Restrictions include paths
+		# (all files must stay within the 'root' subdirectory), as well as
+		# other security restrictions, such as disallowing sticky or setuid
+		# file perms with fchmod()
+		#
+
+		Restrict files? [yes]=20
+	=09
+	You can just hit enter.
+
+=09
+	It then prompts you with:
+
+		###
+		### CACHE SIZE
+		###
+		#=20
+		# The size of the object cache will ultimately determine how much =
+memory
+		# genesis will use, when running.  The cache is defined as WIDTH by =
+DEPTH.
+		# the primary number to be concerned with is WIDTH, as the DEPTH is =
+only
+		# used when collisions occur.  For better distribution, the WIDTH size
+		# should be a prime number.  If you want low memory usage (about 4MB =
+in
+		# unix) a cache size of 31x10 is suggested, increase as you desire. =20
+		# Keep in mind this is ONLY active objects in your database, namely =
+those
+		# which are currently in use.
+		#
+		# You can use GNU's bc command with the file etc/primes.b to generate =
+a list
+		# of prime numbers in the range you are interested in, by typing:
+		#
+		#    bc etc/primes.p
+		#
+
+		Cache Width [61]
+
+	The default is fine to start out with.  If you want to run the primes =
+script, you=20
+	might have to use "bc ./etc/primes.b" instead of the documented =
+command.  For easy=20
+	reference, here are several primes smaller and larger than the=20
+	default: 41, 53, 59, 67, 71, 83.
+=09
+	If you wish to keep the default, just hit enter, otherwise type your =
+prime and hit=20
+	enter.
+
+=09
+	It then prompts you with:
+=09
+		Cache Depth [10]
+	=09
+	This can be any number.  If you wish to keep the default, just hit =
+enter, otherwise=20
+	type your value and hit enter.
+=09
+
+	It then prompts you with:
+
+		###
+		### INSTALL
+		###
+		#=20
+		# Where do you want to install Genesis?  This is the database/world
+		# directory, and should be seperate from the Genesis release =
+directory,
+		# so you can delete the entire Genesis release directory when =
+finished.
+		#
+
+		Install Directory [~/cold]=20
+	=09
+	To make it easy, I suggest typing "../cold" (without the quotes!) and =
+then hitting=20
+	enter.  This will use the directory you created in the beginning and =
+keep all of your=20
+	cold stuff under one parent, but keep the database/world directory out =
+of the source=20
+	trees.
+
+=09
+	It then prompts you with:
+=09
+		# Which install mode?
+		#
+		# Do not change this unless you understand the implications.
+
+		Install Mode [755]=20
+	=09
+	The default is fine for this initial install, so just hit enter.
+=09
+
+	It then prompts you with:
+=09
+		# Which User to install as?  Do not change this unless you are root,
+		# or are aware of the implications.
+
+		Install User [loginuser]=20
+	=09
+	The default is fine for this initial install, so just hit enter.
+
+
+	It then prompts you with:
+
+		###
+		### COMPILER FLAGS
+		###
+		#
+		# Specify compiler optimization flags (if you are unsure which to use,
+		# simply select the default).
+		#
+		# You are running gcc, suggested:
+		#
+		#  -O3                       -- full optimization, good for basic =
+compilation
+		#  -ggdb -O -Wall -pedantic  -- use this for driver development
+	=09
+		Optimization flags: [-g -O]=20
+
+	The default is fine for this initial install, so just hit enter.
+
+
+	It then prompts you with:
+
+		# Genesis allows for native methods to be included in the database.
+		# This is done through modules, where each module adds native methods
+		# to one or more objects.  For more information on adding your own
+		# native methods, refer to the documentation.
+		#
+		# Your current module configuration is:
+		#
+		#         ColdC: yes
+		#         VEIL: yes
+		#         Web: yes
+		#         Math: yes
+
+		Reconfigure Modules? [no]=20
+
+	The default is fine for this initial install, so just hit enter.
+
+	The make file will then continue building Genesis.... And finish.
+=09
+	On some systems, the make file will not put your binaries in the bin =
+directory.
+
+	If you look in ./bin and genesis and coldcc are not there, then you =
+need to manually=20
+	move the files over (assuming your current directory is Genesis):
+=09
+		mv ./src/genesis ./bin/
+		mv ./src/coldcc ./bin/
+	=09
+	This is a good time to check to make sure the compile worked:
+=09
+		./bin/genesis
+	=09
+	Since you don't have a database set up, it should look something like:
+=09
+		Unable to open log logs/db.log: No such file or directory
+		Defaulting to stdout..
+		Unable to open log logs/driver.log: No such file or directory
+		Defaulting to stderr..
+		genesis pid: 12398
+		Cannot find binary directory "binary".
+	=09
+	But, at least the program runs!  If it doesn't, then you'll need to =
+contact one of
+	the Cold mailing lists on this site for further assistance: =
+coldstuff@cold.org
+=09
+	More information can also be found in the README file located in the =
+Genesis directory.
+=09
+* Next, lets install coldcore:
+
+	Change directory to where you installed Genesis and=20
+	move the tarball there.  Then, extract coldcore:
+
+		gzip -dc ColdCore-STABLE.tar.gz | tar -xf -
+=09
+	This will unzip/tar the file into a directory that looks like
+	"ColdCore-3.0.1999-08-28", depending on the version downloaded.
+=09
+	At this point, the directory should look something like this:
+=09
+		ColdCore-3.0.1999-08-28/  ColdCore-STABLE.tar.gz  Genesis/ =
+Genesis.tar.gz  cold/
+	=09
+	Change directory to "ColdCore-3.0.1999-08-28":
+=09
+		cd ColdCore-3.0.1999-08-28
+	=09
+	Then, move everything into the cold directory you created when you =
+installed Genesis:
+=09
+		mv * ../cold
+	=09
+	You can now back up to your main directory and remove the =
+ColdCore-3.0.1999-08-28=20
+	directory:
+=09
+		cd -
+		rmdir ColdCore
+=09
+	Now, change directories into the cold directory:
+=09
+		cd cold
+	=09
+
+	Now, change directory into the dbbin directory:
+=09
+		cd dbbin
+=09
+	Edit the backup file and find where it specifies the path:
+=09
+		#!/usr/bin/perl
+		#
+		# Created by Brandon Gillespie
+		# Additional work by Vang (Dale Mayberry)
+		#
+		## This creates a FIFO list of backups based off your configuration,
+		## it can do regular, weekly and monthly backups, with the intervals
+		## and depth of the FIFO list defined by you.
+		#
+		# INSTALL:
+		#
+		# determine your world directory (i.e. the directory where 'binary'
+		# exists).  Change the following variable to the full path to your
+		# world directory:
+
+		$base =3D "../";
+=09
+	Change the line $base =3D "../"; to specify the cold directory's full =
+path, then=20
+	save the file and exit your editor.
+=09
+	Return to the cold directory:
+=09
+		cd -
+	=09
+	Then, perform the following to copy necessary files from the Genesis =
+directory=20
+	to the cold directory:
+=09
+		cp ../Genesis/bin/* bin/
+		mkdir doc
+		cp ../Genesis/doc/* doc/=20
+		mkdir etc
+		cp ../Genesis/etc/* etc/=20
+	=09
+	The makeworld file is missing.  So you will have to do it yourself =
+(from=20
+	the cold directory):
+=09
+		./bin/coldcc -tcoldcore
+=09
+	This should result in:
+=09
+		Compiling database...
+		Reading from "coldcore".
+		Cleaning up name holders...done.            =20
+		Database compiled to "binary"
+		Closing binary database...
+=09
+	And create a directory named "binary" under cold.  At this point, your =
+cold directory
+	should look something like:
+=09
+		COPYRIGHT  README  backups/  bin/  binary/  coldcore  dbbin/  doc/ =
+etc/  logs/  root/
+	=09
+	Now, you should be able to fire up genesis with coldcore:
+=09
+		./bin/genesis
+	=09
+	No '&amp;' is necessary, as genesis forks automatically.  If you are not =
+running as root, you
+	will need to run genesis as root initially.  You can force genesis to =
+another userid after
+	it starts, but it must be run as root initially.
+=09
+	If genesis doesn't run, then you'll need to contact one of the Cold =
+mailing lists on this=20
+	site for further assistance: coldstuff@cold.org
+=09
+	More information can also be found in the README file located in the =
+cold directory.
+=09
+	Next, go to a program to connect to your server.  Specify the host that =
+genesis is running
+	on, and port 1138.  Then connect.
+=09
+* Next, configure the running core (the New Admin guide also covers much =
+of this=20
+information: http://web.cold.org/coldcore/newadmin.html)
+
+	When you first connect to the newly built core, you will something =
+like:
+=09
+=09
+	                                 + ColdCore +
+=09
+	                           Virtual Community Server
+
+
+	             "The man who reads nothing at all is better educated =20
+         =20
+	                than the man who reads nothing but newspapers."   =20
+         =20
+                                                                   =20
+        =20
+	                        - Thomas Jefferson (1743-1826)            =20
+         =20
+
+                                                                   =20
+        =20
+	       Due to a disk failure we have reverted to an older copy of the =
+db      =20
+	                If you had a user but do not now, this is why.    =20
+         =20
+	                                    Sorry!                        =20
+         =20
+                                                                   =20
+        =20
+	                            Administrators: nothing
+
+	                         Currently Connected users: 0
+	                         Core: ColdCore 3.0.1999-08-28
+	                         Driver: Genesis 1.1.8-STABLE
+	                     ** Use 'Help' for a list of commands**
+
+	You will need to create an initial user account:
+=09
+		create &lt;administrator&gt; &lt;password&gt; &lt;email&gt;
+	=09
+	where "&lt;administrator&gt;" is the name you want to give to the initial =
+admin account.
+	and	"&lt;password&gt;" is the password you want that account to have.
+	and	"&lt;email&gt;" is the email address of the administrator.
+
+	For example:
+=09
+		create PowerMad 1337h4x0r 5up3rh4x0r@hotmail.com
+	=09
+	It then proceeds to log in, show you the initial room, and starup the =
+auto configure
+	script:
+=09
+		The Pit
+		A cozy atmosphere pervades this room, a small hideaway where people =
+can come to relax and socialize. The cement walls are covered with =
+various scribbles burn marks, and stains of unrecognizable origin.
+		the Robot is here.
+		&lt;Login&gt; It is currently 04:38 AM (wintertime) in &lt;Creation&gt;
+		You have not yet set a description for yourself.
+		Perhaps you'd like to take a look at the tutorial.
+		Type @tutorial to read about how to set a description and more.
+		=
+*************************************************************************=
+*****
+		**************************** Welcome to ColdCore =
+*****************************
+		=
+*************************************************************************=
+*****
+		   This is an interactive configuration system which any admin who =
+connects
+		       (until it is completed) is sent through.  You must complete =
+this
+		   configuration before you can do anything else.  You can skip a =
+specific
+		  question at any time by typing '@skip'.  Suggested default values =
+will be
+		 enclosed in square brackets.  Pressing enter without any value will =
+use the
+		                                default value.
+		=
+*************************************************************************=
+*****
+		What class should new users be created as?  Available classes:
+		    $player
+		    $builder
+		    $programmer
+		    $admin
+		New User Class [$admin]
+	=09
+	Enter "$player" (without the quotes!) and hit enter. =20
+	You can always raise someone's permissions later on.
+=09
+=09
+	It then prompts you with:
+
+		---
+		What is your server name? [ColdCore]=20
+	=09
+	Enter what ever you want to have displayed as your server name.
+=09
+=09
+	It then prompts you with:
+=09
+		---
+		What is your server title? [Virtual Community Server]=20
+	=09
+	Enter what ever you want to have displayed as your server title.
+=09
+=09
+	It then prompts you with:
+=09
+		---
+		Which network daemons do you want to have automatically startup,
+		Other than $login_daemon.  Available daemons:
+		  $smtp_daemon         (auto starting)
+		  $http_daemon         (auto starting)
+		  $pop3_daemon
+		Auto-Start: [$login_daemon, $http_daemon, $smtp_daemon]=20
+	=09
+	The default is sufficient for now.  Hit enter.
+=09
+	It returns:
+=09
+	*************************** Configuration Complete =
+****************************
+=09
+	At this point in time, issue a backup command to flush the database to =
+disk:
+=09
+		@backup
+	=09
+	Then run through the tutorial:
+=09
+		@tutorial
+=09
+	To exit the tutorial at any point, just type "exit" (without the =
+quotes!)
+=09
+	To shutdown the server immediately:
+=09
+		@shutdown -t=3D0
+	=09
+	To leave the server running, but quit your current connection:
+=09
+		@quit
+	=09
+	Enjoy!
+
+** OTHER QUESTIONS:
+
+* I hate Windows Telnet, are there any better options?
+
+	Cold recommends using tkMOO instead of telnet:
+		http://www.awns.com/tkMOO-light/
+	=09
+	This tool is available on multiple platforms and is suitable for=20
+	UNIX use as well.
+
+* How do I change my description?
+
+	@describe me as &lt;Description&gt;
+
+	Alternatively, you can also use @describe me and then supply "." to
+	terminate or "@abort" to quit entering a description.
+
+
+* How do I rename something?
+
+	@rename &lt;source&gt; to &lt;destination&gt; &lt;options&gt;
+=09
+	Rename works either on objects or the name property of an object.=20
+	It also parses the name and sets a type than can be overriden by
+	&lt;options&gt;.
+
+	For example:
+=09
+		@rename $the_pit to "The Pit"
+	=09
+	Will result in the name of $the_pit chaing from "The Pit" to "the
+	Pit", because of the parsing.  "the Pit" is a unique name, while=20
+	"The Pit" was a proper name. =20
+	Using options, you might think you can override this behavior
+	by simply using +proper to force it to be a proper name.  Nope.=20
+	This results in a conflict between the parser and your option.=20
+	Instead, use +ignore to force the type to be proper:
+=09
+		@rename $the_pit to "The Pit" +ignore
+	=09
+	Will result in the name of $the_pit becoming "The Pit".
+=09
+	You can also use @rename to rename the actual object itself.
+=09
+	For example:
+=09
+		@rename $thing_1 to $chair
+	=09
+	Objects that are "Core Objects" cannot be renamed.  $the_pit is a
+	core object.  If you attempt to rename $the_pit, you will get the
+	following response:
+=09
+		$the_pit is a core object; you cannot change its object name!
+
+* How do I see all the settings for an object?
+
+	@set $objectname:
+=09
+	For example:
+=09
+		@set $the_pit:
+	=09
+	Results:
+=09
+		-- Settings on The Pit ($the_pit):
+		  command-modules =3D=20
+		  darkness =3D 0
+		  help-node =3D=20
+		  map-position =3D none
+		  propagate =3D no
+		  public-home =3D no
+		  realm =3D &lt;Creation&gt; ($realm_of_creation)
+		  restrict-entry =3D none
+		  visibility =3D 0
+		---
+	=09
+* How do I see all the messages for an object?
+
+	@msg $objectname:
+=09
+	For example:
+=09
+		@msg $the_pit:
+	=09
+	Results:
+		-- Messages on The Nook ($the_pit):
+		  connect =3D [actor] wakes up.
+		  disconnect =3D [actor] falls asleep.
+		  housekeeper =3D The housekeeper arrives and takes [actor]'s body =
+away.
+		---
+
+* Hey I just noticed that there are a couple of weird local commands
+on $the_pit and $place!  How do I get rid of them, @bc "fribble
+&lt;any&gt;" $place.fribble_cmd doesn't work?  @bc "zibble &lt;any&gt;" $the_pit.
+foo_cmd doesn't work?
+
+	The method name for @bc needs to include "()":
+=09
+		@bc "fribble &lt;any&gt;" $place.fribble_cmd()
+=09
+	This will remove the default local command attached to $place:
+=09
+		Command "fribble &lt;any&gt;" removed from $place.fribble_cmd()
+	=09
+
+* How do I hide the $thing decendant I just created in a room?
+
+	Assume the object is $thing_1:
+
+		@set $thing_1:visibility=3D-100
+	=09
+	This will return:
+
+		-- Setting changed to:
+		  visibility =3D -100
+		--
+	=09
+	The object is now, for all reasonable tests, invisible.
+=09
+
+* How do I nail down that object, so it can't be picked up?
+
+	Assuming the object is named $thing_1 again.  There are several=20
+	ways to do this:
+=09
+		@set $thing_1:lock=3Dlocked
+=09
+	This results in:
+=09
+		-- Setting changed to:
+		  lock =3D locked
+		--
+		get chair
+		A chair is locked to no.
+	=09
+	OK, if that doesn't really make you happy, try this:
+	=09
+		@set $thing_1:lock=3Dhere
+	=09
+	This results in:
+=09
+		-- Setting changed to:
+		  lock =3D $the_pit
+		--
+		get chair
+		A chair is locked to The Pit.
+
+	However, if you have Mojo, you'll still be able to drag the object
+	around.
+
+	If there is yet a better way, that results in messaging more
+	appropriate to the attempted action, I don't know how to do it.
+
+
+** COLDCC COMMANDLINE OPTIONS
+	-- ColdCC 1.1-8 --
+
+	Usage: ./bin/coldcc [options]
+
+	Options:
+
+	    -f              force native methods to override existing methods.
+	    -v              version
+	    -h              This message.
+	    -d              Decompile.
+	    -c              Compile (default).
+	    -b binary       binary db directory name, current: "binary"
+	    -t target       target text db, current: "textdump"
+	                    If this is "stdin" it will read from stdin
+	                    instead.  &lt;target&gt; may be a directory or file.
+	    -p              Partial compile, compile object(s) and insert
+	                    into database accordingly.  Can be used with -w
+	                    for a ColdC code verification program.
+	    +|-#            Print/Do not print object numbers by default.
+	                    Default option is +#
+	                    print object names by default, if they exist.
+	    -s WIDTHxDEPTH  Cache size, default 10x30
+	    -n              List native method configuration.
+	    +|-o            Print/Do not print objects as they are processed.
+	    -W              Do not print warnings.
+
+** GENESIS COMMANDLINE OPTIONS
+	-- Genesis 1.1-8 --
+
+	Usage: ./bin/genesis [base dir] [options]
+
+	    Base directory will default to "." if unspecified.  Arguments which
+	    the driver does not recognize, or options which begin with "--" =
+rather
+	    than "-" are passed onto the database as arguments to =
+$sys.startup().
+
+	    Note: specifying "stdin" or "stderr" for either of the logs will
+	    direct them appropriately.
+
+	Options:
+
+	    -v          version.
+	    -f          do not fork on startup
+	    -db &lt;dir&gt;   alternate binary directory, current: "binary"
+	    -dr &lt;dir&gt;   alternate root file directory, current: "root"
+	    -dx &lt;dir&gt;   alternate executables directory, current: "dbbin"
+	    -ld &lt;file&gt;  alternate database logfile, current: "logs/db.log"
+	    -lg &lt;file&gt;  alternate driver (genesis) logfile, current: =
+"logs/driver.log"
+	    -lp &lt;file&gt;  alternate runtime pid logfile, current: =
+"logs/genesis.run"
+	    -s &lt;size&gt;   Cache size, given as WIDTHxDEPTH, current: 61x10
+	    -n &lt;name&gt;   specify the hostname (rather than looking it up)
+	    -u &lt;user&gt;   if running as root, setuid to this user.  This only =
+works
+	                in unix.  Genesis must first be run as root.
+	    -g &lt;group&gt;  if running as root, setgid to this group.  This only =
+works
+	                in unix.  Genesis must first be run as root.
+	    -p &lt;port&gt;   prebind port, can exist multiple times.  Port must be
+	    		    formatted as: [ADDR]:PORT. UDP ports are specified with
+	                negative numbers. Address is any, if unspecified, or =
+must
+	                be an IP address.  All below are valid:
+
+	                    206.81.134.103:80
+	                    :-20
+	                    :23
+------=_NextPart_000_0008_01BFE45D.94F15A80--
+
+</PRE>

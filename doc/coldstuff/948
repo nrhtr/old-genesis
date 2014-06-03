@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [948] in "Coldmud discussion meeting"</TITLE>
+<H1>[948] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?948"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="946"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="947"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="947"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="949"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Re: regexps</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 25 11:34:24 1996
+)</H3>
+<PRE>
+Date: Mon, 25 Mar 1996 10:20:27 -0600 (CST)
+From: Stephen Smoogen &lt;smooge@duracef.shout.net&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199603251535.QAA19382@regoc.srce.hr&gt;
+
+On Mon, 25 Mar 1996, Miroslav Silovic wrote:
+
+&gt; &gt; 
+&gt; &gt; 
+&gt; &gt; As I recall, one of the big problems Greg faced when choosing how to
+&gt; &gt; implement regexps was to find a way to easily implement MOO-style
+&gt; &gt; 'incomplete command' expressions.  In MOO, you canhave a verb
+&gt; &gt; 'foob*ar' that will match foob, fooba and foobar.  How does one
+&gt; &gt; construct this with a perl regexp?  hrmm... 'foob|fooba|foobar' 
+
+I think fooba?r? which would match foob fooba foobar (also foobr)
+
+&gt; We have templates for those. There is no easy way to simulate MOO
+&gt; commands with any standard flavour of regexps.
+
+Aint that the truth :)
+
+------------------------------------------------------------------------------
+Stephen John Smoogen 	
+Recovering Sysadmin (well ok... I still sysadmin... I cant stop)..
+217-351-8093
+
+</PRE>

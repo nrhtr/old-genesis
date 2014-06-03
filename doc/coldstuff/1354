@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1354] in "Coldmud discussion meeting"</TITLE>
+<H1>[1354] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1354"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1347"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1353"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1353"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1355"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] FIX: $english_lib:indef_article(), ColdCore 3.0a9.02</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 29 17:08:38 1997
+)</H3>
+<PRE>
+Date: Fri, 29 Aug 1997 14:01:48 -0700 (PDT)
+From: Brian Buchanan &lt;brian@wasteland.calbbs.com&gt;
+To: "Luther, Clay" &lt;clay@selsius.com&gt;
+cc: "ColdStuff Mailing List (E-mail)" &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;D17232971415D11196C700600819851547E1@raphaelo.paradise.selsius.com&gt;
+
+&gt; Fix:
+&gt; 
+&gt; Since we only care about examining the first word in a multiple word
+&gt; name for "an" exceptions, the fix is to split off the first word of the
+&gt; argument passed to the exception routines.  This coercion occurs within
+&gt; both routines rather than in the calling method, indef_article(), on the
+&gt; off chance that some other method might also want to call these methods
+&gt; someday.
+
+Easier and cleaner fix, which I just implemented:  Prepend the
+vowel_exceptions and nonvowel_exceptions regexps with a "^" to make them
+match only against the beginning of the string. 
+
+Brian
+
+
+</PRE>

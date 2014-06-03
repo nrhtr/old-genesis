@@ -1,0 +1,73 @@
+<HEAD><TITLE>discuss@charon: [1639] in "Coldmud discussion meeting"</TITLE>
+<H1>[1639] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1639"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1626"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1636"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1638"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1640"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1640"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1640"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Genesis 1.1.9 - STABLE</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 10 04:24:30 2001
+)</H3>
+<PRE>
+Message-ID: &lt;3A5C1753.EDE200E1@geocities.com&gt;
+Date: Wed, 10 Jan 2001 02:03:31 -0600
+From: Allen Noe &lt;psyclone42@geocities.com&gt;
+MIME-Version: 1.0
+To: coldstuff@cold.org
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Reply-To: coldstuff@cold.org
+
+Bruce wrote:
+&gt; 
+&gt; Allen Noe wrote:
+
+&lt;big snip&gt;
+
+&gt; &gt; I can always create a separate function to do what I
+&gt; &gt; have stack(1) do if it ends up conflicting -- that
+&gt; &gt; convention is just to save a function and be slightly
+&gt; &gt; portable: (| stack(1) |) || stack() should always compile
+&gt; &gt; and work.
+&gt; 
+&gt; Well, I could make stack() take an optional second argument that
+&gt; would control whether or not line numbers were calculated:
+&gt; 
+&gt; stack() -- current task, generate line numbers
+&gt; stack(828)  -- task 828, generate line numbers
+&gt; stack(828, 0) -- task 828, don't genererate line numbers
+&gt; stack(task_id(), 0) -- current task, don't generate line
+&gt;                        numbers
+&gt; 
+&gt; I could do that if it were seen as important enough.
+
+Sounds good. If you find you don't have time, I could tack the second arg on the
+stack(TID) code -- it looks like I'd need to make an INIT_0_TO_2_ARGS, but that
+looks relatively simple.
+
+&gt; Are there other outstanding patches or have you created new ones
+&gt; since this original post?  Also, I -know- that some of the work
+&gt; that I'm aiming to get into this next release will break Win32 as
+&gt; it brings in the use of Posix threads.
+
+No new patches, but there's a little module I wrote -- nothing really widely
+useful, and the copyright isn't clear on it. If anybody is interested, I could
+try to clarify the copyright enough to let it be put in the main source. It has
+natives that do the following:
+
+1. The equivalent of strlen for a certain kind of buffer: basically a plain
+string which may or may not contain VT100 color codes (ESC[n;n;nm).
+2. The equivalent of subrange for the same sort of buffer.
+3. Delete certain strings from a list and merge certain remaining other strings.
+
+As for pthreads, I believe they can be .. er .. "simulated" using Win32 API
+calls, but would it be too much to ask to surround the bits that need pthreads
+with ifdefs so they could be compiled out? It would improve portability greatly,
+not just to Win32.
+</PRE>

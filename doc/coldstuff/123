@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [123] in "Coldmud discussion meeting"</TITLE>
+<H1>[123] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?123"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="117"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="122"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="122"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="124"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="124"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="124"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: getting it to work..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 13 17:08:25 1993
+)</H3>
+<PRE>
+To: Gregory Blake &lt;gblake@mis.nu.edu&gt;
+Cc: seth@alchemy.TN.Cornell.EDU (Seth Cohn), coldstuff@MIT.EDU
+In-Reply-To: Your message of Mon, 13 Dec 93 13:24:32 -0800.
+             &lt;9312132124.AA05255@mis.nu.edu&gt; 
+Date: Mon, 13 Dec 93 16:59:58 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+Just to make things clear, the .info documentation the same as the
+postscript documentation, just in a different form.
+
+Regarding pad(): I think that's too special-purpose.  Use
+
+	pad(s, max(n, strlen(s))
+
+if you need to.
+
+Regarding "%this" as a verb--note that when the actual
+match_template() is done, "%this" will get converted to "*", and match
+anything.  It will then, in all likelihood, note that what you typed
+is not an object in your environment, and spew an error.  This is not
+really optimal.
+
+Xibo: There's no reason why you can't do a Tinymud-like interface in
+Coldmud; I even have a kludge in match_template() to do equal-sign
+parsing.  The verb matching mechanism in Cold World may be a pain,
+though.
+
+--GBH
+
+</PRE>

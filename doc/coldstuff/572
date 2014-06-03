@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [572] in "Coldmud discussion meeting"</TITLE>
+<H1>[572] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?572"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="565"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="571"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="571"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="573"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="576"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Assignment Operator.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov  9 16:08:08 1994
+)</H3>
+<PRE>
+Date: Wed, 9 Nov 1994 16:00:22 -0500 (EST)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: rayn@crossaccess.com
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9411090204.AA21467@q.crossaccess.com&gt;
+
+
+
+On Tue, 8 Nov 1994 rayn@crossaccess.com wrote:
+
+&gt; If (when) assignment in expression becomes an issue again, I'd give
+&gt; this whole problem more weight, as the only time I've ever seen x = 1
+&gt; cause trouble is when its in an if in C code, and its not readily
+&gt; apparent that its an error. Even then, its a matter of experience. One
+&gt; must make these mistakes, and later laugh about it. (Gee, the server
+&gt; crashed cus i set reallyimportantparameter = 0, instead of testing its
+&gt; value! -- Gee you shouldnt be setting parameters like that, its bad OO ;)
+
+Yes.  The is the only reason I personally support := is that I support
+assignment as an expression.  However, I'd much rather have .= or '= for
+assignment--much MUCH easier on the pinkies.
+
+What I'd like to see is:
+
+  =  as an assignment statement, as it is now.
+  .= as an assignment expression.
+  == as a comparison expression.
+
+--
+James Deikun (James &amp; splat@JHM and BlueMOOn)
+</PRE>

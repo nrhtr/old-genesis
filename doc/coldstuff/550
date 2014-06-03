@@ -1,0 +1,160 @@
+<HEAD><TITLE>discuss@charon: [550] in "Coldmud discussion meeting"</TITLE>
+<H1>[550] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?550"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="544"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="549"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="549"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="551"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="551"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="551"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ToDo, or not ToDo.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 23:34:35 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Sun, 06 Nov 94 21:31:45 -0700
+
+(sigh, I need to get a new mailreader, this one doesn't always close file
+descriptors and segfaults often--loosing any messages in-progress, so I
+apologize if this is a duplicate copy).
+
+&lt; Brandon, this is entirely bullshit.  Colin is expressing a valid concern 
+&lt; that everyone here has, mainly that the server will get loaded down with 
+&lt; useless and idiotic changes.
+
+Yes, and that is a valid point, however he was also taking the POV that any
+change he doesn't agree with is considered useless and idiotic--a view I
+personally find intollerable considering the group effort which must occur
+for coldmud to do anything but flounder and die.
+
+&lt; It seems to me that you're just trying to create a flamewar or something.
+
+No, I am just weary of this additude, it is conductive of an environment
+which destroys itself.
+
+&lt; 0.10 is really a fucked up version.  It has all the substring stuff which 
+&lt; was really somewhat yicky.
+
+_filetree_, what I did was slap the 0.12 src/ directory into the 0.10
+setup and go from there.
+
+&lt; (what great version names we're getting now)
+
+(tangent discussion): I would like to see coldmud move into 1.0, just so we
+don't have such (odd?) version numbers :)  Anybody want to pick a target
+state for the driver to be in to call it 1.0?  I.e. it will have x
+capabilities and x bugs should be fixed, etc...
+
+&lt; then please tell me what they are so that I can fix them.
+
+(sigh)
+
+This is my whole point here.  There _HAS_ to be some ground rules for
+development to proceed without mishap.  Like it or not ColdMUD development
+became a group project when Greg stepped out.  To explain myself in
+relation to the above: why should I send the problems to you specifically, 
+or Riche, or even fix them myself?  Who is working on what?
+
+(read further for a suggestion on what to do)
+
+&lt; I haven't yet decided whether or not I want this change, but I know that 
+&lt; I will certainly listen to all the arguments for/against it before making 
+&lt; my decision.
+
+Which is all I was asking in my post.  Colin seems to have already made his
+decision based on some divine intervention (at least that is all I can
+assume because he doesn't explain it.  yes, I'm getting 'upset' about it).
+
+&lt; homer.ncm.com is where the latest version of 0.12 is available.  Its 
+&lt; called 0.12 because the previous version was just a beta of it and really 
+&lt; was not intended for general release.
+
+Has this been changed in the past ~1-2 weeks?  I based my fixes and Riche's
+patch he sent me for 0.12-1  off it...
+
+&lt; Heh. Mature.
+
+Annoyed is more like it (yes, I know I'm probably on both ends).
+
+[snip]
+
+Ok, the situation as I see it:
+
+  Lots of talented and energetic hackers, each eager to to _SOMETHING_ with
+  the driver, each with their own vision of how it should be done, nobody
+  doing anything because they either think xxx is working on it and they
+  will wait until xxx has had his turn, or they would work on it but they
+  don't know how yyyy will handle their changes, or they don't know what
+  has been fixed or should be fixed etc, etc, etc.
+
+My suggestion follows.  This is what I have found works best in this type
+of situation (that being where you have a central group of people willing
+to work, but where nobody wishes to give up 'admin' rights to anybody else
+for the final say).  It may seem like a lot of 'rules', and those who are
+inherently rebellious by nature (myself included) may feel adverse to this
+type of structure, but it works.
+
+  A: Create a global fix list.  The fix list would encompass three fields:
+
+    Work in Progress:
+
+       Work in progress would cover accepted changes to the driver
+       which a person has spoken for and is working on.
+
+    Todo list:
+
+       This would be a list of items which have to be fixed/finished
+       but which nobody has actually claimed development rights for.
+
+    Discussion list:
+
+       Items which are still up for discussion, and will be up for discussion
+       until there is an overall decision to remove them from this list or
+       add them to the Todo list.  No work should be under progress with
+       any item on this list.
+
+  B: Anybody wishing to contribute to driver development may claim an
+     item from the Todo list.  Out of courtesy, if you claim an item and
+     are unable to finish it, or simply decide not to, let others know.
+
+     If you wish to claim an item simply post to this list requesting
+     to take over the job.  If anybody is working on it already (and had
+     just not mentioned it), they can speak up, otherwise have at it.
+
+  C: When finished release a patch (and a tarred source tree, if you wish).
+     Patches are simple to create (use diff -rc oldsrc newsrc &gt; patchfile--
+     don't use the -w flag).  Make sure your patch updates documentation
+     (just diff the docs directory).  Create a list of what is included
+     in the patch and post it to this list. ) You can stuff anything
+     relating to coldmud in ftp://sticky.usu.edu/pub/brandon/incoming,
+     just tell me it is there.)
+
+All decisions are made as a group, you can generally guage a group concensus
+on an item after ~3 day's reply to it.  If you feel something should be on
+any of the lists, start it at the discussion, and try to convince the others
+why it should be a change WITHOUT any divine intervention reasons (i.e. this
+change should/shouldn't happen because I know it should/shouldn't and you are
+all infidels if you disagree with me).
+
+The fix list can be maintained by whomever wishes, it is not much work.  Being
+a group effort the person maintaining the list should make no judgemental
+decisions, if somebody wishes something to be on the discussion list, they
+add it.  If somebody wishes something to be moved onto the todo list, they
+post here, depending upon the group concensus it may move or not.  If somebody
+claims a fix they adjust the list accordingly.
+
+This system requires a bit of cooperation and mature attitudes.  If you do
+not agree with somebody/something please DONT post snide comments about it,
+come up with an intelligent argument on why you feel the way you do (yes,
+I am guilty as anybody else in respect to this), and you will find people
+will carry the discussion on from that point--as to where snide comments
+just piss off everybody.
+
+-Brandon Gillespie (Lynx)-
+
+</PRE>

@@ -1,0 +1,99 @@
+<HEAD><TITLE>discuss@charon: [1171] in "Coldmud discussion meeting"</TITLE>
+<H1>[1171] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1171"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1170"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1172"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1174"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1174"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Performance notes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec  4 06:35:36 1996
+)</H3>
+<PRE>
+Date: Wed, 4 Dec 1996 12:27:21 +0100
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+
+
+I thought to send some notes on the driver performance here. At least I
+hope this will help you write more efficient code.
+
+1) @ operator
+
+	foo = [@foo, bar]
+
+copies foo on the stack, appends bar, then copies the whole think into
+a new list. On the other hand,
+
+	foo += [bar]
+
+will copy the list at most once (I need to look into the driver, I *hope*
+it will not copy even once in most cases. If it does, it will be fixed).
+
+Same way, foo = [@foo, @bar] should be replaced with foo += bar. 
+I thought of only 2-3 rare cases where @ does make sense.
+
+2) functions and native methods
+
+	foo = foo.replace(5,bar)
+
+actually overwrites foo unless something else references the contents
+of foo. Similarily,
+
+	dict = dict.add(key, val)
+
+overwrites the dict if nothing else is using it. However,
+
+	dict = dict.add(key, val).add(key, val)
+
+will always copy the dict. The reason for this is that if a native
+call or function call is followed by assignment, some natives will
+overwrite the variable as soon as they're sure that there will be
+no throw from the function. This way, one of the references (from
+the argument stack and the variable) is cleared. The new function,
+anticipate_assignment(), implements this in driver. But be careful
+when using it, because if your method throws, a_a will cause the
+assigned variable to be zeroed (it's allright if you expect it to
+happen, though). In the last case, the first .add is followed by .add,
+not assignment, so the driver doesn't know that everything will go
+okay. Therefore, it much leave both refs, and dict gets copied.
+
+3) natives vs functions
+
+Every native method call has to do full method lookup. It takes
+about 3x longer to execute a native than a function. So, be
+careful with them in tight loops.
+
+4) .eval()
+
+Some admins might be tempted to abuse $root.eval. Note that it will
+totally kill the server performance. First, compiler is not fast.
+Second, method lookups are complex (because of MI), and each
+.eval modifies the class hierarchy (since it adds and dels a method).
+Method lookups are cached for speed, and the cache has very good
+hit rate. Unfortunately, each class modification negates the cache,
+so the method lookups after each modification take ages to execute.
+
+5) cache configuration
+
+Simply use depth 20-30 (that's the good range for it), and width so
+that it can hold all the objects you might need together. Depth is
+the parameter that affects performance, 20-30 is a good choice (IMO).
+
+
+Hmm, have I forgotten anything? :) I might send more posts like these
+in the future.
+
+
+	Miro
+
+
+
+
+
+</PRE>

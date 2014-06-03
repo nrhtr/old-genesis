@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [242] in "Coldmud discussion meeting"</TITLE>
+<H1>[242] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?242"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="241"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="241"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="241"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="243"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="253"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="254"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Connection()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 17 18:45:14 1994
+)</H3>
+<PRE>
+To: Colin McCormack &lt;colinm@extro.ucc.su.OZ.AU&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Wed, 18 May 94 06:35:47 +1000.
+             &lt;199405172035.GAA12040@extro.ucc.su.OZ.AU&gt; 
+Date: Tue, 17 May 94 18:37:39 EDT
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; In defense of connection(), mooted primitive returning current
+&gt; connection:
+
+&gt; To follow the encapsulation argument, wouldn't have to conclude that
+&gt; that in order to address stdio in C, one should pass in their value,
+&gt; or a reference to some package containing them not merely where ever
+&gt; they were used, but whenever one wished to interface with a
+&gt; subsystem that might use them?
+
+This is very vague, and I can't tell exactly what you mean here.  If
+you mean that this argument implies that subsystems shouldn't make use
+of stdout directly, then sure, I'll agree with that: it reduces my
+flexibility to be unable to tell the subsystem where that output goes.
+
+Note that Coldmud does not prohibit access to global data.  If you
+want connection(), simply have the connection object tell $sys when
+it's processing a line, and have a $sys.connection().  However,
+routines which use $sys.connection() rather than accepting an argument
+(or using sender()) will be less flexible.  (You might argue that it's
+acceptable to use $sys.connection() as a default, which can be
+overridden, in which case I might agree.)
+
+--GBH
+
+</PRE>

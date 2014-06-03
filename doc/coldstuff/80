@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [80] in "Coldmud discussion meeting"</TITLE>
+<H1>[80] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?80"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="79"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="81"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="84"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="84"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>$user/$player/$person/etc</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 29 19:05:16 1993
+)</H3>
+<PRE>
+Date: Mon, 29 Nov 1993 16:49:55 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Hey greg, I have a question, howcome after everybody convinced me to change
+$user to $person in this heirarchy, you made the core as $user? :)
+
+core user structure:
+
+	$user
+	  |
+	$builder
+	  |
+	$programmer
+
+Cold Dark user structure:
+
+	$person (was $user)
+	  |
+	$player (may be $character)
+	  |
+	$builder
+	  |
+	$storymaster (not yet there)
+	  |
+	$programmer
+
+in the Cold Dark all the basic players will be spawned off $player,
+$storymaster is not exactly a game master, but basically is (following my idea
+for completely integrated Interactive Cyber Fiction (unlike any other M**
+before :):)
+
+Anyhow, i was primarily wondering why you used $user, after you convinced me to
+change $user to something else... :)
+
+-Lynx/Brandon/Me.
+</PRE>

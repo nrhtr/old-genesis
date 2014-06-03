@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [342] in "Coldmud discussion meeting"</TITLE>
+<H1>[342] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?342"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="341"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="343"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Floating Point support</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jun  3 12:53:08 1994
+)</H3>
+<PRE>
+From: rti@mcs.com (Crispin Bivans)
+To: coldstuff@MIT.EDU
+Date: Fri, 3 Jun 1994 11:47:29 -0500 (CDT)
+
+I've heard that floating point numbers currently don't exist in Cold and would
+like to make a request for that to be added. The reasons for this request are:
+
+	1. You could then more easily code a realistic Space Simulation or
+	   other types of RL simulations in the wonderful OOP enviroment of
+	   Coldmud.
+
+	2. It would bring Cold's functionality up one big notch, making the
+	   math support fairly complete, attracting more scientific/educational
+	   orientated coders and developers.
+
+	3. It seems to myself to be silly that Cold despite how *advanced* it is
+	   would be unable to *do* something that primitive MUSE's and MUSH's
+	   easily do.
+
+	4. It would be yet another reason why Cold is/should be better than
+	   even MOO's(which also don't have floating points as far as I know).
+
+	5. If it were programmed *now* instead of later after the Cold code is
+	   fully developed it would be an easier(relatively speaking) change.
+	   I've heard that MOO's are *stuck* with no floating point support
+	   because it would too much of a major change for them with their
+	   'set in stone' server code.
+
+Comments?
+
+
++=============================================================================+
+|Carrie A. Gram                     |              Email: rti@genesis.mcs.com |
+|Programmer: C/SQL/68k ML/Muse/Moo  |                  or rti@mcs.com         |
+|Space Simulations and Roleplaying  |        PGP Pub Key: finger rti@mcs.com  |
++=============================================================================+
+</PRE>

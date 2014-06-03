@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [536] in "Coldmud discussion meeting"</TITLE>
+<H1>[536] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?536"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="535"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="535"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="537"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="539"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 18:35:26 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Sat, 05 Nov 94 14:16:42 -0700
+
+&lt; This basically allows an object to listen to more than one port, 
+
+My main question is why do you want to?  You would be adding another layer
+of complexity no obvious gain, where the gain in keeping it simple is it
+IS simple.  So you can only have 1 connection / object.  That isn't a big
+deal because objects are cheap.
+
+&lt; The only problem with this being you'd have a screw case that'd require
+&lt; a significantly different command line to start even just the server
+&lt; part.
+
+Would anybody ever actually want to add such a functionality to the server?
+
+&lt; Like I said, it would make maintenance very awkward, it would destroy the
+&lt; model of the DB as a more-or-less self-contained system, and it could
+&lt; easily be implemented in-DB with protection for compile() and the like.
+&lt; Private/local is a good idea.  This is not.
+
+_how_ would it destroy the model of the DB?  If you look at it as something
+created and used online I can somewhat see this view, but a db is not only
+created online.  There is a lot more to a db than just online editing, that
+is why Greg had enough foresight to add in additional functionality to
+the db format (such as eval and the ability to comment virtually anywhere
+you want).  By 'locking' a method what you are saying is 'upon moving
+into an online state this method should never be changed until the server
+moves out of said online state'.  What I see as a security mechanism you
+see as some sort of anti-christ to the underlying theory of ColdMUD. Please
+EXPLAIN why this is.
+
+-Brandon (Lynx)-
+</PRE>

@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [337] in "Coldmud discussion meeting"</TITLE>
+<H1>[337] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?337"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="327"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="327"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="336"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="338"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="338"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="338"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: run_script() (odd random thoughts after lots of hour of sleep loss)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 28 23:15:20 1994
+)</H3>
+<PRE>
+Date: Wed, 25 May 1994 10:19:43 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;01HCQUH57EMQBWDBBF@cc.usu.edu&gt; (BRANDON@cc.usu.edu)
+
+
+&gt; You could technically create a method to allow admins to write to
+&gt; the file system by having a series of scripts called where they have
+&gt; 1 line send through the argument line, which is then concatenated
+&gt; onto a file (or whatever).
+
+&gt; Just thought I'd let it be known that if somebody was desperate
+&gt; enough the loophole is actually there to write to the system, it
+&gt; just takes an incredibly complex process.
+
+Can you write a script from cold? or does it (as i hope) need to be
+written outside and then installed in the scripts directory (which
+should be the only directory you can run a script from)
+
+Is your series of scripts what allows writing to the file system, or
+is it the server? (I could probably write a script that when invoked,
+connected to the mud as a player, listened to everything said, and
+wrote it to a file, or whatever you want, so I dont see why your
+limited to one line, bit I dont fully understand how scripts work with
+Cold.)
+
+
+
+</PRE>

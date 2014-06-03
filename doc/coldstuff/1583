@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [1583] in "Coldmud discussion meeting"</TITLE>
+<H1>[1583] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1583"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1581"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1582"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1582"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1584"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1585"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1588"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: A couple simple questions (hopefully)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 30 01:14:48 2000
+)</H3>
+<PRE>
+From: "Steven J. Owens" &lt;puff@netcom.com&gt;
+To: coldstuff@cold.org
+Date: Mon, 29 May 2000 22:03:31 -0700 (PDT)
+In-Reply-To: &lt;392EF982.A3390AC3@cubik.org&gt; from "Bruce" at May 26, 2000 03:24:02 PM
+Reply-To: coldstuff@cold.org
+
+
+Andy Croft asks:
+&gt; &gt; To clarify, I'll have a $thing I've whipped up created every time a group
+&gt; &gt; of players enter combat that acts as a "referee". At the end of combat, the
+&gt; &gt; referee object is destroyed. Now, after a year of 10 to twenty players
+&gt; &gt; duking it out will Cold be able to handle it? Bear in mind I'm still new to
+&gt; &gt; a powerful OOP environment like Cold. Please save the diesel fuel and
+&gt; &gt; matches, I'm painfully aware of my incompetence with Cold. &lt;GRIN&gt;
+
+Bruce writes: 
+&gt; Why not just create them as needed and when done with the match, return
+&gt; them to a pool of un-managed referee objects?  That way, if you only
+&gt; ever have 10 matches at once, you only really need to create 10 refereee
+&gt; objects, rather than an endless cycle of create+destroy.
+
+     Just out of curiosity, what's wrong with an endless
+create/destroy cycle?  
+
+     I'm mostly a spectator on the cold list, but this general topic
+gets discussed a lot in Java circles, because object instantiation is
+so expensive in Java.  The general tone, though, is that creating and
+destroying would be a more elegant design, if not for the limitations
+of the language environment.
+
+     So is your preference environment motivated or design motivated,
+and in either case, could you shed a little more light on the "why" of
+the topic?
+ 
+Steven J. Owens
+puff@netcom.com
+
+</PRE>

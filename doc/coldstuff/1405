@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [1405] in "Coldmud discussion meeting"</TITLE>
+<H1>[1405] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1405"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1404"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1406"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] new VEIL specs</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Feb 12 11:02:20 1998
+)</H3>
+<PRE>
+Date: Thu, 12 Feb 1998 08:57:50 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: veil@cold.org, coldstuff@cold.org
+
+I have straightened and clarified the specs a little more, as well as added
+a minimum subset required for base VEIL Client Interaction support (basically,
+an I/O channel but not much more).  Feel free to read the newer specs and
+give me feedback.
+
+    http://www.cold.org/VEIL/
+
+-Brandon Gillespie
+</PRE>

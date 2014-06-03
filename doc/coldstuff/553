@@ -1,0 +1,143 @@
+<HEAD><TITLE>discuss@charon: [553] in "Coldmud discussion meeting"</TITLE>
+<H1>[553] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?553"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="552"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="554"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="561"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="561"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ToDo What Thou Wilt</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov  7 09:57:41 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Mon, 7 Nov 1994 19:53:18 -0500 (EST)
+Cc: root@colinm.ozemail.com.au ()
+From: colinm@colinm.ozemail.com.au (Colin McCormack)
+Reply-To: colinm@colinm.ozemail.com.au
+
+Let's situate Brandon in this discourse:
+
+Brandon:
+&gt; Speaking from the experience of administrating the development of NetrekII
+&gt; since it's infancy ...
+
+Brandon:
+&gt; Colin seems to have already made his decision based on some divine
+&gt; intervention (at least that is all I can assume because he doesn't
+&gt; explain it.  yes, I'm getting 'upset' about it).
+
+I get that Brandon's pretty confident I've made a decision, and
+that it was the wrong decision, in regard to ":=" and the other
+confectionary.
+
+The further implication I draw is that Brandon, as an administrator, 
+is upset because I haven't justified my preferences to him.
+
+Pick the most likely from this list:
+ (a) I'm not inclined to justify myself to an administrator,
+       therefore am wrong.
+ (b) What that can't be justified to an administrator can't be
+       justified.  [This is a derivative of the tacit ground-rule:
+       "Programming is easy!  Administration is hard."]
+ (c) There is a Santa Claus.
+
+Brandon:
+&gt; This whole attitude which people seem to have in regard to driver 
+&gt; development that "my ideas are right, because I was touched by God
+&gt; and know the truth, anything you come up with is wrong, period, and
+&gt; I don't care what your reasons are" is sheer stupidity.
+
+We're agreed that it's sheer stupidity to consider ideas without
+understanding the reasoning behind them.
+Brandon, for example, has leapt to the perhaps unjustified position that
+my preferences are a result of divine revelation.
+
+If only I had filled in the appropriate ToDo form, and waited for the
+mandatory 3 day consensus period to pass, as ratification.
+
+[You know, I almost feel as if I suggested (gently) that people wanting
+changes be asked to nominate what problem they think they're fixing to 
+avoid just this kind of stupidity.  Perhaps I should have written the
+email as `7 steps to Software Development, for Administrators',
+instead of a series of observations and suggestions to presumed 
+competents.]
+
+Brandon:
+&gt; There _HAS_ [sic] to be some ground rules for development to proceed 
+&gt; without mishap.
+
+0.12.0 is a mishap?  Coldmud itself is a mishap?  Perhaps the ground
+rules ought to come from the needs of people aware of the issues,
+not from a well-meaning will-to-administrate.
+
+Brandon:
+&gt;My suggestion follows.  This is what I have found works best in this type
+&gt;of situation (that being where you have a central group of people willing
+&gt;to work, but where nobody wishes to give up 'admin' rights to anybody else
+&gt;for the final say).  It may seem like a lot of 'rules', and those who are
+&gt;inherently rebellious by nature (myself included) may feel adverse to this
+&gt;type of structure, but it works.
+
+Well, here it is, Brandon.  Administration is the software analog of
+friction:  effort applied at right angle to the direction of travel.
+
+I, personally, trust the people who are in a position to make a decision
+to have the final say as to what they put in their own copies of the server.
+I see no overwhelming argument that that final say should be vested in 
+a committee, no matter how strong that committee's consensus, nor how long
+they've mulled the decision over.
+
+Jordan:
+&gt;&gt; Brandon, this is entirely bullshit.  Colin is expressing a valid concern 
+&gt;&gt; that everyone here has, mainly that the server will get loaded down with 
+&gt;&gt; useless and idiotic changes.
+
+Brandon:
+&gt;Yes, and that is a valid point, however he was also taking the POV that any
+&gt;change he doesn't agree with is considered useless and idiotic--a view I
+&gt;personally find intollerable considering the group effort which must occur
+&gt;for coldmud to do anything but flounder and die.
+
+[Later...]
+
+Brandon:
+&gt;All decisions are made as a group, you can generally guage a group concensus
+&gt;on an item after ~3 day's reply to it.  If you feel something should be on
+&gt;any of the lists, start it at the discussion, and try to convince the others
+&gt;why it should be a change WITHOUT any divine intervention reasons (i.e. this
+&gt;change should/shouldn't happen because I know it should/shouldn't and you are
+&gt;all infidels if you disagree with me).
+
+Hmmm, and the qualification for being part of this group decision-making
+process is mastery of the arcane art of composing and sending email, right?
+
+Well... I don't know what I was worried about!  If a majority of people 
+capable of sending email agree that something's good, it must be good:
+I was worried that anybody could insert an idiotic concept by appealing
+to `ease of use' or `reduced confusion for novice programmers'
+or something bogus... but no way would that get past a gaggle of skilled
+email-users.
+
+I recommend extra credit for the ability to compose email and chew gum at 
+the same time... hell, it works for excellence of decision making in news.
+
+Jordan:
+&gt;&gt; It seems to me that you're just trying to create a flamewar or something.
+
+Brandon:
+&gt;No, I am just weary of this additude, it is conductive of an environment
+&gt;which destroys itself.
+
+Heh, why are these disputes so rabid?  Because the stakes are so small.
+
+Colin.
+
+Do what thou Wilt, shall be the whole of the Law.
+Love is the Law, Love under Will.
+</PRE>

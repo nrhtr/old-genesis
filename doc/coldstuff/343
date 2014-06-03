@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [343] in "Coldmud discussion meeting"</TITLE>
+<H1>[343] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?343"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="342"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="344"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="344"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="349"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>re: floating point</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jun  3 15:48:26 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Fri, 3 Jun 1994 12:41:58 -0700 (PDT)
+
+While server-based floating point support would be far faster, it would not
+ be exceedingly difficult to code floating point in-db. This seems to me
+ to be a nicer solution from a server development perspective. Besides,
+ I doubt very much that ColdMUD would be fast enough to be useful as a
+ simulation language. I think you'd be better off writing your simulation
+ in C or C++ and using someone's libraries.
+
+That's my first reaction, anyway.
+
+I have no objection to adding floating point numbers as yet another type.
+
+Crag / Robert de Forest
+-- 
+"Mr. Tater, I think I have a punishment for you that is fair, just, and
+ clever. Or maybe just fairly clever."
+
+    -- King Yakko of Anvilania.
+</PRE>

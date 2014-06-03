@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [359] in "Coldmud discussion meeting"</TITLE>
+<H1>[359] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?359"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="358"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="360"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="360"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="360"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>help code</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jun 24 20:11:41 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: 	Fri, 24 Jun 1994 17:03:02 -0700
+From: "Mike O'Brien" &lt;obrien@antares.aero.org&gt;
+
+	This may be a basic question, BUT: in the Coldmud distribution as
+currently constituted, there are C-- files for a help system that is not
+loaded into the textdump file by the make-world script.  Is this help
+system in condition to be loaded?  I get an error when I tried patching
+the make-world script to load the help files along with everything else.
+
+Mike O'Brien
+</PRE>

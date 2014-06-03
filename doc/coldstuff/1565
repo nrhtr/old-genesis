@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1565] in "Coldmud discussion meeting"</TITLE>
+<H1>[1565] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1565"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1564"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1566"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Bug in .method_bytecode()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Apr  8 02:57:41 2000
+)</H3>
+<PRE>
+Date: Sat, 08 Apr 2000 02:44:08 -0400
+From: Michael Mudge &lt;mmudge1@twcny.rr.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+I went poking around method_bytecode today and was trying to figure out how if()
+statements are stored...  It seems that I found a bug, instead.  It seems that
+method_bytecode does not indicate the end of an if() block:
+
+@program .test1
+if(1) {
+  return 2;
+  return 3;
+}
+return 4;
+.
+@program .test2
+if(1)
+  return 2;
+return 3;
+return 4;
+.
+
+;.method_bytecode('test1) == .method_bytecode('test2)
+=&gt; 1
+
+- Kipp
+PS.  Not subscribed -- please reply to me too.
+</PRE>

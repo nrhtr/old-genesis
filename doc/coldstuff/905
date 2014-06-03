@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [905] in "Coldmud discussion meeting"</TITLE>
+<H1>[905] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?905"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="904"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="904"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="904"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="906"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] ColdCore for 3-1 ??</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jan 19 00:00:09 1996
+)</H3>
+<PRE>
+From: root@thelbane.brisnet.org.au (Dancer)
+To: coldstuff@tombstone.sunrem.com
+Date: Fri, 19 Jan 1996 14:50:50 +1000 (AEST)
+In-Reply-To: &lt;199601190417.UAA08013@asparagus.tenetwork.com&gt; from "Jeff Kesselman" at Jan 18, 96 08:15:13 pm
+Reply-To: coldstuff@tombstone.sunrem.com
+
+&gt; 
+&gt; Hey all:
+&gt; 
+&gt; Having convinced myself that I shoudl fold my own efforts back into 
+&gt; the ColdCore mainstream, I went to set up the latest genesis and 
+&gt; ColdCore.  Imagine my suprise when, according to the web page, I
+&gt; found out that there is no ColdCore available for the latest genesis 
+&gt; yet.
+&gt; 
+&gt; This is especially confusing as ColdDark claims to be running Genesis 
+&gt; 3.0 and CDC 2.0.  Is this due to the text dump bug mentioned earlier? 
+&gt;  If so, would it be worth releasing a tar of the 2.0 binary tree 
+&gt; as a stop gap?  Or should I regress back to Genesis 2-10?
+&gt; 
+&gt; Thanks
+&gt; 
+
+The textdump bugs are pretty trivial in 0.3-x. So trivial that I hadn't
+even noticed them, TBH.
+
+But 0-3.x has got some pretty severe changes from 0.2-x and it's not
+something you should be using unless you're handy with a debugger, and
+know how to find complex memory/disk/database/cache-handling bugs.
+
+Realistically speaking, 0.3-x is not even in beta-test. It's still alpha
+test, and prone to crash at any moment. Mostly old bugs that we are
+tickling in new ways.
+
+D
+
+</PRE>

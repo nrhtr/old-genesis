@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [55] in "Coldmud discussion meeting"</TITLE>
+<H1>[55] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?55"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="50"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="50"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="54"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="56"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="56"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="58"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: rehash: heirarchy</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 19 02:30:50 1993
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: BRANDON@cc.usu.edu (Lynx)
+Date: Thu, 18 Nov 93 23:22:25 PST
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;01H5GVFJ3KCIANJVQ7@cc.usu.edu&gt;; from "Lynx" at Nov 18, 93 5:18 pm
+
+&gt;                \           $described
+&gt;                 \               |
+&gt;                 |           $physical
+&gt;                 |              / \-----$exit
+&gt;                 |         .---'   `---.
+&gt;                 |   $container       $located
+&gt;                 |----.  / \  `-----.   / \
+&gt;                 |   $room  `----+--|--' $thing
+&gt;                                     `---. |
+&gt;                                        $box
+&gt; I beleive there was no problems with this, no?
+
+Well, I do think it might be good to rename $container to something else, just
+so that MOO-oriented newbies don't go around making a bunch of $containers
+thinking they're box-type objects..  I'm also not quite sure why players are
+descendants of $container and $located instead of simply being descended from
+$box, but that's a minor point.
+
+Also, WHAT are you going on about with the $user thing?  As far as I can tell,
+everybody except you has been talking about just renaming $player to $user, not
+reworking the entire heirarchy, renaming everything in sight.  What's wrong
+with the following?
+
+$person
+  $user (used to be $player)
+    $builder
+      (etc.)
+
+-Richelieu
+-- 
+</PRE>

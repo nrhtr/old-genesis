@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [278] in "Coldmud discussion meeting"</TITLE>
+<H1>[278] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?278"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="276"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="277"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="279"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="279"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 02:08:49 1994
+)</H3>
+<PRE>
+From: rti@mcs.com (Crispin Bivans)
+To: BRANDON@cc.usu.edu (the Lyncx)
+Date: Fri, 20 May 1994 01:04:58 -0500 (CDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;01HCJF3PC64IBWC3GQ@cc.usu.edu&gt; from "the Lyncx" at May 19, 94 10:14:13 pm
+
+&gt; A: what do _you_ feel about moving the default port to the 5xxx range?
+&gt;    the 9xxx range?
+
+No real opinion about that other than '9' looks better.
+
+&gt; B: what do you feel about having a few "known" basic ports, such as those
+&gt;    including a fingerd, login, and a few other simple services?
+
+&gt;    would you mind following the scheme:
+
+&gt;       login:     xxx0
+&gt;       portmapper xxx1
+&gt;       fingerd    xxx2
+
+&gt;    etc?  (i.e. login 5550 portmapper 5551 fingerd 5552 etc).
+
+&gt; For simplicity we could define login as whatever x number we use (i.e. login
+&gt; with 5xxx woudl be 5555 or 9xxx would be 9999).
+
+I would really like to see the services implemented as one port as this would
+actually simplify access. A 'services' server would run, allowing services
+to 'register' themselves as available in the db. And connecting programs could
+use supplied db routines to 'announce' what they want from the server. Calling
+programs wouldn't have to do much... The receiving services wouldn't have to do
+much... And once the 'services' server is built right, it would infinitly
+expandable and flexible. The server itself would show whats available to
+calling programs as well(and as well to services that wanted to see whats
+already 'registered' in the db).
+
+&gt; -Brandon-
+
++=============================================================================+
+|Carrie A. Gram                     |              Email: rti@genesis.mcs.com |
+|Programmer: C/SQL/68k ML/Muse/Moo  |                  or rti@mcs.com         |
+|Space Simulations and Roleplaying  |        PGP Pub Key: finger rti@mcs.com  |
++=============================================================================+
+</PRE>

@@ -1,0 +1,74 @@
+<HEAD><TITLE>discuss@charon: [744] in "Coldmud discussion meeting"</TITLE>
+<H1>[744] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?744"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="742"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="743"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="743"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="745"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="746"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="746"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: idea for custom error handling</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 24 17:14:41 1995
+)</H3>
+<PRE>
+From: brandon@clarkston.declab.usu.edu
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Wed, 24 May 95 14:14:41 CDT."
+             &lt;199505241914.OAA24249@serial.io.com&gt; 
+Date: Wed, 24 May 95 15:12:33 -0600
+
+&lt; I had this idea a while ago but I don't remember posting it.
+&lt; 
+&lt; I'd like to add 'global catching' of a sort where the first action taken by
+&lt;  the server when an error is thrown is to suspend the task and call
+&lt;  $sys.handle_error(error, error_str, error_arg, task_id). If the task is
+&lt;  resumed the expression that threw the error would instead return the value
+&lt;  the task was resumed with. A new function 'complete_throw' (help me think
+&lt;  of a better name) would be added to cause the usual action to happen.
+&lt; 
+&lt; The point of all this is to allow a function to be debugged as it's running.
+&lt;  .handle_error could choose to leave the task suspended and tell the
+&lt;  programmer about the suspended task, etc.
+
+The only problem with this, is that it would add a bit of overhead to things
+which would never want it.
+
+Perhaps we could do something along the lines of expected methods.  Let me
+tangent for a moment.  I would like to have constructors and deconstructors
+handled by the driver.  You would then just flag the method (either through
+"destructor;" or "constructor;" as a statement at the beginning, or a method
+which flips bits on methods--I like the last idea best, then we could remove
+disallow_overrides; from compile and just call a function to set that aspect
+of the method).  Constructors would come into play when you can define
+private methods, as a constructor/destructor would be private in the sense
+that it could ONLY be called by the driver (dont even bother perm checking
+it).
+
+Along these same lines, we could create a handle_error method.  If this method
+exists on an object, and a method executing on that object throws an error,
+then your suggested idea above would go into effect (but on the object
+instead of sys).  This would catch any error caused while executing a method
+on the object that .handle_error is _defined_ on.  handle_error would be a
+private method.
+
+&lt; On a separate topic, I'd like to see traceback and callers include arg info.
+&lt;  callers is already an encapsulation breaking function only useful for
+&lt;  debugging and such and the same goes for traceback :). This would allow me
+&lt;  to inspect the args going into a method which caused it to throw.
+
+Yah, I would like to see it too.
+
+&lt; I might make these changes myself, or I might not. I'd like to know what other
+&lt;  people think.
+
+-Brandon Gillespie-
+---
+  the Cold Dark Virtual Environment: http://pippin.ece.usu.edu:1180/
+   "They who dream by day are cognizant of many things which escape
+           those who dream only by night."  - Edgar Allan Poe
+
+</PRE>

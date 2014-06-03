@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [383] in "Coldmud discussion meeting"</TITLE>
+<H1>[383] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?383"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="381"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="382"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="382"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="384"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="384"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="384"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Compiling Cold on BSDI</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jul 21 11:38:02 1994
+)</H3>
+<PRE>
+To: deforest@netcom.com (Robert de Forest)
+Cc: puff@netcom.com, coldstuff@MIT.EDU
+In-Reply-To: Your message of Thu, 21 Jul 94 04:59:44 -0700.
+             &lt;199407211159.EAA04807@netcom10.netcom.com&gt; 
+Date: Thu, 21 Jul 94 11:28:05 EDT
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; In file included from /usr/include/ctype.h:50, from data.c:6:
+&gt; /usr/include/runetype.h:59: syntax error before `rune_t'
+&gt; /usr/include/runetype.h:74: syntax error before `rune_t'
+&gt; /usr/include/runetype.h:77: syntax error before `char'
+&gt; /usr/include/runetype.h:81: syntax error before `rune_t'
+
+Interesting.  Without being able to look at runetype.h, I can't say
+what the problem is with any certainty, but it looks like runetype.h
+is expecting some types to be defined which aren't.
+
+Try adding "#include &lt;sys/types.h&gt;" at the top of data.c and any other
+files which cause you trouble.
+
+&gt; Incidentally, while the README recomends replaceing memcopy calls, I
+&gt; recomend just using bcopy and swapping the from and too args.
+
+This is correct.  You can simply change:
+
+#define MEMMOVE(a, b, l)	memmove(a, b, (l) * sizeof(*(a)))
+
+to
+
+#define MEMMOVE(a, b, l)	bcopy(b, a, (l) * sizeof(*(a)))
+
+and leave the code alone.  The README should be changed to reflect
+this, since it makes compiling under SunOS 4.x much easier.
+
+--GBH
+
+</PRE>

@@ -1,0 +1,70 @@
+<HEAD><TITLE>discuss@charon: [379] in "Coldmud discussion meeting"</TITLE>
+<H1>[379] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?379"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="378"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="380"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Not that anybody cares anymore (Does Colin read this list?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul 12 20:04:46 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Tue, 12 Jul 1994 17:51:33 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Somehow my user object at the cold dark has become corrupted again.  This time
+I am baffled.  My description of what happens is vague because I dont KNOW what
+is happening, I have just been able to trace it down to a general area.  I
+think it is somehow corrupting buffers or something:
+
+   If I '@show me' I get the error:
+
+! =&gt; ~methoderr in #37.show (defined on #1), line 14$root is not a list.
+!    Thrown by interpreter opcode SPLICE_ADD.
+!    ~type: ~methoderr in #37.show (defined on #1), line
+ 14$brandon.method_info (~methoderr in #37.show (defined on #1), line 14$root)
+ line: 27
+!    ~methoderr: ~methoderr in #37.show (defined on #1), line 14$brandon.show
+ (~methoderr in #37.show (defined on #1), line 14$root) line: 14
+!    ~methoderr: ~methoderr in #37.show (defined on #1), line
+ 14$brandon.show_cmd (~methoderr in #37.show (defined on #1), line
+ 14$programmer) line: 7
+!    ~methoderr: ~methoderr in #37.show (defined on #1), line
+ 14$brandon.parse_line (~methoderr in #37.show (defined on #1), line 14$user)
+ line: 9
+
+(as you can see something isn't right, as the above does not look like a normal
+traceback).  From then on many lines are prefixed by a string, which changes
+from time to time (trying to figure out what it is that causes it to change). I
+hacked a .show which simply stepped through the dictionary returned by
+data(object) bringing a .unparsed() version of it.  It worked great and a
+cursory glance showed no immediately horrid parameters, so I expanded it to:
+
+ for m in (data) {
+   for p in (m) {
+     if (type(p) == 'dictionary) {
+     for line in (p) {
+       actor.tell("    " + $string.unparse(line));
+     }
+     } else {
+       actor.tell($string.unparse(p));
+     }
+   }
+ }
+
+the server died with a segmentation fault.
+
+(sigh).
+
+ /\    Brandon Gillespie    &lt;a href="http://www.usu.edu/~brandon/"&gt;me&lt;/a&gt;  /\
+ ()       An Interactive RFC Index:  http://www.usu.edu/~brandon/RFC/      ()
+ \/ "Luke, at that speed do you think you'll be able to pull out in time?" \/
+</PRE>

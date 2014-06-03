@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1001] in "Coldmud discussion meeting"</TITLE>
+<H1>[1001] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1001"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="999"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1000"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1000"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1002"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re:  [COLD] string matching functions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 15 19:40:39 1996
+)</H3>
+<PRE>
+Date: Wed, 15 May 1996 23:36:58 +0200
+From: silovic@srce.hr (Miroslav Silovic)
+To: brandon@tombstone.sunrem.com, coldstuff@cold.org
+
+
+Okay, I'd only like to reply to the 'post 1.0' introduction. I'd *VERY*
+much prefer that incompatible changes are held until we have a workable
+core. I wouldn't like to see core 3.0 which won't work on any existing
+driver.
+
+That said, yes, I'd like to see str.match_regexp ("blah"), but could you
+wait with this till the core is done, and then both change the driver and
+port the core just before the final release, so that we can develop them
+synchronously?
+
+	Jenner
+
+
+</PRE>

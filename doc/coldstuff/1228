@@ -1,0 +1,84 @@
+<HEAD><TITLE>discuss@charon: [1228] in "Coldmud discussion meeting"</TITLE>
+<H1>[1228] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1228"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1227"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1229"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] cancel() bug [PATCH!!!]</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Feb  4 06:27:06 1997
+)</H3>
+<PRE>
+Date: Tue, 4 Feb 1997 12:12:32 +0100 (MET)
+From: Miroslav Silovic &lt;Miroslav.Silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+Okay, this patch contains two things: bugfix for cancel() (and it was
+SIMPLE: somebody just forgot to remove a couple of lines when task_delete
+went macro) and the function I used to debug the VM. Nothing really calls
+this function, but it's good to keep it in the driver, just in case we
+need to debug the task handling again.
+
+Eventually I'll write a backtrace dumper, too; that one will be called
+during driver PANIC. For now, enjoy the patch. :)
+
+======================================================================
+
+*** Genesis-1.0p22/src/execute.c	Tue Feb  4 12:07:16 1997
+--- Genesis-1.0p22-new/src/execute.c	Tue Feb  4 12:07:17 1997
+***************
+*** 163,174 ****
+  
+  /*
+  // ---------------------------------------------------------------
+  */
+  void task_delete(VMState *list, VMState *elem) {
+-     if (list != suspended)
+-         list = list-&gt;next;
+      while (list &amp;&amp; (list-&gt;next != elem))
+          list = list-&gt;next;
+      if (list)
+          list-&gt;next = elem-&gt;next;
+  }
+--- 163,172 ----
+***************
+*** 379,388 ****
+--- 377,407 ----
+  }
+  
+  /*
+  // ---------------------------------------------------------------
+  */
++ 
++ void show_queues(void) {
++     VMState *v;
++ 
++     /* 
++        Nothing calls this function - it's here as a VM debug utility
++     */
++ 
++     printf ("preempted:");
++     for (v=preempted; v; v=v-&gt;next)
++ 	printf ("%x ", v);
++     printf ("\nsuspended:");
++     for (v=suspended; v; v=v-&gt;next)
++ 	printf ("%x ", v);
++     printf ("\nvmstore:");
++     for (v=vmstore; v; v=v-&gt;next)
++ 	printf ("%x ", v);
++     printf ("\n\n");
++     fflush(stdout);
++ }
++ 
+  void task_cancel(Long tid) {
+      VMState * vm = task_lookup(tid),
+              * old_vm;
+  
+      old_vm = vm_current();
+</PRE>

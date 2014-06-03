@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [272] in "Coldmud discussion meeting"</TITLE>
+<H1>[272] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?272"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="271"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="273"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="274"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="274"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>dict_data()?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 17:47:45 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Thu, 19 May 1994 14:40:57 -0700 (PDT)
+
+While this list is so active, what do people think of the idea of having a
+ dict_data() builtin, parallel to the dict_keys builtin? I implemented this
+ on FrozenApples (when it was up) in-db by doing
+
+@program $dict.data
+ arg dict;
+ return $list.slice($dict.to_list(dict),2);
+.
+
+Or at least I think I did. This would turn dicts into a sort of super-list,
+ since you could iterate on dict_data(dict), or whatever.
+
+I don't know how this fits into the ColdMUD philosophy, and I know it's not
+ a big issue, since I could just as easily keep a list for any dict that I
+ wanted to know the data for and make sure the list was consistent at all
+ times. This seems wasteful to me.
+
+In case you think there is no use for this function, I used it in
+ $user_db.users() when converting it to a child of my new $db generic.
+
+Comments?
+Crag / Robert de Forest
+</PRE>

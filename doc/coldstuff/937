@@ -1,0 +1,79 @@
+<HEAD><TITLE>discuss@charon: [937] in "Coldmud discussion meeting"</TITLE>
+<H1>[937] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?937"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="934"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="934"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="936"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="938"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] MUD system -&gt; MUD system conversion...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 15 13:39:53 1996
+)</H3>
+<PRE>
+From: Gregory D Lewis &lt;glewis@maths.adelaide.edu.au&gt;
+To: coldstuff@cold.org
+Date: Sat, 16 Mar 1996 04:33:17 +1030 (CST)
+In-Reply-To: &lt;Pine.BSF.3.91.960314180636.4097A-100000@tombstone.sunrem.com&gt; from "Brandon Gillespie" at Mar 14, 96 06:12:01 pm
+
+&gt; Most MOO's, MUSH's, etc have a generic object system which is relatively
+&gt; similar (i.e. they all have rooms, or some such similar concept for a
+&gt; location).  The following idea is to create 'templates' which objects
+&gt; from any system can be dumped to, and which any other system can read back
+&gt; into their own db format.  The intention is to create a generic high-level
+&gt; specification for Virtual Environment System topology, so that the topology
+&gt; can easilly convert from driver to driver.
+
+It seems to me to be fairly restrictive to only include members of the 
+Tiny* family or derivatives thereof.  The Genesis driver reminds me much more
+of the lpmud drivers than say raw tinymud, or even MUSH.  I may be taking a 
+naive view I guess since I haven't messed with the internals.  But certainly 
+someone has already used one of the lpmud drivers to do a MOO simulation :)
+
+&gt; To reexamine; the purpose of this system is to create a standard set of
+&gt; templates which can be used to abstractly represent the topology of most
+&gt; systems (MOO, MUSH, TinyMUSH, etc).  With this abstraction one could easilly
+&gt; convert from one system to another.  The level of detail/depth that is created
+&gt; would be restricted.  However, this system would enable one to convert
+&gt; the grunt portion of a system's topology easilly.
+&gt; 
+&gt; Along with templates there is also a generic set of 'data' types
+&gt; (dropping back to C for syntax conventions):
+&gt; 
+&gt;     INT (integer)                       125
+&gt;     STR (string, lists of characters)   "string"
+&gt;     LIST                                {item, item, item}
+&gt;     REF                                 $object
+
+All these data types convert to LPC easily.  The possible exception being the
+REF one, but that could easily become the name of an LPC file.
+
+&gt; The following are examples of template definitions:
+[list deleted for brevity]
+
+Again, these could all easily be translated into lpc rather than into db 
+objects from this high level format.  The only slight difference was that
+most Tiny* muds treat an exit as a separate objects, while most LP muds treat
+exits as part of a room.  This isn't a big hurdle though, and certainly one
+could write a Genesis core that treated exits as part of rooms or an LP mudlib
+that treated exits as separate objects.  And certainly the listed format for
+exits could easily be translated into LPC.
+
+Anyway, I don't think you should overlook the possibility of cross fertilisation
+between mud types that have traditionally not been close.  Certainly I've
+had it on my mind to write a package for the Intermud-3 protocol currently
+being used by LP's and some Aber's in ColdC.  I also wonder if ColdC could
+benefit from some LP concepts like the LPC-&gt;C conversions some drivers now
+do to speed up core or mudlib code (a ColdC-&gt;C conversion could convert some
+of the central db "library objects" into modules for compilation into the
+driver possibly).
+ 
+Oh well, my two gold coins, or two pennies worth, depending on what brand I'm
+on :).
+
+							- Greg
+</PRE>

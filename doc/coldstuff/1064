@@ -1,0 +1,122 @@
+<HEAD><TITLE>discuss@charon: [1064] in "Coldmud discussion meeting"</TITLE>
+<H1>[1064] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1064"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1059"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1060"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1063"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1065"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Standard way of converting "a.b.c.d" to 'struct in_addr'</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug 13 11:18:51 1996
+)</H3>
+<PRE>
+Date: Tue, 13 Aug 1996 16:44:46 +0100
+From: Luc Girardin &lt;girardin@hei.unige.ch&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+Cc: coldstuff@cold.org
+Reply-to: girardin@hei.unige.ch
+
+Brandon Gillespie wrote:
+
+&gt; Right now the driver uses inet_ntoa(), which I _thought_ was standard
+&gt; (all of the systems' man pages I checked had it, and preferred it over
+&gt; other functions).  However, Solaris does not have it.  I've been idly
+&gt; working on an alternative, but I do not have enough reference to come up
+&gt; with a solution.  I primarily need more details on what exactly
+&gt; inet_makeaddr() expects, and how to get "a.b.c.d" to the form it expects..
+
+Try the following code, it should do the job and work on every
+platform...
+
+int inet_aton (const char *cp, struct in_addr *addr)
+{
+  unsigned long parts[4];
+  register unsigned long val;
+  register unsigned long part0;
+  register unsigned long part1;
+  register unsigned long part2;
+  register unsigned long part3;
+  int part;
+  char *next;
+
+  part = 0;
+
+  for (;;)
+    {
+      if (!isdigit (*cp)) /* not decimal digit or leading 0, 0x */
+	return 0;
+
+      errno = 0;
+      parts[part++] = strtoul (cp, &amp;next, 0); /* leading 0=octal, 0x=hex
+*/
+      if (errno == ERANGE)
+	return 0;
+      
+      if (*next == '.')
+	{
+	  if (part &gt;= 4)
+	    return 0;
+
+	  cp = next + 1;
+	}
+      else
+	break; /* from for loop */
+    }
+  /* Check for trailing non-whitespace characters */
+
+  if (strlen (next) != strspn (next, " \t\n\v\f\r"))
+    return 0;
+
+  /* Concoct the address according to the number of parts specified. */
+
+  val = 0;
+  part0 = parts[0];
+  part1 = parts[1];
+  part2 = parts[2];
+  part3 = parts[3];
+
+  switch (part)
+    {
+    case 4: /* a.b.c.d -- 8.8.8.8 bits */
+      if (part3 &gt; 0xff || part2 &gt; 0xff)
+	return 0;
+      val = part3;
+      part2 &lt;&lt;= 8;
+      /* FALLTHROUGH */
+    case 3: /* a.b.c -- 8.8.16 bits */
+      if (part2 &gt; 0xffff || part1 &gt; 0xff)
+	return 0;
+      val |= part2;
+      part1 &lt;&lt;= 16;
+      /* FALLTHROUGH */
+    case 2: /* a.b -- 8.24 bits */
+      if (part1 &gt; 0xffffff || part0 &gt; 0xff)
+	return 0;
+      val |= part1;
+      part0 &lt;&lt;= 24;
+      /* FALLTHROUGH */
+    case 1: /* a -- 32 bits */
+      val |= part0;
+    }
+
+  addr-&gt;s_addr = htonl (val);
+  return 1;
+}
+ 
+Cheers
+
+-----BEGIN PBP PUBLIC INFO BLOCK-----
+Luc Girardin    The   Graduate   Institute  of  International   Studies
+                Institut Universitaire de Hautes Etudes Internationales
+                Geneva,  Switzerland,  http://heiwww.unige.ch/girardin/
+
+                        "Sane sicut lux seipsam et tenebras manifestat,
+                                  sic veritas normal sui et falsi est."
+                                 Spinoza, Ethics, Pt II, Prop. 43, 1675
+-----END PBP PUBLIC INFO BLOCK-----
+</PRE>

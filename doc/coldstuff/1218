@@ -1,0 +1,61 @@
+<HEAD><TITLE>discuss@charon: [1218] in "Coldmud discussion meeting"</TITLE>
+<H1>[1218] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1218"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1216"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1217"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1217"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1219"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] WIN32s</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jan 26 15:40:58 1997
+)</H3>
+<PRE>
+Date: Sun, 26 Jan 1997 13:35:16 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: Stephen Smoogen &lt;smooge@shout.net&gt;
+cc: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;, coldstuff@cold.org
+In-Reply-To: &lt;Pine.LNX.3.95.970126135639.9777C-100000@duracef.shout.net&gt;
+
+On Sun, 26 Jan 1997, Stephen Smoogen wrote:
+&gt; On the gdbm port you may have problems due to it having been ported with
+&gt; 16 bit access in mind versus 32 bit access.I ran into something similar 4
+&gt; years ago... and it took forever to track down. I would not be sure that
+&gt; the 2 binary databse outputs will be identical. I am not sure that 2
+&gt; Unixes (Say BSD and Linux) would output the same binary databses on the
+&gt; same machine.
+
+The binary databases will NOT be the same, unless you can guarantee that
+the same ndbm package is used.  Genesis will use ndbm by default, over
+gdbm.  ndbm is (by default) an OS-provided package.  Some OS's use gdbm
+for their ndbm implementation, but this is not a rule.
+
+So yeah, what he said :)
+
+
+&gt; &gt; I attempted to get p22 running on Win95 using the BorlandC 5.01 compiler
+&gt; &gt; and a DOS port of GDBM.  The Coldcc program appears to work and the 
+&gt; &gt; Genesis driver actually loads the data base and begins to start execution.
+&gt; &gt; However I am encountering errors in method sizes read from the database
+&gt; &gt; in the emalloc routine.  I compared the binary output of Linux and Win95
+&gt; &gt; generation of the MinimalCore4.0 and there appear to be differences due
+&gt; &gt; to uninitialized memory(?).  I know very little Unix and much less about
+&gt; &gt; Cold design.  Here's my driver log just to show you how far I've gotten
+&gt; &gt; with it.  I suspect that once I get an exact match on the DB with Linux's
+&gt; &gt; DB most all my problems will be solved.  Any information on the
+&gt; &gt; format of the binary would be very helpful.  Note that I am not using CYGWIN
+&gt; &gt; 17.1 because it crashes quite frequently for me.     
+&gt; &gt; Is there anyone interested in helping with this? 
+
+Good luck :)
+
+The work I've done so far on the Win32 port were actually geared towards
+compiling in the GNU Win32 environment, and/or Visual C++ (I was compiling
+it in VC++ primarily to gather errors and warnings for cleaning).
+
+
+</PRE>

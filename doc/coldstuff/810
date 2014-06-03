@@ -1,0 +1,73 @@
+<HEAD><TITLE>discuss@charon: [810] in "Coldmud discussion meeting"</TITLE>
+<H1>[810] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?810"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="809"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="811"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>(forward) Re: Multithreaded ColdC...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Sep 17 17:02:05 1995
+)</H3>
+<PRE>
+From: brandon@smithfield.declab.usu.edu
+Date: Sun, 17 Sep 1995 14:55:56 -0600
+To: coldstuff@pippin.ece.usu.edu
+
+Sorry for the delay, I was supposed to forward this a while ago...
+
+------- Forwarded Message
+
+From: paul@llama.net (Paul Kautz)
+Subject: Re: Multithreaded ColdC...
+Date: Sun, 10 Sep 1995 08:10:43 -0700 (PDT)
+Content-Type: text
+Content-Length: 1505      
+Status: RO
+
+&gt; Synchronization is the act of a thread gaining absolute control of an
+&gt; object.  Only one thread can be synchronized with an object at any given
+&gt; time.  There are two ways of synchronizing with an object.  First, one
+&gt; can implicitly synchronize the method with an object by adding the
+&gt; synchronized method flag.  Or, the block control 'sync' can be used,
+&gt; which accepts a list of objects and contains a block of code to execute
+&gt; while synchronized to the object(s), such as:
+&gt; 
+&gt; sync (this()) {
+&gt;     while (times) {
+&gt;         .call_synced_method();
+&gt;         times = times - 1;
+&gt;     }
+&gt; }
+
+How would the permissions be set up?  Making it a `system' statement
+would seem to defeat the purpose, and the great thing about cold
+perms is that they're entirely in-db other than that.  Would a particular
+query method be required?
+
+&gt; fork() splits a thread.  When called it splits the thread into two exact
+&gt; frames.  The function fork() has a logical expression value of 0 to the
+&gt; child process, and the value is the forked thread id for the parent
+&gt; thread.
+
+This seems rather silly.  I don't think the original C would have done
+this is they had the keen object-oriented environment we have.  Either
+give fork an argument of a method to look for, or give it a block of
+code to execute.  Having to continue the method with if/else etc is
+awkward and unnecessary, only useful if you want to have your entire
+program as one linear `file'.
+
+Remember our advantages over a unix environment.
+
+Paul Kautz
+
+
+------- End of Forwarded Message
+
+
+</PRE>

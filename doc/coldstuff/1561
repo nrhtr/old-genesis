@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1561] in "Coldmud discussion meeting"</TITLE>
+<H1>[1561] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1561"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1556"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1558"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1560"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1562"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Matching strings</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 20:01:48 2000
+)</H3>
+<PRE>
+Date: Fri, 10 Mar 2000 17:26:12 -0700
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;A0200A8D901CD311A51F0001C86523B135072F@MMSINET1&gt;; from Adam Cormany on Thu, Mar 02, 2000 at 01:05:26PM -0500
+Reply-To: coldstuff@cold.org
+
+
+--bajzpZikUji1w+G9
+Content-Type: text/plain; charset=us-ascii
+
+On Thu, Mar 02, 2000 at 01:05:26PM -0500, Adam Cormany wrote:
+&gt; I've noticed match_begin to match incomplete arguments to a string, but only
+&gt; at the beginning of the string. Example: match_begin("insanity", "ins")
+&gt; would return true.
+&gt; Is there any matching that matches incomplete arguments to a string, but at
+&gt; the end? Something like match_end("insanity", "ity")? Thanks
+
+There are also two other ways:
+
+     stridx("insanity", "ity", -1)
+
+     match_regexp("insanity", "ity$")
+
+-Brandon
+
+--bajzpZikUji1w+G9
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: 2Vq5zvEKAenBdDA3Lv1GGV2begUawbI2
+
+iQA/AwUBOMmSo0v5XoQiMgn6EQJAKgCg5FCoMm+GeSyV265CSfGyMH1AKAkAnAyk
+kUQ7Mn+5sObARJ5KSqYx7N9t
+=AGZ2
+-----END PGP SIGNATURE-----
+
+--bajzpZikUji1w+G9--
+</PRE>

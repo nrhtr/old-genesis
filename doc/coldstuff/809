@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [809] in "Coldmud discussion meeting"</TITLE>
+<H1>[809] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?809"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="808"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="810"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Oh, and...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep 16 20:59:25 1995
+)</H3>
+<PRE>
+Date: Sat, 16 Sep 1995 18:49:55 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@pippin.ece.usu.edu
+
+I forgot the main reason for mailing, when I was originally testing it I
+stumbled across an invalid way of calling it, which caused a segmentation
+violation in the driver.  Unfortunately I had to leave, and for the life
+of me I cannot find the problem again, so keep your eyes out for this
+bug...
+
+-Brandon
+
+(furthermore, how should floats be handled, add a %x.{precision}f flag?)
+</PRE>

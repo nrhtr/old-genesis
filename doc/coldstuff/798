@@ -1,0 +1,59 @@
+<HEAD><TITLE>discuss@charon: [798] in "Coldmud discussion meeting"</TITLE>
+<H1>[798] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?798"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="797"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="799"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="799"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="799"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Consider: native methods question</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep  8 04:48:15 1995
+)</H3>
+<PRE>
+Date: Fri, 8 Sep 1995 02:42:14 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@clarkston.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+Native methods are simply functions bound on an object in the same means
+as a method, and which do not exist in the opcode table.
+
+I'm considering two implementations:
+
+  #1: Add them to the methods list, hooking into the native code rather than
+      the pcode.  The disadvantage of this lies in it can be awkward.
+  #2: adding a new operator which is a native method operator, for now let
+      us pretend this is '&amp;', so to call a native method you would execute
+      (from the object which has them hashed) it with:
+
+          &amp;function(..).
+
+      This would give you more configurability, in that you could more
+      easilly create wrappers.  For instance, consider the string functions,
+      if you wanted to add 'fill', you would:
+
+          arg length;
+
+          return &amp;pad("", length);
+
+      Or of even more consideration, let us say that the function 'format'
+      exists (as it does in 0.1-6), but rather than submitting the first
+      argument as the format (string) and the second argument as a list,
+      you want to submit the second arguments plus any subsequent number
+      of arguments.  You could do this with:
+
+          public format: native
+              arg format, [args];
+
+              return &amp;format(format, args);
+          .
+
+I dont know which one I would prefer.  I probably would _not_ use &amp; as an
+operator, perhaps have an do_func() or something call...
+
+-Brandon
+</PRE>

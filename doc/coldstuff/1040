@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [1040] in "Coldmud discussion meeting"</TITLE>
+<H1>[1040] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1040"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1037"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1039"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1039"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1041"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1041"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1046"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] encryption, DES, MD5, SHA-1(?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jul 24 11:52:49 1996
+)</H3>
+<PRE>
+Date: Wed, 24 Jul 1996 10:26:48 -0500 (CDT)
+From: Stephen Smoogen &lt;smooge@duracef.shout.net&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199607241001.UAA00818@gateway1.brisnet.org.au&gt;
+
+On Wed, 24 Jul 1996, Dancer wrote:
+
+&gt; Erm, no. Technically, you can't ship anything containing any encryption code
+&gt; outside of the USA. Not MD5, not DES, not anything. Not without a specific
+&gt; permit to do so.
+&gt; 
+&gt; Unix gets away with DES by having had the DES crypto algorithm separately
+&gt; implemented in the UK. Same deal with the others. You send the specs to
+&gt; another country (Canada doesn't count, nor does anywhere on the NSA's
+&gt; shit-list) and let them develop some code to spec. Then everyone's happy,
+&gt; and it's legal.
+&gt; 
+
+With this in mind you might want to have it that people have to pick up 
+the SSH-LEAY distreibtuion from Australia (I dont have the URL handy but 
+can supply it later.) And have the ColdX user drop it in and compile with 
+it. You dont explicitely ship it and it is up to the user to get it 
+depending on their local Encryption laws (ie France, Russia and Singapore 
+no encryption... US no exporting etc etc.) I would say that you might 
+use their implementation of SSH for conceiled VEIL (though I dont knopw 
+enough about this to know if it is possible or not). As a default you can 
+use a simple XOR block encryption that really isnt encryption at all... 
+(IE 1 cycle decrypt)
+
+Stephen
+
+------------------------------------------------------------------------------
+Stephen John Smoogen 	
+Recovering Sysadmin (well ok... I still sysadmin... I cant stop)..
+217-351-8093
+
+</PRE>

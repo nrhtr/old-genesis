@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [75] in "Coldmud discussion meeting"</TITLE>
+<H1>[75] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?75"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="74"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="76"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>arrg</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 29 01:42:58 1993
+)</H3>
+<PRE>
+Date: Sun, 28 Nov 1993 23:37:01 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Ok, i'm sick of tracking this down, i'll get it eventually, but I figure I may
+as well throw out the problem where other's can see it.
+
+the Cold Dark has been down lately because I have been trying to merge our
+world with cold world 4.0.  (BTW, i created a chop.c file which chops up
+a textdump into .c-- files, if anybody wants it scream).  I'm rather sure i
+have everything merged together right, and the first person to connect after
+I restart the server CAN connect, but after that NOBODY can ever get anything
+other than the basic connection (ie not even the welcome message).  I'm going
+to go through connection.c-- _again_ (sigh), anyhow.
+
+-Brandon/Lynx/Me.
+</PRE>

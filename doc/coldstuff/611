@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [611] in "Coldmud discussion meeting"</TITLE>
+<H1>[611] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?611"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="610"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="610"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="610"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="612"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re:  .read() / suspend</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Dec  4 13:06:19 1994
+)</H3>
+<PRE>
+Date: Sun, 4 Dec 1994 11:00:30 -0700
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU, deforest@netcom.com
+Cc: h@avon.declab.usu.edu
+
+&lt; Hope you can understand what all I just spewed.  If it is not clear I will
+&lt; re-post in a more organized manner. Or something.
+
+Actually, it is about what I was thinking (that the buffers were getting
+filled and then suspended), I just hadn't had a chance to check it out yet,
+this weekend is a sci-fi con I'm involved in running.  Thanks for the detailed
+info though, saves me the work ;)
+
+-Brandon (Lynx)-
+</PRE>

@@ -1,0 +1,170 @@
+<HEAD><TITLE>discuss@charon: [111] in "Coldmud discussion meeting"</TITLE>
+<H1>[111] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?111"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="108"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="110"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="110"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="112"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="112"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="113"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Proposed change regarding MI ambiguities</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec 10 21:59:59 1993
+)</H3>
+<PRE>
+Date: Sat, 11 Dec 93 02:56:33 GMT
+From: Andrew Wilson &lt;Andrew.Wilson@cm.cf.ac.uk&gt;
+To: Andrew.Wilson@cm.cf.ac.uk
+Cc: coldstuff@MIT.EDU
+
+
+&gt; From ghudson@MIT.EDU Sat Dec 11 02:06:43 1993
+&gt; To: Andrew Wilson &lt;Andrew.Wilson@cm.cf.ac.uk&gt;
+&gt; Cc: coldstuff@MIT.EDU
+&gt; Subject: Re: Proposed change regarding MI ambiguities
+&gt; Date: Fri, 10 Dec 93 20:59:27 EST
+&gt; From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+&gt; Content-Length: 1884
+&gt; 
+&gt; 
+&gt; &gt; Absolutely not.  It is evident that the ambiguities, if any, can be
+&gt; &gt; detected when the method is defined.  Such ambiguities are, after
+&gt; &gt; all, merely syntactic.  There really is no reason at all for not
+&gt; &gt; creating a @lint, or equivalent mechanism for flagging any
+&gt; &gt; ambiguities and for refusing to construct an ambiguous lattice.
+&gt; &gt; Force the semantics to be unambiguous and you are saved the horror
+&gt; &gt; of run-time lattice verification.  I'd suggest that you read up on
+&gt; &gt; the implementation of the Eiffel programming language NOW rather
+&gt; &gt; than later.  Do it right, or don't bother.
+&gt; 
+&gt; Two disagreements:
+&gt; 
+&gt; (1) I disagree that run-time lattice verification is a "nightmare".
+&gt; As I said, I'm pretty sure I can do it in linear time, which is how
+&gt; long a method search is going to take in the general case anyway.
+&gt; There won't be a performance penalty relative to the current system.
+&gt; 
+&gt; If there's some other reason why this isn't "doing it right," then I'd
+&gt; like to hear it.  Please leave the implementation details up to me,
+&gt; though.
+&gt; 
+&gt; (2) You're not thinking in terms of a mud language.  I can't restrict
+&gt; programmers from defining methods on their objects because other
+&gt; programmers have defined methods on their objects.  Consider the
+&gt; following hierarchy:
+&gt; 
+&gt; 	A
+&gt; 
+&gt;     B   C
+&gt; 
+&gt; 	D
+&gt; 
+&gt; Suppose I own B and you own C.  Someone else owns D.  You define a
+&gt; method 'foo' on C.  Now I can't define a method 'foo' on B, I can't
+&gt; undefine your method on C because I don't own C, and I can't remove
+&gt; B as an ancestor of D because I don't own D.  But D's owner is the one
+&gt; who should have to deal with the problem, since it's D that's (after I
+&gt; define the 'foo' method) inheriting from incompatible parents.
+
+Yep, I know how this thing breaks down.  The point is that you seem to be
+confusing semantics with syntax.  The point is not 'who owns what method' or
+even what the method is named, but rather 'what the method does'.  Assuming
+from your lattice that A is a super-class of B and C, and D a sub-class of B
+and C then there must be, of necessity, a single method on D named 'foo'.  So
+B.foo may print an asterisk, and C.foo may print a plus, what should D.foo do?
+The answer is 'whatever D's designer decides is good'.  So D.foo prints an
+ampersand.  But implicit in the lattice semantics is the notion that D inherits
+the semantics of B.foo and C.foo.
+
+Now you can take this in a range of ways:
+
+1)	Collapse the semantics at D by redefinition.  D.foo prints an
+	ampersand.  You can define a schema like this:
+
+		class D {
+		inherit B
+		inherit C
+		method foo {
+			echo('&amp;');
+		}
+		}
+
+2)	Preserve the semantics from B and C and define additional semantics
+	at D.  Rename [a SYNTACTICAL exercise] B.foo on inheritance into D to:
+
+		D.foo_from_B
+
+	Rename C.foo on inheritance into D to:
+
+		D.foo_from_C
+
+	D can now print asterisks, pluses AND ampersands.
+
+	Indeed there's nothing to stop you from defining the following schema:
+
+		class D {
+		inherit B
+			rename foo to foo_from_B
+		inherit C
+			rename foo to foo_from_C
+		method foo {
+			if (random(2))
+				foo_from_B();
+			else
+				foo_from_C();
+		}
+		}
+
+	just for kicks.
+
+In each case the decision for the correct behaviour of a class rests with the
+class's designer, not the designer of inherited sub-classes.
+
+[returning to G's original text]
+
+Now, to follow your argument, suppose that at some time in the future B's
+programmer decides to add a method to B called, would you believe it!...
+
+	B.foo
+
+A syntactical argument would state that this is not possible because D would
+then have inherited two differently derived methods, both NAMED 'foo'.  The
+lattice would be confused at D and trace'R'us.
+
+A emantic argument would state that, sure, both B and C supplied an inheritable
+method named 'foo' then D would break UNLESS:
+
+	1)  D.foo was specified as a redefinition of both B.foo and C.foo
+
+OR
+
+	2)  Either B.foo or C.foo [or both] were renamed to something else with
+	D.foo's semantics being suppiled either by a complete redefinition
+
+[Finally]
+
+The true semantics of a method are defined in terms of what the USER of the
+method intends.  An instance X of D isa B =&gt; X.B:foo has meaning, and will
+continue to have meaning for all subclasses of D.
+
+
+Jesus!  Where did all this come from?
+
+&gt; 
+&gt; Also, with a disk-based db, having to check non-local conditions while
+&gt; making a local change carries severe performance penalties.
+
+Really.  How many times a second are you going to have to check that the semantic
+content of a lattice is valid before you discover that it is not.  By my
+reckoning, once.  Once detected, the lattice is just plain broken and should
+trace you to hell till you fix it.
+
+&gt; 
+&gt; --GBH
+&gt; Remember, MUDs are a harder problem than real programming languages.
+&gt; 
+&gt; 
+</PRE>

@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [573] in "Coldmud discussion meeting"</TITLE>
+<H1>[573] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?573"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="572"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="574"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>The Cold Dark moves (sort of).</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov  9 16:48:52 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Wed, 09 Nov 94 14:41:44 -0700
+
+I change The Cold Dark's login port to 1138 (So I'm a diehard Lucas fan).  If
+anybody want's they can connect and use tCD to learn about ColdMUD.  Some
+plans I have are to work with some of the guys from the VRML list and to
+create a real Virtual Environment (would also require creating a new request
+slash login protocol).  Anybody interested can join (I'll be creating a 
+mailing list for the whole project soon).  TCD's URLs are:
+
+     telnet://recumbent.declab.usu.edu:1138/
+     http://recumbent.declab.usu.edu:1180/
+
+(I decided to switch all ports to '11' + because X likes the 6*** range too
+much for my liking--and because George Lucas is cool).
+
+-Brandon
+</PRE>

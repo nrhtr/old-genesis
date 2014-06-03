@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [88] in "Coldmud discussion meeting"</TITLE>
+<H1>[88] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?88"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="87"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="87"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="87"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="89"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="89"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="99"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ANSI codes and unreadables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 00:16:43 1993
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: BRANDON@cc.usu.edu (Lynx)
+Date: Fri, 3 Dec 93 21:13:37 PST
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;01H621LFDGAAANY92O@cc.usu.edu&gt;; from "Lynx" at Dec 3, 93 8:56 pm
+
+I don't believe that control characters in MUD output would actually "break"
+most clients per se.  The point is that if you allow anyone to put control
+characters into anything that they send to the MUD, who knows what that will
+turn up like on other screens.  The MUD should _not_ allow non-glyph non-space
+characters in its input.  Instead, I would suggest a mechanism for allowing
+them to be input by way of manually editing text dumps, thus restricting any
+applications of such special characters to sufficiently high-up people, and not
+requiring an unnecessary and potentially dangerous change from the standard MUD
+input conventions.
+
+I do believe that a mechanism for utilizing them in output would be quite
+useful, and sometimes necessary (as exemplified by the tab problem with MOO
+Gopher clients), though.
+
+-Richelieu
+-- 
+</PRE>

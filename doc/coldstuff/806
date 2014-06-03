@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [806] in "Coldmud discussion meeting"</TITLE>
+<H1>[806] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?806"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="805"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="807"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Threading</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Sep 11 19:55:51 1995
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+Date: Mon, 11 Sep 1995 16:51:38 -0700 (PDT)
+
+I'm a big proponent of multi-threading.
+
+Having said that, I now have to observe that i really havent run into the 
+need in ColdX programming.  In point of fact, I've written quite a bit of 
+code which has NOT been re-entrant because I knew an object woudl not be 
+re-entered.
+
+Is it a vain hope to hope that such behavior could remain the default?  
+Its kind of a pain in the rear to go BACK to old stuff and try to 
+remember where I made this assumption...
+
+Jeff Kesselman
+
+</PRE>

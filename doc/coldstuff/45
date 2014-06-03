@@ -1,0 +1,99 @@
+<HEAD><TITLE>discuss@charon: [45] in "Coldmud discussion meeting"</TITLE>
+<H1>[45] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?45"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="44"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="46"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Encapsulation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 12:06:17 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Wed, 17 Nov 93 11:58:53 -0500
+To: coldstuff@MIT.EDU
+
+
+On matching: I actually sort of like Joe's idea of a full LALR grammar
+handler (regexps, you know, are commonplace; this would be more of a
+coup), but that's not something for 1.0.  I'll take a look at bison
+and yacc sources and think about it.
+
+But my primary concern here is with explaining encapsulation, and why
+clear variables are not an option in Coldmud.
+
+Object-oriented programming has its roots in a much older discipline
+which was commonly referred to as data-oriented or data-directd
+programming, the idea that users of data structures should be talking
+about performing operations on them, rather than manipulating their
+representations.  For instance, if you look at the source for the
+Coldmud interpreter, you'll see some direct manipulations of the
+stack, e.g.:
+
+	stack[stack_pos++] = foo;
+
+Were I to encapsulate the stack, I would probably write all such
+manipaulations in terms of function calls grouped together in some
+file or as part of some file:
+
+	push_data(stack, &amp;foo);
+
+(I actually do most of my stack operations with function calls grouped
+together in execute.c, but I don't encapsulate it entirely.)
+
+One of the first things C++ did was provide a mechanism for enforcing
+this encapsulation.  I consider this the most useful feature of C++:
+the idea that I can have a single list of function declarations that
+determine all the functions which have access to the internal
+representation of an object's data.
+
+Something object-oriented programming added to this model is
+inheritance.  I've always been pretty skeptical of inheritance; it's
+often convenient, but I think people often try to stretch it beyond
+its natural usefulness, and because the language is doing a lot of
+things behind your back, code becomes less predictable and more
+susceptible to non-local changes.  However, when you're dealing with
+things like muds or graphics systems, most objects have large,
+complicated interfaces, and it's useful to be able to build those up
+out of parts and express the dependencies of those parts, so there are
+applications for inheritance here.
+
+Unfortunately, I'm seeing an alarming trend in newer object-oriented
+languages towards more baroque inheritance and method dispatch
+systems, and worse, away from encapsulation.  CLOS is a good example
+of a language which goes hog-wild in the degree of complexity of the
+method dispatch process (that is, what happens when I call a method),
+but has no form of encapsulation whatsoever.
+
+Okay, so why are clear variables not an option in Coldmud?  They're
+not an option because it means that I, the parent of object foo, can
+affect the value of foo's variable without calling a method on object
+foo.  This gives me access to the internal representation of an object
+without an interface.
+
+Yes, this means that there is a fundamental difference between methods
+(which are "clear") and variables.  Methods are an interface, and are
+thus inherited and available to the outside world; variables are
+state, and are encapsulated.  Variables exist in a different namespace
+for each object and each ancestor of that object, whereas the method
+namespace is collapsed together, in a sense.  And yes, this means that
+you don't automatically get a functioning copy of an object when you
+make a child of it.
+
+What about default inheritance-time values?  Some find it inconvenient
+to have to specify default values in a .init method, when that
+function could be handled by the language.  Here, I appeal to Occam's
+razor: I don't think I really simplify anything by making the language
+more complex to make the code slightly simpler.  If I have to keep
+track of extra implicit operations to understand how your code works,
+then it doesn't help me that your code is slightly shorter.
+
+--GBH
+
+</PRE>

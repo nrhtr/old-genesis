@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1330] in "Coldmud discussion meeting"</TITLE>
+<H1>[1330] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1330"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1329"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1331"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1331"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1341"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Exit announcements (anomaly?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 21 19:13:36 1997
+)</H3>
+<PRE>
+From: "Luther, Clay" &lt;clay@selsius.com&gt;
+To: "'coldstuff@cold.org'" &lt;coldstuff@cold.org&gt;
+Date: Thu, 21 Aug 1997 18:06:51 -0500
+
+While building in the new core, I noticed that exit announcements occur
+at an odd time (IMHO).
+
+For instance, if I am standing in a room and take the north exit, I will
+see:
+
+	New Room Name
+	New Room Description.
+	You take the north exit.
+
+Isn't more logical (from a VR point of view) to see:
+
+	You take the north exit.
+	New Room Name
+	New Room Description.
+
+???
+
+---
+Onegaishimasu.
+
+Clay Luther
+clay@selsius.com
+
+Hello, hello!  This is Monkey Wrench calling Bunny Hutch Headquarters...
+
+</PRE>

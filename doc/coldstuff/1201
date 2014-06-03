@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [1201] in "Coldmud discussion meeting"</TITLE>
+<H1>[1201] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1201"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1198"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1198"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1200"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1202"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] $motd ideas...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan  1 14:52:11 1997
+)</H3>
+<PRE>
+Date: Wed, 1 Jan 1997 12:47:14 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Charles Shepherd &lt;cshepher@cs.indiana.edu&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199612292227.RAA01550@death.cs.indiana.edu&gt;
+
+On Sun, 29 Dec 1996, Charles Shepherd wrote:
+&gt; I've been looking at the $motd code, trying to find a
+&gt; simple way to customize it.
+&gt; 
+&gt; One way would be to take $motd.build, and instead
+&gt; of passing $motd.build('default) as the logon screen,
+&gt; construct a custom message. My first thought was
+&gt; to do:
+&gt; 
+&gt; $motd.build('title, 'driver, "", "A brief explanation 1", "more 
+&gt;    explanation2, "");
+&gt; 
+&gt; However, this didn't work as all strings are translated to
+&gt; "" when used as output. This means that either we need to
+&gt; change the code to allow non-null strings, or program 
+&gt; in additional cases (such as 'disclaimer, and 'introduction)
+&gt; to add to the case statement.
+
+Actually, this looks like a bug that crept into the code over time, it
+should include the literal strings.  Line 11 of $motd.build() should read:
+
+        output += [args[1], ""];
+
+&gt; One addition that might be helpful would be the presence
+&gt; of a default_motd property. That is, when 'default is passed
+&gt; as the argument to $motd.build, it takes the list from default_motd
+&gt; as the args. That way, it's easier to customize to the needs of
+&gt; a particular world.
+
+This is a good idea.  Also, I started but never finished--I want the
+configurable parts of $motd setable through @set..
+
+-Brandon
+
+</PRE>

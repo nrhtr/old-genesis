@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1103] in "Coldmud discussion meeting"</TITLE>
+<H1>[1103] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1103"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1101"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1101"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1102"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1104"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Patch 16 available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Oct 25 01:38:55 1996
+)</H3>
+<PRE>
+To: coldstuff@cold.org
+In-reply-to: Your message of "Thu, 24 Oct 1996 18:58:25 MDT."
+             &lt;Pine.NEB.3.95.961024185724.13222A-100000@glacier.cold.org&gt; 
+Date: Fri, 25 Oct 1996 00:16:59 -0500
+From: Zachary DeAquila &lt;zachary@zachs.place.org&gt;
+
+
+...but cold is *stable* it's been running for x days and etc, right Brandon?
+*wink, wink, nudge, nudge, say-no-more!*
+
+ --Z
+
+On Thursday, Oct 24, 1996, Brandon Gillespie writes:
+&gt;This fixes the MINLONG problem (now using the newer standard limits.h).
+&gt;A bug with forked methods is fixed (they were not cleaning up the caller's
+&gt;stack and returning the task id like they were supposed to).  I also fixed
+&gt;a minor bug with $string.dbquote_explode().
+&gt;
+&gt;-Brandon
+&gt;
+</PRE>

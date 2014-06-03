@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1530] in "Coldmud discussion meeting"</TITLE>
+<H1>[1530] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1530"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1529"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1531"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>preventing a teleport</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec 17 13:01:36 1999
+)</H3>
+<PRE>
+Date: Fri, 17 Dec 1999 18:37:39 +0100
+To: coldstuff@cold.org
+From: Verhoogen Olivier &lt;Simkin@mail.dma.be&gt;
+Reply-To: coldstuff@cold.org
+
+Greetings,
+
+I'm sending a small coding issue here at Bruce's suggestion.
+
+My problem is the following: I'm coding a turbolift. To operate properly,
+it should do the following when someone tries to enter it (aka tries to be
+move_to'ed to it).
+1) Check wether the lift is at the same deck the player is, 2a) If this is
+the case, return and let the move_to occur or 2b) If this is not the case,
+activate lift code to make it move to the player's position (he or she
+summoned it) and then abort the move.
+
+Now initially I tried to solve this aborting in the same way that worked
+for my turbolift version on LambdaMOO. Namely to hack into
+$place.will_arrrive(), do the necessary checks and if I would need to
+abort, I would cancel the task.
+
+However Bruce advised me not to do this and throw an error, and indeed I
+found this to be the most logical solution. (as cancelling the task would
+take a lot more workarounds)
+But now the question remains where to catch it then...
+
+I'm only a beginner in ColdC, so I deem the solution simple enough :)
+Yet I would prefer not to code a $path solely for use for this turbolift.
+(as to catch from $path.invoke).
+
+Thanks in advance,
+Sim.
+
+</PRE>

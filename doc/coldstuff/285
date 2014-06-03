@@ -1,0 +1,64 @@
+<HEAD><TITLE>discuss@charon: [285] in "Coldmud discussion meeting"</TITLE>
+<H1>[285] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?285"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="284"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="284"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="286"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="286"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 13:59:01 1994
+)</H3>
+<PRE>
+Date: Fri, 20 May 1994 10:46:57 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;m0q4X00-0004JFC@glacier&gt; (message from Greg Hudson on Fri, 20 May 1994 12:00:35 -0400)
+
+
+&gt;&gt; Well, this is just me being paranoid, but a portmapper type thing is
+&gt;&gt; a hackers dream come true... the less randome people know about the
+&gt;&gt; system the more secure it is.
+
+&gt; Security through obscurity is no security at all.  It's quite easy to
+&gt; write a program to connect to all ports on a system, at any rate.
+
+
+Umm, I wasnt suggesting that obsurity be the only form of security,
+but why make things easier on people. its rather standard on secure
+systems to block that kind of thing (portscans). But as I said, in
+this case, I'm just being overly (although perhaps still rightly so)
+paranoid. With standard ports, you could do things like only accept to
+the mail port from the trusted mail port, etc, but when we're dealing
+with above 1k its not really an issue anyways, as most of this stuff
+can be forged. Therefore the security needs to be in how what the port
+is used for is trusted (i.e. it shouldnt be trusted at all.)
+
+&gt; Forge IP addresses?  Difficult to do with TCP connections beyond the
+&gt; first few packets, unless it's from a site that's down.
+
+Well, actually my comment was in reference to names, not ip's, but
+althought its difficult, its not impossible.
+
+&gt;&gt; another thing about portmappers. The general sun style portmapper
+&gt;&gt; for rpc is a problem with secrutiy because it can be tricked...
+
+&gt; This is completely irrelevant; what you've said is about a
+&gt; particular implementation of a service with the name "portmapper"
+&gt; whose functionality has very little to do with what Lynx is
+&gt; proposing.
+
+
+If you read the whole paragraph, I said that it was irrelevant. I was
+explaining my previous objections ;)
+
+
+	Ray
+
+
+</PRE>

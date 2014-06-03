@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [203] in "Coldmud discussion meeting"</TITLE>
+<H1>[203] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?203"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="192"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="201"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="202"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="204"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: names</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Apr  3 20:49:36 1994
+)</H3>
+<PRE>
+Date: Sun, 03 Apr 1994 18:47:15 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Riche:
+&lt; Personally, I'd like to see something like:
+&lt; dbref: $foo
+&lt; dbnum: #1234
+&lt; This keeps things pretty unambiguous, and highlights much better the
+&lt; relationship and function of the two types of values.
+
+I like this the best (ponders):
+
+object:
+  $root,dbref_symbol   'object
+  $root.dbref()        =&gt;  "$object"
+  $root.dbref_symbol() return dbref_symbol;
+  $root.name()         return .dbref()
+  $vr.name()           return name;
+  $vr,name             ["chair", "blue", 'informal] 
+  $physical.name()     All the funky stuff I do with .name right now:
+           .name()     =&gt; "the blue chair"
+           .name('actual)  =&gt; "chair"
+                       etc.
+
+anyhsm, I love it...
+
+_Brandon
+</PRE>

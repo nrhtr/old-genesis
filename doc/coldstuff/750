@@ -1,0 +1,75 @@
+<HEAD><TITLE>discuss@charon: [750] in "Coldmud discussion meeting"</TITLE>
+<H1>[750] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?750"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="747"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="749"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="749"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="751"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: error_arg,error_str</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 25 12:13:08 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Thu, 25 May 95 10:07:12 -0600
+
+
+&lt; (It is the same as traceback()[1][1], isn't it?)
+
+No.  This is best demonstrated with an example:
+
+@program .test1
+  var line, t;
+
+  catch any {
+      .test2();
+  } with handler {
+      t = traceback();
+      .tell("Traceback[1][1]: " + toliteral(t[1][1]));
+      .tell("Error:           " + toliteral(error()));
+      .tell("Traceback: " + toliteral(t[1]));
+      for line in [2..listlen(t)]
+          .tell("           " + toliteral(t[line]));
+  }
+.
+
+@program .test2
+  .test3();
+.
+
+@program .test3
+  throw(~achoo, "Isneezeatyou.");
+.
+
+eval .test1();
+Traceback[1][1]: ~achoo
+Error:           ~methoderr
+Traceback: [~achoo, "Isneezeatyou.", 0]
+           ['method, 'test3, #495, #495, 1]
+           [~achoo, 'test2, #495, #495, 1]
+           [~methoderr, 'test1, #495, #495, 4]
+
+Whereas, if you change test2:
+
+@program .test2
+  (&gt; .test3() &lt;);
+.
+
+Then re-eval:
+
+eval .test1();
+Traceback[1][1]: ~achoo
+Error:           ~achoo
+Traceback: [~achoo, "Isneezeatyou.", 0]
+           ['method, 'test3, #495, #495, 1]
+           [~achoo, 'test2, #495, #495, 1]
+           [~achoo, 'test1, #495, #495, 4]
+
+Make more sense?
+</PRE>

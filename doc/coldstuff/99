@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [99] in "Coldmud discussion meeting"</TITLE>
+<H1>[99] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?99"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="87"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="97"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="98"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="100"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ANSI codes and unreadables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 17:18:46 1993
+)</H3>
+<PRE>
+To: jsp@glia.biostr.washington.edu (Jeff Prothero)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Sat, 04 Dec 1993 13:35:42 PST."
+             &lt;9312042135.AA00625@glia.biostr.washington.edu&gt; 
+Date: Sat, 04 Dec 1993 13:52:56 -0800
+From: Ian McCloghrie &lt;imcclogh@cs.ucsd.edu&gt;
+
+&gt; Richelieu: 
+&gt; | The MUD should _not_ allow non-glyph non-space characters in its input.  
+&gt; 
+&gt; More precisely, muds should default to cooked mode for network I/O,
+&gt; users should have to explicitly select raw 8-bit I/O if they want it.
+
+	Point.  IMHO, the mud should not allow a random user to send a
+random non-printable string to a random other user.  The simplest way
+of doing this is to not allowing sending them at all, sufficient for
+TinyMUD, insufficient for something more general like ColdMUD.
+
+--
+ /~&gt; Ian McCloghrie      | Commandant of Secret Police - Cal Animage Beta.
+&lt; &lt;  /~\ |~\ |~&gt; |  | &lt;~ | email: ian@ucsd.edu               Net/2, USL 0!
+ \_&gt; \_/ |_/ |~\ |__| _&gt; | Card Carrying Member, UCSD Secret Islandia Club
+</PRE>

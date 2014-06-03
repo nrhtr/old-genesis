@@ -1,0 +1,79 @@
+<HEAD><TITLE>discuss@charon: [448] in "Coldmud discussion meeting"</TITLE>
+<H1>[448] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?448"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="441"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="447"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="447"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="449"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="449"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="449"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignments change (fix)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep 23 20:25:53 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of Fri, 23 Sep 94 15:28:23 -0400.
+             &lt;9409231928.AA19061@m2-225-9.MIT.EDU&gt; 
+Date: Fri, 23 Sep 94 20:24:05 EDT
+From: George Heintzelman &lt;georgeh@MIT.EDU&gt;
+
+
+As a usual lurker here, I'd like to stick my .02 in on the matter of 
+assignment and while loops. In reading code, I find:
+
+while (1) {
+	a= foo();
+	if (test(a))
+	   break;
+	endif
+	{ Other stuff}
+}
+
+to be distinctly more difficult to understand on a first reading than
+
+while (test(a=foo())) {
+	Other stuff
+}
+
+And not just because of the lines of code. In order to understand the upper 
+loop, you have to read into the loop and find the break, to understand when 
+the loop will terminate. Sometimes you don't even CARE what the loop really 
+does, you just want to know when it terminates, in fact. 
+
+I'm a physicist by trade, and in that trade you have to read a lot of FORTRAN 
+code. FORTRAN, being a REALLY antiquated language, encourages constructs such 
+as the first, with lots of GOTO's and things instead of break statements, but 
+the effect is the same.... And I know that I don't like it. I would much 
+prefer reserving the break statement for cases where you really want the loop 
+to terminate extraordinarily, as in:
+
+i = 0;
+while (i &lt; lines) {
+	catch ~eof {
+		.read_line()
+	} handler {
+		// Ooops! End of file!!
+		.send_error_message_intelligently()
+		break;
+	}
+i++
+}
+
+So I guess I'm arguing for some form of assignment-as-expression. Perhaps := 
+is an assignment-as-expression operator while retaining = as an 
+assignment-as-command operator? I'm not sure I would necessarily do this, it 
+does seem to contradict the impulse to keep the language as streamlined as 
+possible, but it may be something to think on. Though I admit to generally 
+agreeing with Greg's dislike of side effects, I think allowing it in this one 
+limited case isn't going to cause it to propagate too far.
+
+George Heintzelman
+georgeh@mit.edu
+
+
+	
+</PRE>

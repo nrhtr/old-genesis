@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1480] in "Coldmud discussion meeting"</TITLE>
+<H1>[1480] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1480"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1476"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1478"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1479"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1481"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Text Dump Structure</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 18:03:11 1999
+)</H3>
+<PRE>
+From: "Bruce Mitchener, Jr." &lt;bruce@puremagic.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Wed, 17 Nov 1999 14:09:48 -0800
+Reply-To: coldstuff@cold.org
+
+Ian Klimon wrote:
+&gt; I've been going through the ColdC reference material
+&gt; lately and it appears that the Text Dump Structure
+&gt; information is missing.  I was wondering if this
+&gt; information is available somewhere?
+
+Not really, except for in the source to Genesis/coldcc,
+or by reading a sample textdump.  However, if you take
+the route of reading a textdump, there are commands that
+can be used and understood by coldcc that aren't used in
+a coldcore textdump.
+
+ - Bruce
+
+
+</PRE>

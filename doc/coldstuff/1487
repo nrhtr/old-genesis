@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [1487] in "Coldmud discussion meeting"</TITLE>
+<H1>[1487] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1487"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1486"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1488"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1490"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1490"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Doc reformat</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 24 13:44:31 1999
+)</H3>
+<PRE>
+From: "Ilya, Game Commandos" &lt;Ilya@gamecommandos.com&gt;
+To: "coldstuff@cold.org" &lt;coldstuff@cold.org&gt;
+Date: Wed, 24 Nov 1999 10:14:57 -0800
+Reply-To: coldstuff@cold.org
+
+Hey!
+
+For what it's worth, I took all the text-based stuff in the
+coldc programmer's reference manual and reformatted it
+in word ".doc" format.   It's now 70 pages, with pretty
+reasonably readable indentation, section numeration,
+a table of contents, a few fixed typos, etc. 
+
+I make not the slightest assertion that I understand 
+where any technical problems might be, or how to fix
+'em in the doc.  But I did fix what I could find, and it
+seems pretty close to right.
+
+Would this be something anyone is interested in,
+or of value?
+
+Cheers,  Ilya
+
+--
+  Ilya, Game Commandos     http://www.gamecommandos.com     
+
+
+</PRE>

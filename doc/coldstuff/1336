@@ -1,0 +1,86 @@
+<HEAD><TITLE>discuss@charon: [1336] in "Coldmud discussion meeting"</TITLE>
+<H1>[1336] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1336"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1330"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1335"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1335"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1337"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1339"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1341"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Exit announcements (anomaly?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 21 22:33:58 1997
+)</H3>
+<PRE>
+Date: Thu, 21 Aug 1997 20:24:22 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: Chris Williams &lt;psion@geekspace.com&gt;
+cc: "Luther, Clay" &lt;clay@selsius.com&gt;,
+        "'coldstuff@cold.org'" &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;33FCD494.81F95966@geekspace.com&gt;
+
+On Thu, 21 Aug 1997, Chris Williams wrote:
+
+&gt; Maybe this should be handled by whatever's handling the CML? Like, as
+&gt; part of the CML-frob, you give it meta-information about which messages
+&gt; should be dispatched in what sequence, 
+
+It already is a CML frob :)
+
+And different messages are used depending upon the object receiving the 
+messages--this is the whole underlying design to messages (via @msg).
+
+Michael Loftis &lt;mjl@tcbbs.net&gt;
+
+&gt; Sounds like we need one more function, one to test if you can move... 
+&gt; Itd do like:: 
+&gt; 
+&gt; test_move_to()
+&gt; move_to()
+&gt; announce_move_to()
+&gt; get_prose() (Or whatever it is that gets the room name/descript --  I'm
+&gt; a little fuzzy right now)(
+
+It already does--but inside .move_to()--read the code :)
+
+However, I forgot to mention in my initial reply--I fixed the bug at that
+time.  To explain.  When a user object is moved, it will automatically
+'look' at the new location (see $user.did_move()).  This is not a problem,
+this is an intentional feature coded into the core of the move_to system. 
+You can disable it if you personally dislike it--for yourself--by changing
+the 'auto-look' setting. 
+
+The problem with the movement messages is that when I switched to the new
+messaging system I simply decided to let the location where the moved
+person is at forward the message to them (trying to save a method
+call--talk about over-optimizing :)   I forgot to consider that the
+message would be out of order.  To explain better, the sequence of calls
+(listed in $exit.invoke) was:
+
+     user.move_to(dest);
+     dest.announce(message);
+     source.announce(message);
+
+Since it is a Ctext message, the same message will print the right
+information for everybody in either location, depending upon their role in
+the message (i.e. everybody on the source see's the user leave, everybody
+in the dest see's them arrive, and the user is notified that they took the
+exit).
+
+And like I said, I just forgot to consider it would be out of order.  This
+is fixed by simply excluding the user from the dest announce and
+explicitly sending them the message first, ala:
+
+    user.tell(message);
+    user.move_to(dest);
+    dest.announce(message, user);
+    source.announce(message);
+
+And everything works as one would expect it :)
+
+-Brandon Gillespie
+
+</PRE>

@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1358] in "Coldmud discussion meeting"</TITLE>
+<H1>[1358] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1358"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1356"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1357"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1357"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1359"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Panic behaviour.. create core image?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 25 15:13:07 1997
+)</H3>
+<PRE>
+From: Foxen/Revar &lt;foxen@best.com&gt;
+To: brandon@roguetrader.com (Brandon Gillespie)
+Date: Thu, 25 Sep 1997 12:00:46 -0700 (PDT)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.96.970925100924.10426A-100000@roguetrader.com&gt; from "Brandon Gillespie" at Sep 25, 97 10:10:25 am
+
+&gt; 
+&gt; Just curious, I'm considering changing the behaviour of panic, so after it
+&gt; safely makes a dump of the database it sends SEGV to itself, to create a
+&gt; core image dump--which can later be analized.
+&gt; 
+&gt; Any comments in this regard?  If people dont like it they can just set
+&gt; coredumpsize to zero..
+&gt; 
+&gt; -Brandon
+&gt; 
+&gt; 
+
+You might want to use the more standard abort() function, that raises a
+SIGABRT signal and closes all open file descriptors.  Otherwise, the
+effects are pretty much the same, including dumping core.  Most of the
+TinyMUD derived servers do it this way.
+
+	- Foxen/Revar
+
+</PRE>

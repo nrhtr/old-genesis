@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [1413] in "Coldmud discussion meeting"</TITLE>
+<H1>[1413] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1413"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1412"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1412"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1412"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1414"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1414"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1414"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Genesis 1.1p3-STABLE released</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr  3 01:37:14 1998
+)</H3>
+<PRE>
+From: jeffk@tenetwork.com
+Date: Thu, 02 Apr 1998 22:24:57 -0800
+To: Brandon Gillespie &lt;brandon@roguetrader.com&gt;, coldstuff@cold.org
+
+Brandon:
+
+Has that order problem with disconnect() where the message is thrown before
+the socket is actually closed fixed in this release?
+
+Was it fixed earlier and did I miss it?
+
+JK
+
+At 11:13 PM 4/2/98 -0700, you wrote:
+&gt;It is available, changes list:
+&gt;
+&gt;      * fixed a few minor memory leaks (Bruce)
+&gt;      * fixed a maxint comparison problem (Brad)
+&gt;      * reduced unecessary buffer copies when reading data from a
+&gt;        connection, as well as redundant mallocs (Brandon)
+&gt;      * fixed some problems with cancelling tasks straight from the
+&gt;        driver (i.e. with kill -USR1) which caused a crash (Brandon)
+&gt;      * fixed a problem with set_method_access()--was not complaining
+&gt;        if the method did not exist (Bruce)
+&gt;      * added the ability to do `[buf] * INT like on strings (Brad)
+&gt;      * fixed a problem with the VEIL module (Brandon)
+&gt;      * added the System/OS token as an element to $sys.version() (Brandon)
+&gt;      * fixed a problem with cancelling or getting info on the currently
+&gt;        executing task (Brandon)
+&gt;      * adjusted select() to also check for file descriptors with
+&gt;        exceptions--allowing for later cleanup (Brandon)
+&gt;
+&gt;For those wondering about Brian's BIG_FLOAT patches--I am going to branch
+&gt;1.1-DEV from this release and include them.
+&gt;
+&gt;-Brandon Gillespie
+&gt;
+&gt;
+Jeffrey P. Kesselman
+Senior Game Integration Engineer
+Total Entertainment Network
+
+"Any intelligent fool can make things bigger, more complex, and more
+violent. It takes a touch of genius -- and a lot of courage -- to move
+in the opposite direction." 
+	ALbert Einstien
+
+Unite for Java! - http://www.javalobby.org
+
+
+</PRE>

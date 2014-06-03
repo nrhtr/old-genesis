@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [890] in "Coldmud discussion meeting"</TITLE>
+<H1>[890] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?890"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="889"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="891"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Re: a thought about the new, improved + operator...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan  9 21:45:28 1996
+)</H3>
+<PRE>
+Date: Tue, 9 Jan 1996 19:27:07 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;Pine.BSD/.3.91.960109173026.563I-100000@pentagon.io.com&gt;
+Reply-To: coldstuff@tombstone.sunrem.com
+
+On Tue, 9 Jan 1996, Kor wrote:
+&gt; Robert Lumley and I were talking, recently, about the snifty new addition
+&gt; of automatic conversion to string via the '+' operator.  we were thinking
+&gt; that there is a potential danger in hiding the means of conversion from the
+&gt; programmer, so we were wondering about the possibility of operator
+&gt; overloading...  the same task could be accomplished without hiding the
+&gt; means of operation, and it could also be broadly applied other ways.  I'd
+&gt; also rather like it if new operators could be defined.  it could make for
+&gt; some very nice looking, clean code.
+&gt;
+&gt; one problem I see is that this could make for some really strange oddments
+&gt; that would be made up to look like something else, even though they parsed
+&gt; out in coldc via overloaded operators.
+&gt;
+&gt; anyhow, comments?
+
+I have oft considered having operator overloading, and unfortunately 
+cannot come up with a simple solution (simple being short of rewriting 
+how the current interpreter and parser works).
+
+The problem comes in with how operators are 'looked up'.  There are many 
+ways this could be changed to handle overloading, but no matter which way 
+it is, it is not very efficient.  What it boils down to is that in our 
+current run-time environment operator overloading is not a very good option
+because the interpreter makes several assumptions for speed, which would 
+have to go away.
+
+The other solution would be to rewrite the interpreter.  Frankly I'm not 
+too enthusiastic about that at this moment; I have too many other 
+projects :b
+
+-Brandon
+</PRE>

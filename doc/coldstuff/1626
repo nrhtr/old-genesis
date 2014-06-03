@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1626] in "Coldmud discussion meeting"</TITLE>
+<H1>[1626] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1626"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1625"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1627"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1627"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1640"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Genesis 1.1.9 - STABLE</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct  1 17:50:03 2000
+)</H3>
+<PRE>
+Date: Sun, 1 Oct 2000 15:46:12 -0600
+From: Brandon Gillespie &lt;brandon@ice.cold.org&gt;
+To: coldstuff@cold.org
+Message-ID: &lt;20001001154612.A15385@ice.cold.org&gt;
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Reply-To: coldstuff@cold.org
+
+This is available.  There is not really anything notable here--primarily
+cleanup.  It is just getting the stable branch up to date before I start
+tossing changes into the development branch.  Amoung the changes to be
+expected are method cache optimizations from Bruce.
+
+Chagelog:
+
+      * removed phk_malloc -- modern OS mallocs are decent (Brandon)
+      * misc cleanup (Generic Bob)
+      * removed dnsserv (Brandon)
+      * fix for ctime() in Borland (Psyclone)
+      * Fixed inconsistent behavior in stridx(), listidx(), and
+        bufidx() when presented with an empty first argument. (Bruce)
+
+</PRE>

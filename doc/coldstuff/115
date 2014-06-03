@@ -1,0 +1,75 @@
+<HEAD><TITLE>discuss@charon: [115] in "Coldmud discussion meeting"</TITLE>
+<H1>[115] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?115"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="114"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="116"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>New Coldmud setting up, Problems and Questions for the rest of us</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 13 05:57:18 1993
+)</H3>
+<PRE>
+Date: Mon, 13 Dec 1993 05:59:43 -0500
+From: seth@pleisto.geo.cornell.edu (Seth Cohn)
+To: coldstuff@MIT.EDU
+
+
+Well, I'm setting up a coldmud, since I got a hold of a
+discless sun, and while Lambdamoo is nice, I'll try this first
+to see if it's better. :)
+
+First, Greg, your doc file was great, I tried compiling first
+plain to see what the errors were, and bingo, you had the 
+correction down pat.  works well.  passes the test suite.
+
+I logged on and first thing I noticed is the annoying
+messages to console.  I tried a redirect, but that didn't work.
+./coldmud world &gt; log &amp;     did not stop the messages from coming
+to my own terminal.  any ideas?
+
+Third: I tried a simple command: @dig down to Sethus' Workshop
+no go.  Tried again, no go.
+
+here's the log from the third try (same results as previous)
+
+Trying 128.84.253.18 ...
+Connected to pleisto.geo.cornell.edu.
+Escape character is '^]'.
+
+[welcome message]
+
+* * * Connected * * *
+Nowhere
+You see nothing special.
+[I typed: @dig anyway to Sethus's Third Workshop]
+
+Created new room $room3.
+ERROR: $exit.spawn called with three arguments, requires one.
+Thrown by interpreter opcode MESSAGE.
+~numargs in $nowhere.make_exit (defined on $room), line 8
+~methoderr in $programmer1.dig_to_cmd (defined on $builder), line 10
+~methoderr in $programmer1.parse_command (defined on $user), line 10
+~methoderr in $programmer1.parse_command (defined on $programmer), line 12
+
+
+This is basically an out of the box error.  So I figure this is worth
+posting, since Greg isn't the only one who can answer it. :)
+
+Also, the world-0.4 is pretty sparse, anyone got a decent DB built
+that I can scarf up? I'm not in the mood to start from almost scratch
+unless I have to.
+
+I'm willing to create a manual for coding (since I'll be learning it at the
+same time, should be a good beginner's intro by the time I get done.) so
+I'm looking for as much solid stuff to build a good core as I can get.
+
+Seth
+
+
+</PRE>

@@ -1,0 +1,99 @@
+<HEAD><TITLE>discuss@charon: [805] in "Coldmud discussion meeting"</TITLE>
+<H1>[805] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?805"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="804"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="806"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ColdX-0.2-0 (Pre 1.0-0 release)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Sep 11 19:13:10 1995
+)</H3>
+<PRE>
+Date: Mon, 11 Sep 1995 17:07:30 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+The ColdX-0.2-0 driver is available, Changes from 0.1-4 (last publicized
+release):
+
+0.2-0 [11-Sep-95]: Brandon Gillespie, Miroslav Silovic
+      * Added Floating Point support (Miroslav)
+      * Fixed memory leak in match_pattern() (Miroslav)
+      * New Function: method() (returns method in current frame)
+      * New Function: backup(), similar to binary_dump(), but it copies
+        the binary directory before making it dirty again.
+      * Fixed bug with decompiling frob's
+      * New Function: buffer_from_string() (newlines -&gt; \n )
+      * New Function: buffer_to_string()   (newlines -&gt; \n )
+      * Changed compiling escapes in strings.  Previously it would eat
+        any single slash, and would escape the second character.  Now
+        it does not eat the slash if the second char is not a double
+        quote, or a slash.  This was causing a problem as you would
+        have to submit regexp escapes as "str \\$object" rather than
+        "str \$object" as they should be.  It works fine now.
+      * Rearranged files in anticipation of adding object modules and
+        native methods.
+      * Added method states and method flags.  Method states can be one
+        of the following:
+            public              (default)
+            private             (callable only by this)
+            protected           (sendable only by this)
+            root                (callable only by $root)
+            driver              (callable only by the driver)
+        Method flags can be any of the following:
+            disallow_overrides  (same as before)
+            synchronized        (will be used with multi-threading)
+            locked              (method cannot be changed after this is set)
+            native              (the method is native code, will come in later)
+      * New Function: method_flags() returns the method flags as a list
+        boolean integers.  This will change to a bitwise field, once
+        bitwise operators are added.
+      * New Function: method_state() returns the method state as a symbol
+      * New Function: set_method_state() sets the method state
+      * New Function: set_method_state() sets the method state
+0.1-5 [7-Aug-95]: Brandon Gillespie, Miroslav Silovic, Jeff Kesselman
+      * New Function: clear_var() (Brandon, Miroslav)
+      * New Functions: localtime(), strftime() and timestamp() (Brandon)
+      * New Function: buffer_tail() (Jeff Kesselman)
+      * textdump read/write: ignores variables with invalid parents (Brandon)
+      * New Functions: stat_file(), read_file() (Brandon)
+        read_file() will eventually work the way it is supposed to,
+        (line by line) rather than the entire file in one buffer (which
+        is as it works now).
+      * Added file management routines, seperate development source
+        for developers, distribution source is a modified version of
+        the development source.  (Brandon)
+0.1-4 [16-May-95]: Brandon Gillespie, Miroslav Silovic
+      * Fixed "E" in "aeiou" bug (Brandon Gillespie)
+      * Fixed ugly nasty bug in function binding (Brandon Gillespie)
+      * Fixed regexp bug, had backwards logic (Miroslav Silovic)
+      * Signal handler now catches SIGCHLD and does what it should (so
+        no more &lt;defunct&gt; processes, hopefully). (Brandon Gillespie)
+      * Signal handler resets signals after each catch, for SYSV systems
+        (I don't believe BSD systems need to do this, but I could be
+        wrong).  (Brandon Gillespie)
+
+--------------
+
+0.2-0 is the testbed for 1.0  Once bugs have been hunted in this version,
+I will do a 1.0 release.  Read the file NOTES in the base directory for
+bug hunting notes.
+
+It is available via:
+
+    ftp://sticky.usu.edu/pub/brandon/cold/drivers/ColdX-0.2-0.tar.gz
+
+ColdX Project pages can be found at:
+
+    http://www.cold.org:8080/
+
+Enjoy,
+
+-Brandon Gillespie-
+</PRE>

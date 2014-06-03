@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [235] in "Coldmud discussion meeting"</TITLE>
+<H1>[235] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?235"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="234"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="236"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: netwrok "stuff"</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 13 01:51:05 1994
+)</H3>
+<PRE>
+Date: Thu, 12 May 1994 22:28:07 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+&lt; Hold on here..you want strindex (I like that best, but let's get on with the
+&lt; point) so you can do word wrapping?  Aren't we getting into the area of client
+&lt; functions?  I mean, if you start putting everything in the server, you get
+&lt; lambda, and you get 7 second lag and more server JUNK than you will ever
+&lt; use in your entire life.  See Lambda, if you don't believe me.
+
+I have considered this.  Basically:
+
+  A) I strongly do not think you should limit something because another
+     programmer may do something you don't agree with.
+  B) The reason I have word wrapping is because of Guests.  Since I
+     have the cold dark linked via telnet to the Web, guests often (and
+     already have often) come in from that link.  By having automatic
+     wrapping with guests it is much better.  I am personally a vehmenant
+     believer in clients (I dont think you should support any form of
+     telnet) and having them do all the work.
+
+But here nor there (Oh, and strindex could be used for other things as well--I
+will eventually get it, if anything I will hack it in myself--just figured I'd
+bounce ideas around).
+
+-Brandon/Lyncx-
+</PRE>

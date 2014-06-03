@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [630] in "Coldmud discussion meeting"</TITLE>
+<H1>[630] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?630"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="628"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="629"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="629"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="631"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="632"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="635"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: floating point</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan 16 13:48:31 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Mon, 16 Jan 95 11:43:39 -0700
+
+&lt; Heh.  the two main problems seem to be 1) getting everyone to agree on
+&lt; what changes to be made and 2) getting someone to maintain and coordinate
+&lt; the entire effort.
+
+I've been doing some work on my own driver, on the side.  Since I didn't feel
+like dealing with the 'politics' on this list, I'm calling it something
+original like ColdX.  The main reason for splitting is to do my own hacks
+without having to try to convince others they are a good idea.
+
+(I've already got some changes made, including part of a signal handler, and
+I plan on integrating FP sometime).
+
+&lt; What do people think of some sort of option config file for cold?
+
+I've already got it, using the same system I made for the netrek server.  I
+also have a setup script which sets the available options (prompting for
+what you want).  This is different from the configure script, which creates
+the makefiles.
+
+&lt; nice cores could even have some sort of library object that will do in-db
+&lt; emulation (if possible) of the requested function if it's not present...
+
+I think Crag was working on in-db FP at one point (on tCD) I do not how far he
+got with it (sorry, random trivia).
+
+-Brandon (the engaged -- marriage in June :) -
+</PRE>

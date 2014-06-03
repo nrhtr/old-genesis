@@ -1,0 +1,83 @@
+<HEAD><TITLE>discuss@charon: [458] in "Coldmud discussion meeting"</TITLE>
+<H1>[458] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?458"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="455"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="457"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="457"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="459"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: while, where, when, with -- WHAT?!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Sep 25 15:04:05 1994
+)</H3>
+<PRE>
+Date: Sun, 25 Sep 1994 14:58:55 -0400 (EDT)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: Alex Stewart &lt;stewarta@netcom.com&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199409250754.AAA29028@netcom3.netcom.com&gt;
+
+
+
+On Sun, 25 Sep 1994, Alex Stewart wrote:
+
+&gt;   DO statement WHILE (expr) statement
+&gt; 
+&gt; with possibly the option of leaving off the "DO statement" part of things if
+&gt; one wanted to.
+
+This is another one I kinda like, by the way, because it's more than just 
+a band-aid, it has uses of its own.
+ 
+&gt; I dunno.. I'm thinking of giving up on this whole thing, actually.. I 
+&gt; do actually agree with Greg some on the reasons behind assignments as 
+&gt; statements (now that I think about things, I really kinda like the 
+&gt; design aspect of ColdC that there's only one actual operation (effect) 
+&gt; that can take place per line of code)..  
+
+Note that this only truly applies if no method calls or primitives ever 
+produce side effects, which really just isn't the case.
+
+&gt;                                          and I'm also not sure that 
+&gt; changing the while statement is a good way to do things either, because 
+&gt; people are generally very familiar with it the way it is currently and 
+&gt; it's easy to understand in its current form..  sigh. 
+
+Well, the change you proposed is at least back-compatible and it also 
+allows another familiar and fairly intuitive construct as a special case:
+
+DO
+  &lt;stuff&gt;
+WHILE (&lt;condition&gt;);
+
+&gt; You can do this already, just change the parser code and recompile the server.
+
+Not really, as this still doesn't allow more than one compiler to coexist 
+(except by duplicating the in-server compiler and decompiler in ColdC 
+anyway in order to translate).  It also doesn't allow the other benefits 
+of low-level code access, such as workable debuggers.
+
+&gt; This is actually the kind of thing I'd like to avoid, tho, because it 
+&gt; means that no two ColdMUDs are likely to be able to use the same code, 
+&gt; effectively castrating any porting potential or collaboration between 
+&gt; systems.  Personally, I'd rather have everything stay the way it is 
+&gt; than "progress" in such a potentially disastrous direction (that's why 
+&gt; I'm discussing all of this here instead of just going ahead and making 
+&gt; my own changes). 
+
+This isn't necessarily so.  At the very least, porting should be possible 
+on an "assembly language" level.  More likely, the two MUDs would share 
+at least one popular language compiler.  If something isn't portable, 
+it's much more likely it'll be because someone hacked the core to improve 
+it, or started with a different one entirely.  There are already tons of 
+ColdMUDs with idiosyncratic cores that would make porting a chore, to say 
+the least.  These kind of problems are much more work to deal with than 
+simple language translation, as they affect semantics and code design.
+
+James Deikun (James@JHM, James &amp; Splat@BlueMOOn)
+
+</PRE>

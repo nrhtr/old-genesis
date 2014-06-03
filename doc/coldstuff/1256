@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1256] in "Coldmud discussion meeting"</TITLE>
+<H1>[1256] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1256"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1255"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1255"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1255"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1257"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Win32</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar 12 11:46:01 1997
+)</H3>
+<PRE>
+Date: Wed, 12 Mar 1997 09:30:11 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: Zachary Merlynn Loafman2 &lt;zml@metronet.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;3325E8FD.15B5@metronet.com&gt;
+
+
+&gt; Who is working on the Win32 side of Genesis? I'd be willing to help. :-)
+&gt; 
+
+It is actually finished--but only with borland.  What compiler do you use?
+I would like to get it to also compile with cygwin32 (a nightmare) and
+visual C++.  I suspect the latter will be easier than the former, but who
+knows.
+
+-Brandon
+
+</PRE>

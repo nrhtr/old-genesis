@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [933] in "Coldmud discussion meeting"</TITLE>
+<H1>[933] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?933"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="930"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="932"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="932"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="934"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Genesis/Cold 0.4 is available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar 10 17:40:55 1996
+)</H3>
+<PRE>
+Date: Sun, 10 Mar 1996 15:25:54 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Stephen Smoogen &lt;smooge@duracef.shout.net&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.LNX.3.91.960310133334.5917C-100000@duracef.shout.net&gt;
+
+On Sun, 10 Mar 1996, Stephen Smoogen wrote:
+&gt; On Sun, 10 Mar 1996, Brandon Gillespie wrote:
+&gt; &gt; Genesis 0.4 is the step right before 0.1; all of the bugs we
+&gt; 
+&gt;                                        ^^^^ WOW negative progression!
+
+D'oh
+
+&gt; Will we be using the unix.dll that cygnus.com is getting together? I have 
+&gt; done some winNT/95 work with it and it could be a good transfer zone to 
+&gt; full win95.
+
+I havn't heard about the unix.dll, so I can't say :)
+
+Actually, i've been working with a friend of my who has done quite a bit 
+of PC/DOS/Windows programming (joshua jensen).  Frankly there will not be 
+much needed to change, to compile in windows 95.  A few things here and 
+there, rewrite of file.c, and we are set.  Josh already has bison for 
+win95 so I would believe we will be seeing a win95 version soon after 1.0 
+is out.
+
+-Brandon
+</PRE>

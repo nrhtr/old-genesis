@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [669] in "Coldmud discussion meeting"</TITLE>
+<H1>[669] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?669"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="668"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="668"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="670"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="670"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar  7 17:34:32 1995
+)</H3>
+<PRE>
+From: The Importance of Being Chuck &lt;cadams@weather.Brockport.EDU&gt;
+To: crag@serial.mit.edu (Robert de Forest)
+Date: Tue, 7 Mar 1995 17:28:40 -0500 (EST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;m0rm69a-000KcEC@serial&gt; from "Robert de Forest" at Mar 7, 95 02:46:48 pm
+
+Robert de Forest drew these heiroglyphs:
+&gt; 
+&gt; I'd like to propose '-&gt;' be the assignment operator. It visually represents
+&gt;  what happens to the variable being assigned the new value. It has no chance
+&gt;  of being pronounced, 'equals'. It looks cool...
+
+it's backwards.  :) 
+
+though that's been discussed.  What concerns me is that '=' is already
+assignment.  do we really want two different assignment operators?  or
+are we removing the single '=' entirely?  If so, all I'd do is write
+code in-db that changed them back and forth like JHcore MOOs do with
+comments.  which makes the whole issue of what to call it quite
+academic, actually.  but it's not feasable to write code in-db that
+does assignment-as-expression, so let's have it in the server.
+
+&gt; What have I left out?
+
+how about index-as-lvalue?  (foo[bar] = 1; foo[bar..baz] = [1, 2, 3])
+</PRE>

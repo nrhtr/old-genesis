@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [856] in "Coldmud discussion meeting"</TITLE>
+<H1>[856] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?856"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="855"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="857"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Echo file (fwd)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec 13 11:38:21 1995
+)</H3>
+<PRE>
+Date: Wed, 13 Dec 1995 09:20:45 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+
+All of the file functions will hook through the new file handling system 
+I have hacked up.  It will basically only work with a chunk of the file 
+at a time, to keep it from blocking up tasks.  Right now the block 
+defaults to 512 bytes (or something around there).  It is setable on the 
+fly.  All file functions should be secured when running in a virtual 
+environment.
+
+-Brandon Gillespie-
+</PRE>

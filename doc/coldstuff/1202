@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1202] in "Coldmud discussion meeting"</TITLE>
+<H1>[1202] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1202"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1196"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1200"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1201"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1203"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1204"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1206"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] cold stuff ;)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan  1 15:46:56 1997
+)</H3>
+<PRE>
+Date: Wed, 01 Jan 1997 12:44:55 -0800
+To: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+From: Jeff Kesselman &lt;jeffk@ten.net&gt;
+Cc: coldstuff@cold.org
+
+At 12:43 PM 1/1/97 -0700, you wrote:
+&gt;&gt; 1) Did textdump ever get fixed?  Do we have a dumpsplit that works on the
+&gt;&gt;    new format?
+&gt;
+&gt;What was wrong with the textdump?
+
+Quite awhile ago it was broke. I just haven't kept up, is all.
+
+&gt;
+&gt;&gt; 2) Is it true that user() has no useful or meaningful default before you
+&gt;&gt;    issue a set_user()??  Wouldn't it make sense for the default value
+&gt;&gt;    of user() to be the object that is at the top of the current call stack?
+&gt;
+&gt;Not really.  It all depends upon what user() is for.  It is simply a means
+&gt;of identifying a 'key' controller object within the call stack, with a
+&gt;standard interface (i.e. 'tell').  aving it default to an arbitrary
+&gt;object could potentially break many things assuming that it always returns
+&gt;a standard class of object (defined within the database).
+
+Yes, but....  
+(1) None of the other similar functions (caller(),definer(), sender() )
+    return a known object type.  This is perfectly acceptable for this use.
+(2) I would propose that the inability to ask what the object is at the top
+    of the call stack is a weakness and hole is the whole caller(),definer(),
+    sender(),this()  structure.  This is a useful piece of information about
+    the call that is totally hidden.
+
+I had an in-db thing like user() before, and dropped it for user(), but 
+implemented this way there really is little additional value to it.  I
+REALLY believe a function to query for top of call stack is appropriate and
+necessary (yes, one could parse traceback() but that's VERY inefficient.)
+
+JK
+</PRE>

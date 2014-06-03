@@ -1,0 +1,61 @@
+<HEAD><TITLE>discuss@charon: [1388] in "Coldmud discussion meeting"</TITLE>
+<H1>[1388] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1388"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1387"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1387"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1387"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1389"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] MOO to Cold Converter</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec  4 13:14:04 1997
+)</H3>
+<PRE>
+Date: Thu, 4 Dec 1997 11:04:24 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: "Edward L. Haletky" &lt;elh@secretariat.astroarch.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199712041448.IAA16622@secretariat.astroarch.com&gt;
+
+On Thu, 4 Dec 1997, Edward L. Haletky wrote:
+
+&gt; Is there a MOO to COLD converter anywhere?
+
+A while back I wrote a program that converted moo objects to coldc
+objects--generally.  Then I started to rewrite it to make it better, and
+ended up leaving it in a broken state.  It generally converts code to
+ColdC, but you still need to go and do touching up.
+
+The problem is that MOO and ColdC while similar have a few drastically
+different concepts--primarily dealing with properties.  Furthermore, one
+or two operations are not similar, and require a totally different way of
+doing things.
+
+For instance, in MOO:
+
+    list[2] = value
+
+In ColdC:
+
+    list = replace(list, 2, value)
+
+So its a bit harder to write a convertor.
+
+Not to mention that ColdC has more power than MOO, and while you can
+convert moo code to run in ColdC you can likely optimize it quite well by
+taking advantage of some of the greater data structures and types.
+
+&gt; I really do not wish to reprogram everything.
+
+I can understand :)
+
+If you want to take a whack at fixing it, the conversion program is in
+Perl, and is on the ftp archives under contrib/
+
+-Brandon
+
+</PRE>

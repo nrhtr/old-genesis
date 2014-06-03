@@ -1,0 +1,74 @@
+<HEAD><TITLE>discuss@charon: [1155] in "Coldmud discussion meeting"</TITLE>
+<H1>[1155] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1155"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1153"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1154"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1154"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1156"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1156"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1163"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Is there a shortcut to @def?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 14:21:06 1996
+)</H3>
+<PRE>
+Date: Mon, 02 Dec 1996 12:11:08 -0800
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+Brandon Gillespie wrote:
+&gt; 
+&gt;
+	[...]
+&gt; The definer is optional.  Follow that by a semi colon and then the normal
+&gt; eval from that point on.  This replaces both:
+&gt; 
+&gt;     @def xxx as yyy eval zzz        =&gt;    ;as yyy&lt;xxx&gt;; zzz
+&gt;     @as yyy eval zzz                =&gt;    ;as yyy; zzz
+&gt; 
+
+Thanks.  That's at least one reason to get Alpha 5,  Btw, I've just
+started
+looking at the whole database-- there's a lot of code.  Good job
+to the whole crew!
+
+I'm looking at how to easy or hard it would be to implement intermud3 
+	http://www.imaginary.com
+for intermud communication (the '97 buzzword huh? Connect now with 
+your Sega to the to the Intermud! SEGA!!!). Anyway, if I can actually
+get to the coding part, I hope to get the intermud3 hooked up so
+that I can join other muds in the same network (mostly LP and a couple
+Diku muds).
+
+Intermud3 has the following features:
+	-mudlist to show what muds are up, type, address, databases
+	-remote tell with emotes
+	-remote who
+	-finger
+	-intermud mail (based on the mud name not the address)
+	-ftp/telnet
+	-plus some other stuff I don't know about
+Everything goes through an intermud server.
+
+I'm also talking to some people at Electric Communities about using
+their version of Java language called E (for enhanced Java) that 
+includes some security stuff.  Maybe something to consider for Cold 2.0.
+The lanuage is free and available from:
+	http://www.communities.com
+Their stuff is in *.class, but a good decompiler will rebuild the
+source.
+
+Later,
+
+Frank
+ 
+
+-- 
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+`
+</PRE>

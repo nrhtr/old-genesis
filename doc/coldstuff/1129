@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1129] in "Coldmud discussion meeting"</TITLE>
+<H1>[1129] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1129"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1124"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1128"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1128"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1130"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1130"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1130"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] How to compile?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov  7 01:10:07 1996
+)</H3>
+<PRE>
+Date: Wed, 6 Nov 1996 22:39:44 -0700
+To: silovic@srce.hr, coldstuff@cold.org
+From: gestalt@sedona.net (Gestalt)
+
+&gt; &gt; (4:45pm) merlin [~/Genesis-1.0p18]&gt; make
+&gt; &gt; cd src/; make
+&gt; &gt; yacc -d grammar.y
+&gt; &gt;
+&gt; &gt;  fatal error: too many terminals, limit 300, line 197
+&gt; &gt; *** Error code 1
+&gt; &gt; make: Fatal error: Command failed for target `grammar.o'
+&gt; &gt; Current working directory /u2/home/jc/Genesis-1.0p18/src
+&gt; &gt; *** Error code 1
+&gt; &gt; make: Fatal error: Command failed for target `all'
+&gt; &gt;
+&gt;
+&gt; I've seen this happening on outdated architectures. Your system and gcc
+&gt; are okay, it's your yacc that sucks. Get and compile bison (it's available
+&gt; in any GNU archive).
+&gt;
+&gt;         Miro
+
+Thanks a lot, I'll try it... let you know.
+
+And you run and you run to catch up with the sun but it's sinking
+Racing around to come up behind you again.
+The sun is the same in a relative way but you're older,
+Shorter of breath and one day closer to death.
+
+
+</PRE>

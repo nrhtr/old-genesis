@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [858] in "Coldmud discussion meeting"</TITLE>
+<H1>[858] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?858"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="857"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="859"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="859"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="859"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Dumpsplit for new format???</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec 26 21:18:28 1995
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@tombstone.sunrem.com
+Date: Tue, 26 Dec 1995 17:59:11 +0000
+
+Hey all,
+
+The new format looks great and dbconv looks very useful BUT dumpsplit 
+wont understand the output of dbconv.  Has anyone writtena new 
+dumpsplit to complete the conversion pathway?  Splitting by hand may 
+be as much of a pain to me as just hand re-coding my objects....
+
+Thanks
+
+Jeff Keselman
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+Clinton Gingrich Atomic Biological Bomb NSA -- Hi John!
+(A message for my friend in the NSA)
+*******************************************************
+</PRE>

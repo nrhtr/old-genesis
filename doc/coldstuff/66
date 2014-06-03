@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [66] in "Coldmud discussion meeting"</TITLE>
+<H1>[66] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?66"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="65"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="65"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="65"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="67"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="67"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="67"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Coldmud 0.9 release, Cold World 0.4 release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 25 10:22:16 1993
+)</H3>
+<PRE>
+Date: Thu, 25 Nov 93 15:13:50 GMT
+From: Andrew Wilson &lt;Andrew.Wilson@cm.cf.ac.uk&gt;
+To: coldstuff@MIT.EDU
+
+
+
+
+Ok, on the .9 server with the .4 core I get:
+
+;data(this())
+ERROR: Current object ($programmer1) is the system object.
+Thrown by function data().
+~perm in $programmer1.tmp_eval (defined on $programmer1), line 1
+~methoderr in $programmer1.eval_cmd (defined on $programmer), line 22
+~methoderr in $programmer1.parse_command (defined on $user), line 10
+~methoderr in $programmer1.parse_command (defined on $programmer), line 12
+
+Shouldn't that be )... is NOT the system object?!
+
+Andy.
+</PRE>

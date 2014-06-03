@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [1081] in "Coldmud discussion meeting"</TITLE>
+<H1>[1081] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1081"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1080"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1082"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Patch - persisting objects</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug 27 22:42:16 1996
+)</H3>
+<PRE>
+Date: Wed, 28 Aug 1996 04:23:01 +0200 (MET DST)
+From: Miroslav Silovic &lt;silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+
+Okay, here's another take at unkillable objects bug. This one made
+method_info grab an extra ref.
+
+	Miro
+
+Here's the patch, folks.
+
+---------------------
+
+
+*** /tmp/x/Genesis-1.0p13/src/ops/object.c	Sat Aug 10 19:43:52 1996
+--- object.c	Wed Aug 28 04:15:55 1996
+***************
+*** 414,429 ****
+--- 414,430 ----
+          case MS_DRIVER:    list[4].u.symbol = ident_dup(driver_id);    break;
+          default:           list[4].type = INTEGER; list[4].u.val = 0;  break;
+      }
+  
+      list[5].type = LIST;
+      list[5].u.list = list_method_flags(method-&gt;m_flags);
+  
+      pop(1);
++     cache_discard(method-&gt;object);
+      push_list(output);
+      list_discard(output);
+  }
+  
+  COLDC_FUNC(methods) {
+      cList   * methods;
+      cData     d;
+      Obj * obj;
+</PRE>

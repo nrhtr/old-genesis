@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [878] in "Coldmud discussion meeting"</TITLE>
+<H1>[878] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?878"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="877"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="879"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Editor command change</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan  6 00:25:40 1996
+)</H3>
+<PRE>
+Date: Sat, 6 Jan 1996 05:58:47 +0100
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@tombstone.sunrem.com
+
+
+I replaced :&lt;text&gt; with ,&lt;text&gt; in the editor interface. This way, you
+can do both speech and poses in a room while editting (before, a mistaken
+pose mingled your text). The replacement is done on the cold.org, and
+will be in the new core (unless we replace it again :) )
+
+	Jenner
+</PRE>

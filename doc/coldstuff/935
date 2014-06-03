@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [935] in "Coldmud discussion meeting"</TITLE>
+<H1>[935] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?935"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="934"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="936"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="936"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="938"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Re: MUD system -&gt; MUD system conversion...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 15 11:56:01 1996
+)</H3>
+<PRE>
+Date: Fri, 15 Mar 1996 09:34:27 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: moo-cows@parc.xerox.com, coldstuff@cold.org
+In-Reply-To: &lt;ad6e8b69010210047107@[150.203.175.158]&gt;
+
+On Fri, 15 Mar 1996, Matthew Sanderson wrote:
+&gt; As far as I can see, the differences between text-based VRs (MOO and
+&gt; DikuMUD, for example) are such that the only information that is meaningful
+&gt; to both systems and therefore able to be converted, is the most basic such
+&gt; as location/contents, name, description, and perhaps rudimentary
+&gt; inheritance.
+&gt; I don't see that a (probably quite complex) system of converting from one
+&gt; M*'s internal format into this necessarily very restrictive high-level
+&gt; format, then back down to another M*'s format, would be very useful.
+&gt; Surely if the only things that can be converted over are extremely basic,
+&gt; the conversion would be easier done by hand, or with a simple script.
+&gt; One high-level language to describe all M*s is too ambitious IMHO.
+&gt; A hack that converts, say, a DikuMUD db into a MOO db might be a more
+&gt; useful and easily attainable goal.
+
+There are groups of muds which share the same concepts in topology 
+design.  For instance, a room is MOO is similar to a place in Cold.  The 
+idea is to cater to these similarities.  Diku is as far from a similarity 
+as you can get, and its not intended for converting diku topology.
+
+What is dumped would not have much depth, but it would get 90% of the 
+grunt work converted to a db, if somebody wanted to convert.
+</PRE>

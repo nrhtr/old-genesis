@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [42] in "Coldmud discussion meeting"</TITLE>
+<H1>[42] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?42"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="30"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="32"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="41"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="43"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="46"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="46"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Regular expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 04:30:40 1993
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Tue, 16 Nov 1993 17:31:55 EST."
+Date: Wed, 17 Nov 1993 03:23:29 -0600
+From: Adam Harris &lt;harris@cs.uchicago.edu&gt;
+
+I'd like to cast a vote of in-server regexp routines.  
+It's true that they are "unreadable" to some average, untutored user.
+On the other hand, it seems like there's a huge base of people
+who know and use "regular expressions".  It's implemented all over
+the place (aside from emacs, already mentioned, there's perl, grep,
+MOO implementations, for a start).  And to those users---like myself---
+grep descriptions are *decodable*, if not entirely readable.
+
+This is not to say that, in general, we should restrict ourselves
+to what is currently the standard.  That would be a mistake.  But in
+this case I feel the standard is a reasonably good one.  At least, 
+I haven't really seen better one.  
+
+(How many times have I wished MS Word had reg-exps!  Ah, serves me
+right.)
+
+&gt; &gt; Fifth, I'm kind of wary of totally in-server robots.  I think that
+&gt; &gt; decision mechanisms in robots should generally be done client-side
+&gt; &gt; (there are plenty of client tools for this).
+&gt; 
+&gt; In my experience, in-server robots are the way to go.  Client robots just
+&gt; can't get at the information as expediently or easily using text-only
+&gt; protocols.  Client robots also require the implementation in a different
+&gt; language than the system which they are interfacing with, which deters
+&gt; otherwise creative users.
+&gt; 
+
+Could someone give me a clue on what a "client robot" is?
+
+.......................................................Adam Harris
+............................................harris@cs.uchicago.edu
+</PRE>

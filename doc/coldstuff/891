@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [891] in "Coldmud discussion meeting"</TITLE>
+<H1>[891] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?891"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="890"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="892"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="892"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="893"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Operator overloading</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 10 08:13:38 1996
+)</H3>
+<PRE>
+Date: Wed, 10 Jan 1996 14:00:11 +0100
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@tombstone.sunrem.com
+Reply-To: coldstuff@tombstone.sunrem.com
+
+
+I don't have the new source on me, but in 2-10, there's 
+
+    if (d1-&gt;type == INTEGER &amp;&amp; d2-&gt;type == INTEGER) {
+        /* Replace d1 with d1 + d2, and pop d2. */
+        d1-&gt;u.val += d2-&gt;u.val;
+    } else if (d1-&gt;type == FLOAT &amp;&amp; d2-&gt;type == FLOAT) {
+        d1-&gt;u.fval += d2-&gt;u.fval;
+    } else if (d1-&gt;type == STRING &amp;&amp; d2-&gt;type == STRING) {
+        anticipate_assignment();
+        d1-&gt;u.str = string_add(d1-&gt;u.str, d2-&gt;u.str);
+    } else if (d1-&gt;type == LIST &amp;&amp; d2-&gt;type == LIST) {
+        anticipate_assignment();
+        d1-&gt;u.list = list_append(d1-&gt;u.list, d2-&gt;u.list);
+    } else {
+        cthrow(type_id, "Cannot add %D and %D.", d1, d2);
+        return;
+    }
+    pop(1);
+
+for addition. So, cthrow could be replaced with the method call on the
+first argument (I don't feel like rummaging through the source to find
+the exact recipe. :) ) Brandon, can this be done?
+
+	Miro
+</PRE>

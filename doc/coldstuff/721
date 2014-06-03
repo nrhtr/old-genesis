@@ -1,0 +1,79 @@
+<HEAD><TITLE>discuss@charon: [721] in "Coldmud discussion meeting"</TITLE>
+<H1>[721] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?721"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="720"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="722"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="722"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="722"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>server extension</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 20 08:41:54 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: coldstuff@MIT.EDU
+Date: Mon, 20 Mar 1995 07:29:04 -0600 (CST)
+
+Ok, I have nothing firm in mind, but while I have anything in my mind at all
+ I want to write it down and send it here.
+
+The objective is to be able to add functionality to the server at run time in
+ ways other than writing in-db code because interpretation is inherantly slow
+ except for languages like Forth which are just plain confusing and not overly
+ popular compared to structured compiled languages like C.
+
+My first instinct is to provide a way to 'import' new class objects. What I
+ envision is that you'd tell the running server there's an "object file" at
+ a certain location in the file system and that you wish for it to be added
+ to the server as a new object. Something like import("extensions/bitfield").
+ The return of this function would be a new dbref which acts like a regular
+ object as far as the db can tell. When the object receives messages it turns
+ them into API calls. I guess this is kinda like a Windows DLL...
+
+We'd need a way to verify that an import object was 'valid' and wouldn't crash
+ things. Allowing people to link in code at run-time is just BEGGING for big
+ trouble in the form of destructive crashes and viruses. One way to help
+ prevent this is to limit the level of access the object has. Perhaps allow it
+ to run as a seperate unix process to protect the server and limit interaction
+ to the same methods in-db objects use?
+
+I don't know what the cost of starting a new process in unix is. I also wonder
+ if doing this would kill whatever speed gain we attained. Is process-process
+ communication fast? Perhaps we could offer multiple trust levels. Untrusted
+ modules could be imported in a slow but safe way and as they earn trust more
+ could be given to them and they could run faster?
+
+There are a lot of great things about this. We might be able to get speed and
+ true language independance this way. If we had an export that compiled in-db
+ objects into an importable format we could use these as transportation
+ methods, perhaps... Best of all, we could export to C source, optimize it,
+ compile to assembler, optimize that, assemble it and distribute it as
+ an importable module. If all or most of the core funcionality were turned
+ into modules people could come up with things like list-0.1.2.ci-, a version
+ 0.1.2 c- import file to upgrade the list type.
+
+All of this is very hazy to me right now but maybe someone else will have
+ something to suggest to make this a little more realistic.
+
+Incidentally, since I will be providing the parser tree and allowing people to
+ compile raw parse trees to methods we will be able to add new operators in-db
+ if the code interpreter will support them. Maybe we should change the
+ interpreter to allow 'unknown' operators and send messages to the first
+ operand about the operator to see if it recognizes it, then to the second
+ operator, etc. This would allow some insane person to make string addition to
+ non-string types to work as if the non string types were string
+ representations of themselves if they provide a way to get that rep.
+
+Er, I mean, "foo" + 1 could be interpreted as $string.add_op("foo", 1) which
+ would generate a $integer.to_string(1)?
+
+I am eyeing myself warily now...
+
+
+Crag
+</PRE>

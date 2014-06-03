@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [716] in "Coldmud discussion meeting"</TITLE>
+<H1>[716] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?716"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="715"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="717"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Assignment operators</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar 16 14:48:34 1995
+)</H3>
+<PRE>
+From: foxen@netcom.com (Foxen)
+To: coldstuff@MIT.EDU
+Date: Thu, 16 Mar 1995 11:42:09 -0800 (PST)
+
+If you want to have assignment in expressions, then you cannot use &lt;- as
+an assignment operator.  Consider the following program that is meant to
+count from -10 to -5.
+
+a&lt;--5;
+while (a&lt;-5) {
+  a&lt;-a+1;
+}
+
+	- Foxen
+
+-- 
+   =/\=  "Illuminati...         | "We are young, wandering the face of the
+   ____    It's not just for    |  Earth, wondering what our dreams might be
+  /\/\/\    breakfast anymore!" |  worth, learning that we're only immortal
+ /\/\/\/\    foxen@netcom.com   |  for a limited time." - Rush: Dreamline
+</PRE>

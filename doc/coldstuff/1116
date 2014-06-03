@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1116] in "Coldmud discussion meeting"</TITLE>
+<H1>[1116] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1116"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1113"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1113"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1115"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1117"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Is there a new version of dumpsplit available?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  3 12:01:46 1996
+)</H3>
+<PRE>
+Date: Sun, 3 Nov 1996 09:42:17 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Frank Crowell &lt;frankc@maddog.com&gt;
+cc: Cold Stuff &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;327C5EB4.7F09936A@maddog.com&gt;
+
+&gt; I would like to split out my Alpha 4 textdump but the copy 
+&gt; of dumpsplit that I have doesn't seem to work correctly.
+&gt; Here are the messages I get:
+&gt; 	Splitting db
+&gt; 	Invalid object name "$root;", stripping to "$root".
+&gt; 	.
+&gt; 	Invalid object name "$sys: $root;", stripping to "$sysroot".
+&gt; 	.
+&gt; 
+&gt; Then it seems to hang.
+&gt; 
+&gt; I started to split the file by hand, but then I got bored.
+&gt; Anyone have a dumpsplit that works with A4?
+
+Yeah, dumpsplit is ancient, and assumes the old db format.  I'll look at
+it today and see what I can do.
+
+-B
+
+</PRE>

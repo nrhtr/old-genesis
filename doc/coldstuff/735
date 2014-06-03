@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [735] in "Coldmud discussion meeting"</TITLE>
+<H1>[735] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?735"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="734"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="736"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="736"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="736"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>SUNOS compile error</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 13 00:20:30 1995
+)</H3>
+<PRE>
+Date: Sat, 13 May 1995 00:21:19 -0400
+From: Quinn &lt;quinn@Access.Mountain.Net&gt;
+To: coldstuff@MIT.EDU
+
+
+I get this error when booting Coldmud 1.12-1c with all the mods
+ specified by README.src, plus a #DEFINE SUNOS in config.h.
+
+:| Sat May 13 00:15:52 1995: select:  forever wait
+
+Please help me.
+
+-Quinn
+</PRE>

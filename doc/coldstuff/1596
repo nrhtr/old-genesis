@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [1596] in "Coldmud discussion meeting"</TITLE>
+<H1>[1596] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1596"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1594"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1594"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1595"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1597"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Error message returned to console when @backup is called</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jun 27 21:02:19 2000
+)</H3>
+<PRE>
+Date: Tue, 27 Jun 2000 15:37:01 -0700 (PDT)
+From: Jeremy Weatherford &lt;xidus@xidus.net&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;000001bfdee0$ea5d8020$0200a8c0@nycap.rr.comDEST&gt;
+Reply-To: coldstuff@cold.org
+
+
+All I can tell you is that it happens to me too, and I haven't bothered
+figuring it out yet, since I'm in the process of writing my own core.  :)
+
+BTW, I've finally found a useful place to use frobs.  I'm still working
+out my own implementation, but I'll try to make the frob-related code
+available for people interested.  The core I'm working on will eventually
+be available itself, as well.  I'm using frobs to store exit information
+in rooms right now, and it's working out very well.
+
+Happy hacking,
+
+Jeremy Weatherford
+xidus@xidus.net
+http://xidus.net
+
+On Sun, 25 Jun 2000, Peter Bombard wrote:
+
+&gt; I've done a pretty standard install on Caldera Openlinux 2.3
+&gt; 
+&gt; Whenever I issue the @backup command I see the following on the console:
+&gt; 
+&gt; mv: binary.bak: No such file or directory
+&gt; tar: Cannot add file binary-25Jun100: No such file or directory
+&gt; tar: Error exit delayed from previous errors
+&gt; /bin/cp: binary-25Jun100.tar.gz: No such file or directory
+&gt; /bin/cp: binary-25Jun100.tar.gz: No such file or directory
+&gt; /bin/cp: binary-25Jun100.tar.gz: No such file or directory
+&gt; /bin/cp: binary-25Jun100.tar.gz: No such file or directory
+&gt; 
+&gt; -pete (PBombard@altavista.net) 
+&gt; 
+
+</PRE>

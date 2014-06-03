@@ -1,0 +1,99 @@
+<HEAD><TITLE>discuss@charon: [554] in "Coldmud discussion meeting"</TITLE>
+<H1>[554] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?554"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="553"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="555"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[Coldstuff] Re: The War of Frozen Roses</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov  7 13:16:40 1994
+)</H3>
+<PRE>
+From: image@expert.cc.purdue.edu (Jeff T.P.)
+To: coldstuff@MIT.EDU
+Date: Mon, 07 Nov 1994 13:11:16 -0600
+
+&gt; Brandon:
+&gt; Speaking from the experience of administrating the development of NetrekII
+&gt; since it's infancy ...
+
+Good for you, bravo. . . what's your point?  What does this have to do
+with coldmud?
+
+&gt; Colin:
+&gt; I get that Brandon's pretty confident I've made a decision, and
+&gt; that it was the wrong decision, in regard to ":=" and the other
+&gt; confectionary.
+
+Bravo, good for you. . . what's your point?  What does this have to do
+with coldmud?
+
+
+Last time I checked, when I subscribed, this list was for the purpose of
+talking about coldmud; not quibbling with one another.  It's become
+annoying.  My mailbox has been filled with some messages that really
+have nothing to do with coldmud at all.
+
+It's difficult to sort through all this garbage and find any information
+at all.  I maintain the skimpy FAQ as it is, but if I every message
+wasn't cloutted with so much garbage maybe I could find some more
+information to actually provide in the FAQ.  So far, 1 out of every 5
+pieces of mail I have are from Brandon espousing his hate for people's
+divine intervention trips (the proper term for which is 'arguing from
+Trancendence').  The next few messages following Brandon's then become
+letters of defense.
+
+If you are going to have a flame war (no matter how small the flames)
+then keep it in your mailbox.  I don't want 10 messages a day unless
+they have some actual content.
+
+*  *  *
+
+And now the part about ColdMud:
+
+Things I support:
+
+'=' as assignment and not ':=' or anything else.  '=' is a long term
+standard in several languages, as well as C and C++ which C-- is based.
+Also '=' has been with C-- since the beginning which makes changes
+awkward and annoying.  Why change it if it isn't broke?
+
+'=' as an expression is not a bad idea.  Again, C and C++ allow
+assignment as an expression.  Although not originally part of C--, it is
+an additive that many long term C programmer's find useful.  It does
+detract from the structure, but it also makes certain code easier to
+read (for programmers).  In the past, many languages have made the
+mistake of trying to 'dumb-down' the language for the general public.
+These languages, however, usually ended up doing nothing but frustrating
+the 'real' programmers who needed to do something in that language.  The
+best thing about the '=' as an expression change is that it is
+transparent.  If you don't use it, who will care. . .
+
+Task timeouts.  These are better off to be second based, as ticks from
+what I understand, become a rather arbitrary measurement when taken to
+different machines.  I do not have a full understanding of what exactly
+a tick is however.  Would someone clairify this for me?
+
+Other questions I have:
+
+What exactly is new in Version 0.12?  If there's a History file then
+just tell me that and I'll go look for myself.
+
+What is the current task suspension system like, how do you use it?  If
+you could, explain it in relation to LambdaMOO for recent converts.
+
+Is anyone still running a Cold Web Server?  I want to get the FAQ on it.
+
+Thanks guys.  Cheer up and smile a bit.  This list is getting to grim
+and we're gonna scare away the weak-hearted.  Let's turn them into
+"cold-hearted fools."  (:
+--
+Life In The So-Called Information Age . . .
+                      . . . One Man's Garbage Is Another Man's Treasure.
+</PRE>

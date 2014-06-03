@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [1513] in "Coldmud discussion meeting"</TITLE>
+<H1>[1513] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1513"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1512"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1512"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1514"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1514"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec  2 18:46:23 1999
+)</H3>
+<PRE>
+Date: Thu, 2 Dec 1999 15:32:26 -0800 (PST)
+From: Jeff Kesselman &lt;Jeffrey.Kesselman@eng.sun.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+First off,  I agree with you, just to view the documents there are better 
+solutions then Word or a word-alike.  PDF really IS modified postscript, made a 
+bit more sueful for on-lien viewing and with soem interractive features.  
+(Remember both PDF and post-script were invented by Adobe.)
+
+Still its easy enough to generate both PDF and Postscript from a Word document. 
+id be happy to do both.
+
+Just viewing though there are plenty of solutions (PDF has native readers for 
+most common environments and a Java reader for all others  that support Java.) I 
+assumed that Brandon's cocnern was mroe that he didnt want it in a form that
+was 'read only" to him. StarOfficve potentially  provides a simple solution to 
+that.
+
+The discussion really has to center around "where do we go FROM word" as that is 
+the author's preferred tool and trying to talk any volunteer into learning and 
+using a different tool will generally at best do nothign and at worst alinate 
+them and stop the work from progressign at all.
+
+This is alot like the golden rule-- "He who has the gold makes the rules." In 
+volunteer projects, volunteer effort is the gold.  Unless someoene else is 
+steppign up and offering to do the same work in a different tool, word IS our 
+starting point.
+
+JK
+
+
+</PRE>

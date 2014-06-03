@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [41] in "Coldmud discussion meeting"</TITLE>
+<H1>[41] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?41"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="40"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="42"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>server 8.0 errors (so you know)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 21:57:41 1993
+)</H3>
+<PRE>
+Date: Tue, 16 Nov 1993 19:41:18 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+COLDSTART DATABASE: ./tcd/*  on  Tuesday, November 16, 07:39:31 PM
+Tue Nov 16 19:39:33 1993: $lock true_lock: Line 1: parse error
+Tue Nov 16 19:39:33 1993: $lock false_lock: Line 1: parse error
+Tue Nov 16 19:39:33 1993: $lock object_lock: Line 5: parse error
+Tue Nov 16 19:39:33 1993: $lock and_lock: Line 5: parse error
+Tue Nov 16 19:39:33 1993: $lock or_lock: Line 5: parse error
+Tue Nov 16 19:39:33 1993: $lock not_lock: Line 5: parse error
+Tue Nov 16 19:39:34 1993: &gt; Server starting on port 6667.
+
+anyhow
+
+-Brandon
+</PRE>

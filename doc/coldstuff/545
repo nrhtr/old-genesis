@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [545] in "Coldmud discussion meeting"</TITLE>
+<H1>[545] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?545"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="544"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="546"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Server Thoughts</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 17:19:07 1994
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+Date: Sun, 6 Nov 1994 14:18:34 -0800 (PST)
+
+Ok, I'm new to this community, but here are a couple of my thoughts, for 
+whatever they are worth...
+
+1) Regular Expressions.
+   Incredibly useful.  I don't particualrly care where or how they
+   are impmented in the server, btu they shoudl be fast so you can
+   use them freely.  (The most common way to build fast reg-exp parsers
+   is to compile them down to an FSA.  It can take some memory, but
+   runs like a champ.)
+
+2) Load Control.
+   We have a reasonable nice and clean timing mechanism in cold mud
+   (heartbeat) but no way to get an indication of load.  As interactvity
+   is strongly imapcted by load (mud-lag), this is important to know
+   as timing of interactive things has to be adjusted as load increases.
+   ( A load-sensitive timer would be REALLY neat, but not necessary, as you
+     could build it in ColdC (C--,whatever you call it) if you can get
+     a load-value from the system.)
+
+Comments?
+
+Jeff Kesselman
+
+</PRE>

@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [633] in "Coldmud discussion meeting"</TITLE>
+<H1>[633] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?633"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="632"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="634"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="634"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="642"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>is the request line open?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan 16 18:22:06 1995
+)</H3>
+<PRE>
+From: frankc@netcom.com (Frank Crowell)
+To: coldstuff@MIT.EDU
+Date: Mon, 16 Jan 1995 14:30:47 -0800 (PST)
+
+Just in case the request line is open and before I forget
+again, what about including SUFFIX,PREFIX?
+
+Should these two commands be in the server or in the
+database(s)?  Or are they already in the server and
+I didn't look carefully enough.
+
+-frank
+
+-- 
+Frank Crowell email:frankc@netcom.com
+maddog's studio ftp://ftp.netcom.com/pub/fr/frankc/maddog.html
+**keep trying, ftp.netcom is very busy during the day [PST].**
+</PRE>

@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [402] in "Coldmud discussion meeting"</TITLE>
+<H1>[402] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?402"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="401"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="403"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="403"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="405"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Looking for Cores</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Sep 11 23:41:37 1994
+)</H3>
+<PRE>
+From: Greg Connor &lt;connor@apple.com&gt;
+To: coldstuff@MIT.EDU
+Date: Sun, 11 Sep 94 20:37:26 PDT
+
+Hi all.  I'd like to learn more about ColdMUD. I've been looking
+at the docs and it seems like a really excellent server. But I can't
+seem to find the "on" switch.
+
+Looks like I'm going to need a "core" of some kind, and the coldmud
+package doesn't give any information on where to get one. I downloaded
+a copy of TheColdDark, and it runs, but I'm only able to log in as a guest,
+and the help seems to be broken :)
+
+Anyway, I don't mind starting from scratch if need be, but there are no
+instructions on how to start clean, with an empty database, or even how to 
+write a minimal db.
+
+If anyone can help, please send mail. Thank you.
+Greg C
+(Darril@Incarnations@lumley.cais.com/4201)
+
+</PRE>

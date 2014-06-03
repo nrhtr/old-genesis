@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1050] in "Coldmud discussion meeting"</TITLE>
+<H1>[1050] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1050"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1048"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1048"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1049"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1051"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1051"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1051"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] ~non_terminated...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jul 27 15:09:46 1996
+)</H3>
+<PRE>
+Date: Sat, 27 Jul 1996 12:54:16 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199607271755.SAA02649@aaaaaaaa.demon.co.uk&gt;
+
+On Sat, 27 Jul 1996, Andrew Wilson wrote:
+&gt; Oh, and another thing...
+&gt; 
+&gt; The ~non_terminated behaviour is there to make output to telnet
+&gt; clients look neat:
+&gt; 
+&gt;     Please enter yes or no [yes]: no
+&gt;     
+&gt;     ^ server output.............. ^ user input
+&gt; 
+&gt; Which is kind of pointless if you're not using telnet, but are
+&gt; instead using a 'split screen' client which separates input from
+&gt; output.
+
+Well, most split screen clients that I am familiar with (tf/vt) still 
+handle it (they just put the prompt down in the input window).
+
+However, this behaviour can be disabled with:
+
+@set terminated-tell=no
+
+(It should actually be the default for _new_ users, its just in the ALPHA 
+the user is actually me, so it was on).
+
+-B
+</PRE>

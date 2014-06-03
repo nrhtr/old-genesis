@@ -1,0 +1,144 @@
+<HEAD><TITLE>discuss@charon: [165] in "Coldmud discussion meeting"</TITLE>
+<H1>[165] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?165"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="163"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="164"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="164"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="166"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="166"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="166"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: var accessors</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 25 14:47:07 1994
+)</H3>
+<PRE>
+To: Lynxian Theologies &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Fri, 25 Mar 94 11:54:19 -0600.
+             &lt;01HADZH0TC6WB7D9XF@cc.usu.edu&gt; 
+Date: Fri, 25 Mar 94 14:41:30 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+Let me try to explain the philosophy behind Coldmud's encapsulation.
+
+The phrase "object-oriented" has been corrupted since the days of its
+inception, and it now has a different meaning for everyone.  However,
+these days you can hear a lot about the "three pillars" of
+object-oriented programming: encapsulation, inheritance, and
+polymorphism.
+
+Polymorphism is the idea that a single operation (statement) can have
+several different meanings, and that this meaning may not be selected
+until runtime.  For instance, if I have a variable 'a' which is a
+collection of things, and I want to sort it, I may not care what kind
+of collection a is or what it contains; I just tell the language to
+"sort a" and it's the job of the language to figure out what I mean
+based on a's type.
+
+Inheritance is the idea that a type can be a derivation of a
+previously-defined type.  If I want a fancier version of a given type,
+I shouldn't have to go to all the work of duplicating the existing
+type; instead, I can inherit from it.  Generally, operations of a type
+are called 'methods'.  Associated with every inheritance scheme is a
+message dispatch algorithm, a procedure whereby the language decides,
+given a type and a message name, which method to call.  A common
+criticism of object-oriented languages is that method dispatch
+algorithms are much more complicated than old-style function dispatch
+algorithms, and therefore it's much easier for programmers to lose
+track of the flow of control.
+
+Encapsulation is the idea that you should define a type in terms of
+its operations, not in terms of its state.  That way, if it becomes
+convenient to reimplement the type using a different kind of state,
+code that uses the type won't need to change.  The canonical example
+is: you implement complex numbers in terms of a real part and an
+imaginary part, but you find that you're spending a lot of your time
+computing magnitudes.  If you've defined the 'complex number' type in
+terms of abstract operations and not in terms of state, you can
+reimplement complex numbers in terms of a radius and an angle without
+changing any of the code that uses them.
+
+How does MOO fit into this picture?  MOO evolved out of more
+traditional, non-programmable muds, and the name "object-oriented"
+makes more sense in that concept.  MOO took the old MUDs' conception
+of the database and added inheritance (in a more organized manner
+than, say, Muck).
+
+I should emphasize that MOO's "object-orientation" is in the database,
+and not in the language.  Also, MOO's inheritance is very nonstandard
+(at least for its day), in that it has no separation between
+operations and state: its database has one entity, the object, and you
+can define both operations and state for that object.  Both operations
+and state are inherited, in a way similar to CLOS.
+
+The model of programming under MOO is not much different from
+traditional programming: programmers view objects as a mishmash of
+state and operations, and use whichever form of access is convenient.
+If programmers want to change the state representations of their
+objects, they wind up breaking a lot of code that uses it.  In order
+to prevent programmers from stomping on the state of each others'
+objects, MOO introduces a permissions system similar to that of the
+Unix file system, and the idea of the 'owner' of a method.
+
+Coldmud tries to enforce a simpler, more organized model of
+programming, by encapsulating state.  Every object has an internal
+representation and an external interface, and other objects can only
+access the interface, not the representation.  If you find yourself
+asking the question, "How can I change this variable on another
+object?" then you're not thinking about the problem in the right way,
+for it's none of your business what variables the other object has.
+Thus, there are no built-in operations for changing state on other
+objects.
+
+Encapsulation in Coldmud runs across two axes: between an object and
+other distinct objects, and between an object and its ancestors.
+Although an object's representation contains the representation of its
+ancestors as well as its own state, it has no special access to the
+representation it inherits; it must go through the interface of its
+parents.  For example, and object which derives from 'container'
+cannot directly access its own 'contents', but must go through the
+regular container abstraction.
+
+Okay, that's a nice, pure model, but what happens if I screw up
+programming somewhere and find that in order to fix it, I need to
+change the variable foo belonging to the ancestor $bar on the object
+$baz to 3?  Well, it's not very hard to provide a command which lets
+you evaluate an arbitrary piece of code on an arbitrary object, if you
+have the appropriate permissions.  I would often issue commands like:
+
+	this $baz definer $bar eval foo = 3;
+
+Note that this requires compiling a method, running it, and removing
+it.  This is not the kind of operation you would perform automatically
+in your code (at least, I would hope).
+
+Coldmud's attempts at encapsulation do not change the fact that
+Coldmud is derived from MOO, and that Coldmud's object-orientation is
+in the database, not in the language.  Like MOO's language, Coldmud's
+language has a set of basic data types which cannot be modified, and
+beyond that there is only this idea of a persistent "object" which
+doesn't act all that well as a type.
+
+A sign that Coldmud is not sufficiently extensible (much like MOO is
+not) is that you see programmers squabbling over the details of the
+built-in functions: they want to change the interfaces not to make the
+built-in functionality more powerful, but to make it more convenient
+for their particular needs.  Sure, you can do it without a builtin,
+but "that takes ticks."
+
+MUDs need a complete rethink as dynamic, multi-programmer
+environments.  The focus on the database level (persistent objects
+which combine operations and state) makes it easier to develop a
+dynamic system, but it also makes the system less flexible.  Going
+back to a more traditional object-oriented system with classes and
+instances would introduce all sorts of versioning problems, but it
+might give programmers more flexibility to design robust, flexible
+subsystems.
+
+--GBH
+
+</PRE>

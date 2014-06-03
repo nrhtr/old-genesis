@@ -1,0 +1,96 @@
+<HEAD><TITLE>discuss@charon: [565] in "Coldmud discussion meeting"</TITLE>
+<H1>[565] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?565"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="564"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="566"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="566"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Assignment Operator.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  8 18:49:55 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Tue, 08 Nov 94 16:44:51 -0700
+
+
+Ok, this is my argument for changing the assignment operator from '=' to ':='.
+This argument is NOT for changing assignments to expressions (since some people
+seem to confuse these two issues).  I don't want assignments as expressions.
+
+The reasons I would like to change the assignment operator:
+
+   * removes a touch of confusion in the language
+   * it makes more sense logistically
+
+The only valid reason I can think of for not changing it:
+
+   * tradition, C has always been '='
+
+- The reason it removes a touch of confusion from the language is because
+currently all of the operators which include an equals sign also include
+some other character to identify what specific operation should be occuring.
+From a novice point of view it is extremely easy to confuse '=' and '=='.
+If assignments were expressions this problem would be much more immense, as
+the code would still compile but may have disastrous effects.  However, we
+do not have assignments as expressions (nor is this an argument FOR
+assignments as expressions), but it is still a matter of confusion.  As an
+example, look at the following two blocks of code from the view of a novice
+(do not try to read it logically, I'm just spamming):
+
+while (x == y || y == z &amp;&amp; z &lt;= STOP)
+    y = y + 1;
+    for i in [1..listlen(list)] {
+        x = i + y;
+        if (x == y)
+            list = setadd(list, part, list[i][x + z]);
+    }
+}
+
+Versus:
+
+while (x == y || y == z &amp;&amp; z &lt;= STOP)
+    y := y + 1;
+    for i in [1..listlen(list)] {
+        x := i + y;
+        if (x == y)
+            list := setadd(list, part, list[i][x + z]);
+    }
+}
+
+Now from my point of view, I will be explaining the language of ColdC to a
+lot of people (it will just happen), and a majority of these people will
+never have programmed before.  The above change--while small--would simply
+lessen how much I would have to explain. From the experience I have had so
+far in explaining MOO and C to other people, assignments as '=' is ALWAYS
+a major hangup in learning the language.
+
+- It makes more sense logistically because it is more like an actual english
+statement.  Yes, this is not english, but aspects of it do model how we
+think (otherwise we would not even use an equals sign at all).  I fleshed
+out this aspect before but the best is in how one might right an example...
+
+    Example: body of example.
+
+- By tradition, C has always been '=', so why should we change it?  I
+outlined why we should change it above.  The reason we should break tradition
+is because ColdC is _NOT_ C, so we should not force our language to stick
+with bad aspects of C, such as '=' being an assignment operator.  Otherwise
+we may as well add in other aspects of C such as the for syntax, pointers,
+etc.  I look at this change as one breaking tradition for the better.
+The way I see it is if we bind how ColdC is structured to the styles of one
+language we are horribly limiting the potential scope.
+
+-Brandon Gillespie (Lynx)-
+
+(BTW, as far as assignments as expressions, I would side with Greg.  In my
+opinion the advantages of such an ability are only in giving the programmer
+an ability to obfuscate their code even more.  I would prefer to keep the
+language simple so as to be easy to learn for beginners.)
+</PRE>

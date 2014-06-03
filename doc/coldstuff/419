@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [419] in "Coldmud discussion meeting"</TITLE>
+<H1>[419] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?419"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="418"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="420"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="420"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="422"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>server stuff</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Sep 20 19:15:11 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: coldstuff@MIT.EDU
+Date: Tue, 20 Sep 1994 16:08:41 -0700 (PDT)
+
+Is there any more information on the situation with ColdMUD under Linux (I'm
+finally getting around to setting it up on my linux system, but I don't like
+hangs.  I'm wondering if anybody has any more information before I start going
+after the bug aggressively on my own)?
+
+BTW, now that I've looked a bit at the code, I'm gonna go ahead and fix the
+fork/suspend(0) problem and release a patch if nobody has any objections..  I
+see a fairly simple way to do it, I think.
+
+-R
+-------------------------------------------------------------------------------
+   Alex Stewart - stewarta@netcom.com - Richelieu @ Diversity University MOO
+             ftp://ftp.netcom.com/pub/stewarta/html/stewarta.html
+</PRE>

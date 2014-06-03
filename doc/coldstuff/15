@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [15] in "Coldmud discussion meeting"</TITLE>
+<H1>[15] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?15"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="14"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="16"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>0.8 release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 21:19:39 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Mon, 15 Nov 1993 21:16:20 -0500
+To: coldstuff@MIT.EDU
+
+
+I've released Coldmud 0.8 on ftp.ccs.neu.edu in the directory
+pub/mud/drivers/coldmud as coldmud-0.8.tar.gz.  I've also updated the
+documentation files.
+
+The method search and decompilation bugs are fixed in this release.
+
+I've added two new functions, data() and error_arg().  data() is an
+administrative function which returns all the data on a dbref; if you
+specify a (new) optional third argument to throw(), error_arg()
+retrieves it in the handler that the error triggers.
+
+The frob constructor syntax is now
+
+	&lt;class, representation&gt;
+
+Where class must be a dbref, and representation must be a dictionary.
+Because the dictionary is no longer constructed from associations when
+the frob is constructed, you can substitute any dictionary expression
+in that slot (e.g. dict_add() of another dictionary).
+
+The release-engineering for 0.8 is pretty minimal; I checked the
+regression tests on two platforms, but didn't do extensive testing of
+the new features.  Please tell me about any compilation problems or
+bugs you encounter.
+
+All I currently plan to add to Coldmud before 1.0 is arguments to
+connect messages specifying host addresses.  Please tell me if you
+want anything else added, especially if it's not backward-compatible.
+
+Enjoy.
+
+--GBH
+
+</PRE>

@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [445] in "Coldmud discussion meeting"</TITLE>
+<H1>[445] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?445"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="442"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="443"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="444"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="446"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="451"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="453"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment, while (etc)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep 23 18:35:34 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Fri, 23 Sep 1994 16:06:45 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt; Original quote by Colin McCormack:
+&lt;&gt; It strikes me that one of C--'s features is its similarity to C++.
+&lt;
+&lt;&gt; Hence, assignment `=' (should be an expression)
+&lt;&gt;        equality `==' (if you can't tell the difference, learn to program)
+&lt;&gt;        while (abomination) { abomination } (abomination) - syntax sucks rocks.
+&lt;
+&lt; If nothing else, I share the same attitude.  It doesn't quite make sense
+&lt; to take a language called C-- and make it like pascal, or worse, add a
+&lt; weird conditional structure.  If anything, C-- should mimic C and C++.
+
+I'm sorry, but that opinion is extremely repulsive.  Why should it mimic C and
+C++?  Because _YOU_ think it should?  Ditto goes for Colin.  Colin: if you
+can't tell the reason why we are thinking about changing this, perhaps you
+should learn to be more open minded.
+
+Changing the assignment operator from '=' to ':=' in no   way makes it
+pascal.  If you think it does go back and relearn pascal.  Wake up and smell
+the roses.  However, it DOES improve the language dramatically--especially for
+the beginning learning curve.  One thing which ALWAYS throws people in relation
+to learning C is the '=' and '==' difference.
+
+&lt; The nice thing about staying inside those bounds is that C-- and ColdMud
+&lt; in general have an added benefit of serving instructional purposes with
+&lt; the language and environment.  It's hard as hell trying to show LPC or
+&lt; worse, TinyMUSH or MUCK or MUSE code to an admin and say that what you
+&lt; are doing on his machine will be instructional.  Show him you're C--
+&lt; code, and he'll look over it and it's possible he'll understand it.
+
+This has no relation to the current subject, which is A: changing the
+assignment operator from '=' to ':=' in order to cause less confusion (NOT to
+make it closer to pascal--that is the silliest idea I've ever seen Colin come
+up with), and to B: Change how the while loop functions.  However, if option A
+goes forward--it would lessen the confusion of assignments as expressions
+causing the need for option B to disappear (which would be a good thing, in my
+opinion :)
+
+ColdC (aka C-- (Greg's) is not C, nor is it C++).
+
+-Brandon-
+</PRE>

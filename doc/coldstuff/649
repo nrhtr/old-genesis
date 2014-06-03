@@ -1,0 +1,59 @@
+<HEAD><TITLE>discuss@charon: [649] in "Coldmud discussion meeting"</TITLE>
+<H1>[649] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?649"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="648"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="650"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [ColdMud] The ColdMud FAQ 0.1.0, Jan-31-95 (fwd)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Feb  1 14:03:12 1995
+)</H3>
+<PRE>
+From: crag@serial.io.com (Crag@JHM)
+To: coldstuff@MIT.EDU
+Date: Wed, 1 Feb 1995 10:20:13 -0600 (CST)
+
+I sent the following as a reply to the faq and it bounced back with a
+ connectino timeout so I'm sending it here in hopes that the maintainer
+ of the FAQ will get the info eventually anyway and update it.
+
+Forwarded message:
+&gt; From crag Wed Feb  1 10:02:10 1995
+&gt; Subject: Re: [ColdMud] The ColdMud FAQ 0.1.0, Jan-31-95
+&gt; To: image@expert.cc.purdue.edu (Jeff T.P.)
+&gt; Date: Wed, 1 Feb 1995 10:02:10 -0600 (CST)
+&gt; In-Reply-To: &lt;9502011151.AA12350@expert.cc.purdue.edu&gt; from "Jeff T.P." at Feb 1, 95 06:50:49 am
+&gt; X-Mailer: ELM [version 2.4 PL23]
+&gt; Content-Type: text
+&gt; Content-Length: 843       
+&gt; 
+&gt; Here are some corrections to the FAQ:
+&gt; 
+&gt; In the present state of cold section when it talks about private methods,
+&gt;  ".foo();" should be ":foo();".
+&gt; 
+&gt; Jordan Baker has bowed out of Cold development indefintely. His band got
+&gt;  some time in the studio and is recording or something. Neither he nor
+&gt;  I are working on Cold in any way.
+&gt; 
+&gt; Frozzen Apples is no long up nor available. You are better of with one
+&gt;  of the other cores anyway, since FA has so many loose ends.
+&gt; 
+&gt; As previously annouced, I am now working on programing for my actual job
+&gt;  and am not doing anything with cold other than commenting on the list. I
+&gt;  will return to cold development if I get some time and nothing better comes
+&gt;  along in the interpreted oodb with net connections world, and I don't do
+&gt;  something on my own.
+&gt; 
+&gt; Thanks for maintaining the FAQ. It looks good.
+&gt; 
+&gt; Robert / Crag
+&gt; 
+
+</PRE>

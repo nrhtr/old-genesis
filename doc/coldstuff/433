@@ -1,0 +1,66 @@
+<HEAD><TITLE>discuss@charon: [433] in "Coldmud discussion meeting"</TITLE>
+<H1>[433] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?433"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="430"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="430"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="432"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="434"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="434"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="444"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: "fixing" while loops</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 22 18:02:19 1994
+)</H3>
+<PRE>
+To: deforest@netcom.com (Robert de Forest)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Thu, 22 Sep 1994 10:47:12 PDT."
+             &lt;199409221747.KAA23309@netcom14.netcom.com&gt; 
+Date: Thu, 22 Sep 1994 17:58:59 -0400
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+Okay, some notes:
+
+(1) On atomic: my plan was to have methods be atomic by default, allow
+a method to be declared "non_atomic", and introduce the keyword
+"atomic" which could be used to modify statements.
+
+Once you enter an atomic block, you cannot suspend or be preempted
+until you leave the atomic block.
+
+I'm not sure this is the right idea; in particular, it prevents people
+from using suspend() except when they allow themselves to be preempted
+at any time.
+
+(2) On philosophy: two points I followed while I was development
+Coldmud were simplicity of interface (which is not the same as
+simplicity of implementation) and enforced uniformity of programming
+style--specifically, vertical organization of code.  Assignment is a
+statement because I don't like seeing assignments used as expressions.
+If the current maintainer doesn't mind seeing assignments used as
+expressions, perhaps that requirement should be relaxed.
+
+It seems like this issue focuses on the while loop.  I usually rewrite
+
+	while (a = .test())
+	    .do_something()
+
+as
+
+	while (1) {
+	    a = .test();
+	    if (!a)
+		break;
+	    .do_something();
+	}
+
+The number of lines doesn't bother me very much.  If people are really
+worried by an extra four lines of code for a fairly uncommon
+construct, something like what Robert proposed could make it a
+non-problem.
+
+</PRE>

@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [569] in "Coldmud discussion meeting"</TITLE>
+<H1>[569] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?569"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="565"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="568"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="568"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="570"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="570"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Assignment Operator.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  8 20:25:39 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Tue, 08 Nov 94 18:23:42 -0700
+
+&lt; I've thought about this, and have a serious compromise suggestion:
+&lt;
+&lt; Make ':=' a synonym for '='.
+&lt;
+&lt; Then we can measure the relative productivity of people who use
+&lt; ':=' over those who use '=' and finally stick a cork in whining
+&lt; of the form: `9/10 clueless programmers want '.
+&lt; I have no objection (as I've stressed time and again) to people
+&lt; voting with their feet (or even typing with them.)
+
+... so you would suggest adding the operator ':=' to the driver along
+side '='?  I would be rather reluctant to make such a change because
+it is 'dirty' (so to speak).  Not to mention that if the idea were
+to measure how much of either is used when would we put a stopping
+point to collect the data and make a decision?  Also, I am proposing
+this change now in anticipation of the future.  Quite frankly I personally
+don't care which one I use in my code, as I do not have a problem with
+either one.  However, I do think that problems will arise in the unknown
+future as more people begin to use it, and in my desire to make coldmud as
+appealing and easy to learn as is realistically possible I think this change
+would be worthwile.
+
+My drive behind proposing such a change is not because I want to patronize
+the "clueless programmers", but because I want the environment in ColdMUD
+to be as streamlined, clean, and simple to learn for _OTHER_ people, not
+myself.  This is not a footstool which would be used later to try and
+promote other dastardly alterations to the language.  Infact, it is probably
+the _only_ change of it's type I can think of (others which have been
+suggested would be to use the MOO style endif/endfor etc--which I would be
+against (as Ray would say, it is more characters ;) )).
+
+
+-Brandon
+</PRE>

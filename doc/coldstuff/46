@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [46] in "Coldmud discussion meeting"</TITLE>
+<H1>[46] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?46"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="30"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="42"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="45"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="47"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Regular expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 12:52:47 1993
+)</H3>
+<PRE>
+Date: Wed, 17 Nov 1993 17:39:19 GMT
+From: snooze &lt;gregb@amber.ecst.CSUChico.EDU&gt;
+To: coldstuff@MIT.EDU, harris@cs.uchicago.edu
+
+A client robot is something like a maas-neotek robot like julia, or a
+spider bot... Those are probably the most common.  They are programs
+that people can run separetly from mud that go and log in like a player
+and react to things that are said and stuff like that.  The reason they
+are better then having things in db is that some of them, maas-neotek 
+especially.  Keep track of where they've been in the db, as well as how
+to get from one location to another.  If you were to store all this info
+in a mud you'd end up with a LOT of info stored there...  And since
+you don't have to run a bot of the same machine a mud is on this helps
+if you don't have a ton of space.
+
+snooze
+</PRE>

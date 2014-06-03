@@ -1,0 +1,86 @@
+<HEAD><TITLE>discuss@charon: [1121] in "Coldmud discussion meeting"</TITLE>
+<H1>[1121] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1121"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1120"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1122"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1123"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1123"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Bugfix patch for p17</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  5 01:55:27 1996
+)</H3>
+<PRE>
+Date: Mon, 4 Nov 1996 21:50:40 -0800 (PST)
+From: Brian Buchanan &lt;brian@wasteland.calbbs.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;Pine.NEB.3.95.961104211325.13628A-100000@glacier.cold.org&gt;
+
+
+Looks like Brandon was in a bit of a hurry preparing p17.  I found two 
+errors in the source relating to my bugfixes for this release.  One isn't 
+of much worry unless you're programming with frob methods.  The other 
+will almost certainly crash the driver if you use find_method() anywhere.
+
+Patch follows:
+
+*** ./execute.c.old	Mon Nov  4 21:15:09 1996
+--- ./execute.c	Mon Nov  4 21:36:21 1996
+***************
+*** 973,978 ****
+--- 973,985 ----
+      if (!obj)
+          call_error(CALL_ERR_OBJNF);
+  
++     /* If we're executing as a frob method, treat any method calls to
++        this() as if it were a frob call */
++ 
++     if (cur_frame &amp;&amp; cur_frame-&gt;is_frob == FROB_YES &amp;&amp;
++         cur_frame-&gt;object-&gt;objnum == objnum)
++ 	is_frob = FROB_YES;
++ 
+      /* Find the method to run. */
+      method = object_find_method(objnum, name, is_frob);
+      if (!method) {
+*** ./data/object.c.old	Mon Nov  4 21:39:11 1996
+--- ./data/object.c	Mon Nov  4 21:39:39 1996
+***************
+*** 479,491 ****
+      m2 = object_find_method(cur_frame-&gt;object-&gt;objnum, SYM1, FROB_NO);
+      if (!m)
+          m = m2;
+!     else if (m2 &amp;&amp;
+!         object_has_ancestor(m2-&gt;object-&gt;objnum, m-&gt;object-&gt;objnum))
+!     {
+!         cache_discard(m-&gt;object);
+!         m = m2;
+!     } else
+!         cache_discard(m2-&gt;object);
+  
+      pop(1);
+      if (m) {
+--- 479,491 ----
+      m2 = object_find_method(cur_frame-&gt;object-&gt;objnum, SYM1, FROB_NO);
+      if (!m)
+          m = m2;
+!     else if (m2) {
+! 	if (object_has_ancestor(m2-&gt;object-&gt;objnum, m-&gt;object-&gt;objnum)) {
+!             cache_discard(m-&gt;object);
+!             m = m2;
+!     	} else
+!             cache_discard(m2-&gt;object);
+!     }
+  
+      pop(1);
+      if (m) {
+
+--- CUT HERE ---
+
+
+Brian
+
+</PRE>

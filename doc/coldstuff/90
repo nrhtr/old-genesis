@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [90] in "Coldmud discussion meeting"</TITLE>
+<H1>[90] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?90"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="87"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="89"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="89"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="91"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="91"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="99"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ANSI codes and unreadables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 04:56:52 1993
+)</H3>
+<PRE>
+Date: Sat, 04 Dec 1993 02:37:06 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt;	This discussion has been had, many times, on rec.games.mud.*.
+&gt; ANSI escape codes are _not_ a good thing to put into the server.  If
+&gt; you want to do color hiliting, etc, have a flag the player can set
+&gt; which enables this, and have him load triggers into his tf, which
+&gt; supports color hiliting in the later version.  Basically, design a
+&gt; protocol so that the server can send display independant information,
+&gt; and the client can translate this into whatever is appropriate
+&gt; behaviour for the local display.
+
+hrm, perhaps somebody would be willing to create up the appropriate .vtc file
+for vaportalk, and whatever it would be called for tinyfugue, with the
+appropriate triggers?  I'd be willing to code up ColdMUD's end.  This may
+already be done, as I have heard of some type of format, but I dont know if it
+uses either tf or vt...
+
+Anyhow, there is a difference between saying to do said format, and making it
+easy and available for EVERYBODY.
+
+-Brandon
+</PRE>

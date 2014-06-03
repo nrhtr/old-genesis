@@ -1,0 +1,100 @@
+<HEAD><TITLE>discuss@charon: [713] in "Coldmud discussion meeting"</TITLE>
+<H1>[713] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?713"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="710"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="711"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="712"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="714"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: more blah blah blah</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 14 22:12:45 1995
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff-l@MIT.EDU, coldstuff@MIT.EDU, brandon@avon.declab.usu.edu
+Date: Tue, 14 Mar 1995 19:06:30 -0800 (PST)
+In-Reply-To: &lt;m0roetf-000KcEC@serial&gt; from "Robert de Forest" at Mar 14, 95 04:16:59 pm
+
+&gt; 
+&gt; Sorry about the serial.YOUR.SITE.HERE, I'm not root on serial, but I'll pass
+&gt;  on the problem to someone who is...or he'll see me mention it here since he's
+&gt;  on the list.
+&gt; 
+&gt; I don't intend to release a ColdMUD with an assignment expression. Brandon
+&gt;  will be releasing my change to his ColdX server. Based on these grounds I
+&gt;  think arguments based on 'C-- should be like C' are moot...or something. I
+&gt;  don't think we should restrict ourselves this way.
+
+I actually, if it were the other way around I;d drop the point, but I;m 
+VERY concerned about ColdX.  I see brandon doing development very much in 
+the direction I'd like to see the server go. As such, I'm particualrly 
+concerned tha this particualr banch of the cold-tree remain as accessible 
+to newcopmers as possible, and to me C compatability is a new-comer 
+accessability issue.
+
+&gt; 
+&gt; 
+&gt; A lot of what I'm saying may seem obvious or pointless but I want to stress the
+&gt;  idea that we get to choose every detail of the changes we make ourselves. We
+&gt;  should make the decisions based on goals and needs rather than history.
+
+I'm not disagreeing. I just happent to think that ease of learning ColdC 
+shoudl be a goal.  I assume we WANT this to become a general purpose 
+tool, not just something for the amusement of the immediate group here 
+(certainly thats the idea my book proposal was based on.)  In order to 
+make it appeal to the widest possible audience, C compatability is a good 
+thing, IMO.
+
+&gt; 
+&gt; Some of you will say we _need_ to stay compatible to make the transition from
+&gt;  other languages as smooth as possible for new programmers. I totally agree. I
+&gt;  also feel there are enough differences already to make changes like this not
+&gt;  so crucial. 
+
+Okay, one piont at a time.  I put forth three rules a ltitle whiel back 
+fopr compatability.  I hope every one had a chance to look them over, 
+though i havent had any comments back yet.  The fundemental concepts 
+behind them is that like-functionality shoudl be expressed with 
+like-synrax, varient-functionality should be expressed with varient 
+syntax.  Thsi makes it obvious to the ewn comer what he does or doesn't 
+understand.  break the frist rule, and you have him having to learn 
+needless "translations" to read the code.  break the other and you will 
+"trick" him into misinterpreting code.
+
+&gt; On top of that, people will be coming to ColdX from languages
+&gt;  other than MOO, C, and Pascal, and I suspect a large portion will come with no
+&gt;  experience.
+
+C is still the closest thing to a lingua-franca the comp. sci. community 
+has.  Its the clsoest to a standard we've ever reached.  I asume that 
+this is why ColdC was originall ybased on C.  Otherwise, it proboboly 
+should have been based on a more object oriuented language like Modula2 
+or Smalltalk.
+
+&gt; 
+&gt; All this rambling is to add weight to my assertion that '&lt;-' is the best
+&gt;  best operator to use for assignment in the ColdX server. Its meaning agrees
+&gt;  fairly well with its visual structure. It does not in any way appear to be
+&gt;  a comparison. It suggests modification (through motion).
+&gt; 
+&gt; I address the drawbacks as follows:
+&gt; 
+&gt; "It's too different" - ColdX itself is very different. To keep '=' or change to
+&gt;   ':=' might suggest more similarity than is actually there (to whatever
+&gt;  language people come from).
+
+As I said, sugegsting similarity where the functionality IS similar is 
+good. Suggesting simialrity wher the functionality is different is BAD.  
+Suggesting dissimilarity wher the function is similar is ALSO BAD IMO.
+
+If we were starting from scratch with a  new language I'd be all for &lt;-, 
+I actually like it alot BUT I consdier the comaptability and learnability 
+issues more important.
+
+Jeff Kesselman
+</PRE>

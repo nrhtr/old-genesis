@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [971] in "Coldmud discussion meeting"</TITLE>
+<H1>[971] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?971"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="970"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="972"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis patch 3</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Apr 22 22:45:44 1996
+)</H3>
+<PRE>
+Date: Mon, 22 Apr 1996 20:10:29 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Patch three fixes a method decompilation problem with the ++ -- += -= *= 
+and /= operators (they assumed you were always using local variables, 
+oversight on my part).  It does a few minor other changes as well.
+
+It is available at cold.org/cold/drivers/Genesis-1.0p3.patch.gz
+The entire distribution is also available.  For those who have never 
+added a patch before, go to your Genesis-1.0-2 source directory, back one 
+one more step (cd ..) and type 'patch -p0 &lt; patchfile'.  Assuming you 
+have patch, and it is not a relic, this should do the job.
+
+-Brandon Gillespie-
+</PRE>

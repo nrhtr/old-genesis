@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [998] in "Coldmud discussion meeting"</TITLE>
+<H1>[998] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?998"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="997"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="999"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] match_regexp() optimization</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 15 17:30:41 1996
+)</H3>
+<PRE>
+Date: Wed, 15 May 1996 15:06:11 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+I am also considering making the return value for 'match_regexp()' simply 
+be '1' or '0', where it has an extra argument that can be specified, 
+telling it to give you the index.  With the addition of 'regexp()' there 
+is not really much of a use for having the indexes--and changing the 
+default behavior of match_regexp() would optimize it a bit for simple 
+regexp matching where you do not care about HOW the regexp matched (you 
+just care that it did).
+
+-Brandon
+</PRE>

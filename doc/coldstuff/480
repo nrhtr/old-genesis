@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [480] in "Coldmud discussion meeting"</TITLE>
+<H1>[480] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?480"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="477"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="479"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="479"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="481"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="481"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="483"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: server dev status</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Oct 28 22:41:33 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: deforest@netcom.com (Robert de Forest)
+Date: Fri, 28 Oct 1994 19:32:19 -0700 (PDT)
+Cc: brandon@avon.declab.usu.edu, coldstuff@MIT.EDU, jbb@homer.ncm.com
+In-Reply-To: &lt;199410282049.NAA19106@netcom14.netcom.com&gt; from "Robert de Forest" at Oct 28, 94 01:49:24 pm
+
+&gt; He is on the net sometimes, and not on this list and I have to forward
+&gt;  stuff I think he cares about to him. (jbb@homer.ncm.com)
+&gt; 
+&gt; It is being debugged by him. It works. It does not have the bugs you
+&gt;  (Brandon) reported. The version you have was older and _alpha_.
+
+So why the hell isn't he on this list and where the hell is this alleged new
+version?  I'm getting rather fed up with this "I'm working on it but you
+can't look at it and you can't talk to me" attitude, as I suspect most of the
+other people around here are too.
+
+I appreciate the work that Jordan did to come out with the version of 0.12 that
+we have at the moment and I would very much like to see what he's got now, and
+since he's been the semi-official server maintainer and people said he was
+working on it I've been waiting on him before tackling this stuff myself, but
+I've about run out of wait and I think the least one or the other of you could
+do is keep us up to date on all of this.
+
+-R (annoyed)
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

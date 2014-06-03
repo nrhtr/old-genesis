@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1079] in "Coldmud discussion meeting"</TITLE>
+<H1>[1079] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1079"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1078"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1080"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1080"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1085"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Porting Woes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug 27 20:48:41 1996
+)</H3>
+<PRE>
+Date: Tue, 27 Aug 1996 17:12:46 -0700
+From: Jeff Kesselman &lt;jeffk@ten.net&gt;
+Reply-To: jefk@ten.net
+To: coldstuff@cold.org
+
+Well, Ive been playign with the windows port.
+
+First problem is that gcc under Win95 expects 8.3 filenames because its
+basicly a DOS interface port of gcc (runs in a DSO box).
+
+This means, with our current file names, we will NEVER compile
+under gcc.
+
+Suggestions?  I coudl change the names but upgrading is gonna be a
+pain. It woudl be better is we went to 8.3 for all cold source....
+
+Jeff Kesselman
+</PRE>

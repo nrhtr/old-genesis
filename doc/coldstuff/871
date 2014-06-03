@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [871] in "Coldmud discussion meeting"</TITLE>
+<H1>[871] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?871"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="870"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="872"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="872"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="875"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ColdCore</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan  4 14:43:25 1996
+)</H3>
+<PRE>
+Date: Thu, 04 Jan 1996 14:18:54 +0500
+To: coldstuff@tombstone.sunrem.com
+From: mwilson@vt.edu (Mike "Zaphod" Wilson)
+
+I'm getting ready to start a new Genesis/ColdX/ColdMUD (whatever we are 
+gonna call the server this year :)) project in which I hope to do something 
+a little different with the core.  I won't claim to be some code wizard who 
+can snap his  fingers and instantly have everything I want coded.  Thefore, 
+I kinda wanna save myself as much trouble as possible.  
+
+The basic premise of my core would be to remove the 'room' concept.  Every  
+Object would have props/definitions that supported its location (probably 
+3-d int. coords), size,etc. My looking at the ColdCore to this point (very 
+limited exposure) implies I'm prolly gonna need to take something like a 
+Minimal Core and build from there (I don't want all that fancy schmancy http 
+stuff that ColdCore has yet anyway :)) ... but I saw  something the other 
+day that implied ColdCore already had pretty close to this 'relational' type 
+setup that I want.  
+
+Questions are:
+
+1) Where the heck can I find some good documentation on the ColdCore (I 
+know, I'm dreaming, right?) 
+
+2) Will ColdCore Indeed do the kinda 'relational' system I'm looking for.
+
+3) Will it be easier to take ColdCore, delete all the frills that I don't  
+want in my core, or go ahead and start from Minimal and go up?
+
+All Help greatly appreciated, but probably not rewarded :)
+
+Mike (Zaphod)
+mwilson@glock.com                                             mwilson@vt.edu
+    It's difficult to kiss a woman one moment, and kill her the next.
+   If Bill Clinton is the answer, it must be one very stupid question.
+
+</PRE>

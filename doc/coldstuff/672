@@ -1,0 +1,122 @@
+<HEAD><TITLE>discuss@charon: [672] in "Coldmud discussion meeting"</TITLE>
+<H1>[672] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?672"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="666"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="671"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="671"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="673"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="674"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="726"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assignment operator</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar  8 14:03:33 1995
+)</H3>
+<PRE>
+To: The Importance of Being Chuck &lt;cadams@weather.brockport.edu&gt;
+Cc: crag@serial.mit.edu (Robert de Forest), coldstuff@MIT.EDU,
+        nop@fuji.ccs.neu.edu, eostrom@ccs.neu.edu
+In-Reply-To: Your message of "Tue, 07 Mar 95 17:28:40 EST."
+             &lt;9503072228.AA09902@lightning&gt; 
+Date: Wed, 08 Mar 95 13:55:39 -0500
+From: Jay Carlson &lt;nop@ccs.neu.edu&gt;
+
+&gt; Robert de Forest drew these heiroglyphs:
+
+&gt; &gt; I'd like to propose '-&gt;' be the assignment operator. It visually represents
+&gt; &gt;  what happens to the variable being assigned the new value. It has no chance
+&gt; &gt;  of being pronounced, 'equals'. It looks cool...
+
+&gt; it's backwards.  :) 
+
+&gt; though that's been discussed.  What concerns me is that '=' is already
+&gt; assignment.  do we really want two different assignment operators?  or
+&gt; are we removing the single '=' entirely?  
+
+Perhaps a transition server that parsed both as assignment, but only 
+unparsed as &lt;-.
+
+&gt; If so, all I'd do is write
+&gt; code in-db that changed them back and forth like JHcore MOOs do with
+&gt; comments.  
+
+There are a lot of limitations to what I can do in 
+:verbcode_internal_to_external, mostly due to the fact that I only 
+have access to the string rep of the code.  In particular, dealing 
+with anything that's not a statement can be very hard.  Comments are 
+statements.  So is assignment right now. 
+
+The thing that really makes me scream is that we could do far more 
+powerful transforms if we had access to the syntax tree that the 
+parser has to build ANYWAY.
+
+See my signature.
+
+&gt; which makes the whole issue of what to call it quite
+&gt; academic, actually.  but it's not feasable to write code in-db that
+&gt; does assignment-as-expression, so let's have it in the server.
+
+Without looking at the problem too hard, I'd say that doing the `&lt;-' 
+to '=' rewrite is of middling difficulty.  It's merely a lexical 
+transform, so we don't need a full codewalker.
+
+&gt; &gt; What have I left out?
+
+I know what *I've* left out, *my* religious views!
+
+I like &lt;- as assignment operator, with := in a close second.  = is 
+RIGHT OUT.
+
+&lt;- used to be in the ASCII character set as a single glyph.  It was 
+replaced with _.  There are stil some systems out there that have it 
+though; in particular, Smalltalk-80.  It's a pretty big win.
+
+I like the fact that assignment is not an expression. If we get &lt;- as 
+an assignment operator, it's not as critical, but with assignment 
+looking like equality it eliminates a lot of stupid bugs.
+
+Elsewhere, Jeff Kesselman wrote:
+
+&gt; Well, I'm going to be the dissenting voice here.  +=, -=, etc. all seemed
+&gt; very rational to me.  
+
+They seemed very rational to me when I didn't understand that 
+compilers aren't stupid.
+
+&gt; The = being an assignment operator ONLY caused me
+&gt; some trouble when i forst moved from Pascal to C, and it was minor
+&gt; trouble at that.  You learn very quickly to be careful abotu this.
+
+I've been programming in C for ten years now, and = as assignment 
+operator has given me trouble the whole time.  I'm tired of being 
+really careful about minor syntactic issues when I have big semantic 
+problems to deal with.
+
+&gt; The
+&gt; (IMO sad) fact of the matter is that fewer and fewer students are even
+&gt; taught Pascal before C, so I REALLY think diverging away from C syntax
+&gt; just because of some misguided notion that "we can do it better" is a BAD
+&gt; idea.  
+
+There are lots of people who come to MUD languages with no experience 
+in C.  Anyway, I really think C sucks for many-person collaborative 
+projects, especially when the people building the system don't see 
+each other face to face, and have no strong commitment to building 
+reusable code.
+
+&gt; Currently, the places ColdC differs from C for the most part make
+&gt; logical functional sense. (Such as in the for construct, which is a true
+&gt; set operator rather then a simple ordinal iterator.)
+
+Oh, cmon, there are a lot of differences from C already, starting 
+with dynamic typing, and probably ending with the whole persistent 
+object outlook.
+
+Jay Carlson
+nop@io.com    nop@ccs.neu.edu
+
+Flat text is just *never* what you want.   ---stephen p spackman
+
+</PRE>

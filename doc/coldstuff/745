@@ -1,0 +1,69 @@
+<HEAD><TITLE>discuss@charon: [745] in "Coldmud discussion meeting"</TITLE>
+<H1>[745] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?745"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="744"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="746"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: idea for custom error handling (II)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 24 17:18:28 1995
+)</H3>
+<PRE>
+Date: Wed, 24 May 95 14:13:40 -0700
+From: jsp@betz.biostr.washington.edu (Jeff Prothero)
+To: coldstuff@MIT.EDU
+
+
+Robert de Forest:
+
+| On a separate topic, I'd like to see traceback and
+| callers include arg info.  callers is already an
+| encapsulation breaking function only useful for
+| debugging and such and the same goes for traceback
+| :). This would allow me to inspect the args going into
+| a method which caused it to throw.
+| 
+| I might make these changes myself, or I might not. I'd
+| like to know what other people think.
+
+Note that requiring functions to preserve their
+original parameters (if that is what you are implying)
+involves an architectural commitment to otherwise
+unneeded work (keeping separate working and pristine
+copies of all input parameters).  You might wind up
+regretting this should performance tuning ever become a
+preoccupation...
+
+With Muq, I've provided an abstraction layer providing
+indirect access to the callframe stack -- essentially
+via a pair of functions get_stackframe_count() and
+get_nth_stackframe() -- including local variables by
+name.  (There are some security issues there if you're
+worrying about such and have anything like setuid
+functionality around.  Muq tracks the effective owner
+of each stackframe and returns the contents only to the
+owner or superuser.)  Muq compilers which use local
+variables to hold input parameters will therefor wind
+up returning at least the current values of those
+variables; But there's no commitment to preserve the
+original value.  Muq compilers which simply keep
+parameters directly on the data stack will give the
+debugger a harder time, of course...)  You might want
+to give that a shot as a compromise solution before
+making any commitments that might be regretted later...
+
+I did a quick one-evening debugger based on the above
+that lets one roam up and down the callstack viewing
+local variable values and such;  It's kinda fun.  I'm
+delyaing doing anything really fancy until X support
+is in place...
+
+ Cynbe
+
+</PRE>

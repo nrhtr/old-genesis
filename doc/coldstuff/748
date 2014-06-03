@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [748] in "Coldmud discussion meeting"</TITLE>
+<H1>[748] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?748"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="747"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="747"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="747"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="749"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="749"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="750"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: error_arg,error_str</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 25 10:53:20 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Thu, 25 May 95 08:47:01 -0600
+
+&lt; Why were these removed?  I mean, error() was kept.  Why should we have
+&lt;  to index into traceback() for the rest?  If I just want the error_str(),
+&lt;  it seems wasteful to make the server generate an entire traceback().
+&lt; 
+&lt; Besides, error_str() looks a lot better than traceback()[1][2].
+
+The information is there whether you snag it via traceback()[1][2] or
+error_str().  As far as inefficiency goes, I can think of numerous more
+inefficient things than that :)
+
+It is a little more clunky, but error_[arg|str]() would just be redundant,
+now that traceback() returns intelligent output.
+
+-Brandon Gillespie-
+</PRE>

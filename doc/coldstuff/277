@@ -1,0 +1,27 @@
+<HEAD><TITLE>discuss@charon: [277] in "Coldmud discussion meeting"</TITLE>
+<H1>[277] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?277"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="276"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="278"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>fingerd @the cold dark</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 00:53:50 1994
+)</H3>
+<PRE>
+Date: Thu, 19 May 1994 22:51:09 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Even though it isn't anything spectacular, it is definitely a nifty thing. 
+Telnet to recumbent port 6662, it works just like a normal fingerd: a blank
+line returns everybody logged in, otherwise it tries to find the name of
+somebody if you include a string (and returns relavant info).
+</PRE>

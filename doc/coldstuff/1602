@@ -1,0 +1,103 @@
+<HEAD><TITLE>discuss@charon: [1602] in "Coldmud discussion meeting"</TITLE>
+<H1>[1602] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1602"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1601"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1603"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>DB corruption... urg.  (long, gory)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul 10 07:34:21 2000
+)</H3>
+<PRE>
+Date: Mon, 10 Jul 2000 04:23:36 -0700 (PDT)
+From: Jeremy Weatherford &lt;xidus@xidus.net&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+
+Hello,
+
+I just encountered a very real occurrence of DB corruption.  I don't know
+the hows or whys, although I do have a copy of the corrupt binary DB, if
+anyone with the know-how wants to poke around in it.  This message is
+somewhat long, and includes details about the problems.
+
+Basically, I've been doing some heavy coding in my own core lately, and I
+decided to make a fresh textdump for reference.  I ran backup() in the
+core, went to a shell prompt, typed bin/coldcc -d -b binary.bak -t
+textdump, and got a PANIC from coldcc:
+
+[xidus@bork XidusCore]$ bin/coldcc -d -b binary.bak/ -t	textdump
+Binary database free space: 59.57%
+Writing to "textdump"..
+Decompiling $anonymous...[10 Jul 2000 4:08] PANIC: Invalid data type
+[10 Jul 2000 4:08] doing binary dump...Done
+[10 Jul 2000 4:08] Creating Core Image...Aborted
+
+I got really scared at this point, and wrote a quick routine to dump all
+of my methods into a logfile, since it had been a while since my last
+textdump backup.
+
+I decided I was ready to try shutting down the game, to see if the problem
+was in the backup() call somehow.  I shut down, tried to dump a DB, exact
+same problem.  I tried starting using bin/genesis, and predictably, that
+failed as well.
+
+Poking around in the debugger, I found that it was choking on $user, an
+object I haven't touched in weeks -- this makes me very curious as to what
+exactly caused the corruption, since I certainly wasn't doing anything
+special with that object.  In fact, it's possible that I hadn't even
+changed it since the last (successful) textdump.
+
+I managed to get a partial textdump out of coldcc by convincing it to skip
+the $user object (and its children) using gdb.  Amazingly, the entire rest
+of the DB is intact -- it's just the $user object that was borked.
+
+The backtrace looks something like:
+
+#0  0x2ab24241 in __kill () from /lib/libc.so.6
+#1  0x2ab23ea9 in raise () from /lib/libc.so.6
+#2  0x806125c in catch_SIGFPE (sig=135565336) at sig.c:67
+#3  0x805dd4b in panic (s=0x8080f98 "Invalid data type") at log.c:34
+#4  0x805945d in unpack_data (data=0x8149010, fp=0x80c5000) at
+dbpack.c:717
+#5  0x80582f0 in unpack_list (fp=0x80c5000) at dbpack.c:216
+#6  0x805966a in unpack_object (obj=0x80b7a00, fp=0x80c5000) at
+dbpack.c:799
+#7  0x805799e in db_get (object=0x80b7a00, objnum=21) at binarydb.c:444
+#8  0x8056297 in cache_retrieve (objnum=21) at cache.c:182
+#9  0x804e346 in dump_object (objnum=21, fp=0x80c5f00, objnames=0 '\000')
+    at textdb.c:1409
+(followed by lots of dump_object calls)
+
+The exact point where it dies appears to be unpacking the children list of
+$user, #21.  At frame #5 (dbpack.c:216), len == 259, which is
+unreasonable.  $user should have had around 6 or 7 children.  I also
+noticed that at line 798 in dbpack.c, when it unpacks the parents, it
+reads a value of -1 for the parent list's length.  $user should have had 3
+parents.
+
+Anyway... recovery wasn't -too- bad, but I'm really wondering about Cold's
+stability.  This wasn't even on an active game, although I'm playing with
+the coding a lot.  Does anyone have any idea at all what kind of activity
+causes DB corruption like this?
+
+I have a copy of the corrupted binary available for anyone who's
+interested, just contact me.
+
+BTW... ColdC rocks my happy little world.  I'm having a blast with the
+language and the entire concept of run-time mutability.  I just wish I
+didn't have to worry about DB stability now... grr.
+
+Thanks,
+Jeremy Weatherford
+xidus@xidus.net
+http://xidus.net
+
+</PRE>

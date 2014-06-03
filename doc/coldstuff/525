@@ -1,0 +1,178 @@
+<HEAD><TITLE>discuss@charon: [525] in "Coldmud discussion meeting"</TITLE>
+<H1>[525] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?525"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="524"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="524"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="526"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="530"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 01:33:56 1994
+)</H3>
+<PRE>
+From: brandon@riverheights.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Fri, 04 Nov 94 23:31:43 -0700
+
+I just had a big ole DrPepper, and I'm pissed at stupid beurocrats who
+run around casting threats of federal prosecution, so take the semi
+caustic nature of this post to heart and read the true intent inside (i.e.
+don't take any offense from the material content which may follow :)
+
+&lt; Should become irrelevant. 
+
+Should be (as in there is a soon to occur change which will make it
+irrelevant), or you think it should be?  If so, why?  I gleaned a touch
+of this off your message but you offered no suitable replacement.
+
+&lt; Does this mean there can be more than one object to a dbref?  If
+&lt; it is, I can't see how this would cause anything but confusion.
+&lt; If not, why the extra argument?
+
+True, I believe the #object was included by random chance, to make the two
+method calls look uniform.
+
+&lt;    bind()                    =&gt; listen(port, object)
+&lt;    unbind()                  =&gt; unlisten_port(port)
+&lt;                                 unlisten_object(port)
+&lt;                                 unlisten(port, object)
+&lt;                                 listeners(port)
+&lt;                                 listened_ports(object)
+
+Hmm, I like some of them, but you are stepping down with others... First:
+
+&lt;    bind()                    =&gt; listen(port, object)
+
+Could fly, but I would be adverse to the name because 'listen' in general
+is vague.  Listen to what?  Mexican mariachi bands over on object $party?
+Perhaps listen_for_connection(), but then you may as well go back to ports,
+which DO have a meaning in TCP but does that necessarily mean that is how
+we are interpreting them?  Perhaps port is just a generic term saying
+something will have a 'berth' here, be it a network connection or some
+type of modem interface.
+
+&lt;    unbind()                  =&gt; unlisten_port(port)
+
+Ouch, rescind into improper english while using an even more vague term
+than 'port'.  The least you would want is stop_listening_on(port).
+(perhaps as the alter aspect of this have start_listening_on(port, object)).
+
+&lt;                                 listeners(port)
+&lt;                                 listened_ports(object)
+
+So you think that more than 1 object should be able to listen to a port?
+God talk about scary networking...  As it is right now when you get a
+connection on a port you either have the choice to rebind the port to a new
+object or reassign the connection to another object (the way I did the
+networking was to just spawn a new object and bind the port to it, and let
+the just connected connection go on it's merry way).
+
+However, perhaps a buildin of 'ports()' (no args, returns a dictionary with
+each port as the key, and the value being the object bound to said port).
+
+(I think I like port better than listen, in the long run--more because that
+is how it is now, and there is no real reason to change it since it does
+say what it is, even in the most abstract circumstances).
+
+&lt;&gt;   conn_object.parse()       =&gt; .connection_received(`[buffer])
+&lt; 
+&lt; Shouldn't this maybe just be .receive()?
+
+Actually, I rather liked .parse() myself, but .receive() works.&gt;   
+&lt;&gt; set_heartbeat_freq()      =&gt; set_heartbeat()
+&lt;
+&lt; How about set_heartbeat_interval()?  Long, but it is after all what
+&lt; the thing actually does, unlike either of the above designations.
+
+Well, the main reason I suggested axing _freq is because I'm not one
+for abbreviations.  Then again I'm not one for long names either.  What
+is wrong with 'set_heartbeat()'?  That is what you are doing (depending
+upon how you define a heartbeat--I would do it as being a periodic
+pulse of some sort, so by setting the heartbeat you are setting how
+often said pulse occurs).
+
+&lt; MOO and ColdMUD get more alike all the time.  It'll be interesting
+&lt; when/if CoolMUD gets in on this trend...
+
+Hmm, if you are referring to the ghastly hack Pavel made to MOO, which allows
+you to somewhat restrict builtins by creating a '$sys.protect_foo 1' (in
+comparison to the suggested bind_function('function, object)), I do not
+consider either of the two remotely similar.  Mainly because bind_function()
+is a good flexible implementation which gives people a means to restrict
+function calls if they want.  As far as your analogy goes, I would say
+MOO moves closer to ColdMUD, yet ColdMUD steps forward even further by
+taking valuable aspects of MOO and using them in a well designed way
+(although the idea to bind functions to any object at a whim has been
+around for a while)
+
+&lt; This wouldn't work well with something like MOO's NP_SINGLE network
+&lt; module.
+
+I suppose it is a good thing this is coldmud then? (why wouldn't it
+work with MOO's whatever?  Why does this actually have an effect upon
+the design consideration of implementing such a file structure?).
+
+&lt;&gt; Do-while syntax
+&lt;
+&lt; I've always liked this one.
+
+Yah, probably wouldn't be a bad addition.
+
+&lt;&gt; "locked" compilation flag for nethods
+&lt;&gt;   A compilation flag (like disallow_overrides) which would indicate that
+&lt;&gt;   the specified method cannot be changed from inside the running server
+&lt;&gt;   (it must be modified offline), for security.  Basically, does anybody
+&lt;&gt;   have any reason I shouldn't go ahead and implement this? (sounds good
+&lt;&gt;   to me)
+&lt;
+&lt; This one is IMNSHO entirely silly, superfluous, and otherwise not a
+&lt; Good Thing(TM).  The idea behind it seems to be that by allowing
+&lt; online changing of methods basic to security one is undermining
+&lt; security.
+
+How is this such a hard concept to grasp?
+
+&lt; However, if these methods cannot protect *themselves*
+&lt; from *unauthorized* changes I'd have pretty graves doubts about
+&lt; their general security myself.
+
+So you think one should program a security system which you can trust
+in being impregnable?  By leaving the ability in-db that such key methods
+are compilable/writable, the threat that they can be changed is
+*ALWAYS* there, no matter WHAT security precautions you take in-db, you
+always have to assume that it can happen somehow.  If you have the
+ability to lock a key method, then you have just plugged one potential
+hole relatively tightly.
+
+Having a 'lock' flag on a method would add nothing to the direct functional
+security of the method.  What it does do is give you a guarantee that
+somebody else will not find a back door that allows them to completely
+replace said method with their own.  Your assumption that a single method
+can completely protect itself from harm is silly, and quite frankly I
+would have 'grave doubts' about any system which does such a thing.
+
+&lt; The marginal security gain is simply
+&lt; not worth making a whole bunch of people crawl on their knees
+&lt; through textdumps when maintenance needs to be done.
+
+It is not hard to edit a textdump.  Infact, I would almost prefer to
+edit a textdump in some instances (do not think in relation to MOO dumps).
+
+&lt; The first
+&lt; thing I'd do if I found this bet set anywhere in a core DB would be
+&lt; to use a perl script to take all instances out.
+
+That would be your option, however such an act would (in my opinion) show
+others how much you care about your system's integrity.  The lock flag
+is not intended to be used on very many methods.  If you wish to spend the
+time to write a perl (why the fk perl?  sed would work just dandy) script
+which strips the lock flag out of the 5 methods in the entire db which have
+it, more power too you (?).
+
+-Brandon (Lynx)-
+</PRE>

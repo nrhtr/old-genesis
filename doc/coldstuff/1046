@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1046] in "Coldmud discussion meeting"</TITLE>
+<H1>[1046] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1046"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1037"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1041"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1045"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1047"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] encryption, DES, MD5, SHA-1(?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jul 24 21:39:04 1996
+)</H3>
+<PRE>
+From: Gregory D Lewis &lt;glewis@maths.adelaide.edu.au&gt;
+To: coldstuff@cold.org
+Date: Thu, 25 Jul 1996 10:48:07 +0930 (CST)
+
+Just some comments on this whole thing....
+
+FreeBSD currently ships by default with MD5 (yes that includes source code).
+Anyone from anywhere can retrieve and use this distribution.  They also ship
+separately a DES encryption module for people who want DES, but this is only
+available to people within the US.
+
+In a similar vein to Greg Hudson's comments, I am not a lawyer. However, this 
+seems to me to pretty much suggest you can ship MD5 without any hassles.  You
+might want to go look at the EFF homepage, which has links to info about the
+court challenges to the restrictions on shipping DES (we don't really want
+ColdX to be classified as a munition ;).
+
+						- Greg
+</PRE>

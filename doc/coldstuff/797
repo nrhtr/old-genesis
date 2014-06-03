@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [797] in "Coldmud discussion meeting"</TITLE>
+<H1>[797] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?797"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="790"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="796"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="796"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="798"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: exception handling...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep  1 13:31:08 1995
+)</H3>
+<PRE>
+From: bellegj@monitor.cs.orst.edu
+To: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Fri, 01 Sep 95 10:44:26 PDT."
+             &lt;9509011644.AA02585@lightning&gt; 
+Date: Fri, 01 Sep 95 10:27:34 PDT
+
+
+&gt; hmm... puts the successful case at the bottom instead of the top --
+&gt; one expects the successful case most of the time (that is, success is
+&gt; the typical case), and doesn't want to skip over a bunch of border
+&gt; cases to reach the code for the typical case.
+&gt; 
+&gt; Gets a minus for readability IMHO.
+&gt; 
+&gt; Chuck
+
+Actually, it's normal to put the specific cases first and the general last.
+When is the last time you wrote a switch with the default first?
+The reason is that it's easier to visually jump to the end of a body od code
+than to dig something out of the middle.
+
+
+
+
+-- Jeff Bellegarde (bellegj@mail.cs.orst.edu)
+
+
+</PRE>

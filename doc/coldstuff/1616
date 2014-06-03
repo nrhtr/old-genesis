@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [1616] in "Coldmud discussion meeting"</TITLE>
+<H1>[1616] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1616"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1615"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1615"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1615"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1617"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1617"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1617"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Comprehensive fix list?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Aug 19 11:00:02 2000
+)</H3>
+<PRE>
+Date: Sat, 19 Aug 2000 08:53:10 -0600
+From: Brandon Gillespie &lt;brandon@ice.cold.org&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;20000819024027.VRBZ11463.mta08.onebox.com@onebox.com&gt;; from Kris Anderson on Fri, Aug 18, 2000 at 07:40:12PM -0700
+Reply-To: coldstuff@cold.org
+
+
+--3V7upXqbjpZ4EhLz
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Aug 18, 2000 at 07:40:12PM -0700, Kris Anderson wrote:
+&gt; With all the little db fixes in code is there a comprehensive list of
+&gt; changes that should be made to the databases that we are using?
+&gt;=20
+&gt; I'm using the following -
+&gt; Driver: Genesis 1.1.7-STABLE
+&gt; Core: ColdCore 3.0.1999-08-28
+&gt;=20
+&gt; I'm asking because I set text/ansi in context and some of the stuff ends
+&gt; up looking like this -
+&gt;=20
+&gt;=20
+&gt;         \A1;4mFormatters\A0m             About CML Formatters
+&gt;         \A1;4mGenerators\A0m             About CML Generators
+&gt;         \A1;4mCustomizing\A0m            Customizing Ctext
+&gt;=20
+&gt; And I think having to read every single message in the mailer is just
+&gt; a bit much.
+
+Odd, it appears that while it is generating the ansi sequences, it is
+never doing the final pass and converting \A to the initial ansi
+escape sequence.  I would compare code on $ansi_format between your DB
+and the Cold Dark.
+
+-Brandon
+
+--3V7upXqbjpZ4EhLz
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: svxDNsC6XxrfJFKsOT6KGB56WACl9rsq
+
+iQA/AwUBOZ6fVUv5XoQiMgn6EQLluwCdHW8rsSk8vs2CvM3iEqNXop5uHRQAoLyh
+xCvUh6DPi6xozjZRDSLzPib8
+=tVmm
+-----END PGP SIGNATURE-----
+
+--3V7upXqbjpZ4EhLz--
+</PRE>

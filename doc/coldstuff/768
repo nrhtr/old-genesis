@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [768] in "Coldmud discussion meeting"</TITLE>
+<H1>[768] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?768"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="766"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="766"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="767"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="769"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: escaping characters in match_regexp()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 16 15:41:47 1995
+)</H3>
+<PRE>
+Date: Wed, 16 Aug 1995 13:37:15 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+It looks like it is a bug, because yes, you should be able to escape things.
+I would suggest an alternate approach to what you desire.  In our command
+parser we check for dbrefs and objnames with:
+
+    match_regexp("[#$][a-z_0-9]+", str)
+
+Basically, it seems to work fine when $ is inside []...
+
+I'll add it as a bug to the todo list.
+
+-Brandon
+</PRE>

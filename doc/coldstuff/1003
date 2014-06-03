@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1003] in "Coldmud discussion meeting"</TITLE>
+<H1>[1003] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1003"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="994"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1002"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1002"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1004"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Memory leak</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 17 11:29:36 1996
+)</H3>
+<PRE>
+Date: Fri, 17 May 1996 09:10:43 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Miroslav Silovic &lt;silovic@srce.hr&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199605170451.GAA21730@regoc.srce.hr&gt;
+
+&gt; So I'm going to fix all the modules with *_discard calls, and also
+&gt; with anticipate_assignment calls wherever appropriate (Lynx hasn't done
+&gt; this yet).
+
+
+*_discard sounds good, I was starting to suspect it.
+
+As for anticipate_assignment, there was a reason for not including it, 
+however I have forgotten it (I actually took it out).  I'll look into it..
+
+-Brandon
+</PRE>

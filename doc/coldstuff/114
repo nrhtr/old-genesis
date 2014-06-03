@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [114] in "Coldmud discussion meeting"</TITLE>
+<H1>[114] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?114"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="113"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="115"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>coldworld</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec 11 13:00:47 1993
+)</H3>
+<PRE>
+Date: Sat, 11 Dec 1993 10:54:17 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I sthere any divine underlying theoretical reason behind not allowing spaces in
+player names, in Cold World?  Other than 'that is what everybody does'...? 
+I've taken out the restrictions on the Cold Dark, and it may stay this way
+unless somebody can talk me out of it :)  yeah, you may have to use quotes to
+refer to a whole name, but use match_begin() for most the stuff and it should
+work ok...  (also--since the player db matches against stripped names it is
+easier as well)...
+
+-Brandon
+</PRE>

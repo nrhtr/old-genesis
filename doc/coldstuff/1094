@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [1094] in "Coldmud discussion meeting"</TITLE>
+<H1>[1094] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1094"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1093"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1095"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1095"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1095"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Configure grief on Linux...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Oct  1 17:55:01 1996
+)</H3>
+<PRE>
+Date: Tue, 01 Oct 1996 13:46:50 -0700
+From: Jeff Kesselman &lt;jeffk@ten.net&gt;
+Reply-To: jeffk@ten.net
+To: coldstuff@cold.org
+
+Im trying to compile pact h 13 under linux.
+
+Configure APPEARS to work great, detects everything properly...
+And then genrates a totally empty src/include/config.h
+(one with nothing set, just the default undefs)
+
+Help???
+
+JK
+</PRE>

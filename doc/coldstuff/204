@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [204] in "Coldmud discussion meeting"</TITLE>
+<H1>[204] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?204"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="203"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="205"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Server 0.10 patch2</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr  8 02:44:34 1994
+)</H3>
+<PRE>
+Date: Fri, 08 Apr 1994 00:34:27 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Crag made this patch, it simply adds the builtin "ticks_remaining()",
+definitely a nice thing (not many mods either).
+
+As always, URL:
+
+    ftp://lab_backup.lib.usu.edu/pub/brandon/coldmud/coldmud-0.10.patch2
+
+-Brandon
+</PRE>

@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [1411] in "Coldmud discussion meeting"</TITLE>
+<H1>[1411] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1411"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1410"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1412"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] ColdCore 3.0a10 is available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar 14 18:13:06 1998
+)</H3>
+<PRE>
+Date: Sat, 14 Mar 1998 16:09:18 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+
+ColdCore 3.0a10 is available.  It has many fixes (of course).  Notable
+things that I can recall at this time:
+
+    * $paths -- eg two-way-exits
+    * new command caching system, faster, cleaner, no remote command problems
+    * a lot more help documentation, thanks to many other people contributing
+    * an introductory tutorial (@tutorial)
+    * POP3 daemon (somewhat inefficient on large mail folders, being fixed)
+
+There is also an upgrade program available; however, if you are going to
+be upgrading contact me--I have a few methods that will convert older
+exits to use $paths.
+
+Enjoy;
+
+  -Brandon Gillespie
+
+</PRE>

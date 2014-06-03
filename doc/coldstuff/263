@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [263] in "Coldmud discussion meeting"</TITLE>
+<H1>[263] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?263"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="262"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="264"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>rwho (was: Re: Ports)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 14:07:23 1994
+)</H3>
+<PRE>
+Date: Thu, 19 May 1994 11:59:36 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt; This is somewhat related to the ports issue... so I'll toss it in here.
+&lt; Has anyone considared making something that interfaces with mud rwho servers?
+&lt; Both to have the mud listed in rwho listings, and to get information
+&lt; from it.
+
+rwho is a poorly designed metaserver in my opinion.  It requires a lot of
+interaction between the metaserver and each server, including having the server
+send periodic updates to the rwho server in question.  All that really has to
+happen is to have the metaserver connect to a port every N minutes to get a
+user dump (shrug).  So it may not be up to minute, it would be a lot simpler.
+
+-Brandon-
+</PRE>

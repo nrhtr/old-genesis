@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [194] in "Coldmud discussion meeting"</TITLE>
+<H1>[194] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?194"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="193"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="195"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>heee</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr  1 02:24:03 1994
+)</H3>
+<PRE>
+Date: Fri, 01 Apr 1994 00:21:50 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+This sorta hit me; From the Cold Dark's logfile (I hacked the server  so it
+does not return dates, if it looks odd):
+
+--------------
+Disconnect 0: shkoo ($user_shkoo) &lt;140.198.66.28&gt; 12:11 am Friday, April  1
+Disconnect 0: Lynx ($lynx) &lt;129.123.1.118&gt; 12:11 am Friday, April  1
+Disconnect 0: Richelieu ($riche) &lt;192.100.81.113&gt; 12:11 am Friday, April  1
+Disconnect 0: Zachary ($zachary) &lt;198.4.60.4&gt; 12:11 am Friday, April  1
+Disconnect 0: Jeff ($jeff) &lt;128.193.164.25&gt; 12:11 am Friday, April  1
+Server starting on port 6666 at 12:11 am on Friday, April  1, 1994
+--------------
+
+Now the question to ask, is if the server really did startup..., and if
+everybody really DID disconnect, or if they are all laughing it up with a few
+brewskies...
+
+(sorry, just a bit of juvenile humor (sigh)).
+
+-Brandon
+</PRE>

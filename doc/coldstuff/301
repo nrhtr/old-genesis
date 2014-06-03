@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [301] in "Coldmud discussion meeting"</TITLE>
+<H1>[301] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?301"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="294"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="295"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="300"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="302"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: log and time</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 23 14:15:46 1994
+)</H3>
+<PRE>
+Date: Mon, 23 May 1994 10:37:03 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: BRANDON@cc.usu.edu
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;01HCLJW3Y3RMBWCEU7@cc.usu.edu&gt; (message from the Lyncx on Sat, 21 May 1994 10:53:12 -0600 (MDT))
+
+
+the Lyncx:
+&gt; You are afraid of somebody hacking out the time string, if it is in
+&gt; the database instead of the server.  However, if they did do this
+&gt; you would know when it happened anyhow, because up to n time strings
+&gt; would have a time stamp, then they wouldn't; but it would still be
+&gt; noticeable.  Anyhow, hacking security in ColdMUD is different than
+&gt; in MOO.  In MOO you must get a "wiz" bit.  In coldmud you simply
+&gt; have to gain access to $sys (once you can write to sys you can do
+&gt; anything).  If they have access to sys they can just turn _OFF_ the
+&gt; logging feature all together, which means that the difference
+&gt; between stamping times on it or not would make _NO_ difference.  I
+&gt; can understand the reason for a timestamp in MOO, because the server
+&gt; will call the log for various different things, but not in Cold,
+&gt; therefore there is no reason to even worry about it.
+
+Mmm, sorry I was under the opinon that the log had practical
+usefulness for security reasons, not just an informal diary of
+connections. In my opinion some things should not be touched in DB,
+and Logging is one of them. No reason not to worry about it? heh there
+is if your paranoid and just found out that you cant even trust your
+logfile. 
+
+Take this for example:
+
+hacker logs on, hacker breaks into sys, hacker turns off logging,
+hacker makes an admin character. well, your doing a scan of the logs,
+catch the hack into sys, and patch it. you still have an admin that is
+a hacker running around, and may not see it for a while, especially if
+he hides some things to avoid detection. Granted this is kinda
+extreme, cus most hackers wont bother to be so sublte on a mud, but it
+is plausable. I dont think logging should be changable at run-time in
+ANY instance, except to hand-add a new log message. Of course, it wont
+kill me because its the way it is, Im just not happy with it. 
+
+
+	Ray / Ash
+
+
+
+
+</PRE>

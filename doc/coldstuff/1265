@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [1265] in "Coldmud discussion meeting"</TITLE>
+<H1>[1265] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1265"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1264"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1264"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1264"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1266"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1266"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1268"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] A bug??</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Apr  1 03:37:01 1997
+)</H3>
+<PRE>
+Date: Tue, 1 Apr 1997 00:32:03 -0800 (PST)
+From: Brian Buchanan &lt;brian@wasteland.calbbs.com&gt;
+To: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;3.0.32.19970401002326.007676cc@mail.tenetwork.com&gt;
+
+On Tue, 1 Apr 1997, Jeff Kesselman wrote:
+
+&gt; Im doing a call of the form 
+&gt;   out = (fooobj).myfunc();
+&gt; Where foobj is a variable containing an obj reference
+&gt;  and myfunc is a method on the referenced obejct tha ttakes no arguments.
+&gt; 
+&gt; im gettign a "called with one argument, requires none" error
+
+Are you 100% sure you aren't calling the method on a frob?
+
+- Brian
+
+</PRE>

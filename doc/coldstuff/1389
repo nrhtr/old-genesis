@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [1389] in "Coldmud discussion meeting"</TITLE>
+<H1>[1389] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1389"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1388"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1390"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1390"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1391"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Cheap CORBA??</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  6 02:19:50 1997
+)</H3>
+<PRE>
+From: jeffk@tenetwork.com
+Date: Fri, 05 Dec 1997 23:10:18 -0800
+To: coldstuff@cold.org
+
+Hey all,
+
+I've started playing with Kelvin again.  This version is beig coded in JAVA
+for a variety of reasons.
+
+An issue I've come across -- I've been reading up on CORBA and it looks
+like a very intresting thing to base this on.  Th one problem is that JAVA
+CORBA ORBs and coding kits all seem VERY expensve (int the 1 to 3 grand
+range.)
+
+I don't suppsoe anyone knows of a cheap but decent JAVA CORBA implementation?
+
+Just checking.
+
+Jeffk
+Jeffrey P. Kesselman
+Senior Game Integration Engineer
+Total Entertainment Network
+
+Unite for Java! - http://www.javalobby.org
+
+** Tired of unsolicited email? TAKE BACK OUR MAILBOXES! --
+http://www.ten.net/~jeffk/stopspam.htm ** 
+</PRE>

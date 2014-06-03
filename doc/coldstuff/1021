@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1021] in "Coldmud discussion meeting"</TITLE>
+<H1>[1021] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1021"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1020"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1020"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1020"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1022"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] 1 sec backups</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun 13 15:47:55 1996
+)</H3>
+<PRE>
+Date: Thu, 13 Jun 1996 13:35:07 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199606131706.TAA13943@regoc.srce.hr&gt;
+
+On Thu, 13 Jun 1996, Miroslav Silovic wrote:
+&gt; Users wouldn't
+&gt; notice that unless the RAM cache fills up with modified objects, in
+&gt; which case the game would pause further till the filesystem backup is
+&gt; done).
+
+Actually, I'd still like to have a special case where you can specify a 
+backup cache size different (larger) from the run-time cache size.  I'd 
+be a simple thing to let the cache grow, and then when you receive the 
+signal that its done copying and you can write again reduce the cache 
+back down to its original size and set the width/depth back to normal..
+
+-Brandon
+</PRE>

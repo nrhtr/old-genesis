@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [274] in "Coldmud discussion meeting"</TITLE>
+<H1>[274] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?274"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="272"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="272"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="273"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="275"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: dict_data()?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 18:14:16 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: deforest@netcom.com (Robert de Forest)
+Date: Thu, 19 May 1994 15:05:10 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+Reply-To: coldstuff@MIT.EDU
+In-Reply-To: &lt;199405192140.OAA11563@netcom.com&gt; from "Robert de Forest" at May 19, 94 02:40:57 pm
+
+&gt; While this list is so active, what do people think of the idea of having a
+&gt;  dict_data() builtin, parallel to the dict_keys builtin? I implemented this
+&gt;  on FrozenApples (when it was up) in-db by doing
+&gt; 
+&gt; @program $dict.data
+&gt;  arg dict;
+&gt;  return $list.slice($dict.to_list(dict),2);
+&gt; .
+
+Actually, it seems to me that:
+
+@program $dict.data
+ arg dict;
+ var x, list;
+ list = [];
+ for x in (dict)
+   list = list + [x[2]];
+ return list;
+.
+
+...would be much more efficient, but anyway:  While I can see that this might
+be nice for some uses, I can't really come up with any operation off hand that
+would use it frequently enough to be a real speed issue, and I'm not sure what
+other reason there would be to make a builtin specifically for this purpose..
+
+Maybe I'm just missing some incredibly obvious need for it or something, tho..
+
+-Riche
+</PRE>

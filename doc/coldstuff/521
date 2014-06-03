@@ -1,0 +1,207 @@
+<HEAD><TITLE>discuss@charon: [521] in "Coldmud discussion meeting"</TITLE>
+<H1>[521] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?521"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="519"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="520"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="522"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="523"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 00:19:56 1994
+)</H3>
+<PRE>
+Date: Sat, 5 Nov 1994 00:17:48 -0500 (EST)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: Alex Stewart &lt;riche@crl.com&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199411042101.AA00504@crl4.crl.com&gt;
+
+&gt; Atomic code blocks
+&gt;   This is really needed now that we have suspend capability, and I will
+&gt;   probably implement it as an 'atomic &lt;statement&gt;' syntax, i.e:
+&gt;     atomic object.some_special_method();
+&gt;   and
+&gt;     atomic {
+&gt;       do this;
+&gt;       and this;
+&gt;       and this too;
+&gt;     }
+&gt;   and etc..  If an attempt is made to suspend or pause while executing in an
+&gt;   atomic state, an error will be thrown instead.
+
+It seems to me this construct isn't sufficiently general to amount
+to much.  It won't be worth the bytes it takes in the server in a
+multithreaded environment (it'd hold up *way* more tasks than
+necessary if it could even be implemented successfully at all,
+which is doubtful), and it doesn't allow for things like saving
+your state and proceeding to do the suspension--it's an all or
+nothing thing.  To me this is the major problem of the ColdMUD
+error handling system, which got fleshed out for me in a
+discussion of similar issues a while back in moo-cows.  It's based
+on LISP catch/throw, which was never really meant for error
+handling as such.  Without resumes, it's way too static, and it
+doesn't really support good stack unwinding right now either.
+These are more basic issues you need to be working on.
+
+&gt; Callback system
+&gt;   The DB will be able to call request_callback() to instruct the server to
+&gt;   call $sys.callback at the next appropriate task opportunity.  Multiple
+&gt;   requests will result in multiple callbacks.  I'm not sure whether pause()
+&gt;   should be kept or not once this is implemented, as its functionality can be
+&gt;   performed with this and suspend()/resume().. I'll have to run some tests to
+&gt;   see if there's a significant speed advantage of pause() over the other way
+&gt;   of doing things..
+
+What does this actually involve?  (Besides a really long awkward method
+named $sys.callback of course :)
+
+&gt; Syntax/builtin changes:
+&gt; 
+&gt;   with handler              =&gt; handler
+
+Should become irrelevant. 
+
+&gt;   del_name('dbref)          =&gt; del_dbref('dbref, #object)
+
+Does this mean there can be more than one object to a dbref?  If
+it is, I can't see how this would cause anything but confusion.
+If not, why the extra argument?
+
+&gt;   bind()                    =&gt; bind_port()
+&gt;   unbind()                  =&gt; unbind_port()
+
+Personally I'd prefer to see 
+
+    bind()                    =&gt; listen(port, object)
+    unbind()                  =&gt; unlisten_port(port)
+                                 unlisten_object(port)
+                                 unlisten(port, object)
+                                 listeners(port)
+                                 listened_ports(object)
+
+Port isn't necessarily a TCP port; just something the server can
+sensibly listen to.  Could be an identifier for a modem, among
+other things.  The other parameters would be likewise genericised.
+
+(Hey, it makes as much sense as genericising strings.)
+
+&gt;   conn_object.failed()      =&gt; .connection_failed('refused/'timedout, "addr",
+&gt;                                                   port, socket)
+
+Are you sure this shouldn't be an error rather than a callback?  After
+all, this never happens anyplace an error would not be sensible.  I
+could see a case for this back when the server couldn't queue tasks,
+but not now.
+
+&gt;   conn_object.parse()       =&gt; .connection_received(`[buffer])
+
+Shouldn't this maybe just be .receive()?
+
+&gt;   set_heartbeat_freq()      =&gt; set_heartbeat()
+
+How about set_heartbeat_interval()?  Long, but it is after all what
+the thing actually does, unlike either of the above designations.
+
+&gt; Flexible builtin bindings
+
+MOO and ColdMUD get more alike all the time.  It'll be interesting
+when/if CoolMUD gets in on this trend...
+
+&gt;   Other contents/directories are allowed but ignored by the server.
+&gt;   Logfile output will also be changed to go to stdout instead of stderr.
+&gt;   stderr will be reserved for actual error messages.
+
+This wouldn't work well with something like MOO's NP_SINGLE network
+module.
+
+&gt; Up for Discussion
+&gt; -----------------
+&gt; Do-while syntax
+
+I've always liked this one.  Lots of languages could benefit from this
+(C, C++, Pascal, etc).  It'd certainly save on a *lot* of convoluted
+constructs (if-thens with first-time flags, duplicated code, and on
+and on...).
+
+&gt;   I'm still kinda unsure about this, really..  the idea with the above plan is
+&gt;   mainly to try to keep connections of all sorts (network connections, pipe
+&gt;   connections, etc) all as similar as possible for consistency of interface,
+&gt;   but that means things like .connection_opened has to get different args
+&gt;   depending on the connection type and you need to use two separate objects
+&gt;   for handling sdout and stderr separately..  An alternative would be to have
+&gt;   a different interface for pipes to other processes, along the lines of
+&gt;   .pipe_opened, .pipe_closed, .pipe_stdout, .pipe_stderr, etc..
+&gt; 
+&gt;   Anyway, what do people think?
+
+I think it's a great idea and should be extended to things like in-DB
+streams.  That'd take a little more reworking, though; echo() simply
+does not generalise well to this.
+
+&gt; Change the task timeout system
+&gt;   The main question is just how should it be changed.  method-local tick
+&gt;   counts clearly are not sufficient.  It could simply be changed along the
+&gt;   same lines as MOO's task-timeout handling (tick counts relative to the
+&gt;   entire task, and renewed when the task suspends)..  what I'm thinking about
+&gt;   at the moment is changing tickout checking to be based on the task rather
+&gt;   than the method and allowing it to be set for any given task with a builtin
+&gt;   (this would make things more flexible than a standard tick-limit imposed by
+&gt;   the server, though it would mean things like pause() would have to go
+&gt;   through thunks if the tick count was to be renewed..)  Should task timeouts
+&gt;   be based on ticks, seconds, or both? (maybe seconds would be better overall,
+&gt;   since a tick is really such an arbitrary thing anyway)
+
+Ticks have their uses.  Stopping tight, fast, useless infinite loops
+earlier strikes me as a good example.  
+
+I'd say use both ticks and seconds.  I'd also say make server defaults
+for various instances, but let $sys grant extra ticks or take some
+away (granting should be used *very* sparingly).
+
+&gt; buffer_to_strings()        =&gt; ascii_buffer_to_strings()
+&gt; strings_to_buffer()        =&gt; strings_to_ascii_buffer()
+&gt; 
+&gt;   I also believe that the string dataype should simply be defined as a series
+&gt;   of "text characters", where what exactly a "text character" is and how it's
+&gt;   represented internally are nobody's business as long as it can represent all
+&gt;   the printing characters one needs, whereas a buffer should be defined
+
+The minimum here would be us-ascii characters, since everything in the
+server is expressed in terms of them, as well as all the internals of
+all current cores.  Strings should also IMHO never include newlines or
+vertical tabs/formfeeds (or the system-local equivalents of such).
+
+&gt;   explicitly as a series of 8-bit bytes, with no particular significance to
+&gt;   what they represent.  I.e. the definition of a string is based entirely on
+&gt;   what it's used for and not what it is, and the definition of a buffer is
+&gt;   defined entirely on what it is and not what it's used for.
+
+I'm not sure buffers should be nailed down as '8-bit bytes'.  
+Unicode-supporting systems should perhaps get 16.  I'm not entirely 
+certain of this, either.
+
+&gt; "locked" compilation flag for nethods
+&gt;   A compilation flag (like disallow_overrides) which would indicate that the
+&gt;   specified method cannot be changed from inside the running server (it must
+&gt;   be modified offline), for security.  Basically, does anybody have any reason
+&gt;   I shouldn't go ahead and implement this? (sounds good to me)
+
+This one is IMNSHO entirely silly, superfluous, and otherwise not a
+Good Thing(TM).  The idea behind it seems to be that by allowing
+online changing of methods basic to security one is undermining
+security.  However, if these methods cannot protect *themselves*
+from *unauthorized* changes I'd have pretty graves doubts about
+their general security myself.  The marginal security gain is simply
+not worth making a whole bunch of people crawl on their knees
+through textdumps when maintenance needs to be done.  The first
+thing I'd do if I found this bet set anywhere in a core DB would be
+to use a perl script to take all instances out.
+
+--
+James Deikun (James@JHM, James &amp; Splat@BlueMOOn)
+</PRE>

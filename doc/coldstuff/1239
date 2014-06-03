@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [1239] in "Coldmud discussion meeting"</TITLE>
+<H1>[1239] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1239"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1235"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1238"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1238"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1240"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1240"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1241"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] public/private/protected object variables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar  1 17:41:44 1997
+)</H3>
+<PRE>
+Date: Sat, 1 Mar 97 17:18:28 -0500
+From: "Jeff T. Polczynski" &lt;jefftp@purdue.edu&gt;
+To: "COLD" &lt;coldstuff@cold.org&gt;
+
+&gt;On Sat, 1 Mar 1997, Jeff Kesselman wrote:
+&gt;&gt; I guess I'ld have to say I think its a bad ideas. I think its dilutes the
+&gt;&gt; strengths of COldC-- oen of which is that it breaks your sloppy C++ habits
+&gt;&gt; and FORCES yo uto learn how to write really good object orinted code.
+&gt;But this isn't breaking the encapsulation--it is simply changing the
+&gt;default value when a specific instance is not defined.  The variable still
+
+[...]
+
+&gt;instance in the ancestor tree)--and only change what you care about.
+
+This sounds like MOO's standard operation for decendants. Which I've 
+really missed in ColdX. Variables default to the value defined above them 
+in the public instance... I think the private, protected and public words 
+sound strange when used in this respect, but I would find these features 
+make more commonsense than the current system where you need to define 
+values over and over again, which is bad programming in my mind.
+</PRE>

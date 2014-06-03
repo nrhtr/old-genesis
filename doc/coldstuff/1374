@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1374] in "Coldmud discussion meeting"</TITLE>
+<H1>[1374] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1374"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1373"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1375"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis 1.1-STABLE</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 18 17:24:26 1997
+)</H3>
+<PRE>
+Date: Tue, 18 Nov 1997 15:15:33 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+
+Genesis 1.1-STABLE is now available.  This is the first branch in our
+development tree (finally).  There will be a DEV and a STABLE release.
+Notes from the STABLE release:
+
+    This is the STABLE release of Genesis.  This means no features will
+    be added to this release--only bug fixes and patches.  There is also
+    a higher level of run-time stability for this release which you will
+    not have with the DEV release (alpha developmental).
+
+Furthermore, I am making both releases available via cvsup, more details
+on this will come in time.
+
+Until later, Enjoy;
+
+    -Brandon Gillespie
+
+</PRE>

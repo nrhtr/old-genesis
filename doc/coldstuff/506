@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [506] in "Coldmud discussion meeting"</TITLE>
+<H1>[506] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?506"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="505"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="507"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>bugs bugs bugs</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 18:52:03 1994
+)</H3>
+<PRE>
+From: brandon@riverheights.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Tue, 01 Nov 94 16:51:12 -0700
+
+I've got a very odd situation.  Basically upon startup:
+
+ERROR: class 7523 name coordinate_shortcuts unparseable: #[["n?orth", [0, 0]], [
+"s?outh", [180, 0]], ["e?ast", [90, 0]], ["w?est", [270, 0]], ["ne|northeast", [
+45, 0]], ["se|southeast", [135, 0]], ["nw|northwest", [225, 0]], ["sw|southwest"
+, [315, 0]], ["up", [-1, 90]], ["d?own", [-1, -90]]]
+
+The parameter 'coordinate_shortcuts' is COMPLETELY valid, as far as I can
+tell there is nothing wrong with the above parameter.  Hell, the driver
+is the one who created it (it wrote it into the textdump), and it accepted
+it on an eval, so why will it not accept it when reading in the textdump?
+
+-Brandon
+</PRE>

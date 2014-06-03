@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [1268] in "Coldmud discussion meeting"</TITLE>
+<H1>[1268] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1268"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1264"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1267"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1267"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1269"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] A bug??</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Apr  2 11:29:48 1997
+)</H3>
+<PRE>
+Date: Wed, 2 Apr 1997 09:23:27 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;3.0.32.19970401004155.0076b5ac@mail.tenetwork.com&gt;
+
+On Tue, 1 Apr 1997, Jeff Kesselman wrote:
+&gt; At 12:32 AM 4/1/97 -0800, you wrote:
+&gt; &gt;On Tue, 1 Apr 1997, Jeff Kesselman wrote:
+&gt; &gt;
+&gt; &gt;&gt; Im doing a call of the form 
+&gt; &gt;&gt;   out = (fooobj).myfunc();
+&gt; &gt;&gt; Where foobj is a variable containing an obj reference
+&gt; &gt;&gt;  and myfunc is a method on the referenced obejct tha ttakes no arguments.
+&gt; &gt;&gt; 
+&gt; &gt;&gt; im gettign a "called with one argument, requires none" error
+&gt; &gt;
+&gt; &gt;Are you 100% sure you aren't calling the method on a frob?
+&gt; 
+&gt; Good thought but yes Im sure.  It tells me oits callign it on $integer...
+
+There is no bug.  The 'fooobj' variable is not set--it is defaulting to
+zero, so its really doing:
+
+   (0).myfunc()
+
+which is then mapped to:
+
+   $integer.myfunc(0)
+
+check 'fooobj' and make sure the current instance you are using is
+initialized correctly.
+
+-Brandon
+
+</PRE>

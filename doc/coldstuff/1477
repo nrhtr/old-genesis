@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [1477] in "Coldmud discussion meeting"</TITLE>
+<H1>[1477] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1477"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1476"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1476"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1476"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1478"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1478"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1480"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Text Dump Structure</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 16:57:09 1999
+)</H3>
+<PRE>
+Date: Wed, 17 Nov 1999 13:49:28 -0800 (PST)
+From: Jeff Kesselman &lt;Jeffrey.Kesselman@eng.sun.com&gt;
+To: cold-announce@cold.org
+Reply-To: cold-announce@cold.org
+
+Textdump is human readable and IMO very simple to grok. Why dont you just dump 
+and look at the output?
+
+&gt;I've been going through the ColdC reference material lately and it appears that 
+the Text Dump Structure information is missing.  I was wondering if this 
+information is available somewhere?
+&gt;
+&gt;ian klimon
+&gt;ian@aephirsden.com 
+&gt;www.aephirsden.com
+&gt;
+&gt;
+
+Jeff Kesselman
+Member of Technical Staff IV
+JDK Performance/RAS Team
+SUN Microsystems
+
+Thought to meditate on:
+
+No two objects in nature are equal, any two apples are in fact quite different 
+from any other two apples in the world.
+
+Thus can Math really be said to be True in an absolute concrete sense, 
+or is it merely an internally consistent abstraction?
+
+</PRE>

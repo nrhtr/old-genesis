@@ -1,0 +1,73 @@
+<HEAD><TITLE>discuss@charon: [1035] in "Coldmud discussion meeting"</TITLE>
+<H1>[1035] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1035"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1032"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1034"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1034"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1036"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1036"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1036"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] behaviour of localtime()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul 23 15:06:37 1996
+)</H3>
+<PRE>
+From: Jay Carlson &lt;nop@nop.com&gt;
+To: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+cc: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;, coldstuff@cold.org
+In-reply-to: Your message of "Tue, 23 Jul 96 17:14:07 BST."
+             &lt;199607231614.RAA01653@aaaaaaaa.demon.co.uk&gt; 
+Date: Tue, 23 Jul 96 14:28:56 -0400
+
+Andy writes:
+
+&gt;&gt; Right now localtime works like:
+&gt;&gt; 
+&gt;&gt;     1. INTEGER time (same as returned by the function time()) 
+&gt;&gt;     2. INTEGER seconds (0-59) 
+&gt;&gt;     3. INTEGER minutes (0-59) 
+&gt;
+&gt;[snippety...]
+&gt;
+&gt;&gt; Which is basically a raw dump of the C function localtime().  Because 
+&gt;&gt; Cold scales arrays starting at one rather than zero, I think I will change 
+&gt;&gt; it to add one to elements 2 - 9 (excluding the year and day of the month), 
+&gt;&gt; instead giving you:
+&gt;&gt; 
+&gt;&gt;     1. INTEGER time (same as returned by the function time())
+&gt;&gt;     2. INTEGER seconds (1-60)
+&gt;&gt;     3. INTEGER minutes (1-60)
+&gt;
+&gt;[snip...]
+&gt;
+&gt;&gt; The reason for this is any likely use of localtime() in ColdC will 
+&gt;&gt; inevitably require you to add one to the value, so why not do it in 
+&gt;&gt; native code rather than interpreted code?
+
+&gt; What is this, April 1st?
+
+3/0/96.
+
+&gt;  Under this proposal I'll be forced to
+&gt; subtract one from seconds and minutes to get the right answer?
+
+I think that part's ill-considered.  But as far as months and days go,
+it's right on.
+
+&gt; I think, on general principal, that you shouldn't dick with
+&gt; something so important as localtime(), you'll be up to your ass in
+&gt; FAQ 'er why is cold's time code not standard C,
+
+ColdC Is Not C.  Java Is Not C.  There Can Be Progress.
+
+For what it's worth, the Java crowd is currently bemoaning their own
+java.util.Date class; it has 0-based months.  That's a pretty big lose.
+
+Jay Carlson
+nop@nop.com    nop@ccs.neu.edu    nop@kagoona.mitre.org
+
+Flat text is just *never* what you want.   ---stephen p spackman
+</PRE>

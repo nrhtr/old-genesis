@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [1539] in "Coldmud discussion meeting"</TITLE>
+<H1>[1539] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1539"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1538"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1540"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>make or make install that is the question</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan 20 05:26:42 2000
+)</H3>
+<PRE>
+From: "Kris Anderson" &lt;msmouse@kittymail.com&gt;
+To: coldstuff@cold.org
+Date: Thu, 20 Jan 2000 19:08:04 +0800
+Reply-To: coldstuff@cold.org
+
+I was parousing your web instructions on how to install cold and it says the following.
+
+make - to make what ever
+make install - to make it and install
+
+Although I am new to FreeBSD I have managed to at least twice do sucessful make and make installs of previous versions of Cold.  But there always seemed to be something missing that I had to go hunting down.  Part of it is the dns thingy it tries to cp then chmod at the end of make install.  It doesn't exist.
+
+Don't ask me how I managed to get it going in the first place.  But I suspect that I d/l the database and some how it did the work when I untarred it and such.  Then I copied missing stuff to the appropriate directories.
+
+If you have any clue as to what I'm doing wrong it would be greatly appreciated.  Like I said, I do have two sucessful installs of Cold going that I did myself.
+
+Anyways, hope to hear from ya'll and maybe I can figure out what it is I'm doing wrong here.  But for now I've just got Genesis-1.1.8-STABLE.tar.gz.
+
+Thanks,
+
+Kris Anderson
+-- 
+
+
+_______________________________________________
+Get your free email from www.kittymail.com
+powered by OutBlaze
+</PRE>

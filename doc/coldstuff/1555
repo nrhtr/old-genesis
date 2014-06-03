@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1555] in "Coldmud discussion meeting"</TITLE>
+<H1>[1555] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1555"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1554"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1556"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>AW: HTTP-connections</H2>
+<H3>???@ATHENA.MIT.EDU (Sun Feb 27 15:02:53 2000
+)</H3>
+<PRE>
+From: "Joerg Weber" &lt;joerg@fs.is.uni-sb.de&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Sun, 27 Feb 2000 21:00:05 +0100
+In-Reply-To: &lt;38B843B2.8667016E@mindless.com&gt;
+Reply-To: coldstuff@cold.org
+
+Hello Michael,
+
+thanks for your reply! The Refresh-Tag isn't as nifty as I want to have to
+have the output to be appended in real-time, but not closing the connection
+did, in the end, the trick. You've just to modify a few methods on
+$http_interface to not write a full HTTP-Header. Again, thanks.
+
+Joerg
+
+
+&gt; -----Ursprungliche Nachricht-----
+&gt; Von: owner-coldstuff@roguetrader.com
+&gt; [mailto:owner-coldstuff@roguetrader.com]Im Auftrag von Michael Loftis
+&gt; Gesendet: Samstag, 26. Februar 2000 22:21
+&gt; An: coldstuff@cold.org
+&gt; Betreff: Re: HTTP-connections
+&gt;
+&gt;
+&gt; You just don't close the connection.  Or ask the browser to reload with an
+&gt; HTML Meta REFRESH tag.
+&gt;
+&gt; See HTML infos for more.
+&gt;
+
+</PRE>

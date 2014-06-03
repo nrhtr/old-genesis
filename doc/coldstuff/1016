@@ -1,0 +1,74 @@
+<HEAD><TITLE>discuss@charon: [1016] in "Coldmud discussion meeting"</TITLE>
+<H1>[1016] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1016"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1015"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1017"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1019"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1019"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Reducing backups to 1 second, ALWAYS ... (or there abouts)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jun 11 20:15:13 1996
+)</H3>
+<PRE>
+Date: Tue, 11 Jun 1996 17:53:45 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+Ok, in the never ending quest for reducing the time of a backup I believe 
+Miro (Jenner) has found the best solution.  To keep myself from 
+forgetting it I'm posting here (and for feedback).
+
+Basically, right now the driver has done _virtually_ all it can do to 
+reduce the time involved in a backup.  What occurs now is:
+
+   * driver goes atomic
+   * db sync -- objects in memory are written to disk, usually takes
+     microseconds.
+   * binary db copy -- copy entire db to a new location, this is the
+     slowdown--right now its doing a raw read/write--which is about as
+     fast as we will ever get.  The slowdown on backups as the current
+     time is one thing: disk/filesystem speed.
+   * driver returns to normal operation
+
+The reason you are atomic is you must keep the db syncronized on disk 
+during the entire copying process, if you dont it will change halfway 
+through the backup and you will have a corrupt backup.
+
+Jenner suggests...
+
+   * driver goes atomic
+   * db sync to disk
+   * db becomes read-only, changed objects stay in ram-cache
+   * driver returns to normal operation
+   * fork binary db copy as another process, when it completes a signal
+     is sent to the driver.
+   * driver receives signal, sets the db as read/write again.
+
+Because of this the time involved in the backup will ONLY depend upon how 
+large your ram-cache is, and how active your server is (a more active 
+server will have more out-of-sync objects in the ram-cache).  Overall I 
+doubt it would take more than a second to sync the db except in the rare 
+situations.
+
+There is one major problem: the ram-cache can reach capacity.  You can 
+get by this by simply starting the driver with a larger ram cache--but 
+then you have the problem in that your server may eventually allocate 
+all of that cache.  You will not be like a MOO, as after the backup was 
+finished the cache would be pushed to disk and the empty holders (still 
+allocated) would be pushed to swap.
+
+Another suggestion would be to have a regular cache size and a backup 
+cache size.  The backup cache size would be several times larger (perhaps 
+even growing as needed).  When the backup was completed it would reduce 
+the cache back to its normal size, writing objects to disk as needed.  If 
+you are using phk_malloc() (or your OS malloc is very good), the object 
+cache holders would be free'd, thereby freeing up pages which are 
+RETURNED to the operating system, and your footprint suddenly shrinks.
+
+-Brandon Gillespie-
+</PRE>

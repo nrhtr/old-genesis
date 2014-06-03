@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [684] in "Coldmud discussion meeting"</TITLE>
+<H1>[684] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?684"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="682"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="683"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="683"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="685"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: blah blah blah</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar  9 16:17:38 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: 
+Date: Thu, 9 Mar 1995 15:12:16 -0600 (CST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9503092032.AA03605@avon.declab.usu.edu&gt; from "869683 Gillespie Brandon James" at Mar 9, 95 01:32:14 pm
+
+&gt; 
+&gt; &lt; [[flags], [arg names], [var names], [statements]]
+&gt; &lt;
+&gt; &lt; Does anyone have any objections? Alternative suggesions?
+&gt; 
+&gt; Just one, make it a dictionary ala:
+&gt; 
+&gt; #[['flags, [...]], ['args, [...]], ['vars, [...]], ['body, [...]]]
+&gt; 
+&gt; Trivial, but cleaner.
+&gt; 
+&gt; -Brandon
+&gt; 
+
+I thought of that and discarded the idea thinking it was a silly idea, but I
+ guess I was wrong. That being the case, I'll send a full specification of the
+ format of the structure to this list before I start implementing it.
+
+Crag
+</PRE>

@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [314] in "Coldmud discussion meeting"</TITLE>
+<H1>[314] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?314"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="312"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="312"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="313"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="315"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: 11.*</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 24 10:55:23 1994
+)</H3>
+<PRE>
+To: BRANDON@cc.usu.edu
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Mon, 23 May 1994 22:19:04 MDT."
+             &lt;01HCP0CQX1Y0BWCX9J@cc.usu.edu&gt; 
+Date: Tue, 24 May 1994 10:52:41 -0400
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt;&gt; dict_add_elem() and dict_del_elem() have been removed. They may be
+&gt;&gt; coded in-db with dict_add() and dict_del(), as well as a setadd()
+&gt;&gt; or setremove() and some other logic.
+
+&gt; setadd and setremove have been removed?  Quite frankly I never had
+&gt; the use for dict_*_elem().
+
+If I may be so bold, I think the original message meant:
+
+dict_add_elem() and dict_del_elem() have been removed.
+dict_add_elem() and dict_del_elem() may be coded in-db using
+dict_add(), dict_del(), setadd(), setremove(), and some other logic.
+
+(Those two functions were a pretty silly idea on my part in the first
+place.)
+
+--GBH
+
+</PRE>

@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [300] in "Coldmud discussion meeting"</TITLE>
+<H1>[300] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?300"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="299"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="301"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>patched source</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun May 22 15:57:28 1994
+)</H3>
+<PRE>
+Date: Sun, 22 May 1994 13:54:08 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+There is a patched source for coldmud-0.10-3 (patch 3).  It contains the patch
+merlin sent as well as a #define in config.h for LOG_TIMES (off currently). 
+Turn it on if you wish to have times in your logfile.  You can find the tar at:
+
+     ftp://ftp.mcs.usu.edu/brandon/coldmud/coldmud-0.10-3.tar.gz
+
+-Brandon-
+</PRE>

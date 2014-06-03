@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [1488] in "Coldmud discussion meeting"</TITLE>
+<H1>[1488] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1488"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1487"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1489"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1489"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1489"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>re: Genesis on Linux / seth law</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 24 14:06:00 1999
+)</H3>
+<PRE>
+From: "Ilya, Game Commandos" &lt;Ilya@gamecommandos.com&gt;
+To: "coldstuff@cold.org" &lt;coldstuff@cold.org&gt;
+Date: Wed, 24 Nov 1999 10:39:35 -0800
+Reply-To: coldstuff@cold.org
+
+I have done this recently, and remember it well.  Assuming
+nobody else has already answered this, I'll give it a crack.
+
+I found that on my mandrake linux, I had to be sure perl5
+was installed, because it had the ndbm.h header file I needed.
+
+That header file ended up in /usr/include/db1
+I guessed it would be needed in /usr/include as well, so
+copied it into there as well.  Yes, I know, a link would probably
+have been wiser, but I didn't.
+
+Anyway, that solved my problem and genesis compiled
+fine after that.
+
+--
+  Ilya, Game Commandos     http://www.gamecommandos.com     
+
+
+</PRE>

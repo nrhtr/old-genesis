@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1277] in "Coldmud discussion meeting"</TITLE>
+<H1>[1277] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1277"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1276"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1278"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis p27 available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Apr 10 16:42:28 1997
+)</H3>
+<PRE>
+Date: Thu, 10 Apr 1997 14:33:00 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+Mostly bug fixes.  Changes include:
+
+      * fixed a bug, removed an extra cache_discard that completely bombed
+        the server if the object got swapped while task still used the
+        method  (Miro)
+      * Added a traceback logging means (Miro)
+      * Fixed deallocing things in wrong order in frame_return (Miro)
+      * found minor logic bug with frename() (Brian)
+      * fixed a bug where frames were cleaning up information before the
+        traceback could be generated (Miro)
+      * wrapped up default_var() and inherited_var() -- no cacheing of
+        results occurs with inherited_var(), use it wisely (Brian)
+
+-Brandon
+
+Also, note--inherited var doesn't work correctly right now, it searches
+your ancestors in the wrong order.  Keep this in mind..
+
+</PRE>

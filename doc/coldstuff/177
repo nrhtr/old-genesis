@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [177] in "Coldmud discussion meeting"</TITLE>
+<H1>[177] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?177"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="167"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="174"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="176"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="178"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="178"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="178"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Encapsulation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 25 21:11:29 1994
+)</H3>
+<PRE>
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: zachary@io.com (Zachary)
+Date: Fri, 25 Mar 1994 17:05:57 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199403260028.SAA24596@illuminati.io.com&gt; from "Zachary" at Mar 25, 94 06:28:32 pm
+
+&gt; &gt;&gt; Umm, whats the difference between adding something to the containers contents, 
+&gt; &gt;&gt; and asking the container to add someting to its contents? and why is adding 
+&gt; &gt;&gt; someting to the cointaier's contents not setting the containers contents variable?
+&gt; 
+&gt; The difference is the conceptual level aat which you and the code operate
+&gt; on.  Directly adding something to a containers contents by manipulating
+&gt; its internal variables is the wrong kind of thinking... There may be some
+&gt; other kinds of things that need to be done when a container adds
+&gt; something to its contents - some checking for this or that or whatever -
+&gt; that won't be done if you think of the way to put things into a container
+&gt; is to get it to manipulate its variables in a certain way.  You need to
+&gt; think, instead, of getting the object to ask the container to put be put
+&gt; in its contents... this way both objects have ways to 'hook into' the
+&gt; process of being moved into the container.  I know this all sounds sort
+&gt; of confusing, but basically it says to try to think at a higher level of
+&gt; abstraction than code and objects - think of actions instead of code...
+&gt; especially when conceptualizing.  Then translate each little action that
+&gt; makes upt he overall action into code... 
+&gt; 
+&gt;  --Zachary
+&gt; 
+Actually, my suggestion was to ask the object to add the value to its containers
+var, not to directly set it. My whole core modification is to make it so you
+only ever directly assign a variable in one place - the variable accessor on the
+object. It seems that after a certain point the language becomes insufficient
+to discuss this kinda stuff, since it seems my phrasing was totally confusing :)I was actually trying to understand if there's a difference between asking 
+the contents parameter on object a to add item x, and adding item x to the
+contents of container a, which seems like an abstraction, while im trying to
+understand how to write the code...
+Ik thats sounding confusing now too. I'm gonna read some OO books tonight and
+see what i can find out.
+	Ash
+
+</PRE>

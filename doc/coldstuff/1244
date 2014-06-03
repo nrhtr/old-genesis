@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1244] in "Coldmud discussion meeting"</TITLE>
+<H1>[1244] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1244"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1243"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1245"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1245"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1245"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] a couple of html questions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar  5 00:48:24 1997
+)</H3>
+<PRE>
+Date: Tue, 04 Mar 1997 22:45:04 -0800
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+I seem to have forgotten how to use the html stuff in Cold.
+For example, I thought that the start.html went in the root
+directory where the database is.  But I get "not found" error
+messages when I try to access that file with a browser.
+
+I also don't know what I'm suppose to put in the .../login/
+file; is that an index.html?
+
+I don't need detailed answers, but just a pointer or two
+of what I'm suppose to be looking.
+
+I also wonder if there is a editor for editing the 
+complex html descriptions that are embedded in the Cold
+database or is the idea to @dump the object and then use
+a regular text editor.  An example of this is motd.  There
+is a lot of html stuff and not an obvious way of how I can
+edit it.
+
+I'm using genesis p23 and database A6.
+
+Frank
+
+-- 
+_______________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+</PRE>

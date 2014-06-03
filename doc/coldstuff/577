@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [577] in "Coldmud discussion meeting"</TITLE>
+<H1>[577] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?577"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="565"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="576"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="576"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="578"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Assignment Operator.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 10 19:48:46 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Thu, 10 Nov 94 17:41:25 -0700
+
+&lt; Actually, I only proposed := when we were discussing assignment-expressions in
+&lt; the first place.  If we don't have assignment expressions, I really don't see
+&lt; that it matters much one way or the other, and don't really see why we should
+&lt; bother changing it anyway..
+
+Yeah, that is pretty much the way I'm starting to look at it.
+
+&lt; (at least most people recognize := from pascal and so can guess at what it
+
+Actually I think of VMS symbols before I think of pascal (along the same
+lines, but as  'sym:==value').
+
+As I see it there are about as many people for assignments as there are
+against it, so we should just scrap that discussion for a while, and we can
+probably toss the ':=' one, unless somebody wishes to add in assignments as
+expressions (at which point I think they should be ':=').
+
+-Brandon
+</PRE>

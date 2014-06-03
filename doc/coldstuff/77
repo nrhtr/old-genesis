@@ -1,0 +1,88 @@
+<HEAD><TITLE>discuss@charon: [77] in "Coldmud discussion meeting"</TITLE>
+<H1>[77] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?77"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="76"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="76"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="76"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="78"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="78"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="78"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Best Platform for ColdMUD?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 29 10:36:49 1993
+)</H3>
+<PRE>
+Date: Mon, 29 Nov 93 15:31:36 GMT
+From: Andrew Wilson &lt;Andrew.Wilson@cm.cf.ac.uk&gt;
+To: coldstuff@MIT.EDU, paul@isl.cf.ac.uk
+
+Each,
+
+	Paul Richards (paul@isl.cf.ac.uk) is one of the FreeBSD core developers,
+and I've just clued him in to the special needs of Cold/MOO systems so far as
+free PC unix is concerned.  If you'd like to know a bit more, OS-wise then you
+should get in contact with him.
+
+&gt; From uso01@mailhost.unidata.com Mon Nov 29 15:15:50 1993
+&gt; Date: Mon, 29 Nov 1993 09:13:31 -0600
+&gt; From: Steven Owens &lt;uso01@mailhost.unidata.com&gt;
+&gt; To: coldstuff@MIT.EDU
+&gt; Subject: Best Platform for ColdMUD?
+&gt; Content-Length: 1430
+&gt; 
+&gt; 
+&gt; Hi all,
+&gt; 
+&gt; 	You may remember a question or two I posted a couple of weeks
+&gt; ago.  In a nutshell, a friend of mine, Scott, wants to start up a BBS
+&gt; running some sort of MUD.  I'm talking him into using ColdMUD, because
+&gt; I think it's nifty.  I could really use some advice on the platform.
+&gt; 
+&gt; 	Question is, what's the best platform to set it up on, taking
+&gt; into account feasibility and cost?  And what's the best way to
+&gt; establish connectivity?
+&gt; 
+&gt; 	Scott just went out and purchased a Packard Bell 486 DX 66Mhz
+&gt; with 8meg of ram and a 400-odd meg hard drive, but he can still return
+&gt; it if it's horribly wrong (Best Buy 30-day "no questions asked" return
+&gt; policy).
+&gt; 
+&gt; 	I'm assuming that running Linux or some other brand of free
+&gt; UNIX for x86 machines is best.  How do FreeBSD and such measure up
+&gt; against Linux?
+
+Paul knows the answer to this one I think.
+
+&gt; 
+&gt; 	What kind of a load (disk space, RAM, CPU) would ColdMUD
+&gt; impose on a regular UNIX system (i.e. what if he rents space on one of
+&gt; Netcom's systems, or Colorado SuperNet?)?
+&gt; 
+&gt; 	We're based in Denver, Colorado.  Scott wants to eventually
+&gt; set up a multi-line BBS for players, but right now he's looking for
+&gt; the most cost-effective method to run the system in a "development"
+&gt; mode; probably SLIPping into Netcom or something similar, to allow the
+&gt; developers to connect and work on stuff.  He's not independently
+&gt; wealthy, but he's committed to doing this; any suggestions for the
+&gt; most cost-effective method?
+&gt; 
+&gt; Steven J. Owens
+&gt; uso01@unidata.com
+&gt; 
+&gt; 
+
+Greg?  Could you subscribe Paul to this mailing list ASAP as well?
+
+Thanks,
+Andy.
+
+Paul:	ColdMUD is a multiple-inheritance object-oriented multi-user database
+	system/programming environment/VR engine, in some ways similar to Pavel
+	Curtis' MOO system.  Cold is newer and still in the developement stage
+	but due to its platform	friendly design (a disk based db rather than a
+	memory based one for MOO) it's generating a lot of interest.  To
+	be honest, this is one of the new breed.
+</PRE>

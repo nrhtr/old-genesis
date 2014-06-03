@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [321] in "Coldmud discussion meeting"</TITLE>
+<H1>[321] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?321"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="320"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="322"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>server vs db security</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 24 14:59:14 1994
+)</H3>
+<PRE>
+Date: Tue, 24 May 1994 11:46:30 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+
+
+Brandon:
+
+&gt; I just hacked $sys.compile() on the Cold Dark to:
+&gt; &lt;some code that logs changes made to $sys&gt;
+
+cool. Do we want to move a db-security discussion to colddarkthings?
+or is generic db security appropriate for here? (or both?)
+
+</PRE>

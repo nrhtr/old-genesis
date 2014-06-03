@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1427] in "Coldmud discussion meeting"</TITLE>
+<H1>[1427] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1427"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1426"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1428"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1428"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1430"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Question about Genesis</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Sep 28 01:22:03 1998
+)</H3>
+<PRE>
+From: "Park, Hyun Joon" &lt;HyunJoon.Park@COMPAQ.com&gt;
+To: "'coldstuff@cold.org'" &lt;coldstuff@cold.org&gt;
+Date: Mon, 28 Sep 1998 00:17:14 -0500
+
+Hi !
+
+Cold is very good MUD server.
+I was running Cold witrh MinimalCore the first time.
+
+Command is exist only QUIT in MinimalCore.
+And I was modify source in MinimalCore as "QUIT" ---&gt; "Korean Character" (
+2Byte Character ) 
+But, Every 2Byte Character is eliminated,
+
+How Can I use the 2Byte Character ?
+
+Thanks and Best regards,
+
+Park, HyunJoon
+HyunJoon.Park@compaq.com
+
+
+</PRE>

@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [293] in "Coldmud discussion meeting"</TITLE>
+<H1>[293] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?293"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="282"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="290"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="292"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="294"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: time in the log</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 21 08:32:54 1994
+)</H3>
+<PRE>
+Date: Fri, 20 May 1994 16:44:23 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199405202330.QAA26131@netcom.com&gt; (deforest@netcom.com)
+
+Well, if the format of time sent to the log is an in-db option,
+i.e. run-time, then anything that hacks where that format is
+determined can change it, which I dont like. Like I said though, I'm
+just being paranoid. an example would be, say you have the format
+somewhere, and our happy hacker somehow manages to make it "", then we
+lose time info in the log. I pretty much am clueless on alot of cold
+stuff, as you probably already know ;) so I'll be nice instead of
+paranoid and assume that theres no way to remove info from the log
+once its there, barring hacking the account the server is running
+under. Since this is the case, lack of time info is not as crucial,
+but i'd still prefer it to be a compile option rather than an in-db
+format. 
+
+Also, with the in-db format, wouldnt you have to get time, format it
+and then log it? in this case someone can step in and mess up the
+procedure. (and i also dont know how this would interact with some of
+the server level log messages)
+
+That is somewhat what I meant by time being moved in-db. Yes, its
+still obtained from the same original machine source, but once its in
+db, its just a string. The less opportunity someone has to get between
+the machine's clock and the log, the better, i think. 
+
+In conclusion I conclude that your conclusion is conclusive.
+
+Ow.
+
+uh yeah option in config.h or makefile ;)
+
+chihuahua
+
+	Ray / Ash
+
+
+</PRE>

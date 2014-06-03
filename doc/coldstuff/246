@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [246] in "Coldmud discussion meeting"</TITLE>
+<H1>[246] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?246"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="245"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="247"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>clear_param() again.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 17 22:42:40 1994
+)</H3>
+<PRE>
+Date: Tue, 17 May 1994 20:39:09 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt;&gt;     clear_parameter($defining_object, 'parameter)
+&lt;
+&lt;&gt; Which is called from the object that it is currently residing on.
+&lt;&gt; This would not break encapsulation, and it would fix what I see as a
+&lt;&gt; gaping wound in the side of ColdMUD.
+&lt;
+&lt; This would break encapsulation: it allows you to set the value of a
+&lt; ancestor's parameter.
+&lt; 
+&lt; If you want to implement this, make it a $sys-only method that takes
+&lt; an object, a definer, and a parameter name.  The system object can
+&lt; then have a method which does clear_parameter(sender(), caller(),
+&lt; name).
+
+I started to think about this, and I dont know if I was upmost clear.  Perhaps
+have:
+
+
+        clear_parameter('parameter)
+
+Which is defined on a method on the defining object, and called by the object
+which wishes to be cleared.  Therefore:
+
+
+   $objA has .clear_param()    (a thunk)
+
+   $objB calls .clear_param to clear the foo_parameter...
+
+Would this follow encapsulation?
+</PRE>

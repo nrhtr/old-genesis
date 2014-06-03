@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [28] in "Coldmud discussion meeting"</TITLE>
+<H1>[28] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?28"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="19"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="19"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="27"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="29"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="31"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="48"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: clear parameters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 16:29:16 1993
+)</H3>
+<PRE>
+To: deforest@netcom.com (Robert de Forest)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Tue, 16 Nov 93 00:54:50 -0800.
+             &lt;199311160854.AAA22197@mail.netcom.com&gt; 
+Date: Tue, 16 Nov 93 16:18:28 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; As a former MOO programmer, I have become used to clear props for
+&gt; default options and the like. Parameters in ColdMUD do not appear to
+&gt; be clearable.  Is there a design reason for this or could it be
+&gt; changed?
+
+&gt; I realize values can be initialized in .init(), but I'd like to be
+&gt; able to change default values without looking for all the players
+&gt; who haven't changed theirs.
+
+In other words, you want a method on one object to change variable
+values on another object (it's children).
+
+Unlike MOO, Coldmud stresses encapsulation; non-local access to
+variables is strictly discouraged.
+
+So yes, there is a design reason for it.
+
+&gt; I also wonder if unset parameters take up db space.
+
+Variables which have never been set (and thus have the value 0 if
+read) take up no db space.  This is not really a concern, though, due
+to disk-basing, unless you need to conserve disk space (not the
+highest priority for me when I make design decisions).
+
+--GBH
+
+</PRE>

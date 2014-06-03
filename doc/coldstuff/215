@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [215] in "Coldmud discussion meeting"</TITLE>
+<H1>[215] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?215"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="211"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="214"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="214"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="216"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: match_template() needs help with consistancy</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Apr 28 14:59:36 1994
+)</H3>
+<PRE>
+Date: Thu, 28 Apr 1994 12:12:03 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt;&gt;&gt; * The user generally doesn't want any processing to get in the way
+&lt;&gt;&gt; when it's not necessary; therefore, no processing at all is done on
+&lt;&gt;&gt; the last argument.
+&lt;
+&lt;&gt; This is bad.  It is bad quite simply because it means parsing is
+&lt;&gt; handled differently in some cases than in others and it's not always
+&lt;&gt; immediately obvious which is which.  Rules should be consistent for
+&lt;&gt; the entire match or not exist at all.
+&lt;
+&lt; I disagree.  For user-level parsing, the primary job of the parser is
+&lt; to keep its nose out of the user's business (for examples of parsers
+&lt; which forget this rule, see Mush).  Consistency is secondary; the user
+&lt; spends a lot of time in the parser and will learn its rules quickly
+&lt; enough.
+
+I think Consistency is not secondary, when a user finds that rules apply only
+in some circumstances and not others, they instantly begin to think it is
+worlds more complex than it is.  By getting a base level of consistancy it is
+much easier to comprehend to a beginning user, especially the non-computer
+literate type.
+
+&lt;&gt; No, MOO parsing does not function this way (iobjstr quoting is
+&lt;&gt; handled exactly the same as dobjstr quoting, the way it should be),
+&lt;&gt; nor does anything else that I am familiar with.
+&lt;
+&lt; You are correct; it is Coolmud's verb-dobj-prep-iobj parsing which
+&lt; works the same way as Coldmud's "verb * prep *" template matching.
+&lt;
+&lt; Here are some examples of user commands which show why I prefer the
+&lt; "quote the whole argument or none of it" rule.
+&lt;
+&lt;	@desc here as A sign on the road says, "Burma Shave."
+&lt;	whisper The spy told me, "Ken sent me." to dave
+&lt;
+&lt; MOO mangles both of these.
+
+This is true, I had not considered it.  How about using some less common
+character for specifying what should only be used as a wild match?  This would
+be somewhat against norms, but it would be easier.  Perhaps a `text` which is
+rarely ever used in writing, I would say ' but its nearly as common as " ...
+(i.e.):
+
+     "f * dd * z"    "f `dd f` dd f z"   =&gt; ["f", "dd f", "dd", "f", "z"]
+
+Just a thought.
+</PRE>

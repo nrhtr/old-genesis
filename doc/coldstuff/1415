@@ -1,0 +1,58 @@
+<HEAD><TITLE>discuss@charon: [1415] in "Coldmud discussion meeting"</TITLE>
+<H1>[1415] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1415"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1414"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1416"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1416"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1417"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Heretical Question</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr 17 14:51:20 1998
+)</H3>
+<PRE>
+From: jeffk@tenetwork.com
+Date: Fri, 17 Apr 1998 11:22:45 -0700
+To: coldstuff@cold.org
+
+I've been re-evaluating my Kelvin design as I get deeper and deeper into
+my current cold based project.  I've come up with a rather heretical
+question...
+
+How important IS run-time receivability of the "class" structure (yes I
+know Cold is classless but that's the easiest way to phrase what Im asking.)
+
+I know many people are used to on-line editing of their object defs, but
+when push comes to shove, for a production environment what are the real
+advantages?
+
+Does it add significantly to the expressive power of the language or
+maintainability of applications in real-world use? How so?
+
+I'm asking because this feature has all sorts of implications that result
+in late binding and visualizations.  Without it, one could really write
+such a  system right on top of the JAVA VM rather then on a second layer of
+VM ontop of that.
+
+Pls consider your answers carefully.
+
+Thx.
+
+JK
+Jeffrey P. Kesselman
+Senior Game Integration Engineer
+Total Entertainment Network
+
+"Any intelligent fool can make things bigger, more complex, and more
+violent. It takes a touch of genius -- and a lot of courage -- to move
+in the opposite direction." 
+	ALbert Einstien
+
+Unite for Java! - http://www.javalobby.org
+
+
+</PRE>

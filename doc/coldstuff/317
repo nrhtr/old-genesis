@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [317] in "Coldmud discussion meeting"</TITLE>
+<H1>[317] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?317"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="306"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="316"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="316"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="318"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="319"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="322"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: logging, fact and fiction</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 24 14:12:11 1994
+)</H3>
+<PRE>
+Date: Tue, 24 May 94 11:08:03 PDT
+From: weber@tungsten.seattle.geoworks.com (Eric Weber)
+To: rayn@q.crossaccess.com (Ray Nawara jr.)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9405241730.AA11029@q.crossaccess.com&gt;
+
+Ray Nawara jr. writes:
+ &gt; 
+ &gt; GBH:
+ &gt; &gt; If all calls to $sys.eval, $sys.compile, and all methods on $sys
+ &gt; &gt; which modify ,admins are logged, then Ray/Ashs senario is
+ &gt; &gt; invalid. The time of modifying $sys.log and/or $sys,admins will be
+ &gt; &gt; in the log.
+ &gt; 
+ &gt; Mmm, yoeh if mods to log were logged (besides perhaps being
+ &gt; recursive?) then you'd be able to see the hole.  
+ &gt; 
+
+It seems like a good idea to run an external program on the text dump
+to watch for certain types of changes to $sys, such as changes to verb
+code or security related properties.  This wouldn't give you any
+information on precisely when or how a change occurred, but would give
+you an out-of-db method for noticing an attack that slipped through
+the log somehow.
+
+Has anyone written such a program?
+
+-- Eric
+
+</PRE>

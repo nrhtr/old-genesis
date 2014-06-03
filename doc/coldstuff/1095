@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [1095] in "Coldmud discussion meeting"</TITLE>
+<H1>[1095] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1095"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1094"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1094"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1094"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1096"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Configure grief on Linux...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Oct  1 19:07:28 1996
+)</H3>
+<PRE>
+Date: Tue, 1 Oct 1996 15:23:54 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Jeff Kesselman &lt;jeffk@ten.net&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;3251833A.545D@ten.net&gt;
+
+On Tue, 1 Oct 1996, Jeff Kesselman wrote:
+&gt; Im trying to compile pact h 13 under linux.
+&gt; 
+&gt; Configure APPEARS to work great, detects everything properly...
+&gt; And then genrates a totally empty src/include/config.h
+&gt; (one with nothing set, just the default undefs)
+
+Woah, boggle.  Uhh, what distribution of linux, and how modified is it?
+Sounds like your sed may be funky, although why I dont know (the seds used
+to change the undefs to defs are not really complex).
+
+Also, grab patch14, it fixes a serious bug.
+
+-Brandon
+
+</PRE>

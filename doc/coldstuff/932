@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [932] in "Coldmud discussion meeting"</TITLE>
+<H1>[932] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?932"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="930"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="931"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="931"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="933"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="933"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="933"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Genesis/Cold 0.4 is available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar 10 14:58:56 1996
+)</H3>
+<PRE>
+Date: Sun, 10 Mar 1996 13:46:43 -0600 (CST)
+From: Stephen Smoogen &lt;smooge@duracef.shout.net&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.960310032929.16178A-100000@tombstone.sunrem.com&gt;
+
+On Sun, 10 Mar 1996, Brandon Gillespie wrote:
+
+&gt; Genesis 0.4 is the step right before 0.1; all of the bugs we
+
+                                       ^^^^ WOW negative progression!
+
+&gt; Interested souls can use Genesis 0.4 as a pre Genesis 1.0.  There
+
+&gt; And in other news; after the 1.0 version is released I will be working on 
+&gt; getting a win32 version available to the masses; most of the work 
+&gt; involved will simply be converting file handling functions accordingly.  
+&gt; Basically; you will be able to run it in windows 95.
+&gt; 
+
+Will we be using the unix.dll that cygnus.com is getting together? I have 
+done some winNT/95 work with it and it could be a good transfer zone to 
+full win95.
+
+Stephen
+
+
+------------------------------------------------------------------------------
+Stephen John Smoogen 	
+Recovering Sysadmin (well ok... I still sysadmin... I cant stop)..
+217-351-8093
+
+</PRE>

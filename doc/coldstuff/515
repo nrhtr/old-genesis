@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [515] in "Coldmud discussion meeting"</TITLE>
+<H1>[515] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?515"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="509"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="514"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="514"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="516"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: quick note: known bugs</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov  4 12:35:55 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: riche@crl.com (Alex Stewart)
+Date: Fri, 4 Nov 1994 09:31:51 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199411031307.AA18577@crl6.crl.com&gt; from "Alex Stewart" at Nov 3, 94 05:07:49 am
+
+&gt; 
+&gt; &gt; The server becomes entirely unstable when forced to diskbase.
+&gt; 
+&gt; How do you mean "forced to diskbase"?
+&gt; 
+&gt; &gt; match_regexp is fckd.
+&gt; 
+&gt; crashes-the-server fckd or just doesn't-do-what-it's-supposed-to fckd?
+&gt; No chance of an example instance, I suppose..
+&gt; 
+&gt; -R
+&gt; -------------------------------------------------------------------------------
+&gt;      Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+&gt;               ftp://ftp.crl.com/users/ro/riche/html/riche.html
+&gt; 
+
+Pardon me, I should have said more. :)
+
+When the size of the db is larger than the cashe weird things (loss of changes)
+ start to happen. Binary storage and retreival has been seen to have problems
+ such as loosing parameters and entire objects even.
+
+match_regexp() returns almsot entirely useless data. If there was a match it
+ returns a list of [start, len], but being broken, the elements are either
+ [0, 0] in the case of a matching subexpression, or [0, -something] for unused
+ subexpressions.
+
+Try it out yourself. :)
+
+Crag / Robert
+</PRE>

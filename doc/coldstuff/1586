@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1586] in "Coldmud discussion meeting"</TITLE>
+<H1>[1586] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1586"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1581"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1585"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1585"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1587"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1587"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1588"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: A couple simple questions (hopefully)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 30 14:49:04 2000
+)</H3>
+<PRE>
+From: Steve Mosher &lt;goat@isn.net&gt;
+To: coldstuff@cold.org
+Date: Tue, 30 May 2000 15:37:01 -0300
+In-Reply-To: &lt;20000530115801.A25017@ice.roguetrader.com&gt;
+Reply-To: coldstuff@cold.org
+
+On Tue, 30 May 2000, Brandon Gillespie wrote:
+&gt; Because objects are inherently persistent in ColdC, they also have a
+&gt; unique identifier.  This means you can theoretically run out of
+&gt; identifiers since it is a signed 32bit number.
+
+	Of course, if you allocated one id every second, it would take you
+more than 120 years to use them all.
+
+-- 
+	Heuristics are bug ridden by definition. If they didn't have bugs, then
+they'd be algorithms.
+</PRE>

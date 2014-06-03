@@ -1,0 +1,72 @@
+<HEAD><TITLE>discuss@charon: [599] in "Coldmud discussion meeting"</TITLE>
+<H1>[599] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?599"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="598"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="600"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Deleting inherited parameters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 26 16:53:58 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Sat, 26 Nov 94 14:52:39 -0700
+
+Once again I am bringing this subject up :)  I REALLY would like to see this
+ability in the driver, what were the arguments against it?  Basically a func  
+could be created along the lines of: (called on the defining object) 
+
+     clear_parameter($descendant, 'parameter)
+
+Example:
+
+-----
+Two Objects:
+
+Object: $A:
+Parents: [$misc]
+Methods:
+  bar()        (returns the value of bar)
+$root Parameters:
+  [...]
+$A Parameters:
+  bar: ['nothing]
+
+Object: $B
+Parents: [$A]
+Methods:
+  (none)
+$root Parameters:
+  [...]
+$A Parameters:
+  bar: ['my_own_value, 1]
+-----
+Object $A removes the parameter 'bar.
+Object $B still has 'bar set on $A.  However, it is completely useless
+   since $A no longer defines 'bar (calling $B.bar() will return ~paramnf--
+   it will work again if you add the parameter back to $A)
+-----
+Then on $A a method is defined as:
+
+@program $A.clear_bar
+     clear_parameter(this(), 'bar);
+.
+
+-----
+At which point you should be able to call $B.clear_bar() and remove 'bar...
+
+Comments?
+
+(BTW, I do not consider copying an entire object just to clear a parameter as
+a valid option, it is a horrid kludge to get around a gaping hole, in my
+opinion)
+
+-Brandon (Lynx)-
+</PRE>

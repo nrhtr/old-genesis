@@ -1,0 +1,143 @@
+<HEAD><TITLE>discuss@charon: [590] in "Coldmud discussion meeting"</TITLE>
+<H1>[590] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?590"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="587"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="588"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="589"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="591"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="603"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="605"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: New functions on the version 0.12 of the server</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 17 19:28:05 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: azuki@ci.uminho.pt
+Date: Thu, 17 Nov 1994 16:06:17 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9411172147.AA21056@orpheu.ci.uminho.pt&gt; from "azuki@ci.uminho.pt" at Nov 17, 94 10:47:12 pm
+
+&gt; 
+&gt; Can someone tell me what are the new functions available on the version 12
+&gt; of the server do please?
+&gt; I have been inspecting the C code to try to find some guidelines and i
+&gt; found the following functions which aren't documented:
+&gt; 
+&gt; suspend()
+&gt; resume()
+&gt; tasks()
+These were added by Jordan Baker to version 0.11.3 to create 0.12.0. They allow
+ a task to suspend indefinitely, to be resumed by another task, or canceled.
+
+Suspend causes a task to be stored in the internal table of suspended tasks.
+ It takes no args and returns a value specified by the resume() call or 0 if
+ none. Resume causes a task to finish processing, removing it from the
+ suspended task table. It takes args of a task id and optional return value.
+ It has no meaningful return value. There is another new function you missed,
+ "cancel", which takes an arg of an id and deletes the suspended task without
+ resuming it. The tasks() function returns a list of suspnded tasks by id.
+ (The id of the currently running task is returned by task_id().)
+
+&gt; pause()
+&gt; ticks_left()
+The pause() function suspends a task and resumes it when all other suspended
+ tasks and pending IO have been serviced, and restores the tick count for the
+ current frame to its full count (I think). ticks_left() returns the number of
+ ticks that may be used up before ~ticks is thrown. This allows for
+
+while (!done) {
+  // do stuff
+  if (ticks_left() &lt; 200)
+    pause();
+}
+
+MOO users will recognize it as doing what suspend(0) is used for. Suspend()
+ can't be used since it doesn't modify the tick count. It would be necessary to
+ store local data as static data and use the heartbeat to schedule continuation
+ of a long process. The eventual solution will be multi-threading and such.
+
+Pause takes no args and returns nothing useful.
+
+&gt; callers()
+Callers returns the call stack in the form [sender, caller, method, line],
+ where sender and caller were this() and definer() respectively in their own
+ frames, method is the name of the method holding the code that placed the
+ call, line is the line in the code where the call happened. Keep in mind that
+ with the introduction of tasking the method may have changed since the call
+ was made. Changes to code used in a suspended task will not effect the task.
+ The server makes a copy of each method when it suspends.
+
+Also note that use of this function as part of your design is STRICTLY
+ discouraged. It was added for use as a debugging tool. THe intent is to write
+ an in-db throw() function which does not in fact throw, but suspends the task
+ and notifies the programmer of the event allowing 'em to inspect the db.
+ Having callers() available makes a lot of debug code unnecessary.
+
+&gt; tick()
+I added this to to 0.10.x to make it easier to measure the efficiency of code.
+ Sometimes talking about big-oh, linear time, log time, and Murphy's law just
+ doesn't get you anywhere and you need a way to know which way uses more
+ actual instructions. tick() returns the number of instructions executed since
+ the server started. Of course, this number will probably flip over many times
+ a day in a fast server with heavy usage, but for integer arithmatic this is
+ no big deal. t = tick(); do_stuff; ticks_used = tick() - t; is always going to
+ return the same thing for the same number of ticks used by do_stuff;
+
+The ticks_left() function is only meaningful within a single stack frame.
+ ColdMUD keeps a separate tick count for each frame. For those not familiar
+ with this terminology, every method call starts a new stack frame. The stack
+ frame is destroyed when it returns or an error is thrown or propegated. (They
+ are also destroyed when a task is canceled, but this is a somewhat unnatural
+ occurance and best not thought about. :) The tick() function tracks tick usage
+ across method calls, so that do_stuff; in the above example could contain a
+ method call and would account for the ticks used within that call which
+ ticks_left() would not.
+
+&gt; size()
+This function takes one parameter, an object, and returns its size in bytes as
+ it would be stored on disk. ColdMUD binary files are encoded in a format which
+ uses only 7 bits, making them mail-able (?), so though proportional, the
+ relationship between the size of an object in memory and on disk is a mystery
+ to me.
+
+&gt; hostname()
+&gt; ip()
+Modifications to add the above were posted to Coldstuff some time ago and I
+ made them in my copy and now they're kindof official I guess. They return the
+ hostname and numeric IP address of a string address respectively. That is,
+ hostname("127.0.0.0") =&gt; "localhost" and ip("localhost") =&gt; "127.0.0.0".
+
+&gt; set_name()
+&gt; del_name()
+I could have SWORN these were documented. They were added for version 10 when
+ Greg added the name layer. set_name(dbref, symbol) associates that symbol with
+ that dbref such that get_name(symbol) =&gt; dbref. del_name(symbol) removes the
+ asociation. Incidentally, $foo is syntactically equivalent to get_name('foo);
+
+&gt; db_top()
+This returns the integer number of the next object to be created. Not all that
+ useful since we have $name_expressions and no renumber() and so on, but that's
+ what it is. It was also added with version 10.
+
+&gt; 
+&gt; some of these functions are self explanatory, others are not so evident and
+&gt; i would appreciate if someone could give a small explanation of what these
+&gt; functions do, as i will surely be developing things on this server, i would
+&gt; like to be able to use it to its best.
+&gt; Thanks in advance.
+&gt; 
+&gt; -Rui Mendes.
+&gt; 
+
+One other thing: The functions suspend, resume, cancel, tasks, callers, size,
+ set_name, and del_name are $sys-only. Methods not defined on #0 will not be
+ able to use these functions without getting ~perm thrown at them.
+
+I hope the FAQ manager will add the above info :)
+
+Crag / Robert
+</PRE>

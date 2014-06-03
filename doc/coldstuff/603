@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [603] in "Coldmud discussion meeting"</TITLE>
+<H1>[603] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?603"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="587"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="590"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="602"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="604"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="604"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="605"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: New functions on the version 0.12 of the server</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov 27 19:36:10 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Sun, 27 Nov 94 17:33:34 -0700
+
+&lt; Suspend causes a task to be stored in the internal table of suspended tasks.
+&lt; It takes no args and returns a value specified by the resume() call or 0 if
+  ----------------
+
+I just started playing around with this recently.  Now forgive me if I am not
+correctly understanding the implied usage of this function, but on the driver
+I received from Jordan's archive site suspend() can only be called by $sys,
+and since one would be unable to remotely suspend a method through a thunk,
+restricting it to $sys means that only methods on $sys can be suspended, which
+seems rather overly restrictive?  (Or am I just reading it wrong, the only
+way I can figure out what it does is by playing with it and reading the code)
+For now I've just removed the sys object checking, as I would like to play
+around with it...
+
+|    Brandon (Lynx) Web Pages: http://www.declab.usu.edu:8080/~brandon/     |
+|         the Cold Dark: telnet://recumbent.declab.usu.edu:1138/            |
+</PRE>

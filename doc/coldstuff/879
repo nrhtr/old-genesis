@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [879] in "Coldmud discussion meeting"</TITLE>
+<H1>[879] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?879"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="878"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="880"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Vanishing object bug strikes again</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan  6 02:48:34 1996
+)</H3>
+<PRE>
+Date: Sat, 6 Jan 1996 08:34:03 +0100
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@tombstone.sunrem.com
+
+
+This time I think I got it at the moment it happened. See:
+
+Spawned new object $help_node_6 (help_node_6) from $help_node (the help_node).
+Object name changed to: $help_node_combat
+! =&gt; Can't find object name uncompile_evaluator.
+!    Error ~methoderr caused by NAME
+!    ~namenf: $ctext_frob.uncompile() line 3
+!    ~methoderr: $help_node.edit_body() ($help_node_combat) line 2
+!    ~methoderr: $miro.tmp_eval() line 5
+!    ~methoderr: $root.eval() ($miro) line 16
+!    ~methoderr: $programmer.evaluate() ($miro) line 7
+!    ~methoderr: $programmer.eval_cmd() ($miro) line 31
+!    ~methoderr: $user.parse_line() ($miro) line 9
+
+After creating a new $object, $uncompile_evaluator has just vanished (I
+used it just before).
+
+	Miro / Jenner
+
+</PRE>

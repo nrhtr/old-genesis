@@ -1,0 +1,28 @@
+<HEAD><TITLE>discuss@charon: [258] in "Coldmud discussion meeting"</TITLE>
+<H1>[258] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?258"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="257"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="259"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="260"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 18 19:42:24 1994
+)</H3>
+<PRE>
+Date: Wed, 18 May 1994 17:37:45 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+The idea would be to standardize ports, so its just known that a N type server
+would be on the same port for the same application.  The idea of connecting
+thorugh the same port for _everything_ is bad in my opinion.  We can use more
+ports, why not use them?  It would mean less complicated code in the end, and a
+much more simple design.
+</PRE>

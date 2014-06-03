@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [281] in "Coldmud discussion meeting"</TITLE>
+<H1>[281] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?281"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="280"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="282"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ports...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 09:53:40 1994
+)</H3>
+<PRE>
+Date: Thu, 19 May 1994 13:18:13 -0700
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+
+as far as i can see, nothing real big uses anything above 2766, except
+in the 6xxx range, which includes X, and IRC. some MBone multicast
+stuff uses things in the 4000's, as well as 3456-7 and 9876, but I
+dont think these are common, and seem to be only used at those
+specific sites. perhaps to be considered though.
+
+single port would be the most useful for inside a firewall, but as you
+said, most likely a server running in a firewall will only allow
+telnet anyway. As to running inside a firewall, Lambda did for some
+time, I believe. This is why nothing was done there with onc for a
+while. the concept is to make it so that the core isnt designed such
+that you have to worry about security issues, i.e. make it as secure
+as possible, with options to lessen the security, instead of the other
+way around ;) my objections to portmapper were mostly based on the rpc
+version which uses callbacks and can be spoofed, which is not as much
+of an issue for this case. a general portsinfo port is a good idea i
+think, if we're not going to use single port... actually I suggest
+having only 2 "abolute standard" ports in the core, the telnet port
+and the portinfo port. If so desired, all services can be done through
+the main port, and the portifo port will tell this. having standard
+ports for services is still a good idea, IMHO, and it seems to me that
+the multiple ports makes it easier to disable selected services (not
+really by much though i guess).
+
+
+
+	Ray/Ash
+
+</PRE>

@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [10] in "Coldmud discussion meeting"</TITLE>
+<H1>[10] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?10"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="9"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="11"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Connection objects sticking around</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 16:36:32 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Mon, 15 Nov 93 16:30:29 EST
+To: coldstuff@MIT.EDU
+
+
+I've heard complaints that connection objects are sticking around in
+database.  There are several reasons why this might occur, but I can't
+reproduce the situation in Cold World in any of the three cases where
+connection objects get destroyed.
+
+Since the Cold World database keeps one connection object around at
+all times in order to deal with the next incoming connection, it seems
+likely that the leak occurs when you shut down and start back up.  It
+might be a good idea to do a
+	
+	for obj in ($connection.children())
+	    destroy(obj);
+
+in $sys.startup().
+
+--GBH
+
+</PRE>

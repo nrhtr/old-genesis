@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [691] in "Coldmud discussion meeting"</TITLE>
+<H1>[691] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?691"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="690"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="692"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="693"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="703"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>continuing the debates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 14:16:30 1995
+)</H3>
+<PRE>
+From: crag@serial.MIT.EDU (Robert de Forest )
+To: coldstuff@MIT.EDU
+Date: Fri, 10 Mar 1995 13:11:04 -0600 (CST)
+
+I am glad someone came up with add_method as an alternative to whatever I said.
+ I also like the idea of coldc_to_method and method_to_coldc. Do we really want
+ to split out the parts of a program tho? Would it be better to have add_method
+ take args of method_id, falgs, args, vars, body as opposed to placing the
+ last four args inside the structure for a method? The disassemble function,
+ I'll call it get_method, will need to return something and it seems most
+ rational to have it return whatever add_method takes as its arg. If I have
+ it return a list you can splice it (@), but Brandon pointed out that a dict
+ makes more sense.
+
+I'm just nit picking and stuff. For now add_method will take two args. The name
+ and structure. (add_method('foo, #[['flags, []]...]))
+
+I will have default values for all elements of the dictionary, too. #[] will be
+ a valid program. :)
+
+-----
+
+I do not like :-, nothing about it says assignment to me.
+
+On the other hand, when I'm done with method_to_coldc and coldc_to_method I
+ may be able to enhance those functions by providing a way to supply different
+ strings for operators and functions. HAHAHAHAHA. I have no idea how to do
+ that in coldc_to_method. OH well.
+
+I guess that's all for now.
+
+Crag
+</PRE>

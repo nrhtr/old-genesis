@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [196] in "Coldmud discussion meeting"</TITLE>
+<H1>[196] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?196"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="192"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="195"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="195"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="197"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="201"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="203"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: names</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr  1 11:32:30 1994
+)</H3>
+<PRE>
+Date: Fri, 01 Apr 1994 09:28:24 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; I was under the impression names were different than dbrefs.
+&gt; name:  $funky_chicken
+&gt; dbref: #1234
+&gt; so changing get_name(); to get_dbref(); is not necessarily a good idea.
+
+I'm not sure how greg has it, the whole thing looks rather confusing/messy
+whatever.
+
+Right now I would like "id" for one reference and "dbref" for the other
+(interchangeable, although I think dbref should be $reference), but the more I
+think about it, using "name" in the core is just a bad thing, as it confuses
+the hell out of some people and can also be mis-understood by a few (MOO'ers. 
+I dont care if this isn't MOO, or of MOO isn't everything, a majority of the
+people who will be using our core will come from MOO).  I'm eventually going to
+structure CDC like:
+
+$vr object:
+     ,id 'chair_234
+   ,name ["chair", "blue", 'informal]
+
+or non-$vr would just have ,id.  And ,name is "vr_name", where you parse the
+elements depending upon how they want the name (i.e. "the blue chair").
+
+-Brandon
+
+(I will use 'id' for now (sigh)).
+</PRE>

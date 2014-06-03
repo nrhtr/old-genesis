@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [947] in "Coldmud discussion meeting"</TITLE>
+<H1>[947] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?947"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="946"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="946"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="946"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="948"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="948"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="948"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Re: regexps</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 25 10:54:44 1996
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+Date: Mon, 25 Mar 1996 16:35:25 +0100 (MET)
+In-Reply-To: &lt;m0u1DqB-00015HC@zachs.place.org&gt; from "Zachary DeAquila" at Mar 25, 96 09:05:50 am
+
+&gt; 
+&gt; 
+&gt; As I recall, one of the big problems Greg faced when choosing how to
+&gt; implement regexps was to find a way to easily implement MOO-style
+&gt; 'incomplete command' expressions.  In MOO, you canhave a verb
+&gt; 'foob*ar' that will match foob, fooba and foobar.  How does one
+&gt; construct this with a perl regexp?  hrmm... 'foob|fooba|foobar' 
+&gt; ew.  So.... whatever the choice, this functional requirement must
+&gt; be kept in mind...
+&gt; 
+&gt;  --Zachary
+&gt; 
+
+We have templates for those. There is no easy way to simulate MOO
+commands with any standard flavour of regexps.
+
+</PRE>

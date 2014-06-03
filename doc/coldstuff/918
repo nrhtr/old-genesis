@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [918] in "Coldmud discussion meeting"</TITLE>
+<H1>[918] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?918"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="917"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="919"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Cold Comment (wish list)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Feb  9 15:12:17 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@cold.org
+Date: Fri, 9 Feb 1996 11:39:30 +0000
+Reply-To: coldstuff@cold.org
+
+We are 90% of the way to user-defined types.  With the $&lt;type&gt; 
+objects, primitive types act ALMOST like frobs.  The only major 
+difference I see is that infix operators are legal on primitive types 
+and not on frobs.  Thus my addition to the wish list...
+
+1) infix operator map to a $&lt;type&gt; object method (defaulting 
+to their built in functionality if not defined.)
+ex:  2 + 2  ---&gt;  $integer.plus(2,2)
+
+2) infix operators be extended to work on frobs in the same way.
+
+#2 above is actually the more needed, #1 is just a nicety to keep 
+things logicly consistant.
+
+Jeff Kesselman
+
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+</PRE>

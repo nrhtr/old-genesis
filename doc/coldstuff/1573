@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [1573] in "Coldmud discussion meeting"</TITLE>
+<H1>[1573] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1573"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1572"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1574"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1574"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Editing code from in-game</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May  1 16:46:21 2000
+)</H3>
+<PRE>
+Date: Mon, 1 May 2000 13:32:38 -0700 (PDT)
+From: Jeremy Weatherford &lt;xidus@xidus.net&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+
+How do people usually set up editing when they're doing a lot of
+programming?  In Genesis, or other MOOs, doesn't matter.  I'm just looking
+for good concepts.  I'm ready to start implementing editing in my core.
+
+The line-based editor in ColdCore is sort of workable, but also eminently
+unusable for large editing projects.
+
+Right at the moment I'm writing everything in Emacs and recompiling and
+restarting after each change, which is hardly optimal.  I didn't have a
+working user interface before this, though, so it was the only option.  :)
+
+I've heard of various TF macros and Emacs modes, but I'm not sure how to
+set these up.
+
+It would work for me to be able to tell the game to read in and compile
+methods from a given file, but that depends on filesystem access to the
+machine where the server is.  Which is fine while I'm running it on my
+machine, not so fine when it's sitting on a server somewhere.  :)
+
+Anyway, just looking for ideas... let me know how editing is implemented
+in your game, or how you think it should be implemented.  All the code I
+write will be freely available, so I don't mind giving it back if you want
+me to write the code for your idea -- as long as it works for me too.  ;)
+
+Thanks,
+Jeremy Weatherford
+xidus@xidus.net
+http://xidus.net
+
+</PRE>

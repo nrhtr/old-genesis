@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1496] in "Coldmud discussion meeting"</TITLE>
+<H1>[1496] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1496"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1495"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1495"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1497"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1497"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 29 06:05:26 1999
+)</H3>
+<PRE>
+To: coldstuff@cold.org
+From: Miroslav Silovic &lt;silovic@zesoi.fer.hr&gt;
+Date: 29 Nov 1999 11:32:23 +0100
+In-Reply-To: "Ian Klimon, Esq."'s message of "Sun, 28 Nov 1999 10:50:10 -0500"
+Reply-To: coldstuff@cold.org
+
+"Ian Klimon, Esq." &lt;ian@aephirsden.com&gt; writes:
+
+&gt; I've found Word to be quite useful for indexing and table of
+&gt; contents.  I wanted it in a format that I could read offline that
+&gt; clearly delineated the sections, etc, Word seemed to be the
+&gt; appropriate way to achieve this.
+
+It is -a- way to achive this, but being tied to a single OS, very hard
+to convert to anything else (without major losses in markup) - in
+particular very hard to convert to CML - it's definitely not the
+appropriate way. Docbook (SGML), LaTeX or even texinfo are all
+superior by the criteria above (both allow sections, can be printed
+and read offline, allow indexing and TOC... and are bloody portable).
+
+-- 
+How to eff the ineffable?
+</PRE>

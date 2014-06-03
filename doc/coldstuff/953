@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [953] in "Coldmud discussion meeting"</TITLE>
+<H1>[953] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?953"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="952"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="954"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Minimal Core 3.0</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 26 12:01:39 1996
+)</H3>
+<PRE>
+Date: Tue, 26 Mar 1996 09:33:01 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+There is a Minimal Core 3.0 available at:
+
+    ftp://ftp.cold.org/pub/cold/dbs/MinimalCore-3.0.tar.gz
+
+This core works with the latest Genesis release.
+
+Enjoy...
+
+-Brandon
+</PRE>

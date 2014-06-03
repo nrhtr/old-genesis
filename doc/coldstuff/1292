@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [1292] in "Coldmud discussion meeting"</TITLE>
+<H1>[1292] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1292"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1291"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1293"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Patch28 and p26+/p27+</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May  7 15:45:02 1997
+)</H3>
+<PRE>
+Date: Wed, 7 May 1997 13:37:15 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+Patch 28 is available, you should upgrade to it.  Also, you need to grab
+p26+ or p27+ and apply them to your current source (if you are using p26
+or p27) and decompile your database with the patched p26/p27 source.  I
+tweaked object searching in patch 26 and didn't bother to fully test it,
+which is causing problems (such as objects to not get dumped to a
+textdump).  I appologize for this, shan't happen again.  p28 includes the
+fix.
+
+-Brandon Gillespie
+
+</PRE>

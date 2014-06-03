@@ -1,0 +1,77 @@
+<HEAD><TITLE>discuss@charon: [1601] in "Coldmud discussion meeting"</TITLE>
+<H1>[1601] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1601"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1599"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1599"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1600"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1602"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Back up problem solved</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul  3 00:10:47 2000
+)</H3>
+<PRE>
+Date: Sun, 2 Jul 2000 22:03:51 -0600
+From: Brandon Gillespie &lt;brandon@ice.cold.org&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;000001bfe47d$83edade0$0200a8c0@nycap.rr.comDEST&gt;; from Peter Bombard on Sun, Jul 02, 2000 at 07:30:30PM -0400
+Reply-To: coldstuff@cold.org
+
+
+--bp/iNruPH9dso1Pn
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+BTW, I recommend using the new 2nd generation backup script.  It has
+much added functionality--such as the option of backing up binary or
+text backups, multiple types of compression mechanisms and emailing
+the admin if a backup failed.  It is available at:
+
+    ftp://ftp.cold.org/cold/contrib/scripts/backup2.gz
+
+-Brandon
+
+On Sun, Jul 02, 2000 at 07:30:30PM -0400, Peter Bombard wrote:
+&gt; All I needed to do was to edit the backup script and find the place where=
+ it
+&gt; set the path.
+&gt;=20
+&gt;   #!/usr/bin/perl
+&gt;   #
+&gt;   # Created by Brandon Gillespie
+&gt;   # Additional work by Vang (Dale Mayberry)
+&gt;   #
+&gt;   ## This creates a FIFO list of backups based off your configuration,
+&gt;   ## it can do regular, weekly and monthly backups, with the intervals
+&gt;   ## and depth of the FIFO list defined by you.
+&gt;   #
+&gt;   # INSTALL:
+&gt;   #
+&gt;   # determine your world directory (i.e. the directory where 'binary'
+&gt;   # exists).  Change the following variable to the full path to your
+&gt;   # world directory:
+&gt;=20
+&gt;   $base =3D "../";
+&gt;=20
+&gt; When I followed those instructions, backups worked fine.
+&gt; -pete (PBombard@altavista.net)
+&gt;=20
+
+--bp/iNruPH9dso1Pn
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: CXWuVIFM2GTLnlR03zRlgcd8MBPiTlE+
+
+iQA/AwUBOWAQp0v5XoQiMgn6EQJiSQCg1g63P6Io/n9ZTthudyJNugWkg40AoOaN
+Bl5j6nvhbkqr7NM16Qj3GIPu
+=0Cll
+-----END PGP SIGNATURE-----
+
+--bp/iNruPH9dso1Pn--
+</PRE>

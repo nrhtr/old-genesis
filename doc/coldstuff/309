@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [309] in "Coldmud discussion meeting"</TITLE>
+<H1>[309] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?309"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="308"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="310"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>more arguing about log()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 23 22:29:22 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Mon, 23 May 1994 19:15:12 -0700 (PDT)
+
+If all calls to $sys.eval, $sys.compile, and all methods on $sys which
+ modify ,admins are logged, then Ray/Ashs senario is invalid. The time
+ of modifying $sys.log and/or $sys,admins will be in the log.
+
+Your scenarios all have human error on the part of the admins in them, too.
+ I don't think you can justify time in log() based on that. I claim that
+ the current version of the server can be made equally or more secure than
+ MOO, which has been hacked once in Lambda's history (by Quinn). It has been
+ lagged miserably by an unknown programmer, but that's a different kind of
+ issue.
+
+Incidentally, there may well be ways to hack adminship in-db in the World-6 or
+ tCD cores. I would attribute this to operator error if this is the case.
+
+Crag, always up for a nice, friendly argument. :)
+</PRE>

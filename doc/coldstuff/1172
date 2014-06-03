@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [1172] in "Coldmud discussion meeting"</TITLE>
+<H1>[1172] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1172"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1169"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1170"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1171"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1173"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1173"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1173"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] win32 port?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec  4 10:50:05 1996
+)</H3>
+<PRE>
+Date: Wed, 4 Dec 1996 08:40:23 -0700 (MST)
+From: "Terrence M. Drozdowski" &lt;xymox@xymox.org&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;19961204052323070.AAA158@SAMHAIN.foxberry.com&gt;
+
+On Wed, 4 Dec 1996, Blanchard, Micheal wrote:
+
+&gt; i have windowsnt here and am looking for a fairly easy to configure mud
+&gt; server, and was wondering if cold was being ported to win32?
+&gt; 
+
+Supposedly, if you have the patience, you can compile cold on win32.  You 
+need access to a unix box first, to build the win32 source files.  All 
+you need to do is get into a unix shell, type make win32, tar up the 
+resulting source files, then attempt compile/configuration in NT.  I 
+tried this once on an NT 4 beta box, with GNUwin32 gcc, but it failed 
+part way through.  I would imagine if you know your way around C well
+enough (I know basics, but most is over my head) you could kludge your 
+way through it all.  If you try it and have success, please let me know.
+
+------------------------
+Terrence M. Drozdowski	
+xymox@xymox.org.
+http://www.xymox.org/~xymox
+					             -----------------------
+
+</PRE>

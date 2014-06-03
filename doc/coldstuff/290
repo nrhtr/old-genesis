@@ -1,0 +1,61 @@
+<HEAD><TITLE>discuss@charon: [290] in "Coldmud discussion meeting"</TITLE>
+<H1>[290] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?290"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="282"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="289"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="289"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="291"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="293"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="293"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: time in the log</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 20 19:37:45 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com
+To: rayn@q.crossaccess.com (Ray Nawara jr.)
+Date: Fri, 20 May 1994 16:30:22 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9405202256.AA23959@q.crossaccess.com&gt; from "Ray Nawara jr." at May 20, 94 03:56:26 pm
+
+I feel compelled to respond to this, for some reason...
+&gt; 
+&gt;    &gt; I definitely dont think time should be made in-db. That makes it
+&gt;    &gt; modifiable from the db, and therefore prettymuch invalid as a logging
+&gt;    &gt; tool security-wise.
+&gt; 
+&gt;    It is a $sys-only builtin at the moment, so security is not an issue.
+&gt; 
+&gt; That is exactly WHY it's an issue. I'm talking about when an admin
+&gt; account is hacked. It may be that your only way of detecting this is
+&gt; via the logs, and if time isnt in the logs, then thats one less clue.
+
+If someone hacks an admin account you've got worse problems than what
+ time the accuont was hacked...Dare I discuss cluefulness of admins? Would
+ that be a 'people in glass houses' thing? Hmmm...
+
+&gt; anything that can be changed in-db is not strictly secure
+&gt; serverwise. (ignoring the in db-security, which may be perfectly
+&gt; adequate). I dont consider the DB's time function as a trusted thing,
+&gt; only the server's call to unix, and if time were moved to the db, i'd
+&gt; be miffed ;) on the other hand, I'd still live, so this is just the
+&gt; opinon of a currently extremely paranoid individual :)
+&gt; 
+&gt; 	Ray / Ash
+&gt; 
+&gt; 
+The only part to be moved in-db would be the formatting. More exactly, all
+ log output. This was Lynx's idea, but I think I started this instance of the
+ thread, and in doing so I mentioned the possibility of logging sender().
+
+The only reason I mention that is that it sounds like you're suggesting that
+ time() being moved in-db was an idea. I don't think anyone could argue for
+ this and mean it and know what a computer is.
+
+In conclusion, we are in agreement if it's an option in config.h or Makefile.
+
+Crag, probably beating a dead chiwawa(sp?).
+</PRE>

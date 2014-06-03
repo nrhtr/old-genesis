@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [265] in "Coldmud discussion meeting"</TITLE>
+<H1>[265] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?265"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="264"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="266"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Oh, two more things</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 14:43:43 1994
+)</H3>
+<PRE>
+Date: Thu, 19 May 1994 12:39:26 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+fork()  Is it going to happen?
+
+and log(), I would personally like to see the date be smaller, somethign along
+the lines of:
+
+xx-xx-xx/xx:xx:xx&gt; ......
+
+rather than:
+
+xx x xxx x x xxxxxx x x xxx:xx:xx xxxx&gt; .....
+
+(of course the second example does not have correctly placed x's).
+
+-Brandon-  (who can hack the log() thing if anybody isn't against it)
+</PRE>

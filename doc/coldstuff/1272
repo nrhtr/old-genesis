@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [1272] in "Coldmud discussion meeting"</TITLE>
+<H1>[1272] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1272"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1271"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1273"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1274"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1274"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Parser instability</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Apr  7 03:05:30 1997
+)</H3>
+<PRE>
+Date: Mon, 07 Apr 1997 00:04:47 -0700
+To: coldstuff@cold.org
+From: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+
+I've foudn a number of places in my debuygging where code of teh form
+
+if (expression)
+   statement;
+
+Fails and
+
+if (expression) {
+  statement;
+}
+
+Works correctly. i havent found a pattern yet of exactly what kind of
+stamenets cause these problems.
+
+This however reinforces a beleif of mien that the entire parser aught to be
+re-written.  At the same time the issues of &lt;cr&gt; not being a proper white
+space character in the outer-syntax could also be addressed...
+
+If someone wanted to write a BNF, and write the action routines, ild be
+willing to do a parser in PCCTS.  This has the additional advanatge of,
+since PCCTS is LL(k) as oppsoed to ACC being LALR, of meanign it woudl
+generate more intelligent syntax error messages.
+
+JK
+
+</PRE>

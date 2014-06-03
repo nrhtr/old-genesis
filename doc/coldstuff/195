@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [195] in "Coldmud discussion meeting"</TITLE>
+<H1>[195] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?195"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="192"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="192"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="194"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="196"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="196"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="203"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: names</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr  1 11:20:49 1994
+)</H3>
+<PRE>
+Date: Fri,  1 Apr 1994 11:16:08 -0500 (EST)
+From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+To: coldstuff@MIT.EDU
+Cc: 
+In-Reply-To: &lt;01HAMQNF6KCYB8NQZ6@cc.usu.edu&gt;
+
+I was under the impression names were different than dbrefs.
+name:  $funky_chicken
+dbref: #1234
+so changing get_name(); to get_dbref(); is not necessarily a good idea.
+
+
+</PRE>

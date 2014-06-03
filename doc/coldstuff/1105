@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [1105] in "Coldmud discussion meeting"</TITLE>
+<H1>[1105] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1105"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1104"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1106"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1106"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1108"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] minimal core</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Oct 26 05:17:48 1996
+)</H3>
+<PRE>
+To: coldstuff@cold.org
+Date: Sat, 26 Oct 1996 04:07:34 -0500
+From: Zachary DeAquila &lt;zachary@zachs.place.org&gt;
+
+
+Well, I decided to mess around a bit with the latest driver, so I
+compiled it up on my linux box (no problems at all.. very cool) and
+pulled a brand new Minimalcore out of the box and ran it.
+It ran fine.
+Except:
+It has one command, QUIT. Said command doesn't seem to work.
+
+Really. I mean it. I type QUITE and it responds with Goodbye.
+but I stay connected.  Anyone care to explain this?  I read the code
+and it all seems to look okay.  I don't grok.
+
+halp.
+
+ --Zachary
+</PRE>

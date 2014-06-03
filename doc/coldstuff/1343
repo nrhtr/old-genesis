@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [1343] in "Coldmud discussion meeting"</TITLE>
+<H1>[1343] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1343"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1342"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1342"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1342"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1344"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] How close (fwd)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Aug 25 15:21:47 1997
+)</H3>
+<PRE>
+To: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+cc: coldstuff@cold.org, ewittner@esri.com
+In-reply-to: Your message of "Mon, 25 Aug 1997 12:59:56 MDT."
+             &lt;Pine.BSF.3.96.970825125914.29047A-100000@roguetrader.com&gt; 
+Date: Mon, 25 Aug 1997 12:15:57 -0700
+From: Brad Roberts &lt;braddr@puremagic.com&gt;
+
+You familiar with how well oil and water mix?
+
+Its close to that.. muse, mush and mux are so totally different from cold in their programming its not even funny.
+
+There are a few similarities.. in that every online multi user system is going to have the same basic concepts:
+
+various permission levels: user, builder, programmer, administrator
+rooms and exits and messages when moving around between them
+some systems, including cold has realms or zones
+
+But there are some signifigant differences between how the above features are implemented and how they're used.
+
+If you want an easy transition, you probably won't find it.  If you want a far more powerful system that you can customize to your hearts content with more degree than you ever thought possible with muse/mush/mux, you're all set.
+
+I'm a programmer at heart.. so I like coldc a lot.. its very C like, its very easy.  The functional language in muse/mush/mux gives me heartburn.  Its extremely difficult to code anything even remotely complex in that 'language'.
+
+Well.. I better stop before I start to seriously rant about how much I learned to hate muse and mush (never actually used mux, but its mush at heart).
+
+Later,
+Brad
+
+</PRE>

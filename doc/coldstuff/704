@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [704] in "Coldmud discussion meeting"</TITLE>
+<H1>[704] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?704"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="703"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="705"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: assembler/bytecode interface</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar 11 00:30:53 1995
+)</H3>
+<PRE>
+Date: Fri, 10 Mar 95 21:27:45 -0800
+From: jsp@betz.biostr.washington.edu (Jeff Prothero)
+To: coldstuff@MIT.EDU
+
+
+| &gt; Great idea.  Could the data format for the "assembly code" PLEASE be
+| &gt; published?
+| 
+| I certainly hope not.  The internal byte codes used by the Coldmud
+| server are an implementation detail.
+
+What I've done in Muq is to provide an Assembler class
+which encapsulates the assembly process and guarantees
+that only correct executables get produced, while allowing
+full in-db flexibility.  The interface looks approximately
+like:
+
+   make-assembler    ( create an instance )
+   reset             ( start a new assembly )
+   assemble-call     ( assemble a call to a function.
+                       If the 'function' is actually a primitive,
+                       the appropriate bytecode is deposited
+                       instead of an actual CALL.  This keeps the
+                       distinction between &gt;most&lt; prims and fns
+                       transparent even to in-db compilers, which
+                       frees me to move functionality from in-server
+                       to in-db in successive releases. )
+   assemble-label    ( Deposit a logical target for a branch. )
+   assemble-bra      ( Deposit a branch to given label.  May precede
+                       label. )
+   [...]             ( A few more calls that deposit special stack-
+                       hacking instructions for exception handling,
+                       and obscure stuff like that. )
+   finish-assembly   ( Wraps it all up and returns an executable object.
+                       Aborts if there are jumps to missing labels or
+                       such.  Makes sure there is a RETURN at the end. )
+
+Thus, there's no "assembly language" in the texual sense (well, for
+internal debugging I have a symbolic bytecode assembler, but that's
+another issue entirely) but in-db code can assemble arbitrary (rational)
+functions.
+
+(You can poke around http://betz.biostr.washington.edu/~jsp/muq/muq.html
+if you want the gory details.)
+
+ Cynbe
+
+</PRE>

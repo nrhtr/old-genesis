@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [552] in "Coldmud discussion meeting"</TITLE>
+<H1>[552] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?552"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="548"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="548"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="551"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="553"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="555"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="556"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: coldmud compile, not good at netcom</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 23:52:33 1994
+)</H3>
+<PRE>
+To: frankc@netcom.com (Frank Crowell)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Sun, 06 Nov 1994 18:59:27 PST."
+             &lt;199411070259.SAA00699@netcom9.netcom.com&gt; 
+Date: Sun, 06 Nov 1994 23:46:42 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; On netcom, I am having trouble compiling coldmud (0.10 and 0.12-1).
+&gt; I get the same warnings and error messages.  Util.c gives a fatal
+&gt; error concerning RAND_MAX and i also get a lot of implicit warnings.
+
+Read the README or INSTALL file before complaining to the mailing
+list, please.  There are a stock set of modifications to account for
+SunOS brokenness.
+
+</PRE>

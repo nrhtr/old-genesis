@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1264] in "Coldmud discussion meeting"</TITLE>
+<H1>[1264] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1264"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1263"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1265"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1265"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1268"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] A bug??</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Apr  1 03:27:16 1997
+)</H3>
+<PRE>
+Date: Tue, 01 Apr 1997 00:23:29 -0800
+To: coldstuff@cold.org
+From: Jeff Kesselman &lt;jeffk@tenetwork.com&gt;
+
+What could cause the damn thing to think tehre is a parameter ebgin passed
+where there is none in the source code??
+
+Im doing a call of the form 
+  out = (fooobj).myfunc();
+Where foobj is a variable containing an obj reference
+ and myfunc is a method on the referenced obejct tha ttakes no arguments.
+
+im gettign a "called with one argument, requires none" error
+
+?????  bad stack?  that would be scary....
+
+JK
+
+</PRE>

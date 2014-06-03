@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [714] in "Coldmud discussion meeting"</TITLE>
+<H1>[714] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?714"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="712"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="712"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="713"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="715"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: consider the lilies</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar 15 18:48:26 1995
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: paul@solar.sky.net
+Date: Wed, 15 Mar 1995 15:46:10 -0800 (PST)
+Cc: crag@serial.io.com, coldstuff@MIT.EDU
+In-Reply-To: &lt;9503150046.AA00237@MIT.EDU&gt; from "paul@solar.sky.net" at Mar 14, 95 06:45:20 pm
+
+&gt; I don't see any reason to change from '='. There may be confusion with
+&gt; '=='. By the same token, there may be confusion between '&lt;-' and '-' or '&lt;'.
+
+The issue here isn't confusion, but mistakes.  Taking into account this
+distinction, however, Paul has brought up something that I think we've been
+overlooking, too..  The whole point of changing the assignment operator is to
+avoid simple, common mistakes turning one operator into another, with effects
+that might not be immediately obvious but could be disastrous..  Given this
+goal, it becomes apparent that &lt;- and -&gt; both have similar problems, in that
+each of their constituent characters are also operators which are usable in the
+same (or at least some of the same) context.
+
+Thus, I change my vote on these to feeling that they're only marginally (if at
+all) better than leaving it the way it is, on mistake-proofing grounds, and
+are worse on consistency and ease-of-learning grounds.. thus I'm against both
+of them.
+
+I still think that := is the best choice, as it suffers none of these drawbacks
+and is already a rather well known (and easily figurable-outable for those who
+don't already know it) assignment operator elsewhere..
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+"We are the music makers, and we are the dreamers of the dreams" -- Willy Wonka
+</PRE>

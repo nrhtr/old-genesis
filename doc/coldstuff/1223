@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [1223] in "Coldmud discussion meeting"</TITLE>
+<H1>[1223] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1223"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1219"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1220"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1222"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1224"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1224"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1224"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Win32 Port</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jan 27 23:00:03 1997
+)</H3>
+<PRE>
+From: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Mon, 27 Jan 1997 22:56:39 -0500
+
+Hi,
+	Ok I have a working(?) version running.  I have executed quite
+a few commands without any crashes.  The native "execute" method
+is currently unavailable.    
+I attempted to produce a diff file, but my editor has
+screwed up the source with CRLF sequences.  A minor inconvenience
+but one I can correct.  I also had to rename some modules to get
+Borland's IDE to cooperate.  Hopefully I can figure out how to use
+the project manager to allow the same "make" structure.  Unix's make is
+so much nicer. :-(
+
+My question is there any interest in my mods?
+If so how do you prefer these to be packaged?
+What #ifdefs should I use? __Win32__ or WIN32 and/or __BORLANDC__ ?
+I had to redeclare all the globals in the defs.h as extern except in the
+module
+that really defines them? Does VC++ handle this differently or perhaps my
+options are whacked?
+
+	Jon Lambert
+
+    
+
+
+
+
+Some are born to sweet delight, some are born to endless night
+
+</PRE>

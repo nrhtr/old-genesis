@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [375] in "Coldmud discussion meeting"</TITLE>
+<H1>[375] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?375"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="374"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="376"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="376"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="377"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>objname vs dbref</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul 11 03:50:49 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Mon, 11 Jul 1994 00:46:53 -0700 (PDT)
+
+I did in fact request that the routines which manipulate the object lookup
+ table refer to the lookup keys as names. That is, I prefer add_objname to
+ set_name. In the current docs, $foo is a name expression which evaluates
+ identically to get_name('foo). $foo therefore, is not really a dbref, since
+ it has the name layer between 'foo and the actual number of the object.
+
+I think it's less confusing to call "$root" a name and "#1" a number. Hence
+ Brandon's suggestions as orriginally mailed.
+
+Naturally, the change from set_name() to add_objname() is to account for the
+ fact that objects are allowed to have multiple names.
+
+My thanks to Greg for the name/num setup. It makes swapping objects out for
+ debug purposes and such easy and just plain makes sense.
+
+Crag,
+waffler
+
+-- 
+Austerities
+
+Self-discipline leads to higher spiritual states
+Only if practiced with understanding.
+The clearer the goal,
+The greater the result.
+</PRE>

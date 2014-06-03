@@ -1,0 +1,69 @@
+<HEAD><TITLE>discuss@charon: [575] in "Coldmud discussion meeting"</TITLE>
+<H1>[575] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?575"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="574"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="576"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Misc.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 10 00:10:18 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Wed, 09 Nov 1994 23:07:16 -0600
+From: Zachary  &lt;zachary@pentagon.io.com&gt;
+
+
+After wading through the whining, and ignoring most of it, here's my $.02:
+
+I noticed someone (Brandon?) had written a piece of code he called 'dumpbuild'
+which was supposed to be able to put a dumpsplit core back together if you
+manually renumbered sys to 0, but much faster.  I dunno 'bout the
+renumbering stuff, but if he can spiffy it up to work the same as
+dumpunsplit, I have no problem with him calling it 'dumpunsplit 2.0' or
+something. Just ack me in the credits :)
+
+On the '=' vs ':=' debate:
+
+Give up.  Support both by either globally making := a synonym for = or
+by providing 1) a server patch to fix the server and 2) a (well thought
+out) dump-converter (should convert =-&gt;:= and :=-&gt;= ).  Yes, this is a
+kludgy answer, but I think there are more important things real server
+hackers should be worrying about that what an equals sign should look
+like.
+
+On = as an expression:
+
+Greg specifically left this out.  On purpose.  He is/was trying to
+encourage vertical code organization.  I'm happy to leave it at that, but
+then, I'm pretty easygoing...
+
+On do{}while{} :
+
+I don't see the need, and would really rather folks concentrate on more
+complex and pressing issues like task management, core design, and error
+handling.  
+
+...
+
+All in all, I'd rather see people working more and
+griping/philosophizng/flaming less.  But that's just me :)
+
+ --Zachary
+
+PS: One of the best ways to get your way is to present people with fait
+    accompli.
+
+
+
+
+
+
+
+</PRE>

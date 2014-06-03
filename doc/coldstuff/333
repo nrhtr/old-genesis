@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [333] in "Coldmud discussion meeting"</TITLE>
+<H1>[333] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?333"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="332"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="334"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="334"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="336"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>spell checking</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May 27 22:45:28 1994
+)</H3>
+<PRE>
+From: BRANDON@cc.usu.edu
+Date: Fri, 27 May 1994 20:38:23 -0600 (MDT)
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I'd like to do it.  The best way I can see of doing it would be to have
+run_script() return stdout of the script.  Then it would be a simple hack to
+create a script that used 'spell' or whatever is on your system (or even hack a
+nicer spell that execs the current spell, dunno).  Anyhow, right now I've
+gotten to the point of:
+
+     I can create a spell checking command from the shell.
+
+     I can run it from coldmud, but cannot return the output.
+
+Alternatives:
+
+     I can run it from coldmud, and receive stdout
+     I can run it via a faucet on another port, and have coldmud connect to it.
+     I can always create another builtin.
+
+I would personally prefer the first one, as it is the best, in my opinion, and
+it also makes run_script a much more powerful builtin (from what you can do). 
+Now, the problem comes up with how does run_script() return stdout?  I figure
+just handle it like a connection and bind it to an object.  I.e.
+
+    'run_script("script", ["args"], $object, &lt;background&gt;)'
+
+Basically, handle it like a connection but have it run a script instead. 
+Comments?
+
+(Oh, also, I think that run_shell would be a better term no?)
+
+-Brandon-
+</PRE>

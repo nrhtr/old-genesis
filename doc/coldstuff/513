@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [513] in "Coldmud discussion meeting"</TITLE>
+<H1>[513] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?513"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="512"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="514"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ColdWeb 0.1 (*grin*)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov  3 02:13:18 1994
+)</H3>
+<PRE>
+From: brandon@riverheights.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Thu, 03 Nov 94 00:09:43 -0700
+
+Well, I've pretty much finished up the GET method for the web server at
+tCD.  I even created a few 'scripts' in /bin (you can do /bin/show?object,
+/bin/list_method?$object.method(), and /bin/who).  However, if you want
+to get a more 'html' version of an object use /objects/object (screw the
+.html extension, the $reference is optional).  Connecting
+with a simple slash (/) will give you the motd.  The http daemon is listening
+on port 8080.
+
+Example object requests:
+
+http://recumbent.declab.usu.edu:8080/objects/root/
+
+http://recumbent.declab.usu.edu:8080/bin/list_method?$root.initialize()
+
+etc.
+
+I just wrote this all in the past few hours, so don't be too disappointed
+if something doesn't work. PLEASE do tell me if something doesn't work.  It
+is using the new network system at the Cold Dark 
+($network/$daemon/$connecton/$connection_interface and others).
+
+And, if you are even more bored, telnet to port 4444, I have the finger
+daemon running on it again (works like GNU finger).
+
+-Brandon
+</PRE>

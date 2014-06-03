@@ -1,0 +1,28 @@
+<HEAD><TITLE>discuss@charon: [1234] in "Coldmud discussion meeting"</TITLE>
+<H1>[1234] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1234"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1233"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1235"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis p24 backup 'oops'</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Feb 14 19:37:31 1997
+)</H3>
+<PRE>
+Date: Fri, 14 Feb 1997 16:56:06 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: coldstuff@cold.org
+
+The .clean file in backups made by Genesis p24 will be in the wrong
+format.  If you need to use a binarydb backup edit the .clean file and put
+the last system line as the first line of the file.  Sorry!
+
+-Brandon Gillespie
+
+</PRE>

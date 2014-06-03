@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1589] in "Coldmud discussion meeting"</TITLE>
+<H1>[1589] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1589"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1588"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1590"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>cold.xidus.net, NetStart core</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jun  2 03:26:39 2000
+)</H3>
+<PRE>
+Date: Fri, 2 Jun 2000 00:17:35 -0700 (PDT)
+From: Jeremy Weatherford &lt;xidus@xidus.net&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+
+Hello,
+
+I'm sure everyone's tired of hearing from me, given the disproportionate
+amount of traffic I seem to be generating.  :)
+
+I have a site up at http://cold.xidus.net for my ColdC projects.  The only
+project currently available is NetStart, which is a core with minimal
+networking code.  It's basically only useful for people trying to start
+from scratch with a core, or for people interested in the networking
+internals.
+
+Next up is a core called BaseCore which will be a more useful starting
+place for writing your own core.  :)
+
+Happy hacking,
+Jeremy Weatherford
+xidus@xidus.net
+http://xidus.net
+
+</PRE>

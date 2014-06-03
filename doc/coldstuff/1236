@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1236] in "Coldmud discussion meeting"</TITLE>
+<H1>[1236] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1236"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1235"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1235"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1235"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1237"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1237"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1241"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] public/private/protected object variables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar  1 00:24:11 1997
+)</H3>
+<PRE>
+From: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+To: "COLD" &lt;coldstuff@cold.org&gt;
+Date: Sat, 1 Mar 1997 00:22:32 -0500
+
+&gt; Back when I added public/private/protected methods I considered diong the
+&gt; same with variables.  Once again I'm considering it--simply because the
+&gt; need for such a beast is more and more becoming a need for some people. 
+&gt; What I'm thinking of implementing is three types of object variables.  We
+&gt; would still keep encapsulation in that only the definer can access
+&gt; variables and instances it defines.  What we would be expanding on is the
+&gt; default value for these instances (i.e. what is inherited and how). 
+&gt; Basically: 
+&gt; 
+&gt;         private     -- act as they do now--if no instance is defined
+&gt;                        simply return zero.  This would be the default
+&gt;         protected   -- if there is no instance, use the _definers_
+&gt;                        instance (and only the definers)
+&gt;         public      -- get the first instance in the ancestor tree--using
+&gt;                        the same search requirements as for methods.  We
+&gt;                        would likely want a cache like with methods..or
+not.
+&gt; 
+&gt; Comments?
+&gt; 
+Yes! Definitely!!
+
+I think these are formally called class attributes in OO terminology.
+
+If you are familiar with Smalltalk these are called "class variables".
+In C++ they are called "static variables".
+
+I believe that these could be EXTREMELY useful constructs.
+
+I know the memory size of derived objects could be reduced in many 
+circumstances.   It would also allow better encapsulation and might
+even reduce the proliferation of unnecessary utility-object types.
+
+Of course, I could be wrong.
+</PRE>

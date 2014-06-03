@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [201] in "Coldmud discussion meeting"</TITLE>
+<H1>[201] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?201"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="192"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="196"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="200"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="202"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="203"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="203"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: names</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Apr  3 00:55:47 1994
+)</H3>
+<PRE>
+From: stewarta@netcom.com (Alex Stewart)
+To: coldstuff@MIT.EDU
+Date: Sat, 2 Apr 1994 21:54:30 -0800 (PST)
+
+Sigh.. just now realized I sent this message only to William, and not to the
+maillist like I'd intended.. oh well.
+
+&gt; I was under the impression names were different than dbrefs.
+&gt; name:  $funky_chicken
+&gt; dbref: #1234
+&gt; so changing get_name(); to get_dbref(); is not necessarily a good idea.
+
+Well, the way I figure it, #xxx isn't really a dbref because it's never
+supposed to actually be used to reference anything (outside of server-internal
+stuff) (that's what $foo is for).  Moreover, $foo used to be called a dbref,
+and it's function hasn't changed at all since that point, but it's not a dbref
+anymore, which doesn't seem right (picky, I know, but still valid).
+
+I can live with not calling $foo-type things dbrefs (though I still think they
+should be) but what I really do want to see is changing the *_name stuff to
+_something_ else, because it's just plain ambiguous and confusing, even for
+people who know what they're doing (if I'm talking about an object's name with
+someone, how do they know if I mean the VR name or the *_name name, etc?  The
+term "name" comes with a fair amount of linguistic baggage, and is best left to
+applications that are farily close to the VR aspects of the system)
+
+Personally, I'd like to see something like:
+dbref: $foo
+dbnum: #1234
+This keeps things pretty unambiguous, and highlights much better the
+relationship and function of the two types of values.
+
+-Riche
+
+
+</PRE>

@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1397] in "Coldmud discussion meeting"</TITLE>
+<H1>[1397] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1397"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1396"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1396"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1396"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1398"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Genesis signal handler:</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  8 15:56:06 1997
+)</H3>
+<PRE>
+Date: Mon, 8 Dec 1997 13:43:59 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: Chris Gazley &lt;cgazley@vc.mulberry.com&gt;
+cc: Cold Stuff Mailing List &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;19971208112046.59323@vc&gt;
+
+On Mon, 8 Dec 1997, Chris Gazley wrote:
+
+&gt;         Could anyone tell me which signal will make Genesis shutdown clean
+&gt; from outside the system.  I want to make a daemon script for it since the
+&gt; machine i'm running it on may at anytime be rebooted due to the idiotic
+&gt; nature of my friend Paul.  I know how to start her up but the page an
+&gt; www.cold.org didn't really tell alot about what each signal did as far as
+&gt; core stability was concerned.  Thanks in advance.
+
+     http://www.cold.org/Software/Genesis/docs/
+
+I believe kill -QUIT is the one you want--it is basically the same as
+calling shutdown() from ColdC.
+
+-Brandon
+
+</PRE>

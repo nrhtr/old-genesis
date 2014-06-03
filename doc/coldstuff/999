@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [999] in "Coldmud discussion meeting"</TITLE>
+<H1>[999] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?999"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="998"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1000"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1000"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1001"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] string matching functions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 15 17:32:57 1996
+)</H3>
+<PRE>
+Date: Wed, 15 May 1996 15:02:19 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+I realize we have hit the post 1.0 stage, but this is something which has 
+been grating on me for a while.  Namely, the order of arguments varies 
+from matching function to matching function.  All functions generally 
+have a key argument (i.e. the pattern, template, regexp) and a string, 
+along with other args.  However, the order of these varies.  I would
+like to change that, so its always the same across the board.  Right now 
+we have:
+
+    match_begin(str, key, ...)
+    match_pattern(key, str, ...)
+    match_template(key, str, ...)
+    match_regexp(key, str, ...)
+    regexp(key, str, ...)
+    strsed(key, str, ...)
+
+The only reason the regexp functions have the key first is because 
+template and pattern were key first as well.  However, I'm considering
+switching them, as it would 'feel' much more natural across the board,
+and with native method hooks it would make MUCH more sense.  For 
+instance, right now you would do:
+
+       "regexp".match_regexp(str);
+
+When in actuality the target should be 'str', not 'regexp'.  In swapping 
+the order this would straighten out to:
+
+       str.match_regexp("regexp")
+(or):  match_regexp(str, "regexp")
+
+What I'm suggesting doing is changing ALL matching functions to take the 
+string as the first argument, and the key as the second argument.  The 
+impact of this is anybody who is not planning on simply upgrading to the 
+next coldcore would have to search their db for each matching function 
+and swap the args (I'll be doing coldcore).
+
+Comments?
+
+-Brandon Gillespie
+</PRE>

@@ -1,0 +1,54 @@
+<HEAD><TITLE>discuss@charon: [1554] in "Coldmud discussion meeting"</TITLE>
+<H1>[1554] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1554"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1551"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1551"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1553"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1555"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: HTTP-connections</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Feb 26 16:34:24 2000
+)</H3>
+<PRE>
+Date: Sat, 26 Feb 2000 14:20:50 -0700
+From: Michael Loftis &lt;zop12@mindless.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+You just don't close the connection.  Or ask the browser to reload with an
+HTML Meta REFRESH tag.
+
+See HTML infos for more.
+
+Joerg Weber wrote:
+
+&gt; Hello everyone,
+&gt;
+&gt; I'm wondering if it is possible to write to an existing http_connection
+&gt; without losing the content of the currently displayed URL.
+&gt; What I'm trying to do is this:
+&gt; 1) Generate a page via /bin/myniftything
+&gt; 2) Write something to the connection which gets ADDED to the page. The
+&gt; browser should somehow notice that new data comes in, and append it. I've
+&gt; seen that system working already but don't have the source of the
+&gt; application.
+&gt;
+&gt; Anyone?
+&gt;
+&gt; Cheers,
+&gt;         Broesel
+
+--
+Michael Loftis
+zop12@mindless.com   ICQ: 15648280  AIM: DyJailBait
+Funny quip of the moment just happens to be....
+Linux is like a tent:
+no gates, no windows, and an Apache inside!
+
+
+</PRE>

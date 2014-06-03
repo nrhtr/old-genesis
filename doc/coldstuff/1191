@@ -1,0 +1,66 @@
+<HEAD><TITLE>discuss@charon: [1191] in "Coldmud discussion meeting"</TITLE>
+<H1>[1191] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1191"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1190"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1192"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Re: [ColdCore] Editor command sed/sub</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Dec 22 12:29:54 1996
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+In-Reply-To: &lt;Pine.NEB.3.95.961220232425.20830A-100000@glacier.cold.org&gt; from Brandon Gillespie at "Dec 20, 96 11:27:56 pm"
+To: brandon@glacier.cold.org (Brandon Gillespie)
+Date: Sun, 22 Dec 1996 18:22:13 +0100 (MET)
+Cc: coldcore@cold.org, coldstuff@cold.org
+
+&gt; In the editor there is the command that works like sed in unix:
+&gt; 
+&gt;     s/.../.../yyy
+&gt; 
+&gt; It is also modeled after the same MOO style command, with the range
+&gt; specified after the flags (yyy).  A question has arisen with the two
+&gt; available types of search and replaces, strsed() and strsub().  To specify
+&gt; the difference I created 'sub' and 'sed', ala:
+&gt; 
+&gt;     sub/xxx/yyy/fff
+&gt;     sed/xxx/yyy/fff
+&gt; 
+&gt; The question is what behaviour should 's' follow?  sed or sub?  I
+&gt; personally think sed--but I'm a regexp freak.  Others?  Note: sed gives
+&gt; you FULL sed capability, i.e.:
+&gt; 
+&gt; 
+&gt;     sed/(regex)more(regex)more(regex)/other%1more%3baz%2/
+&gt; 
+&gt; Where sub is simply a literal translation.  I would consider nixing sub
+&gt; all together if it weren't for the 'magical' characters you don't always
+&gt; want to be escaping, namely []*$() and company..
+&gt; 
+&gt; Preferences?
+&gt; 
+&gt; -Brandon Gillespie
+&gt; 
+&gt; 
+
+Okay, by now you prolly know just /who/ arose the question. MOO's
+s/// is just a literal translation, and I muchly prefer it that way.
+Common sense says that simpler feature (and that's non-regexp) string
+substitution is much more common in Real World. So, s/// should follow
+that semantics, with sed/// when you /really/ need it. After all,
+regexp can be real pain in the ass when you want to replace
+numeric expression in a method, plus, automation gained with
+regexps is completely useless for JUST A SINGLE substitution that
+most editor users really need (regexps are a norm when you use,
+for instance, @grep with +r).
+
+	Miro
+
+</PRE>

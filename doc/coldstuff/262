@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [262] in "Coldmud discussion meeting"</TITLE>
+<H1>[262] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?262"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="260"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="261"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="263"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="271"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 12:46:13 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;199405191021.DAA07760@netcom.com&gt; 
+Date: Thu, 19 May 1994 09:40:27 -0700
+From: Gregory Blake &lt;gblake@mis.nu.edu&gt;
+
+
+This is somewhat related to the ports issue... so I'll toss it in here.
+Has anyone considared making something that interfaces with mud rwho servers?
+Both to have the mud listed in rwho listings, and to get information
+from it.
+
+
+comments?
+
+--
+==============================================================================
+Gregory Blake                       |Snooze@TinyMUSH,TooMUSH, SpaceMadness,
+Network Admin - National University |LambdaMOO, Fantasia, CaveMUCK, DragonMUD
+work: (619)563-2595                 |Email - gblake@mis.nu.edu
+home: (619)528-4531                 |
+==============================================================================
+home addr: 4783 Utah Street, San Diego, CA  92116
+==============================================================================
+
+</PRE>

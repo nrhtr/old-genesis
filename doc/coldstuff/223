@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [223] in "Coldmud discussion meeting"</TITLE>
+<H1>[223] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?223"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="222"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="224"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>regression testing</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri May  6 11:00:27 1994
+)</H3>
+<PRE>
+Date: Fri,  6 May 1994 10:54:01 -0400 (EDT)
+From: William B Fisher &lt;wbfst1+@pitt.edu&gt;
+To: coldstuff@MIT.EDU
+Cc: 
+
+Somehow, I cannot get my linux box to actually complete the regression tests
+packaged with coldmud.  It runs the standard tests 1-whatever, then the
+regression tests 1-6, does not give output for 7-26, then shuts down normally.
+There seems to be no change in the 'source' for the tests, or the shell,
+and I only get one warning when compiling the server, about 'val' not being
+initialized in this function, I forget which place.  I'm using gcc 2.5.8,
+linux 1.0, perl 4.0, and coldmud-0.10.2.tar.gz from brandon's ftp site.
+
+
+</PRE>

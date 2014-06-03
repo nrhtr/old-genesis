@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [1139] in "Coldmud discussion meeting"</TITLE>
+<H1>[1139] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1139"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1137"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1138"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1138"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1140"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1140"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1140"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] How easy is it to animate things in ColdX</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 27 16:27:45 1996
+)</H3>
+<PRE>
+Date: Wed, 27 Nov 1996 14:32:16 -0600 (CST)
+From: Kor &lt;qor@io.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;Pine.NEB.3.95.961127101704.3748B-100000@glacier.cold.org&gt;
+
+On Wed, 27 Nov 1996, Brandon Gillespie wrote:
+&gt; 
+&gt; Doing a tick model is bad because it is constantly requiring all objects
+&gt; to be active which demands them to be in memory at all times--thus
+&gt; increasing the memory profile and object cache.  This works against the
+&gt; way cold is optimized.
+&gt; 
+
+okay, I understand that, but I have a question...  the tick model was
+devised to control the number of tasks scheduled, if I understand
+correctly, and this does result in a conservation of resources.  would
+there be any expedient to modifying the model such that objects only listen
+to it when it is important that they do so-- according to the same rules
+that they would bother to run their own heartbeat.  the only way I can
+think to do it off the top of my head is to have a list of listening
+objects, who perhaps even listen only at various intervals.
+
+would that have a positive effect in any sort of database, large or small?
+would it be more trouble than it is worth?
+
+I hope it will be at least the seed of a useful idea if not a useful idea
+in itself...
+
+Thanks for listening,
+Ira
+
+--
+qor@io.com			Aladdin is like a god to the Doghouse.
+</PRE>

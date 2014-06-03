@@ -1,0 +1,116 @@
+<HEAD><TITLE>discuss@charon: [497] in "Coldmud discussion meeting"</TITLE>
+<H1>[497] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?497"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="495"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="496"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="496"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="498"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="498"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="505"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: driver database dumping</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct 31 19:40:44 1994
+)</H3>
+<PRE>
+To: rayn@crossaccess.com
+Date: Tue, 1 Nov 1994 05:34:18 -0500 (EST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9411010002.AA12115@q.crossaccess.com&gt; from "rayn@crossaccess.com" at Oct 31, 94 04:02:28 pm
+From: colinm@ozemail.com.au (Colin McCormack)
+Reply-To: colinm@ozemail.com.au
+
+&gt; re: dumping objects with dbref instead of obnum.
+&gt; 
+&gt; This would be nice, especially if it allowed renumbering. 
+
+I hacked Zach's (?) dumpsplit to produce symbolic stuff.
+It's not 100% but it's about 99.9% (there are degenerate cases)
+
+Enjoy.
+
+Colin.
+
+#!/usr/bin/perl
+
+$debug=0;
+$conservative=0; # won't touch vars with quotes in 'em
+$|=1;
+
+# check we're being called properly
+$USAGE = "Usage: $0 &lt;textdump&gt; &lt;name-to-pointer file&gt;\n";
+($textdump = $ARGV[0]) || die " $USAGE No textdump specified.\n";
+($numfile = $ARGV[1]) || die " $USAGE No namefile specified.\n";
+
+# define the save-an-object subroutine
+sub saveanobj { 
+      chop($num);
+      $debug &amp;&amp; print "**************** SAVING OBJECT $num FOUND **************\n";
+      print NAMES "name $name{$num} ${num}\n";
+      open(OUT,"&gt;&gt;$name{$num}.c--") || die "Current directory unwriteable.";
+      print OUT @parents;
+      print OUT @buffer; 
+      close(OUT);
+      undef @buffer;
+      undef @parents;
+      undef $num;
+}
+
+# start the processing
+open(IN,$textdump) || die "Invalid or unreadable textdump \"$textdump\"";
+open(NAMES,"&gt;&gt;$numfile") || die "Current directory unwriteable.";
+
+print "Name Pass... ";
+while (&lt;IN&gt;) {
+    if (/^name (.+) ([0-9]+)$/) {
+	$name{$2}=$1;
+    }
+}
+close(IN);
+
+print "\nWorking... ";
+open(IN,$textdump) || die "Invalid or unreadable textdump \"$textdump\"";
+while (&lt;IN&gt;) {
+  if (!$debug) {
+    # show a cute whriling counter thing to show that it's working...
+    (!($. % 500)) &amp;&amp; print "\b. ";
+    $foo = ("-","\\","|","/")[$. % 4]; print "\b$foo";
+  }
+  # do actual work 
+  $debug &amp;&amp; print "&gt;";
+  if (/^name (.+) ([0-9]+)$/) {
+    $debug &amp;&amp; print "******************* NAME FOUND ********************\n";
+  } elsif (/^parent \#([0-9]+)/) {
+    $debug &amp;&amp; print "**** FOUND PARENT ***";
+    if ($num) {
+      &amp;saveanobj;
+    }
+    @parents=(@parents,"parent \$$name{$1}\n");
+  } elsif (/^object \#([0-9]+)/) {
+    $debug &amp;&amp; print "*********** FOUND OBJECT # $1 ****************\n";
+    $num="${1}X";
+    @buffer = ("object \$$name{$1}\n");
+  } elsif ($conservative &amp;&amp; /^var (.*)\"/) {
+    $debug &amp;&amp; print "*********** FOUND LITERAL VAR ****************\n";
+    @buffer = (@buffer, $_);
+  } elsif (/^var ([0-9]+)/) {
+    $debug &amp;&amp; print "*********** FOUND VAR ****************\n";
+    $_ = "var \$$name{$1}$'";
+    while (/^(.+)\#([0-9]+)/) {
+	$_ = "$1\$$name{$2}$'";
+    }
+    @buffer = (@buffer, $_);
+  } else {
+    @buffer = (@buffer, $_);   
+  }
+  $debug &amp;&amp; print "$_";
+}
+close(IN);
+if ($num) {
+  &amp;saveanobj;
+}
+close(NAMES);
+print "\bDone.\n";
+</PRE>

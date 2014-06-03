@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [1421] in "Coldmud discussion meeting"</TITLE>
+<H1>[1421] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1421"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1420"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1422"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Proposal...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 28 01:22:25 1998
+)</H3>
+<PRE>
+Date: Fri, 28 Aug 1998 01:10:27 -0400
+From: Michael Mudge &lt;kipp@moo.syr.edu&gt;
+To: coldstuff@cold.org
+
+On a new core of mine, I have written a permission system that is based
+on an individual method's perms.  In order to decide if the previous
+method has permission to call this method, I would need some way of
+knowing the method's name...  I think there should be a caller_method()
+function written.  For now, I am having to use stack()[2][3]... Which is
+very slow.  (I also think a speedier stack(1), which doesn't get line
+numbers, would also be useful)... Any thoughts on this?
+
+- Kipp
+</PRE>

@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [557] in "Coldmud discussion meeting"</TITLE>
+<H1>[557] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?557"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="556"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="558"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>coldmud-0.12-1b</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov  7 20:55:25 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Mon, 07 Nov 94 18:52:49 -0700
+
+Ok, I fixed the problem with the missing README (tweaked it a touch for the
+changes since it was last written).  I also added a little more to configure
+in lieu of what is in the README file.  I didn't include case checking for
+all of the situations it covered as that would require adding #ifdefs, which
+Greg didn't want.
+
+0.12-1b/src is actually Jordan's source (last mod date on the file was
+Oct 30), with Alex Stewart's fixes and my tweak of write_log/write_err,
+going to stdout and stderr appropriately.
+
+The .texi file in doc/ is only for server 0.11 (it doesn't include
+information on anything Jordan has added).  The CHANGES file is updated
+a touch, although I am somewhat unclear as to what occured from 0.10 -&gt; 0.12,
+so feel free to change/mod things.
+
+it is at:
+
+  ftp://sticky.usu.edu/pub/brandon/coldmud/coldmud-0.12-1b.tar.gz
+
+-Brandon
+</PRE>

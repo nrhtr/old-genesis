@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [1189] in "Coldmud discussion meeting"</TITLE>
+<H1>[1189] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1189"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1188"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1190"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis patch 21, ColdCore 3.0 alpha 6</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec 21 20:08:35 1996
+)</H3>
+<PRE>
+Date: Sat, 21 Dec 1996 17:52:54 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: coldstuff@cold.org
+
+Both are available.  Genesis p21 is not much changed, other than a fix to
+buf_to_str() and another arg accepted for strsub() (so that it behaves
+like strsed()).  The Core does not NEED patch 21--but without it s/x/y/ in
+the editor may not function correctly.  The Core is NEARLY COMPLETE.  For
+more information on what is remaining connect to the Cold Dark and ask us,
+or read the TODO.
+
+-Brandon Gillespie
+
+(Get both at: ftp://ftp.cold.org/cold/)
+
+</PRE>

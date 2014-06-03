@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1409] in "Coldmud discussion meeting"</TITLE>
+<H1>[1409] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1409"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1408"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1408"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1408"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1410"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] [BUG] can't log in...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar  1 16:55:37 1998
+)</H3>
+<PRE>
+Date: Sun, 1 Mar 1998 14:42:27 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: Andrew.Wilson@cs.cf.ac.uk
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199803011650.QAA03671@aaaaaaaa.demon.co.uk&gt;
+
+On Sun, 1 Mar 1998, Andrew Wilson wrote:
+
+&gt; Hi,
+&gt; 
+&gt; typing 'connect foo bar' gives me:
+&gt; 
+&gt; ! =&gt; Object variable modules not found.
+&gt; !    Error ~methoderr caused by GET_OBJ_VAR
+&gt; !    ~varnf: $command_cache.match_shortcut() ($user_networker) line 4
+&gt; !    ~methoderr: $command_parser.parse() line 8
+&gt; !    ~methoderr: $user.parse_line() ($user_networker) line 12
+&gt; 
+&gt; There's no way to login to tCD.
+
+yeah, it is fixed now.
+
+-Brandon
+
+</PRE>

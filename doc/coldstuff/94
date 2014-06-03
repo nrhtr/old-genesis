@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [94] in "Coldmud discussion meeting"</TITLE>
+<H1>[94] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?94"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="93"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="93"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="93"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="95"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="96"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="96"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ASCII Codes etc</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 16:04:12 1993
+)</H3>
+<PRE>
+Date: Sat, 4 Dec 1993 13:00:09 -0800
+From: Steven Seger Augart &lt;swa@ISI.EDU&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Lynx's message of Sat, 04 Dec 1993 12:01:56 -0600 (MDT) &lt;01H62X8D1S7MANXSH4@cc.usu.edu&gt;
+
+   Date: Sat, 04 Dec 1993 12:01:56 -0600 (MDT)
+   From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+   Content-Transfer-Encoding: 7BIT
+
+   The only pro for using vt codes is that it is a KNOWN standard.  Far as I know
+   there really is not a very wide spread standard for anything else...
+
+Such a MUD presentation protocol needs to be designed by somebody who
+has the time and energy and ability to actually implement it and
+maintain it and collaborate in discussions about the protocol spec as
+they arise.  Just specifying a protocol without some concurrent
+experience in implementing it isn't a good way to do business.  The
+devil is in the details.
+
+Note that Greg has not volunteered himself to be the protocol
+designer; this is wise, given that it's the sort of project that would
+end up taking a large amount of time. 
+
+There is no quick or easy solution to this issue.  Greg is right.
+
+--swa
+
+Steven Seger Augart
+Research Staff, USC Information Sciences Institute
+</PRE>

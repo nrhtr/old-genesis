@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [1637] in "Coldmud discussion meeting"</TITLE>
+<H1>[1637] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1637"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1636"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1638"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1638"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1638"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Patches</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan  9 12:31:55 2001
+)</H3>
+<PRE>
+Date: Tue, 9 Jan 2001 18:14:31 +0100 (CET)
+From: Verhoogen Olivier &lt;simkin@astr0324.rug.ac.be&gt;
+To: coldstuff@cold.org
+Message-ID: &lt;Pine.LNX.4.21.0101091811050.264-100000@astr0324.rug.ac.be&gt;
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Reply-To: coldstuff@cold.org
+
+Heya :)
+
+I allready forwarded this one to Brandon (as did Brian, who coded it) but
+I should point out there's an updated patch for double precision floating
+points against Genesis 1.1.9.
+I won't spam the list with it but if you didn't get ahold of it yet I'll
+forward it too you aswell.
+
+And I would like to thank Brian for the bother of reworking it ;).
+
+-- Simkin.
+
+
+
+
+</PRE>

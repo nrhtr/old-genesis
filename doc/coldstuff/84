@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [84] in "Coldmud discussion meeting"</TITLE>
+<H1>[84] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?84"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="80"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="80"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="83"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="85"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: $user/$player/$person/etc</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 29 20:38:02 1993
+)</H3>
+<PRE>
+To: Lynx &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Mon, 29 Nov 93 16:49:55 -0600.
+             &lt;01H5W7TX9L0YANST52@cc.usu.edu&gt; 
+Date: Mon, 29 Nov 93 20:29:59 EST
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; Hey greg, I have a question, howcome after everybody convinced me to
+&gt; change $user to $person in this heirarchy, you made the core as
+&gt; $user?  :)
+
+I think you're confused.  What people didn't want to see was $player
+representing all user connections.  I still have $person, which is an
+ancestor of all objects modeling people (perhaps not user-controlled
+people).
+
+coldstuff probably isn't the best forum for minor details of core
+design; we have quite a few subscribers now, and there are a lot of
+nitty details.  Feel free to send me mail personally about small
+issues, and mail to the list about things which are likely to concern
+many people (conceptual issues, announcements, etc.).
+
+As for bugs, the best thing for me is not a gdb stack trace of a core
+dump (although it helps), but a reliable procedure for repeating the
+bug.  Again, these should probably go to me personally.
+
+--GBH
+
+</PRE>

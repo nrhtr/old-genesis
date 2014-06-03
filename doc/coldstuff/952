@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [952] in "Coldmud discussion meeting"</TITLE>
+<H1>[952] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?952"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="944"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="950"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="951"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="953"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] ColdC 1.0 Manual completed</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 26 11:55:46 1996
+)</H3>
+<PRE>
+Date: Tue, 26 Mar 1996 09:36:15 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: Bill DeVos &lt;watcher@winc.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;315812BC.7BFD445@winc.com&gt;
+
+On Tue, 26 Mar 1996, Bill DeVos wrote:
+&gt;   Is there a location that documents the commandline parameters to
+&gt; coldcc and genesis?  I've searched through www.cold.org with no luck.
+
+      http://www.cold.org/Genesis/
+
+This is a rough draft for what you want.  Comments are greatly appreciated.
+</PRE>

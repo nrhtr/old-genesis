@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [297] in "Coldmud discussion meeting"</TITLE>
+<H1>[297] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?297"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="296"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="298"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="298"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="303"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>coldmud hanging</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun May 22 13:34:36 1994
+)</H3>
+<PRE>
+From: cadams@weather.Brockport.EDU
+To: coldstuff@MIT.EDU
+Date: Sun, 22 May 1994 13:26:22 -0400 (EDT)
+
+every version i've tried does the same damn thing, no matter what
+machine it's running on:
+
+i remove the binary directory from the world, and restart.  and it
+just hangs forever.  doing a process listing, i notice that it's
+idled, waiting for input, which i can only assume means it THINKS it's
+finished.  looking at the newly created binary directory shows all the
+files completely empty, except binary/clean, which is always nine
+whopping bytes long, never any more.
+
+no log of anything, no errors, no nothing.
+
+
+</PRE>

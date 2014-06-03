@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [625] in "Coldmud discussion meeting"</TITLE>
+<H1>[625] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?625"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="624"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="624"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="624"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="626"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="626"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="627"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Adding a command, HELP!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 26 17:24:39 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Mon, 26 Dec 94 15:22:54 -0700
+
+&lt; I'm working  on that littel tiemr manager of mine, but I've been stumped 
+&lt; for a week. I CANNOT get CDC to recognize my new command (@tqueue).
+
+If you are running CDC-1.1, you need to rehash your command environment.
+I added command caches because of the immense performance they gave (when
+you have a large amount of commands, you DO notice it).  However, your
+cache is rehashed every time you logged in, and when you either eval
+;.rehash_command_environment() or when you type @rehash (this command
+may not have made it in 1.1).
+
+-Brandon
+
+(BTW, CDC-2.0 will be out after the break, and should include many more
+improvements over 1.0).
+</PRE>

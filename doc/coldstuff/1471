@@ -1,0 +1,82 @@
+<HEAD><TITLE>discuss@charon: [1471] in "Coldmud discussion meeting"</TITLE>
+<H1>[1471] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1471"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1470"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1472"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1472"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1485"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Questions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 00:02:48 1999
+)</H3>
+<PRE>
+From: "Soth" &lt;soth@iquest.net&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Mon, 15 Nov 1999 23:38:27 -0500
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0006_01BF2FC2.83FC1580
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Hello, I have a couple questions that hopefully someone can help me =
+with.
+1) Is ANSI colors supported what so ever inside the code? I was wanting =
+to add color to $body.say_cmd and a few others.
+2) I recently was working with $described.description and noticed =
+sender() returns $the_pit or whereever you are located. Is there =
+something I can use to return the user like $user_soth? I'm trying to =
+check to see if the user has a certain flag in a variable I've created =
+named pflags so was wanting to check if(flag in pflags).=20
+
+Thanks for any help and advice,
+soth
+
+
+------=_NextPart_000_0006_01BF2FC2.83FC1580
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+
+&lt;META content=3Dtext/html;charset=3Diso-8859-1 =
+http-equiv=3DContent-Type&gt;
+&lt;META content=3D'"MSHTML 4.72.3110.7"' name=3DGENERATOR&gt;
+&lt;/HEAD&gt;
+&lt;BODY bgColor=3D#ffffff&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;Hello, I have a couple questions =
+that hopefully=20
+someone can help me with.&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;1) Is ANSI colors supported what so =
+ever inside=20
+the code? I was wanting to add color to $body.say_cmd and a few=20
+others.&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;2) I recently was working with=20
+$described.description and noticed sender() returns $the_pit or =
+whereever you=20
+are located. Is there something I can use to return the user like =
+$user_soth?=20
+I'm trying to check to see if the user has a certain flag in a variable =
+I've=20
+created named pflags so was wanting to check if(flag in pflags). =
+&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;Thanks for any help and =
+advice,&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;soth&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+
+------=_NextPart_000_0006_01BF2FC2.83FC1580--
+
+</PRE>

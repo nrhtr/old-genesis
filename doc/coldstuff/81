@@ -1,0 +1,27 @@
+<HEAD><TITLE>discuss@charon: [81] in "Coldmud discussion meeting"</TITLE>
+<H1>[81] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?81"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="80"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="82"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>$sys.create_object() &amp; $sys.create()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 29 19:51:29 1993
+)</H3>
+<PRE>
+Date: Mon, 29 Nov 1993 17:46:58 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+anybody else agree that $sys.create should be $sys.create_user, and leave
+$sys.create_object as it is?
+
+-Brandon
+</PRE>

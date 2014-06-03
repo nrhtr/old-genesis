@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [1215] in "Coldmud discussion meeting"</TITLE>
+<H1>[1215] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1215"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1214"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1214"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1214"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1216"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Pause, suspend and re-entrancy....</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jan 17 05:40:49 1997
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+In-Reply-To: &lt;32DF376E.3F1D@ten.net&gt; from Jeff Kesselman at "Jan 17, 97 00:25:18 am"
+To: jeffk@ten.net (Jeff Kesselman)
+Date: Fri, 17 Jan 1997 11:24:55 +0100 (MET)
+Cc: coldstuff@cold.org
+
+&gt;  Something ocurred to me the other night.....
+&gt; 
+&gt; What prevents Genesis from re-entering an object with a Paused or
+&gt; Suspended method on another thread?  Seems pretty dangerous unless there
+&gt; is a JAVA like "monitor" than can be sued for synchronization.
+
+It's also completely prevented by the fact that Cold doesn't support
+threads yet. :) Yes, there will be locking, once we need it.
+
+&gt; 
+&gt; The Interperter currently does a C function call through a dispatch
+&gt; table for EVERY opcode.  I suspect by judicious in-lining with a
+&gt; switch() statement in teh execute() function of the most common
+&gt; operators (things like +, -,++,--) we could SIGNIFICANTLY improve
+&gt; performance.....   a C-call per fundemental math op is really kinda sick
+&gt; and totally unecessary, IMO.
+&gt; 
+
+Actually, there wouldn't be any improvement. Operators, even the 'trivial'
+ones, spend far more time than a single C call on typechecking their
+arguments.
+
+Although, admittedly, profiler I used still reports that Cold spends
+unpleasant ammount of time in the main intepreter loop. I don't really
+think this can be easily fixed, and as for the /hard/ way to fix it...
+Well, we're working on it. :)
+
+	Miro
+
+</PRE>

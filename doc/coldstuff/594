@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [594] in "Coldmud discussion meeting"</TITLE>
+<H1>[594] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?594"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="593"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="595"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="595"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="596"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>A subtle ingeritence question.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 25 01:42:31 1994
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+Date: Thu, 24 Nov 1994 22:37:38 -0800 (PST)
+
+This is a fairly sublte question regarding inheritence:
+
+Object A
+   has method foo
+   has method bar which calls foo
+
+Object B
+   is a child of Object A
+   has method foo
+
+B.bar() will call WHICH foo when invoked?
+
+Thanks
+
+Jeff kesselman
+
+
+</PRE>

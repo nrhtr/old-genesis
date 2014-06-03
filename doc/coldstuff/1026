@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [1026] in "Coldmud discussion meeting"</TITLE>
+<H1>[1026] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1026"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1025"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1027"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1027"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1027"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] pre-compiled binaries available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jul 10 14:56:13 1996
+)</H3>
+<PRE>
+Date: Wed, 10 Jul 1996 12:15:56 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+There are pre-compiled binaries of patch8 available at:
+
+    ftp://ftp.cold.org/cold/bin/
+
+We currently have:
+
+    FreeBSD 2.1-R
+    Solaris 5.5
+    Ultrix 4.4
+    OSF/1 (DEC Alpha) -- YES, it WORKS!
+
+-Brandon Gillespie
+
+(BTW, anybody trying to get p8 compiled on an alpha with Linux should 
+contact me first, there is one change to a file I overlooked).
+</PRE>

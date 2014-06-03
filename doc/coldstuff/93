@@ -1,0 +1,62 @@
+<HEAD><TITLE>discuss@charon: [93] in "Coldmud discussion meeting"</TITLE>
+<H1>[93] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?93"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="92"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="94"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="94"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="96"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ASCII Codes etc</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 14:07:40 1993
+)</H3>
+<PRE>
+Date: Sat, 04 Dec 1993 12:01:56 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; The appropriate solution is to design a client-oriented, intent-based
+&gt; protocol, and then let people write clients to format the text however
+&gt; they want.  Line-oriented clients could punt and display everything
+&gt; without much presentation (VT could actually handle a little bit, such
+&gt; as emphasis and centering, given a real protocol instead of VT-100
+&gt; codes, which are a nightmare to parse out); newer clients could be
+&gt; more sophisticated.  For more references, see jtext.
+                       				^^^^^
+what/where/when/why/how
+
+The thing is, I have no problem with using triggers for clients, but it has to
+be easy for people to get their client setup to use them, not just some vague
+'get an arr ceee file for it' which usually turns people off and they forget
+about it.  I like things to look nice, I agree with your arguments for ANSI
+codes, so lets make it easy to use other codes.
+
+The only pro for using vt codes is that it is a KNOWN standard.  Far as I know
+there really is not a very wide spread standard for anything else...
+
+&gt; Someone suggested reading in unprintables from the text dump.  I don't
+&gt; currently filter text dump input, so this is possible in 0.9.
+&gt; However, I will fix this hole in 1.0.
+
+sure, great richelieu, there goes our chance to break everybodies clients :) 
+(cant even do decent line animation anymore :(
+
+&gt; I am not going to try to place any injunctions on people against
+&gt; modifying the server, but I will not be at all pleased if people start
+&gt; using coldmud to output raw terminal sequences.
+
+suuuure, set everybody up for a guilt trip.
+
+&gt; I will also not be
+&gt; pleased if people start handling multiple lines by sticking newlines
+&gt; in the text rather than using lists of lines.
+
+that would be scary.
+
+-Brandon/DragonLynx
+</PRE>

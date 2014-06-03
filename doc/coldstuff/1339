@@ -1,0 +1,67 @@
+<HEAD><TITLE>discuss@charon: [1339] in "Coldmud discussion meeting"</TITLE>
+<H1>[1339] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1339"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1330"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1336"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1338"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1340"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1340"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1341"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>RE: [COLD] Exit announcements (anomaly?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 22 00:37:04 1997
+)</H3>
+<PRE>
+From: "Luther, Clay" &lt;clay@selsius.com&gt;
+To: "'Brandon Gillespie'" &lt;brandon@roguetrader.com&gt;,
+        Chris Williams
+	 &lt;psion@geekspace.com&gt;
+Cc: "Luther, Clay" &lt;clay@selsius.com&gt;,
+        "'coldstuff@cold.org'"
+	 &lt;coldstuff@cold.org&gt;
+Date: Thu, 21 Aug 1997 23:14:23 -0500
+
+See below...
+
+&gt; -----Original Message-----
+&gt; From:	Brandon Gillespie [SMTP:brandon@roguetrader.com]
+&gt; Sent:	Thursday, August 21, 1997 9:24 PM
+&gt; To:	Chris Williams
+&gt; Cc:	Luther, Clay; 'coldstuff@cold.org'
+&gt; Subject:	Re: [COLD] Exit announcements (anomaly?)
+&gt; 
+&gt; And like I said, I just forgot to consider it would be out of order.
+&gt; This
+&gt; is fixed by simply excluding the user from the dest announce and
+&gt; explicitly sending them the message first, ala:
+&gt; 
+&gt;     user.tell(message);
+&gt;     user.move_to(dest);
+&gt;     dest.announce(message, user);
+&gt;     source.announce(message);
+&gt; 
+&gt; And everything works as one would expect it :)
+&gt; 
+&gt; -Brandon Gillespie
+&gt; 
+&gt; [Clay Luther]  
+&gt; Does it?  I attempted to apply this fix to $exit.invoke(), but, even
+&gt; though I can list the changes, it appears that the exits I've created
+&gt; aren't calling $exit.invoke() at all.  In fact,
+&gt; I went so far as to put debug messages like s.tell("HIYA!") in the
+&gt; code.  These don't show up. Am I misunderstanding how Cold objects
+&gt; call methods on their parents?
+&gt; 
+&gt; Here's the code as I changed it (from $exit.invoke()):
+&gt; 
+&gt;   // Brian's fix for the out of order exit announcements
+&gt;   m = .eval_message("invoke", $exit, .exit_msg_vars(s));
+&gt;   s.tell(m);
+&gt;   s.move_to(dest);
+&gt;   dest.announce(m, s);
+&gt;   source.announce(m);
+&gt;  
+</PRE>

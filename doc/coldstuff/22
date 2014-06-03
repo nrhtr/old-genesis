@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [22] in "Coldmud discussion meeting"</TITLE>
+<H1>[22] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?22"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="21"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="23"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>parameter problems</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 04:28:05 1993
+)</H3>
+<PRE>
+Date: Tue, 16 Nov 1993 04:13:36 -0500
+From: Quinn Avery &lt;quinn@DUS.Mountain.Net&gt;
+To: coldstuff@MIT.EDU
+
+As is, if you want to set a parameter on an object you have to scrounge around to find out where it's defined.
+ 
+Something like these...
+ 
+find_parameter('name) -&gt; $defined_on
+find_next_parameter('name[, $after]) -&gt; $defined_on
+ 
+....might come in handy.
+ 
+The second one is assuming you allow multiple parameters of the same name on descendant objects.  I think you do.. too lazy to check the info file.
+ 
+-quinn
+</PRE>

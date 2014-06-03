@@ -1,0 +1,75 @@
+<HEAD><TITLE>discuss@charon: [1473] in "Coldmud discussion meeting"</TITLE>
+<H1>[1473] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1473"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1471"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1472"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1472"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1474"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1485"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1485"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Questions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 13:45:21 1999
+)</H3>
+<PRE>
+Date: Tue, 16 Nov 1999 10:24:13 -0800 (PST)
+From: Jeff Kesselman &lt;Jeffrey.Kesselman@eng.sun.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+
+&gt;X-Authentication-Warning: roguetrader.com: majordomo set sender to 
+owner-coldstuff@roguetrader.com using -f
+&gt;From: "Soth" &lt;soth@iquest.net&gt;
+&gt;To: &lt;coldstuff@cold.org&gt;
+&gt;Subject: Questions
+&gt;Date: Mon, 15 Nov 1999 23:38:27 -0500
+&gt;MIME-Version: 1.0
+&gt;X-Priority: 3
+&gt;X-MSMail-Priority: Normal
+&gt;X-MimeOLE: Produced By Microsoft MimeOLE V4.72.3110.3
+&gt;
+&gt;Hello, I have a couple questions that hopefully someone can help me with.
+&gt;1) Is ANSI colors supported what so ever inside the code? I was wanting to add 
+color to $body.say_cmd and a few others.
+
+Boy havent talked abt this sicne my old BBS days... BUT...
+
+Thast easy enough. ANSI graphics are just old-style terminal escape sequecnes so 
+get yourself a chart and add them to your strings (or write a function that does 
+so automiaticly form a higher level inertface to set the color and such.)
+
+The BIg trick is switchign between that and regular text sicne ANSI, unlike 
+telnet, provides no neotiation protocol.  Usually BBS's begai nwith a line thats 
+said something like "If yhis is RED, type Y, else type n" whewn you logged in 
+the first time and made an account, then theys torefd that info on your account.
+
+have fun.
+
+&gt;2) I recently was working with $described.description and noticed sender() 
+returns $the_pit or whereever you are located. Is there something I can use to 
+return the user like $user_soth? I'm trying to check to see if the user has a 
+certain flag in a variable I've created named pflags so was wanting to check 
+if(flag in pflags). 
+&gt;
+&gt;Thanks for any help and advice,
+&gt;soth
+&gt;
+
+Jeff Kesselman
+Member of Technical Staff IV
+JDK Performance/RAS Team
+SUN Microsystems
+
+Thought to meditate on:
+
+No two objects in nature are equal, any two apples are in fact quite different 
+from any other two apples in the world.
+
+Thus can Math really be said to be True in an absolute concrete sense, 
+or is it merely an internally consistent abstraction?
+
+</PRE>

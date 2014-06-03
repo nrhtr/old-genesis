@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1368] in "Coldmud discussion meeting"</TITLE>
+<H1>[1368] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1368"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1366"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1367"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1367"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1369"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Having problems tranferring users from old db to new</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 10 14:59:58 1997
+)</H3>
+<PRE>
+From: maddog@best.com
+In-Reply-To: &lt;Pine.BSF.3.96.971110112612.1340A-100000@roguetrader.com&gt; from Brandon Gillespie at "Nov 10, 97 11:28:20 am"
+To: coldstuff@cold.org
+Date: Mon, 10 Nov 1997 11:52:51 -0800 (PST)
+
+Brandon Gillespie wrote:
+&gt; On Sun, 9 Nov 1997, Frank Crowell wrote:
+&gt; 
+&gt; &gt; What is a good way of moving a user from an old db to a newer db?
+&gt; 
+&gt; Did you use the upgrade script?
+ Actually I had about 14 failed *.cdc files; so I was going to do them by
+hand and then decided to do whatever I could do.
+&gt; 
+&gt; The problem you are having is that all users are indexed by their name on
+&gt; $user_db, so you need to insert each of them into the database.  You can
+
+I was on the track of adding the users to $user_db, but I wasn't sure if
+that was the right thing to do.
+ 
+&gt; use 'coldcc' to do this:
+&gt; 
+&gt; ---------------------------
+&gt; % coldcc -p -tstdin
+&gt; 
+Interesting...
+I will try this tonight.  I think I can get all the other stuff changed
+ok if I get past this point.
+
+thanks.
+
+frank
+
+
+-- 
+________________________________________________________________________
+maddog's studio http://www.maddog.com/
+Frank Crowell frankc@maddog.com
+</PRE>

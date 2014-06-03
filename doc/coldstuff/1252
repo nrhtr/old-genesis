@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [1252] in "Coldmud discussion meeting"</TITLE>
+<H1>[1252] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1252"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1251"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1251"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1251"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1253"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1253"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1253"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Class Constants/Public Vars</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 10 17:28:31 1997
+)</H3>
+<PRE>
+Date: Mon, 10 Mar 1997 15:21:55 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: "Jeff T. Polczynski" &lt;jefftp@purdue.edu&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;33247dd554f9002@herald.cc.purdue.edu&gt;
+
+&gt; You mentioned the idea of "public/protected/private" variables a week or 
+&gt; two ago. Any plans on implimenting these ideas or is the jury out still?
+
+I want to.
+
+If/when is up in the air still tho.
+
+</PRE>

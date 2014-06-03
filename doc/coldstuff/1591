@@ -1,0 +1,64 @@
+<HEAD><TITLE>discuss@charon: [1591] in "Coldmud discussion meeting"</TITLE>
+<H1>[1591] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1591"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1590"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1590"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1590"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1592"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1592"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1592"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Quick Question</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jun  3 12:58:13 2000
+)</H3>
+<PRE>
+From: "Wolfe" &lt;grimslayde@lonewolfe.net&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Sat, 3 Jun 2000 11:50:03 -0500
+Reply-To: coldstuff@cold.org
+
+Are you spelling it like "north east" or "south west"?
+I just added two exits to room on my place, one leading north and the other
+leading northeast. I'd suggest ya look on the helpfile for name templates.
+It explains how to have an exit with two names, like having "northeast" and
+"ne" target the same $path thingie. I'm no pro, but that's my two yen. I
+found the quickest way to get an area built is using the @dig command as
+thus:
+
+@dig north;south to a vast library
+
+The first direction is the exit from the current place, the one after the
+semicolon is the exit from the attached place. Pretty simple, eh? Then all
+ya gotta do is describe the room ya just built and perhaps the $path, if you
+do that sort o' thing.
+
+It's okay being a newbie, these fellows don't bite much I've found. As many
+would attest, I've had my share of REALLY asinine questions and I have no
+scars to show for it. Quick praise unto all who have helped me thus far,
+you've all been great!
+
+Ninja-newbie, vanish!!!!
+&lt;BAMF!!!&gt;
+
+- Paidran/Grimslayde/Drew
+
+----- Original Message -----
+From: &lt;ACSRonE@cs.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Sent: Saturday, June 03, 2000 10:43 AM
+Subject: Quick Question
+
+
+&gt;        I am trying to make a room that would incorporate all directions
+into
+&gt; it (NE, NW, SE, SW, S, N, E, W) but it's not allowing more than one
+instance
+&gt; of North or South in a room is there way to get around this and if there
+is,
+&gt; and if there is may i ask how ?  Before you ask....Yep I'm a Newbie.
+&gt;
+
+</PRE>

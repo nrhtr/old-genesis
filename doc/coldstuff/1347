@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [1347] in "Coldmud discussion meeting"</TITLE>
+<H1>[1347] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1347"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1346"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1348"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1348"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1354"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] FIX: $english_lib:indef_article(), ColdCore 3.0a9.02</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 28 23:34:04 1997
+)</H3>
+<PRE>
+From: "Luther, Clay" &lt;clay@selsius.com&gt;
+To: "ColdStuff Mailing List (E-mail)" &lt;coldstuff@cold.org&gt;
+Date: Thu, 28 Aug 1997 22:25:03 -0500
+
+Here is a fix for the small bug in ColdCore 3.0a9.02
+$english_lib:indef_article().
+
+Problem Occurs:
+
+This problem was found while trying to @rename an object.
+
+Problem:
+
+$english_lib.indef_article() is called to select the proper indefinite
+article for "normal" object names.  The method decides whether to return
+an "a" or an "an" for the object's new name.
+
+The method calls two other methods, $english_lib.vowel_exception() and
+$english_lib.non_vowel_exception(), to catch "an" exceptions in the
+English language (for example, you do not say "an unix" or "a hour").
+This logic was failing if the new name passed in was more than one word
+long.
+
+Fix:
+
+Since we only care about examining the first word in a multiple word
+name for "an" exceptions, the fix is to split off the first word of the
+argument passed to the exception routines.  This coercion occurs within
+both routines rather than in the calling method, indef_article(), on the
+off chance that some other method might also want to call these methods
+someday.
+
+
+@program $english_lib.vowel_exception() +access=pub
+  arg word;
+  var prefix, word1;
+  
+  word1 = split(word, "\s+")[1];
+  return match_regexp(word1, vowel_exceptions) ? 1 : 0;
+  
+  // $#Edited: 28 Aug 97 22:19 $user_cle
+  // $#Edited: 28 Aug 97 22:21 $user_cle
+</PRE>

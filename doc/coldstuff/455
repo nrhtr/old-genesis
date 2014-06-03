@@ -1,0 +1,117 @@
+<HEAD><TITLE>discuss@charon: [455] in "Coldmud discussion meeting"</TITLE>
+<H1>[455] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?455"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="454"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="456"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="457"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="458"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>while, where, when, with -- WHAT?!</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Sep 24 23:07:42 1994
+)</H3>
+<PRE>
+Date: Sat, 24 Sep 1994 23:04:02 -0400 (EDT)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;9409241522.AA07300@glacier.mit.edu&gt;
+
+
+
+On Sat, 24 Sep 1994, Greg Hudson wrote:
+
+&gt; 
+&gt; I'd just like to throw a few more ideas into the mix:
+&gt; 
+&gt; This reads as, "while [go off and set the value of a to .test()] a
+&gt; isn't negative, do something with a".  This is a rather disjointed
+&gt; sentence; there are ways of reading this that make grammatical sense
+&gt; (e.g. "while the value of .test(), which I'll call a, is nonegative,
+&gt; do something with a"), but they don't come directly from reading the
+&gt; code (when := is your generic assignment operator) and gloss over the
+&gt; side-effect, which is exactly how you see people writing C expressions
+&gt; a lot.
+
+Personally, I don't see a problem with side effects as such.  Unexpected 
+side effects are the only real problem (which is why := beats =).
+ 
+[etc]
+&gt; If while() isn't the appropriate construct, let's try C's for() (which
+&gt; I realize doesn't exist in Coldmud):
+&gt; 
+&gt; 	for (a = .test(); a &gt;= 0; a = .test())
+&gt; 		.do_something(a);
+
+C's for is definitely NOT something I'd like to see imported into 
+ColdMUD.  It's far and away the least intuitive statement in the language 
+and best left where it is.
+
+[...]
+&gt; loop until a is nonnegative, doing something with a."  Consider:
+&gt; 
+&gt; 	where (a = .test(); a &gt;= 0)
+&gt; 		.do_something(a);
+&gt; 
+&gt; The name "where" is the best I could come up with on short notice, and
+&gt; of course any name for a new looping construct is going to sound a bit
+&gt; funny ("for (a;b;c)" is not particularly intuitive; while (a)" is
+&gt; easily made intuitive mainly because it's so simple).  This construct
+&gt; takes care of all of the situations for which people want assignment
+&gt; expressions in while loops.  I argue that a when loop is more
+&gt; intuitive than a while loop with a side-effect in the condition.
+
+Where or when or whatever, this introduces needless complication to the 
+language.  It might be argued that a complicated language is better than 
+complicated code, but then you don't need a reference book to decipher a 
+complicated expression, just a bit of head-scratching, as opposed to the 
+case of an unfamiliar construct.
+
+Besides, I don't see how this would take care of multiple assignments in 
+the condition.
+
+[ifs with assignment]
+&gt; If we think of where() as a while() with a preparatory statement
+&gt; clause, then we might try to apply the same solution here, but this
+&gt; requires making up yet another name and complicating your control flow
+&gt; constructs again.
+
+All I can say is, ick.
+  
+&gt;                    Assignment expressions are another solution (with
+&gt; associated defects), and ignoring the problem is also acceptable
+&gt; (really, I don't use assignment expressions in C, and these things
+&gt; don't bother me too much).
+
+Assignment expressions, yes, are acceptable, but ignoring the problem 
+often requires 132-column display capabilites.
+
+&gt; 
+&gt; However, let me throw out just one more crazy idea: leave looping
+&gt; alone for now and extend the expression syntax:
+&gt; 
+&gt; 	(where IDENT := expr) expr
+&gt; 
+&gt; For example:
+&gt; 
+&gt; 	while ((where a := .test()) a &gt;= 0)
+&gt; 		.do_something(a);
+
+To me, it seems like you've just reinvented assignment expressions while 
+complicating the syntax.
+
+A crazy idea of my own:  maybe it'd be best to end the language wars once 
+and for all by introducing low-level code access and writing the compiler 
+in the DB.  From my inspection of the server code, ColdMUD's string 
+operations seem efficient enough for this, unlike those of L-----M--.  
+One could even use a buffer and decomplicate the structure considerably.
+
+This way, if you don't like the language, you could conceivably modify or 
+replace it.  If you get crazy with this, it could get confusing, but then 
+noone will program anything cool at your site and you get what you 
+deserve.  :)
+
+</PRE>

@@ -1,0 +1,86 @@
+<HEAD><TITLE>discuss@charon: [990] in "Coldmud discussion meeting"</TITLE>
+<H1>[990] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?990"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="989"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="991"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="991"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="992"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Possible optimization idea..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May  2 19:20:57 1996
+)</H3>
+<PRE>
+Date: Thu, 2 May 1996 16:55:37 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+I have noticed that there is a very common construct in ColdC, and I am 
+considering adding an optimization for this construct.  Basically, you 
+will often see a variable initialized to a base data type, then x 
+elements are added to the variable and the result is returned.  The 
+problem here is you can end up having quite a few reallocs leading to 
+fragmentation and other problems, if the increments are small enough and 
+the end result is very large.  The idea would be to provide an 
+'initializer' function of sorts, for this case called 'new()' where you 
+specify the data type and the anticipated size.  The driver can ignore 
+this directive, or it can take it into account--calling 'new()' will 
+never throw an error, and may simply be equivalent to doing 'bar = "";'.  
+
+An example of where this could be very useful is taken from the catalog 
+server I am working on.  This is pseudo code to clarify things:
+
+    images = ["008-123", "008-141", ..];
+    serv = "&lt;img src=\""+ $sys.primary_server() +"/images/catalog/";    
+    line = "";
+    for i in (images)   
+        line += t + i + ".gif\"&gt;\n";
+
+Assuming 'images' were 20 elements long, the end result would be a string 
+that is around 1100 characters in length.  With the addition of a 'new()'
+function the above code changes to:
+
+    images = ["008-123", "008-141", ..];
+    serv = "&lt;img src=\""+ $sys.primary_server() +"/images/catalog/";    
+    line = new('string, listlen(images) * (strlen(serv) + 14));
+    for i in (images)   
+        line += t + i + ".gif\"&gt;\n";
+
+The variable 'line' would still begin with no elements (""), but it would 
+possibly have much more starting memory allocated (other than the minimal 
+starting-size we have now).  Keep in mind, calling 'new()' would not 
+guarantee memory allocated for the given elements--I would most 
+definitely have a disabling option to this (leaving it equivalent to a 
+simple 'line = "";').  However, in certain situations I can see it giving 
+a definite bonus to things.
+
+Pros: mentioned above
+Cons:
+
+  people could easilly max out a server by 'new()'ing a large number
+  of elements.  However they can do this already.  You could disable
+  new() to keep them from the immediate situation, or you can create
+  a wrapper around .compile() which is:
+
+      if (!$sys.is_admin(sender())) {
+          for line in (code) {
+              if (match_regexp("[^\.a-z_]new\(", line))
+                  throw(~invfunc, "Only administrators may use new()");
+          }
+      }
+
+  new() can also be a problem if the person coding with it is not
+  aware of how references are handled.  If they are using it in a
+  situation where the string would simply be copied anyway, it could
+  end up creating slower code..
+
+Comments?  Is this too low a level of functionality for ColdC?  It is 
+simply a hinting mechanism intended for optimization, not necessarily a 
+direct memory allocation system like in other languages...
+
+-Brandon Gillespie
+</PRE>

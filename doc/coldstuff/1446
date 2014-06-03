@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [1446] in "Coldmud discussion meeting"</TITLE>
+<H1>[1446] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1446"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1445"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1447"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>status of coldhell?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Feb 27 14:45:53 1999
+)</H3>
+<PRE>
+Date: Sat, 27 Feb 1999 11:34:57 -0800
+From: Frank Crowell &lt;maddog@maddog.com&gt;
+To: "coldstuff@cold.org" &lt;coldstuff@cold.org&gt;
+Reply-To: coldstuff@cold.org
+
+Anyone know the status of coldhell?  I found it a few days ago and
+started tinkering with it.  Don't know if it's available for public use
+or if it just at cold.org as a repository.
+
+Anyone else working with it?  I've had to make a couple of minor changes
+if anyone needs them -- nothing really important  The lib seems fairly
+easy to work with and I'm sure it can be adapted to other games.  There
+is no license information so I don't know what restrictions the coldhell
+group wants to put on the lib.
+
+I've got a copy of the lib running at blackrabbit.mudservices.com 1150.
+Come and look at it if you want.
+
+frank
+
+
+</PRE>

@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1438] in "Coldmud discussion meeting"</TITLE>
+<H1>[1438] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1438"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1432"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1437"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1437"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1439"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ColdCore Roadmap</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 11 10:56:47 1998
+)</H3>
+<PRE>
+Date: Wed, 11 Nov 1998 07:46:38 -0800
+To: coldstuff@cold.org
+From: joel thornton &lt;jpt@mindless.com&gt;
+In-Reply-To: &lt;19981111030054.A9864@cold.org&gt;
+
+&gt;But the core reason they havn't been implemented yet is because most
+&gt;systems are rather inter-dependant.  If a change is made to the parser
+&gt;it may break commands--so while you could just upgrade the parser
+&gt;module, all commands would then be broken--would you have to go out
+&gt;and grab all of the varied command modules as well?  Then you'd also
+&gt;have all of your custom commands too...  Are the benefits of all the
+&gt;work to create this worth the pay-off?
+
+I think each package just needs a clearly defined API, and stick to it once
+the package is incarnated.  So initially yes, this could break some
+systems, but the eventual payoff is that all those broken pieces, when
+fixed, will now interoperate with any other system which is using those
+packages.
+</PRE>

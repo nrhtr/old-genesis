@@ -1,0 +1,49 @@
+<HEAD><TITLE>discuss@charon: [740] in "Coldmud discussion meeting"</TITLE>
+<H1>[740] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?740"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="739"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="741"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>"E" in "aeiou" bug fixed</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 13 18:50:42 1995
+)</H3>
+<PRE>
+Date: Sat, 13 May 1995 16:49:34 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU, coldx@tiny.mcs.usu.edu
+
+The problem was in strcchr, in that it was doing lowercase on the left
+side, but not on the right side.  You can fix it by changing the function
+in the following way:
+
+(from):
+/* Look for c in s, ignoring case. */
+char *strcchr(char *s, int c)
+{
+    for (; *s; s++) {
+        if (LCASE(*s) == c)
+            return s;
+    }
+    return (c) ? NULL : s;
+}
+
+(to):
+/* Look for c in s, ignoring case. */
+char *strcchr(char *s, int c)
+{
+    c = LCASE(c);
+
+    for (; *s; s++) {
+        if (LCASE(*s) == c)
+            return s;
+    }
+    return (c) ? NULL : s;
+}
+</PRE>

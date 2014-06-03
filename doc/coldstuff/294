@@ -1,0 +1,34 @@
+<HEAD><TITLE>discuss@charon: [294] in "Coldmud discussion meeting"</TITLE>
+<H1>[294] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?294"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="293"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="295"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="295"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="301"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: log and time</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat May 21 12:57:15 1994
+)</H3>
+<PRE>
+Date: Sat, 21 May 1994 10:53:12 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+You are afraid of somebody hacking out the time string, if it is in the
+database instead of the server.  However, if they did do this you would know
+when it happened anyhow, because up to n time strings would have a time stamp,
+then they wouldn't; but it would still be noticeable.  Anyhow, hacking security
+in ColdMUD is different than in MOO.  In MOO you must get a "wiz" bit.  In
+coldmud you simply have to gain access to $sys (once you can write to sys you
+can do anything).  If they have access to sys they can just turn _OFF_ the
+logging feature all together, which means that the difference between stamping
+times on it or not would make _NO_ difference.  I can understand the reason for
+a timestamp in MOO, because the server will call the log for various different
+things, but not in Cold, therefore there is no reason to even worry about it.
+</PRE>

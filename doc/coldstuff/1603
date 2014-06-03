@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [1603] in "Coldmud discussion meeting"</TITLE>
+<H1>[1603] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1603"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1602"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1604"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1604"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1605"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>newbie question about what cold/genesis can do...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul 10 12:34:58 2000
+)</H3>
+<PRE>
+Date: Mon, 10 Jul 2000 17:24:06 +0100
+From: "John P . Looney" &lt;valen@tuatha.org&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+ Excuse the pretentionism, but after playing with the "adventure.sh"
+script that comes with bash [0], I thought "wouldn't it be cool if you
+could do more, inside a mud-like environment.
+
+ So, I wrote:
+    http://www.RedBrick.dcu.ie/~valen/muce.ps
+ as a kind of a joke. A few friends thought "that would be cool actually".
+For those too lazy to read it, it's basically saying that "wouldn't it be
+nice if you could run a mud-like virtual machine on your PC, and import
+files from your PC (running windows, or unix, or whatever - it shouldn't
+matter) as objects in a mud-like world. Then, you could clone a load of
+URL objects, for instance, "go" to a friends "house" - which is a room, on
+his PC, and do something like "give knapsack.urls to friend" or something.
+
+ Anyway, I was thinking that if we were going to toy with this idea, the
+Cold system might be a cunning place to start. If any of the developers
+could have a look at the file, and tell me if I would be better off
+starting from scratch, of from something like Circle mud, I'd appreciate
+it.
+
+Kate
+
+[0] adventure.sh comes with the bash 2.x source distro. It's cool - try it
+out - it lets you walk around your file system, picking up files into a
+"knapsack", and dumping them into different directories. You can feed
+files to the "rm" monster, etc.
+
+-- 
+The words of the unwary are apt to cause needless pain and bloody violence.
+                                                        - Zen Master Greg
+</PRE>

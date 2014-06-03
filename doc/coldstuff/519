@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [519] in "Coldmud discussion meeting"</TITLE>
+<H1>[519] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?519"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="518"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="518"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="520"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="521"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov  4 18:38:13 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: brandon@riverheights.declab.usu.edu
+Date: Fri, 4 Nov 1994 15:36:21 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9411042305.AA02851@riverheights.declab.usu.edu&gt; from "brandon@riverheights.declab.usu.edu" at Nov 4, 94 04:05:38 pm
+
+&gt; Actually (cosmetic here), I'd prefer executables/ or exe_bin/, or hmm,
+&gt; execute_bin/ (hsm), perhaps execute/  (sigh).
+
+Howabout exec/?
+
+&gt; "private" would be good too, in my opinion (would remove a lot of perm
+&gt; checking which simply checks to make sure it is called by this object).
+&gt; 
+&gt; Also, I would (still) like to see the assignment operator change from '='
+&gt; to ':='.  I believe it would seriously help lessen confusion in the language,
+&gt; in relation to people learning the language.
+
+Yeah, I forgot about these two when making up my list.. both of these should be
+in the "discussion" section.
+
+Something else I forgot which should be in the "to-do" section:
+
+In-DB message-&gt;method resolution
+  Originally (in the docs at least) there seemed to be some distinction between
+  a message sent to an object and the method called upon receiving that object,
+  but no real advantage of this conceptual distinction was taken.  I'm going to
+  add the option for an object to do its own message resolution by way of a
+  specific method on the object, which the server would call, if present, to
+  find out what method should be executed when a message gets sent to that
+  object.  In addition to enhancing encapsulation, this would also have
+  significant advantages in several areas such as doppleganger frobs and
+  network-object representations.
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

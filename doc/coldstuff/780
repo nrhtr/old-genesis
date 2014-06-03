@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [780] in "Coldmud discussion meeting"</TITLE>
+<H1>[780] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?780"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="776"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="779"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="779"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="781"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="781"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="781"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Stupid Question Time</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Aug 20 22:49:31 1995
+)</H3>
+<PRE>
+Date: Sun, 20 Aug 1995 20:48:16 -0600
+From: 869683 Gillespie Brandon James &lt;brandon@avon.declab.usu.edu&gt;
+To: coldstuff@MIT.EDU
+
+&lt;&gt;    head = buffer_truncate(buff, size);
+&lt;&gt;    tail = (| buffer_tail(buff, size+1) |) || `[];
+&lt;
+&lt; Hmm.  What type is the return from a (|  |) clause when a function throws
+&lt; an error?
+
+It becomes the value of error(), and all ~error's test false.
+
+-Brandon
+</PRE>

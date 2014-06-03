@@ -1,0 +1,84 @@
+<HEAD><TITLE>discuss@charon: [546] in "Coldmud discussion meeting"</TITLE>
+<H1>[546] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?546"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="544"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="544"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="545"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="547"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="549"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="551"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ToDo, or not ToDo.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 17:57:35 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Sun, 06 Nov 94 15:55:42 -0700
+
+colinm@colinm.ozemail.com.au (Colin McCormack) writes:
+&lt; In general, I would rather see nothing done to the server, 
+&lt; than see a bunch of ill considered hacks thrown into the server,
+&lt; in the name of I don't know... Progress?  Convenience?
+&lt; Notional improvement?
+
+Unfortunately (fortunately?), everybody does not share the same position
+as you on what is 'good' for the driver.  While it seems like you have
+some holy vision of how the server should be, others also have opinions.
+Just because you do not like their opinions does not mean they are wrong,
+it means YOU dont like their opinions.  This whole attitude which people
+seem to have in regard to driver development that "my ideas are right,
+because I was touched by God and know the truth, anything you come up
+with is wrong, period, and I don't care what your reasons are" is sheer
+stupidity.
+
+Speaking from the experience of administrating the development of NetrekII
+since it's infancy (NetrekII development consists of a team of ~10 developers
+and ~30k lines of client code and ~40k lines of server code) I feel I can
+safely say that EVERYBODY has an opinion in where something is going.  If
+it just happens that 9 out of 10 people on the 'development team' decide
+they like something, IT DOESNT MATTER if you think the change is selling
+the soul of the code, what matters is that you are a minority.  Realize that
+in respect to that change your idea will not find ground.  Deal with it
+and learn to work as a team--your ideas may be holy and touched by God,
+but as far as anybody else is concerned so are their ideas.  Try to give a
+little ground sometime.
+
+As far as Richelieu doing development on the driver, I plan on helping him
+in this endeavor--even IF I do not like some of the changes he may make.  I
+have already taken the 0.10 source filetree (with the test directory and
+documentation) and updated it to 0.12, written a base configure script and
+revamped the makefiles.  (amoung other changes).
+
+[snip]
+&lt; I trust him not to pollute coldmud with poisoned confectionary 
+&lt; like do {abomination} while {abominable}.
+
+goto: first and second paragraph
+
+Most people want this change (infact, you are the only person I know who
+finds it an abomination, most people do not care either way or want it).
+
+[snip]
+&lt; All you really need is a place to ftp the latest server(s) from [...]
+
+Sticky.usu.edu is open to anything (space is readily available there), and
+I have done my best to make distinctions between the different sources,
+documentation, cores, textdumps and other paraphenilia.
+
+[snip]
+&lt; Certainly, also, Chaos and Crag would be a moderating interface
+&lt; between Richelieu and I, to the extent that I might want to
+&lt; make my position/feelings felt on some issues.
+
+(sigh, feel's pity for Chaos and Crag)
+
+Colin: please pay attention to headers in a message that indicate the
+difference between a change Richelieu is going to make, and one which he
+is requesting discussion on.
+
+-Brandon Gillespie (Lynx)-
+</PRE>

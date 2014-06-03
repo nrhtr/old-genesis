@@ -1,0 +1,70 @@
+<HEAD><TITLE>discuss@charon: [1375] in "Coldmud discussion meeting"</TITLE>
+<H1>[1375] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1375"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1374"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1376"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1376"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1383"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] NBC Online project</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 20 01:55:08 1997
+)</H3>
+<PRE>
+Date: Wed, 19 Nov 1997 23:56:04 -0900
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+NBC Online/Homicide plans to include an RPG mud as part of their online
+offerings.
+(http://www.nbc.com)
+Their intention is to have some sort of mud that can be used to exend
+the Homicide/Second Story series that's being developed for the web; all
+this is in support of the television series Homicide.
+
+NBC Online will not pay for the project (what a surprise!), but they are
+willing to have online promotion for the mud/company that gets involved
+with the project.  Currently I'm tossing around some ideas with their
+software developer and their producer, but I'm not interested in
+promotion.  However, if someone can make a decent Homicide RPG Cold, it
+could really help give Cold a boost.
+
+I'm willing to provide the Black Rabbit server as a "proof of concept"
+server, but the Homicide RPG will have to be moved off the server by the
+end of March.  This means that the project will have to find another
+machine.  If a sponsor for the site can be found, then that sponsor
+should get the promotion from NBC Online.
+
+The project will also need a builder or two and an admin.  If anyone is
+interested on working on this project, I will give you complete mud
+control so you can get the job done.
+
+There are also some technical problems.  They want the mud to be able to
+handle 300+ online users. I believe that LambdaMOO lags to an impossible
+level at over 200-- don't know how well a Cold could handle that many.
+Many two servers is better.  Suggestions?
+
+Another concern is the use of the web.  I'm still not clear on this
+requirement, but I know that they want to tie it in to their web page
+some way.  If you look at the NBC web page, you will see that they make
+heavy use of web technology, including lots of javascripts, and maybe
+even java.  I don't really know what to do about this part.
+
+Finally, there will be some use of NPCs.  The "proof of concept" will
+have to include some functional NPCs, TBD.
+
+So what do you think?  Is that a project worth doing and are there
+enough resources in the Cold community to make it happen?  It's not a
+great project if you want to run your own mud.  But it may enhance your
+resume.
+
+So send me some email if you are interested in the project,
+
+frankc@maddog.com
+
+
+</PRE>

@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1329] in "Coldmud discussion meeting"</TITLE>
+<H1>[1329] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1329"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1325"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1328"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1328"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1330"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>RE: [COLD] New ColdCore and Core Upgrader available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 21 18:28:46 1997
+)</H3>
+<PRE>
+Date: Thu, 21 Aug 1997 16:23:54 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: "Luther, Clay" &lt;clay@selsius.com&gt;
+cc: "'coldstuff@cold.org'" &lt;coldstuff@cold.org&gt;
+In-Reply-To: &lt;97D99B08E012D111A0CE00805F70754FB83A@RAPHAEL&gt;
+
+On Thu, 21 Aug 1997, Luther, Clay wrote:
+
+&gt; I downloaded the new core and set it up, but I am getting a (sort of
+&gt; annoying) message everytime I log on.
+&gt; 
+&gt; It's the "this message will continue to appear for $admins until someone
+&gt; answers all the questions" message.
+&gt; 
+&gt; Unfortuantely, I *have* answered all the questions (at least it's
+&gt; stopped asking me).  Now, why doesn't it go away?
+&gt; 
+&gt; Later.
+
+Augh, bug.. since the core isn't writable it couldn't remove the call to
+itself.  Simply remove $admin.login to get rid of the message..
+
+-Brandon
+
+</PRE>

@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [596] in "Coldmud discussion meeting"</TITLE>
+<H1>[596] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?596"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="594"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="595"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="595"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="597"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: A subtle ingeritence question.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 25 16:29:16 1994
+)</H3>
+<PRE>
+From: cadams@weather.Brockport.EDU
+To: jeffpk@netcom.com (Jeff Kesselman)
+Date: Fri, 25 Nov 1994 15:58:51 -0500 (EST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199411250637.WAA21336@netcom16.netcom.com&gt; from "Jeff Kesselman" at Nov 24, 94 10:37:38 pm
+
+what Jeff Kesselman really MEANT to say was:
+&gt; 
+&gt; This is a fairly sublte question regarding inheritence:
+&gt; 
+&gt; Object A
+&gt;    has method foo
+&gt;    has method bar which calls foo
+&gt; 
+&gt; Object B
+&gt;    is a child of Object A
+&gt;    has method foo
+&gt; 
+&gt; B.bar() will call WHICH foo when invoked?
+
+B.bar() will call B.foo()
+
+</PRE>

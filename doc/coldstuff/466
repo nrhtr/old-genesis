@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [466] in "Coldmud discussion meeting"</TITLE>
+<H1>[466] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?466"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="463"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="465"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="465"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="467"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="467"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="467"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Coldmud v0.12</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Oct 20 18:41:52 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: nop@ccs.neu.edu (Jay Carlson)
+Date: Thu, 20 Oct 1994 15:36:04 -0700 (PDT)
+Cc: lim@gs.tandem.com, coldstuff@MIT.EDU, nop@orodruin.ccs.neu.edu
+In-Reply-To: &lt;199410202221.SAA08710@orodruin.ccs.neu.edu&gt; from "Jay Carlson" at Oct 20, 94 06:21:14 pm
+
+&gt; I can maintain an archive of Coldmud sources at ftp.ccs.neu.edu (aka 
+&gt; ftp.mud.org) if people will let me know what I'm supposed to archive.
+
+I suppose somebody should put together a proper archive of 0.12 and do this..
+I'd been kinda planning to at least fix the known bugs (or let somebody else
+fix the bugs) before doing this myself, tho..
+
+Really, the patched version of 0.10 (0.10.4?) is the last "official" release of
+the server (where is 0.10.4, anyway?).. the rest is actually still semi-beta
+stuff..
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

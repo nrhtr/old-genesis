@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [665] in "Coldmud discussion meeting"</TITLE>
+<H1>[665] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?665"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="664"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="664"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="664"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="666"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Let's re-open the assignments as expressions debate</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar  7 14:16:54 1995
+)</H3>
+<PRE>
+From: brandon@petersboro.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Tue, 07 Mar 95 12:11:17 -0700
+
+&lt; Greg's postion is that assignment expressions lead to bad style which should
+&lt; not be permitted if the language is to be readable and gain acceptance.
+&lt;
+&lt; Quinn's argument is that the programmer should be given the freedom to choose
+&lt; how ugly or unreadable his code is.
+
+Although I agree with Greg, I also agree with Quinn.  But, in my opinion
+(after a bit of comparison/thought on the matter) I do not believe that
+adding assignments as expressions makes it any less readable.  I.e. I would
+be for the change.  However, I _DO_ think that in order for the change
+to be implemented, we must change the assignment operator (to anything but
+a single equals sign).  THIS is what causes assignments as expressions
+to become convulted and confusing, in my opinion...
+
+&lt; Is anyone still interested in Cold? Will ColdX take over Cold's role in the
+&lt; world? Is anyone more interested in the old Cold now that it may gain this
+&lt; patch? Will Brandon add this to ColdX? Will Colin put this in his server?
+&lt; Does anyone care about Cold at all anymore?
+
+Go ahead and send me the patch, I'm still learning bits and pieces of yacc,
+but I can put it in the next release (once it is decided what operator to
+use...). (BTW, anybody know of a standard way to "turn on" verbose errors
+with yacc, other than #define'ing YYERROR_VERBOSE? (as this doesn't seem to
+be the right way--I need to get that damn yacc book)).
+
+-Brandon (Lynx)-
+</PRE>

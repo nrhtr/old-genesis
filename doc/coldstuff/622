@@ -1,0 +1,69 @@
+<HEAD><TITLE>discuss@charon: [622] in "Coldmud discussion meeting"</TITLE>
+<H1>[622] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?622"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="621"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="621"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="621"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="623"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="623"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="623"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Timer object</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 19 09:51:38 1994
+)</H3>
+<PRE>
+To: jeffpk@netcom.com (Jeff Kesselman)
+Cc: coldstuff@MIT.EDU, zachary@pentagon.io.com
+In-Reply-To: Your message of "Sat, 17 Dec 1994 20:01:26 PST."
+             &lt;199412180401.UAA18659@netcom13.netcom.com&gt; 
+Date: Mon, 19 Dec 1994 08:47:47 -0600
+From: Zachary  &lt;zachary@pentagon.io.com&gt;
+
+
+ &gt;From: jeffpk@netcom.com (Jeff Kesselman)
+ &gt;Message-Id: &lt;199412180401.UAA18659@netcom13.netcom.com&gt;
+ &gt;Subject: Timer object
+ &gt;To: coldstuff@MIT.EDU
+ &gt;Date: Sat, 17 Dec 1994 20:01:26 -0800 (PST)
+ &gt;X-Mailer: ELM [version 2.4 PL23]
+ &gt;Mime-Version: 1.0
+ &gt;
+ &gt;
+ &gt; I've written a first pass at a simpel timer object.  The idea was a 
+ &gt; minimal suite of functionality to allow 'system independance' of functions
+ &gt; that need a timed call back.  
+ &gt; 
+ &gt; Its small and should be pretty self-explanatory.  It supports two kinds 
+ &gt; of call backs, a one-shot (called an alarm) and a periodic (called a clock.)
+ &gt; 
+ &gt; How close the timing is to the timign asked for is a function of the 
+ &gt; period of the heartbeat.  You need to put a call to $timer.pulse() in the 
+ &gt; system heartbeat function.
+ &gt;
+ &gt; Its quite possible that there are more efficient ways to do what I
+ &gt; am doing, particularly in the resetting of a clock callback.  If someone
+ &gt; can suggest better code, Ild be more then happy to use it.
+ &gt;
+ &gt; All comments are welcome.
+ &gt;
+ &gt; Jeff Kesselman
+
+ [ code omitted ]
+
+ looks okay, but I think you can make it a bit more efficent in the average case by
+ keeping the list of callbacks in order from soonest to latest - this changes your
+ check each tick to O(1) (ie constant time to check to see if just the first thing has
+ happened yet) at the expense of making your inserts O(n) with n the length of the list.
+ Average insert case is then actually O(n/2), but who's counting?
+
+ This should not be taken as a criticism of your code in any way - it looks good and it's
+ nice to see people writing Cold code and sharing it :)  Keep up the good work!
+
+ --Zachary
+
+
+
+</PRE>

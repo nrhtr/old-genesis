@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [154] in "Coldmud discussion meeting"</TITLE>
+<H1>[154] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?154"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="153"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="153"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="153"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="155"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="156"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="156"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: hrm, and mod by zero</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Mar 22 13:30:38 1994
+)</H3>
+<PRE>
+From: zachary@io.com (Zachary )
+To: BRANDON@cc.usu.edu
+Cc: coldstuff@MIT.EDU, zachary@io.com
+In-Reply-To: Your message of Mon, 14 Mar 94 01:21:52.
+             &lt;01H9Y07SRFQ0B8K09B@cc.usu.edu&gt; 
+Date: Tue, 22 Mar 94 12:26:00 CST
+
+
+&gt;&gt; I guess the mod by zero isn't fixed yet, either..
+&gt;&gt; (thought it was fixed in .10)
+
+I'm only a minor C hacker, but even I can fix this one. uhm... 
+arithop.c, line 100 says:
+ 
+ } else if (d2-&gt;type == 0) { 
+
+when it should say:
+
+ } else if (d2-&gt;u.val == 0) {
+
+to test for the 'are we dividing by zero' case.  
+I've also found the source of the random(0) error, but am not sure of the
+behaviour desired if someone DOES do a random(0)... 0? error? 1? other?
+
+ --Zachary
+</PRE>

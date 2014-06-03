@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [47] in "Coldmud discussion meeting"</TITLE>
+<H1>[47] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?47"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="46"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="48"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>client robots</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov 17 21:43:22 1993
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Wed, 17 Nov 93 18:36:56 PST
+
+I'm probably just stating the obvious here...
+
+I'm sure this isn't a new idea, but I see no reason all NPC's couldn't be
+controlled by one off-db program (if you have an extra computer). Have 
+someone's program log in as 'GameMaster',
+and have the GM control its charachters as puppets.
+
+This would have the advantages of a client robot, while only requiring one
+extra computer for several (50? 100?) robots. I don't know how much load this
+would put on the server, communication wise, but I bet it could be optimized to
+be far less then an equal number of single-robot programs or actual players.
+
+Just think, MOO's and MUDs are multi-threaded, and they don't even know it...
+-- 
+</PRE>

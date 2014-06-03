@@ -1,0 +1,98 @@
+<HEAD><TITLE>discuss@charon: [1212] in "Coldmud discussion meeting"</TITLE>
+<H1>[1212] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1212"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1211"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1213"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] patch: *the* corruption bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 15 06:27:14 1997
+)</H3>
+<PRE>
+Date: Wed, 15 Jan 1997 12:19:27 +0100 (MET)
+From: Miroslav Silovic &lt;silovic@public.srce.hr&gt;
+To: coldstuff@cold.org
+
+
+Okay, I finally found the damn thing. And it was in my code. Jeffk, feel
+free to ignore my request, I figured it out (and purify prolly wouldn't
+have helped, either. :) )
+
+The problem was in scatter assignment, when you used @ to assign the
+tail, it left references to freed memory (due to a bug in refcounting).
+This caused memory corruption later in the execution. Notably,
+@add-shorthand, CML compiler and debugger were hit by this bug,
+and so was everything that used $list.sum.
+
+I also fixed missing check_stack in op_scatter_start and another memory
+leak in scatter assignment.
+
+The patch:
+
+*** Genesis-1.0p21/src/ops/operators.c	Sun Dec 15 00:05:53 1996
+--- Genesis-1.0p21-new/src/ops/operators.c	Wed Jan 15 12:04:14 1997
+***************
+*** 1926,1944 ****
+  	    break;
+  	}
+  
+  	case SPLICE: {
+  	    Int len=list_length(l);
+  
+  	    if (list_index &gt;= len)
+  		/* Sorry, we're out of data. Empty list. */
+  		list_index = len;
+  	    /* Don't anticipate if we're not at the top level */
+  	    if (stack[stack_pos-3].type == INTEGER)
+  		anticipate_assignment();
+  	    c = ++cur_frame-&gt;pc;
+! 	    push_list(list_sublist(l, list_index, len-list_index));
+  	    (*op_table[opcodes[c-1]].func)();
+  	    if (cur_frame-&gt;pc != c+1)
+  		return;
+  	    pop(1);
+  	    break;
+--- 1926,1947 ----
+  	    break;
+  	}
+  
+  	case SPLICE: {
+  	    Int len=list_length(l);
++ 	    cList *sublist;
+  
+  	    if (list_index &gt;= len)
+  		/* Sorry, we're out of data. Empty list. */
+  		list_index = len;
+  	    /* Don't anticipate if we're not at the top level */
+  	    if (stack[stack_pos-3].type == INTEGER)
+  		anticipate_assignment();
+  	    c = ++cur_frame-&gt;pc;
+! 	    sublist = list_sublist(list_dup(l), list_index, len-list_index);
+! 	    push_list(sublist);
+! 	    list_discard(sublist);
+  	    (*op_table[opcodes[c-1]].func)();
+  	    if (cur_frame-&gt;pc != c+1)
+  		return;
+  	    pop(1);
+  	    break;
+***************
+*** 1954,1963 ****
+--- 1957,1967 ----
+  	cthrow (type_id, "Attempting to scatter non-list (%D)",
+  		&amp;stack[stack_pos-1]);
+  	return;
+      }
+  
++     check_stack(2);
+      stack[stack_pos+1]=stack[stack_pos-1];
+      stack[stack_pos-1].type=INTEGER;
+      stack[stack_pos-1].u.val=0;
+      stack[stack_pos]=stack[stack_pos-1];
+      stack_pos+=2;
+</PRE>

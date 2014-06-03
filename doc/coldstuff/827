@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [827] in "Coldmud discussion meeting"</TITLE>
+<H1>[827] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?827"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="825"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="826"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="826"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="828"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="828"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="830"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: protected and private object variables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Oct 15 18:34:57 1995
+)</H3>
+<PRE>
+Date: Sun, 15 Oct 1995 18:29:03 -0400 (EDT)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+In-reply-to: &lt;9510140417.AA06850@smithfield.declab.usu.edu&gt;
+To: 869683 Gillespie Brandon James &lt;brandon@smithfield.declab.usu.edu&gt;
+Cc: coldstuff@pippin.ece.usu.edu
+
+
+
+On Fri, 13 Oct 1995, 869683 Gillespie Brandon James wrote:
+
+&gt; From this, $foo_1,test starts as 0.  I call $foo_1.test(1), and $foo_1,test
+&gt; becomes [1], because 'test in bar' gets the value of bar from $foo, rather
+&gt; than from $foo_1, because it is a private variable.  If $foo_1 were to
+&gt; define another method, and attempt to access bar, it would not work (just
+&gt; as it should not).
+&gt; 
+&gt; Is this something I should add?
+
+Maybe, maybe not, but from the way you explained it, the names are 
+totally wrong.  They should be 'instance' and 'class' variables, or 
+'child' and 'definer' variables if you want to be obnoxiously classless.
+
+--
+James "obnoxiously classless" Deikun
+writer of wrongs * the fender of justice * guardian of the holy chow
+******** Two wrongs don't make a right, but three lefts do. ********
+</PRE>

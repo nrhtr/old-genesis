@@ -1,0 +1,33 @@
+<HEAD><TITLE>discuss@charon: [442] in "Coldmud discussion meeting"</TITLE>
+<H1>[442] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?442"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="441"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="443"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="443"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="453"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>assignment, while (etc)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Sep 23 13:17:09 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Fri, 23 Sep 1994 23:10:15 -0400 (EDT)
+From: colinm@ozemail.com.au (Colin McCormack)
+Reply-To: colinm@ozemail.com.au
+
+It strikes me that one of C--'s features is its similarity to C++.
+
+Hence, assignment `=' (should be an expression)
+       equality `==' (if you can't tell the difference, learn to program)
+       while (abomination) { abomination } (abomination) - syntax sucks rocks.
+
+My A$0.02
+
+Colin.
+
+</PRE>

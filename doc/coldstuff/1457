@@ -1,0 +1,84 @@
+<HEAD><TITLE>discuss@charon: [1457] in "Coldmud discussion meeting"</TITLE>
+<H1>[1457] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1457"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1456"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1458"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1458"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1463"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>pueblo format bug</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Oct 25 16:47:32 1999
+)</H3>
+<PRE>
+From: "Tony Dorge" &lt;lasorin@mb.sympatico.ca&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Mon, 25 Oct 1999 15:09:51 -0700
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0006_01BF1EFA.FC55C540
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+i have noticed that in the $pueblo_format.format() method that the 12th =
+line has an error, it currently reads.
+
+
+return str_to_buf(str + "\n");
+
+but shouuld read
+
+
+return str_to_buf(str + "&lt;br&gt;");
+
+i hope this is helpful to futur user.
+
+Thanks=20
+
+Corfire=20
+
+------=_NextPart_000_0006_01BF1EFA.FC55C540
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+
+&lt;META content=3Dtext/html;charset=3Diso-8859-1 =
+http-equiv=3DContent-Type&gt;
+&lt;META content=3D'"MSHTML 4.72.3110.7"' name=3DGENERATOR&gt;
+&lt;/HEAD&gt;
+&lt;BODY bgColor=3D#ffffff&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;i have noticed that in the=20
+$pueblo_format.format() method that the 12th line has an error, it =
+currently=20
+reads.&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;&lt;BR&gt;return str_to_buf(str +=20
+&amp;quot;\n&amp;quot;);&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;but shouuld read&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;&lt;BR&gt;return str_to_buf(str +=20
+&amp;quot;&amp;lt;br&amp;gt;&amp;quot;);&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;i hope this is helpful to futur=20
+user.&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;Thanks&amp;nbsp;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 size=3D2&gt;&lt;/FONT&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT color=3D#000000 =
+size=3D2&gt;Corfire&amp;nbsp;&lt;/FONT&gt;&lt;/DIV&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+
+------=_NextPart_000_0006_01BF1EFA.FC55C540--
+
+</PRE>

@@ -1,0 +1,104 @@
+<HEAD><TITLE>discuss@charon: [504] in "Coldmud discussion meeting"</TITLE>
+<H1>[504] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?504"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="503"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="505"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="511"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="511"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Driver cleanup</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 18:32:04 1994
+)</H3>
+<PRE>
+From: brandon@riverheights.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Tue, 01 Nov 94 16:29:49 -0700
+
+Ok, this is primarily directed towards riche now that he is in the hotseat,
+but I'm swinging it by everybody for the heck of it.  Most of this you have
+probably seen by me already.
+
+This is a list of 'cleanup' changes to the driver.  The primary purpose
+of most of these changes is to clarify their usage, or, to just fix them :)
+
+Proposed Changes:
+
+------------------------------------------
+set_name()                  =&gt; set_dbref()
+del_name()                  =&gt; del_dbref()
+get_name()                  =&gt; get_dbref()
+
+This has a few fold reasons.  A: because is makes it easier to figure out
+what a 'name' is.  B: use dbref versus objname because the documentation
+already calls the suckers dbrefs.  C: use dbref versus objname because
+when using both objname and objnum there was a bit of confusion (I did it
+for a while).
+
+------------------------------------------
+run_script()                =&gt; execute()
+
+This is more of a principle thing.  Since it uses exec() to run the 'scripts',
+it doesn't mean they ARE scripts, they can be anything.  It would also be
+nice to add an interface where you would do:
+
+execute($object, "execstring", [args as before])
+
+and it would call $object.stdin and $object.stderr with the stdin and stderr
+of "execstring" (for simplicity just have it return the output after
+execstring exits).
+
+------------------------------------------
+connect()                   =&gt; open_connection()
+disconnect()                =&gt; close_connection()
+bind()                      =&gt; bind_port()
+unbind()                    =&gt; unbind_port()
+assign_conn()               =&gt; reassign_connection()
+
+Along with the above changes would be method changes of:
+
+conn_object.connect()  =&gt; .connection_started('inbound, "ip", port, socket)
+                       =&gt; .connection_started('outbound, "ip", port, socket)
+
+Currently connect is not only misleading, as it is the same name as the
+system function connect() (which does a totally different thing), but it
+calls the method differently depending upon where the connection originated
+(inbound or outbound).  Just send the same args, specifying which type of
+connection it is with the 'symbol.
+
+conn_object.failed()   =&gt; .connection_failed("addr", port, socket)
+
+------------------------------------------
+Everything above I feel strongly about (SOMETHING should be done, at the
+least with the connection stuff--I'm saying this from experience in writing
+a completely configurable $network/$daemon/$inbound[outbound]_connection/
+$connection_interface heirarchy: networking needs help).  The rest is
+more trivial.
+------------------------------------------
+set_heartbeat_freq()        =&gt; set_heartbeat()
+db_top                      =&gt; max_objnum()
+
+The above two are just gratuitous, but which I think just "feel" nicer (shrug).
+
+------------------------------------------
+Make assignments with ':=' rather than '='.  This is _NOT_ to make it closer
+to Pascal, but rather to simplify the language.  Using a semi colon-&gt;equals
+sign combination not only virtually eliminates the ever constant problem
+of people using assignments when they meant to use a comparison (I dont give
+a rats ass about good programers, good programers are not the only ones who
+use a system--and I am always dealing with the 'other' users of a system--I
+know how they think (sorta)), but it also makes sense.  In the english
+language an 'assignment' of sorts is made using the semi colon.  Example: &lt;an 
+example would follow here&gt;.
+------------------------------------------
+As long as the idea is to keep code linear rather than horizontal, I would
+like to see '-=' and '+=' added.  They add a touch of simplicity and as
+long as a statement cannot be an expression they do not add much more
+complexity.
+
+-Brandon
+</PRE>

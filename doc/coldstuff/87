@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [87] in "Coldmud discussion meeting"</TITLE>
+<H1>[87] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?87"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="86"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="88"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="88"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="99"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ANSI codes and unreadables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Dec  3 23:01:24 1993
+)</H3>
+<PRE>
+Date: Fri, 03 Dec 1993 20:56:43 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Ok, right now the server simply ignores any ansi/unreadable code (ie doesnt
+save it in any text or anything).  I can see the viewpoint that it breaks
+clients, but I still think that it should at least be there.  This is because
+you may want to have a 'graphics' type mode, which can return colored text, and
+various other fun things.  YES you can use special readable codes like ~[[1m
+instead of CRT[[1m, but then you have to have special clients which recognize
+your secret codes, and other funky things.  It wont really happen in otherwords
+(at least not on a large scale).
+
+The thing which made me think about this was I have been talking to a large
+part of the VR community here at USU, and a LARGE portion of them would, if
+they had to make the choice, use raw telnet over a client--to get colored and
+nifty ansi characters.
+
+I realize that most/all the tiny family of muds does not use these characters,
+well do I care about tradition?  :)
+
+-Brandon
+
+(As for having abuse of it, it may be possible to control unreadables through
+$sys (dunno))
+</PRE>

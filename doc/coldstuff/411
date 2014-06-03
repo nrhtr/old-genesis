@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [411] in "Coldmud discussion meeting"</TITLE>
+<H1>[411] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?411"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="410"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="410"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="410"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="412"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re:  Impromptu faq</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Sep 15 18:57:41 1994
+)</H3>
+<PRE>
+Date: Thu, 15 Sep 1994 15:52:04 -0700
+From: bookwyrm@netcom.com (Kim)
+To: coldstuff@MIT.EDU
+
+&gt;This isn't really a faq, but we've had the same question three times in a very
+&gt; short span of time with some vague answers but no resolution. I avoided
+&gt; answering the questions because there are no definite answers, however, I will
+&gt; tell you what I know:
+
+Thank you, this information is much appreciated...
+
+&gt;  Jordan Baker continues to do server hacking. He and others are trying to find
+&gt;   and squash the bug which is causing the server to hang on linux machines. He
+&gt;   also plans to add floating-point support. There has been talk of adding more
+&gt;   attributes to methods besides "disallow_overrides", specifically "private"
+&gt;   and "instance_only". The first has been successfully added to 0.12.0, but
+&gt;   was removed because Jordan didn't trust the changes bug-wise. He also isn't
+&gt;   yet convinced that it is a Good Thing (tm).
+
+I would like to help with this.  I am running on a linux machine right
+now, and am very interested in floating point support.  Is there a 
+contact point for this effort?
+
+I am currently trying to plan out a database with three dimensional
+coordinates, events, and possibly adding some sort of distributed 
+support, barring how much dreaming I do.
+
+Kim
+bookwyrm@netcom.com
+bookwyrm@solluna.mindspring.com
+</PRE>

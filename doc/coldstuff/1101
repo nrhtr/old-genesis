@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [1101] in "Coldmud discussion meeting"</TITLE>
+<H1>[1101] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1101"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1100"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1102"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1103"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1103"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Patch 16 available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Oct 24 21:09:00 1996
+)</H3>
+<PRE>
+Date: Thu, 24 Oct 1996 18:58:25 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: coldstuff@cold.org
+
+This fixes the MINLONG problem (now using the newer standard limits.h).
+A bug with forked methods is fixed (they were not cleaning up the caller's
+stack and returning the task id like they were supposed to).  I also fixed
+a minor bug with $string.dbquote_explode().
+
+-Brandon
+
+</PRE>

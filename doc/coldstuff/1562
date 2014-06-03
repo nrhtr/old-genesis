@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [1562] in "Coldmud discussion meeting"</TITLE>
+<H1>[1562] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1562"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1561"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1563"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1563"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1563"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>binary tree/other..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Mar 11 18:01:14 2000
+)</H3>
+<PRE>
+Date: Sat, 11 Mar 2000 17:47:15 -0600
+To: coldstuff@cold.org
+From: roacho@xamocorp.com
+In-Reply-To: &lt;20000310172611.C78607@ice.roguetrader.com&gt;
+Reply-To: coldstuff@cold.org
+
+I need to write some code which will be used in 3 places whenever a request
+is made to my server. It is to keep track of unique ips. I will likely
+write it a few different methods and test for speed/memory usage, however I
+would appreciate any suggestions that peopel have.
+
+I am currently considdering taking the ip and turning it into a single
+integer and using objects in the database as nodes in a binary tree.  I'm
+not sure how much overhead will come with the use of all those objects.
+I'm also think of using nested dictionaries and a list to store the ip's by
+hierarchical numbering based on the four number fields. I know dictionaries
+tend to be slow, and ColdC's non-mutable datatypes can be a pain, but I
+dont know what is the lesser of the two evils.
+
+Anywho, I'm off to write some code.. if someone can suggest something
+better please do.
+
+</PRE>

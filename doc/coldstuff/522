@@ -1,0 +1,94 @@
+<HEAD><TITLE>discuss@charon: [522] in "Coldmud discussion meeting"</TITLE>
+<H1>[522] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?522"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="521"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="523"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="528"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>discussion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 00:29:56 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Fri, 4 Nov 1994 21:29:00 -0800 (PST)
+
+My responses to things I just read, no particular order, yadda, yadda. :)
+
+The dbm bugs was in fact experienced under Linux.
+
+Some have experienced (primarily under linux) a hanging problem. Server just
+ sticks. No IO is processed, ps says process is sleeping. Seems to be a
+ problem with select() itself. (according to what I overheard)
+
+I don't want the assignment operator changed because I am not convinced that
+ having it be '=' poses a problem. I would like to see assignment be an
+ expression so that the developers may decide what 'good code' is. I
+ aprove of the do &lt;statement&gt; while (&lt;test&gt;) &lt;statement&gt; change.
+
+I am for adding a seconds limit, but against a per-task tick limit.
+
+I am for allowing the db to manipulate the second and tick limits.
+
+I am (sorta) for making ticking out become an auto pause().
+
+I am for request_callback() but against removing pause() because pause() makes
+ it easier to cope with loops you are sure will go for a while. (as in a
+ db-search function, see @grep at the FA site at sequoia.picosof.com)
+
+I like the builtin-binding thing but would prefer that bound functions
+ automatically send that message to the object they are bound to when used
+ by other objects, as done in LambdaMOO. For those not familiar with this
+ change, it would mean that binding db_top() to $data would cause the
+ execution of db_top() by an object other than $data to be interpreted
+ identically to $data.db_top().
+
+I would like to see the IO interface modified as recomended but also unified
+ such that the interface is identical not including the parameters passed in
+ the interface functions/methods. Er...
+If .parse is called for connections it shoudl be for pipes as well. Perhaps
+ we are talking about even more profound changes such as renaming .parse to
+ .recive_pipe_data(source, data) where source is 'pipe_stdout, 'pipe_sterr,
+ 'connection, 'file, etc. Or do we want to allow multiple bindings at all?
+ Handles? I don't know. :)
+
+I like the idea of allowing the reciving object to catch ~methodnf before the
+ calling object, and I don't really care how it is implemented, wihtin reason.
+ This would make writing a distributed db type thing VERY easy. I guess that's
+ what Riche was saying. :)
+
+textdump format changes - How about 'static' for var? 'parameter'? 'property'?
+
+I just remebered a sort of bug/feature that makes hanging the server not so 
+ hard to do. It goes like this: catch ~max_depth with a recursive handler. I
+ forget the details and when I did this I ended up getting SEGV because I was
+ passing a string back in error_str() and adding to it and it got bigger than
+ 4meg or whatever the maximum size of a string is. DUnno what to recommend if
+ anything.
+
+Would like the bind_function capability to be extended to make binding server
+ throws possible (for debugging purposes). I might want to
+ bind_function('throw, $error, [~varnf]) before running a particular section
+ of code and have $error.throw() suspend the task that caused the throw and
+ notify the programmer that a broken task is waiting for inspection. Could
+ even bind_function('throw, $method_redirector, [~methodnf])...
+
+And if you bound throw() and ran across one on an object other than what it was
+ bound to the result could be either a return or an actual throw based on the
+ handler's .throw method :)
+
+I am definetly in favor of local as a method flag (formerly known as private).
+
+That's all I can think of right now.
+
+Thanks, Riche, for taking over development. Your todo/discussion list looks
+ encouraging. :)
+
+Crag / Robert
+</PRE>

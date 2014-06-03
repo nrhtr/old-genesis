@@ -1,0 +1,76 @@
+<HEAD><TITLE>discuss@charon: [1309] in "Coldmud discussion meeting"</TITLE>
+<H1>[1309] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1309"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1308"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1310"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Recieving SMTP email in your ColdCore</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul 15 18:27:20 1997
+)</H3>
+<PRE>
+Date: Tue, 15 Jul 1997 16:22:25 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+
+A good solution to the long problem of easilly relaying internet SMTP
+email to a mail host has been found by Brad Roberts with help from a few
+other sources.  Essentially this requires a specific hostname which has an
+MX entry pointing to the relay gateway.  Any and all mail sent to this
+host will be relayed to the ColdCore (so this host will no longer receive
+mail in the standard way--which is why it should be a seperate hostname).
+
+The DNS MX entry should likely look something like:
+
+YOURHOST  in      a       206.81.134.107
+YOURHOST  in mx   0       REAL.HOST.RELAY.COM.
+
+With the MX entry in DNS setup correctly, the next step is to configure
+sendmail to accept the host and relay it appropriately. To do this you
+need to setup your mailertable to recognize the host as a cold relay host.
+Define cold in sendmail.cf as:
+
+Mcold,          P=[IPC], F=mDFMuX, S=11/31, R=21, E=\r\n, L=990,
+                T=DNS/RFC822/SMTP,
+                A=IPC $h 1125
+
+After this is defined simply add an entry to your mailer table like:
+
+    SITENAME.SITE.COM  cold:REAL.SITE.COM
+
+The Cold rule tells it to relay it to the specified host, on port 1125. 
+The mailertable location will vary.  Look in your sendmail.cf file for:
+
+    Kmailertable
+
+With these installed, you should be able to receive internet mail on your
+Cold server without problem.
+
+We have decided to supplement this idea by creating a subdomain to the
+cold.org domain of 'site', where anybody running a cold server can request
+a name and with a minimal donation ($5 or more/year), we will create the
+name and MX record for the server.  This will allow the MX to work as
+above, for mail relaying, and will also allow PLACE.site.cold.org to point
+directly to the specific cold server.  For instance, with the name shadows
+we would create the internet hostname 'shadows.site.cold.org'.  Users
+around the world could connect to this Cold server by using the address
+'shadows.site.cold.org', and the MX record would also relay mail
+appropriately.
+
+In the situations where the mail volume would not be high, and the server
+cannot alter its own sendmail configuration and mailer tables, we will
+also be the mail relay.
+
+If you are interested, you can register your server at:
+
+    http://www.cold.org/servers/register.html
+
+And I will respond with more information.
+
+</PRE>

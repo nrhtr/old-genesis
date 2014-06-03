@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [568] in "Coldmud discussion meeting"</TITLE>
+<H1>[568] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?568"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="565"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="567"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="567"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="569"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="569"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="577"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Assignment Operator.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  8 20:17:10 1994
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Tue, 08 Nov 94 18:15:08 -0700
+
+&lt; a valid reason for not changing it: you have to rewrite all existing code.
+&lt; trivial but annoying. 
+
+I thought of this, and 1 unix command would suffice (from a valid textdump):
+
+sed "s/ = / := /g" textdump &gt; textdump.out
+
+(although it would mess up any text you had with ' = ' in it).
+
+&lt; even more trivial: its an extra character ;)
+
+Damn, I didn't think of that 8)
+
+&lt; I don't see arguments about difficulty of grasping the concept of
+&lt; assignment vs test of equality as particularly reasonable. That would
+&lt; be like changing english "no" to something else just because japanese
+&lt; "no" means something different. explain the concept of assignment,
+&lt; explain the concept of test for equality, then explain the sybols for
+&lt; these operations.
+
+It isn't the concept of assignment versus test of equality that people
+get hung up on, it is just simple confusion of a single equals sign with
+a double equals sign.  (Do keep in mind: even though you may not see many
+people experiencing this problem, it still is a problem.  Ask yourself how
+much time you spend helping 'newbies' (the more time you have spent the
+more aware to this actual circumstance you would be)).
+
+-Brandon (Lynx)-
+</PRE>

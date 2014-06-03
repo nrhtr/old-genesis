@@ -1,0 +1,78 @@
+<HEAD><TITLE>discuss@charon: [56] in "Coldmud discussion meeting"</TITLE>
+<H1>[56] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?56"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="50"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="55"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="55"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="57"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="58"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="58"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: rehash: heirarchy</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov 19 11:17:09 1993
+)</H3>
+<PRE>
+To: stewarta@netcom.com (Alex Stewart)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Thu, 18 Nov 1993 23:22:25 PST."
+             &lt;199311190722.XAA11540@mail.netcom.com&gt; 
+Date: Fri, 19 Nov 1993 10:00:43 -0600
+From: Erik Ostrom &lt;eostrom@pepperoncini.gac.edu&gt;
+
+&gt;							    I'm also
+&gt; not quite sure why players are descendants of $container and
+&gt; $located instead of simply being descended from $box, but that's a
+&gt; minor point.
+
+Just to expand a little on an earlier comment, since Jay doesn't seem
+to want to flame about this right now:
+
+The relation between me and the hat I am wearing is not the same as
+the relation between a bottle and the water it contains.  I am a
+container in that my spleen is inside me, but I don't think that's
+what most people intend when they make users descendants of
+containers.
+
+It would be nice to be able to consider these relations separately.
+
+&gt; Also, WHAT are you going on about with the $user thing?  
+
+Yes, Lynx, why is $person renamed to $user in your diagram?
+
+Hm, after a little preliminary thinking, here's my attempt at a
+user/robot hierarchy (whee, ascii art!):
+
+         $person                     $user
+            | 		            /  |  \
+      [$rpg_person] 	           /   |   \
+            |      \__	          /    |    \
+            |         `[$character]    |     \
+    $building_person        | 	       |      \
+	    |       \    $guest        |       \
+	    | 	     \_____________    |        \
+  $programming_person              `$builder     \
+                     \_______________________     \
+					     `$programmer
+
+Sigh.  The idea here is to separate "an object which has &lt;rpg,
+building, programming&gt; commands available" from "an object which
+handles connections and represents an actual user."  So $character,
+$builder, and $programmer each are determined solely by their
+inheritance from $user and a person class.
+
+$person means "an object which executes commands" and basically acts
+like a person in some sense, whether a robot or a real user.
+
+Not everyone wants RPG functionality, so $rpg_person and $character
+should be easily detachable; $building_person should inherit from
+$person or $rpg_person if it exists, and $guest should inherit from
+$user or $character.
+
+BTW, stuffing everything into a flat namespaces is really lame.
+
+Just tossing out ideas (and one content-free remark)
+--Erik
+</PRE>

@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [636] in "Coldmud discussion meeting"</TITLE>
+<H1>[636] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?636"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="633"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="634"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="635"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="637"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="639"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="642"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: is the request line open?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan 17 00:18:50 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Mon, 16 Jan 95 22:16:06 -0700
+
+&lt; Just in case the request line is open and before I forget
+&lt; again, what about including SUFFIX,PREFIX?
+&lt;
+&lt; Should these two commands be in the server or in the
+&lt; database(s)?  Or are they already in the server and
+&lt; I didn't look carefully enough.
+
+They are not currently in the server or any databases which I know about.
+
+Personally, I do not plan on implementing them.  They are a primitive hack,
+and a much better system can be designed and implemented (totally in-db).
+(Of course, I'm the one who thinks you should encode all text and use a
+specifically designed client).
+
+Of course, I would say this is more an in-db concern.
+
+-Brandon (Lynx)-
+</PRE>

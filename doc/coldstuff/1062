@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1062] in "Coldmud discussion meeting"</TITLE>
+<H1>[1062] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1062"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1061"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1063"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1063"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1063"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Re: frobs</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Aug 10 17:30:41 1996
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+Date: Sat, 10 Aug 1996 23:15:34 +0200 (MET DST)
+
+&gt; 
+&gt; Solutions:
+&gt; 
+&gt;   * Prefix frob methods with 'frob_' (or some other such prefix), which 
+&gt;     is handled behind the scenes and on-the-fly.  This is _ok_, but it
+&gt;     would kill any efficiency with using Frobs.
+&gt;   * Create multiple 'scopes' for methods where they do not cross.  I.e.
+&gt;     you could have two .name() methods, one for use when it is called
+&gt;     from a frob, and one for when it is called from an object.  This could
+&gt;     be further extended to private methods as well, although then you
+&gt;     would either have to devise a special 'local-call' operator (other
+&gt;     than '.') or you would have to add more lookup steps to the current
+&gt;     method lookup.
+&gt; 
+&gt; 
+
+Okay, here was my answer to the problem: Instead of a change in the method
+naming (which fubars lookup), I suggested adding 'frob flag to methods.
+The flag would act as follows:
+
+	* if method flagged as frob is called like object.method(), it will
+	  behave like a normal method. In particular, an attempt to override
+	  a !over method will fail (and the parent's method will be called).
+	* if method flagged as frob is called like (&lt;object, rep&gt;).method(),
+	  it will take priority.
+
+This behaves similarily as different namespaces, except that you can
+call frob methods like normal ones (unless they're overriding parents),
+you can easily make them recursive, and there is no cruft in the lookup
+code (except for overriding, then it would become slightly more complex).
+
+Brandon dislikes this idea, I still don't understand the reasons. Thoughts? :)
+
+	Miro
+</PRE>

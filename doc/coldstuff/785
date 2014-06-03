@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [785] in "Coldmud discussion meeting"</TITLE>
+<H1>[785] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?785"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="784"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="786"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="787"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="787"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Diogenes Club skeleton up and running</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Aug 25 12:31:51 1995
+)</H3>
+<PRE>
+From: jeffpk@netcom.com (Jeff Kesselman)
+To: coldstuff@MIT.EDU
+Date: Fri, 25 Aug 1995 09:07:28 -0700 (PDT)
+
+Hey all:
+
+The skeletal form of The Diogenes Club is up and running on:
+   telnet://diogenet.net:1138
+
+Some warnings and caveats:
+
+0) You MUST sue a tlenet protocol compliant client (such as telnet.)
+
+1) The telnet protocol handler is in alpha stage.  If it fails for you,
+   thats not a shock, but I'd like to hear the details.
+
+2) Currently the only terminal types supported are vt100 and linux console.
+   (I have to add a names-list gwenerator to my termcap converting
+    PERL script.  Otehrwise I'd have to add each one to my names.index
+    by hand.  yech!)
+
+3) Currently all that is supported is login, look, and @logout.
+
+Jeff Kesselman
+jeffpk@netcom.comA
+</PRE>

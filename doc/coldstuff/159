@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [159] in "Coldmud discussion meeting"</TITLE>
+<H1>[159] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?159"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="158"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="160"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>coldmud-0.10.patch1</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar 23 18:27:47 1994
+)</H3>
+<PRE>
+Date: Wed, 23 Mar 1994 16:22:15 -0600 (MDT)
+From: Lynxian Theologies &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+It is available at:
+
+  ftp://lab_backup.lib.usu.edu/pub/brandon/cold_dark/coldmud-0.10.patch1
+
+It isn't extremely huge, but fixes some crippling bugs.  Changes:
+
++ divide by zero bug fixed, now throws ~div (Zachary)
+
++ random(0) bug fixed, now throws ~range (Zachary)
+
++ Database load/save error fixed (would segfault before) (Crag)
+
++ VERSION_BUGFIX changed to 1
+
+-------------------------------------------------------------------------
+
+
+-Brandon (Lynx)
+</PRE>

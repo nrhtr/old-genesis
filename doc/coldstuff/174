@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [174] in "Coldmud discussion meeting"</TITLE>
+<H1>[174] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?174"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="167"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="170"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="173"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="175"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="177"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="178"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Encapsulation</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 25 20:36:44 1994
+)</H3>
+<PRE>
+Date: Fri, 25 Mar 1994 18:20:33 -0600 (MDT)
+From: Lynxian Theologies &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; Umm, whats the difference between adding something to the containers contents, 
+&gt; and asking the container to add someting to its contents? and why is adding 
+&gt; someting to the cointaier's contents not setting the containers contents variable?
+
+Hsm, Zachary already covered this, but i'm feeling like a bastich so i'll do it
+again, in simple terms (as thats all I can think of them in ;)
+
+   $you are an object, $he is an object, you are carrying $it.  In order for
+$you to give $it to $he you do NOT simply take his ,contents parameter and tack
+him onto the end of the list, $you calls $he.new_content($it) the .new_content
+(or whatever its called, these are bogus names) method then adds it to its own
+contents.  For all $you know, $he is adding $it to a parameter called
+,my_wankin_contents, and you dont care.
+
+-=-
+
+Anyhow, I know what you are going through.  When I first snagged coldmud Greg
+was cringing in fear when he'd see "Connected: Lynx" wherever he was at, and
+i'd run up and ask him just about the same question's you've asked so far 8)
+
+I've since come to understand the point of view Greg is coming from, and
+actually like it better than MOO.  Well, cold is just all around better than
+MOO, like I havn't said that enough already.  B)
+
+-Brandon (Lynx)
+</PRE>

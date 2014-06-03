@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1114] in "Coldmud discussion meeting"</TITLE>
+<H1>[1114] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1114"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1112"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1112"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1113"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1115"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1115"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1115"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] My @who doesn't work with a4</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  3 03:26:55 1996
+)</H3>
+<PRE>
+From: levi@Nexus.wolfenet.com (Levi Pearson)
+To: frankc@maddog.com (Frank Crowell)
+Date: Sun, 3 Nov 1996 00:11:02 -0800 (PST)
+Cc: coldstuff@cold.org
+In-Reply-To: &lt;327C5CEA.46BABE0A@maddog.com&gt; from "Frank Crowell" at Nov 3, 96 00:50:50 am
+Reply-To: levip@wolfenet.com
+
+&gt; 
+&gt; I am trouble getting @who to work in Cold Core Alpha 4; Alpha 3 works
+&gt; okay (same Genesis version).
+&gt; 
+
+	The realm frob is messed up, you need to (as an admin) do
+
+@set here:realm=Creation
+
+	That should clear up that particular problem.
+
+
+			--Levi
+</PRE>

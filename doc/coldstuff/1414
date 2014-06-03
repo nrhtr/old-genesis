@@ -1,0 +1,73 @@
+<HEAD><TITLE>discuss@charon: [1414] in "Coldmud discussion meeting"</TITLE>
+<H1>[1414] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1414"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1412"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1413"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1413"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1415"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Genesis 1.1p3-STABLE released</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr  3 01:46:02 1998
+)</H3>
+<PRE>
+From: ubmitche@mcs.drexel.edu (Bruce Mitchener)
+To: jeffk@tenetwork.com
+Date: Fri, 3 Apr 1998 01:41:30 -0500 (EST)
+Cc: brandon@roguetrader.com, coldstuff@cold.org
+In-Reply-To: &lt;3.0.32.19980402222455.012bd928@mail.tenetwork.com&gt; from "jeffk@tenetwork.com" at Apr 2, 98 10:24:57 pm
+
+From the doc/CHANGES file:
+
+1.0-37 [18-Sep-97] Brandon
+      * added 'partial or 'full option to $http.encode(), default
+        is 'full, if 'partial is given it will only encode what
+        is required for the path part of an HTTP URL (Brandon)
+      * fixed fflush(): was erroring when it shouldn't be (Brandon)
+      * fixed an ordering problem when .disconnect() was called, after
+        a lot of urging by Jeff Kesselman ;b (Brandon)
+      * fixed a bug in native .ip() -- wasn't referencing right var (Brandon)
+      * added explicit close in errfile and logfile, if needed (Brandon)
+      * coldcc will now whine in some cases where data isn't formatted
+        correctly, with a var definition (Brandon)
+      * depth search of ancestors on $root was returning [] not [$root]
+      * buf_to_str*() was removing '\t' instead of translating it to a space
+
+so...
+yes.
+
+ - Bruce
+
+&gt; Brandon:
+&gt; 
+&gt; Has that order problem with disconnect() where the message is thrown before
+&gt; the socket is actually closed fixed in this release?
+&gt; 
+&gt; Was it fixed earlier and did I miss it?
+&gt; 
+&gt; JK
+&gt; 
+&gt; Jeffrey P. Kesselman
+&gt; Senior Game Integration Engineer
+&gt; Total Entertainment Network
+&gt; 
+&gt; "Any intelligent fool can make things bigger, more complex, and more
+&gt; violent. It takes a touch of genius -- and a lot of courage -- to move
+&gt; in the opposite direction." 
+&gt; 	ALbert Einstien
+&gt; 
+&gt; Unite for Java! - http://www.javalobby.org
+
+
+-- 
+Bruce Mitchener, Jr.
+ubmitche@mcs.drexel.edu
+
+Vote Monarchist!  (licensed from Black Unicorn &lt;unicorn@schloss.li&gt;)
+Ego sum rex romanus, et super grammatica.
+
+</PRE>

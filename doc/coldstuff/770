@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [770] in "Coldmud discussion meeting"</TITLE>
+<H1>[770] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?770"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="764"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="764"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="769"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="771"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="771"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="786"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: fork() vs send()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Aug 19 13:15:01 1995
+)</H3>
+<PRE>
+From: Chuck Adams &lt;cadams@weather.Brockport.EDU&gt;
+To: brandon@avon.declab.usu.edu (869683 Gillespie Brandon James)
+Date: Sat, 19 Aug 1995 11:08:45 -0600 (MDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9508160513.AA15091@avon.declab.usu.edu&gt; from "869683 Gillespie Brandon James" at Aug 15, 95 11:13:04 pm
+
+869683 Gillespie Brandon James drew these hieroglyphs:
+&gt; 
+&gt; I've been toying with the implementation of fork(), and Jeff brought up that
+&gt; it may be better to implement something slightly different, such as:
+&gt; 
+&gt;     send(object, 'method, [args])
+&gt; 
+&gt; Which would be virtually the same as object.method(args), except for that
+&gt; it "forks" off.
+&gt; 
+&gt; Anybody have comments on this, compared to a direct fork() implementation?
+
+my vote is for a direct fork implementation.  send() just doesn't hint
+at forking.  if you want to get LPmuddish (you may stop laughing now),
+you could call it call_out(), but fork is so much more versatile, and
+lets you fork off a whole block of code instead of a single method
+call.
+
+However, they're actually semi-different concepts anyway.  fork() has
+to copy the execution environment, whereas send() wouldn't have to.
+So send() would be a lot "cleaner" than using an explicit fork.  Am I
+far off the mark here?
+
+Anyway, I suggest two things if you do create it:
+
+1. Call it something different.  send() just doesn't say 'fork'.
+
+2. An argument for a delay time ala fork (n)
+</PRE>

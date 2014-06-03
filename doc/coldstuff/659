@@ -1,0 +1,32 @@
+<HEAD><TITLE>discuss@charon: [659] in "Coldmud discussion meeting"</TITLE>
+<H1>[659] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?659"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="658"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="660"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Cold Dark Core 1.2 release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar  2 00:20:17 1995
+)</H3>
+<PRE>
+Date: Wed, 1 Mar 1995 22:18:36 -0700
+From: brandon@nibley.declab.usu.edu.declab.usu.edu (869683 Gillespie Brandon James)
+To: coldstuff@MIT.EDU
+
+Ok, the 1.2 release of the Cold Dark core is available on sticky.usu.edu
+in /pub/brandon/coldmud/world-CDC-1.2.tar.gz.  It is a parsed textdump
+and should be much easier to build than the previous dump.  It includes
+hypertext help system, ctext and other goodies (including mail).  However,
+most of these projects are still in debug state.  This release is so
+people can have a core which works with the ColdX driver.
+
+Enjoy!
+
+-Brandon (Lynx)-
+</PRE>

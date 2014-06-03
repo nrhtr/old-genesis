@@ -1,0 +1,52 @@
+<HEAD><TITLE>discuss@charon: [1211] in "Coldmud discussion meeting"</TITLE>
+<H1>[1211] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1211"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1210"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1210"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1210"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1212"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Down n Dirty native methods</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 15 04:07:24 1997
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+In-Reply-To: &lt;3.0.32.19970114200659.00683cf4@mail.tenetwork.com&gt; from Jeff Kesselman at "Jan 14, 97 08:07:00 pm"
+To: jeffk@ten.net (Jeff Kesselman)
+Date: Wed, 15 Jan 1997 09:59:07 +0100 (MET)
+Cc: coldstuff@cold.org
+
+&gt; Okies,
+&gt; I need to be able to create a method invocation from inside my native
+&gt; method.  I'm implementing the TEN security/billing interface and its based
+&gt; on callbacks from an idle function.  Trying to translate that to something
+&gt; else will cost me e\seriosu efficiency ADN a lot of unecc C coding.
+&gt; 
+&gt; What I need is a function like Perl5's perl_call().
+&gt; Does this exist? If nto, coudl someone write one fairly quickly??
+&gt; 
+&gt; Jeff K.
+&gt; 
+
+Actually call_method() was already hacked to put the current task into
+the background and call a new method as needed. But it crashes the
+driver and wouldn't work with the callbacks that pause. To spell
+it out: current virtual machine doesn't allow calling from C
+to ColdC. And yes, this is major problem (we hope to deal with it
+when we have multithreaded server, then we'll also rewrite multitasking).
+For the temporary solution: check the #ifdeffed part in task() (or
+call_method, I'm not sure), enable it, find out why it crashes, and
+make sure that new task runs atomically (so that it actually returns).
+Another way to do it is to use the trick from scatter assignment, where
+one operator puts the necessary stuff on stack, returns to the interpreter,
+and another operator picks up when the other left. Hope this helps (since
+my current priority is debugging - we have stability problem).
+
+	Miro
+
+</PRE>

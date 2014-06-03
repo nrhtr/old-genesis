@@ -1,0 +1,31 @@
+<HEAD><TITLE>discuss@charon: [62] in "Coldmud discussion meeting"</TITLE>
+<H1>[62] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?62"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="61"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="63"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="63"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="63"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>clear params</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 20 19:30:14 1993
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Sat, 20 Nov 93 16:19:45 PST
+
+Heh, I thought Greg gave a pretty decent reason not to have clear parameters.
+They would allow the parents to affect the children in ways the parents don't
+have control over. He also pointed out how simple it is to implement defaults
+without them.
+
+Therefore, I ask...Do we really wnat them?
+
+What have I started....
+-- 
+</PRE>

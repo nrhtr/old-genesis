@@ -1,0 +1,174 @@
+<HEAD><TITLE>discuss@charon: [532] in "Coldmud discussion meeting"</TITLE>
+<H1>[532] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?532"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="517"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="531"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="531"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="533"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="533"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov  5 15:51:18 1994
+)</H3>
+<PRE>
+Date: Sat, 5 Nov 1994 15:48:52 -0500 (EST)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: Alex Stewart &lt;riche@crl.com&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199411050558.AA21366@crl4.crl.com&gt;
+
+
+
+On Fri, 4 Nov 1994, Alex Stewart wrote:
+
+&gt; Yeah, yeah, I know.. (I read that discussion too) If you want to rewrite
+&gt; ColdMUD's error handling system feel free.  In the mean time, however, having
+&gt; _some_ way to control atomicity is better than having none at all, and this
+&gt; construct would be useful at the very least for avoiding the entirely awful
+&gt; situation in MOO where for a whole bunch of utility object verbs you've got
+&gt; :foo() and :foo_suspended() and :bar() and :bar_suspended() and on and on.
+
+I suppose you're right, but I still think it'd be better to rewrite error
+handling sooner than later.
+
+&gt; Not much (it involves an extra builtin, a counter in the server, and a minor
+&gt; addition to the main processing loop).  Why?
+
+I was kind of referring to the aspect of replacing pause() with
+request_callback().
+
+&gt; &gt;     bind()                    =&gt; listen(port, object)
+&gt; &gt;     unbind()                  =&gt; unlisten_port(port)
+&gt; &gt;                                  unlisten_object(port)
+&gt; &gt;                                  unlisten(port, object)
+&gt; &gt;                                  listeners(port)
+&gt; &gt;                                  listened_ports(object)
+&gt; 
+&gt; Ick.. listen? (I dunno, just an aesthetic thing, but I never liked that name)
+&gt; Why so many ways to unbind and check up on things?  I don't see any need for
+&gt; more than unlisten_port(port) and possibly listeners, tho that's a frill,
+&gt; really (that info can be kept in-DB too).
+
+Well, the name is arguable, I suppose.  The idea behind my proposal was
+to possibly allow listening to a port with multiple objects, but on
+reflection that may be more trouble than it's worth.  I'd now suggest:
+
+       listen/bind(port, object)
+       un[listen/bind](port, object)
+       un[listen/bind]_port(port)
+       un[listen/bind]_object(object)
+       listener/something(port)
+       listened_ports/something(object)
+       rebind_all(object)                 which rebinds all ports
+                                          this object is bound to
+                                          to &lt;object&gt;.
+
+This basically allows an object to listen to more than one port, 
+but not for a port to be listened to by multiple objects.  It's
+flexible in how you choose to access or change information, which
+I think allows it to be used more flexibly in application.  An
+object wouldn't need to know what port(s) it was listening on to
+hand them off somewhere else, for example.
+
+&gt; Well, come up with a good overall scheme for keeping everything properly
+&gt; generic and I'll look into it.. as it is, I'm having a hard enough time
+&gt; figuring out a decent way to make pipes and net connections work the same way,
+&gt; and I'm thinking it might be best to not bother and let the DB construct
+&gt; generic interfaces (which can easily be done in-DB anyway) instead.  More
+&gt; flexible that way too.
+
+The proper way to genericise would to me seem to be:
+
+  port =&gt; anything on which an inbound or outbound connection can be made
+  address =&gt; anywhere a connection can come from or be made to
+  connection-info =&gt; information about a connection, including the address,
+                     the port, the direction, things like socket numbers...
+
+Connection-info would be given to the object connected to.  Generally
+the first arg would be the connection, the second arg would be the
+port, the third the address, and the fourth the remainder.
+
+Yes, these names conflict with other things.  Call them what you want
+if you decide to implement them, unless it's something like 'shep'. :)
+
+&gt; Where would the error be thrown?  Are you suggesting that the open_connection()
+&gt; call should wait for the connection to be established or fail before continuing
+&gt; on with its own task?  I think this is a big step backwards.  One of the things
+&gt; I really like about ColdMUD is that all its network I/O is asynchronous.
+
+I was kind of thinking of open_connection() suspending the task pending
+completion of the attempt.  Is this a horrible thing?  To me it seems
+a tremendous simplification in terms of programming, although I suppose
+you could do the same thing with clever use of suspend/resume and the
+callbacks.  This would, however, require the connection object to be
+aware of the task using it to make outbound connections, and this would
+tend to limit reusability unless one is extremely careful.
+
+&gt; Well, I was kinda trying to keep everything grouped together under a similar
+&gt; naming convention..  maybe .connection_receive()..
+
+Sounds good, if long.  I'd kind of like to see the same method being
+used between objects in-DB, too.  There should conceptually be a
+matching method to be used in the other direction.  Why not the same
+one?  Because that wouldn't allow objects to be used as 'filters'.
+
+&gt; &gt; This wouldn't work well with something like MOO's NP_SINGLE network
+&gt; &gt; module.
+&gt; 
+&gt; True, but ColdMUD doesn't have that.  If it did, or does in future, then under
+&gt; that particular setup it would make sense to send everything to stderr instead,
+&gt; but for other setups I don't see why we shouldn't take advantage of the two
+&gt; streams and use them the way they were intended..
+
+The only problem with this being you'd have a screw case that'd require
+a significantly different command line to start even just the server
+part.
+
+&gt; Actually, the minimum, in my opinion, should be completely up to the particular
+&gt; character set that the server is compiled to support.  Currently there is only
+&gt; a US-ASCII based server, but there's no reason that one shouldn't be able to
+&gt; convert it to being all EBCDIC (shudder) based if they wanted to.  It might
+&gt; require a few language alterations, but there's no reason it couldn't do all
+&gt; its internal processing in EBCDIC, save EBCDIC textdumps, etc.
+
+Sorry.  That should be "all the characters used for identifiers or elements
+of C-- other than the contents of string literals".
+
+Of course, if you were to run away from the server-based compiler model
+with all due speed this requirement would be reduced.  They still should
+not include vertical spacing characters and the like.
+
+&gt; No, this is exactly what I'm saying should _not_ be a consideration.  What a
+&gt; buffer is or isn't should have absolutely nothing to do with what the data in
+&gt; the buffer represents.  The 8-bit specification is simply to define how the
+&gt; arbitrary bit pattern is broken up for processing and conversion to a text
+&gt; representation when it's displayed, etc, and 8-bit is used because that's the
+&gt; smallest breakdown commonly required for any binary data.
+
+Sounds good.
+
+&gt; Well, all I can say is you obviously have very little concept of proper
+&gt; security in a computer environment.  I bet you have the same password on all
+&gt; your MUDs and never change it too.  
+
+You lose.  Pay up.  I've never used the same password two places anywhere 
+on or off the net since I started out in BBSing.  I've never used the sort
+of passwords that make crackers cackle gleefully either.
+
+&gt; The simple point is that this level of added protection can't hurt and can make
+&gt; holes (which will _always_ exist.  Anyone who thinks their software is
+&gt; bug-free shouldn't be writing software) MUCH more difficult for someone to
+&gt; exploit and/or hide their exploitation.
+
+Like I said, it would make maintenance very awkward, it would destroy the
+model of the DB as a more-or-less self-contained system, and it could
+easily be implemented in-DB with protection for compile() and the like.
+Private/local is a good idea.  This is not.
+
+--
+James Deikun (James@JHM, James &amp; Splat@BlueMOOn)
+</PRE>

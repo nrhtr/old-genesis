@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [702] in "Coldmud discussion meeting"</TITLE>
+<H1>[702] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?702"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="691"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="701"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="701"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="703"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="703"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="703"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: continuing the debates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 10 23:59:56 1995
+)</H3>
+<PRE>
+Date: Fri, 10 Mar 1995 20:55:12 -0800
+To: coldstuff@MIT.EDU
+From: jeffpk@netcom.com (Jeff Kesselman)
+
+&gt;&lt; I'm just nit picking and stuff. For now add_method will take two args. The
+&gt;&lt; name and structure. (add_method('foo, #[['flags, []]...]))
+&gt;
+&gt;That is probably the best.
+&gt;
+&gt;&lt; I will have default values for all elements of the dictionary, too. #[] will
+&gt;&lt; be a valid program. :)
+&gt;
+&gt;Actually, it should never assume what is being handed it is a valid program,
+&gt;have it check anyway (ugh, this could get scary...)
+
+Would be nice, but I'd settle fo a run-time "exception" (throw) of invalid
+op-code. After all, thats what a modern processor does.  In general, I want
+this level to be fast and efficient ratehr then bullet-proof...
+
+Actually, I guess in the spirit of things I'd rather the checks be in a
+"proofread_coldcode()" call that is independant from assignment.
+
+BTW: I love this idea because it also opens up the way ofr
+alternate-compilers are seperate yacc/lex programs, or even a Coldmud IDE,
+now THERES an idea...
+
+Jeff Kesselman
+
+
+
+</PRE>

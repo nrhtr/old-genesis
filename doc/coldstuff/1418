@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1418] in "Coldmud discussion meeting"</TITLE>
+<H1>[1418] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1418"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1417"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1419"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Genesis 1.1p4-STABLE release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 27 03:09:32 1998
+)</H3>
+<PRE>
+Date: Wed, 27 May 1998 01:03:12 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+
+A new release of Genesis.  Changes list:
+
+      * fixed some error reports (Bruce)
+      * fixed an include problem with Solaris, and some warnings (Bruce)
+      * fixed bug with set_method_access on an invalid method (Bruce)
+      * fixed bug with strsed throwing wrong error msg (Bruce)
+      * fixed bug with match_pattern and case sensitivity (Brian)
+      * fixed bug with `[x] * x (Brad)
+      * fixed *graft() function bugs (Bruce/Brandon)
+      * re-integrated and updated testing utility (Brandon/Bruce)
+      * fixed 'make lint' (Brandon)
+
+-Brandon Gillespie
+</PRE>

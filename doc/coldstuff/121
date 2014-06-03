@@ -1,0 +1,65 @@
+<HEAD><TITLE>discuss@charon: [121] in "Coldmud discussion meeting"</TITLE>
+<H1>[121] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?121"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="117"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="120"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="120"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="122"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="122"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="124"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: getting it to work..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 13 17:07:22 1993
+)</H3>
+<PRE>
+To: quinn@DUS.Mountain.Net (Quinn Avery)
+Cc: gblake@mis.nu.edu, seth@alchemy.TN.Cornell.EDU, coldstuff@MIT.EDU
+In-Reply-To: &lt;199312132127.AA13379@DUS.Mountain.Net&gt; 
+Date: Mon, 13 Dec 1993 13:56:15 -0800
+From: Gregory Blake &lt;gblake@mis.nu.edu&gt;
+
+
+On Mon, 13 Dec 1993 16:27:41 -0500  Quinn Avery wrote:
+
+&gt;&gt;I'm looking to create a core that is more accessable to the TinyMUD
+&gt;&gt; family people out there, because that's one way to attract them.
+&gt;
+&gt;What does that mean `accessable to the TinyMUD family'?  Isn't that
+&gt; taking a step backwards?  After MOO, tinymuds seem so awkward and
+&gt; primitive to me.
+&gt;
+&gt;It is nice that we have several cores being developed.  Maybe one
+&gt; of MOO's drawbacks is that there is only one real core-db being
+&gt; used (besides maybe an OpalCore someday).
+&gt;
+&gt;-quinn
+
+I don't think so... The nice thing about TinyMUD style things is
+that they make it easy for people who aren't programmers to sit
+down and build by reading through a 2 page document.  If you take
+something like TinyMUCK, which has builders and programmers &lt;though
+on most MUCKs everyone is a builder&gt;.  There are a lot of basic
+building things you can do as a builder.  You can create fairly
+complex puzzles with just exits and locks and the messages you can
+set.  What this means is that you don't HAVE to be a programmer
+to do somewhat fancy things.
+
+The other reason I want the compatability with my core is that
+there are a lot of people out in the Tiny community who WOULD use
+things like MOO or Cold more if they were able to use some of the 
+commands they are used to.
+
+Also... this is stuff that would go on the builder parent, which
+means I'm talking mostly about interface type stuff and how I
+want things to behave &lt;for instance... i like being able to be
+able to set @succs on rooms, it does have a purpose :).  And
+if you ask I'll explain it to you:)&gt;.  If you are a programmer
+and you're setting up an area sure, you can make all kinds of
+fancy stuff.  But much stuff you build won't have that level
+of complexity.
+
+snooze
+</PRE>

@@ -1,0 +1,89 @@
+<HEAD><TITLE>discuss@charon: [382] in "Coldmud discussion meeting"</TITLE>
+<H1>[382] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?382"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="381"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="381"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="381"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="383"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="383"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="384"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Compiling Cold on BSDI</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jul 21 08:04:15 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: puff@netcom.com (Steven J. Owens)
+Date: Thu, 21 Jul 1994 04:59:44 -0700 (PDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199407210612.XAA13147@netcom3.netcom.com&gt; from "Steven J. Owens" at Jul 20, 94 11:12:03 pm
+
+&gt; 
+&gt; 
+&gt; Hokay, I tried the macho route and quickly caved in to reveal the
+&gt; whimpering code-craven that I truly am.  Has anybody gone this route
+&gt; and figured out The Answers to installing Cold on BSDI?  
+
+I've only ever tried SunOS and Linux. I was gonna try Irix but the machine
+ I was gonna try it on didn't have bison.
+
+&gt; I made all of the recommended edits for BSD 4.3 and SunOS, but I get
+&gt; the following results when I run the make.  Is this a flaw in the BSDI
+&gt; include files, or is Cold neglecting to include a proper file for
+&gt; BSDI?
+&gt; 
+&gt; (Yes, yes, I know, it's not Cold's fault, BSDI is breaking some sort
+&gt; of rule and it's not posix-complaint or whatever, but that still
+&gt; leaves me between a rock and a hard place).
+&gt; 
+&gt; Anxiously awaiting your insight...
+&gt;                                    Puff
+&gt; 
+&gt; ------------------------------------------------------------
+&gt; gcc -Wall -O -fomit-frame-pointer -c data.c
+&gt; In file included from /usr/include/ctype.h:50, from data.c:6:
+&gt; /usr/include/runetype.h:59: syntax error before `rune_t'
+&gt; /usr/include/runetype.h:74: syntax error before `rune_t'
+&gt; /usr/include/runetype.h:77: syntax error before `char'
+&gt; /usr/include/runetype.h:81: syntax error before `rune_t'
+&gt; /usr/include/ctype.h: In function toupper:
+&gt; In file included from data.c:6:
+&gt; /usr/include/ctype.h:167: structure has no member named `mapupper'
+&gt; /usr/include/ctype.h:167: subscripted value is neither array nor pointer
+&gt; /usr/include/ctype.h: In function tolower:
+&gt; /usr/include/ctype.h:174: structure has no member named `maplower'
+&gt; /usr/include/ctype.h:174: subscripted value is neither array nor pointer
+&gt; data.c: In function data_cmp:
+&gt; data.c:83: warning: implicit declaration of function `bcmp'
+&gt; *** Error code 1
+&gt; 
+&gt; Stop.
+&gt; ------------------------------------------------------------
+&gt; 
+
+Syntax errors suggest something more fundamental to me. I usualy get warnings
+ about pointers and things when I make under SunOS, but this looks way
+ different.
+
+The only error I know anything about is the implicit declaration of bcmp. This
+ (as you will no doubt recall) is the function used in place of memcmp for
+ SunOS. I don't know much about BSD or SunOS, much less BSDI, but if you know
+ of a system routine which behaves the way memcmp is supposed to, use it
+ instead. If you know where it's declared, include that.
+
+I doubt that I'm telling you anythign you hadn't thought of, but I'm often
+ surprised at what people don't know. :)
+
+Incidentally, while the README recomends replaceing memcopy calls, I recomend
+ just using bcopy and swapping the from and too args.
+
+-- 
+Unexpectant
+
+Meditate with no thought of gain.
+Expect no ambitions to be fulfulled;
+Only then will the inner force manifest.
+</PRE>

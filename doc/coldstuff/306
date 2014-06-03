@@ -1,0 +1,75 @@
+<HEAD><TITLE>discuss@charon: [306] in "Coldmud discussion meeting"</TITLE>
+<H1>[306] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?306"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="305"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="307"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="307"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="322"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>logging, fact and fiction</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May 23 21:27:51 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Mon, 23 May 1994 18:18:46 -0700 (PDT)
+
+Due to recent posts I feel it's necessary to state how things currently
+ work (?). This will be a review for most of you.
+
+The server is aware of only two objects. They are #0 and #1. #0 is the
+ 'system' object and #1 is the 'root' object. The only permission checks
+ the server ever does is to prohibit execution of certain builtins by objects
+ which are not one of these. For example, the create() function will throw
+ ~perm if run by a method defined on any object other than $sys.
+
+log() is a system function. This makes sense, since it means people can't
+ 'spoof' a log entry. This means, however, that all logging must go through
+ a method defined on $sys.
+
+This information is prompted by a comment somewher that the ability to turn
+ off logging scared a poster. This should not scare em any more than the
+ ability to turn off object creation.
+
+I hope this clears things up without being overly condesending in tone. :)
+
+I also hopes this explains why I wasn't worried about moving time in-db. If
+ someone gets far enough along to screw up $sys.log then having log() only
+ log strings will not make a bit of difference. I also applaud Lynx on his
+ initiative. Thanks for making the 10.3 patch available.
+
+Crag
+
+P.S. I too have been having odd server problems, such as a blank startup
+ and crashing on textdump. I am even using 11.4, which has been modified
+ extensively. However, since the next release is already underway and will
+ be what amounts to an overhaul, I am not going to fuss over these problems.
+
+P.P.S. Note to individuals wanting to make their dbs compatible with future
+ releases: The following have changed for version 11.x
+
+traceback() returns a list of values instead of strings. It is of the form
+[[~error, "msg (formerly returned by error_str()", arg (formerly returned by
+ error_arg())],
+ ['thrower ('opcode | 'method), opcode or method ('GET_OBJ_VAR, etc)],
+ (and the rest are the stack frames, as in [~error, 'method, #definer, #this, line])
+]
+
+I believe the CD core parsed the old traceback() into this form. This will no
+ longer be necessary.
+
+error_arg() and error_str() are contained in traceback() and have been removed.
+
+dict_add_elem() and dict_del_elem(0 have been removed. They may be coded in-db
+ with dict_add() and dict_del(), as well as a setadd() or setremove() and some
+ other logic.
+
+These are all the language changes that were made. To make a textdump 11.x
+ compatible, remove all references to error_*() and dict_*_elem().
+
+</PRE>

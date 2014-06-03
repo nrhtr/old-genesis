@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1149] in "Coldmud discussion meeting"</TITLE>
+<H1>[1149] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1149"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1141"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1148"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1148"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1150"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] scatter/optional assignments - request for discussion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 30 12:18:06 1996
+)</H3>
+<PRE>
+Date: Sat, 30 Nov 1996 09:13:40 -0800 (PST)
+From: Brian Buchanan &lt;brian@wasteland.calbbs.com&gt;
+To: Miroslav Silovic &lt;Miroslav.Silovic@public.srce.hr&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199611291401.PAA11414@jagor.srce.hr&gt;
+
+Wow!  Cool!  Just one problem, and that's that something like:
+
+#2 = 6;
+
+generates a `Parse error in scatter argument list.', when it should be 
+something like `Illegal expression on left side of assignment.', since #2 
+isn't a list.
+
+
+Oh, anyone attempting to apply this patch should `make scrub' before 
+recompiling.  It will save you lots of grief. :)
+
+Brian
+
+</PRE>

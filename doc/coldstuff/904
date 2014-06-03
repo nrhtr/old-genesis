@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [904] in "Coldmud discussion meeting"</TITLE>
+<H1>[904] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?904"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="903"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="905"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="905"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="905"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] ColdCore for 3-1 ??</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan 18 23:29:29 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@tombstone.sunrem.com
+Date: Thu, 18 Jan 1996 20:15:13 +0000
+Reply-To: coldstuff@tombstone.sunrem.com
+
+Hey all:
+
+Having convinced myself that I shoudl fold my own efforts back into 
+the ColdCore mainstream, I went to set up the latest genesis and 
+ColdCore.  Imagine my suprise when, according to the web page, I
+found out that there is no ColdCore available for the latest genesis 
+yet.
+
+This is especially confusing as ColdDark claims to be running Genesis 
+3.0 and CDC 2.0.  Is this due to the text dump bug mentioned earlier? 
+ If so, would it be worth releasing a tar of the 2.0 binary tree 
+as a stop gap?  Or should I regress back to Genesis 2-10?
+
+Thanks
+
+Jeff Kesselman
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+Clinton Gingrich Atomic Biological Bomb NSA -- Hi John!
+(A message for my friend in the NSA)
+*******************************************************
+</PRE>

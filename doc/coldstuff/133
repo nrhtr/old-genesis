@@ -1,0 +1,154 @@
+<HEAD><TITLE>discuss@charon: [133] in "Coldmud discussion meeting"</TITLE>
+<H1>[133] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?133"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="132"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="134"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>alpha 0.1 cold emacs-list code for mud.el</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Jan  1 05:15:57 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Sat, 01 Jan 1994 04:04:07 -0600
+From: Adam Harris &lt;harris@cs.uchicago.edu&gt;
+
+
+Here's the code I've developed for emac to let me do local
+editing of programs, a la C-C C-V in mud.el for MOOs.
+I know it's rough and nasty, but it works for me.
+
+If you would like to see some other function implemented for cold,
+ask me and maybe I'll try to tackle it.  Or if you've developed
+better code, I'd like to have it! ;)
+
+Instructions:  insert the following lines in your mud.el, or
+have it be required in mud.el.  I actually use mud-telnet.el, but
+it should work for either.
+
+  Also, I've created a $commands object which intercepts the
+suffix/prefix strings and ignores them.  It's trivially easy to
+do.  I don't know what LambdaMOO does for it's local editing and
+prefix/suffix stuff, but maybe something along these lines will
+make it into ColdWorld.
+
+-adam
+----------------------cut here-----------------------
+
+;;; cold -- by adam harris, harris@cs.uchicago.edu
+;;;  Jan 1, 1994  0.1 alpha
+; based on MOO stuff, even uses moo-filter
+
+(defun define-cold-mode-commands ()
+  (define-key (current-local-map) "\^c\^v" 'cold-get-method-listing)
+  (define-key (current-local-map) "\^c\^d" 'cold-get-description))
+
+(defvar cold-mode-hook '(define-cold-mode-commands))
+(defvar cold-filter-hook
+  '(moo-filter mud-check-page mud-check-reconnect
+	       mud-fill-lines))
+; prefixes have nasty counter-effect of making "I don't understand" stuff
+; but it's just temporary until the cold core changes to accomodate these
+; command strings
+; NB: Changing these can break the code!
+(setq moo-prefix "===COLD-Prefix===" 
+      moo-suffix "===COLD-Suffix===")
+(defvar cold-delim-string nil)
+(defvar cold-delim-regexp nil)
+(defvar cold-object nil)
+			  
+
+(defun cold-do-fetch (prompt object-fmt command-fmt fixer)
+  (setq cold-object (format object-fmt (read-string prompt))
+	moo-state 'waiting
+	moo-fixer fixer
+	mud-current-process (get-buffer-process (current-buffer))
+	moo-buffer (get-buffer-create cold-object))
+  (moo-set-delimiter moo-suffix)
+  (pop-to-buffer moo-buffer)
+  (erase-buffer)
+  (mud-send-string (concat (format command-fmt cold-object) "\n"
+			   moo-prefix "\n")
+		   mud-current-process)
+  (mud-send-string (concat moo-suffix "\n") mud-current-process)
+)
+
+
+(defun cold-get-method-listing ()
+  "Fetch the COLD code for a verb"
+  "--we can't use do-fetch because of the way this stuff is organized"
+  "  and we need separate vars for object and method -- bleech"
+  (interactive)
+  (setq cold-object (format "%s" (read-string "Edit which method? "))
+	tmpval (string-match "[.]" cold-object)
+	theobj (substring cold-object 0 tmpval)
+	themethod (substring cold-object (+ tmpval 1))
+	moo-state 'waiting
+	moo-fixer 'cold-fix-listing
+	mud-current-process (get-buffer-process (current-buffer))
+	moo-buffer (get-buffer-create cold-object))
+  (moo-set-delimiter moo-suffix)
+  (pop-to-buffer moo-buffer)
+  (erase-buffer)
+  (mud-send-string (concat 
+		    "@list " themethod " on " theobj "\n"
+		    moo-prefix "\n")
+		   mud-current-process)
+  (mud-send-string (concat moo-suffix "\n") mud-current-process)
+)
+
+
+(defun cold-get-description()
+  "Fetch the description of some object."
+  "  which is perfectly useless"
+  (interactive)
+  (moo-do-fetch "Edit description of what object: "
+                "%s"
+                "@show %s.description"
+                'cold-fix-description)
+)
+
+
+(defun cold-fix-description ()
+  "Useless function to fix up the description results.  You can't re-set stuff"
+  "this way..."
+  (let ((start (point)))
+    (search-forward "\"")
+    (delete-region start (point)))
+  (search-forward "\"")
+  (backward-char)
+  (delete-region (point-max) (point))
+  (save-excursion)
+)
+
+
+(defun cold-fix-listing ()
+  "Clean up a verb listing in cold"
+  (interactive)
+  (if (looking-at "ERROR")
+    (delete-region (point-min) (point-max))
+    )
+  (beginning-of-buffer)
+  "Replace theobj with real object defining the method"
+  (if (search-forward-regexp "^.+defined on \\(.*\\)):" (point-max) t)
+      (replace-match (concat "@program " themethod " on \\1"))
+    "else"
+    (insert (concat "@program " themethod " on " theobj "\n"))
+    )
+  "Kill the prefix line (only for world's w/o proper filters)"
+  (if (search-forward-regexp "\\(===COLD-Prefix===\\|I don't understand that.\\)\n" nil nil)
+      (replace-match "")
+    )
+  (goto-char (point-max))
+  (insert ".")
+)
+
+
+
+</PRE>

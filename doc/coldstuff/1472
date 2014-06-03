@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1472] in "Coldmud discussion meeting"</TITLE>
+<H1>[1472] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1472"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1471"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1471"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1471"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1473"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1473"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1485"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Questions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 11:12:17 1999
+)</H3>
+<PRE>
+From: rozzin@geekspace.com (Joshua Rosen)
+To: coldstuff@cold.org
+Date: Tue, 16 Nov 1999 10:41:15 EST
+Reply-To: coldstuff@cold.org
+
+&gt;1) Is ANSI colors supported what so ever inside the code? I was wanting to add color to $body.say_cmd and a few others.
+
+Yes--look into CML (Cold Markup Language, or something like that--read ?cml); feed CML-containing strings to $compiler.compile_cml, and it'll spit out Ctext frobs, which can be fed to $user.tell (or $user._tell) and will be translated into whatever format the user has set their content-type settings to (ansi, html, tkMOO...).
+
+A while back, I added a setting in my system so that users could choose to have their speech, emotes, etc. parsed for CML. I had to make a few little changes to be able to use the `append' method on strings with Ctext frobs.
+
+&gt;2) I recently was working with $described.description and noticed sender() returns $the_pit or whereever you are located. Is there something I can use to return the user like $user_soth? I'm trying to check to see if the user has a certain flag in a variable I've created named pflags so was wanting to check if(flag in pflags). 
+
+`user()' returns the user.
+`sender()' actually returns whatever object called the current method.
+
+
+</PRE>

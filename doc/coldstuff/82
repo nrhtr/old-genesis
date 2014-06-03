@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [82] in "Coldmud discussion meeting"</TITLE>
+<H1>[82] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?82"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="81"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="83"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>uhhh, the server like crashed or something :)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 29 20:15:15 1993
+)</H3>
+<PRE>
+Date: Mon, 29 Nov 1993 18:10:42 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Ok, here is the output:
+
+pid 9159 (coldmud) was killed on an unaligned access, at pc 0x40128c
+
+doesnt really help much, I can drag it into gdb and re-do the error if you
+want.
+
+Basically, what I was doing is trying to chparent something, unfortunately with
+the new way .init works in the 4.0 world you cannot initialize an object upon
+creation, anyhow in dealing with this problem I was playing around, I created
+$storymaster (it wasnt initialized) and I did: 
+;$builder.add_parent($storymaster) (was currently $person ($storymaster also
+was $person)), I was then going to $builder.del_parent($person), but it crashed
+the server...Just thought youd like to know :)
+
+-Brandon/Lynx/Me.
+</PRE>

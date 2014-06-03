@@ -1,0 +1,59 @@
+<HEAD><TITLE>discuss@charon: [381] in "Coldmud discussion meeting"</TITLE>
+<H1>[381] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?381"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="380"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="382"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="382"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="384"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Compiling Cold on BSDI</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jul 21 02:21:32 1994
+)</H3>
+<PRE>
+Date: Wed, 20 Jul 1994 23:12:03 -0700
+From: puff@netcom.com (Steven J. Owens)
+To: coldstuff@MIT.EDU
+
+
+Hokay, I tried the macho route and quickly caved in to reveal the
+whimpering code-craven that I truly am.  Has anybody gone this route
+and figured out The Answers to installing Cold on BSDI?  
+
+I made all of the recommended edits for BSD 4.3 and SunOS, but I get
+the following results when I run the make.  Is this a flaw in the BSDI
+include files, or is Cold neglecting to include a proper file for
+BSDI?
+
+(Yes, yes, I know, it's not Cold's fault, BSDI is breaking some sort
+of rule and it's not posix-complaint or whatever, but that still
+leaves me between a rock and a hard place).
+
+Anxiously awaiting your insight...
+                                   Puff
+
+------------------------------------------------------------
+gcc -Wall -O -fomit-frame-pointer -c data.c
+In file included from /usr/include/ctype.h:50, from data.c:6:
+/usr/include/runetype.h:59: syntax error before `rune_t'
+/usr/include/runetype.h:74: syntax error before `rune_t'
+/usr/include/runetype.h:77: syntax error before `char'
+/usr/include/runetype.h:81: syntax error before `rune_t'
+/usr/include/ctype.h: In function toupper:
+In file included from data.c:6:
+/usr/include/ctype.h:167: structure has no member named `mapupper'
+/usr/include/ctype.h:167: subscripted value is neither array nor pointer
+/usr/include/ctype.h: In function tolower:
+/usr/include/ctype.h:174: structure has no member named `maplower'
+/usr/include/ctype.h:174: subscripted value is neither array nor pointer
+data.c: In function data_cmp:
+data.c:83: warning: implicit declaration of function `bcmp'
+*** Error code 1
+
+Stop.
+------------------------------------------------------------
+</PRE>

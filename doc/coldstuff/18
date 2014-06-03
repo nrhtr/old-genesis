@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [18] in "Coldmud discussion meeting"</TITLE>
+<H1>[18] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?18"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="17"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="19"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>No subject found in mail header</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 23:46:41 1993
+)</H3>
+<PRE>
+Date: Mon, 15 Nov 1993 23:31:57 -0500
+From: Quinn Avery &lt;quinn@DUS.Mountain.Net&gt;
+To: coldstuff@MIT.EDU
+
+&gt;Please tell me if you want anything else added, especially if it's
+&gt; not backward-compatible.
+ 
+I would -really- like to see some regular expression matching
+ eventually.  This is really the only thing I'll miss about MOO.
+ 
+I use regexp extensively in my Almost Human Bastard (AHaB, mud-AI),
+ and I'm sure others have used it in their robots.  It's really
+ indispensable for intelligent non-player characters.
+ 
+I plan on persuading some people I'm developing for to use Coldmud
+ instead of MOO, but one of the things they really liked was AHaB.
+ 
+Any chance on getting regexp on or before 1.0?  I realise it's a
+ big addition (tho I don't realise HOW big--I'm no server wiz), but
+ would appreciate at least an estimation of the likeliness it'll
+ ever be in coldmud.
+ 
+-quinn/Hemlock
+</PRE>

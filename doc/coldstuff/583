@@ -1,0 +1,103 @@
+<HEAD><TITLE>discuss@charon: [583] in "Coldmud discussion meeting"</TITLE>
+<H1>[583] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?583"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="580"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="580"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="582"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="584"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: use of test value in a while loop</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Nov 12 22:55:28 1994
+)</H3>
+<PRE>
+Date: Sat, 12 Nov 1994 22:49:43 -0500 (EST)
+From: James C Deikun &lt;jcdst10+@pitt.edu&gt;
+To: Robert de Forest &lt;deforest@netcom.com&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199411120114.RAA17273@netcom3.netcom.com&gt;
+
+&gt; There has been a raging debate on this list on the following uglyness:
+&gt; 
+&gt; @program thing.example
+&gt;  var test_val;
+&gt; 
+&gt;  test_val = .test();
+&gt;  while (test_val) {
+&gt;    .use_of_test_val(test_val);
+&gt;    test_val = .test();
+&gt;  }
+&gt; .
+
+And ugly it surely is.
+
+&gt; A wise programmer just gave me a clue. He said the above could be re-written
+&gt;  in the following way:
+&gt; 
+&gt; @program thing.loop_code
+&gt;  arg test_val;
+&gt;  
+&gt;  test_val &amp;&amp; .use_of_test_val(test_val);
+&gt;  return test_val;
+&gt; .
+&gt; 
+&gt; @program thing.example
+&gt;  while (.loop_code(.test()));
+&gt; .
+
+I suppose it could.
+
+&gt; It costs a method call and gives you an abstraction and simplification.
+
+I'm not sure where you get this 'abstraction and simplification' idea.
+I found this form harder to understnad than the original.  It's also
+longer, and takes twice as much effort to list.  It breaks the loop code
+which is probably internally conceptually connected into two highly
+separated parts, uses up a chunk of namespace for no obvious benefit,
+and quickly becomes tremendously awkward in the likely case that the
+loop code involves the use fo several local variables.  If it also
+changes them, things become impossible, or at least horrifyingly ugly.
+
+&gt; With
+&gt;  .loop_code marked private/local/"search for method on definer() only", would
+&gt;  not be too expenseive.
+
+In the case of a simple loop, the only type in which this method is much
+use, I could see the cost of the method call being significant even if it
+was local.
+
+&gt; I hearby revoke any vote I made in favor of a new loop stucture, and vote
+&gt;  strongly against do {} while {} or any of the other propsals.
+
+I'm not sure why this is in this message; do {} while() {} wouldn't
+simplify this loop all that much anyway; however I still find
+
+@program object.example
+ var test_val;
+
+ do
+   test_val = .test();
+ while (test_val)
+   .use_of_test_value(test_val);
+.
+
+to be cleaner and shorter than either of the previous presentations, and
+only difficult to understand if it is unfamiliar.  Maybe there is a more
+'self-explanatory' syntax for such loops, but it'd still hardly be the
+least immediately clear aspect of ColdC.
+
+&gt; I no longer accept the 'let the programmer decide' argument for design because
+&gt;  Cold is a social language in that it begs for group work. That being the case,
+&gt;  its design should be such that bad code design is not possible or very hard
+&gt;  to use.
+
+Glad to see you've come around on the higher-level issues, at least.
+
+--
+James Deikun (James &amp; splat@JHM &amp; BlueMOOn)
+
+</PRE>

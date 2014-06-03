@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [894] in "Coldmud discussion meeting"</TITLE>
+<H1>[894] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?894"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="893"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="895"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] More and more parser problems</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jan 17 10:23:47 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@tombstone.sunrem.com
+Date: Tue, 16 Jan 1996 21:13:11 +0000
+Reply-To: coldstuff@tombstone.sunrem.com
+
+// &lt;whatever&gt;
+
+is legal
+
+&lt;space&gt;// &lt;whatevr
+
+is not.
+
+This is a rather rediculous limitation.  This parser just ISN'T ready 
+for prime-time folks.  I'm going back to 2.n until this stuff is 
+cleared up.  I woudl be happy to write a proper and correct parser 
+for the language if people want me to, but the context sensativity of 
+the current one is rediculous.
+
+(No offense to whomever did it.  The problem is probobly that an 
+attempt was made to mdify the old one, which was really written for a 
+line-oriented scriting language, rather then starting from scratch 
+properly.)
+
+Jeff Kesselman
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+Clinton Gingrich Atomic Biological Bomb NSA -- Hi John!
+(A message for my friend in the NSA)
+*******************************************************
+</PRE>

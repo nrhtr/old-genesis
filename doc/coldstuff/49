@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [49] in "Coldmud discussion meeting"</TITLE>
+<H1>[49] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?49"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="48"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="50"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>new frob stuff...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Nov 18 19:07:33 1993
+)</H3>
+<PRE>
+Date: Thu, 18 Nov 1993 23:52:22 GMT
+From: snooze &lt;gregb@amber.ecst.CSUChico.EDU&gt;
+To: coldstuff@MIT.EDU
+
+
+Given that I am still kinda iffy on my understanding of frobs...
+could someone out there show me how the new syntax works?
+Do we just go and sub in &lt;class, representation&gt; where $class$[representation]
+used to be?
+
+snooze
+&lt;feeling slightly dumb :)&gt;
+</PRE>

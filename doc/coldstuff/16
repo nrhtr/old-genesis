@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [16] in "Coldmud discussion meeting"</TITLE>
+<H1>[16] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?16"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="13"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="14"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="15"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="17"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="17"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="17"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: $connection and $sys.startup()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov 15 22:22:55 1993
+)</H3>
+<PRE>
+Date: Mon, 15 Nov 1993 20:17:58 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+&gt; I'd like to hear why my code wouldn't work.  Keep in mind that nothing
+&gt; keeps track of connection objects except for $sys, which starts off
+&gt; with a clean slate.
+
+I cannot recall (shoulda saved a log file).  It just printed some errors
+dealing with ~type to the logfile and didnt destroy anything...
+
+&gt; If you put it in the wrong place, yes.  The code should be placed near
+&gt; the beginning of $sys.startup().
+
+sure, now you say that :)  Althought in retrospect it does make sense.
+
+&gt; This is *not* the right way to do it.  It will leave one connection
+&gt; object, but there is no guarantee that it is the particular one that
+&gt; the system object has as the receiver on the port.  You got lucky.
+
+Well, I said that there was probably a better way to do it.  And I am lucky.
+
+-Brandon/Lynx/Me.
+</PRE>

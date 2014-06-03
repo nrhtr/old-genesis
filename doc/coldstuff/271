@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [271] in "Coldmud discussion meeting"</TITLE>
+<H1>[271] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?271"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="258"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="262"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="270"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="272"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="276"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="302"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ports</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu May 19 15:53:11 1994
+)</H3>
+<PRE>
+Date: Thu, 19 May 1994 13:44:15 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&lt; However, here's another point:  If you want to add a new standard service
+&lt; under Lynx's plan, you need to go through this whole process all over again
+&lt; to pick a port number and get everybody to agree that that number will
+&lt; represent that service forever and all time, and then hope that nothing you
+&lt; don't know about is going to kill everything dead...
+
+well, no...The idea is to define some basic system and then a few basic startup
+ports with this system.  The one I posted was to use ports xxxn, where n
+increments for different services (starting at 0 for login).
+
+&lt; In my opinion, it is MUCH preferable to set up a system whereby services can
+&lt; be looked up and accessed by name, rather than some arbitrary
+
+That would be the portmapper service (xxx1).
+
+All i'm requesting is to standardize a system (like the xxxn) and a few basic
+ports, like xxx0 through xxx3 (login, portmapper, link, smtp)  I may have
+forgotten one or two...
+
+-Brandon-
+</PRE>

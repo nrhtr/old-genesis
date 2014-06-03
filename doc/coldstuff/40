@@ -1,0 +1,66 @@
+<HEAD><TITLE>discuss@charon: [40] in "Coldmud discussion meeting"</TITLE>
+<H1>[40] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?40"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="19"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="38"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="39"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="41"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="48"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="48"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: clear parameters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 21:14:17 1993
+)</H3>
+<PRE>
+Date: Tue, 16 Nov 1993 18:47:21 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: IN%"coldstuff@mit.edu"
+
+&gt; Variable values are not inherited in Coldmud, period.  All object
+&gt; variables have a default value of 0.
+
+well, this seems odd to me, and what I'm going to say here may not make sense,
+but I dont make sense often times, and i'm still trying to figure out what Greg
+is completely meaning by encapsulation, but:
+
+	Methods are essentially clear, because you can call them on objects
+which do not have the method defined, but their parents do.  So say you define
+a method which references a parameter on a parent, it breaks in the child
+because the method is clear, and the parameter is not (the parameter is at 0,
+when it should be at [foo] or something like it is on the parent).  This doesnt
+make sense to me...
+
+	Also, lets just say that this parameter I spoke of earlier is called
+foo.  This parameter is defined on a parent, and every so often the parent
+changes the value for various reasons (its how the method functions).  On all
+the children the parameter is defined as 0, so to get the method to work right
+you are going to have to have it call the parent directly, or set the parameter
+for each child...
+
+	As for simply setting the parameter for each child, this seems like it
+would take up a _lot_ of unneccessary space; and I AM worrying about space
+since the Cold Dark will be a machine which I am paying for out of my own
+pocket...
+
+&gt; I do not think it would be "nicer" to have a more baroque variable
+&gt; lookup system, notwithstanding people's reliance on it in MOO.  As I
+&gt; pointed out, such a variable lookup system damages encapsulation, and
+&gt; can be done trivially in-db.
+
+How does it damage it?  And forgive my naivete' but what _IS_ encapsulation?
+(I'm an english major, forgive me)
+
+Dont think we are all ganging up on you Greg, I think that ColdMUD is a great
+server, much better than MOO, but there are somethings which we would like to
+see, either out of our relation with MOO, or simply because we think it may
+work out better that way.  If you believe we are wrong, please tell us, and
+tell us _why_  It is hard for us to simply swallow our pride on something we
+are tied to off simple trust.
+(heh, we are all a bunch of untrusting bastiches :)
+
+-Brandon/Lynx/Me.
+</PRE>

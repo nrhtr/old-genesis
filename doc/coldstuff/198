@@ -1,0 +1,72 @@
+<HEAD><TITLE>discuss@charon: [198] in "Coldmud discussion meeting"</TITLE>
+<H1>[198] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?198"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="197"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="197"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="197"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="199"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: /etc/services</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Apr  1 12:06:11 1994
+)</H3>
+<PRE>
+Date: Fri, 1 Apr 94 18:01:09 BST
+From: Andrew Wilson &lt;Andrew.Wilson@cm.cf.ac.uk&gt;
+To: coldstuff@MIT.EDU
+
+
+
+----- Begin Included Message -----
+
+From BRANDON@cc.usu.edu Fri Apr  1 17:49:34 1994
+Date: Fri, 01 Apr 1994 09:45:42 -0600 (MDT)
+From: the Lynx &lt;BRANDON@cc.usu.edu&gt;
+Subject: /etc/services
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=US-ASCII
+Content-Transfer-Encoding: 7BIT
+Content-Length: 945
+
+I've been thinking lately (ouch).
+
+why don't we define up a bunch of "services" or ports that all coldmuds should
+listen to, just as a standard, for various different things, such as
+(brainstorming):
+
+smtpd (same as SMTP, protocol and all)             6625
+nntpd (hsm, brainstorm)                            66119
+httpd                                             &lt;ack, dont know the usual
+                                                   httpd port, 66 + whatever&gt;
+faucet (it just spams something, like inet faucet) 6663
+rcommands                                          6664
+coldlink (funky idea with ...stuff :)              6665
+connection                                         6666
+
+-----------------
+Anyhow, comments?  the coldlink port is an idea I have for doing expanded
+server-&gt;server linking, which would include passing minor attributes of a user.
+
+We could also figure up some other link aspects (distributed stuff?)
+
+-Brandon
+
+
+----- End Included Message -----
+
+Aigh, Caramba!  Remember that  MOO is gearing up for multiple ports soon, now
+would be a good time to share your thoughts with the likes of Pavel C.  It'd
+be a shame if every M** server on the inet had a different standard set of
+ports.
+
+Ay/Net.
+
+Andrew Wilson
+&lt;a href = http://www.cm.cf.ac.uk/People/Andrew.Wilson.html&gt;Ay&lt;/a&gt;
+</PRE>

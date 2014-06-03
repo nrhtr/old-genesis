@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [1312] in "Coldmud discussion meeting"</TITLE>
+<H1>[1312] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1312"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1308"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1308"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1311"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1313"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Frobs:  What the Heck?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jul 15 19:59:44 1997
+)</H3>
+<PRE>
+Date: Tue, 15 Jul 1997 17:55:25 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+
+
+On Tue, 15 Jul 1997 clay@incite.com wrote:
+&gt; OK.  Fine.  I'm an ancient moo coder and I am looking over cold and I
+&gt; understand everything in the ColdC Manual *except* frobs.
+&gt; 
+&gt; Although the author seems to think they are perfectly obvious, I cannot
+&gt; figure them out:  what are they, what are they for, what's a really good
+&gt; example of one?
+
+Sorry, I rewote it a little.. check it out at:
+
+     http://ice.cold.org/bin/help?node=coldc_types_frobs
+
+-Brandon
+
+
+</PRE>

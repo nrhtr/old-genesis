@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [344] in "Coldmud discussion meeting"</TITLE>
+<H1>[344] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?344"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="343"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="343"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="343"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="345"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="345"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="349"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: floating point</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jun  3 18:42:25 1994
+)</H3>
+<PRE>
+From: rti@mcs.com (Crispin Bivans)
+To: deforest@netcom.com (Robert de Forest)
+Date: Fri, 3 Jun 1994 17:35:38 -0500 (CDT)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199406031941.MAA04488@netcom.com&gt; from "Robert de Forest" at Jun 3, 94 12:41:58 pm
+
+
+&gt; While server-based floating point support would be far faster, it would not
+&gt;  be exceedingly difficult to code floating point in-db. This seems to me
+&gt;  to be a nicer solution from a server development perspective. Besides,
+&gt;  I doubt very much that ColdMUD would be fast enough to be useful as a
+&gt;  simulation language. I think you'd be better off writing your simulation
+&gt;  in C or C++ and using someone's libraries.
+
+Actually, there is already a Space Simulation running on Micromuse based apon
+10 second updates(ships move every 10 secs) with almost 100 'objects' floating
+around in space currently that is a hybrid of C(in server) and MUSE code(online)to act as an interface. The C portion of the code currently runs in under one
+second every update. I believe Coldmud due to its unique nature would be able
+to handle 10 second updates although of course it'd have to been seen to be
+known.
+
+Question: Is the C-- code 'compiled' or interpreted during 'runtime'?
+
+
+&gt; Crag / Robert de Forest
+&gt; -- 
+&gt; "Mr. Tater, I think I have a punishment for you that is fair, just, and
+&gt;  clever. Or maybe just fairly clever."
+&gt;     -- King Yakko of Anvilania.
+
++=============================================================================+
+|Carrie A. Gram                     |              Email: rti@genesis.mcs.com |
+|Programmer: C/SQL/68k ML/Muse/Moo  |                  or rti@mcs.com         |
+|Space Simulations and Roleplaying  |        PGP Pub Key: finger rti@mcs.com  |
++=============================================================================+
+</PRE>

@@ -1,0 +1,68 @@
+<HEAD><TITLE>discuss@charon: [1455] in "Coldmud discussion meeting"</TITLE>
+<H1>[1455] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1455"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1454"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1456"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1456"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1456"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>win32 genesis compile prob</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Oct 20 16:36:19 1999
+)</H3>
+<PRE>
+Date: Wed, 20 Oct 1999 13:01:05 -0700 (PDT)
+From: "Brandon J. Rickman" &lt;ashes@pc4.zennet.com&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+Jon Lambert's email seems to have changed, so I'll post this here:
+
+To: Jon Lambert &lt;jlsysin@ix.netcom.com&gt;
+Subject: win32 genesis
+
+I'm trying to compile the latest stable version of genesis for win32.  I
+am stalled trying to do the final compile, can't seem to get past
+grammar.c.
+
+These are the errors I'm getting.  Note I'm using Borland 4.52, will this 
+be a problem?
+
+
+MAKE Version 3.7  Copyright (c) 1987, 1994 Borland International
+	Bcc32 +BccW32.cfg -P- -c @MAKE0049.@@@
+
+Borland C++ 4.52 for Win32 Copyright (c) 1993, 1994 Borland International
+
+grammar.c:
+
+Loaded pre-compiled headers.
+Error grammar.y 51: Multiple declaration for 'YYSTYPE'
+Error /usr/lib/bison.simple 102: Type mismatch in redeclaration of
+'yylval'
+Warning /usr/lib/bison.simple 253: Conversion may lose significant digits
+in function yyparse
+Warning /usr/lib/bison.simple 301: Call to function '__yy_bcopy' with no
+prototype in function yyparse
+Warning /usr/lib/bison.simple 303: Call to function '__yy_bcopy' with no
+prototype in function yyparse
+Error /usr/lib/bison.simple 424: Illegal structure operation in function
+yyparse
+Error /usr/lib/bison.simple 652: Illegal structure operation in function
+yyparse
+*** 4 errors in Compile ***
+
+** error 1 ** deleting grammar.obj
+
+
+
+FYI, I found a windows version of gdbm at http://www.roth.net/libs/gdbm/ .
+Binary and source.
+
+- B!
+
+</PRE>

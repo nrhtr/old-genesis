@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1075] in "Coldmud discussion meeting"</TITLE>
+<H1>[1075] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1075"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1074"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1074"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1074"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1076"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Cold95?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Aug 21 22:17:27 1996
+)</H3>
+<PRE>
+Date: Wed, 21 Aug 1996 19:56:14 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;321BB9AF.6D9A@ten.net&gt;
+
+On Wed, 21 Aug 1996 aliah@ten.net wrote:
+&gt; What ever happened to the project to port ColdX to Win95?
+&gt; 
+&gt; Wondering,
+
+It was accidentally dropped, fell through the floorboards and nobody has 
+bothered pulling them up to retrieve it :)
+
+If you want, you can try the following:
+
+ * in unix somewhere, after 'configure' has run its course)
+
+    &gt; make win32
+
+ * move the whole server filetree to a Win32 system, edit 
+   src/include/config.h appropriately (I dont know what appropriately is 
+   yet :) and src/include/defs.h as well (at the top you implicitly 'turn
+   on' Win32 support).
+
+ * try to build it (either through a project, or the gnu win32 unix stuff)
+
+Frankly, I _suspect_ it may compile with little to no problem in the gnu 
+win32 unix stuff.
+
+-Brandon Gillespie
+</PRE>

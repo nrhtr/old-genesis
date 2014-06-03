@@ -1,0 +1,93 @@
+<HEAD><TITLE>discuss@charon: [511] in "Coldmud discussion meeting"</TITLE>
+<H1>[511] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?511"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="504"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="504"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="510"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="512"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Driver cleanup</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  1 23:38:37 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: brandon@riverheights.declab.usu.edu
+Date: Tue, 1 Nov 1994 20:34:53 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9411012329.AA00563@riverheights.declab.usu.edu&gt; from "brandon@riverheights.declab.usu.edu" at Nov 1, 94 04:29:49 pm
+
+A couple of quick kibbitzes (and how I'll end up doing things if people don't
+have strong objections):
+
+&gt; conn_object.connect()  =&gt; .connection_started('inbound, "ip", port, socket)
+&gt;                        =&gt; .connection_started('outbound, "ip", port, socket)
+
+I think to be consistent with open_connection()/close_connection()/etc, this
+should be renamed to .connection_opened (and likewise, .connection_closed, etc)
+and in order to be more consistent amongst all of the methods, rahter than
+'inbound and 'outbound it should be 'local or 'remote, indicating the origin of
+the event, thus .connection_opened('local, "ip", port, socket) would indicate
+an outbound connection (i.e. initiated by the local system) and 'remote would
+indicate an inbound (initiated by the remote) connection, and
+.connection_closed('remote) could also be used to indicate the other end closed
+the connection or .connection_closed('local) would indicate that it was closed
+with a call to close_connection() locally, etc.
+
+&gt; conn_object.failed()   =&gt; .connection_failed("addr", port, socket)
+
+I'm kinda thinking that all the net-negotiation calls to objects should have a
+standard call syntax, thus this would be .connection_failed('local, "addr",
+port, socket), (though I can't think of any situation where it wouldn't be
+'local, but just so the args are similar to _opened and _closed..  Actually,
+now that I think about it, maybe that spot should be used to indicate
+why the connection failed ('refused, 'timedout, etc).)
+
+&gt; Make assignments with ':=' rather than '='.  This is _NOT_ to make it closer
+
+I'm not sure whether I'm going to do this or not, actually.. if assignments
+can't be used as expressions it's really more of a cosmetic matter anyway, and
+'=' is more C-like (and thus more familiar) to many people..  Anyway, it's
+still up for discussion as far as I'm concerned..
+
+&gt; As long as the idea is to keep code linear rather than horizontal, I would
+&gt; like to see '-=' and '+=' added.  They add a touch of simplicity and as
+&gt; long as a statement cannot be an expression they do not add much more
+&gt; complexity.
+
+I kinda agree with your argument, but at the same time I also don't like += and
+-= very much for other reasons.  For one, they're much more cryptic than the
+spelled out versions (which is one thing I detest about C), and not immediately
+obvious what they mean to a newbie to programming, and secondly I just don't
+like those symbols very much for those operations in general (just an aesthetic
+thing, but if it's short for "x = x + y", why is the '=' after the '+'?)..
+
+As for your other message:
+&gt; The reason I would like to have it handle it's own logfiles, rather than
+&gt; redirecting stderr is primarily out of personal preference (it feels cleaner
+&gt; to have coldmud do it itself, and isn't much harder).
+
+I disagree.. since there's nothing else the server is using the stdout and
+stderr for it makes it much more flexible to send its log out that way because
+then it can be piped or redirected to anything easily and simply (as opposed to
+having to hack the server if you want to send its log somewhere else).  I
+suppose this could be added as a command-line option, but I certainly don't
+think it should be the only way the server can do things..
+
+&gt; If -r coldroot is not specified in the arguments, it would default to "../".
+
+This sounds like a bad idea too.  For one thing, this combined with the
+&lt;root&gt;/bin directory name might indicate to some that the proper way to do
+things is to put the coldmud driver into the bin directory and just execute it
+as 'coldmud', which seems bad considering that's where execute() looks for
+runnable things..  Why exactly should the default be .. instead of .?
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

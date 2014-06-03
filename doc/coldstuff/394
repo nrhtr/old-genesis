@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [394] in "Coldmud discussion meeting"</TITLE>
+<H1>[394] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?394"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="393"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="395"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Core projects?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Aug 27 14:11:40 1994
+)</H3>
+<PRE>
+From: vaps3kc@prism.gatech.edu (Lord of Agonies)
+To: coldstuff@MIT.EDU
+Date: Sat, 27 Aug 1994 13:34:33 -0400 (EDT)
+
+Greets folks:
+
+Exactly how close is there  to a release of  a building-level Core for
+ColdMUD?  I just need about the  same level of functionality one might
+find in MUSH, room  and  exit creation, succ/osucc/odrop, descs,  etc.
+I've finally got my own site available which  I'd like to create an RP
+heavy MUD with an inbuilt RPG.
+
+The logically  best way to  impliment  it  would be under  Cold,  with
+encapsulation and OOP, but I don't want to code the same functionality
+that should be   in  a core,  myself.  So,   how  close are  we   to a
+release-potential core?
+
+(In a postscriptum: You  know, it'd be  awfully nice if in addition to
+C, Cold took programs in LISP syntax too.  :) )
+
+					--Alexander Williams
+</PRE>

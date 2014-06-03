@@ -1,0 +1,46 @@
+<HEAD><TITLE>discuss@charon: [872] in "Coldmud discussion meeting"</TITLE>
+<H1>[872] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?872"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="871"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="871"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="871"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="873"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="873"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="875"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ColdCore</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jan  4 15:51:49 1996
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@tombstone.sunrem.com
+Date: Thu, 4 Jan 1996 21:37:36 +0100 (MET)
+
+&gt; 
+&gt; 1) Where the heck can I find some good documentation on the ColdCore (I 
+&gt; know, I'm dreaming, right?) 
+
+Yep! For now. :)
+
+&gt; 
+&gt; 2) Will ColdCore Indeed do the kinda 'relational' system I'm looking for.
+
+There will be a system that keeps the spatial relations between objects - 
+we need some way to generate VRML from the room contents. :)
+
+&gt; 
+&gt; 3) Will it be easier to take ColdCore, delete all the frills that I don't  
+&gt; want in my core, or go ahead and start from Minimal and go up?
+
+Did you think about keeping the rooms we have now and parenting
+all the objects intended to keep other objects to it?
+
+After all, with multiple parenting you don't need to think too much about
+changing the stuff. :)
+
+	Miro
+
+</PRE>

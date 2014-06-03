@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [128] in "Coldmud discussion meeting"</TITLE>
+<H1>[128] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?128"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="127"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="129"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Correction, and update</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Dec 19 02:06:11 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Sun, 19 Dec 93 02:00:01 EST
+To: coldstuff@MIT.EDU
+
+
+I got the IP address wrong for Cold World; it's 18.177.1.175.  My
+apologies.  The network people here messed up the cname for glacier
+(updated a commented-out line in the hostnames file), so it'll take me
+a few more days to get it sorted out.
+
+I decided to do the buffer mods for 1.0 instead of for a 1.x version.
+They seem to work fine.  Thus, Coldmud 1.0 will have raw network I/O.
+The parse method will receive a buffer argument instead of a string
+argument, and echo() accepts a buffer instead of a string.  I expect
+to release a Cold World 0.6 along with Coldmud 1.0 that will support
+these changes.  It turns out that a quick hack to $connection is all
+that's necessary.
+
+I still haven't been able to reproduce or locate the
+missing-dictionary-entry bug.  I'll keep looking.  I'm also getting
+peculiar behavior with destroyed objects showing up in objects' child
+lists when you shutdown and restart from a binary database; I suspect
+I'm not setting the dirty bit properly, now that I think bout it.
+I've also already corrected a slew of minor bugs.
+
+Because I've done more changes than I expected to for 1.0, and have
+only ten days before the release date, I will mail out beta versions
+of the code to people who are interested (send me mail).  I won't make
+a "beta release" via ftp, because my numbering system doesn't account
+for that, and it's silly anyway.
+
+--GBH
+
+</PRE>

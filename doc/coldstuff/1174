@@ -1,0 +1,43 @@
+<HEAD><TITLE>discuss@charon: [1174] in "Coldmud discussion meeting"</TITLE>
+<H1>[1174] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1174"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1171"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1171"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1173"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1175"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Performance notes</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec  4 12:08:52 1996
+)</H3>
+<PRE>
+Date: Wed, 4 Dec 1996 09:54:22 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199612041127.MAA17791@regoc.srce.hr&gt;
+
+On Wed, 4 Dec 1996, Miroslav Silovic wrote:
+&gt; 3) natives vs functions
+&gt; 
+&gt; Every native method call has to do full method lookup. It takes
+&gt; about 3x longer to execute a native than a function. So, be
+&gt; careful with them in tight loops.
+
+This is sortof misleading :)
+
+They are not 3x longer, they are a bit slower on startup than
+functions--however once they start executing they are the same 'speed' as
+functions as they are simply executing native C code.  The slower amount
+on startup is in the 2-3 times range, but its measured in about a
+hundred-thousandth of a second.  Using it in general is ok--but as he says
+if its in a tightly executing loop where you want to optimize things,
+using 'strlen(str)' over 'str.length()' will give you a few microseconds
+more :)
+
+-Brandon Gillespie
+
+</PRE>

@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [1331] in "Coldmud discussion meeting"</TITLE>
+<H1>[1331] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1331"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1330"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1330"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1330"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1332"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1332"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1341"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Exit announcements (anomaly?)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Aug 21 19:29:39 1997
+)</H3>
+<PRE>
+Date: Thu, 21 Aug 1997 19:23:41 -0400
+From: Chris Williams &lt;psion@geekspace.com&gt;
+To: "Luther, Clay" &lt;clay@selsius.com&gt;
+CC: "'coldstuff@cold.org'" &lt;coldstuff@cold.org&gt;
+
+&gt; While building in the new core, I noticed that exit announcements occur
+&gt; at an odd time (IMHO).
+&gt; 
+&gt; For instance, if I am standing in a room and take the north exit, I will
+&gt; see:
+&gt; 
+&gt;         New Room Name
+&gt;         New Room Description.
+&gt;         You take the north exit.
+&gt; 
+&gt; Isn't more logical (from a VR point of view) to see:
+&gt; 
+&gt;         You take the north exit.
+&gt;         New Room Name
+&gt;         New Room Description.
+I've noticed the same thing, and agree. Is there a reason source and dest
+announces can't be called bevore move_to (in $exit.invoke)? (they'd both have
+to be moved, else the actor would see their messages twice, or none at all).
+Brandon/someone..?
+
+-- 
+                                  -Chris^`~'*.,_,.*'~`^P$iON-
+-----BEGIN GEEK CODE BLOCK-----
+Version: 3.12
+GCS/CM/IT/M/S d-- s+: a15 C++++$ UL+ P L-- E? W++(+++) N+ o? K? w++++@
+O--- M-- V- PS++ PE- Y+ PGP- t+ 5++ X+ R+ tv+ b++ DI+++ D+
+G++ e* h! r y- 
+------END GEEK CODE BLOCK------
+</PRE>

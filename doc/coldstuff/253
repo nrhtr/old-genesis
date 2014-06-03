@@ -1,0 +1,50 @@
+<HEAD><TITLE>discuss@charon: [253] in "Coldmud discussion meeting"</TITLE>
+<H1>[253] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?253"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="241"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="242"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="252"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="254"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="254"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="254"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Connection()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed May 18 05:10:57 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Cc: colinm@extro.ucc.su.OZ.AU (Colin McCormack)
+In-Reply-To: Your message of "Wed, 18 May 1994 01:35:03 PDT."
+             &lt;199405180835.BAA20696@netcom.com&gt; 
+Date: Wed, 18 May 1994 05:06:44 -0400
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+Side note: the maximum value of a port is 2^16 - 1, or 65,535.
+Although Coldmud may allow you to bind to a port above that, you're
+actually binding to (unsigned)(n) % 65,536.
+
+&gt;&gt; There is a primitive which makes use of connection information,
+&gt;&gt; echo() or somesuch... are you suggesting that this is not needed,
+&gt;&gt; or rather that the appropriate place for accessing current connection
+&gt;&gt; is the server, and only there?
+
+&gt; Actually, the current functioning of echo(), in my opinion, is
+&gt; something to be changed, rather than emulated.  In my opinion,
+&gt; echo() should only work when this() is an object with a current
+&gt; connection bound to it, and should echo to all connections bound to
+&gt; the current object, thus preserving encapsulation and a consistent
+&gt; connection&lt;-&gt;object interface.
+
+This is how echo() operates, actually.
+
+Coldmud's design was based very much upon that of existing mud
+servers; if I write another server, it will depart from this model in
+a number of ways.
+
+--GBH
+
+</PRE>

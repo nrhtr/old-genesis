@@ -1,0 +1,38 @@
+<HEAD><TITLE>discuss@charon: [36] in "Coldmud discussion meeting"</TITLE>
+<H1>[36] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?36"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="19"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="35"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="35"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="37"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="37"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="48"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: clear parameters</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov 16 18:19:35 1993
+)</H3>
+<PRE>
+To: nils mccarthy &lt;nils@mcmuse.mc.maricopa.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of "Tue, 16 Nov 1993 15:37:37 MST."
+             &lt;9311162237.AA18919@mcmuse.mc.maricopa.edu&gt; 
+Date: Tue, 16 Nov 1993 17:04:25 -0600
+From: Erik Ostrom &lt;eostrom@pepperoncini.gac.edu&gt;
+
+&gt; if a variable on the parent is changed, it would automatically be
+&gt; inherited by all the clear variables, that is the ones that had the
+&gt; same value as the old one.
+
+I make a generic overhead lamp.  The default value for its `on'
+variable is 0.  You make a child of my overhead lamp.  You turn it on.
+You turn it off again.  I decide that the world needs more light, so I
+set the default value to 1.  Your lamp goes on, inches from your face,
+blinding you for several minutes.  (It's a bright lamp.)
+
+Obviously there are ways to avoid this particular example.  Still, I
+really don't like the assumption that because a child's value is equal
+to the parent's value, the two are somehow linked.
+</PRE>

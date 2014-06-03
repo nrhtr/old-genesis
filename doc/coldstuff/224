@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [224] in "Coldmud discussion meeting"</TITLE>
+<H1>[224] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?224"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="223"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="225"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>lab_backup renamed (finally)</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 10 17:35:26 1994
+)</H3>
+<PRE>
+Date: Tue, 10 May 1994 15:27:54 -0600 (MDT)
+From: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+Anybody wishing to upload/download files from lab_backup, well, we finally
+submitted and changed its name to:
+
+
+        tiny.mcs.usu.edu
+
+(yah, we have our own subnet now).
+
+Anyhow, ftp for the coldmud stuff i've been keeping is:
+
+        ftp://tiny.mcs.usu.edu/pub/brandon/coldmud
+
+-Brandon/Lyncx-
+
+(BTW, its actually /pub/brandon/ies/coldmud...oh, and tiny is not related to
+the mud type, but its named as such because the machine is a tiny 486 running
+FreeBSD and with 120 meg HD (8 meg ram)).
+</PRE>

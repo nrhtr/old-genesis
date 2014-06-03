@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [1325] in "Coldmud discussion meeting"</TITLE>
+<H1>[1325] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1325"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1324"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1326"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1328"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1329"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] New ColdCore and Core Upgrader available</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Aug 19 14:30:31 1997
+)</H3>
+<PRE>
+Date: Tue, 19 Aug 1997 12:24:11 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+
+Ok, a new coldcore is available, along with a Core Upgrader.  If you have
+ColdCore 3.0a7 or ColdCore 3.0a8 you can upgrade to the newest core
+(ColdCore 3.0a9.02).  Just grab the appropriate upgradedb tarball from the
+ColdCore ftp site:
+
+       ftp://ftp.cold.org/cold/dbs/ColdCore/
+
+Or, you can grab a fresh a9.02 db and run with it instead.  From this
+point on, we hope to have an upgrader with each core release--this upgrade
+should upgrade your database with farily few problems, assuming you do not
+change core objects.
+
+-Brandon Gillespie
+
+</PRE>

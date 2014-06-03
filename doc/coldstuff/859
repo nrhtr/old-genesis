@@ -1,0 +1,44 @@
+<HEAD><TITLE>discuss@charon: [859] in "Coldmud discussion meeting"</TITLE>
+<H1>[859] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?859"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="858"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="858"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="858"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="860"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Dumpsplit for new format???</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec 27 11:22:40 1995
+)</H3>
+<PRE>
+Date: Wed, 27 Dec 1995 09:11:00 +0000 ()
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@tombstone.sunrem.com
+In-Reply-To: &lt;199512270212.SAA00856@asparagus.tenetwork.com&gt;
+
+On Tue, 26 Dec 1995, Jeff Kesselman wrote:
+&gt; Hey all,
+&gt; 
+&gt; The new format looks great and dbconv looks very useful BUT dumpsplit 
+&gt; wont understand the output of dbconv.  Has anyone writtena new 
+&gt; dumpsplit to complete the conversion pathway?  Splitting by hand may 
+&gt; be as much of a pain to me as just hand re-coding my objects....
+&gt; 
+&gt; Thanks
+
+Not yet, although its in the pipeworks.  My whole schedule is shifted by 
+a week because I forgot that I was moving this week (pshaw, little things).
+
+The new compiler, btw, will handle \ newline escapes for all but methods, 
+i.e.:
+
+object $foo;
+new var boo = [1, 2, 3, 4,\
+               5, 6, 7, 8];
+
+-Brandon
+</PRE>

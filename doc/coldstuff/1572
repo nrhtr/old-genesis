@@ -1,0 +1,115 @@
+<HEAD><TITLE>discuss@charon: [1572] in "Coldmud discussion meeting"</TITLE>
+<H1>[1572] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1572"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1571"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1573"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>explode_quoted native code</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon May  1 12:06:21 2000
+)</H3>
+<PRE>
+Date: Mon, 1 May 2000 08:45:43 -0700 (PDT)
+From: Jeremy Weatherford &lt;xidus@xidus.net&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+
+Here's the code for an explode_quoted in C.  I'll put together a patchfile
+later for those who aren't familiar with adding native methods.
+
+It's a little idiosyncratic, but it works the way -I- want it to work.  ;)
+
+;explode_quoted("\"bork bork\" bork\"froon \"froon\"bork\" bork bork");
+=&gt; ["bork bork", "bork\"froon", "froon\"bork", "bork", "bork"]
+
+Your mileage may vary, let me know if you feel strongly that it should
+work differently.
+
+The code:
+
+(in src/ops/string.c)
+COLDC_FUNC(explode_quoted) {
+    cData * args;
+    cList * exploded;
+
+    /* Accept a string to explode and an optional string for the word
+     * separator. */
+    if (!func_init_1(&amp;args, STRING))
+	return;
+
+    exploded = strexplodequoted(args[0].u.str);
+
+    /* Pop the arguments and push the list onto the stack. */
+    pop(1);
+    push_list(exploded);
+    list_discard(exploded);
+}
+
+(in src/strutil.c)
+cList * strexplodequoted(cStr * str) {
+    char     * s = string_chars(str),
+             * p = s,
+             * q;
+    Int        len = string_length(str);
+    cList   * list = list_new(0);
+    cStr * word;
+    cData     d;
+
+    d.type = STRING;
+
+    while (*p) {
+      while (*p == ' ')
+	p++;
+      if (*p == '"') {
+	p++;
+	q = p;
+	while (*q &amp;&amp; !(*q == '"' &amp;&amp; (*(q+1) == ' ' || !*(q+1))))
+	  q++;
+	ADD_WORD((p, q-p));
+	p = q+1; /* after end quote */
+      } else if (*p) {
+	q = p;
+	while (*q &amp;&amp; (*q != ' ')) /* stop on space */
+	  q++;
+	ADD_WORD((p, q-p));
+	p = q;
+      }
+    }
+
+    return list;
+}
+
+(in src/include/strutil.h)
+cList   * strexplodequoted(cStr * str);
+
+(in src/include/functions.h)
+COLDC_FUNC(explode_quoted);
+
+Also add it to the array in src/opcodes.c, and add a F_EXPLODE_QUOTED
+token in src/include/parse.h
+
+Speaking of which, is it reasonable to just pick the highest unused token
+value and bump LAST_TOKEN up by one?  If not, how should I add new
+functions?
+
+Patchfile forthcoming, probably around 2pmPST today.
+
+Oh, and... I'm working on a new minimal core of my own, just to figure out
+how things work.  It's structured quite a bit differently from ColdCore,
+and I think it'll turn out to be quite useful.  Let me know by e-mail if
+you're interested in a copy once I get something useful.  It's 814 lines
+and 15k right now, and I sort of have a working login interface and
+parser.  :)
+
+Jeremy Weatherford
+xidus@xidus.net
+http://xidus.net
+
+</PRE>

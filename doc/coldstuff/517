@@ -1,0 +1,275 @@
+<HEAD><TITLE>discuss@charon: [517] in "Coldmud discussion meeting"</TITLE>
+<H1>[517] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?517"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="516"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="518"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="518"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="542"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>To-Do list..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Nov  4 16:12:36 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: coldstuff@MIT.EDU
+Date: Fri, 4 Nov 1994 13:01:50 -0800 (PST)
+
+Eesh.. I'd never realized how much there really is that could stand to be
+worked on on the server until I started putting it all in one list..  Anyway,
+this is what I've come up with and what I'm gonna start working on in a
+semi-kinda-just-thrown-together order of priority.. feedback is welcome..
+Please particularly look at the "Up for Discussion" section and let me know
+what you think about some of that..
+
+Bugs
+----
+When DB size exceeds cache, objects/parameters/changes disappear spuriously
+  -- Crag
+match_regexp returns bad results -- Crag
+Dumps stop halfway through under Alpha OSF/1 -- Brandon
+
+To-Do List
+----------
+Reorganize main-loop processing order
+  This is something that needs to be worked on.. for one thing,
+  output-flushing isn't done nearly frequently enough (for example, it isn't
+  done during a pause() call)
+
+Retain suspended tasks across restarts
+  This is also something that's desperately needed as currently, when a task
+  suspend()s or pause()s, there's no guarantee at all that it will ever
+  actually get a chance to be resumed, as the server could shutdown and all
+  suspended tasks would be lost unceremoneously.
+
+Atomic code blocks
+  This is really needed now that we have suspend capability, and I will
+  probably implement it as an 'atomic &lt;statement&gt;' syntax, i.e:
+    atomic object.some_special_method();
+  and
+    atomic {
+      do this;
+      and this;
+      and this too;
+    }
+  and etc..  If an attempt is made to suspend or pause while executing in an
+  atomic state, an error will be thrown instead.
+
+Signal handler
+  Given all the nasty things that can happen on unix systems, it seems like a
+  really good idea to give ColdMUD a signal handler of some kind.  This will
+  probably take the form of the server sending a .signal('signal) message to
+  $sys and then shutting down gracefully as soon as that completes (or
+  suspends) for critical signals (such as TERM), or taking action based on the
+  return value for non-critical signals (such as USR1, etc).
+
+Callback system
+  The DB will be able to call request_callback() to instruct the server to
+  call $sys.callback at the next appropriate task opportunity.  Multiple
+  requests will result in multiple callbacks.  I'm not sure whether pause()
+  should be kept or not once this is implemented, as its functionality can be
+  performed with this and suspend()/resume().. I'll have to run some tests to
+  see if there's a significant speed advantage of pause() over the other way
+  of doing things..
+
+Syntax/builtin changes:
+
+  with handler              =&gt; handler
+
+  set_name(#object, 'dbref) =&gt; set_dbref('dbref, #object)
+  del_name('dbref)          =&gt; del_dbref('dbref, #object)
+  get_name('dbref)          =&gt; get_objnum('dbref)    =&gt; #object
+                            =&gt; get_dbrefs(#object)   =&gt; ['dbref, 'dbref]
+  todbref(int)              =&gt; toobj(int)
+  run_script()              =&gt; execute()
+  connect()                 =&gt; open_connection()
+  disconnect()              =&gt; close_connection()
+  bind()                    =&gt; bind_port()
+  unbind()                  =&gt; unbind_port()
+  assign_conn()             =&gt; reassign_connection()
+  conn_object.connect()     =&gt; .connection_opened('local, "ip", port, socket)
+                            =&gt; .connection_opened('remote, "ip", port, socket)
+  conn_object.disconnect()  =&gt; .connection_closed('local/'remote)
+  conn_object.failed()      =&gt; .connection_failed('refused/'timedout, "addr",
+                                                  port, socket)
+  conn_object.parse()       =&gt; .connection_received(`[buffer])
+  set_heartbeat_freq()      =&gt; set_heartbeat()
+  db_top()                  =&gt; next_objnum() (db_top + 1)
+
+Flexible builtin bindings
+  This will be implemented as a couple of new builtins,
+  bind_builtin('builtin_name, $object) and unbind_builtin('builtin_name)
+  The first will restrict a particular builtin to only be callable from
+  methods on the specified object, and the second would make a builtin
+  callable from any method.  All builtins will then be unbound by default and
+  it will be up to the particular DB (via calls to these builtins at startup)
+  how they're restricted.  Now that I think about it, there should probably be
+  a builtins() builtin that will return all registered builtins, just so a DB
+  can restrict anything it doesn't recognize as well (so you don't have the
+  potential of security holes because the server has a new builtin that the DB
+  doesn't know about).. plus it would let the DB check for certain
+  capabilities/extensions, etc..
+
+Binary-db backup function
+  Part of the whole point to diskbasing, in my opinion, is that it should be a
+  trivial matter to do checkpoints.  Thus this business of having to do a
+  textdump every time you want to back up the DB is just plain silly.  I'm
+  gonna add a builtin that will sync the binary DB and copy the clean binary
+  DB over to a backup directory, which should be much quicker and more
+  efficient than current methods for checkpointing..
+
+Change command line syntax to 'coldmud [-d directory] [args for $sys]'
+  The directory would default to the cwd.  The contents expected/maintained by
+  the server would be:
+    argv[0].pid     -- file containing the PID for the running server
+    ebin/           -- directory where execute() programs are located
+    files/          -- directory for echo_file() files.
+    db/             -- directory where the database is stored
+       binary/      -- contains .pag, etc files for the binary representation
+       backup/      -- directory where the binary/ files are copied during a
+                       binary backup
+       textdump     -- file for text dumps
+
+  Other contents/directories are allowed but ignored by the server.
+  Logfile output will also be changed to go to stdout instead of stderr.
+  stderr will be reserved for actual error messages.
+
+Change textdump format
+  This isn't really that high a priority, because things work fine as is, but
+  it's something that probably should be done eventually, just to make the
+  textdump file easier to munge in general and more readable.  Changes
+  include:
+    make it dbref-based instead of objnum-based
+    make the "object" statement come before the parents list so that it's
+      easier to find the beginning of an object definition.
+    change "name" to "dbref"
+    change "var" to "value" (or something.. "var" is really kinda confusing,
+      as they aren't variables)
+
+Server statistics reporting
+  Something to report the vital statistics of a running server (things like
+  object-swapping info, memory usage, etc) would be nice, too..
+
+Up for Discussion
+-----------------
+Do-while syntax
+  This is my earlier suggestion of adding an optional "do" component to the
+  existing "while" syntax, such that the syntax becomes:
+    [do &lt;statement&gt;] while (&lt;expr&gt;) &lt;statement&gt;
+  As far as I can tell, we never came to a real consensus as to whether this
+  would be a good thing for me to add or not, so I'm listing it here..
+  Basically, this would allow for test-at-end loops, and test-in-middle for
+  that matter, along the following lines:
+    do
+      x = x + 1;             // Do our processing first,
+    while (x &lt; 3);           // and then test at the end of the loop
+
+    do {
+      .call_this_method();   // do some prerequisite stuff
+      x = object.foo();
+    } while (x) {            // if !x, break out of the loop,
+      y = y + x;             // otherwise do something with it
+      .tell("yay!");
+    }                        // and loop back up to the "do" point
+
+  etc.. while still allowing the previous syntax of:
+    while (foo) {
+      .do_something_with(foo);
+    }
+
+  etc.
+
+Handle I/O redirection for execute() calls
+  the builtin
+    execute("cmd", "args" [,background])
+  would change to
+    execute("cmd", "args" [,stdio-object [,stderr-object]])
+
+  All execution will become background execution, now that the DB can
+  suspend() the task pending the completion anyway.  stdio-object and
+  stderr-object will function exactly like network objects.  They will receive
+    .connection_opened('pipe, "cmd", "args")
+  at the beginning of the process, and will receive
+    .connection_closed('pipe, result-code)
+  when the task completes (result-code is the return value of the program
+  being executed, and will be sent to both the stdio object and the stderr
+  object, if both exist).  stdout/stderr is sent to the appropriate object as
+  .connection_received calls.  stdin is supplied to the process by echo()ing
+  from the stdio object.  If no stderr object is specified, stderr is sent to
+  the stdio object the same as stdout.
+
+  I'm still kinda unsure about this, really..  the idea with the above plan is
+  mainly to try to keep connections of all sorts (network connections, pipe
+  connections, etc) all as similar as possible for consistency of interface,
+  but that means things like .connection_opened has to get different args
+  depending on the connection type and you need to use two separate objects
+  for handling sdout and stderr separately..  An alternative would be to have
+  a different interface for pipes to other processes, along the lines of
+  .pipe_opened, .pipe_closed, .pipe_stdout, .pipe_stderr, etc..
+
+  Anyway, what do people think?
+
+Change the task timeout system
+  This really needs to be worked on too.  I recently managed to create
+  (somewhat by accident) a combination of two methods that, when executed,
+  caused one task to completely monopolize the server for a good 30 minutes
+  (until I gave up and had to kill off the server's process and restart it).
+  This is Not Good(tm).
+
+  The main question is just how should it be changed.  method-local tick
+  counts clearly are not sufficient.  It could simply be changed along the
+  same lines as MOO's task-timeout handling (tick counts relative to the
+  entire task, and renewed when the task suspends)..  what I'm thinking about
+  at the moment is changing tickout checking to be based on the task rather
+  than the method and allowing it to be set for any given task with a builtin
+  (this would make things more flexible than a standard tick-limit imposed by
+  the server, though it would mean things like pause() would have to go
+  through thunks if the tick count was to be renewed..)  Should task timeouts
+  be based on ticks, seconds, or both? (maybe seconds would be better overall,
+  since a tick is really such an arbitrary thing anyway)
+
+buffer_to_strings()        =&gt; ascii_buffer_to_strings()
+strings_to_buffer()        =&gt; strings_to_ascii_buffer()
+  buffer_to_strings is not a straight datatype conversion as its
+  name suggests, but rather an ASCII-specific raw-to-cooked conversion as
+  well.  With the growing internationality of language use in computing
+  systems, and the several potential multi-lingual standards beyond ASCII
+  that have been being worked on for some time, it seems rather arrogant
+  and just kinda dumb to assume this is the only type of text anyone will
+  ever handle in a ColdMUD environment.  Thus, this function should
+  explicitly specify that it's designed for ASCII text and there should be
+  room for other options down the line..  The actual name of the builtin is
+  negotiable..  Another alternative is just to add a second arg
+  (buffer_to_strings(buf, 'ascii), etc), but that kinda insinuates that there
+  are other options, which there aren't yet, and it requires one to hack an
+  existing builtin to add a new option, instead of just adding a new builtin.
+
+  I also believe that the string dataype should simply be defined as a series
+  of "text characters", where what exactly a "text character" is and how it's
+  represented internally are nobody's business as long as it can represent all
+  the printing characters one needs, whereas a buffer should be defined
+  explicitly as a series of 8-bit bytes, with no particular significance to
+  what they represent.  I.e. the definition of a string is based entirely on
+  what it's used for and not what it is, and the definition of a buffer is
+  defined entirely on what it is and not what it's used for.
+
+"locked" compilation flag for nethods
+  A compilation flag (like disallow_overrides) which would indicate that the
+  specified method cannot be changed from inside the running server (it must
+  be modified offline), for security.  Basically, does anybody have any reason
+  I shouldn't go ahead and implement this? (sounds good to me)
+
+Bugs fixed so far (just in my work version, nothing released)
+-----------------
+Fixed a bug where pause()d tasks wouldn't be resumed properly if the heartbeat
+  was disabled.
+Fixed some minor compiler warnings
+
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

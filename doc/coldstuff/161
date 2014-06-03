@@ -1,0 +1,60 @@
+<HEAD><TITLE>discuss@charon: [161] in "Coldmud discussion meeting"</TITLE>
+<H1>[161] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?161"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="160"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="160"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="160"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="162"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: accessors for vars</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar 24 02:35:12 1994
+)</H3>
+<PRE>
+Date: Thu, 24 Mar 1994 00:31:46 -0600 (MDT)
+From: Lynxian Theologies &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+&gt; In C-- in general, and in the colddark db, haw does accessing
+&gt; an objects variables work? There are usually functions that
+&gt; return the variable if called, but rarely is there a function
+&gt; to set it. well, ok maybe rarely is an understatement, but in
+&gt; this case, where the variable is protected by encapsulation, 
+&gt; i cant resort to the MOOcode equivalent of ;$obj.prop = val
+&gt; (or can i?)
+&gt; as a corralary/aside, it seems that each param should have an
+&gt; accessor for it which, if called with no args returns the value
+&gt; of the associated variable (which is the current case usually i believe),
+&gt; and if called with args, sets the variable (perms depending of course)
+&gt; and if it cant for some reason returns an error
+&gt; Just some ramblings as i endevor to comprehend this stuff.
+
+Definitely a question we should have in the FAQ, when/if we get one (anybody
+want to volunteer?).
+
+You cannot directly access parameters, like in MOO.  Instead you must have a
+method on the defining parent to return the parameter.  Eval can be used, if
+you own the object or are an admin.  Basically, you have:
+
+     $obj_A,A_defined_parameter = 0;
+
+     $obj_B,A_defined_parameter = 1;
+
+In order to return the parameter you cannot create a method on $obj_B, you must
+have a method on $obj_A, which has 'return A_defined_parameter;' somewhere in
+it's code.
+
+As an admin you can also use the command 'def * as * eval *':
+
+definer $obj_A as $obj_B eval return A_defined_parameter;  =&gt; 1;
+
+--------------
+Hope that makes sense...
+
+-Brandon (aka Lynx)
+</PRE>

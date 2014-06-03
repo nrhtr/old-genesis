@@ -1,0 +1,63 @@
+<HEAD><TITLE>discuss@charon: [722] in "Coldmud discussion meeting"</TITLE>
+<H1>[722] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?722"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="721"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="721"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="721"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="723"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: server extension</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 20 14:16:50 1995
+)</H3>
+<PRE>
+From: brandon@avon.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Mon, 20 Mar 95 12:12:44 -0700
+
+&lt; My first instinct is to provide a way to 'import' new class objects. What I
+&lt; envision is that you'd tell the running server there's an "object file" at
+&lt; a certain location in the file system and that you wish for it to be added
+&lt; to the server as a new object. Something like import("extensions/bitfield").
+&lt; The return of this function would be a new dbref which acts like a regular
+&lt; object as far as the db can tell. When the object receives messages it turns
+&lt; them into API calls. I guess this is kinda like a Windows DLL...
+
+Unfortunately, I am a complete novice in respect to this low level of
+functionality.  However, it is something I would love to see.
+
+&lt; We'd need a way to verify that an import object was 'valid' [...]
+
+Actually, I wouldn't bother.  99% of the time you are linking to a binary
+it would be to have faster and more optimal routines.  No joe schmo would
+do this (and if they wanted to they could contact an admin).  I think you
+should just bind the [de]linking function to $sys and trust the object you
+are linking to.
+
+&lt; Incidentally, since I will be providing the parser tree and allowing people to
+&lt; compile raw parse trees to methods we will be able to add new operators in-db
+&lt; if the code interpreter will support them. Maybe we should change the
+&lt; interpreter to allow 'unknown' operators and send messages to the first
+&lt; operand about the operator to see if it recognizes it, then to the second
+&lt; operator, etc. This would allow some insane person to make string addition to
+&lt; non-string types to work as if the non string types were string
+&lt; representations of themselves if they provide a way to get that rep.
+&lt;
+&lt; Er, I mean, "foo" + 1 could be interpreted as $string.add_op("foo", 1) which
+&lt; would generate a $integer.to_string(1)?
+
+Actually, I would interpret "foo" + 1 to return "oo", but that is just me
+(shrug).
+
+I wouldn't bother with the above, sure it would be nice, but how often
+would it be used (compared to how often you'd have to check the validity
+of each operator).
+
+(then again, I could just be raining on your parade :)
+
+-Brandon
+</PRE>

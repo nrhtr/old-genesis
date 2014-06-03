@@ -1,0 +1,29 @@
+<HEAD><TITLE>discuss@charon: [1012] in "Coldmud discussion meeting"</TITLE>
+<H1>[1012] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1012"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1011"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1013"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] maplist/mapindex</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jun  9 16:14:38 1996
+)</H3>
+<PRE>
+To: coldstuff@cold.org
+Date: Sun, 09 Jun 1996 15:06:05 -0500
+From: Zachary DeAquila &lt;zachary@zachs.place.org&gt;
+
+
+minor quibble, (I like the idea in general) but I'd suggest
+using 'mapitem' instead of 'maplist' - because you're mapping
+the var to each item just like 'mapindex' maps the var to
+each index...
+
+ --Zachary
+</PRE>

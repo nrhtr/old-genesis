@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1210] in "Coldmud discussion meeting"</TITLE>
+<H1>[1210] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1210"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1209"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1211"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1211"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1211"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Down n Dirty native methods</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Jan 14 23:23:30 1997
+)</H3>
+<PRE>
+Date: Tue, 14 Jan 1997 20:07:00 -0800
+To: coldstuff@cold.org
+From: Jeff Kesselman &lt;jeffk@ten.net&gt;
+
+Okies,
+I need to be able to create a method invocation from inside my native
+method.  I'm implementing the TEN security/billing interface and its based
+on callbacks from an idle function.  Trying to translate that to something
+else will cost me e\seriosu efficiency ADN a lot of unecc C coding.
+
+What I need is a function like Perl5's perl_call().
+Does this exist? If nto, coudl someone write one fairly quickly??
+
+Jeff K.
+
+
+
+</PRE>

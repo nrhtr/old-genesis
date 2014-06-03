@@ -1,0 +1,30 @@
+<HEAD><TITLE>discuss@charon: [143] in "Coldmud discussion meeting"</TITLE>
+<H1>[143] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?143"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="142"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="144"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>name resolving with connect()</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Feb  7 03:09:36 1994
+)</H3>
+<PRE>
+Date: Mon, 7 Feb 94 01:04:09 -0700
+From: brandon@paradise.declab.usu.edu (869683 Gillespie Brandon James)
+To: coldstuff@MIT.EDU
+
+
+Would be nice to have this, is it on the agenda?  Right now you have to do
+SMTP the ugly way by connecting to a pre-defined IP number and having that
+machine forward to another one..(ugh).  Anyhow, anything?
+
+Greg?  Bueller?  Bueller? ... ANYBODY?  Has ColdMUD been forsaken?
+
+-Brandon
+</PRE>

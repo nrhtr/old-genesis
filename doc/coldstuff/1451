@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1451] in "Coldmud discussion meeting"</TITLE>
+<H1>[1451] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1451"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1450"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1452"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1452"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1452"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ColdC</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Aug  2 12:49:56 1999
+)</H3>
+<PRE>
+Date: Mon, 2 Aug 1999 12:29:31 -0400 (EDT)
+From: William Moore &lt;moorewc@bellsouth.net&gt;
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+	I was wondering if anybody on this list could help point me to a
+good source of information, or perhaps some pointers getting started with
+ColdC.  I've been an active develpoer of MUDs, mostly diku, and merc based
+for the last couple of years, but I've found them to be highly restrictive
+for expansion.  I came acrossed ColdC and was impressed with it's Ideas.
+I would like to try starting a MUD based on it, but have had a hard time
+getting started.  Any ideas, and or pointers on where to get started would
+be greatly appreciated :)
+
+Thanks..
+
+William Moore
+
+
+Nitwit ideas are for emergencies.  You use them when you've got nothing
+else to try.  If they work, they go in the Book.  Otherwise you follow
+the Book, which is largely a collection of nitwit ideas that worked.
+                -- Larry Niven, "The Mote in God's Eye"
+
+</PRE>

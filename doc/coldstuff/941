@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [941] in "Coldmud discussion meeting"</TITLE>
+<H1>[941] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?941"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="939"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="940"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="940"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="942"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="942"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="943"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] regular expressions</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Mar 22 19:36:36 1996
+)</H3>
+<PRE>
+From: "Jeff Kesselman" &lt;jeffk@tenetwork.com&gt;
+To: coldstuff@cold.org, silovic@srce.hr (Miroslav Silovic)
+Date: Fri, 22 Mar 1996 16:22:08 +0000
+Reply-to: jeffk@tenetwork.com
+
+
+
+&gt;I think we should use Perl regexp (if you feel like isolating its
+&gt;source). At least I can tell which characters need to be backslashed and
+&gt;when in Perl regexp. :) It's also somewhat standard and powerful
+&gt;enough.
+
+As I understand it, the issue is not changing what regexp in coldc 
+does, but how itis implemented, yes?
+
+I personally like coldc 's regexp for the way it allows me to specify 
+what I want extracted.  Its very mud-friendly.  How it is implemented 
+I don't care so much about BUT the same expression should produce the 
+same reult on all ColdX implementations.  How it does it IMO shoudl 
+be left up to the porter/implementor.
+
+JK
+
+	Miro
+
+*******************************************************
+Jeff Kesselman                  * We want to be your
+Game Integration Engineer       *       perfect
+The Total Entertainment Network *         TEN
+*******************************************************
+</PRE>

@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [244] in "Coldmud discussion meeting"</TITLE>
+<H1>[244] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?244"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="243"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="245"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="245"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="247"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: temporary alternative for no clear_param)?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 17 22:28:48 1994
+)</H3>
+<PRE>
+To: the Lyncx &lt;BRANDON@cc.usu.edu&gt;
+Cc: coldstuff@MIT.EDU
+In-Reply-To: Your message of Tue, 17 May 94 20:22:18 -0600.
+             &lt;01HCGI9G9Y5UBWB7E1@cc.usu.edu&gt; 
+Date: Tue, 17 May 94 22:26:48 EDT
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt;     clear_parameter($defining_object, 'parameter)
+
+&gt; Which is called from the object that it is currently residing on.
+&gt; This would not break encapsulation, and it would fix what I see as a
+&gt; gaping wound in the side of ColdMUD.
+
+This would break encapsulation: it allows you to set the value of a
+ancestor's parameter.
+
+If you want to implement this, make it a $sys-only method that takes
+an object, a definer, and a parameter name.  The system object can
+then have a method which does clear_parameter(sender(), caller(),
+name).
+
+--GBH
+
+</PRE>

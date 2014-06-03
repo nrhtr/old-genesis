@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [655] in "Coldmud discussion meeting"</TITLE>
+<H1>[655] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?655"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="651"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="653"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="654"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="656"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: coldmud</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Feb 28 21:31:11 1995
+)</H3>
+<PRE>
+From: brandon@nibley.declab.usu.edu.declab.usu.edu
+To: coldstuff@MIT.EDU
+Date: Tue, 28 Feb 95 19:27:16 -0700
+
+
+&lt; we are trying to set up coldmud and are having some
+&lt; difficulties.  We cant create a world either, although
+&lt; coldmud compiled and seems to be running correctly, we
+&lt; can't connect to it.  The name of the world we are tring
+&lt; to create is somehting Glacier (The brain does not work
+&lt; as well as it use to) Nevertheless, if there is any help
+&lt; for me, it is all appreciated.
+
+It depends upon the driver you are using, and the core.  If you are using
+the Glacier world, it will only work with the very old driver 0.10-* (without
+making changes that is).
+
+If you want to use one of the newer versions (or even the ColdX driver),
+you probably need either the Frozenapples core or the Cold Dark Core.
+
+I havn't done any work in the past few months on either ColdX (my driver
+hacks), or the Cold Dark.  However, there will be one more (clean) release
+of both the Cold Dark Core (including all of the existing projects completed,
+which encompases hypertext help, Cold text (in-db dynamic text scheme), mail,
+new parsing system and new command syntax (i.e. "@display &lt;string&gt; on &lt;user&gt;"),
+as well as other things I have forgotten (oh, ColdX has a signal handler)).
+
+You can try to catch me online at the Cold Dark (good luck, I'm rather busy
+as of late, RL sucks ;), which is at:
+
+   recumbent.declab.usu.edu 1138
+
+ /\    Brandon Gillespie   (http://www.declab.usu.edu:8080/~brandon/)      /\
+ ||   "They who dream by day are cognizant of many things which escape     ||
+ \/           those who dream only by night."  - Edgar Allan Poe           \/
+</PRE>

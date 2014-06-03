@@ -1,0 +1,81 @@
+<HEAD><TITLE>discuss@charon: [1214] in "Coldmud discussion meeting"</TITLE>
+<H1>[1214] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1214"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1213"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1215"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1215"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1215"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Pause, suspend and re-entrancy....</H2>
+<H3>daemon@ATHENA.MIT.EDU (Fri Jan 17 03:34:19 1997
+)</H3>
+<PRE>
+Date: Fri, 17 Jan 1997 00:25:18 -0800
+From: Jeff Kesselman &lt;jeffk@ten.net&gt;
+To: coldstuff@cold.org
+
+
+------------EB86584437A8
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=us-ascii
+
+ Something ocurred to me the other night.....
+
+What prevents Genesis from re-entering an object with a Paused or
+Suspended method on another thread?  Seems pretty dangerous unless there
+is a JAVA like "monitor" than can be sued for synchronization.
+
+Oh, and  on another subject....
+
+The Interperter currently does a C function call through a dispatch
+table for EVERY opcode.  I suspect by judicious in-lining with a
+switch() statement in teh execute() function of the most common
+operators (things like +, -,++,--) we could SIGNIFICANTLY improve
+performance.....   a C-call per fundemental math op is really kinda sick
+and totally unecessary, IMO.
+
+JK
+------------------------------------------------------------------------
+
+------------EB86584437A8
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html; charset=us-ascii
+
+&lt;HTML&gt;&lt;BODY&gt;
+
+&lt;DT&gt;&amp;nbsp;Something ocurred to me the other night.....&lt;/DT&gt;
+
+&lt;DT&gt;&amp;nbsp;&lt;/DT&gt;
+
+&lt;DT&gt;What prevents Genesis from re-entering an object with a Paused or Suspended
+method on another thread?&amp;nbsp; Seems pretty dangerous unless there is
+a JAVA like &amp;quot;monitor&amp;quot; than can be sued for synchronization.&lt;/DT&gt;
+
+&lt;DT&gt;&amp;nbsp;&lt;/DT&gt;
+
+&lt;DT&gt;Oh, and&amp;nbsp; on another subject....&lt;/DT&gt;
+
+&lt;DT&gt;&amp;nbsp;&lt;/DT&gt;
+
+&lt;DT&gt;The Interperter currently does a C function call through a dispatch
+table for EVERY opcode.&amp;nbsp; I suspect by judicious in-lining with a switch()
+statement in teh execute() function of the most common operators (things
+like +, -,++,--) we could SIGNIFICANTLY improve performance.....&amp;nbsp;&amp;nbsp;
+a C-call per fundemental math op is really kinda sick and totally unecessary,
+IMO.&lt;/DT&gt;
+
+&lt;DT&gt;&amp;nbsp;&lt;/DT&gt;
+
+&lt;DT&gt;JK
+&lt;HR WIDTH="100%"&gt;&lt;/DT&gt;
+
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+------------EB86584437A8--
+
+</PRE>

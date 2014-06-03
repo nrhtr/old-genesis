@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [1020] in "Coldmud discussion meeting"</TITLE>
+<H1>[1020] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1020"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1019"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1021"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1021"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1021"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] 1 sec backups</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Jun 13 13:39:06 1996
+)</H3>
+<PRE>
+Date: Thu, 13 Jun 1996 19:06:10 +0200
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+
+
+In respond to the previous message (I lost the quote, sorry):
+
+In tuning the Cold server, I'm looking forward to 100-200 users online,
+and even 1000 is not out of consideration. Let's see what happens with
+1000 user backup.
+
+I expect that many people would require about 5000 objects in the object
+cache, about 4000 of which would be marked as modified at any given
+time. So, it's 4000 objects times 3kb/object (average). Remember, Cold
+doesn't decompile the methods before saving, and that is the main
+time-issue with MOOs.
+
+So, we have 12MB disk access. On a fast machine (and you *really* want a
+fast thing for 1000 users), it's 15-20 seconds (while the 100+ MB
+database copy would take far longer, in the background. Users wouldn't
+notice that unless the RAM cache fills up with modified objects, in
+which case the game would pause further till the filesystem backup is
+done).
+
+Mind you, with 100 users, we're in the order of magnitude of 1 sec for
+backup, so it's not *too* optimistic. :) Many MUSHes spend only a few secs
+for it.
+
+	Miro
+</PRE>

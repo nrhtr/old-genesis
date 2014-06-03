@@ -1,0 +1,312 @@
+<HEAD><TITLE>discuss@charon: [1519] in "Coldmud discussion meeting"</TITLE>
+<H1>[1519] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1519"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1518"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1518"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1520"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1525"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1529"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec  7 18:52:04 1999
+)</H3>
+<PRE>
+From: "Ian Klimon, Esq." &lt;ian@aephirsden.com&gt;
+To: &lt;coldstuff@cold.org&gt;
+Date: Tue, 7 Dec 1999 18:39:21 -0500
+Reply-To: coldstuff@cold.org
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0B82_01BF40E2.6040A8A0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+&gt;&gt;People should use what they like using, particularly in a
+volunteer project, but that's no reason for the project itself to
+adopt a proprietary standard for maintaining the information and
+cooperating among writers.  Compose in Word all you want, but don't
+expect stuff to be use and distributed if it takes advantage of
+proprietary word features that don't export well. &lt;&lt;
+
+Well it all boils down to this:  I've done numerous spelling/grammatical =
+and style fixes to the ColdC Reference.  They are in Word.  I've offered =
+this doc to whoever would like it.  If you don't want it, no skin off my =
+teeth.  If someone wants to settle on a format and convert this as a =
+onetime shot into that format, I'm happy to do any changes/edits/updates =
+in that particular format.
+
+And there you have it.
+
+ian
+
+
+------
+ian c. klimon, esq.
+ian@aephirsden.com
+www.aephirsden.com
+
+
+  ----- Original Message -----=20
+  From: Steven J. Owens=20
+  To: coldstuff@cold.org=20
+  Sent: Tuesday, December 07, 1999 6:02 PM
+  Subject: Re: Reference Manual updates
+
+
+  I wrote:
+  &gt; &gt;     I think the majority of the geek world recognize that the
+  &gt; &gt;majority of the "advancements" beyond text are just bloat and =
+feature
+  &gt; &gt;creep.  Now if you wanted to maintain the docs in FrameMaker format
+
+  Jeff Kesselman writes:
+  &gt; This is a pointless religous debate I fear.
+
+       Then why are you debating it? :-)
+
+  &gt; My simple answer is go look at sales figures.=20
+
+       Which will tell you almost nothing about the advantages of the
+  tool itself, other than that it's widely known, widely used, and
+  likely to be around in at least some form for the foreseeable future.
+
+  &gt; &lt;religous flame bait on, Im afraid&gt;
+  &gt; P.S.  Framemaker is the stadnard here where I work, Sun, for
+  &gt; layout. Most of the technical writers I've asked though say that
+  &gt; while it's layout is superb, its text processing is inadaquate.
+  &gt; Most of them compsoe test in Vi or Emacs and import...
+  &gt; &lt;/religous flame bait&gt;
+
+       The original reference to FrameMaker was simply that if you want
+  to propose any sort of WYSIWYG editor format, FrameMaker (and
+  InterLeaf) is one of the few that would actually provide any
+  significant advantages.  Having written 6 database manuals in (not to
+  mention being involved in the production of another dozen or so
+  manuals) in FrameMaker I feel slightly qualified to comment on the
+  process of producing technical documents.  Personally, I prefer to
+  work in emacs for heavy text processing, but FrameMaker or its like is
+  quite handy in producing a printed document.  I'd probably use it for
+  the post-production process.
+
+       FrameMaker's original developers felt much the same way about
+  emacs, I suspect; the Unix flavors of FrameMaker had the default emacs
+  control key mappings for cursor manipulation.  Given my 'druthers,
+  it'd be some combination of the two (maybe some merging of Xemacs and
+  FrameMaker :-).  The chief advantages Frame has is some decent level
+  of format and layout control, at one point an almost object-oriented
+  level of formatting control over pararaphs by style (and it was
+  heading even further in this direction last time I looked), a pretty
+  good indexing system, and some very handy structural conveniences for
+  large documents.
+
+       Frame excelled at very large technical documents, which was where
+  it gained the most acceptance.  If I were somehow put in the
+  decision-making role for such a process, that's probably the way I'd
+  go; use some fairly straightforward text markup format to define the
+  raw text, probably a format built in XML, from that generate HTML for
+  web reference use, texinfo and/or unix Man files for people who want
+  them, and generate MIF and import into FrameMaker for book production.
+
+       As to the question of what format the document development should
+  be done in, well, that goes back to my original suggestion:
+
+       "What's wrong with HTML?  Or how about adding something like
+  JavaDoc to the Cold stuff?  One possibility I'd suggest is, if people
+  really want to use Word, why not have a special set of styles meant to
+  be used in generating HTML output (not that I'd trust Word's output to
+  HTML, having spent some painful hours working with such output in the
+  past).  Or find some relatively painless XML format that can be easily
+  translated into infotext, Word, and HTML as needed."
+
+       People should use what they like using, particularly in a
+  volunteer project, but that's no reason for the project itself to
+  adopt a proprietary standard for maintaining the information and
+  cooperating among writers.  Compose in Word all you want, but don't
+  expect stuff to be use and distributed if it takes advantage of
+  proprietary word features that don't export well.  Heck, maybe a
+  wikiwikiweb is what people should use :-).
+
+  Steven J. Owens
+  puff@guild.net
+  puff@netcom.com
+
+
+------=_NextPart_000_0B82_01BF40E2.6040A8A0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META content=3D"text/html; charset=3Diso-8859-1" =
+http-equiv=3DContent-Type&gt;
+&lt;META content=3D"MSHTML 5.00.2919.6307" name=3DGENERATOR&gt;
+&lt;STYLE&gt;&lt;/STYLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY bgColor=3D#ffffff&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;&amp;gt;&amp;gt;People should use what they like using, =
+particularly=20
+in a&lt;BR&gt;volunteer project, but that's no reason for the project itself=20
+to&lt;BR&gt;adopt a proprietary standard for maintaining the information=20
+and&lt;BR&gt;cooperating among writers.&amp;nbsp; Compose in Word all you want, =
+but=20
+don't&lt;BR&gt;expect stuff to be use and distributed if it takes advantage=20
+of&lt;BR&gt;proprietary word features that don't export=20
+well.&amp;nbsp;&amp;lt;&amp;lt;&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;Well it all boils down to this:&amp;nbsp; I've done =
+numerous=20
+spelling/grammatical and style fixes to the ColdC Reference.&amp;nbsp; They =
+are in=20
+Word.&amp;nbsp; I've offered this doc to whoever would like it.&amp;nbsp; If you =
+don't=20
+want it, no skin off my teeth.&amp;nbsp; If someone wants to settle on a =
+format and=20
+convert this as a onetime shot into that format, I'm happy to do any=20
+changes/edits/updates in that particular format.&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;And there you have it.&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&lt;FONT size=3D2&gt;ian&lt;/FONT&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;------&lt;BR&gt;ian c. klimon, esq.&lt;BR&gt;&lt;A=20
+href=3D"mailto:ian@aephirsden.com"&gt;ian@aephirsden.com&lt;/A&gt;&lt;BR&gt;&lt;A=20
+href=3D"http://www.aephirsden.com"&gt;www.aephirsden.com&lt;/A&gt;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;DIV&gt;&amp;nbsp;&lt;/DIV&gt;
+&lt;BLOCKQUOTE=20
+style=3D"BORDER-LEFT: #000000 2px solid; MARGIN-LEFT: 5px; MARGIN-RIGHT: =
+0px; PADDING-LEFT: 5px; PADDING-RIGHT: 0px"&gt;
+  &lt;DIV style=3D"FONT: 10pt arial"&gt;----- Original Message ----- &lt;/DIV&gt;
+  &lt;DIV=20
+  style=3D"BACKGROUND: #e4e4e4; FONT: 10pt arial; font-color: =
+black"&gt;&lt;B&gt;From:&lt;/B&gt;=20
+  &lt;A href=3D"mailto:puff@netcom.com" title=3Dpuff@netcom.com&gt;Steven J. =
+Owens&lt;/A&gt;=20
+  &lt;/DIV&gt;
+  &lt;DIV style=3D"FONT: 10pt arial"&gt;&lt;B&gt;To:&lt;/B&gt; &lt;A =
+href=3D"mailto:coldstuff@cold.org"=20
+  title=3Dcoldstuff@cold.org&gt;coldstuff@cold.org&lt;/A&gt; &lt;/DIV&gt;
+  &lt;DIV style=3D"FONT: 10pt arial"&gt;&lt;B&gt;Sent:&lt;/B&gt; Tuesday, December 07, =
+1999 6:02=20
+  PM&lt;/DIV&gt;
+  &lt;DIV style=3D"FONT: 10pt arial"&gt;&lt;B&gt;Subject:&lt;/B&gt; Re: Reference Manual=20
+  updates&lt;/DIV&gt;
+  &lt;DIV&gt;&lt;BR&gt;&lt;/DIV&gt;I wrote:&lt;BR&gt;&amp;gt; &amp;gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; I think =
+the=20
+  majority of the geek world recognize that the&lt;BR&gt;&amp;gt; &amp;gt;majority of =
+the=20
+  "advancements" beyond text are just bloat and feature&lt;BR&gt;&amp;gt; =
+&amp;gt;creep.&amp;nbsp;=20
+  Now if you wanted to maintain the docs in FrameMaker =
+format&lt;BR&gt;&lt;BR&gt;Jeff=20
+  Kesselman writes:&lt;BR&gt;&amp;gt; This is a pointless religous debate I=20
+  fear.&lt;BR&gt;&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Then why are you debating it?=20
+  :-)&lt;BR&gt;&lt;BR&gt;&amp;gt; My simple answer is go look at sales figures.=20
+  &lt;BR&gt;&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Which will tell you almost nothing =
+about the=20
+  advantages of the&lt;BR&gt;tool itself, other than that it's widely known, =
+widely=20
+  used, and&lt;BR&gt;likely to be around in at least some form for the =
+foreseeable=20
+  future.&lt;BR&gt;&lt;BR&gt;&amp;gt; &amp;lt;religous flame bait on, Im afraid&amp;gt;&lt;BR&gt;&amp;gt;=20
+  P.S.&amp;nbsp; Framemaker is the stadnard here where I work, Sun, =
+for&lt;BR&gt;&amp;gt;=20
+  layout. Most of the technical writers I've asked though say =
+that&lt;BR&gt;&amp;gt; while=20
+  it's layout is superb, its text processing is inadaquate.&lt;BR&gt;&amp;gt; Most =
+of them=20
+  compsoe test in Vi or Emacs and import...&lt;BR&gt;&amp;gt; &amp;lt;/religous flame=20
+  bait&amp;gt;&lt;BR&gt;&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; The original reference to =
+FrameMaker=20
+  was simply that if you want&lt;BR&gt;to propose any sort of WYSIWYG editor =
+format,=20
+  FrameMaker (and&lt;BR&gt;InterLeaf) is one of the few that would actually =
+provide=20
+  any&lt;BR&gt;significant advantages.&amp;nbsp; Having written 6 database manuals =
+in (not=20
+  to&lt;BR&gt;mention being involved in the production of another dozen or=20
+  so&lt;BR&gt;manuals) in FrameMaker I feel slightly qualified to comment on=20
+  the&lt;BR&gt;process of producing technical documents.&amp;nbsp; Personally, I =
+prefer=20
+  to&lt;BR&gt;work in emacs for heavy text processing, but FrameMaker or its =
+like=20
+  is&lt;BR&gt;quite handy in producing a printed document.&amp;nbsp; I'd probably =
+use it=20
+  for&lt;BR&gt;the post-production process.&lt;BR&gt;&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;=20
+  FrameMaker's original developers felt much the same way =
+about&lt;BR&gt;emacs, I=20
+  suspect; the Unix flavors of FrameMaker had the default =
+emacs&lt;BR&gt;control key=20
+  mappings for cursor manipulation.&amp;nbsp; Given my 'druthers,&lt;BR&gt;it'd be =
+some=20
+  combination of the two (maybe some merging of Xemacs and&lt;BR&gt;FrameMaker =
+
+  :-).&amp;nbsp; The chief advantages Frame has is some decent level&lt;BR&gt;of =
+format=20
+  and layout control, at one point an almost object-oriented&lt;BR&gt;level of =
+
+  formatting control over pararaphs by style (and it was&lt;BR&gt;heading even =
+further=20
+  in this direction last time I looked), a pretty&lt;BR&gt;good indexing =
+system, and=20
+  some very handy structural conveniences for&lt;BR&gt;large=20
+  documents.&lt;BR&gt;&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Frame excelled at very =
+large=20
+  technical documents, which was where&lt;BR&gt;it gained the most =
+acceptance.&amp;nbsp;=20
+  If I were somehow put in the&lt;BR&gt;decision-making role for such a =
+process,=20
+  that's probably the way I'd&lt;BR&gt;go; use some fairly straightforward =
+text markup=20
+  format to define the&lt;BR&gt;raw text, probably a format built in XML, from =
+that=20
+  generate HTML for&lt;BR&gt;web reference use, texinfo and/or unix Man files =
+for=20
+  people who want&lt;BR&gt;them, and generate MIF and import into FrameMaker =
+for book=20
+  production.&lt;BR&gt;&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; As to the question of what =
+format=20
+  the document development should&lt;BR&gt;be done in, well, that goes back to =
+my=20
+  original suggestion:&lt;BR&gt;&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; "What's wrong =
+with=20
+  HTML?&amp;nbsp; Or how about adding something like&lt;BR&gt;JavaDoc to the Cold=20
+  stuff?&amp;nbsp; One possibility I'd suggest is, if people&lt;BR&gt;really want =
+to use=20
+  Word, why not have a special set of styles meant to&lt;BR&gt;be used in =
+generating=20
+  HTML output (not that I'd trust Word's output to&lt;BR&gt;HTML, having spent =
+some=20
+  painful hours working with such output in the&lt;BR&gt;past).&amp;nbsp; Or find =
+some=20
+  relatively painless XML format that can be easily&lt;BR&gt;translated into =
+infotext,=20
+  Word, and HTML as needed."&lt;BR&gt;&lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; People =
+should use=20
+  what they like using, particularly in a&lt;BR&gt;volunteer project, but =
+that's no=20
+  reason for the project itself to&lt;BR&gt;adopt a proprietary standard for=20
+  maintaining the information and&lt;BR&gt;cooperating among writers.&amp;nbsp; =
+Compose in=20
+  Word all you want, but don't&lt;BR&gt;expect stuff to be use and distributed =
+if it=20
+  takes advantage of&lt;BR&gt;proprietary word features that don't export =
+well.&amp;nbsp;=20
+  Heck, maybe a&lt;BR&gt;wikiwikiweb is what people should use =
+:-).&lt;BR&gt;&lt;BR&gt;Steven J.=20
+  Owens&lt;BR&gt;&lt;A href=3D"mailto:puff@guild.net"&gt;puff@guild.net&lt;/A&gt;&lt;BR&gt;&lt;A=20
+  =
+href=3D"mailto:puff@netcom.com"&gt;puff@netcom.com&lt;/A&gt;&lt;BR&gt;&lt;/BLOCKQUOTE&gt;&lt;/BOD=
+Y&gt;&lt;/HTML&gt;
+
+------=_NextPart_000_0B82_01BF40E2.6040A8A0--
+
+</PRE>

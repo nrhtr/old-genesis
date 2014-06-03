@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [239] in "Coldmud discussion meeting"</TITLE>
+<H1>[239] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?239"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="236"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="238"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="238"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="240"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="240"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="240"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Finding out the call stack in ColdMUD</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue May 17 00:23:31 1994
+)</H3>
+<PRE>
+Date: Tue, 17 May 1994 00:19:03 -0400 (EDT)
+From: "John P. Landahl III" &lt;jpl3@access.digex.net&gt;
+To: coldstuff@MIT.EDU
+In-Reply-To: &lt;01HCF7YF4FBMBG68WO@cc.usu.edu&gt;
+
+On Mon, 16 May 1994, the Lyncx wrote:
+
+&gt; &lt;&gt; I want something like MOO's 'callers()' or 'player' in ColdMUD.  Is
+&gt; &lt;&gt; this possible?  sender() only gives you the info from one level
+&gt; &lt;&gt; back.  I need to know who or what is ultimately responsible for
+&gt; &lt;&gt; calling the current method.  I'm trying to write a parser that can
+&gt; &lt;
+&gt; &lt; This is tantamount to accessing global state, and is a poor design.
+&gt; &lt; If you need this information, pass it in as an argument.
+&gt; 
+&gt; SamIAm's suggestion would be to have a connection(), which returns your
+&gt; connection object, and to let you find user from there...
+
+That would probably be fine for what I want to do, but I don't see why being 
+able to get the call stack is "poor design".  Someone whack me with a 
+kyosaku and enlighten me.
+
+John/Jip
+</PRE>

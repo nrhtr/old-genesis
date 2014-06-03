@@ -1,0 +1,45 @@
+<HEAD><TITLE>discuss@charon: [1014] in "Coldmud discussion meeting"</TITLE>
+<H1>[1014] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1014"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1013"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1015"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1015"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1015"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] maplist stuff</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Jun  9 16:55:19 1996
+)</H3>
+<PRE>
+From: silovic@srce.hr (Miroslav Silovic)
+To: coldstuff@cold.org
+Date: Sun, 9 Jun 1996 22:45:09 +0200 (MET DST)
+
+
+After day's thought, I think that introducing new keywords may be bad
+idea in any case. How about doing it the way Mathematica does (okay,
+with slight changes in the operator names so that decompilation doesn't
+break):
+
+maplist:	[1,2,3] \@ x -&gt; x+1;
+mapindex:       l \# x -&gt; l[len-x];
+findindex:	l \? x -&gt; x&gt;0;
+filter:         l \* x -&gt; x&gt;0;
+
+And maybe:
+
+maptohash:      l \&amp; x -&gt; [x,0];  &lt;-- this one should return a
+				      hashtable
+Index equivalent to this:   l \+ x -&gt; [p[x],q[x]];
+
+The problem is whether we can use backslash (it's free at the moment,
+isn't it?)
+
+Cryptic, but with helps, one can get used to this. :)
+
+	Miro
+</PRE>

@@ -1,0 +1,39 @@
+<HEAD><TITLE>discuss@charon: [1249] in "Coldmud discussion meeting"</TITLE>
+<H1>[1249] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1249"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1247"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1248"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1248"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1250"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Win32?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Mar 10 11:07:11 1997
+)</H3>
+<PRE>
+Date: Mon, 10 Mar 1997 09:00:40 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@cold.org&gt;
+To: Chris Williams &lt;psion@mv.mv.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;33233299.7A13@mv.mv.com&gt;
+
+On Sun, 9 Mar 1997, Chris Williams wrote:
+&gt; &gt; How far away is the win32 version of Cold Genesis Core?
+&gt; 
+&gt; Yeah, when?
+
+It works right now--but only if you are using borland to compile (just
+follow the instructions).  I was going to get it to work with Visual C++,
+but I just sold my PC in leiu of a DEC Alpha--sorry! (NO, its not FS&amp;#@
+running NT).
+
+However, with p25 out we will have Win32 binaries available for
+downloading.
+
+-Brandon Gillespie
+
+</PRE>

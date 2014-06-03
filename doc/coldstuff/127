@@ -1,0 +1,57 @@
+<HEAD><TITLE>discuss@charon: [127] in "Coldmud discussion meeting"</TITLE>
+<H1>[127] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?127"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="126"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="128"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Cold World 0.5 release</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Dec 16 03:44:03 1993
+)</H3>
+<PRE>
+From: ghudson@MIT.EDU
+Date: Thu, 16 Dec 93 03:24:50 EST
+To: coldstuff@MIT.EDU
+
+
+I have released Cold World 0.5 on ftp.ccs.neu.edu.
+
+I have rewritten the object initialization code, which will affect
+people's init() methods.  I have also rewritten a lot of the
+connection-handling code to be more flexible.
+
+Cold World is now a real mud, on glacier.mit.edu 6666.  The cname
+"glacier" for the machine will hopefully come through tomorrow; in the
+meantime, the IP address is 18.77.1.175 (this may change if I move it
+to, say, a Linux box in my dorm room after I have networking; the
+hostname probably won't change).  The server is running on an old,
+slow Vax 3100, which should be an interesting test of the server's
+speed if it gets very much activity.
+
+I haven't worked out a collaboration policy yet, but new players will
+be programmers when they log in.  I don't guarantee that the database
+is stable, although I hope not to have to revamp the core code to the
+point of requiring a database restart from scratch after this release
+of Cold World.  I'm also not backing up the database (apart from the
+usual hourly checkpoint to local disk), although I may start doing
+that.
+
+There is currently only 15MB free on the local disk partition, which
+isn't much growing room; however, I should be able to get a Linux box
+up on the net by February and move the mud (and the machine name)
+there, if it looks like I need more space.  (I also hope to have
+18.77.1.175 upgraded to something with 400MB of local disk, but that
+may not happen until next summer.)
+
+The mud isn't really ready to be public; the layout is rather pathetic
+right now.  It's mostly for testing and development.
+
+--GBH
+
+</PRE>

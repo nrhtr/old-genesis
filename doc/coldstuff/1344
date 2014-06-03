@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1344] in "Coldmud discussion meeting"</TITLE>
+<H1>[1344] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1344"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1343"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1345"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] Looking at Smocks</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Aug 25 16:40:57 1997
+)</H3>
+<PRE>
+From: "Luther, Clay" &lt;clay@selsius.com&gt;
+To: "'coldstuff@cold.org'" &lt;coldstuff@cold.org&gt;
+Date: Mon, 25 Aug 1997 15:34:49 -0500
+
+We are trying to figure out how to look at things held by other people,
+namely clothing at this juncture.
+
+For example, Cle is wearing the $wearble_frob "a filthy white smock."
+
+&gt; look Cle
+Cle is wearing a filthy white smock.
+&gt; look at Cle's smock
+Cle does not have a smock.
+
+Am I missing a public flag or something?
+
+---
+Onegaishimasu.
+
+Clay Luther
+clay@selsius.com
+
+Hello, hello!  This is Monkey Wrench calling Bunny Hutch Headquarters...
+
+</PRE>

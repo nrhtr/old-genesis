@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [555] in "Coldmud discussion meeting"</TITLE>
+<H1>[555] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?555"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="548"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="552"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="554"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="556"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="556"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="556"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: coldmud compile, not good at netcom</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Nov  7 17:45:42 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: frankc@netcom.com (Frank Crowell)
+Date: Mon, 7 Nov 1994 14:35:50 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;199411070259.SAA00699@netcom9.netcom.com&gt; from "Frank Crowell" at Nov 6, 94 06:59:27 pm
+
+&gt; 
+&gt; On netcom, I am having trouble compiling coldmud (0.10 and 0.12-1).
+&gt; I get the same warnings and error messages.  Util.c gives
+&gt; a fatal error concerning RAND_MAX and i also get a lot
+&gt; of implicit warnings.
+&gt; 
+&gt; Anyone out there from netcom know if anything has changed
+&gt; that would cause coldmud (and fmpl 1.6) to not compile?
+&gt; 
+&gt; I think the only server that I have been able to build tonight
+&gt; is LambdaMOO (lastest version).
+&gt; 
+&gt; well so much for muds, I think i will go get a pizza.
+&gt; 
+&gt; -frank
+&gt; 
+&gt; -- 
+&gt; [Frank Crowell  			 frankc@netcom.COM]
+&gt; [Home page	ftp://ftp.netcom.com/pub/frankc/pages.html]
+&gt; 
+
+I have successfully compiled 0.10 here at NetCom by following the directions
+ in the README. Version 0.12.0 requires that COMPILE_SUNOS or some such
+ macro be defined. I thought the makefile had been updated for this.
+</PRE>

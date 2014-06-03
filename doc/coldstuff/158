@@ -1,0 +1,51 @@
+<HEAD><TITLE>discuss@charon: [158] in "Coldmud discussion meeting"</TITLE>
+<H1>[158] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?158"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="157"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="159"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>segv durring startup FIXED???</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Mar 23 03:58:13 1994
+)</H3>
+<PRE>
+From: deforest@netcom.com (Robert de Forest)
+To: coldstuff@MIT.EDU
+Date: Wed, 23 Mar 1994 00:56:02 -0800 (PST)
+
+After much toil, I found what may be the solution to the segmentation
+ faults recieved at startup and durring other times when objects are sized.
+
+Here's the diff of dbpack.c (the only filed needing changes):
+
+150c150
+&lt; 	    write_ident(obj-&gt;vars.tab[i].class, fp);
+---
+&gt; 	    write_long(obj-&gt;vars.tab[i].class, fp);
+360c360
+&lt; 	    obj-&gt;vars.tab[i].class = read_ident(fp);
+---
+&gt; 	    obj-&gt;vars.tab[i].class = read_long(fp);
+581c581
+&lt; 	    size += size_ident(obj-&gt;vars.tab[i].class);
+---
+&gt; 	    size += size_long(obj-&gt;vars.tab[i].class);
+
+The problem is that when changing dbrefs to not being idents, a few references
+ to class were not converted. Class is the object defining the variable in
+ vars. That is, vars.tab[] is an array of structs with a name, a defining
+ class, and a value. The class used to be an ident, as did al dbrefs (I
+ assume), hence the confusion. There may be other files so affected. I don't
+ know.
+
+Any comments?
+
+Crag@TheColdDark
+Robert de Forest
+</PRE>

@@ -1,0 +1,55 @@
+<HEAD><TITLE>discuss@charon: [151] in "Coldmud discussion meeting"</TITLE>
+<H1>[151] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?151"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="150"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="152"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>parameters etc</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Mar  6 17:49:14 1994
+)</H3>
+<PRE>
+Date: Sun, 06 Mar 1994 15:33:59 -0600 (MDT)
+From: Lynx &lt;BRANDON@cc.usu.edu&gt;
+To: coldstuff@MIT.EDU
+X-Vms-To: COLDSTUFF
+
+I realize Greg has yet to be completely resurrected, but i'm posting this so I
+dont forget...
+
+First: ancestor defined parameters on children.
+
+You cannot removeremove them, p  Crag mentioned this to Greg and Greg said it
+was a 'feature'.  I believe that being able to hose the parent parameter and
+have the children's parameters stay is a feature, not being able to remove the
+childrens parameters, AT ALL, is a bug.  (at all in db--you can always edit the
+textdump--which is the only option available currently).
+
+This showed up when I rearranged $described.  I hosed ,description from
+$described, and suddenly realized that all the children still had it defined (I
+knew this would happen, just never...realized it I guess).  Not even that,
+there was no way of accessing the parameters!  They existed, but nothing I had
+would access them (i.e. get the value).  Very frustrating indeed.  Perhaps a
+'add/del _inherited_parameter (hsm).  Dunno, but something is needed, oh, and a
+get_inherited_var(), hsm, SOMETHING (feh).
+
+Next: some sort of method tracing (like method())
+
+This is stretching it, I know, but it would be extremely nice.  Basically its
+the method that called the current method... perhaps last_method() or
+something.  In cooperation with this, it would be nice to have stack() which
+would keep track of all objects/methods called in this stack (like a traceback,
+but accessible--not strings).
+
+------------
+wishlist end
+------------
+
+-Brandon (Lynx)
+</PRE>

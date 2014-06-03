@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [1287] in "Coldmud discussion meeting"</TITLE>
+<H1>[1287] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1287"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1286"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1286"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1286"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1288"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1288"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1297"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] minimal db</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun May  4 21:03:53 1997
+)</H3>
+<PRE>
+From: "Jon A. Lambert" &lt;jlsysinc@ix.netcom.com&gt;
+To: "Jess Regal" &lt;regal@netline.net&gt;, "ColdC ML" &lt;coldstuff@cold.org&gt;
+Date: Sun, 4 May 1997 21:01:19 -0400
+
+&gt; I've downloaded the minimal.db onto a windows 95 system...i don't know
+&gt; what the makedb thing did in unix, but i was directed by someone to use
+&gt; copy source+source+source command type thing. so i did, appended the
+&gt; .cdc files together into textdump, run coldcc..get an error. "Text dump
+&gt; ended inside method definition.!" go figure..so i try the copy again,
+&gt; redownloaded the file, finally i tried just compiling the .cdc
+&gt; files...same message..is it something to do with WinZip? is there
+&gt; something else in that makedb file/command that i missed? Any help would
+&gt; be appreciated.
+&gt; 
+Hmm, try 'copy /b source + source + source textdump'
+
+Also, make sure you don't have an extra plus between source and textdump
+
+
+</PRE>

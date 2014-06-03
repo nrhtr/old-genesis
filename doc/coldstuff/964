@@ -1,0 +1,37 @@
+<HEAD><TITLE>discuss@charon: [964] in "Coldmud discussion meeting"</TITLE>
+<H1>[964] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?964"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="963"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="965"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] log() function change</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Apr 17 16:31:44 1996
+)</H3>
+<PRE>
+Date: Wed, 17 Apr 1996 14:03:58 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+
+I realize I promised that there would be no more changes to the base 
+functions, however this one is one which was overlooked.  As it is 
+generally not used in more than a few places in a DB I figured I would 
+bounce it off this list for discussion.
+
+I would like to rename the function 'log()' to 'dblog()' (which writes to 
+the logs/db.log file).  This will leave it open so the logarithmic 
+function can be the common name of 'log()'.  Right now all of the 
+math/trig functions are named exactly as their C equivalents, except for 
+log, which is 'logf()' in order to reduce conflicts.  However, this 
+doesn't sit well with me...
+
+Comments?
+
+-Brandon Gillespie-
+</PRE>

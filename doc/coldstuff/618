@@ -1,0 +1,47 @@
+<HEAD><TITLE>discuss@charon: [618] in "Coldmud discussion meeting"</TITLE>
+<H1>[618] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?618"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="615"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="617"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="617"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="619"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: speed ping</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec 12 16:53:35 1994
+)</H3>
+<PRE>
+From: Alex Stewart &lt;riche@crl.com&gt;
+To: brandon@avon.declab.usu.edu
+Date: Mon, 12 Dec 1994 13:49:29 -0800 (PST)
+Cc: coldstuff@MIT.EDU
+In-Reply-To: &lt;9412122103.AA02217@avon.declab.usu.edu&gt; from "brandon@avon.declab.usu.edu" at Dec 12, 94 02:02:54 pm
+
+&gt; What I was asking is what would be faster, using match template or tossing
+&gt; it into a dictionary.  It will work, as the templates I would be using in
+&gt; the dictionary would only be 1 word long.
+
+Well, it seems to me that should be fairly obvious.  Dictionary lookup is done
+internal to the server using hash tables and optimized C code, as opposed to
+match_template which has to run through a ColdC interpreted loop using a
+routine which has to do a pattern match on every instance to see if it matches.
+OF COURSE dictionary lookup will be faster, unless you're doing something silly
+like creating the dictionary from the templates every time you want to match
+something.
+
+Of course it'll take up a lot more storage space..
+
+&gt; (PLEASE stop trying to assume you know what I'm talking about).
+
+Oh, come on, Brandon.  PLEASE stop jumping on Crag for perfectly legitimate
+questions.  I was going to ask the same thing.
+
+-R
+-------------------------------------------------------------------------------
+     Alex Stewart - riche@crl.com - Richelieu @ Diversity University MOO
+              ftp://ftp.crl.com/users/ro/riche/html/riche.html
+</PRE>

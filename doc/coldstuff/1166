@@ -1,0 +1,48 @@
+<HEAD><TITLE>discuss@charon: [1166] in "Coldmud discussion meeting"</TITLE>
+<H1>[1166] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1166"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1165"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1165"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1165"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1167"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1168"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1168"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Re:coldcc -d -#...</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Dec  2 22:35:35 1996
+)</H3>
+<PRE>
+Date: Mon, 2 Dec 1996 20:28:24 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Andrew Wilson &lt;andrew@aaaaaaaa.demon.co.uk&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;199612022306.XAA01092@aaaaaaaa.demon.co.uk&gt;
+
+&gt; 
+&gt; 	I think that coldcc's args parser needs to be toughened 
+&gt; up to avoid a little problem I just encountered.
+&gt; 
+&gt; 	coldcc -d -#
+&gt; 
+&gt; 		means decompile from binary to textdump, use object names
+&gt; 		instead of numbers when writing out the text...
+&gt; 
+&gt; 	coldcc -#d
+&gt; 
+&gt; 		actually compiles from textdump to binary.
+
+You can't merge args--each is a seperate entity to allow for followup
+information to the arg (i.e. -s10x40)
+
+&gt; Sucky.
+
+Mmm, depends upon your POV :)
+
+I can have it explained a little better in -h
+
+-Brandon
+
+</PRE>

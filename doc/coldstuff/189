@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [189] in "Coldmud discussion meeting"</TITLE>
+<H1>[189] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?189"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="186"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="188"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="188"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="190"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="206"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="207"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>re: confusion</H2>
+<H3>daemon@ATHENA.MIT.EDU (Thu Mar 31 16:20:37 1994
+)</H3>
+<PRE>
+From: rayn@q.crossaccess.com (Ray Nawara jr.)
+To: coldstuff@MIT.EDU
+Date: Thu, 31 Mar 1994 10:26:47 -0800 (PST)
+
+Mostly, i wasnt real clear on how params worked when i thought
+of the accessor bit, so i thought you had to do a setvar if
+you wanted to change a param...
+the reason I wanted to have an accessor was for abstraction purposes..
+having only one method that directly set a parameter, with all other 
+methods calling the accessor to change or read the value, so that 
+changes could be made to how that parameter was set (or returned)
+easily, but It's probably not worth the overhead to always do this,
+just make the method if its necessary, i guess. Its easy to be a 
+purist when your being abstract, and not considering db bloat or
+speed :)
+
+Ash
+
+</PRE>

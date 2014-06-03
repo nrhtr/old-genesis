@@ -1,0 +1,42 @@
+<HEAD><TITLE>discuss@charon: [1195] in "Coldmud discussion meeting"</TITLE>
+<H1>[1195] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1195"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1194"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1196"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1199"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1203"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>[COLD] What can I do with $robot?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Dec 29 06:53:40 1996
+)</H3>
+<PRE>
+Date: Sun, 29 Dec 1996 04:50:24 -0800
+From: Frank Crowell &lt;frankc@maddog.com&gt;
+To: Cold Stuff &lt;coldstuff@cold.org&gt;
+
+I created a clone of $robot and changed a couple of 
+attributes, but I don't seem to know how to use/extend the
+$robot.  As a minimum I would like it to behave like
+a MUSH puppet so that I could:
+	-set it so the object hears and the messages
+		can either be pattern-matched or 
+		processed in some other way
+		(for example on LambdaMOO I have 
+		a puppet with a tell_to set to me)
+
+	-have it respond to tells/pages so I can get 
+	it to do things.
+
+Maybe I need to create a listening thing object.  
+But I don't know how to get the object to respond to
+messages.
+
+Thanks for any help.
+
+Frank
+</PRE>

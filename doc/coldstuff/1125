@@ -1,0 +1,53 @@
+<HEAD><TITLE>discuss@charon: [1125] in "Coldmud discussion meeting"</TITLE>
+<H1>[1125] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1125"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1124"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1124"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1124"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1126"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1126"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1130"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] How to compile?</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Nov  6 11:36:06 1996
+)</H3>
+<PRE>
+Date: Wed, 6 Nov 1996 09:15:21 -0700 (MST)
+From: Brandon Gillespie &lt;brandon@glacier.cold.org&gt;
+To: Gestalt &lt;gestalt@sedona.net&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;v02140b03aea5ce52b30d@[206.85.48.101]&gt;
+
+On Tue, 5 Nov 1996, Gestalt wrote:
+&gt; I seem to be unable to get Genesis to compile on my system. During 'make',
+&gt; it spits out a couple warnings, either terminating in a quota full error or
+&gt; fatal error no. 1 (as I recall)... I have attempted to compile several
+&gt; versions.
+&gt; 
+&gt; If anyone has any idea how, I would like to get a ColdCore up to dink
+&gt; around with.
+&gt; My system is setup as follows:
+&gt; 
+&gt; SunSPARC workstation (with 16 megs real ram and at least 64 swap)
+&gt; SunOS Release 4.1.4_DBE1.4
+&gt; 
+&gt; I have attempted it both with a 10 meg quota and none. Neither way works.
+&gt; 
+&gt; If this is un unkown problem then I will send the output from configure and
+&gt; make... I didn't want to flood the list with big huge files if it wasn't
+&gt; necessary.
+
+Send the output from Make, and the output from: /bin/uname -a
+
+You may be out of luck--the older SunOS has some problems and is not
+ANSI/POSIX standard, which Genesis assumes your compiler is.  My
+suggestion would be to hitup the administrator to upgrade to Solaris or to
+install NetBSD on it, both of which are ANSI and mostly POSIX compliant
+(enough that it doesnt matter anymore).
+
+-Brandon Gillespie
+
+</PRE>

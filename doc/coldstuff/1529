@@ -1,0 +1,56 @@
+<HEAD><TITLE>discuss@charon: [1529] in "Coldmud discussion meeting"</TITLE>
+<H1>[1529] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1529"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1494"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1528"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1528"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1530"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: Reference Manual updates</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Dec  8 10:39:00 1999
+)</H3>
+<PRE>
+Date: Wed, 8 Dec 1999 08:17:09 -0700
+From: Brandon Gillespie &lt;brandon@roguetrader.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;000a01bf411e$bf441e40$fe700d18@catv1.md.home.com&gt;; from Ian Klimon, Esq. on Tue, Dec 07, 1999 at 08:51:29PM -0500
+Reply-To: coldstuff@cold.org
+
+
+--45Z9DzgjV8m4Oswq
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Dec 07, 1999 at 08:51:29PM -0500, Ian Klimon, Esq. wrote:
+&gt; Is there somewhere one can obtain a copy of this old ColdMUD manual?=20
+&gt; I'd be happy to continue work on integrating the two into a full
+&gt; fledged ColdC Manual.
+
+The manual Jeff refers to is the one in ColdCore.  It is still a 'full
+fledged' reference manual, it just isn't in an immediately printable
+format.  But as my earlier (a week or two ago) message stated--this is
+simply a matter of building a formatter that will generate it in
+texinfo or a similar format (what the original reference manual was
+in).
+
+-Brandon
+
+--45Z9DzgjV8m4Oswq
+Content-Type: application/pgp-signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0i for non-commercial use
+MessageID: ezl1w+zNJ0lVtqoFaXXW5wWjhoWXLNpT
+
+iQA/AwUBOE52dEv5XoQiMgn6EQLCkgCgqmpODqeKcHrXhoLIdk0GRHPwlgMAoLez
+I4zomn87UeE+wGU5jQdm7VzI
+=cRUS
+-----END PGP SIGNATURE-----
+
+--45Z9DzgjV8m4Oswq--
+</PRE>

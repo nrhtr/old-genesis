@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [970] in "Coldmud discussion meeting"</TITLE>
+<H1>[970] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?970"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="969"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="969"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="969"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="971"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="972"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="983"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] 'user()' builtin function..</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Apr 22 18:24:09 1996
+)</H3>
+<PRE>
+Date: Mon, 22 Apr 1996 14:50:12 -0700 (PDT)
+From: No one of any consequence &lt;seanl@beef.bovine.com&gt;
+To: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+cc: coldstuff@cold.org
+In-Reply-To: &lt;Pine.BSF.3.91.960422125842.3006A-100000@tombstone.sunrem.com&gt;
+
+How about requestor()
+
+On Mon, 22 Apr 1996, Brandon Gillespie wrote:
+
+&gt; Ok, I'm breaking down here.  Should we add a 'user()' builtin?  This 
+&gt; function would go alongside 'sender()' and 'caller()', it would be more 
+&gt; appropriately called 'controller()'.  Since ColdC is developed for a 
+&gt; multi-connection server environment it only makes sense that there would 
+&gt; be a central object to control a single 'connection'.  How this builtin 
+&gt; would work is there would be a controller variable which defaults to the 
+&gt; connection starting the task, but allow the task to set a different 
+&gt; controller as things go..
+&gt; 
+&gt; -Brandon Gillespie-
+&gt; 
+&gt; Do you prefer 'user()' or 'controller()'?
+&gt; 
+</PRE>

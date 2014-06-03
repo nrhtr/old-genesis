@@ -1,0 +1,36 @@
+<HEAD><TITLE>discuss@charon: [97] in "Coldmud discussion meeting"</TITLE>
+<H1>[97] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?97"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="87"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="92"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="96"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="98"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="99"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="99"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: ANSI codes and unreadables</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sat Dec  4 16:29:38 1993
+)</H3>
+<PRE>
+Date: Sat, 4 Dec 93 13:35:42 -0800
+From: jsp@glia.biostr.washington.edu (Jeff Prothero)
+To: coldstuff@MIT.EDU
+
+Richelieu: 
+| The MUD should _not_ allow non-glyph non-space characters in its input.  
+
+More precisely, muds should default to cooked mode for network I/O,
+users should have to explicitly select raw 8-bit I/O if they want it.
+
+Raw 8-bit I/O is in fact frequently handy for anyone attempting
+nontrivial projects based on a mudserver core, as moo-cows list
+traffic demonstrates:  having to effectively uuencode datastreams
+to get them through the netport is a bug, not a feature, in many
+multimedia type applications.
+
+CrT
+
+</PRE>

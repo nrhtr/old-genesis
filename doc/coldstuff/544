@@ -1,0 +1,138 @@
+<HEAD><TITLE>discuss@charon: [544] in "Coldmud discussion meeting"</TITLE>
+<H1>[544] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?544"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="543"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="545"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="546"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="551"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>ToDo, or not ToDo.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Sun Nov  6 17:05:36 1994
+)</H3>
+<PRE>
+To: coldstuff@MIT.EDU
+Date: Mon, 7 Nov 1994 02:59:34 -0500 (EST)
+Cc: root@colinm.ozemail.com.au ()
+From: colinm@colinm.ozemail.com.au (Colin McCormack)
+Reply-To: colinm@colinm.ozemail.com.au
+
+In general, I would rather see nothing done to the server, 
+than see a bunch of ill considered hacks thrown into the server,
+in the name of I don't know... Progress?  Convenience?
+Notional improvement?
+
+The changes suggested have ranged over: cosmetic (however uglifying)
+to fundamental (changing method semantics) to soundly reasoned
+(of which I've already implemented some, having thought of them
+initially :)
+
+There's nothing wrong with talking about them, nothing at all,
+but I'd counsel conservatism in action... remain focused on what
+it is that a change would enable a core to do, and what a core
+can't do unless it gets the facility you're after... don't get hung
+up on what, remember `why'.
+
+There's nothing so damaging as an ill considered change,
+something that half-solves a problem, or that solves the
+wrong problem... it obscures elegant design.
+
+En passant:  regexps should be taken out of String.
+
+On another matter:  Chaos has indicated that he's still into
+evolutionary hacking of the server, and I think that's good.
+
+I've gone quite a way to rewriting in C++, am pausing for an
+extended think and regroup.
+I may even scratch what I have and rewrite again, 3rd time,
+before completing.  It would be a mistake to see mine
+as a major push to a new architecture, right now:
+I'm simply after a different/better implementation,
+not so much a modification to the C-- level interface,
+which I consider (in overall conception) to be excellent.
+So there's no impediment to getting on with cores, is there?
+
+(`the more I look at it, the more I like it.  I do
+think it's good.  No matter how I turn it, or which way I
+view it, it remains consistent.  I WISH YOU WERE HERE TO
+SEE IT!' [Indiscipline - King Crimson])
+
+Richelieu (Get an easier name to spell) has indicated an
+interest in evolutionarily hacking the server too.
+I see no reason why they can't work together, if they
+want to; or apart, if they must.
+Certainly, also, Chaos and Crag would be a moderating interface
+between Richelieu and I, to the extent that I might want to
+make my position/feelings felt on some issues.
+
+There will always be someone pushing the envelope, and delivering
+the goods.  My money's on Chaos, who produced workable tasking
+when it appeared that tasking was necessary, and because, somehow,
+I trust him not to pollute coldmud with poisoned confectionary 
+like do {abomination} while {abominable}.
+
+As far as I'm concerned, you +could+ treat it as an open market,
+with people sending out mutually incompatible servers:
+To the extent that a core is needlessly based on a spurious
+feature, it's not going to be taken up.  To the extent that a
+really good new feature is presented by one, it will be adopted
+by the others... There's some efficiency in people all working to 
+common goals, but let's face it:  the core is what most people
+see, and the server's merely a means to that end.  If Rich thinks he's
+making it easier to make a better core, and he and I disagree,
+more strength to his arm... time will tell.
+
+All you really need is a place to ftp the latest server(s) from
+and a way to tell which is what, and the sense to choose and combine
+appropriately, so long as the developments are appropriately modular.
+
+If someone hijacks the whole concept, and makes of it an abortion,
+so what?  We still have 0.12.0, and its capabilities are far
+from exhausted.
+
+The scrabbling for official position is a scrabbling for
+the right to apply the name `coldmud'.  I really don't care what
+the system I'm working with is called, so long as I can call it
+`the best.'  In other words:  I'd hope that the coldmud 
+community had the sense to see that whoever's speaking most
+sense at any given moment is speaking for coldmud's future. 
+If not, that's where we part company, and coldmud departs from
+any future it may have.  The good news is:  there is no absolute
+zero, it's a partial order.
+
+If you have a problem, articulate it first as a problem,
+not as a solution.  The real gems in any development history 
+are the problems solved in arrival, not the fully formed
+solutions, because those problems permit many possible solutions.
+If you have a problem with the way coldmud works, or doesn't,
+phrase it as such, so Riche's `method parsing method' might be
+something like:  `I wish there was some way for an object to
+accept an arbitrary method call / message, because it'd enable
+me to do something I couldn't otherwise, and I reckon this is
+a good way to do it' followed by a solution sketch.
+
+As I see it, the problem is mainly that people have difficulty
+getting the known-latest server... so someone fer chrissakes
+decide where they're going to deposit servers and cores,
+stick to it, and get on with it.  Of course, I could be wrong...
+there could be other problems.  For all I know, there aren't many
+problems, and people are just floating ideas they'd like to
+see experimented with... so, grab a server and start hacking,
+don't assume that because someone else isn't doing the hacking
+for you, but rather chasing their own daemons, that they
+don't speak for coldmud, and you do.
+
+For the moment, I'm core-extending, as I know now where (my)
+coldmud's headed, I can make the right choices.  Server and
+core are codependant, in a relation of mutual presupposition.
+I have a feeling it's time to push the core envelope, some.
+
+Colin.
+
+My A$0.02.
+
+</PRE>

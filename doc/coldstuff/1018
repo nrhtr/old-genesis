@@ -1,0 +1,35 @@
+<HEAD><TITLE>discuss@charon: [1018] in "Coldmud discussion meeting"</TITLE>
+<H1>[1018] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1018"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1017"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1017"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1017"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1019"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [COLD] Decompiler bug.</H2>
+<H3>daemon@ATHENA.MIT.EDU (Wed Jun 12 14:25:41 1996
+)</H3>
+<PRE>
+Date: Wed, 12 Jun 1996 11:59:23 -0600 (MDT)
+From: Brandon Gillespie &lt;brandon@tombstone.sunrem.com&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;31BE0A5C.6003@tenetwork.com&gt;
+
+On Tue, 11 Jun 1996, Jeff Kesselman wrote:
+&gt; if (foo)
+&gt;     ;
+&gt; 
+&gt; Decompiles to
+&gt; 
+&gt; if (foo)
+&gt;
+
+Ok, I got it (I think), thanks--should show up in patch 8.
+
+-Brandon
+</PRE>

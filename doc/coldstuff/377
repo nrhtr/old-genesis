@@ -1,0 +1,40 @@
+<HEAD><TITLE>discuss@charon: [377] in "Coldmud discussion meeting"</TITLE>
+<H1>[377] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?377"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="375"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="376"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="376"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="378"><IMG SRC="/i-next.gif" ALT="next"></A>
+<IMG SRC="/n-nref.gif" ALT="">
+<IMG SRC="/n-lref.gif" ALT="">
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: objname vs dbref</H2>
+<H3>daemon@ATHENA.MIT.EDU (Mon Jul 11 10:45:55 1994
+)</H3>
+<PRE>
+To: stewarta@netcom.com (Alex Stewart)
+Cc: deforest@netcom.com (Robert de Forest), coldstuff@MIT.EDU
+In-Reply-To: Your message of "Mon, 11 Jul 1994 03:19:16 PDT."
+             &lt;199407111019.DAA25182@netcom5.netcom.com&gt; 
+Date: Mon, 11 Jul 1994 10:39:35 -0400
+From: Greg Hudson &lt;ghudson@MIT.EDU&gt;
+
+
+&gt; As I've said before, I see no reason why the $foo syntax shouldn't
+&gt; be called a dbref.  It is, quite simply, the way database objects
+&gt; are referenced ("db"-"ref") by anything outside server internals
+&gt; (i.e. by the real world).
+
+"Dbref" has traditionally been a data type referring to an object in
+the database.  This is completely divorced from the $foo syntax and
+any numbering of objects.
+
+That objects are numbered at all should not be visible to the
+programmer, although it still is in 0.10.
+
+--GBH
+
+</PRE>

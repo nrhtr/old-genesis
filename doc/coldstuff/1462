@@ -1,0 +1,41 @@
+<HEAD><TITLE>discuss@charon: [1462] in "Coldmud discussion meeting"</TITLE>
+<H1>[1462] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1462"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<IMG SRC="/n-fref.gif" ALT="">
+<IMG SRC="/n-pref.gif" ALT="">
+<A HREF="1461"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1463"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1469"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1469"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>bugs::parentless object</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Nov  9 19:44:32 1999
+)</H3>
+<PRE>
+Date: Tue, 09 Nov 1999 19:18:57 EST
+From: rozzin@geekspace.com (Joshua Rosen)
+To: coldstuff@cold.org
+Reply-To: coldstuff@cold.org
+
+with mojo, eval:
+
+;as $sys create([])
+
+a new, full-bastard object is created. It has no... anything, save its object number.
+This wouldn't be so bad, except that it seems impossible to operate on the object; and actions taken toward the object seem to return "#xxx.has_ancestor not found."
+
+Maybe create() should throw an error when passed an empty parent-list.
+
+--
+-----BEGIN GEEK CODE BLOCK-----
+Version: 3.12
+GFA/CS/L/M/P/MU/O d(-) s:-- a? C++++$&gt;$ ULB P L+ E W+++ N-(!) o? K(--) w(--)(---) O+++ M-- V? PS+++ PE Y+ PGP-(+++) t 5 X+ R* tv(+) b+ DI+ D---- G+++ e h! r%--- y+
+------END GEEK CODE BLOCK------
+rozzin@geekspace.com -- http://i.am/rozzin
+(please don't send me needlessly HTMLised e-mail)
+
+
+</PRE>

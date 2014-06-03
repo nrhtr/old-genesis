@@ -1,0 +1,67 @@
+<HEAD><TITLE>discuss@charon: [1535] in "Coldmud discussion meeting"</TITLE>
+<H1>[1535] in Coldmud discussion meeting</H1></HEAD>
+<A HREF="/"><IMG SRC="/i-d.gif" ALT="root"></A>
+<A HREF="?1535"><IMG SRC="/i-back.gif" ALT="meeting"></A>
+<A HREF="/help.html"><IMG SRC="/i-help.gif" ALT="help"></A>
+<A HREF="1"><IMG SRC="/i-first.gif" ALT="first"></A>
+<A HREF="1533"><IMG SRC="/i-fref.gif" ALT="first in chain"></A>
+<A HREF="1533"><IMG SRC="/i-pref.gif" ALT="previous in chain"></A>
+<A HREF="1534"><IMG SRC="/i-prev.gif" ALT="previous"></A>
+<A HREF="1536"><IMG SRC="/i-next.gif" ALT="next"></A>
+<A HREF="1536"><IMG SRC="/i-nref.gif" ALT="next in chain"></A>
+<A HREF="1537"><IMG SRC="/i-lref.gif" ALT="last in chain"></A>
+<A HREF="1641"><IMG SRC="/i-last.gif" ALT="last"></A>
+<HR><H2>Re: [patch] optimize method cache</H2>
+<H3>daemon@ATHENA.MIT.EDU (Tue Dec 21 14:19:07 1999
+)</H3>
+<PRE>
+Date: Tue, 21 Dec 1999 13:01:26 -0600 (CST)
+From: Jay Carlson &lt;nop@place.org&gt;
+To: coldstuff@cold.org
+In-Reply-To: &lt;199912210751.XAA26720@portland.puremagic.com&gt;
+Reply-To: coldstuff@cold.org
+
+&gt; This is a patch to help optimize the method cache some.
+&gt; 
+&gt; It changes the following:
+&gt; 
+&gt; 1) Do not invalidate the cache when destroying an object that has
+&gt;    no methods and no children.  This'll prevent the method cache
+&gt;    from getting nuked everytime someone connects as a user, or via
+&gt;    the web interface.
+
+[...]
+
+&gt; 3) In setting the access on a method, only invalidate in the
+&gt;    specific instance in which you need to invalidate.  Also,
+&gt;    save some work and don't flag it as dirty unless you need to
+&gt;    do so.
+
+This looks...familiar. :-)
+
+&gt; The other optimization that should be addressed and that was left out of
+&gt; both of those emails, is that negative method lookups should be cached.
+
+Experience with this in MOO has been iffy.  Here's a quote from LambdaMOO:
+
+&gt;@verb-cache-stats
+Hits: 961,763,137, negative hits: 24,229,258, misses: 8,807,049, generations: 2,157
+Ratio: 109.20:1, or 99.08%
+[...]
+&gt;@uptime
+The server has been up for 8 days, 22 hours, 1 minute, and 10 seconds.
+
+I'm not sure it's worth the possible cache pollution.  Very
+core-dependent though.  The code's already done, so I doubt
+we'll be taking it out.
+
+&gt; However, with the addition of that much extra information to the cache,
+&gt; it is well past time for someone to look at adding monitoring data to the
+&gt; various caches and tracking the hit/miss/overwrite rates to help people
+&gt; tune their cache sizes.
+
+Agreed.
+
+Jay
+
+</PRE>
