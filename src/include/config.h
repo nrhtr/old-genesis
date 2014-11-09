@@ -22,7 +22,7 @@
 #define HAVE_SYS_WAIT_H 1
 
 /* Define for the right header for dbm routines */
-#define DBM_H_FILE <gdbm/ndbm.h>
+#define DBM_H_FILE <kclangc.h>
 #define DB_DBM_HSEARCH 1
 
 /* Define if your struct dirent has d_namlen */

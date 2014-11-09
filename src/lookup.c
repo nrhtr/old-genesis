@@ -16,7 +16,8 @@
 #include "cdc_db.h"
 #include "util.h"
 
-#include <kclangc.h>
+#include DBM_H_FILE
+
 typedef struct {
     char *dptr;
     int dsize;
