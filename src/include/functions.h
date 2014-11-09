@@ -58,7 +58,6 @@ COLDC_FUNC(fwrite);
 COLDC_FUNC(fstat);
 COLDC_FUNC(execute);
 
-//added by celthric
 COLDC_FUNC(range);
 COLDC_FUNC(glob);
 

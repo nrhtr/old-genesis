@@ -50,7 +50,6 @@ COLDC_FUNC(listgraft)
     list_discard(l2);
 }
 
-//added by celthric
 COLDC_FUNC(range)
 {
     cData *args;

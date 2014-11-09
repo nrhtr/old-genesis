@@ -299,7 +299,6 @@ static Op_info op_info[] = {
     {F_STRIDX, "stridx", func_stridx},
 
     /* List manipulation (listop.c). */
-    //added by celthric
     {F_RANGE, "range", func_range},
     {F_GLOB, "glob", func_glob},
 

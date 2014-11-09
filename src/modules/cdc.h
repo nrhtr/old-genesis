@@ -11,9 +11,7 @@ void uninit_cdc(void);
 extern module_t cdc_module;
 #endif
 
-/* celthric addition */
 NATIVE_METHOD(punctuate);
-
 NATIVE_METHOD(buflen);
 NATIVE_METHOD(buf_replace);
 NATIVE_METHOD(subbuf);
