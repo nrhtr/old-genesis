@@ -76,3 +76,5 @@ while (!eof(STDIN)) {
 }' > $prog
 
 diff $expected $output | perl $prog 
+
+exit 1
