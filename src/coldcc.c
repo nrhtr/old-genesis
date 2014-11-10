@@ -40,25 +40,14 @@ INTERNAL void usage(char *name);
 INTERNAL FILE *find_text_db(void);
 INTERNAL void compile_db(Int type);
 
-/* FIXME: needs refactoring */
-void shutdown_coldcc_error(void)
+void shutdown_coldcc(int exit_status)
 {
     cache_sync();
     db_close();
     flush_output();
     close_files();
     fputc(10, stderr);
-    exit(1);
-}
-
-void shutdown_coldcc(void)
-{
-    cache_sync();
-    db_close();
-    flush_output();
-    close_files();
-    fputc(10, stderr);
-    exit(0);
+    exit(exit_status);
 }
 
 /*
@@ -88,7 +77,7 @@ int main(int argc, char **argv)
     }
 
     fputs("Closing binary database...", stderr);
-    shutdown_coldcc();
+    shutdown_coldcc(EXIT_SUCCESS);
 
     /* make compilers happy; we never reach this */
     return 0;

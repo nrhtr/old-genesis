@@ -61,14 +61,14 @@ extern Bool print_warn;
 
 #define DIE(__s) { \
         printf("\rLine %ld: ERROR: %s\n", (long) line_count, __s); \
-        shutdown_coldcc_error(); \
+        shutdown_coldcc(EXIT_FAILURE); \
     }
 
 #define DIEf(__fmt, __arg) { \
         printf("\rLine %ld: ERROR: ", (long) line_count); \
         printf(__fmt, __arg); \
         fputc('\n', stdout); \
-        shutdown_coldcc(); \
+        shutdown_coldcc(EXIT_FAILURE); \
     }
 
 /* Dancer: This is more portable than the pointer arithmetic
@@ -123,7 +123,7 @@ INTERNAL void shutdown_coldcc(void)
 }
 #endif
 
-extern void shutdown_coldcc(void);
+extern void shutdown_coldcc(int);
 
 typedef struct holder_s holder_t;
 
@@ -262,7 +262,7 @@ INTERNAL void remember_native(Method * method)
         fformat(stdout,
                 "\rLine %l: ERROR: %O.%s() overrides existing native definition.\n",
                 line_count, nh->objnum, ident_name(nh->native));
-        shutdown_coldcc();
+        shutdown_coldcc(EXIT_FAILURE);
     }
 
     nh = (nh_t *) malloc(sizeof(nh_t));
@@ -1284,7 +1284,7 @@ void compile_cdc_file(FILE * fp)
         } else if (strnccmp(s, "//", 2)) {
             WARN(("parse error, unknown directive."));
             ERRf("\"%s\"\n", s);
-            shutdown_coldcc();
+            shutdown_coldcc(EXIT_FAILURE);
         }
 
         string_discard(str);
